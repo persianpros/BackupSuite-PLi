@@ -1,0 +1,415 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#:start HDD version
+msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
+msgstr ""
+
+#:start USB version
+msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
+msgstr ""
+
+#:plugin HDD 3
+msgid "Full back-up on HDD"
+msgstr ""
+
+#:plugin USB 2
+msgid "Full back-up to USB"
+msgstr ""
+
+#:message01
+msgid "No supported receiver found!"
+msgstr ""
+
+#:message02
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr ""
+
+#:message03
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr ""
+
+#:message04
+msgid " size to be backed up: "
+msgstr ""
+
+#:message05
+msgid "not found, the backup process will be aborted!"
+msgstr ""
+
+#:message06
+msgid "Some information about the task"
+msgstr ""
+
+#:message06a
+msgid "Create: root.ubifs"
+msgstr ""
+
+#:message07
+msgid "Create: kerneldump"
+msgstr ""
+
+#:message08
+msgid "Almost there... Now building the USB-Image!"
+msgstr ""
+
+#:message09
+msgid "Additional backup -> "
+msgstr ""
+
+#:message10
+msgid "USB Image created in: "
+msgstr ""
+
+#:message11
+msgid "and there is made an extra copy in: "
+msgstr ""
+
+#:message12-1
+msgid "To restore the image:"
+msgstr ""
+
+#:message12-2
+msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
+msgstr ""
+
+#:message12-3
+msgid "Follow the instructions on the front-display."
+msgstr ""
+
+#:message12-4
+msgid "Please wait.... almost ready!"
+msgstr ""
+
+#:message13
+msgid "Press arrow up from frontpanel to start loading."
+msgstr ""
+
+#:message14
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr ""
+
+#:message15
+msgid "Image creation FAILED!"
+msgstr ""
+
+#:message16
+msgid "available "
+msgstr ""
+
+#:message17-1
+msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr ""
+
+#:message17-2
+msgid "This only takes about 20 seconds....."
+msgstr ""
+
+#:message19
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr ""
+
+#:message20
+msgid "Full back-up to the harddisk"
+msgstr ""
+
+#:message21-1
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr ""
+
+#:message21-2
+msgid "PLEASE READ THIS:"
+msgstr ""
+
+#:message21-3
+msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
+msgstr ""
+
+#:message21-4
+msgid "backupstick or"
+msgstr ""
+
+#:message21-5
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+#:message21-6
+msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
+msgstr ""
+
+#:message21-7
+msgid "The program will exit now."
+msgstr ""
+
+##:message22
+msgid "Full back-up direct to USB"
+msgstr ""
+
+#:message23
+msgid "The content of the folder is:"
+msgstr ""
+
+#:message24
+msgid "Time required for this process: "
+msgstr ""
+
+#:message25
+msgid "minutes"
+msgstr ""
+
+#:message26
+msgid "Backup done with: "
+msgstr ""
+
+#:message27
+msgid "KB per second"
+msgstr ""
+
+#:message28
+msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr ""
+
+#:message29
+msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr ""
+
+#:message30-1
+msgid "* * * WARNING * * *"
+msgstr ""
+
+#:message30-2
+msgid "Not enough free space on "
+msgstr ""
+
+#:message31
+msgid " to make a back-up!"
+msgstr ""
+
+#:message32
+msgid " MB available space"
+msgstr ""
+
+#:message33
+msgid " MB needed space"
+msgstr ""
+
+#:message34
+msgid "The program will abort, please try another medium with more free space to create your back-up."
+msgstr ""
+
+
+
+
+#: plugin.py
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+
+#: plugin.py
+#, python-format
+msgid "  %s (maybe error)"
+msgstr ""
+
+#: plugin.py
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr ""
+
+#: plugin.py
+msgid " nothing!"
+msgstr ""
+
+#: plugin.py
+msgid " version "
+msgstr ""
+
+#: plugin.py
+msgid ""
+"A recording is currently running. Please stop the recording before trying to start a flashing."
+msgstr ""
+
+#: plugin.py
+msgid "Cancel"
+msgstr ""
+
+#: plugin.py
+msgid "Create backup"
+msgstr ""
+
+#: plugin.py
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr ""
+
+#: plugin.py
+msgid "Done"
+msgstr ""
+
+#: plugin.py
+msgid "Exit"
+msgstr ""
+
+#: plugin.py
+msgid "Failed"
+msgstr ""
+
+#: plugin.py
+msgid "Flashing: "
+msgstr ""
+
+#: plugin.py
+msgid "For flashing your receiver files are needed:\n"
+msgstr ""
+
+#: plugin.py
+msgid "NAS"
+msgstr ""
+
+#: plugin.py
+msgid "NOT found files for flashing!\n"
+msgstr ""
+
+#: plugin.py
+msgid "No backup present"
+msgstr ""
+
+#: plugin.py
+msgid "Only kernel"
+msgstr ""
+
+#: plugin.py
+msgid "Only root"
+msgstr ""
+
+#: plugin.py
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr ""
+
+#: plugin.py
+msgid "Press OK"
+msgstr ""
+
+#: plugin.py
+msgid "Read error current dir, sorry."
+msgstr ""
+
+#: plugin.py
+msgid "Restore backup"
+msgstr ""
+
+#: plugin.py
+msgid "Run flash"
+msgstr ""
+
+#: plugin.py
+msgid "Running"
+msgstr ""
+
+#: plugin.py
+msgid "Save"
+msgstr ""
+
+#: plugin.py
+msgid "Select parameter for start flash!\n"
+msgstr ""
+
+#: plugin.py
+msgid "Select the folder with backup"
+msgstr ""
+
+#: plugin.py
+msgid "Show only found image and mtd partitions.\n"
+msgstr ""
+
+#: plugin.py
+msgid "Simulate (no write)"
+msgstr ""
+
+#: plugin.py
+msgid "Standard (root and kernel)"
+msgstr ""
+
+#: plugin.py
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr ""
+
+#: plugin.py
+msgid "Unzip"
+msgstr ""
+
+#: plugin.py
+msgid ""
+"Warning!\n"
+"Use at your own risk! Make always a backup before use!\n"
+"Don't use it if you use multiple ubi volumes in ubi layer!"
+msgstr ""
+
+#: plugin.py
+msgid "Your STB will freeze during the flashing process.\n"
+msgstr ""
+
+#: plugin.py
+#, python-format
+msgid "current:  %s"
+msgstr ""
+
+#: plugin.py
+msgid "disabled"
+msgstr ""
+
+#: plugin.py
+msgid "no"
+msgstr ""
+
+#: plugin.py
+msgid "ofgwrite will stop enigma2 now to run the flash.\n"
+msgstr ""
+
+#: plugin.py
+msgid "type info"
+msgstr ""
+
+#: plugin.py
+msgid "type yes/no"
+msgstr ""
+
+msgid "Only root with use mtdy device"
+msgstr ""
+
+msgid "Only kernel with use mtdx device"
+msgstr ""
+
+#: plugin.py
+msgid "BackupSuite"
+msgstr ""
+
+#: plugin.py
+msgid "Enables back-up & restore without an USB-stick"
+msgstr ""
+
+#: plugin.py
+msgid "Make a backup or restore a backup"   
+msgstr ""
+
+#: plugin.py
+msgid "Backup > HDD"
+msgstr ""
+
+#: plugin.py
+msgid "Backup > USB"
+msgstr ""
+
+#: plugin.py
+msgid "What is new since the last release?"
+msgstr ""

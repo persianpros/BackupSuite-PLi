@@ -1,0 +1,418 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Language: tr\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: start HDD version
+msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
+msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' tr_TR"
+
+#: start USB version
+msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
+msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' tr_TR"
+
+#: plugin HDD 3
+msgid "Full back-up on HDD"
+msgstr "Tam yedekleme HDD üzerine"
+
+#: plugin USB 2
+msgid "Full back-up to USB"
+msgstr "Tam yedekleme USB  içine"
+
+#: message01
+msgid "No supported receiver found!"
+msgstr "Desteklenen alıcısı bulunamadı!"
+
+#: message02
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "YEDEKLEME ARAÇ, KOMPLE YEDEKLEME YAPMAK İÇİN"
+
+#: message03
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr "Lütfen sabırlı olun, bir yedekleme artık yapılacaktır, bu sürer: "
+
+#: message04
+msgid " size to be backed up: "
+msgstr " yedeklenmesi boyutu: "
+
+#: message05
+msgid "not found, the backup process will be aborted!"
+msgstr "bulunamadı, yedekleme işlemi iptal olacak!"
+
+#: message06
+msgid "Some information about the task"
+msgstr "Görev hakkında bazı bilgiler"
+
+#: message06a
+msgid "Create: root.ubifs"
+msgstr "Oluşturma: root.ubifs "
+
+#: message07
+msgid "Create: kerneldump"
+msgstr "Oluşturma: kerneldump"
+
+#: message08
+msgid "Almost there... Now building the USB-Image!"
+msgstr "Neredeyse ... Şimdi USB Görüntü oluşturmak!"
+
+#: message09
+msgid "Additional backup -> "
+msgstr "Ek yedekleme -> "
+
+#: message10
+msgid "USB Image created in: "
+msgstr "USB görüntü oluşturulur:"
+
+#: message11
+msgid "and there is made an extra copy in: "
+msgstr "ve orada fazladan bir kopyası yapılır:"
+
+#: message12-1
+msgid "To restore the image:"
+msgstr "Görüntüyü geri yüklemek için:"
+
+#: message12-2
+msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
+msgstr "(Ön) USB portuna USB Belek sürücü yerleştirin ve alıcının arkasındaki PowerSwitch ile alıcısını kapatiniz ve tekrar PowerSwitch ile aciniz."
+
+#: message12-3
+msgid "Follow the instructions on the front-display."
+msgstr "Ön ekrandaki yönergeleri izleyin."
+
+#: message12-4
+msgid "Please wait.... almost ready!"
+msgstr "Lütfen bekleyiniz.... birazdan hazır!"
+
+#: message13
+msgid "Press arrow up from frontpanel to start loading."
+msgstr "Yüklemeye başlatmak için ön paneldeki yukarı ok tuşuna basın."
+
+#: message14
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr "Lütfen alıcının görüntüyü geri yüklemek nası yapılır el kılavuzuna bakınız."
+
+#: message15
+msgid "Image creation FAILED!"
+msgstr "Görüntü oluşturma BAŞARISIZ!"
+
+#: message16
+msgid "available "
+msgstr "mevcut"
+
+#: message17-1
+msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr "USB bağlantı noktalarından birinde tespit edilen geçerli bir USB-Belek varsa,bu nedenle ekstra bir kopya yedekleme görüntü şimdi bu USB-Belek için kopyalanır."
+
+#: message17-2
+msgid "This only takes about 20 seconds....."
+msgstr "Bu yaklaşık 20 saniye sürer ....."
+
+#: message19
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Yedekleme tamamlandı ve USB flash sürücüne kopyalanır."
+
+#: message20
+msgid "Full back-up to the harddisk"
+msgstr "Tam yedekleme sabit disk içine"
+
+#: message21-1
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "Geçerli bir USB-Belek bulunmaz ise,hiçbir şey yapilamaz."
+
+#: message21-2
+msgid "PLEASE READ THIS:"
+msgstr "LÜTFEN BUNU OKUYUNUZ:"
+
+#: message21-3
+msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
+msgstr "USB-Belek doğrudan yedeklemek için, USB-Belek bir dosya adı içermesi ZORUNLUDUR:"
+
+#: message21-4
+msgid "backupstick or"
+msgstr "backupstick veya"
+
+#: message21-5
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+#: message21-6
+msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
+msgstr "Bu dosyayı içeren bir USB-Belek koyarsanız yedekleme otomatik olarak USB-Belek üzerine yapılacak ve mevcut görüntü gerekirse geri yüklemek için kullanılabilir."
+
+#: message21-7
+msgid "The program will exit now."
+msgstr "Program şimdi kapanacak. "
+
+#: message22
+msgid "Full back-up direct to USB"
+msgstr "Tam yedekleme USB üzerine"
+
+#: message23
+msgid "The content of the folder is:"
+msgstr "Klasörün içeriği:"
+
+#: message24
+msgid "Time required for this process: "
+msgstr "Bu işlem için gereken süre: "
+
+#: message25
+msgid "minutes"
+msgstr "dakika"
+
+#: message26
+msgid "Backup done with: "
+msgstr "Yedekleme ile yapılan: "
+
+#: message27
+msgid "KB per second"
+msgstr "KB saniye başına"
+
+#: message28
+msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Bu yedekleme büyük olasılıkla boyut nedeniyle geri yüklenemez,bu şekilde geri yüklemek için çok büyük. Bu kısıtlama Bootloader`dan kaynaklaniyor,yedekleme veya BackupSuite dan degildir."
+
+#: message29
+msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Geri yükleme yedeklemenin maximum boyutunu gectigi icin bir sorun olabilir. Bu kısıtlama Bootloader`dan kaynaklaniyor,yedekleme veya BackupSuite dan degildir."
+
+#: message30-1
+msgid "* * * WARNING * * *"
+msgstr "* * * DIKKAT * * *"
+
+#: message30-2
+msgid "Not enough free space on "
+msgstr "Boş alan yeterli değil"
+
+#: message31
+msgid " to make a back-up!"
+msgstr "Bir yedeklem yapmak için!"
+
+#: message32
+msgid " MB available space"
+msgstr "MB kullanılabilir alan"
+
+#: message33
+msgid " MB needed space"
+msgstr "MB alan gerekli"
+
+#: message34
+msgid "The program will abort, please try another medium with more free space to create your back-up."
+msgstr "Program iptal edilecek, daha fazla boş alana sahip başka bir ortam deneyin lütfen yedekleme oluşturmak için."
+
+#: plugin.py
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+"\n"
+"Bulunan dosyalar:"
+
+#: plugin.py
+#, python-format
+msgid "  %s (maybe error)"
+msgstr "  %s (olabilir hata)"
+
+#: plugin.py
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr "  %s (belki tamam)"
+
+#: plugin.py
+msgid " nothing!"
+msgstr "hiçbir şey!"
+
+#: plugin.py
+msgid " version "
+msgstr "versiyon"
+
+#: plugin.py
+msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
+msgstr "Bir kayıt şu anda çalışıyor. flaş başlatmadan önce kaydı durdurun lütfen."
+
+#: plugin.py
+msgid "Cancel"
+msgstr "iptal"
+
+#: plugin.py
+msgid "Create backup"
+msgstr "yedek oluşturun"
+
+#: plugin.py
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr "gerçekten açmak istiyor musunuz %s ?"
+
+#: plugin.py
+msgid "Done"
+msgstr "tamam"
+
+#: plugin.py
+msgid "Exit"
+msgstr "çıkış"
+
+#: plugin.py
+msgid "Failed"
+msgstr "başarısız"
+
+#: plugin.py
+msgid "Flashing: "
+msgstr "flaş yapiyor:"
+
+#: plugin.py
+msgid "For flashing your receiver files are needed:\n"
+msgstr "flaş için Receiver dosyaları ihtiyaç vardır:\n"
+
+#: plugin.py
+msgid "NAS"
+msgstr "NAS"
+
+#: plugin.py
+msgid "NOT found files for flashing!\n"
+msgstr "flaş için dosya bulunamadı!\n"
+
+#: plugin.py
+msgid "No backup present"
+msgstr "Hiçbir yedekleme mevcut degil"
+
+#: plugin.py
+msgid "Only kernel"
+msgstr "sadece çekirdek"
+
+#: plugin.py
+msgid "Only root"
+msgstr "sadece kök"
+
+#: plugin.py
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr "Lütfen: STB yeniden başlatmayin ve kapatmayin YAPMAYIN.\n"
+
+#: plugin.py
+msgid "Press OK"
+msgstr "OK basın"
+
+#: plugin.py
+msgid "Read error current dir, sorry."
+msgstr "Okuma hatası dizin, üzgünüm."
+
+#: plugin.py
+msgid "Restore backup"
+msgstr "yedeği geri yükle"
+
+#: plugin.py
+msgid "Run flash"
+msgstr "flaş başliyor"
+
+#: plugin.py
+msgid "Running"
+msgstr "çalışıyor"
+
+#: plugin.py
+msgid "Save"
+msgstr "kaydetmek"
+
+#: plugin.py
+msgid "Select parameter for start flash!\n"
+msgstr "flaş başlangıç için parametreyi seçin!\n"
+
+#: plugin.py
+msgid "Select the folder with backup"
+msgstr "Yedekleme klasörü seçin"
+
+#: plugin.py
+msgid "Show only found image and mtd partitions.\n"
+msgstr "Sadece image ve mtd bölümleri  bulundu göster.\n"
+
+#: plugin.py
+msgid "Simulate (no write)"
+msgstr "simüle (yazilim hayir) "
+
+#: plugin.py
+msgid "Standard (root and kernel)"
+msgstr "Standart (kök ve kernel)"
+
+#: plugin.py
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr "image veya çekirdek flash yapmaya baslayacaktir ve birkaç dakika içinde otomatik olarak boot yapacaktir.\n"
+
+#: plugin.py
+msgid "Unzip"
+msgstr "Sıkıştırmayı Kaldır"
+
+#: plugin.py
+msgid ""
+"Warning!\n"
+"Use at your own risk! Make always a backup before use!\n"
+"Don't use it if you use multiple ubi volumes in ubi layer!"
+msgstr ""
+"Dikkat!\n"
+"Sorumluluk kendinize aittir!Kullanmadan önce her zaman bir yedeğini yapiniz!\n"
+"Eğer Ubi katmanda birden ubi hacimleri kullanırsanız kullanın etmeyin!"
+
+#: plugin.py
+msgid "Your STB will freeze during the flashing process.\n"
+msgstr "STB flaş işlemi sırasında donacaktir.\n"
+
+#: plugin.py
+#, python-format
+msgid "current:  %s"
+msgstr "akım: %s"
+
+#: plugin.py
+msgid "disabled"
+msgstr "devre dışı"
+
+#: plugin.py
+msgid "no"
+msgstr "hayır"
+
+#: plugin.py
+msgid "ofgwrite will stop enigma2 now to run the flash.\n"
+msgstr "flaş başlatmak için ofgwrite  şimdi enigma2 yi durduracaktır.\n"
+
+#: plugin.py
+msgid "type info"
+msgstr "tür bilgisi"
+
+#: plugin.py
+msgid "type yes/no"
+msgstr "tür evet/hayır"
+
+msgid "Only root with use mtdy device"
+msgstr "sadece kök kullanım mtdy cihazı ile"
+
+msgid "Only kernel with use mtdx device"
+msgstr "Sadece çekirdek  kullanım mtdx cihazı ile"
+
+#: plugin.py
+msgid "BackupSuite"
+msgstr "BackupSuite"
+
+#: plugin.py
+msgid "Enables back-up & restore without an USB-stick"
+msgstr "Yedekleme sağlar & geri yükleme USB Belek olmadan"
+
+#: plugin.py
+msgid "Make a backup or restore a backup"
+msgstr "Yedekleme yapmak veya geri yükleme"
+
+#: plugin.py
+msgid "Backup > HDD"
+msgstr "Yedekleme > HDD"
+
+#: plugin.py
+msgid "Backup > USB"
+msgstr "Yedeklem > USB"
+
+#: plugin.py
+msgid "What is new since the last release?"
+msgstr "En son sürümden sonra hangi yenilikler var?"
+

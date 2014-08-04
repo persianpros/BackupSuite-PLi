@@ -1,0 +1,28 @@
+Changed in version 17.7
+- Removed textual error and therefore also changed all translations
+- Further refined some help-screens to bring some colour in your life and clarified some parts
+
+Changed in version 17.6
+- Small change in the code of the detection of the desktopsize, just to ensure the correct handling if a high resolution desktop is used 
+- Added some help-screens
+
+Changed in version 17.5
+- Mostly skinning issues
+- Moved skins to seperate file
+- Added "SD" screens, the plugin tests for the skin resolution, if 1280 then the pluginskin is 1280 x 720 else 720 x 576
+- Changed the German translation for the Blue button into "Backup flashen" instead of "Backup herstellen"
+
+Changed in version 17.4
+- Changed some icons/buttons/skin
+- Changed the title of the plugin in just: "BackupSuite" and changed the locale files accordingly
+- Added support for the VU+ Solo Second Edition 
+
+Changed in version 17.3
+- changed the skin so it is more like the skin PLi-HD-FullNight 
+  (but not exactly, left some more room at the bottom of the skin)
+- some small changes in the code, cleaned it up
+- removed the ofgwrite binary from the plugin folder, it is now supplied as a package 
+  (on Openpli and all Open Alliance images) and is automatic installed when installing the BackupSuite
+- gave the dog a bone and sent the dog to his pillow, in other words I removed the avatar
+
+Pedro
