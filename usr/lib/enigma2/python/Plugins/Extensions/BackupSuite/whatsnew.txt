@@ -1,3 +1,5 @@
+From 04-08-2014 placed the code on github
+
 Changed in version 17.7
 - Removed textual error and therefore also changed all translations
 - Further refined some help-screens to bring some colour in your life and clarified some parts
