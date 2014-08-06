@@ -33,7 +33,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
-PLUGIN_VERSION = _(" version ") + "17.7"
+PLUGIN_VERSION = _(" version ") + "17.8"
 ######################################################################################################
 #Set default configuration
 

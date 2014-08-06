@@ -1,4 +1,6 @@
-From 04-08-2014 placed the code on github
+Changed in version 17.8
+- Remove conffile, now it is created after the first use.
+- Since 05-08-2014 the BackupSuite is located on github and build from there 
 
 Changed in version 17.7
 - Removed textual error and therefore also changed all translations

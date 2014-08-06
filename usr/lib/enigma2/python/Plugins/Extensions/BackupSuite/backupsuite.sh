@@ -79,7 +79,11 @@ echo $LINE
 ########################## DECLARATION OF VARIABLES ###########################
 BACKUPDATE=`date +%Y.%m.%d_%H:%M`
 DATE=`date +%Y%m%d_%H%M`
-ESTSPEED=`cat /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt`
+if [ -f "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt" ] ; then
+	ESTSPEED=`cat /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt`
+else
+	ESTSPEED="250"
+fi
 FLASHED=`date -r /etc/version +%Y.%m.%d_%H:%M`
 ISSUE=`cat /etc/issue | grep . | tail -n 1 ` 
 IMVER=${ISSUE%?????}
@@ -95,7 +99,7 @@ TARGET="XX"
 UBINIZE=/usr/sbin/ubinize
 USEDsizebytes=`df -B 1 /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`
 USEDsizekb=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` 
-VERSION="Version 17.7 - 30-07-2014"
+VERSION="Version 17.8 - 06-08-2014"
 WORKDIR="$MEDIA/bi"
 
 ######################### START THE LOGFILE $LOGFILE ##########################
