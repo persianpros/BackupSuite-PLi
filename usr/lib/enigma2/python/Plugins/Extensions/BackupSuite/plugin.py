@@ -33,7 +33,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
-PLUGIN_VERSION = _(" version ") + "17.8"
+PLUGIN_VERSION = _(" version ") + "18.0"
 ######################################################################################################
 #Set default configuration
 
@@ -96,14 +96,20 @@ class BackupStart(Screen):
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "ChannelSelectEPGActions", "HelpActions"],
 		{
 			"red": self.cancel,
-			"green": self.backuphdd,
-			"yellow": self.backupusb,
+			"green": self.confirmhdd,
+			"yellow": self.confirmusb,
 			"blue": self.flashimage,
 			"showEPGList": self.keyInfo,
 			"cancel": self.cancel,
 			"displayHelp": self.showHelp,
 			}, -2)
 		self.setTitle(self.setup_title)
+
+	def confirmhdd(self):
+		self.session.openWithCallback(self.backuphdd, MessageBox, _("Do you want to make an USB-back-up image on HDD? \n\nThis only takes a few minutes and is fully automatic.\n") , MessageBox.TYPE_YESNO, timeout = 20, default = True)
+		
+	def confirmusb(self):
+		self.session.openWithCallback(self.backupusb, MessageBox, _("Do you want to make a back-up on USB?\n\nThis only takes a few minutes depending on the used filesystem and is fully automatic.\n\nMake sure you first insert an USB flash drive before you select Yes.") , MessageBox.TYPE_YESNO, timeout = 20, default = True)
 
 	def showHelp(self):
 		from plugin import backupsuiteHelp
@@ -136,15 +142,17 @@ class BackupStart(Screen):
 	def keyInfo(self):
 		self.session.open(WhatisNewInfo)
 
-	def backuphdd(self):
-		text = _('Full back-up on HDD')
-		cmd = backupCommandHDD()
-		self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
+	def backuphdd(self, ret = False ):
+		if (ret == True):
+			text = _('Full back-up on HDD')
+			cmd = backupCommandHDD()
+			self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
 
-	def backupusb(self):
-		text = _('Full back-up to USB')
-		cmd = backupCommandUSB()
-		self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
+	def backupusb(self, ret = False ):
+		if (ret == True):
+			text = _('Full back-up to USB')
+			cmd = backupCommandUSB()
+			self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
 
 	def consoleClosed(self, answer=None): 
 		return

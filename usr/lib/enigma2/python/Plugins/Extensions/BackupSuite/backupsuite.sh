@@ -99,7 +99,7 @@ TARGET="XX"
 UBINIZE=/usr/sbin/ubinize
 USEDsizebytes=`df -B 1 /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`
 USEDsizekb=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` 
-VERSION="Version 17.8 - 06-08-2014"
+VERSION="Version 18.0 - 15-08-2014"
 WORKDIR="$MEDIA/bi"
 
 ######################### START THE LOGFILE $LOGFILE ##########################

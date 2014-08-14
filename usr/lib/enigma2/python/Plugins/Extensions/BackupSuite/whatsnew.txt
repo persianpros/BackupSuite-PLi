@@ -1,3 +1,11 @@
+Changed in 18.0
+- Added messagebox to confirm the start of the backup process of the HDD and USB option
+- Added support for the Xtrend ET7000 and ET7500
+- Added support for the Mutant/Opticum HD2400 and the Mutant HD1100
+
+Changed in version 17.9
+- Was only used to notify of the new git-version (which didn't work out)
+
 Changed in version 17.8
 - Removed the conffile speed.txt, now it is created after the first use.
 - Since 05-08-2014 the BackupSuite is located on github and build from there
