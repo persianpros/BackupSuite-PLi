@@ -17,8 +17,8 @@ Xtrend 4000	et4000	Xtrend ET4000	/et4x00	/fullbackup_et4x00		-m 2048 -e 126976 -
 Xtrend 5000	et5000	Xtrend ET5000	/et5x00	/fullbackup_et5x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message13
 Xtrend 6000	et6000	Xtrend ET6000	/et6x00	/fullbackup_et6x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message13
 Xtrend 6500	et6500	Xtrend ET6500	/et6x00	/fullbackup_et6x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 7000	et7000	Xtrend ET7000	/et7000	/fullbackup_et7000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 7500	et7500	Xtrend ET7500	/et7500	/fullbackup_et7500		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
+Xtrend 7000	et7000	Xtrend ET7000	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
+Xtrend 7500	et7500	Xtrend ET7500	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
 Xtrend 8000	et8000	Xtrend ET8000	/et8000	/fullbackup_et8000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
 Xtrend 9000	et9000	Xtrend ET9000	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
 Xtrend 9200	et9200	Xtrend ET9200	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
