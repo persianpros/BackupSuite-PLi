@@ -24,9 +24,33 @@ msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh
 msgid "Full back-up on HDD"
 msgstr "Tam yedekleme HDD üzerine"
 
+#plugin HDD 4
+msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Eğer HDD üzerindeki bir USB-yedekleme görüntü yapmak ister misiniz? \n"
+"\n"
+"Bu sadece bir kaç dakika sürer ve tam otomatiktir. \n"
+
 #: plugin USB 2
 msgid "Full back-up to USB"
 msgstr "Tam yedekleme USB  içine"
+
+#plugin USB 3
+msgid ""
+"Do you want to make a back-up on USB?\n"
+"\n"
+"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"\n"
+"Make sure you first insert an USB flash drive before you select Yes."
+msgstr ""
+"USB üzerinde bir yedekleme yapmak istiyor musunuz? \n"
+"\n"
+"Bu sadece kullanılan dosya sistemi bağlı olarak birkaç dakika sürer ve tam otomatiktir. \n"
+"\n"
+"Evet seçeneğini seçmeden önce ilk olarak bir USB Belek sürücü taktığınızdan emin olun."
 
 #: message01
 msgid "No supported receiver found!"

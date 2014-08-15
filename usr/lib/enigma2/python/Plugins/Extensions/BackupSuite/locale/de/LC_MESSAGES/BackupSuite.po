@@ -23,9 +23,33 @@ msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh
 msgid "Full back-up on HDD"
 msgstr "Voll-Backup auf HDD"
 
+#: plugin HDD 4
+msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Möchten sie ein USB-Backup auf HDD erstellen? \n"
+"\n"
+"Das dauert nur wenige Minuten und geht automatisch.\n"
+
 #: plugin USB 2
 msgid "Full back-up to USB"
 msgstr "Voll-Backup auf USB"
+
+#: plugin USB 3
+msgid ""
+"Do you want to make a back-up on USB?\n"
+"\n"
+"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"\n"
+"Make sure you first insert an USB flash drive before you select Yes."
+msgstr ""
+"Möchten sie ein Backup auf USB erstellen?\n"
+"\n"
+"Das dauert abhängig vom verwendeten Dateisystem nur wenige Minuten und geht automatisch.\n"
+"\n"
+"Stellen Sie sicher, dass ein USB-Stick angeschlossen ist, bevor Sie Ja wählen."
 
 #: message01
 msgid "No supported receiver found!"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Backup Suite Official Greek Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-07-30 08:46+0100\n"
+"PO-Revision-Date: 2014-08-15 08:23+0100\n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: SatDreamGR <mcelliot_g@hotmail.com>\n"
 "Language: el_GR\n"
@@ -31,9 +31,25 @@ msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh
 msgid "Full back-up on HDD"
 msgstr "Πλήρης εφεδρεία σε HDD"
 
+#: plugin HDD 4
+msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+
 #: plugin USB 2
 msgid "Full back-up to USB"
 msgstr "Πλήρης εφεδρεία σε USB"
+
+#: plugin USB 3
+msgid ""
+"Do you want to make a back-up on USB?\n"
+"\n"
+"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"\n"
+"Make sure you first insert an USB flash drive before you select Yes."
+msgstr ""
 
 #: message01
 msgid "No supported receiver found!"
