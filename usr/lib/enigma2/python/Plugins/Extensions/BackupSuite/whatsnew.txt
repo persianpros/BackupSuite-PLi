@@ -3,6 +3,10 @@ Changed in 18.0
 - Added support for the Xtrend ET7000 and ET7500
 - Added support for the Mutant/Opticum HD2400 and the Mutant HD1100
 
+15-8-2014
+- Completed some translations needed for the MessageBox when starting to make a backup
+
+
 Changed in version 17.9
 - Was only used to notify of the new git-version (which didn't work out)
 
