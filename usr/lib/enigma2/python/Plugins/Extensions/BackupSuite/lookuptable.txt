@@ -24,4 +24,4 @@ Xtrend 9000	et9000	Xtrend ET9000	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -
 Xtrend 9200	et9200	Xtrend ET9200	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
 Xtrend 9500	et9500	Xtrend ET9500	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
 HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-HD 1100	hd1100	HD 1100	/hd2400	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin 	noforce	message12
+HD 1100	hd1100	HD 1100	/hd1100	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin 	noforce	message12
