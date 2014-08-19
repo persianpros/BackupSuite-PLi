@@ -396,6 +396,11 @@ echo $LINE >> $LOGFILE
 {
 $SHOW "message26" ; echo -n "$SPEED" ; $SHOW "message27"
 } 2>&1 | tee -a $LOGFILE
+echo $LINE >> $LOGFILE
+echo $LINE >> $LOGFILE
+echo "Installed packages contained in this backup:" >> $LOGFILE
+echo "--------------------------------------------" >> $LOGFILE
+opkg list-installed >> $LOGFILE
 
 ######################## COPY LOGFILE TO MAINDESTINATION ######################
 echo -n $WHITE

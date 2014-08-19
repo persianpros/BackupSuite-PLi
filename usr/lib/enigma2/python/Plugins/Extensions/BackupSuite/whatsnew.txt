@@ -6,6 +6,8 @@ Changed in 18.0
 15-8-2014
 - Completed some translations needed for the MessageBox when starting to make a backup
 
+19-08-2014
+- Add a list of all installed packages in the logfile. This should make it easier if you want to find a specific backup with e.g. certain driver versions.
 
 Changed in version 17.9
 - Was only used to notify of the new git-version (which didn't work out)
