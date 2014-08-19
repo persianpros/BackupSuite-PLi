@@ -48,6 +48,8 @@ echo "Back-up = $BACKUPDATE"
 echo "Version = $IMVER"
 echo "Flashed = $FLASHED"
 echo "Updated = $LASTUPDATE"
+echo -n "Drivers = "
+opkg list-installed | grep dvb-modules
 echo $LINE
 }
 
@@ -99,7 +101,7 @@ TARGET="XX"
 UBINIZE=/usr/sbin/ubinize
 USEDsizebytes=`df -B 1 /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`
 USEDsizekb=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` 
-VERSION="Version 18.0 - 15-08-2014"
+VERSION="Version 18.0a - 19-08-2014"
 WORKDIR="$MEDIA/bi"
 
 ######################### START THE LOGFILE $LOGFILE ##########################
@@ -396,6 +398,7 @@ echo $LINE >> $LOGFILE
 {
 $SHOW "message26" ; echo -n "$SPEED" ; $SHOW "message27"
 } 2>&1 | tee -a $LOGFILE
+#### ADD A LIST OF THE INSTALLED PACKAGES TO THE BackupSuite.LOG ####
 echo $LINE >> $LOGFILE
 echo $LINE >> $LOGFILE
 echo "Installed packages contained in this backup:" >> $LOGFILE

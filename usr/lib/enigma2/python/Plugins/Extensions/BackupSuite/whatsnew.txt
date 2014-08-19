@@ -8,6 +8,7 @@ Changed in 18.0
 
 19-08-2014
 - Add a list of all installed packages in the logfile. This should make it easier if you want to find a specific backup with e.g. certain driver versions.
+- Report the driver version in the logfile at the start of the backup process
 
 Changed in version 17.9
 - Was only used to notify of the new git-version (which didn't work out)
