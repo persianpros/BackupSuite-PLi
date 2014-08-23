@@ -219,7 +219,7 @@ echo $LINE
 } 2>&1 | tee -a $LOGFILE
 
 ####### WARNING IF THE IMAGESIZE OF THE XTRENDS GETS TOO BIG TO RESTORE ########
-if [ ${MODEL:0:2} = et ] ; then
+if [ ${MODEL:0:2} = "et" -a ${MODEL:0:3} != "et8" -a ${MODEL:0:3} != "et1" -a ${MODEL:0:3} != "et7" ] ; then
 	if [ $MEGABYTES -gt 120 ] ; then
     echo -n $RED
 	$SHOW "message28" 2>&1 | tee -a $LOGFILE #Image probably too big to restore
