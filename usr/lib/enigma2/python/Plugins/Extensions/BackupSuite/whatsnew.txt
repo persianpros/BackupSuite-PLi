@@ -1,14 +1,18 @@
 Changed in 18.0
-- Added messagebox to confirm the start of the backup process of the HDD and USB option
-- Added support for the Xtrend ET7000 and ET7500
-- Added support for the Mutant/Opticum HD2400 and the Mutant HD1100
-
-15-8-2014
-- Completed some translations needed for the MessageBox when starting to make a backup
+28-08-2014
+- Added support for the ET8500 (a bit premature, but what the heck) 
 
 19-08-2014
 - Add a list of all installed packages in the logfile. This should make it easier if you want to find a specific backup with e.g. certain driver versions.
 - Report the driver version in the logfile at the start of the backup process
+
+15-8-2014
+- Completed some translations needed for the MessageBox when starting to make a backup
+
+14-08-2014
+- Added messagebox to confirm the start of the backup process of the HDD and USB option
+- Added support for the Xtrend ET7000 and ET7500
+- Added support for the Mutant/Opticum HD2400 and the Mutant HD1100
 
 Changed in version 17.9
 - Was only used to notify of the new git-version (which didn't work out)
