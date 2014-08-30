@@ -315,7 +315,7 @@ msgid "What is new since the last release?"
 msgstr "Vad är nytt sedan förra utgåvan?"
 
 msgid ""
-"Do you want to make an USB-back-up image on HDD?\n"
+"Do you want to make an USB-back-up image on HDD? \n"
 "\n"
 "This only takes a few minutes and is fully automatic.\n"
 msgstr ""
