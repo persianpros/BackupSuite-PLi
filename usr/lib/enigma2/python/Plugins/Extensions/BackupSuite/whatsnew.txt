@@ -1,4 +1,7 @@
 Changed in 18.0
+30-08-2014
+- Added Swedish translation. Big thanks goes to H2SO4JB (on Openpli)
+
 28-08-2014
 - Added support for the ET8500 (a bit premature, but what the heck) 
 
