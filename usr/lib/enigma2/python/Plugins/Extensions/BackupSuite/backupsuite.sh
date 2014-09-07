@@ -101,7 +101,11 @@ TARGET="XX"
 UBINIZE=/usr/sbin/ubinize
 USEDsizebytes=`df -B 1 /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`
 USEDsizekb=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` 
-VERSION="Version 18.0a - 30-08-2014"
+if [ -f "/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control" ] ; then
+	VERSION="Version: "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d " " -f 2 | cut -d "+" -f2`
+else
+	VERSION="Version unknown, probably not installed the right way."
+fi
 WORKDIR="$MEDIA/bi"
 
 ######################### START THE LOGFILE $LOGFILE ##########################

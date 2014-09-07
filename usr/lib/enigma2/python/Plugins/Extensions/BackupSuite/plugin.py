@@ -33,7 +33,7 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
-PLUGIN_VERSION = _(" version ") + "18.0"
+
 ######################################################################################################
 #Set default configuration
 
@@ -403,14 +403,14 @@ def Plugins(path,**kwargs):
 		return [
 			PluginDescriptor(
 			name=_("BackupSuite"),
-			description = _("Enables back-up & restore without an USB-stick") + PLUGIN_VERSION,
+			description = _("Enables back-up & restore without an USB-stick"),
 			where = PluginDescriptor.WHERE_PLUGINMENU,
 			icon = 'plugin.png',
 			fnc = main
 			),
 			PluginDescriptor(
 			name =_("BackupSuite"), 
-			description = _("Enables back-up & restore without an USB-stick") + PLUGIN_VERSION,
+			description = _("Enables back-up & restore without an USB-stick"),
 			where = PluginDescriptor.WHERE_EXTENSIONSMENU, 
 			fnc = main)
 		]
