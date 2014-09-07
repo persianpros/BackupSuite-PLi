@@ -112,7 +112,7 @@ WORKDIR="$MEDIA/bi"
 echo "*** THIS BACKUP IS CREATED WITH THE PLUGIN BACKUPSUITE ***" > $LOGFILE
 echo "***** This plugin is brought to you by Pedro_Newbie ******" >> $LOGFILE
 echo $LINE >> $LOGFILE
-echo "Plugin version     = $VERSION" >> $LOGFILE
+echo "Plugin version     = "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d "+" -f 2- | cut -d "-" -f1` >> $LOGFILE
 echo "Back-up media      = $MEDIA" >> $LOGFILE
 df -h "$MEDIA"  >> $LOGFILE
 echo $LINE >> $LOGFILE

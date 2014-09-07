@@ -1,5 +1,5 @@
 Changelog
-git 28 - 07-09-2014
+git28 and 29 - 07-09-2014
 - Changed the way of version numbering, now following the git numbers
 
 git27 - 04-09-2014
