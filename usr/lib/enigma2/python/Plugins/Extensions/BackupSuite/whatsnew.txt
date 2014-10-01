@@ -1,4 +1,8 @@
 Changelog
+git 30 - 01-10-2014
+- Changed the Backusuite.sh to correct handle the ET8500
+- Corrected lookuptable.txt for the Atemio Nemesis
+
 git28 and 29 - 07-09-2014
 - Changed the way of version numbering, now following the git numbers
 

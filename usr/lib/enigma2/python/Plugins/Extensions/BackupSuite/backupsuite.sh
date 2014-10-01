@@ -93,7 +93,7 @@ LASTUPDATE=`date -r /var/lib/opkg/status +%Y.%m.%d_%H:%M`
 LOGFILE=/tmp/BackupSuite.log
 MEDIA="$1"
 MKFS=/usr/sbin/mkfs.ubifs
-MTDPLACE=`cat /proc/mtd | grep "kernel" | cut -d ":" -f 1`
+MTDPLACE=`cat /proc/mtd | grep -w "kernel" | cut -d ":" -f 1`
 NANDDUMP=/usr/sbin/nanddump
 START=$(date +%s)
 LOOKUP="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/lookuptable.txt"
@@ -203,7 +203,7 @@ echo $WHITE
 
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
-KERNELHEX=`cat /proc/mtd | grep kernel | cut -d " " -f 2` # Kernelsize in Hex
+KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
 KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
 TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
 KILOBYTES=$(($TOTAL/1024))			# Total ROOTFS + Kernel size in KB
