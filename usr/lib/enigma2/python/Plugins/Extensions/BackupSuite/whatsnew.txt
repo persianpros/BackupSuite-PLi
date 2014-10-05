@@ -1,6 +1,7 @@
 Changelog
-git 31-32 - 4/5-10-2014
+git 31-36 - 5-10-2014
 - Added support for the Ixuss One (Thanks Athoik!)
+- made some stupid errors local in the lookuptable
 
 git 30 - 01-10-2014
 - Changed the Backupsuite.sh to correct handle the ET8500
