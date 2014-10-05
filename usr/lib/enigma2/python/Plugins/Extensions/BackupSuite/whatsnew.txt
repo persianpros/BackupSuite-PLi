@@ -1,6 +1,9 @@
 Changelog
+git 31-32 - 4/5-10-2014
+- Added support for the Ixuss One (Thanks Athoik!)
+
 git 30 - 01-10-2014
-- Changed the Backusuite.sh to correct handle the ET8500
+- Changed the Backupsuite.sh to correct handle the ET8500
 - Corrected lookuptable.txt for the Atemio Nemesis
 
 git28 and 29 - 07-09-2014
