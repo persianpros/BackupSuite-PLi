@@ -1,4 +1,7 @@
 Changelog
+git 38 - 19-10-2014
+- Removed (temporarily?) the support for the Formuler F1 & F3 because on these models the proces aborts with an error while dumping the kernel partition. I'm unable to "repair" it at the moment because I've no test machine to run some tests on it to determine the error.
+
 git 31-36 - 5-10-2014
 - Added support for the Ixuss One (Thanks Athoik!)
 - made some stupid errors local in the lookuptable
