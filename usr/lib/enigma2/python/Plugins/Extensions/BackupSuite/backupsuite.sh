@@ -253,6 +253,33 @@ mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
 
 ####################### START THE REAL BACK-UP PROCESS ########################
 
+############################## MAKING KERNELDUMP ##############################
+echo $LINE >> $LOGFILE
+$SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
+echo "Kernel resides on $MTDPLACE" >> $LOGFILE # Just for testing purposes 
+$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
+
+KERNELCHECK=`ls "$WORKDIR" -e1S | grep kernel | awk {'print $3'} ` 
+if [ $KERNELCHECK != $KERNEL ] ; then
+	echo "The size of the Kernel = $KERNELCHECK bytes, expected it to be $KERNEL bytes" >> $LOGFILE
+	echo "Now checking if there are reported badblocks, if there are badblocks reported then there is probably no problem" >> $LOGFILE
+	mtdinfo -M /dev/$MTDPLACE | grep -q BAD
+	if [ "$?" = "1" ] ; then
+		echo "There were no known badblocks in the kernel partition ($MTDPLACE), this could point at troubles" >> $LOGFILE
+	else 
+		echo "The badblocks were already marked as such in the kernelpartion /dev/$MTDPLACE, so there are probably no problems" >> $LOGFILE
+	fi
+fi
+
+if [ -f "$WORKDIR/$KERNELNAME" ] ; then
+	echo -n "Kernel dumped  :" >> $LOGFILE
+	ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
+else 
+	echo "$WORKDIR/$KERNELNAME NOT FOUND"  >> $LOGFILE
+	big_fail
+fi
+echo "--------------------------" >> $LOGFILE
+
 ############################# MAKING UBINIZE.CFG ##############################
 echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
 echo mode=ubi >> "$WORKDIR/ubinize.cfg"
@@ -297,32 +324,6 @@ else
 fi
 echo
 
-############################## MAKING KERNELDUMP ##############################
-echo $LINE >> $LOGFILE
-$SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-echo "Kernel resides on $MTDPLACE" >> $LOGFILE # Just for testing purposes 
-$NANDDUMP /dev/$MTDPLACE -q > "$WORKDIR/$KERNELNAME"
-
-KERNELCHECK=`ls "$WORKDIR" -e1S | grep kernel | awk {'print $3'} ` 
-if [ $KERNELCHECK != $KERNEL ] ; then
-	echo "The size of the Kernel = $KERNELCHECK bytes, expected it to be $KERNEL bytes" >> $LOGFILE
-	echo "Now checking if there are reported badblocks, if there are badblocks reported then there is probably no problem" >> $LOGFILE
-	mtdinfo -M /dev/$MTDPLACE | grep -q BAD
-	if [ "$?" = "1" ] ; then
-		echo "There were no known badblocks in the kernel partition ($MTDPLACE), this could point at troubles" >> $LOGFILE
-	else 
-		echo "The badblocks were already marked as such in the kernelpartion /dev/$MTDPLACE, so there are probably no problems" >> $LOGFILE
-	fi
-fi
-
-if [ -f "$WORKDIR/$KERNELNAME" ] ; then
-	echo -n "Kernel dumped  :" >> $LOGFILE
-	ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
-else 
-	echo "$WORKDIR/$KERNELNAME NOT FOUND"  >> $LOGFILE
-	big_fail
-fi
-echo "--------------------------" >> $LOGFILE
 
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
