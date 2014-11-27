@@ -1,4 +1,6 @@
 Changelog
+git 40 - 27-11-2014
+- Added support for the new VU+ Zero (Thanks to 2boom)
 
 git 39 - 23-11-2014
 - Restored the support for the Formuler F1 & F3
