@@ -83,6 +83,9 @@ BACKUPDATE=`date +%Y.%m.%d_%H:%M`
 DATE=`date +%Y%m%d_%H%M`
 if [ -f "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt" ] ; then
 	ESTSPEED=`cat /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt`
+	if [ $ESTSPEED = 0 ] ; then 
+		ESTSPEED="250"
+	fi
 else
 	ESTSPEED="250"
 fi

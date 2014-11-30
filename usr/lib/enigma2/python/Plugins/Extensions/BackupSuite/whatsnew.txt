@@ -1,8 +1,12 @@
 Changelog
-git 40 - 27-11-2014
+
+git 41 - 30-11-2014 (Openpli's 20+git3)
+- If stored speed in speed.txt = 0 then use the default speed of 250 to avoid a divide by zero error.
+
+git 40 - 27-11-2014 (Openpli's 20+git2)
 - Added support for the new VU+ Zero (Thanks to 2boom)
 
-git 39 - 23-11-2014
+git 39 - 23-11-2014 (Openpli's 20+git1)
 - Restored the support for the Formuler F1 & F3
 - Rearranged  the code a bit, now first starting with the least time consuming part, the kerneldump
 
