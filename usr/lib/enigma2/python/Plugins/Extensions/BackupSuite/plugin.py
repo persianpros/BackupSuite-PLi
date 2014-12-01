@@ -93,12 +93,13 @@ class BackupStart(Screen):
 		self["key_yellow"] = Button(_("Backup > USB"))
 		self["key_blue"] = Button(_("Restore backup"))
 		self["help"] = StaticText()
-		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "ChannelSelectEPGActions", "HelpActions"],
+		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "InfobarEPGActions", "ChannelSelectEPGActions", "HelpActions"],
 		{
 			"red": self.cancel,
 			"green": self.confirmhdd,
 			"yellow": self.confirmusb,
 			"blue": self.flashimage,
+			"showEventInfo": self.keyInfo,
 			"showEPGList": self.keyInfo,
 			"cancel": self.cancel,
 			"displayHelp": self.showHelp,

@@ -1,9 +1,11 @@
 Changelog
+git 42 - 01-12-2014 (Openpli 20+git4)
+- Because of some changes in Openpli I had to change the mapping of the guide/info key. It should work on updated and non-updated receivers (Thanks Dima73 for the hint)
 
-git 41 - 30-11-2014 (Openpli's 20+git3)
+git 41 - 30-11-2014 (Openpli 20+git3)
 - If stored speed in speed.txt = 0 then use the default speed of 250 to avoid a divide by zero error.
 
-git 40 - 27-11-2014 (Openpli's 20+git2)
+git 40 - 27-11-2014 (Openpli 20+git2)
 - Added support for the new VU+ Zero (Thanks to 2boom)
 
 git 39 - 23-11-2014 (Openpli's 20+git1)
