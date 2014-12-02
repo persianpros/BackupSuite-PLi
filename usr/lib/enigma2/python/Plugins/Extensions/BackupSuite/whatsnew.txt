@@ -1,4 +1,7 @@
 Changelog
+Git 43/44 - 02-12-2014
+- Changed keymapping to EPGSelectAction
+
 git 42 - 01-12-2014 (Openpli 20+git4)
 - Because of some changes in Openpli I had to change the mapping of the guide/info key. It should work on updated and non-updated receivers (Thanks Dima73 for the hint)
 
