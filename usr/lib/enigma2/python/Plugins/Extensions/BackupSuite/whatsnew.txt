@@ -1,4 +1,9 @@
 Changelog
+git 46   19-12-2014 (Openpli 20+git7)
+- Added a little workaround to enable a clean remove of the BackupSuite. This is normally done by a postrm routine but this file isn't added by Openpli despite several requests. So therefore this workaround.
+The workaround:
+The file /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list is checked, if the pyo files and the speed.txt are not listed they will be added to the file to enable a clean remove of the BackupSuite
+
 git 45   12-12-2014 (Openpli 20+git6)
 - Added a seasonal picture :-)
 

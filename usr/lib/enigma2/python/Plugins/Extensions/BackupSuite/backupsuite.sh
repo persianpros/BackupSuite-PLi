@@ -4,6 +4,19 @@
 ###############################################################################
 #
 #!/bin/sh
+## FIRST CHECK IF ALL THE FILES ARE LISTED IN /var/lib/opkg/info/enigma2-plugin-extensions-nackupsuite.list
+## If the .pyo files and the speed.txt are not listed they will be added to the file to enable a clean remove of the BackupSuite. 
+## This is normally done by a postrm routine but this file isn't added by Openpli despite several requests. 
+## So therefore this workaround.
+##
+## START WORKAROUND
+cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list | grep -wq "pyo"
+if [ "$?" = 1 ] ; then
+	echo "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/plugin.pyo" >> /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list
+	echo "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/__init__.pyo" >> /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list
+	echo "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt" >> /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list
+	echo "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/schermen.pyo" >> /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list
+fi
 
 ##TESTING IF PROGRAM IS RUN FROM COMMANDLINE OR CONSOLE, JUST FOR THE COLORS ##
 if tty > /dev/null ; then		# Commandline
