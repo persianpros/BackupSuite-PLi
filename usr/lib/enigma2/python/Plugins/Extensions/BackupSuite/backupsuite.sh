@@ -4,19 +4,18 @@
 ###############################################################################
 #
 #!/bin/sh
-## FIRST CHECK IF ALL THE FILES ARE LISTED IN /var/lib/opkg/info/enigma2-plugin-extensions-nackupsuite.list
-## If the .pyo files and the speed.txt are not listed they will be added to the file to enable a clean remove of the BackupSuite. 
-## This is normally done by a postrm routine but this file isn't added by Openpli despite several requests. 
+## ADD A POSTRM ROUTINE TO ENSURE A CLEAN UNINSTALL
+## This is normally added while building but despite several requests it isn't added yet
 ## So therefore this workaround.
-##
-## START WORKAROUND
-cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list | grep -wq "pyo"
-if [ "$?" = 1 ] ; then
-	echo "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/plugin.pyo" >> /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list
-	echo "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/__init__.pyo" >> /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list
-	echo "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt" >> /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list
-	echo "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/schermen.pyo" >> /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.list
+POSTRM="/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.postrm"
+if [ ! -f $POSTRM ] ; then
+	echo "#!/bin/sh" > "$POSTRM"
+	echo "rm -rf /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite" >> "$POSTRM"
+	echo 'echo "Plugin removed!"' >> "$POSTRM"
+	echo "exit 0" >> "$POSTRM"
+	chmod 755 "$POSTRM"
 fi
+## END WORKAROUND
 
 ##TESTING IF PROGRAM IS RUN FROM COMMANDLINE OR CONSOLE, JUST FOR THE COLORS ##
 if tty > /dev/null ; then		# Commandline
