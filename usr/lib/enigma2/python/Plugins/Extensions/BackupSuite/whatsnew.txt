@@ -7,7 +7,10 @@ Pedro
 ----------------------------------------------
 
 Changelog
-git 47   21-12-2014 (Openpli 20+git8)
+git 48   21-12-2014 (Openpli 20+git8)
+- Corrected some parameters for the VU+ Zero and Solo SE
+
+git 47   21-12-2014 
 Changed the workaround and create a postrm if it doesn't exist to ensure a clean uninstall
 
 git 46   19-12-2014 (Openpli 20+git7)

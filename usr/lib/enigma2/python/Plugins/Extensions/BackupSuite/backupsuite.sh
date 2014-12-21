@@ -352,7 +352,9 @@ elif [ $ACTION = "reboot" ] ; then
 	touch "$MAINDEST/reboot.update"
 	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/noforce.update"
 	echo "and remove reboot.update, otherwise the box is flashed again after completion" >> "$MAINDEST/noforce.update"
-	chmod 644 "$MAINDEST/reboot.update"
+	chmod 644 "$MAINDEST/reboot.update" 
+elif [ $ACTION = "force" ] ; then
+	echo " " > "$MAINDEST/force.update"
 fi
 
 image_version > "$MAINDEST/imageversion" 
