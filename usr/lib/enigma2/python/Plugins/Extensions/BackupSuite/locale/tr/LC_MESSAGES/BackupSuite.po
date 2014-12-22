@@ -12,19 +12,11 @@ msgstr ""
 "Language: tr\n"
 "X-Generator: Poedit 1.6.5\n"
 
-#: start HDD version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' tr_TR"
-
-#: start USB version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' tr_TR"
-
 #: plugin HDD 3
 msgid "Full back-up on HDD"
 msgstr "Tam yedekleme HDD üzerine"
 
-#plugin HDD 4
+#: plugin HDD 4
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -38,7 +30,7 @@ msgstr ""
 msgid "Full back-up to USB"
 msgstr "Tam yedekleme USB  içine"
 
-#plugin USB 3
+#: plugin USB 3
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -84,10 +76,6 @@ msgstr "Oluşturma: root.ubifs "
 msgid "Create: kerneldump"
 msgstr "Oluşturma: kerneldump"
 
-#: message08
-msgid "Almost there... Now building the USB-Image!"
-msgstr "Neredeyse ... Şimdi USB Görüntü oluşturmak!"
-
 #: message09
 msgid "Additional backup -> "
 msgstr "Ek yedekleme -> "
@@ -111,10 +99,6 @@ msgstr "(Ön) USB portuna USB Belek sürücü yerleştirin ve alıcının arkas�
 #: message12-3
 msgid "Follow the instructions on the front-display."
 msgstr "Ön ekrandaki yönergeleri izleyin."
-
-#: message12-4
-msgid "Please wait.... almost ready!"
-msgstr "Lütfen bekleyiniz.... birazdan hazır!"
 
 #: message13
 msgid "Press arrow up from frontpanel to start loading."
@@ -231,6 +215,22 @@ msgstr "MB alan gerekli"
 #: message34
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Program iptal edilecek, daha fazla boş alana sahip başka bir ortam deneyin lütfen yedekleme oluşturmak için."
+
+#: message36-1
+msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
+msgstr ""
+
+#: message36-2
+msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
+msgstr ""
+
+#: message36-3
+msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
+msgstr ""
+
+#: message36-4
+msgid "Update is done when white light blinks on the front panel."
+msgstr ""
 
 #: plugin.py
 msgid ""
@@ -410,11 +410,17 @@ msgstr "tür bilgisi"
 msgid "type yes/no"
 msgstr "tür evet/hayır"
 
+#: plugin.py
 msgid "Only root with use mtdy device"
 msgstr "sadece kök kullanım mtdy cihazı ile"
 
+#: plugin.py
 msgid "Only kernel with use mtdx device"
 msgstr "Sadece çekirdek  kullanım mtdx cihazı ile"
+
+#: plugin.py
+msgid "Make a backup or restore a backup"
+msgstr "Yedekleme yapmak veya geri yükleme"
 
 #: plugin.py
 msgid "BackupSuite"
@@ -423,10 +429,6 @@ msgstr "BackupSuite"
 #: plugin.py
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Yedekleme sağlar & geri yükleme USB Belek olmadan"
-
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Yedekleme yapmak veya geri yükleme"
 
 #: plugin.py
 msgid "Backup > HDD"

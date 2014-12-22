@@ -11,14 +11,6 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#:start HDD version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
-msgstr ""
-
-#:start USB version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
-msgstr ""
-
 #:plugin HDD 3
 msgid "Full back-up on HDD"
 msgstr ""
@@ -82,10 +74,6 @@ msgstr ""
 msgid "Create: kerneldump"
 msgstr ""
 
-#:message08
-msgid "Almost there... Now building the USB-Image!"
-msgstr ""
-
 #:message09
 msgid "Additional backup -> "
 msgstr ""
@@ -108,10 +96,6 @@ msgstr ""
 
 #:message12-3
 msgid "Follow the instructions on the front-display."
-msgstr ""
-
-#:message12-4
-msgid "Please wait.... almost ready!"
 msgstr ""
 
 #:message13
@@ -230,8 +214,21 @@ msgstr ""
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr ""
 
+#: message36-1
+msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
+msgstr ""
 
+#: message36-2
+msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
+msgstr ""
 
+#: message36-3
+msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
+msgstr ""
+
+#: message36-4
+msgid "Update is done when white light blinks on the front panel."
+msgstr ""
 
 #: plugin.py
 msgid ""

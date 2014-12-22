@@ -10,14 +10,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: plugin HDD 1
-msgid "Full back-up on HDD/USB or Restore a back-up"
-msgstr "Volledige back-up op HDD/USB of Herstel een back-up"
-
-#: plugin HDD 2
-msgid "Full 1:1 back-up in USB format"
-msgstr "Volledige 1:1 back-up in USB formaat"
-
 #: plugin HDD 3
 msgid "Full back-up on HDD"
 msgstr "Volledige back-up op de harddisk"
@@ -31,10 +23,6 @@ msgstr ""
 "Wil je een USB-back-up maken op je harddisk? \n"
 "\n"
 "Dit duurt enige minuten afhankelijk van het bestandssysteem en is volledig automatisch.\n"
-
-#: plugin USB 1
-msgid "Full 1:1 back-up direct on USB"
-msgstr "Volledige 1:1 back-up direct op een USB-stick"
 
 #: plugin USB 2
 msgid "Full back-up to USB"
@@ -86,10 +74,6 @@ msgstr "Maak nu het bestand: root.ubifs"
 msgid "Create: kerneldump"
 msgstr "Maak nu de kerneldump"
 
-#: message08
-msgid "Almost there... Now building the USB-Image!"
-msgstr "Bijna klaar... Nu wordt de USB-image in elkaar gezet!"
-
 #: message09
 msgid "Additional backup -> "
 msgstr "Extra backup -> "
@@ -113,10 +97,6 @@ msgstr "Plaats de USB-stick in de (voorste) USB-poort en schakel de receiver uit
 #: message12-3
 msgid "Follow the instructions on the front-display."
 msgstr "Volg de instructies op het display."
-
-#: message12-4
-msgid "Please wait.... almost ready!"
-msgstr "Nog heel even wachten.... bijna klaar!"
 
 #: message13
 msgid "Press arrow up from frontpanel to start loading."
@@ -233,6 +213,22 @@ msgstr " MB benodigde ruimte"
 #: message34
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Het programma wordt afgesloten, probeer alstublieft een medium met meer beschikbare ruimte om uw back-up te maken."
+
+#: message36-1
+msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
+msgstr "Hernoem eerst het bestand 'noforce.update' op de USB-stick naar 'force.update'."
+
+#: message36-2
+msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
+msgstr "Plaats de USB-stick in het USB-slot en schakel de ontvanger uit en weer aan met de aan/uit-knop."
+
+#: message36-3
+msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
+msgstr "De update is bezig als het witte lampje geleidelijk lichter en donkerder wordt op het voorpaneel."
+
+#: message36-4
+msgid "Update is done when white light blinks on the front panel."
+msgstr "De update is klaar als het witte lampje op het voorpaneel knippert."
 
 #: plugin.py
 msgid ""

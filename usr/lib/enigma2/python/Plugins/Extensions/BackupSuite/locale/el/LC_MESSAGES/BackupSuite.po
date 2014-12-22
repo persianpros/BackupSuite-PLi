@@ -1,14 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: Backup Suite Official Greek Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-08-15 08:23+0100\n"
+"PO-Revision-Date: 2014-12-22 10:25+0100\n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: SatDreamGR <mcelliot_g@hotmail.com>\n"
 "Language: el_GR\n"
@@ -229,6 +224,22 @@ msgstr " απαιτούμενος χώρος σε MB"
 #: message34
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Το πρόγραμμα θα ματαιωθεί, δοκιμάστε ένα άλλο μέσο με περισσότερο ελεύθερο χώρο για το αντίγραφο σας."
+
+#: message36-1
+msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
+msgstr ""
+
+#: message36-2
+msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
+msgstr ""
+
+#: message36-3
+msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
+msgstr ""
+
+#: message36-4
+msgid "Update is done when white light blinks on the front panel."
+msgstr ""
 
 #: plugin.py
 msgid ""

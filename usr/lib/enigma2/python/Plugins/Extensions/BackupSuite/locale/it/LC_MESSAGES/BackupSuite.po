@@ -10,14 +10,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.4\n"
-
-#: start HDD version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' de_DE"
-
-#: start USB version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' de_DE"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: it\n"
 
 #: plugin HDD 3
 msgid "Full back-up on HDD"
@@ -83,10 +77,6 @@ msgstr "Creando: root.ubifs"
 msgid "Create: kerneldump"
 msgstr "Creando: Kerneldump"
 
-#: message08
-msgid "Almost there... Now building the USB-Image!"
-msgstr "Processo quasi terminato... Creazione dell Immagine-USB!"
-
 #: message09
 msgid "Additional backup -> "
 msgstr "Altri backup -> "
@@ -110,10 +100,6 @@ msgstr "Inserire la penna USB nella USB-port (frontale) spegnere e riaccendere i
 #: message12-3
 msgid "Follow the instructions on the front-display."
 msgstr "Eseguire le istruzioni nel Display-frontale."
-
-#: message12-4
-msgid "Please wait.... almost ready!"
-msgstr "Prego attender.... operazione quasi terminata!"
 
 #: message13
 msgid "Press arrow up from frontpanel to start loading."
@@ -230,6 +216,22 @@ msgstr " MB spazio necessario"
 #: message34
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Il programma sara terminato, usare un altro mezzo che abbia piu spazio per creare il vostro back-up."
+
+#: message36-1
+msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
+msgstr ""
+
+#: message36-2
+msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
+msgstr ""
+
+#: message36-3
+msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
+msgstr ""
+
+#: message36-4
+msgid "Update is done when white light blinks on the front panel."
+msgstr ""
 
 #: plugin.py
 msgid ""
@@ -418,6 +420,10 @@ msgid "Only kernel with use mtdx device"
 msgstr ""
 
 #: plugin.py
+msgid "Make a backup or restore a backup"
+msgstr "Eseguire un backup o ripristinare un backup"
+
+#: plugin.py
 msgid "BackupSuite"
 msgstr "BackupSuite"
 
@@ -426,14 +432,14 @@ msgid "Enables back-up & restore without an USB-stick"
 msgstr "Effettuare un back-up & ripristinare senza una penna USB"
 
 #: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Eseguire un backup o ripristinare un backup"
-
-#: plugin.py
 msgid "Backup > HDD"
 msgstr ""
 
 #: plugin.py
 msgid "Backup > USB"
+msgstr ""
+
+#: plugin.py
+msgid "What is new since the last release?"
 msgstr ""
 

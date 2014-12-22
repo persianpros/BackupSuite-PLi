@@ -11,19 +11,11 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: start HDD version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' sk_SK"
-
-#: start USB version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' sk_SK"
-
 #: plugin HDD 3
 msgid "Full back-up on HDD"
 msgstr "Plná záloha na HDD"
 
-#plugin HDD 4
+#: plugin HDD 4
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -37,7 +29,7 @@ msgstr ""
 msgid "Full back-up to USB"
 msgstr "Plná záloha na USB"
 
-#plugin USB 3
+#: plugin USB 3
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -83,10 +75,6 @@ msgstr "Vytvára sa : root.ubifs"
 msgid "Create: kerneldump"
 msgstr "Vytvára sa : Kerneldump"
 
-#: message08
-msgid "Almost there... Now building the USB-Image!"
-msgstr "Už to skoro je ... Teraz vytváram Image !"
-
 #: message09
 msgid "Additional backup -> "
 msgstr "Ďalšia záloha -> "
@@ -110,10 +98,6 @@ msgstr "Image dajte na USB a vložte ho do predného USB-portu a vypnite/zapnite
 #: message12-3
 msgid "Follow the instructions on the front-display."
 msgstr "Postupujte podla pokynov na prednom displeji."
-
-#: message12-4
-msgid "Please wait.... almost ready!"
-msgstr "Počkajte prosím .... takmer hotovo !"
 
 #: message13
 msgid "Press arrow up from frontpanel to start loading."
@@ -230,6 +214,22 @@ msgstr " MB potrebného miesta"
 #: message34
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Program je ukončený, prosím skúste nové médium s dostatkom volného miesta pre vytvorenie zálohy."
+
+#: message36-1
+msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
+msgstr ""
+
+#: message36-2
+msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
+msgstr ""
+
+#: message36-3
+msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
+msgstr ""
+
+#: message36-4
+msgid "Update is done when white light blinks on the front panel."
+msgstr ""
 
 #: plugin.py
 msgid ""

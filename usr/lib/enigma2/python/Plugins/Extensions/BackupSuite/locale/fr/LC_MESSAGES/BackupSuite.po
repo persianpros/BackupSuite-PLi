@@ -13,12 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr\n"
 
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' fr_FR"
-
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' fr_FR"
-
+#: plugin HDD 3
 msgid "Full back-up on HDD"
 msgstr "Sauvegarde complète sur HDD"
 
@@ -32,6 +27,7 @@ msgstr ""
 "\n"
 "Cela ne prend que quelques minutes et est entièrement automatique.\n"
 
+#: plugin USB 2
 msgid "Full back-up to USB"
 msgstr "Sauvegarde complète sur USB"
 
@@ -49,141 +45,193 @@ msgstr ""
 "\n"
 "Assurez-vous que vous insérez une clé USB avant de sélectionner Oui."
 
+#: message01
 msgid "No supported receiver found!"
 msgstr "Recepteur non-supporté"
 
+#: message02
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
 msgstr "OUTIL DE SAUVEGARDE, POUR EFFECTUER UNE SAUVEGARDE COMPLETE"
 
+#: message03
 msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr "Merci d'être patient, la sauvegarde va commencer, elle va durer environ: "
 
+#: message04
 msgid " size to be backed up: "
 msgstr "Taille à sauvegarder:"
 
+#: message05
 msgid "not found, the backup process will be aborted!"
 msgstr "pas trouvé, interruption de la sauvegarde!"
 
+#: message06
 msgid "Some information about the task"
 msgstr "Quelques informations concernant la tâche"
 
+#: message06a
 msgid "Create: root.ubifs"
 msgstr "Création: root.ubifs"
 
+#: message07
 msgid "Create: kerneldump"
 msgstr "Création: kerneldump"
 
-msgid "Almost there... Now building the USB-Image!"
-msgstr "Bientôt terminé... Création de l'image sur la clé USB en cours!"
-
+#: message09
 msgid "Additional backup -> "
 msgstr "Sauvegarde additionnelle -> "
 
+#: message10
 msgid "USB Image created in: "
 msgstr "Image USB créée sur: "
 
+#: message11
 msgid "and there is made an extra copy in: "
 msgstr "et une copie supplémentaire a été éffectué sur: "
 
+#: message12-1
 msgid "To restore the image:"
 msgstr "Pour Restaurer cette image:"
 
+#: message12-2
 msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
 msgstr "Brancher la clé USB sur le port USB en façade, éteindre le STB puis le rallumer en utilisant l'interrupteur arrière."
 
+#: message13
 msgid "Follow the instructions on the front-display."
 msgstr "Suivre les instructions sur l'écran de la façade."
 
-msgid "Please wait.... almost ready!"
-msgstr "Veuillez patienter ... Presque terminé!"
-
+#: message13
 msgid "Press arrow up from frontpanel to start loading."
 msgstr "Merci de presser flèche haut sur le panneau de façade pour démarrer le chargement."
 
+#: message14
 msgid "Please check the manual of the receiver on how to restore the image."
 msgstr "Merci de vérifier comment restaurer l'image sur le guide d'utilisateur de votre STB."
 
+#: message15
 msgid "Image creation FAILED!"
 msgstr "Création de l'image NON REUSSIE!"
 
+#: message16
 msgid "available "
 msgstr "disponible "
 
+#: message17-1
 msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
 msgstr "Il y a une clé USB valide détectée dans l'un des ports USB, donc une copie supplémentaire de l'image de sauvegarde sera copiée sur cette clé USB."
 
+#: message172
 msgid "This only takes about 20 seconds....."
 msgstr "Ceci dure seulement 20 secondes...."
 
+#: message19
 msgid "Backup finished and copied to your USB-flashdrive."
 msgstr "Sauvegarde terminée et copiée sur votre clé USB."
 
+#: message20
 msgid "Full back-up to the harddisk"
 msgstr "Sauvegarde complète sur disque dur"
 
+#: message21-1
 msgid "There is NO valid USB-stick found, so I've got nothing to do."
 msgstr "Aucune clé USB valide trouvé, alors il n'y a rien à faire."
 
+#: message21-2
 msgid "PLEASE READ THIS:"
 msgstr "MERCI DE LIRE CECI:"
 
+#: message21-3
 msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
 msgstr "Pour sauvegarder directement sur la clé USB, elle doit contenir un fichier nommé:"
 
+#: message21-4
 msgid "backupstick or"
 msgstr "backupstick ou"
 
+#: message21-5
 msgid "backupstick.txt"
 msgstr "backupstick.txt"
 
+#: message21-6
 msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
 msgstr "Si vous branchez une clé USB contenant ce fichier alors la sauvegarde sera automatiquement effectué sur cette clé et pourra être utilisé pour restaurer l'image courante si nécessaire."
 
+#: message21-7
 msgid "The program will exit now."
 msgstr "Le programme va s'arrêter maintenant."
 
-# #:message22
+#: message22
 msgid "Full back-up direct to USB"
 msgstr "Sauvegarde complète sur clé USB"
 
+#: message23
 msgid "The content of the folder is:"
 msgstr "Le contenu du dossier est:"
 
+#: message24
 msgid "Time required for this process: "
 msgstr "Temps nécessaire pour cette tâche: "
 
+#: message25
 msgid "minutes"
 msgstr "minutes"
 
+#: message26
 msgid "Backup done with: "
 msgstr "Sauvegarde effectuée avec: "
 
+#: message27
 msgid "KB per second"
 msgstr "KB par seconde"
 
+#: message28
 msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
 msgstr "Il est très probable que la restauration de la sauvegarde ne soit pas possible, sa taille excédant la limite. Il s'agit d'une limitation du bootloader et non de l'outil BackupSuite."
 
+#: message29
 msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
 msgstr "Il pourrait y avoir une problème durant la restauration de la sauvegarde parceque sa taille est proche de la taille maximal. Il s'agit d'un e limitation du bootloader et non de l'outil BackupSuite."
 
+#: message30-1
 msgid "* * * WARNING * * *"
 msgstr "* * * WARNING * * *"
 
+#: message30-2
 msgid "Not enough free space on "
 msgstr "Espace libre insuffisant sur "
 
+#: message31
 msgid " to make a back-up!"
 msgstr " pour effectuer une sauvegarde"
 
+#: message32
 msgid " MB available space"
 msgstr " MB d'espace disponible"
 
+#: message33
 msgid " MB needed space"
 msgstr " MB d'espace nécessaire"
 
+#: message34
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Interruption du programme, merci d'utiliser un support avec plus d'espace libre pour effectuer votre sauvegarde."
+
+#: message36-1
+msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
+msgstr ""
+
+#: message36-2
+msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
+msgstr ""
+
+#: message36-3
+msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
+msgstr ""
+
+#: message36-4
+msgid "Update is done when white light blinks on the front panel."
+msgstr ""
 
 #: plugin.py
 msgid ""
@@ -363,11 +411,17 @@ msgstr "Entrer les informations"
 msgid "type yes/no"
 msgstr "Entrée oui/non"
 
+#: plugin.py
 msgid "Only root with use mtdy device"
 msgstr "Seulement root avec l'utilisation du device mtdy"
 
+#: plugin.py
 msgid "Only kernel with use mtdx device"
 msgstr "Seulement kernel avec l'utilisation du device mtdy"
+
+#: plugin.py
+msgid "Make a backup or restore a backup"
+msgstr "Effectuer une sauvegarde ou restaurer une sauvegarde"
 
 #: plugin.py
 msgid "BackupSuite"
@@ -376,10 +430,6 @@ msgstr "BackupSuite"
 #: plugin.py
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Active les sauvegardes  & restaurations sans clé USB"
-
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Effectuer une sauvegarde ou restaurer une sauvegarde"
 
 #: plugin.py
 msgid "Backup > HDD"

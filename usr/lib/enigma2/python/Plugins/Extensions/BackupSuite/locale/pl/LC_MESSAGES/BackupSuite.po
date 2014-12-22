@@ -10,20 +10,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
 "X-Generator: Poedit 1.6.5\n"
-
-#: start HDD version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' pl_PL"
-
-#: start USB version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' pl_PL"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: pl\n"
 
 #: plugin HDD 3
 msgid "Full back-up on HDD"
 msgstr "Backup image na HDD"
 
-#plugin HDD 4
+#: plugin HDD 4
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -37,7 +31,7 @@ msgstr ""
 msgid "Full back-up to USB"
 msgstr "Backup image na USB"
 
-#plugin USB 3
+#: plugin USB 3
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -83,10 +77,6 @@ msgstr "Tworzenie: root.ubifs"
 msgid "Create: kerneldump"
 msgstr "Tworzenie: kerneldump"
 
-#: message08
-msgid "Almost there... Now building the USB-Image!"
-msgstr "Prawie gotowe... Teraz tworzone jest usb-image!"
-
 #: message09
 msgid "Additional backup -> "
 msgstr "Dodatkowy backup -> "
@@ -110,10 +100,6 @@ msgstr "Umieść pen USB w przednim gnieździe i zrestartuj odbiornik wyłączni
 #: message12-3
 msgid "Follow the instructions on the front-display."
 msgstr "Postępuj zgodnie z instrukcjami na wyświetlaczu"
-
-#: message12-4
-msgid "Please wait.... almost ready!"
-msgstr "Czekaj... prawie gotowe!"
 
 #: message13
 msgid "Press arrow up from frontpanel to start loading."
@@ -230,6 +216,22 @@ msgstr " MB potrzebne"
 #: message34
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Wykonywanie zostanie przerwane, do utworzenia swojego backupu użyj innego nośnika, z więksżą ilością wolnego miejsca."
+
+#: message36-1
+msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
+msgstr ""
+
+#: message36-2
+msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
+msgstr ""
+
+#: message36-3
+msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
+msgstr ""
+
+#: message36-4
+msgid "Update is done when white light blinks on the front panel."
+msgstr ""
 
 #: plugin.py
 msgid ""
@@ -409,11 +411,17 @@ msgstr "wpisz info"
 msgid "type yes/no"
 msgstr "wpisz tak/nie"
 
+#: plugin.py
 msgid "Only root with use mtdy device"
 msgstr "Tylko root z użyciem urządzenia mtdy"
 
+#: plugin.py
 msgid "Only kernel with use mtdx device"
 msgstr "Tylko kernel z użyciem urządzenie mtdx"
+
+#: plugin.py
+msgid "Make a backup or restore a backup"
+msgstr "Wykonaj lub przywróć kopię image"
 
 #: plugin.py
 msgid "BackupSuite"
@@ -422,10 +430,6 @@ msgstr "BackupSuite"
 #: plugin.py
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Pozwala wykonać kopię i przywrócić image bez pena USB"
-
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Wykonaj lub przywróć kopię image"
 
 #: plugin.py
 msgid "Backup > HDD"
