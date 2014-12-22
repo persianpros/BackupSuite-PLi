@@ -8,7 +8,7 @@ Pedro
 
 Changelog
 
-Git 50
+Git 50-51 22-12-2014
 - Corrected some parameters for the VU+ Zero and Solo SE
 
 git 49   21-12-2014
