@@ -7,6 +7,9 @@ Pedro
 ----------------------------------------------
 
 Changelog
+Git 53   22-12-2014 (Openpli 20+git12)
+- Corrected lookuptable.txt for the entry Vu+ Solo SE, used a wrong name for root_cfe_auto.bin
+
 Git 52   22-12-2014 (Openpli 20+git11)
 - Added instructions to restore a backup for the Vu+ Solo SE and Zero (not sure if the Zero also is using the blinking frontpanel light to show the flash progress). These directions are only in English and Dutch at the moment.
 - Cleaned a little in the message-file, removed some obsolete messages. The language files however needs some attention.
@@ -14,7 +17,7 @@ Git 52   22-12-2014 (Openpli 20+git11)
 Git 50-51 22-12-2014 (Openpli 20+git10)
 - Corrected some parameters for the VU+ Zero and Solo SE
 
-git 49   21-12-2014 (Openplii 20+git9)
+git 49   21-12-2014 (Openpli 20+git9)
 Reverted git 48
 
 git 48   21-12-2014 (Openpli 20+git8)
