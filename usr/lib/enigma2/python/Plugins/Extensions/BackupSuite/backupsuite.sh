@@ -348,11 +348,8 @@ mv "$WORKDIR/root.ubifs" "$MAINDEST/$ROOTNAME"
 mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
 if [ $ACTION = "noforce" ] ; then
 	echo "rename this file to 'force' to force an update without confirmation" > "$MAINDEST/noforce"; 
-elif [ $ACTION = "reboot" ] ; then	
-	touch "$MAINDEST/reboot.update"
-	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/noforce.update"
-	echo "and remove reboot.update, otherwise the box is flashed again after completion" >> "$MAINDEST/noforce.update"
-	chmod 644 "$MAINDEST/reboot.update" 
+elif [ $ACTION = "reboot" ] ; then
+	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/reboot.update"
 elif [ $ACTION = "force" ] ; then
 	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
 fi

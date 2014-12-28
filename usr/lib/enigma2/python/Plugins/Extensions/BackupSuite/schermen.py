@@ -3,7 +3,7 @@
 skinstarthd = """
 	<screen name="BackupSuite" position="fill" size="1280,720" title=" " >
 		<eLabel position="0,0" size="1280,88" backgroundColor="#00000000" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/christmas_big.png" position="0,88" size="1280,542" zPosition="1"/>
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/newyear_big.png" position="0,88" size="1280,542" zPosition="1"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/smallshadowline.png" position="0,88" size="1280,2" zPosition="2"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/smallshadowline.png" position="0,630" size="1280,2" zPosition="2"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/red.png"	position="145,641" size="30,30" alphatest="on" />
@@ -37,7 +37,7 @@ skinstartsd = """
 		<widget source="Title" render="Label" transparent="1" zPosition="1" halign="center" valign="center" position="60,30" size="600,45" font="Regular;20" foregroundColor="#006CA4C5"/>
 		<ePixmap pixmap="skin_default/buttons/key_info.png" zPosition="1" position="10,540" size="35,25" alphatest="blend"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/key_help.png" zPosition="1" position="50,540" size="35,25" alphatest="blend"/>
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/christmas_small.png" zPosition="1" position="0,89" size="720,428"/>
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/newyear_small.png" zPosition="1" position="0,89" size="720,428"/>
 		<ePixmap pixmap="skin_default/buttons/button_red.png" zPosition="1" position="10,516" size="15,16" alphatest="blend"/>
 		<ePixmap pixmap="skin_default/buttons/button_green.png" zPosition="1" position="190,516" size="15,16" alphatest="blend"/>
 		<ePixmap pixmap="skin_default/buttons/button_yellow.png" zPosition="1" position="370,516" size="15,16" alphatest="blend"/>
