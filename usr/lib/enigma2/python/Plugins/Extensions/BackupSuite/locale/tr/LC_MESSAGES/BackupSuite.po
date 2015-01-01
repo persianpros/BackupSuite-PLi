@@ -12,11 +12,11 @@ msgstr ""
 "Language: tr\n"
 "X-Generator: Poedit 1.6.5\n"
 
-#: plugin HDD 3
+#: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Tam yedekleme HDD üzerine"
 
-#: plugin HDD 4
+#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -26,11 +26,11 @@ msgstr ""
 "\n"
 "Bu sadece bir kaç dakika sürer ve tam otomatiktir. \n"
 
-#: plugin USB 2
+#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Tam yedekleme USB  içine"
 
-#: plugin USB 3
+#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -87,22 +87,6 @@ msgstr "USB görüntü oluşturulur:"
 #: message11
 msgid "and there is made an extra copy in: "
 msgstr "ve orada fazladan bir kopyası yapılır:"
-
-#: message12-1
-msgid "To restore the image:"
-msgstr "Görüntüyü geri yüklemek için:"
-
-#: message12-2
-msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
-msgstr "(Ön) USB portuna USB Belek sürücü yerleştirin ve alıcının arkasındaki PowerSwitch ile alıcısını kapatiniz ve tekrar PowerSwitch ile aciniz."
-
-#: message12-3
-msgid "Follow the instructions on the front-display."
-msgstr "Ön ekrandaki yönergeleri izleyin."
-
-#: message13
-msgid "Press arrow up from frontpanel to start loading."
-msgstr "Yüklemeye başlatmak için ön paneldeki yukarı ok tuşuna basın."
 
 #: message14
 msgid "Please check the manual of the receiver on how to restore the image."
@@ -216,23 +200,7 @@ msgstr "MB alan gerekli"
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Program iptal edilecek, daha fazla boş alana sahip başka bir ortam deneyin lütfen yedekleme oluşturmak için."
 
-#: message36-1
-msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
-msgstr ""
-
-#: message36-2
-msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
-msgstr ""
-
-#: message36-3
-msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
-msgstr ""
-
-#: message36-4
-msgid "Update is done when white light blinks on the front panel."
-msgstr ""
-
-#: plugin.py
+#: plugin.py 294
 msgid ""
 "\n"
 "The found files:"
@@ -240,138 +208,98 @@ msgstr ""
 "\n"
 "Bulunan dosyalar:"
 
-#: plugin.py
+#: plugin.py 300
 #, python-format
 msgid "  %s (maybe error)"
 msgstr "  %s (olabilir hata)"
 
-#: plugin.py
+#: plugin.py 297
 #, python-format
 msgid "  %s (maybe ok)"
 msgstr "  %s (belki tamam)"
 
-#: plugin.py
+#: plugin.py 303
 msgid " nothing!"
 msgstr "hiçbir şey!"
 
-#: plugin.py
-msgid " version "
-msgstr "versiyon"
-
-#: plugin.py
+#: plugin.py 327
 msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
 msgstr "Bir kayıt şu anda çalışıyor. flaş başlatmadan önce kaydı durdurun lütfen."
 
-#: plugin.py
+#: plugin.py 91
 msgid "Cancel"
 msgstr "iptal"
 
-#: plugin.py
-msgid "Create backup"
-msgstr "yedek oluşturun"
-
-#: plugin.py
+#: plugin.py 383
 #, python-format
 msgid "Do you really want to unpack %s ?"
 msgstr "gerçekten açmak istiyor musunuz %s ?"
 
-#: plugin.py
-msgid "Done"
-msgstr "tamam"
-
-#: plugin.py
+#: plugin.py 317
 msgid "Exit"
 msgstr "çıkış"
 
-#: plugin.py
-msgid "Failed"
-msgstr "başarısız"
-
-#: plugin.py
+#: plugin.py 331
 msgid "Flashing: "
 msgstr "flaş yapiyor:"
 
-#: plugin.py
+#: plugin.py 275
 msgid "For flashing your receiver files are needed:\n"
 msgstr "flaş için Receiver dosyaları ihtiyaç vardır:\n"
 
-#: plugin.py
-msgid "NAS"
-msgstr "NAS"
-
-#: plugin.py
+#: plugin.py 354
 msgid "NOT found files for flashing!\n"
 msgstr "flaş için dosya bulunamadı!\n"
 
-#: plugin.py
-msgid "No backup present"
-msgstr "Hiçbir yedekleme mevcut degil"
-
-#: plugin.py
+#: plugin.py 311 343
 msgid "Only kernel"
 msgstr "sadece çekirdek"
 
-#: plugin.py
+#: plugin.py 310 340
 msgid "Only root"
 msgstr "sadece kök"
 
-#: plugin.py
+#: plugin.py 361
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
 msgstr "Lütfen: STB yeniden başlatmayin ve kapatmayin YAPMAYIN.\n"
 
-#: plugin.py
-msgid "Press OK"
-msgstr "OK basın"
-
-#: plugin.py
-msgid "Read error current dir, sorry."
-msgstr "Okuma hatası dizin, üzgünüm."
-
-#: plugin.py
+#: plugin.py 94
 msgid "Restore backup"
 msgstr "yedeği geri yükle"
 
-#: plugin.py
+#: plugin.py 249 263 269
 msgid "Run flash"
 msgstr "flaş başliyor"
 
-#: plugin.py
-msgid "Running"
-msgstr "çalışıyor"
-
-#: plugin.py
-msgid "Save"
-msgstr "kaydetmek"
-
-#: plugin.py
+#: plugin.py 274
 msgid "Select parameter for start flash!\n"
 msgstr "flaş başlangıç için parametreyi seçin!\n"
 
-#: plugin.py
+#: plugin.py 199
 msgid "Select the folder with backup"
 msgstr "Yedekleme klasörü seçin"
 
-#: plugin.py
+#: plugin.py 367
 msgid "Show only found image and mtd partitions.\n"
 msgstr "Sadece image ve mtd bölümleri  bulundu göster.\n"
 
-#: plugin.py
+#: plugin.py 308 334
 msgid "Simulate (no write)"
 msgstr "simüle (yazilim hayir) "
 
-#: plugin.py
+#: plugin.py 309 337
 msgid "Standard (root and kernel)"
 msgstr "Standart (kök ve kernel)"
 
-#: plugin.py
+#: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr "image veya çekirdek flash yapmaya baslayacaktir ve birkaç dakika içinde otomatik olarak boot yapacaktir.\n"
 
-#: plugin.py
+#: plugin.py 247 380
 msgid "Unzip"
 msgstr "Sıkıştırmayı Kaldır"
 
-#: plugin.py
+#: plugin.py 266
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -381,64 +309,44 @@ msgstr ""
 "Sorumluluk kendinize aittir!Kullanmadan önce her zaman bir yedeğini yapiniz!\n"
 "Eğer Ubi katmanda birden ubi hacimleri kullanırsanız kullanın etmeyin!"
 
-#: plugin.py
+#: plugin.py 360
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "STB flaş işlemi sırasında donacaktir.\n"
 
-#: plugin.py
+#: plugin.py 203 241
 #, python-format
 msgid "current:  %s"
 msgstr "akım: %s"
 
-#: plugin.py
-msgid "disabled"
-msgstr "devre dışı"
-
-#: plugin.py
-msgid "no"
-msgstr "hayır"
-
-#: plugin.py
+#: plugin.py 359
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "flaş başlatmak için ofgwrite  şimdi enigma2 yi durduracaktır.\n"
 
-#: plugin.py
-msgid "type info"
-msgstr "tür bilgisi"
-
-#: plugin.py
-msgid "type yes/no"
-msgstr "tür evet/hayır"
-
-#: plugin.py
+#: plugin.py 312 346
 msgid "Only root with use mtdy device"
 msgstr "sadece kök kullanım mtdy cihazı ile"
 
-#: plugin.py
+#: plugin.py 313 349
 msgid "Only kernel with use mtdx device"
 msgstr "Sadece çekirdek  kullanım mtdx cihazı ile"
 
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Yedekleme yapmak veya geri yükleme"
-
-#: plugin.py
+#: plugin.py 405 412
 msgid "BackupSuite"
 msgstr "BackupSuite"
 
-#: plugin.py
+#: plugin.py 406 413
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Yedekleme sağlar & geri yükleme USB Belek olmadan"
 
-#: plugin.py
+#: plugin.py 92
 msgid "Backup > HDD"
 msgstr "Yedekleme > HDD"
 
-#: plugin.py
+#: plugin.py 93
 msgid "Backup > USB"
 msgstr "Yedeklem > USB"
 
-#: plugin.py
+#: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "En son sürümden sonra hangi yenilikler var?"
 

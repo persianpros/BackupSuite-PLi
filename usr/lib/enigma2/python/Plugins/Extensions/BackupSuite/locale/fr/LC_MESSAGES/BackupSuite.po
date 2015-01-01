@@ -13,11 +13,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr\n"
 
-#: plugin HDD 3
+#: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Sauvegarde complète sur HDD"
 
-#: plugin HDD 4
+#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -27,11 +27,11 @@ msgstr ""
 "\n"
 "Cela ne prend que quelques minutes et est entièrement automatique.\n"
 
-#: plugin USB 2
+#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Sauvegarde complète sur USB"
 
-#: plugin USB 3
+#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -88,22 +88,6 @@ msgstr "Image USB créée sur: "
 #: message11
 msgid "and there is made an extra copy in: "
 msgstr "et une copie supplémentaire a été éffectué sur: "
-
-#: message12-1
-msgid "To restore the image:"
-msgstr "Pour Restaurer cette image:"
-
-#: message12-2
-msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
-msgstr "Brancher la clé USB sur le port USB en façade, éteindre le STB puis le rallumer en utilisant l'interrupteur arrière."
-
-#: message13
-msgid "Follow the instructions on the front-display."
-msgstr "Suivre les instructions sur l'écran de la façade."
-
-#: message13
-msgid "Press arrow up from frontpanel to start loading."
-msgstr "Merci de presser flèche haut sur le panneau de façade pour démarrer le chargement."
 
 #: message14
 msgid "Please check the manual of the receiver on how to restore the image."
@@ -217,23 +201,7 @@ msgstr " MB d'espace nécessaire"
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Interruption du programme, merci d'utiliser un support avec plus d'espace libre pour effectuer votre sauvegarde."
 
-#: message36-1
-msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
-msgstr ""
-
-#: message36-2
-msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
-msgstr ""
-
-#: message36-3
-msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
-msgstr ""
-
-#: message36-4
-msgid "Update is done when white light blinks on the front panel."
-msgstr ""
-
-#: plugin.py
+#: plugin.py 294
 msgid ""
 "\n"
 "The found files:"
@@ -241,138 +209,98 @@ msgstr ""
 "\n"
 "Fichiers touvées:"
 
-#: plugin.py
+#: plugin.py 300
 #, python-format
 msgid "  %s (maybe error)"
 msgstr "  %s (erreur possible)"
 
-#: plugin.py
+#: plugin.py 297
 #, python-format
 msgid "  %s (maybe ok)"
 msgstr "  %s (peut-être ok)"
 
-#: plugin.py
+#: plugin.py 303
 msgid " nothing!"
 msgstr " rien!"
 
-#: plugin.py
-msgid " version "
-msgstr " version "
-
-#: plugin.py
+#: plugin.py 327
 msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
 msgstr "Un enregistrement est en cours. Merci de l'arrêter avant de démarrer le flash."
 
-#: plugin.py
+#: plugin.py 91
 msgid "Cancel"
 msgstr "Annuler"
 
-#: plugin.py
-msgid "Create backup"
-msgstr "Créer une sauvegarde"
-
-#: plugin.py
+#: plugin.py 383
 #, python-format
 msgid "Do you really want to unpack %s ?"
 msgstr "Voulez-vous vraiment déballer %s ?"
 
-#: plugin.py
-msgid "Done"
-msgstr "Terminé"
-
-#: plugin.py
+#: plugin.py 317
 msgid "Exit"
 msgstr "Sortir"
 
-#: plugin.py
-msgid "Failed"
-msgstr "Raté"
-
-#: plugin.py
+#: plugin.py 331
 msgid "Flashing: "
 msgstr "Flashage:"
 
-#: plugin.py
+#: plugin.py 275
 msgid "For flashing your receiver files are needed:\n"
 msgstr "Pour flasher votre STB, les fichiers sont nécessaires:\n"
 
-#: plugin.py
-msgid "NAS"
-msgstr "NAS"
-
-#: plugin.py
+#: plugin.py 354
 msgid "NOT found files for flashing!\n"
 msgstr "Fichiers pour flashage non trouvés!\n"
 
-#: plugin.py
-msgid "No backup present"
-msgstr "Aucune sauvegarde présente"
-
-#: plugin.py
+#: plugin.py 311 343
 msgid "Only kernel"
 msgstr "Kernel seulement"
 
-#: plugin.py
+#: plugin.py 310 340
 msgid "Only root"
 msgstr "Root seulement"
 
-#: plugin.py
+#: plugin.py 361
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
 msgstr "Merci de NE PAS rebooter ou éteindre votre STB.\n"
 
-#: plugin.py
-msgid "Press OK"
-msgstr "Appuyer sur OK"
-
-#: plugin.py
-msgid "Read error current dir, sorry."
-msgstr "Erreur de lecture du répertoire courant, pardon."
-
-#: plugin.py
+#: plugin.py 94
 msgid "Restore backup"
 msgstr "Restaurer sauvegarde"
 
-#: plugin.py
+#: plugin.py 249 263 269
 msgid "Run flash"
 msgstr "Démarrer le flash"
 
-#: plugin.py
-msgid "Running"
-msgstr "En cours"
-
-#: plugin.py
-msgid "Save"
-msgstr "Sauvegarder"
-
-#: plugin.py
+#: plugin.py 274
 msgid "Select parameter for start flash!\n"
 msgstr "Sélectionner paramètre pour lancer le flash!\n"
 
-#: plugin.py
+#: plugin.py 199
 msgid "Select the folder with backup"
 msgstr "Selectionner le dossier avec la sauvegarde"
 
-#: plugin.py
+#: plugin.py 367
 msgid "Show only found image and mtd partitions.\n"
 msgstr "Montrer seulement les images et partitions mtd trouvées.\n"
 
-#: plugin.py
+#: plugin.py 308 334
 msgid "Simulate (no write)"
 msgstr "Simuler (pas d'écriture)"
 
-#: plugin.py
+#: plugin.py 309 337
 msgid "Standard (root and kernel)"
 msgstr "Standard (root et kernel)"
 
-#: plugin.py
+#: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr "L'image ou le kernel va être flashé et redemarré automatiquement dans quelques minutes.\n"
 
-#: plugin.py
+#: plugin.py 247 380
 msgid "Unzip"
 msgstr "Désarchiver"
 
-#: plugin.py
+#: plugin.py 266
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -382,64 +310,44 @@ msgstr ""
 "Utiliser à vos risques et périls! Toujours effectuer une sauvegarde avant utilisation!\n"
 "Ne pas utiliser si vous utilisez de multiples volumes UBI dans la couche UBI!"
 
-#: plugin.py
+#: plugin.py 360
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "Votre STB va se bloquer durant le processus de flashage.\n"
 
-#: plugin.py
+#: plugin.py 203 241
 #, python-format
 msgid "current:  %s"
 msgstr "courant: %s"
 
-#: plugin.py
-msgid "disabled"
-msgstr "désactivé"
-
-#: plugin.py
-msgid "no"
-msgstr "non"
-
-#: plugin.py
+#: plugin.py 359
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "ofgwrite va arrêter enigma2 pour lancer le flash.\n"
 
-#: plugin.py
-msgid "type info"
-msgstr "Entrer les informations"
-
-#: plugin.py
-msgid "type yes/no"
-msgstr "Entrée oui/non"
-
-#: plugin.py
+#: plugin.py 312 346
 msgid "Only root with use mtdy device"
 msgstr "Seulement root avec l'utilisation du device mtdy"
 
-#: plugin.py
+#: plugin.py 313 349
 msgid "Only kernel with use mtdx device"
 msgstr "Seulement kernel avec l'utilisation du device mtdy"
 
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Effectuer une sauvegarde ou restaurer une sauvegarde"
-
-#: plugin.py
+#: plugin.py 405 412
 msgid "BackupSuite"
 msgstr "BackupSuite"
 
-#: plugin.py
+#: plugin.py 406 413
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Active les sauvegardes  & restaurations sans clé USB"
 
-#: plugin.py
+#: plugin.py 92
 msgid "Backup > HDD"
 msgstr "Sauvegarde > HDD"
 
-#: plugin.py
+#: plugin.py 93
 msgid "Backup > USB"
 msgstr "Sauvegarde > USB"
 
-#: plugin.py
+#: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Quoi de neuf depuis la dernière version?"
 

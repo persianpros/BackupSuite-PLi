@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: plugin HDD 3
+#: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Fullständig säkerhetskopiering på hårddisk"
 
-#: plugin HDD 4
+#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -24,11 +24,11 @@ msgstr ""
 "\n"
 "Detta tar endast några minuter och är helt automatiskt.\n"
 
-#: plugin USB 2
+#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Fullständig säkerhetskopiering till USB"
 
-#: plugin USB 3
+#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -85,22 +85,6 @@ msgstr "USB-image skapad i: "
 #: message11
 msgid "and there is made an extra copy in: "
 msgstr "och det har gjorts en extra kopia i: "
-
-#: message12-1
-msgid "To restore the image:"
-msgstr "För att återställa denna image:"
-
-#: message12-2
-msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
-msgstr "Placera USB-enheten i USB-porten (fram) och slå av, och sedan på mottagaren, med Power-knappen på baksidan av mottagaren."
-
-#: message12-3
-msgid "Follow the instructions on the front-display."
-msgstr "Följ instruktionerna på skärmen på framsidan."
-
-#: message13
-msgid "Press arrow up from frontpanel to start loading."
-msgstr "Tryck på uppåtpilen på framsidan för att starta laddningen."
 
 #: message14
 msgid "Please check the manual of the receiver on how to restore the image."
@@ -214,23 +198,7 @@ msgstr " MB utrymme krävs"
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Programmet kommer att avbrytas. Försök med en annan lagringsenhet med mer ledigt utrymme för att skapa din säkerhetskopia."
 
-#: message36-1
-msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
-msgstr ""
-
-#: message36-2
-msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
-msgstr ""
-
-#: message36-3
-msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
-msgstr ""
-
-#: message36-4
-msgid "Update is done when white light blinks on the front panel."
-msgstr ""
-
-#: plugin.py
+#: plugin.py 294
 msgid ""
 "\n"
 "The found files:"
@@ -238,138 +206,98 @@ msgstr ""
 "\n"
 "Hittade filer:"
 
-#: plugin.py
+#: plugin.py 300
 #, python-format
 msgid "  %s (maybe error)"
 msgstr "  %s (kanske fel)"
 
-#: plugin.py
+#: plugin.py 297
 #, python-format
 msgid "  %s (maybe ok)"
 msgstr "  %s (kanske ok)"
 
-#: plugin.py
+#: plugin.py 303
 msgid " nothing!"
 msgstr " ingenting!"
 
-#: plugin.py
-msgid " version "
-msgstr " version "
-
-#: plugin.py
+#: plugin.py 327
 msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
 msgstr "En inspelning körs för tillfället. Stoppa inspelningen innan du försöker att starta en formatering."
 
-#: plugin.py
+#: plugin.py 91
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: plugin.py
-msgid "Create backup"
-msgstr "Skapa säkerhetskopia"
-
-#: plugin.py
+#: plugin.py 383
 #, python-format
 msgid "Do you really want to unpack %s ?"
 msgstr "Vill du verkligen packa upp %s ?"
 
-#: plugin.py
-msgid "Done"
-msgstr "Klar"
-
-#: plugin.py
+#: plugin.py 317
 msgid "Exit"
 msgstr "Avsluta"
 
-#: plugin.py
-msgid "Failed"
-msgstr "Misslyckades"
-
-#: plugin.py
+#: plugin.py 331
 msgid "Flashing: "
 msgstr "Formaterar: "
 
-#: plugin.py
+#: plugin.py 275
 msgid "For flashing your receiver files are needed:\n"
 msgstr "För att formatera din mottagare, följande filer krävs:\n"
 
-#: plugin.py
-msgid "NAS"
-msgstr "NAS"
-
-#: plugin.py
+#: plugin.py 354
 msgid "NOT found files for flashing!\n"
 msgstr "Hittade INTE filer för formatering!\n"
 
-#: plugin.py
-msgid "No backup present"
-msgstr "Ingen säkerhetskopia närvarande"
-
-#: plugin.py
+#: plugin.py 311 343
 msgid "Only kernel"
 msgstr "Endast kernel"
 
-#: plugin.py
+#: plugin.py 310 340
 msgid "Only root"
 msgstr "Endast root"
 
-#: plugin.py
+#: plugin.py 361
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
 msgstr "Observera: Starta INTE om din box eller stäng av strömmen.\n"
 
-#: plugin.py
-msgid "Press OK"
-msgstr "Tryck OK"
-
-#: plugin.py
-msgid "Read error current dir, sorry."
-msgstr "Läsfel på aktuell mapp."
-
-#: plugin.py
+#: plugin.py 94
 msgid "Restore backup"
 msgstr "Återställ backup"
 
-#: plugin.py
+#: plugin.py 249 263 269
 msgid "Run flash"
 msgstr "Kör formatering"
 
-#: plugin.py
-msgid "Running"
-msgstr "Kör"
-
-#: plugin.py
-msgid "Save"
-msgstr "Spara"
-
-#: plugin.py
+#: plugin.py 274
 msgid "Select parameter for start flash!\n"
 msgstr "Välj parameter för att starta formatering!\n"
 
-#: plugin.py
+#: plugin.py 199
 msgid "Select the folder with backup"
 msgstr "Välj mappen med säkerhetskopian"
 
-#: plugin.py
+#: plugin.py 367
 msgid "Show only found image and mtd partitions.\n"
 msgstr "Visa endast hittade image och MTD-partitioner.\n"
 
-#: plugin.py
+#: plugin.py 308 334
 msgid "Simulate (no write)"
 msgstr "Simulera (skriv inte)"
 
-#: plugin.py
+#: plugin.py 309 337
 msgid "Standard (root and kernel)"
 msgstr "Standard (root och kernel)"
 
-#: plugin.py
+#: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr "Denna image eller kernel kommer att installeras och auto-starta om några minuter.\n"
 
-#: plugin.py
+#: plugin.py 247 380
 msgid "Unzip"
 msgstr "Unzip"
 
-#: plugin.py
+#: plugin.py 266
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -379,64 +307,44 @@ msgstr ""
 "Använd på egen risk! Gör alltid en säkerhetskopia innan användning!\n"
 "Använd den inte om du använder flera UBI-volumer i UBI-lager!"
 
-#: plugin.py
+#: plugin.py 360
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "Din mottagare kommer att frysa under formateringsprocessen.\n"
 
-#: plugin.py
+#: plugin.py 203 241
 #, python-format
 msgid "current:  %s"
 msgstr "nuvarande:  %s"
 
-#: plugin.py
-msgid "disabled"
-msgstr "avaktiverad"
-
-#: plugin.py
-msgid "no"
-msgstr "nej"
-
-#: plugin.py
+#: plugin.py 359
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "ofgwrite kommer att stoppa enigma2 nu för att utföra installeringen.\n"
 
-#: plugin.py
-msgid "type info"
-msgstr "typ info"
-
-#: plugin.py
-msgid "type yes/no"
-msgstr "typ ja/nej"
-
-#: plugin.py
+#: plugin.py 312 346
 msgid "Only root with use mtdy device"
 msgstr "Endast root med MTDY-enhet"
 
-#: plugin.py
+#: plugin.py 313 349
 msgid "Only kernel with use mtdx device"
 msgstr "Endast kernel med MTDX-enhet"
 
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Gör en säkerhetskopia eller återställ en säkerhetskopia"
-
-#: plugin.py
+#: plugin.py 405 412
 msgid "BackupSuite"
 msgstr "BackupSuite"
 
-#: plugin.py
+#: plugin.py 406 413
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Aktiverar säkerhetskopiering & återställning utan ett USB-minne"
 
-#: plugin.py
+#: plugin.py 92
 msgid "Backup > HDD"
 msgstr "Backup > HDD"
 
-#: plugin.py
+#: plugin.py 93
 msgid "Backup > USB"
 msgstr "Backup > USB"
 
-#: plugin.py
+#: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Vad är nytt sedan förra utgåvan?"
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Backup Suite Official Greek Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-12-22 10:25+0100\n"
+"PO-Revision-Date: 2014-12-30 20:08+0100\n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: SatDreamGR <mcelliot_g@hotmail.com>\n"
 "Language: el_GR\n"
@@ -14,30 +14,22 @@ msgstr ""
 "X-Generator: Poedit 1.6.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: start HDD version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' en_EN"
-
-#: start USB version
-msgid "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
-msgstr "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' en_EN"
-
-#: plugin HDD 3
+#: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Πλήρης εφεδρεία σε HDD"
 
-#: plugin HDD 4
+#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
 "This only takes a few minutes and is fully automatic.\n"
 msgstr ""
 
-#: plugin USB 2
+#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Πλήρης εφεδρεία σε USB"
 
-#: plugin USB 3
+#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -78,10 +70,6 @@ msgstr "Δημιουργία: root.ubifs"
 msgid "Create: kerneldump"
 msgstr "Δημιουργία: kerneldump"
 
-#: message08
-msgid "Almost there... Now building the USB-Image!"
-msgstr "Σχεδόν τελειώσαμε...Δημιουργείται το USB-Image!"
-
 #: message09
 msgid "Additional backup -> "
 msgstr "Επιπρόσθετο αντίγραφο ασφαλείας -> "
@@ -93,26 +81,6 @@ msgstr "Το USB Image δημιουργήθηκε στο: "
 #: message11
 msgid "and there is made an extra copy in: "
 msgstr "και ένα επιπρόσθετο αντίγραφο δημιουργήθηκε στο: "
-
-#: message12-1
-msgid "To restore the image:"
-msgstr "Για επαναφορά του image:"
-
-#: message12-2
-msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
-msgstr "Τοποθετήστε το USB στικ στην (εμπρόσθια) θύρα USB, κλείστε και ανοίξτε ξανά το δέκτη με το διακόπτη στο πίσω μέρος του δέκτη."
-
-#: message12-3
-msgid "Follow the instructions on the front-display."
-msgstr "Ακολουθήστε τις οδηγίες στην οθόνη πρόσοψης."
-
-#: message12-4
-msgid "Please wait.... almost ready!"
-msgstr "Παρακαλώ περιμένετε... σχεδόν έτοιμο!"
-
-#: message13
-msgid "Press arrow up from frontpanel to start loading."
-msgstr "Πιέστε το πλήκτρο ΕΠΑΝΩ στο εμπρόσθιο πάνελ για να ξεκινήσει η φόρτωση."
 
 #: message14
 msgid "Please check the manual of the receiver on how to restore the image."
@@ -225,23 +193,7 @@ msgstr " απαιτούμενος χώρος σε MB"
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Το πρόγραμμα θα ματαιωθεί, δοκιμάστε ένα άλλο μέσο με περισσότερο ελεύθερο χώρο για το αντίγραφο σας."
 
-#: message36-1
-msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
-msgstr ""
-
-#: message36-2
-msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
-msgstr ""
-
-#: message36-3
-msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
-msgstr ""
-
-#: message36-4
-msgid "Update is done when white light blinks on the front panel."
-msgstr ""
-
-#: plugin.py
+#: plugin.py 294
 msgid ""
 "\n"
 "The found files:"
@@ -249,17 +201,17 @@ msgstr ""
 "\n"
 "Αρχεία που βρέθηκαν:"
 
-#: plugin.py
+#: plugin.py 300
 #, python-format
 msgid "  %s (maybe error)"
 msgstr "  %s (πιθανό σφάλμα)"
 
-#: plugin.py
+#: plugin.py 297
 #, python-format
 msgid "  %s (maybe ok)"
 msgstr "  %s (πιθανώς ok)"
 
-#: plugin.py
+#: plugin.py 303
 msgid " nothing!"
 msgstr " τίποτα!"
 
@@ -267,120 +219,84 @@ msgstr " τίποτα!"
 msgid " version "
 msgstr " έκδοση "
 
-#: plugin.py
+#: plugin.py 327
 msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
 msgstr "Μία εγγραφή είναι σε εξέλιξη. Παρακαλώ σταματήστε την εγγραφή πριν ξεκινήσετε το φλασάρισμα."
 
-#: plugin.py
+#: plugin.py 91
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: plugin.py
-msgid "Create backup"
-msgstr "Δημιουργία αντιγράφου"
-
-#: plugin.py
+#: plugin.py 383
 #, python-format
 msgid "Do you really want to unpack %s ?"
 msgstr "Θελετε σίγουρα να αποσυμπιεστεί το %s ;"
 
-#: plugin.py
-msgid "Done"
-msgstr "Ολοκληρώθηκε"
-
-#: plugin.py
+#: plugin.py 317
 msgid "Exit"
 msgstr "Έξοδος"
 
-#: plugin.py
-msgid "Failed"
-msgstr "Αποτυχία"
-
-#: plugin.py
+#: plugin.py 331
 msgid "Flashing: "
 msgstr "Φλασάρισμα: "
 
-#: plugin.py
+#: plugin.py 275
 msgid "For flashing your receiver files are needed:\n"
 msgstr "Για το φλασάρισμα του δέκτη απαιτούνται τα αρχεία:\n"
 
-#: plugin.py
-msgid "NAS"
-msgstr "NAS"
-
-#: plugin.py
+#: plugin.py 354
 msgid "NOT found files for flashing!\n"
 msgstr "ΔΕΝ βρέθηκαν αρχεία για φλασάρισμα!\n"
 
-#: plugin.py
-msgid "No backup present"
-msgstr "Δεν βρέθηκε αντίγραφο"
-
-#: plugin.py
+#: plugin.py 311 343
 msgid "Only kernel"
 msgstr "Μόνο τον kernel"
 
-#: plugin.py
+#: plugin.py 310 340
 msgid "Only root"
 msgstr "Μόνο τη ρίζα"
 
-#: plugin.py
+#: plugin.py 361
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
 msgstr "Παρακαλούμε: ΜΗΝ επανεκκινήσετε ή κλείσετε το δέκτη σας.\n"
 
-#: plugin.py
-msgid "Press OK"
-msgstr "Πιέστε ΟΚ"
-
-#: plugin.py
-msgid "Read error current dir, sorry."
-msgstr "Σφάλμα ανάγνωσης τρέχοντος φακέλου, λυπούμαστε."
-
-#: plugin.py
+#: plugin.py 94
 msgid "Restore backup"
 msgstr "Επαναφορά αντιγράφου"
 
-#: plugin.py
+#: plugin.py 249 263 269
 msgid "Run flash"
 msgstr "Φλασάρισμα"
 
-#: plugin.py
-msgid "Running"
-msgstr "Σε εκτέλεση"
-
-#: plugin.py
-msgid "Save"
-msgstr "Αποθήκευση"
-
-#: plugin.py
+#: plugin.py 274
 msgid "Select parameter for start flash!\n"
 msgstr "Επιλογή παραμέτρου για εκκίνηση φλασαρίσματος!\n"
 
-#: plugin.py
+#: plugin.py 199
 msgid "Select the folder with backup"
 msgstr "Επιλογή του φακέλου με το αντίγραφο"
 
-#: plugin.py
+#: plugin.py 367
 msgid "Show only found image and mtd partitions.\n"
 msgstr "Εμφάνιση μόνο των images που βρέθηκαν και των κατατμήσεων mtd.\n"
 
-#: plugin.py
+#: plugin.py 308 334
 msgid "Simulate (no write)"
 msgstr "Προσομοίωση (μη εγγραφή)"
 
-#: plugin.py
+#: plugin.py 309 337
 msgid "Standard (root and kernel)"
 msgstr "Στάνταρ (ρίζα και kernel)"
 
-#: plugin.py
+#: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr "Το image ή ο kernel θα φλασαριστούν και θα εκκινηθούν αυτόματα σε λίγα λεπτά.\n"
 
-#: plugin.py
+#: plugin.py 247 380
 msgid "Unzip"
 msgstr "Αποσυμπίεση"
 
-#: plugin.py
+#: plugin.py 266
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -390,46 +306,32 @@ msgstr ""
 "Χρήση με δική σας ευθύνη! Δημιουργείτε πάντα αντίγραφο πριν τη χρήση!\n"
 "Μην το χρησιμοποιείτε σε πολλαπλούς τόμους ubi στο επίπεδο ubi!"
 
-#: plugin.py
+#: plugin.py 360
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "Ο δέκτης σας θα παγώσει κατά το φλασάρισμα.\n"
 
-#: plugin.py
+#: plugin.py 203 241
 #, python-format
 msgid "current:  %s"
 msgstr "τρέχον:  %s"
 
-#: plugin.py
-msgid "disabled"
-msgstr "απενεργοποιημένο"
-
-#: plugin.py
-msgid "no"
-msgstr "όχι"
-
-#: plugin.py
+#: plugin.py 359
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "το ofgwrite θα σταματήσει το enigma2 τώρα για να τρέξει το φλασάρισμα.\n"
 
-#: plugin.py
-msgid "type info"
-msgstr "πληροφορίες τύπου"
-
-#: plugin.py
-msgid "type yes/no"
-msgstr "τύπος ναι/όχι"
-
+#: plugin.py 312 346
 msgid "Only root with use mtdy device"
 msgstr "Μόνο ρίζα σε χρήση συσκευής mtdx"
 
+#: plugin.py 313 349
 msgid "Only kernel with use mtdx device"
 msgstr "Μόνο kernel σε χρήση συσκευής mtdx"
 
-#: plugin.py
+#: plugin.py 405 412
 msgid "BackupSuite"
 msgstr "BackupSuite"
 
-#: plugin.py
+#: plugin.py 406 413
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Ενεργοποιεί τη δημιουργία & επαναφορά αντιγράφων ασφαλείας χωρίς USB στικ"
 
@@ -437,36 +339,15 @@ msgstr "Ενεργοποιεί τη δημιουργία & επαναφορά α
 msgid "Make a backup or restore a backup"
 msgstr "Δημιουργία αντιγράφου ή επαναφορά αντιγράφου ασφαλείας"
 
-#: plugin.py
+#: plugin.py 92
 msgid "Backup > HDD"
 msgstr "Εφεδρεία > HDD"
 
-#: plugin.py
+#: plugin.py 93
 msgid "Backup > USB"
 msgstr "Εφεδρεία > USB"
 
-msgid "Place USB stick in the USB slot at the rear side of the XP1000 and switch the receiver off and on with the powerswitch"
-msgstr "Τοποθετήστε το USB στικ στη θύρα USB στο πίσω μέρος του XP1000, κλείστε και ανοίξτε ξανά το δέκτη με το διακόπτη τροφοδοσίας"
-
-msgid "When the record LED and standby LED become red press CH+ button on the receiver to start USB update."
-msgstr "Όταν το LED εγγραφής και το LED αναμονής γίνει κόκκινο, πιέστε το πλήκτρο CH+ στο δέκτη για να ξεκινήσει η αναβάθμιση μέσω USB."
-
-msgid "Wait until the standby LED will become blue."
-msgstr "Παρακαλώ περιμένετε μέχρι το LED αναμονής να γίνει μπλε."
-
-msgid "Place USB stick in the USB slot at the back side and switch the receiver off and on with the powerswitch"
-msgstr "Τοποθετήστε ένα USB στικ στη θύρα USB στο πίσω μέρος, κλείστε και ανοίξτε ξανά το δέκτη με το διακόπτη τροφοδοσίας"
-
-msgid "When message at display at front If you want to upgrade..., please quickly press UP button on remote control."
-msgstr "Όταν εμφανιστεί το μήνυμα If you want to upgrade..., πιέστε γρήγορα το πλήκτρο ΕΠΑΝΩ στο τηλεχειριστήριο."
-
-msgid "When message reboot, power off and remove USB."
-msgstr "Στο μήνυμα επανεκκίνησης, κλείστε το δέκτη και αφαιρέστε το USB."
-
-msgid "Power on!"
-msgstr "Άνοιγμα!"
-
-#: plugin.py
+#: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Τι είναι νέο από την τελευταία έκδοση;"
 

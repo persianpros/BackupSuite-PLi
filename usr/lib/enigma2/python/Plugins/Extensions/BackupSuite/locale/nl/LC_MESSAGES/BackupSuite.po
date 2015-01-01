@@ -10,11 +10,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: plugin HDD 3
-msgid "Full back-up on HDD"
-msgstr "Volledige back-up op de harddisk"
+#: plugin.py 91
+msgid "Cancel"
+msgstr "Annuleer"
 
-#: plugin HDD 4
+#: plugin.py 92
+msgid "Backup > HDD"
+msgstr "Backup > HDD"
+
+#: plugin.py 93
+msgid "Backup > USB"
+msgstr "Backup > USB"
+
+#: plugin.py 94
+msgid "Restore backup"
+msgstr "Backup terugzetten"
+
+#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -24,11 +36,7 @@ msgstr ""
 "\n"
 "Dit duurt enige minuten afhankelijk van het bestandssysteem en is volledig automatisch.\n"
 
-#: plugin USB 2
-msgid "Full back-up to USB"
-msgstr "Volledige back-up naar USB"
-
-#: plugin USB 3
+#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -41,6 +49,148 @@ msgstr ""
 "Dit duurt enige minuten afhankelijk van het bestandssysteem.\n"
 "\n"
 "Zorg er voor dat een USB-stick is geplaatst in de USB-poort voordat je JA kiest."
+
+#: plugin 147
+msgid "Full back-up on HDD"
+msgstr "Volledige back-up op de harddisk"
+
+#: plugin 153
+msgid "Full back-up to USB"
+msgstr "Volledige back-up naar USB"
+
+#: plugin.py 173
+msgid "What is new since the last release?"
+msgstr "Wat is nieuw sinds de laatste uitgave?"
+
+#: plugin.py 199
+msgid "Select the folder with backup"
+msgstr "Selecteer de map met de backup"
+
+#: plugin.py 203 241
+#, python-format
+msgid "current:  %s"
+msgstr "huidig:  %s"
+
+#: plugin.py 247 380
+msgid "Unzip"
+msgstr "Unzip"
+
+#: plugin.py 249 263 269
+msgid "Run flash"
+msgstr "Start flash"
+
+#: plugin.py 266
+msgid ""
+"Warning!\n"
+"Use at your own risk! Make always a backup before use!\n"
+"Don't use it if you use multiple ubi volumes in ubi layer!"
+msgstr ""
+"Waarschuwing!\n"
+"Gebruik op eigen risico! Maak altijd een backup voor gebruik!\n"
+"Niet gebruiken als je meervoudige ubi volumes gebruikt in de ubi laag!"
+
+#: plugin.py 274
+msgid "Select parameter for start flash!\n"
+msgstr "Selecteer parameter om flash te starten!\n"
+
+#: plugin.py 275
+msgid "For flashing your receiver files are needed:\n"
+msgstr "Benodigde bestanden om de ontvanger te flashen:\n"
+
+#: plugin.py 294
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+"\n"
+"De gevonden bestanden:"
+
+#: plugin.py 297
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr "  %s (misschien ok)"
+
+#: plugin.py 300
+#, python-format
+msgid "  %s (maybe error)"
+msgstr "  %s (misschien fout)"
+
+#: plugin.py 303
+msgid " nothing!"
+msgstr " niets!"
+
+#: plugin.py 308 334
+msgid "Simulate (no write)"
+msgstr "Simuleren (niet schrijven)"
+
+#: plugin.py 309 337
+msgid "Standard (root and kernel)"
+msgstr "Standaard (root en kernel)"
+
+#: plugin.py 310 340
+msgid "Only root"
+msgstr "Alleen root"
+
+#: plugin.py 311 343
+msgid "Only kernel"
+msgstr "Alleen kernel"
+
+#: plugin.py 312 346
+msgid "Only root with use mtdy device"
+msgstr "Alleen root met gebruik van mtdy device"
+
+#: plugin.py 313 349
+msgid "Only kernel with use mtdx device"
+msgstr "Alleen kernel met gebruik van mtdx device"
+
+#: plugin.py 317
+msgid "Exit"
+msgstr "Einde"
+
+#: plugin.py 327
+msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
+msgstr "Er loopt momenteel een opname. Stop deze opname voordat geprobeerd wordt om te flashen"
+
+#: plugin.py 331
+msgid "Flashing: "
+msgstr "Flashing"
+
+#: plugin.py 354
+msgid "NOT found files for flashing!\n"
+msgstr "GEEN bestanden gevonden om te flashen!\n"
+
+#: plugin.py 359
+msgid "ofgwrite will stop enigma2 now to run the flash.\n"
+msgstr "ofgwrite zal enigma2 stoppen om te kunnen flashen.\n"
+
+#: plugin.py 360
+msgid "Your STB will freeze during the flashing process.\n"
+msgstr "Je STB zal bevriezen gedurende de flash procedure.\n"
+
+#: plugin.py 361
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr "AUB: De ontvanger NIET HERSTARTEN en NIET de stroom onderbreken.\n"
+
+#: plugin.py 362
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr "De image en/of de kernel worden geflasht en automatisch herstart binnen een paar minuten.\n"
+
+#: plugin.py 367
+msgid "Show only found image and mtd partitions.\n"
+msgstr "Toon alleen de gevonden image en mtd partities.\n"
+
+#: plugin.py 383
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr "Wil je echt %s uitpakken?"
+
+#: plugin.py 405 412
+msgid "BackupSuite"
+msgstr "BackupSuite"
+
+#: plugin.py 406 413
+msgid "Enables back-up & restore without an USB-stick"
+msgstr "Maakt backups en herstelt deze zonder USB-stick"
 
 #: message01
 msgid "No supported receiver found!"
@@ -85,22 +235,6 @@ msgstr "USB-image gemaakt in: "
 #: message11
 msgid "and there is made an extra copy in: "
 msgstr "en er is een extra kopie gemaakt in: "
-
-#: message12-1
-msgid "To restore the image:"
-msgstr "Om de back-up terug te plaatsen:"
-
-#: message12-2
-msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
-msgstr "Plaats de USB-stick in de (voorste) USB-poort en schakel de receiver uit en aan met de schakelaar op de achterkant van de receiver."
-
-#: message12-3
-msgid "Follow the instructions on the front-display."
-msgstr "Volg de instructies op het display."
-
-#: message13
-msgid "Press arrow up from frontpanel to start loading."
-msgstr "Druk op pijl-omhoog op het voorpaneel om het laden te starten."
 
 #: message14
 msgid "Please check the manual of the receiver on how to restore the image."
@@ -213,230 +347,4 @@ msgstr " MB benodigde ruimte"
 #: message34
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Het programma wordt afgesloten, probeer alstublieft een medium met meer beschikbare ruimte om uw back-up te maken."
-
-#: message36-1
-msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
-msgstr "Hernoem eerst het bestand 'noforce.update' op de USB-stick naar 'force.update'."
-
-#: message36-2
-msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
-msgstr "Plaats de USB-stick in het USB-slot en schakel de ontvanger uit en weer aan met de aan/uit-knop."
-
-#: message36-3
-msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
-msgstr "De update is bezig als het witte lampje geleidelijk lichter en donkerder wordt op het voorpaneel."
-
-#: message36-4
-msgid "Update is done when white light blinks on the front panel."
-msgstr "De update is klaar als het witte lampje op het voorpaneel knippert."
-
-#: plugin.py
-msgid ""
-"\n"
-"The found files:"
-msgstr ""
-"\n"
-"De gevonden bestanden:"
-
-#: plugin.py
-#, python-format
-msgid "  %s (maybe error)"
-msgstr "  %s (misschien fout)"
-
-#: plugin.py
-#, python-format
-msgid "  %s (maybe ok)"
-msgstr "  %s (misschien ok)"
-
-#: plugin.py
-msgid " nothing!"
-msgstr " niets!"
-
-#: plugin.py
-msgid " version "
-msgstr " versie "
-
-#: plugin.py
-msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
-msgstr "Er loopt momenteel een opname. Stop deze opname voordat geprobeerd wordt om te flashen"
-
-#: plugin.py
-msgid "Cancel"
-msgstr "Annuleer"
-
-#: plugin.py
-msgid "Create backup"
-msgstr "Maak backup"
-
-#: plugin.py
-#, python-format
-msgid "Do you really want to unpack %s ?"
-msgstr "Wil je echt %s uitpakken?"
-
-#: plugin.py
-msgid "Done"
-msgstr "Klaar"
-
-#: plugin.py
-msgid "Exit"
-msgstr "Einde"
-
-#: plugin.py
-msgid "Failed"
-msgstr "Mislukt"
-
-#: plugin.py
-msgid "Flashing: "
-msgstr "Flashing"
-
-#: plugin.py
-msgid "For flashing your receiver files are needed:\n"
-msgstr "Benodigde bestanden om de ontvanger te flashen:\n"
-
-#: plugin.py
-msgid "NAS"
-msgstr "NAS"
-
-#: plugin.py
-msgid "NOT found files for flashing!\n"
-msgstr "GEEN bestanden gevonden om te flashen!\n"
-
-#: plugin.py
-msgid "No backup present"
-msgstr "Geen backup aanwezig"
-
-#: plugin.py
-msgid "Only kernel"
-msgstr "Alleen kernel"
-
-#: plugin.py
-msgid "Only root"
-msgstr "Alleen root"
-
-#: plugin.py
-msgid "Please: DO NOT reboot your STB and turn off the power.\n"
-msgstr "AUB: De ontvanger NIET HERSTARTEN en NIET de stroom onderbreken.\n"
-
-#: plugin.py
-msgid "Press OK"
-msgstr "Druk op OK"
-
-#: plugin.py
-msgid "Read error current dir, sorry."
-msgstr "Leesfout huidige map, sorry."
-
-#: plugin.py
-msgid "Restore backup"
-msgstr "Backup terugzetten"
-
-#: plugin.py
-msgid "Run flash"
-msgstr "Start flash"
-
-#: plugin.py
-msgid "Running"
-msgstr "Bezig..."
-
-#: plugin.py
-msgid "Save"
-msgstr "Opslaan"
-
-#: plugin.py
-msgid "Select parameter for start flash!\n"
-msgstr "Selecteer parameter om flash te starten!\n"
-
-#: plugin.py
-msgid "Select the folder with backup"
-msgstr "Selecteer de map met de backup"
-
-#: plugin.py
-msgid "Show only found image and mtd partitions.\n"
-msgstr "Toon alleen de gevonden image en mtd partities.\n"
-
-#: plugin.py
-msgid "Simulate (no write)"
-msgstr "Simuleren (niet schrijven)"
-
-#: plugin.py
-msgid "Standard (root and kernel)"
-msgstr "Standaard (root en kernel)"
-
-#: plugin.py
-msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr "De image en/of de kernel worden geflasht en automatisch herstart binnen een paar minuten.\n"
-
-#: plugin.py
-msgid "Unzip"
-msgstr "Unzip"
-
-#: plugin.py
-msgid ""
-"Warning!\n"
-"Use at your own risk! Make always a backup before use!\n"
-"Don't use it if you use multiple ubi volumes in ubi layer!"
-msgstr ""
-"Waarschuwing!\n"
-"Gebruik op eigen risico! Maak altijd een backup voor gebruik!\n"
-"Niet gebruiken als je meervoudige ubi volumes gebruikt in de ubi laag!"
-
-#: plugin.py
-msgid "Your STB will freeze during the flashing process.\n"
-msgstr "Je STB zal bevriezen gedurende de flash procedure.\n"
-
-#: plugin.py
-#, python-format
-msgid "current:  %s"
-msgstr "huidig:  %s"
-
-#: plugin.py
-msgid "disabled"
-msgstr "gedeactiveerd"
-
-#: plugin.py
-msgid "no"
-msgstr "nee"
-
-#: plugin.py
-msgid "ofgwrite will stop enigma2 now to run the flash.\n"
-msgstr "ofgwrite zal enigma2 stoppen om te kunnen flashen.\n"
-
-#: plugin.py
-msgid "type info"
-msgstr "type info"
-
-#: plugin.py
-msgid "type yes/no"
-msgstr "type ja/nee"
-
-#: plugin.py
-msgid "Only root with use mtdy device"
-msgstr "Alleen root met gebruik van mtdy device"
-
-#: plugin.py
-msgid "Only kernel with use mtdx device"
-msgstr "Alleen kernel met gebruik van mtdx device"
-
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Maak een backup of herstel een backup"
-
-#: plugin.py
-msgid "BackupSuite"
-msgstr "BackupSuite"
-
-#: plugin.py
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Maakt backups en herstelt deze zonder USB-stick"
-
-#: plugin.py
-msgid "Backup > HDD"
-msgstr "Backup > HDD"
-
-#: plugin.py
-msgid "Backup > USB"
-msgstr "Backup > USB"
-
-#: plugin.py
-msgid "What is new since the last release?"
-msgstr "Wat is nieuw sinds de laatste uitgave?"
 

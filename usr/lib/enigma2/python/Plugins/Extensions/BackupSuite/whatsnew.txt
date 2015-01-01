@@ -1,4 +1,9 @@
 Changelog
+Git 55   01-01-2015 (Openpli 20+git13)
+- Russian translation improved (thanks to 2boom)
+- Simplified the messages, no receiver specific instructions anymore on how to restore the image, just "Please check the manual of the receiver on how to restore the image."
+- Deleted the messages column in the lookuptable.txt because of above mentioned simplification.
+
 Git 54   27-12-2014 (Openpli 20+git12)
 - Changed the description in reboot.update for the Vu's 
 - Removed the noforce.update for all Vu models except the Solo SE and Zero

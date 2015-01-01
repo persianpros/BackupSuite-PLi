@@ -50,10 +50,6 @@ def message07():
 	print _("Create: kerneldump")
 	return
 
-def message08():
-	print _("Almost there... Now building the USB-Image!")
-	return
-
 def message09():
 	sys.stdout.write(_("Additional backup -> "))
 	return
@@ -65,18 +61,6 @@ def message10():
 def message11():
 	sys.stdout.write(_("and there is made an extra copy in: "))
 	return
-
-def message12():
-	print _("To restore the image:")
-	print _("Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver.")
-	print _("Follow the instructions on the front-display.")
-	return
-
-def message13():
-	print _("To restore the image:")
-	print _("Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver.")
-	print _("Press arrow up from frontpanel to start loading.")
-	return 
 
 def message14():
 	print _("Please check the manual of the receiver on how to restore the image.")
@@ -93,13 +77,6 @@ def message16():
 def message17():
 	print _("There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive.")
 	print _("This only takes about 20 seconds.....")
-	return
-
-def message18(): #XP1000
-	print _("To restore the image:")
-	print _("Place USB stick in the USB slot at the rear side of the XP1000 and switch the receiver off and on with the powerswitch")
-	print _("When the record LED and standby LED become red press CH+ button on the receiver to start USB update.")
-	print _("Wait until the standby LED will become blue.")
 	return
 
 def message19():
@@ -174,22 +151,6 @@ def message33():
 	
 def message34():
 	print _("The program will abort, please try another medium with more free space to create your back-up.")
-	return
-
-def message35(): #IXUSS
-	print _("To restore the image:")
-	print _("Place USB stick in the USB slot at the back side and switch the receiver off and on with the powerswitch")
-	print _("When message at display at front If you want to upgrade..., please quickly press UP button on remote control.")
-	print _("When message reboot, power off and remove USB.")
-	print _("Power on!")
-	return
-
-def message36(): #Vu+ Solo SE (and Vu+ Zero?)
-	print _("To restore the image:")
-	print _("First rename the file 'noforce.update' on your USB-stick into 'force.update'.")
-	print _("Place USB stick in the USB slot and switch the receiver off and on with the powerswitch.")
-	print _("Update is in progress when the white light becomes gradually bright and dark on the front panel.")
-	print _("Update is done when white light blinks on the front panel.")
 	return
 
 globals()[sys.argv[2]]()

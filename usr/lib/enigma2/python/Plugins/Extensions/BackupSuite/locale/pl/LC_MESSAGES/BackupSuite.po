@@ -13,11 +13,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: pl\n"
 
-#: plugin HDD 3
+#: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Backup image na HDD"
 
-#: plugin HDD 4
+#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -27,11 +27,11 @@ msgstr ""
 "\n"
 "To zajmie tylko kilka minut i jest w pełni automatyczne.\n"
 
-#: plugin USB 2
+#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Backup image na USB"
 
-#: plugin USB 3
+#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -88,22 +88,6 @@ msgstr "Image USB utworzone na: "
 #: message11
 msgid "and there is made an extra copy in: "
 msgstr "i dodatkowa kopia utworzona na: "
-
-#: message12-1
-msgid "To restore the image:"
-msgstr "Aby przywrócić image:"
-
-#: message12-2
-msgid "Place the USB-flash drive in the (front) USB-port and switch the receiver off and on with the powerswitch on the back of the receiver."
-msgstr "Umieść pen USB w przednim gnieździe i zrestartuj odbiornik wyłącznikiem zasilania (z tyłu odbiornika)."
-
-#: message12-3
-msgid "Follow the instructions on the front-display."
-msgstr "Postępuj zgodnie z instrukcjami na wyświetlaczu"
-
-#: message13
-msgid "Press arrow up from frontpanel to start loading."
-msgstr "Wciśnij strzałkę 'w górę' na panelu przednim aby rozpocząć wgrywanie."
 
 #: message14
 msgid "Please check te manual of the receiver on how to restore the image."
@@ -217,23 +201,7 @@ msgstr " MB potrzebne"
 msgid "The program will abort, please try another medium with more free space to create your back-up."
 msgstr "Wykonywanie zostanie przerwane, do utworzenia swojego backupu użyj innego nośnika, z więksżą ilością wolnego miejsca."
 
-#: message36-1
-msgid "First rename the file 'noforce.update' on your USB-stick into 'force.update'."
-msgstr ""
-
-#: message36-2
-msgid "Place USB stick in the USB slot and switch the receiver off and on with the powerswitch."
-msgstr ""
-
-#: message36-3
-msgid "Update is in progress when the white light becomes gradually bright and dark on the front panel."
-msgstr ""
-
-#: message36-4
-msgid "Update is done when white light blinks on the front panel."
-msgstr ""
-
-#: plugin.py
+#: plugin.py 294
 msgid ""
 "\n"
 "The found files:"
@@ -241,138 +209,98 @@ msgstr ""
 "\n"
 "Znalezione pliki:"
 
-#: plugin.py
+#: plugin.py 300
 #, python-format
 msgid "  %s (maybe error)"
 msgstr "  %s (być może błąd)"
 
-#: plugin.py
+#: plugin.py 297
 #, python-format
 msgid "  %s (maybe ok)"
 msgstr "  %s (być może ok)"
 
-#: plugin.py
+#: plugin.py 303
 msgid " nothing!"
 msgstr "brak!"
 
-#: plugin.py
-msgid " version "
-msgstr " wersja"
-
-#: plugin.py
+#: plugin.py 327
 msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
 msgstr "Aktualnie trwa nagrywanie! Zatrzymaj je zanim rozpoczniesz procedurę wgrywania image."
 
-#: plugin.py
+#: plugin.py 91
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: plugin.py
-msgid "Create backup"
-msgstr "Utwórz backup"
-
-#: plugin.py
+#: plugin.py 383
 #, python-format
 msgid "Do you really want to unpack %s ?"
 msgstr "Napewno chcesz rozpakować %s ?"
 
-#: plugin.py
-msgid "Done"
-msgstr "Zrobione"
-
-#: plugin.py
+#: plugin.py 317
 msgid "Exit"
 msgstr "Wyjdź"
 
-#: plugin.py
-msgid "Failed"
-msgstr "Nieudane"
-
-#: plugin.py
+#: plugin.py 331
 msgid "Flashing: "
 msgstr "Wgrywanie:"
 
-#: plugin.py
+#: plugin.py 275
 msgid "For flashing your receiver files are needed:\n"
 msgstr "Pliki potrzebne do flashowania twojego odbiornika:\n"
 
-#: plugin.py
-msgid "NAS"
-msgstr ""
-
-#: plugin.py
+#: plugin.py 354
 msgid "NOT found files for flashing!\n"
 msgstr "NIE znaleziono plików do flashowania!\n"
 
-#: plugin.py
-msgid "No backup present"
-msgstr "Brak kopii zapasowej"
-
-#: plugin.py
+#: plugin.py 311 343
 msgid "Only kernel"
 msgstr "Tylko kernel"
 
-#: plugin.py
+#: plugin.py 310 340
 msgid "Only root"
 msgstr "Tylko root"
 
-#: plugin.py
+#: plugin.py 361
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
 msgstr "Uwaga: NIE restartuj odbiornika ani NIE wyłączaj zasilania.\n"
 
-#: plugin.py
-msgid "Press OK"
-msgstr "Wciśnij OK"
-
-#: plugin.py
-msgid "Read error current dir, sorry."
-msgstr "Błąd odczytu bieżącego katalogu."
-
-#: plugin.py
+#: plugin.py 94
 msgid "Restore backup"
 msgstr "Przywróć backup"
 
-#: plugin.py
+#: plugin.py 249 263 269
 msgid "Run flash"
 msgstr "Uruchom wgrywanie"
 
-#: plugin.py
-msgid "Running"
-msgstr "Trwa"
-
-#: plugin.py
-msgid "Save"
-msgstr "Zapisz"
-
-#: plugin.py
+#: plugin.py 274
 msgid "Select parameter for start flash!\n"
 msgstr "Wybierz parametry aby rozpocząć wgrywanie!\n"
 
-#: plugin.py
+#: plugin.py 199
 msgid "Select the folder with backup"
 msgstr "Wybierz katalog z backupem"
 
-#: plugin.py
+#: plugin.py 367
 msgid "Show only found image and mtd partitions.\n"
 msgstr "Pokaż tylko znalezione image i partycje mtd.\n"
 
-#: plugin.py
+#: plugin.py 308 334
 msgid "Simulate (no write)"
 msgstr "Symulacja (bez zapisu)"
 
-#: plugin.py
+#: plugin.py 309 337
 msgid "Standard (root and kernel)"
 msgstr "Standard (root and kernel)"
 
-#: plugin.py
+#: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr "Image lub kernel zostanie wgrany i uruchomi się automatycznie za kilka minut.\n"
 
-#: plugin.py
+#: plugin.py 247 380
 msgid "Unzip"
 msgstr "Rozpakuj zip"
 
-#: plugin.py
+#: plugin.py 266
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -382,64 +310,44 @@ msgstr ""
 "Używasz na własne ryzyko! Zawsze najpierw utwórz backup!\n"
 "Nie używaj jeśli używasz kilku woluminów ubi w warstwie ubi!"
 
-#: plugin.py
+#: plugin.py 360
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "Odbiornik będzie 'zamrożony' podczas procedury wgrywania.\n"
 
-#: plugin.py
+#: plugin.py 203 241
 #, python-format
 msgid "current:  %s"
 msgstr "bieżacy:  %s"
 
-#: plugin.py
-msgid "disabled"
-msgstr "wyłączony"
-
-#: plugin.py
-msgid "no"
-msgstr "nie"
-
-#: plugin.py
+#: plugin.py 359
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "ofgwrite zastopuje teraz e2 aby uruchomić flashowanie.\n"
 
-#: plugin.py
-msgid "type info"
-msgstr "wpisz info"
-
-#: plugin.py
-msgid "type yes/no"
-msgstr "wpisz tak/nie"
-
-#: plugin.py
+#: plugin.py 312 346
 msgid "Only root with use mtdy device"
 msgstr "Tylko root z użyciem urządzenia mtdy"
 
-#: plugin.py
+#: plugin.py 313 349
 msgid "Only kernel with use mtdx device"
 msgstr "Tylko kernel z użyciem urządzenie mtdx"
 
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Wykonaj lub przywróć kopię image"
-
-#: plugin.py
+#: plugin.py 405 412
 msgid "BackupSuite"
 msgstr "BackupSuite"
 
-#: plugin.py
+#: plugin.py 406 413
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Pozwala wykonać kopię i przywrócić image bez pena USB"
 
-#: plugin.py
+#: plugin.py 92
 msgid "Backup > HDD"
 msgstr ""
 
-#: plugin.py
+#: plugin.py 93
 msgid "Backup > USB"
 msgstr ""
 
-#: plugin.py
+#: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Co nowego od ostatniego wydania?"
 

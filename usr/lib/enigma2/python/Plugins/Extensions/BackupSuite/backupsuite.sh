@@ -200,7 +200,6 @@ UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
 ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
 KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
 ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
-MESSAGE=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 12`
 echo "Destination        = $MAINDEST" >> $LOGFILE
 echo $LINE >> $LOGFILE
 
@@ -358,7 +357,8 @@ image_version > "$MAINDEST/imageversion"
 cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
 if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/imageversion" ] ; then
 		backup_made
-		$SHOW $MESSAGE 			# Instructions on how to restore the image.
+		$SHOW "message14" 			# Instructions on how to restore the image.
+		echo $LINE
 else
 	big_fail
 fi

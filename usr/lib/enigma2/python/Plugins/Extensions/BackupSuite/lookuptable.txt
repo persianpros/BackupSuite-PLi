@@ -1,35 +1,35 @@
 BRAND AND MODEL	MODEL	SHOWNAME	FOLDER	EXTR1	EXTR2	MKUBIFS_ARGS	UBINIZE_ARGS	ROOTNAME	KERNELNAME	ACTION	MESSAGE
-Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message14
-Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce	message14
-Formuler F1	formuler1	Formuler F1	/formuler1	/fullbackup_formuler1		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-HD 1100	hd1100	HD 1100	/hd1100	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message35
-Ixuss Zero	ixusszero	Ixuss Zero	/medialink/ixusszero	/fullbackup_ixusszero	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message35
-Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message14
-Miraclebox Mini	ini-1000sv	Miraclebox Mini	/miraclebox/mini	/fullbackup_mbmini	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message14
-Miraclebox Twin	ini-5000sv	Miraclebox Twin	/miraclebox/twin	/fullbackup_mbtwin	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message14
-Miraclebox Ultra	ini-8000sv	Miraclebox Ultra	/miraclebox/ultra	/fullbackup_mbultra	/miraclebox	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce	message14
-Octagon	xp1000s	Octagon XP1000s	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message14
-VU Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none	message12
-VU Duo2	duo2	Vu+ Duo2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot	message12
-VU Solo	solo	Vu+ Solo	/vuplus/solo	/fullbackup_solo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none	message12
-VU Solo SE	solose	VU+ Solo SE	/vuplus/solose	/fullbackup_solose	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force	message36
-VU Solo2	solo2	VU+ Solo2	/vuplus/solo2	/fullbackup_solo2	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot	message12
-VU Ultimo	ultimo	VU+ Ultimo	/vuplus/ultimo	/fullbackup_ultimo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	reboot	message12
-VU Uno	uno	VU+ Uno	/vuplus/uno	/fullbackup_uno	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	reboot	message12
-VU Zero	zero	VU+ zero	/vuplus/zero	/fullbackup_zero	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force	message36
-Xpeed LX	ini-1000de	Xpeed LX	/xpeedlx	/fullbackup_xpeed		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message14
-Xtrend 10000	et10000	Xtrend ET10000	/et10000	/fullbackup_et10000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 4000	et4000	Xtrend ET4000	/et4x00	/fullbackup_et4x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message13
-Xtrend 5000	et5000	Xtrend ET5000	/et5x00	/fullbackup_et5x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message13
-Xtrend 6000	et6000	Xtrend ET6000	/et6x00	/fullbackup_et6x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message13
-Xtrend 6500	et6500	Xtrend ET6500	/et6x00	/fullbackup_et6x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 7000	et7000	Xtrend ET7000	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 7500	et7500	Xtrend ET7500	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 8000	et8000	Xtrend ET8000	/et8000	/fullbackup_et8000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 8500	et8500	Xtrend ET8500	/et8500	/fullbackup_et8500		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 9000	et9000	Xtrend ET9000	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 9200	et9200	Xtrend ET9200	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
-Xtrend 9500	et9500	Xtrend ET9500	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce	message12
+Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
+Formuler F1	formuler1	Formuler F1	/formuler1	/fullbackup_formuler1		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+HD 1100	hd1100	HD 1100	/hd1100	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Ixuss Zero	ixusszero	Ixuss Zero	/medialink/ixusszero	/fullbackup_ixusszero	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Miraclebox Mini	ini-1000sv	Miraclebox Mini	/miraclebox/mini	/fullbackup_mbmini	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Miraclebox Twin	ini-5000sv	Miraclebox Twin	/miraclebox/twin	/fullbackup_mbtwin	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Miraclebox Ultra	ini-8000sv	Miraclebox Ultra	/miraclebox/ultra	/fullbackup_mbultra	/miraclebox	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
+Octagon	xp1000s	Octagon XP1000s	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+VU Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
+VU Duo2	duo2	Vu+ Duo2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
+VU Solo	solo	Vu+ Solo	/vuplus/solo	/fullbackup_solo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
+VU Solo SE	solose	VU+ Solo SE	/vuplus/solose	/fullbackup_solose	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
+VU Solo2	solo2	VU+ Solo2	/vuplus/solo2	/fullbackup_solo2	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
+VU Ultimo	ultimo	VU+ Ultimo	/vuplus/ultimo	/fullbackup_ultimo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	reboot
+VU Uno	uno	VU+ Uno	/vuplus/uno	/fullbackup_uno	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	reboot
+VU Zero	zero	VU+ zero	/vuplus/zero	/fullbackup_zero	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
+Xpeed LX	ini-1000de	Xpeed LX	/xpeedlx	/fullbackup_xpeed		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 10000	et10000	Xtrend ET10000	/et10000	/fullbackup_et10000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 4000	et4000	Xtrend ET4000	/et4x00	/fullbackup_et4x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 5000	et5000	Xtrend ET5000	/et5x00	/fullbackup_et5x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 6000	et6000	Xtrend ET6000	/et6x00	/fullbackup_et6x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 6500	et6500	Xtrend ET6500	/et6x00	/fullbackup_et6x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 7000	et7000	Xtrend ET7000	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 7500	et7500	Xtrend ET7500	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 8000	et8000	Xtrend ET8000	/et8000	/fullbackup_et8000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 8500	et8500	Xtrend ET8500	/et8500	/fullbackup_et8500		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 9000	et9000	Xtrend ET9000	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 9200	et9200	Xtrend ET9200	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 9500	et9500	Xtrend ET9500	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
