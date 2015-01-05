@@ -1,7 +1,11 @@
 Changelog
+Git 56   05-01-2015 (Openpli 20+git14)
+- Removed the image of the fireworks
+
 Git 55   01-01-2015 (Openpli 20+git13)
 - Russian translation improved (thanks to 2boom)
-- Simplified the messages, no receiver specific instructions anymore on how to restore the image, just "Please check the manual of the receiver on how to restore the image."
+- Simplified the messages, no receiver specific instructions anymore on how to restore the image, 
+  just "Please check the manual of the receiver on how to restore the image."
 - Deleted the messages column in the lookuptable.txt because of above mentioned simplification.
 
 Git 54   27-12-2014 (Openpli 20+git12)
@@ -30,10 +34,3 @@ git 42   01-12-2014 (Openpli 20+git4)
 
 git 41   30-11-2014 (Openpli 20+git3)
 - If stored speed in speed.txt = 0 then use the default speed of 250 to avoid a divide by zero error.
-
-git 40   27-11-2014 (Openpli 20+git2)
-- Added support for the new VU+ Zero (Thanks to 2boom)
-
-git 39   23-11-2014 (Openpli's 20+git1)
-- Restored the support for the Formuler F1 & F3
-- Rearranged  the code a bit, now first starting with the least time consuming part, the kerneldump
