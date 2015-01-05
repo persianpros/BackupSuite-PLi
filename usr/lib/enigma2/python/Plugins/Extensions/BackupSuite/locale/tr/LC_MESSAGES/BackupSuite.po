@@ -12,6 +12,10 @@ msgstr ""
 "Language: tr\n"
 "X-Generator: Poedit 1.6.5\n"
 
+#: plugin.py 89
+msgid "Make a backup or restore a backup"
+msgstr "Yedekleme yapmak veya geri yükleme"
+
 #: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Tam yedekleme HDD üzerine"

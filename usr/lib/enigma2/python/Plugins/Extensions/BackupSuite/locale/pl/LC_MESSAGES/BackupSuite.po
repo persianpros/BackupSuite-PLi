@@ -13,6 +13,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: pl\n"
 
+#: plugin.py 89
+msgid "Make a backup or restore a backup"
+msgstr "Wykonaj lub przywróc kopie image"
+
 #: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Backup image na HDD"

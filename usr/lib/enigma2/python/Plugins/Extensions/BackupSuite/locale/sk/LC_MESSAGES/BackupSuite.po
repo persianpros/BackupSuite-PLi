@@ -11,6 +11,10 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.7\n"
 
+#: plugin.py 89
+msgid "Make a backup or restore a backup"
+msgstr "Vytvorte si zálohu alebo obnovenie zálohy"
+
 #: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Plná záloha na HDD"

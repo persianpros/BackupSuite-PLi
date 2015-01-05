@@ -10,6 +10,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#: plugin.py 89
+msgid "Make a backup or restore a backup"
+msgstr "Gör en säkerhetskopia eller återställ en säkerhetskopia"
+
 #: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Fullständig säkerhetskopiering på hårddisk"
