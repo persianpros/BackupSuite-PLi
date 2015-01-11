@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr\n"
 
@@ -27,9 +27,9 @@ msgid ""
 "\n"
 "This only takes a few minutes and is fully automatic.\n"
 msgstr ""
-"Voulez-vous faire une image USB de sauvegarde sur le disque dur? \n"
+"Voulez-vous faire une sauvegarde de type USB sur le HDD? \n"
 "\n"
-"Cela ne prend que quelques minutes et est entièrement automatique.\n"
+"C'est entièrement automatisée et ne dure que quelques minutes.\n"
 
 #: plugin 153
 msgid "Full back-up to USB"
@@ -45,9 +45,9 @@ msgid ""
 msgstr ""
 "Voulez-vous faire un back-up sur USB?\n"
 "\n"
-"Cela ne prend que quelques minutes en fonction du système de fichiers utilisé et est entièrement automatique.\n"
+"C'est entièrement automatisée et ne dure que quelques minutes en fonction du système de fichiers utilisé.\n"
 "\n"
-"Assurez-vous que vous insérez une clé USB avant de sélectionner Oui."
+"Insérez une clé USB avant de sélectionner Oui."
 
 #: message01
 msgid "No supported receiver found!"
@@ -55,15 +55,15 @@ msgstr "Recepteur non-supporté"
 
 #: message02
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "OUTIL DE SAUVEGARDE, POUR EFFECTUER UNE SAUVEGARDE COMPLETE"
+msgstr "BACK-UP TOOL, POUR EFFECTUER UNE SAUVEGARDE COMPLETE"
 
 #: message03
 msgid "Please be patient, a backup will now be made, this will take about: "
-msgstr "Merci d'être patient, la sauvegarde va commencer, elle va durer environ: "
+msgstr "Merci d'être patient, la sauvegarde va commencer et va durer environ: "
 
 #: message04
 msgid " size to be backed up: "
-msgstr "Taille à sauvegarder:"
+msgstr " Taille à sauvegarder:"
 
 #: message05
 msgid "not found, the backup process will be aborted!"
@@ -107,7 +107,7 @@ msgstr "disponible "
 
 #: message17-1
 msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr "Il y a une clé USB valide détectée dans l'un des ports USB, donc une copie supplémentaire de l'image de sauvegarde sera copiée sur cette clé USB."
+msgstr "Une clé USB valide est détectée dans un des ports USB. Une copie de la sauvegarde sera faite sur cette clé USB."
 
 #: message172
 msgid "This only takes about 20 seconds....."
@@ -119,11 +119,11 @@ msgstr "Sauvegarde terminée et copiée sur votre clé USB."
 
 #: message20
 msgid "Full back-up to the harddisk"
-msgstr "Sauvegarde complète sur disque dur"
+msgstr "Sauvegarde complète sur HDD"
 
 #: message21-1
 msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "Aucune clé USB valide trouvé, alors il n'y a rien à faire."
+msgstr "Aucune clé USB valide détectée. Rien de sera fait."
 
 #: message21-2
 msgid "PLEASE READ THIS:"
@@ -143,7 +143,7 @@ msgstr "backupstick.txt"
 
 #: message21-6
 msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
-msgstr "Si vous branchez une clé USB contenant ce fichier alors la sauvegarde sera automatiquement effectué sur cette clé et pourra être utilisé pour restaurer l'image courante si nécessaire."
+msgstr "Si vous branchez une clé USB contenant ce fichier alors la sauvegarde sera automatiquement effectuée sur cette clé et pourra être utilisée pour restaurer l'image courante si nécessaire."
 
 #: message21-7
 msgid "The program will exit now."
@@ -175,11 +175,11 @@ msgstr "KB par seconde"
 
 #: message28
 msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Il est très probable que la restauration de la sauvegarde ne soit pas possible, sa taille excédant la limite. Il s'agit d'une limitation du bootloader et non de l'outil BackupSuite."
+msgstr "Il est très probable que la restauration de la sauvegarde ne soit pas possible en raison de sa taille excédant la limite. Il s'agit d'une limitation du bootloader et non de l'outil BackupSuite."
 
 #: message29
 msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Il pourrait y avoir une problème durant la restauration de la sauvegarde parceque sa taille est proche de la taille maximal. Il s'agit d'un e limitation du bootloader et non de l'outil BackupSuite."
+msgstr "Il pourrait y avoir une problème durant la restauration de la sauvegarde parceque sa taille est proche de la taille maximal. Il s'agit d'une limitation du bootloader et non de l'outil BackupSuite."
 
 #: message30-1
 msgid "* * * WARNING * * *"
@@ -238,7 +238,7 @@ msgstr "Annuler"
 #: plugin.py 383
 #, python-format
 msgid "Do you really want to unpack %s ?"
-msgstr "Voulez-vous vraiment déballer %s ?"
+msgstr "Voulez-vous vraiment décompresser %s ?"
 
 #: plugin.py 317
 msgid "Exit"
@@ -302,7 +302,7 @@ msgstr "L'image ou le kernel va être flashé et redemarré automatiquement dans
 
 #: plugin.py 247 380
 msgid "Unzip"
-msgstr "Désarchiver"
+msgstr "Décompresser"
 
 #: plugin.py 266
 msgid ""
@@ -333,7 +333,7 @@ msgstr "Seulement root avec l'utilisation du device mtdy"
 
 #: plugin.py 313 349
 msgid "Only kernel with use mtdx device"
-msgstr "Seulement kernel avec l'utilisation du device mtdy"
+msgstr "Seulement kernel avec l'utilisation du device mtdx"
 
 #: plugin.py 405 412
 msgid "BackupSuite"
@@ -341,7 +341,7 @@ msgstr "BackupSuite"
 
 #: plugin.py 406 413
 msgid "Enables back-up & restore without an USB-stick"
-msgstr "Active les sauvegardes  & restaurations sans clé USB"
+msgstr "Active la sauvegarde & restauration sans clé USB"
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -354,4 +354,3 @@ msgstr "Sauvegarde > USB"
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Quoi de neuf depuis la dernière version?"
-
