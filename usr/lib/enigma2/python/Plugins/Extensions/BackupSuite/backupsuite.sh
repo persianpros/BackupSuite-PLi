@@ -4,6 +4,7 @@
 ###############################################################################
 #
 #!/bin/sh
+
 ## ADD A POSTRM ROUTINE TO ENSURE A CLEAN UNINSTALL
 ## This is normally added while building but despite several requests it isn't added yet
 ## So therefore this workaround.
@@ -34,6 +35,12 @@ else							# On the STB
 	WHITE='\c00??????'
 fi
 ###################### FIRST DEFINE SOME PROGRAM BLOCKS #######################
+############################# START LOGGING ###################################
+log()
+{
+echo "$*" >> $LOGFILE
+}
+
 ########################## DEFINE CLEAN-UP ROUTINE ############################
 clean_up()
 {
@@ -46,8 +53,13 @@ rm -rf "$WORKDIR" > /dev/null 2>&1
 ###################### BIG OOPS!, HOLY SH... (SHELL SCRIPT :-))################
 big_fail()
 {
+if [ -d $WORKDIR ] ; then 
+	log "FAIL!"
+	log "Content so far of the working directory $WORKDIR "
+	ls -el $WORKDIR >> $LOGFILE
+fi
 clean_up
-echo -n $RED
+echo $RED
 $SHOW "message15" 2>&1 | tee -a $LOGFILE # Image creation FAILED!
 echo $WHITE
 exit 0
@@ -69,11 +81,25 @@ echo $LINE
 make_folders()
 {
 rm -rf "$MAINDEST"
-echo "Removed directory  = $MAINDEST"  >> $LOGFILE
+log "Removed directory  = $MAINDEST"
 mkdir -p "$MAINDEST"
-echo "Created directory  = $MAINDEST"  >> $LOGFILE
+log "Created directory  = $MAINDEST"
 }
 
+################ CHECK FOR THE NEEDED BINARIES IF THEY EXIST ##################
+checkbinary()
+{
+if [ ! -f "$1" ] ; then {
+	echo -n "$1 " ; $SHOW "message05"
+	} 2>&1 | tee -a $LOGFILE
+	big_fail
+elif [ ! -x "$1" ] ; then
+	{
+	echo "Error: $1 is not executable..."
+	} 2>&1 | tee -a $LOGFILE
+	big_fail
+fi
+}
 ################### BACK-UP MADE AND REPORTING SIZE ETC. ######################
 backup_made()
 {
@@ -95,7 +121,7 @@ BACKUPDATE=`date +%Y.%m.%d_%H:%M`
 DATE=`date +%Y%m%d_%H%M`
 if [ -f "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt" ] ; then
 	ESTSPEED=`cat /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt`
-	if [ $ESTSPEED = 0 ] ; then 
+	if [ $ESTSPEED -lt 50 ] ; then 
 		ESTSPEED="250"
 	fi
 else
@@ -124,15 +150,16 @@ fi
 WORKDIR="$MEDIA/bi"
 
 ######################### START THE LOGFILE $LOGFILE ##########################
-echo "*** THIS BACKUP IS CREATED WITH THE PLUGIN BACKUPSUITE ***" > $LOGFILE
-echo "***** This plugin is brought to you by Pedro_Newbie ******" >> $LOGFILE
-echo $LINE >> $LOGFILE
-echo "Plugin version     = "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d "+" -f 2- | cut -d "-" -f1` >> $LOGFILE
-echo "Back-up media      = $MEDIA" >> $LOGFILE
+echo -n "" > $LOGFILE
+log "*** THIS BACKUP IS CREATED WITH THE PLUGIN BACKUPSUITE ***"
+log "***** This plugin is brought to you by Pedro_Newbie ******"
+log $LINE
+log "Plugin version     = "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d "+" -f 2- | cut -d "-" -f1`
+log "Back-up media      = $MEDIA"
 df -h "$MEDIA"  >> $LOGFILE
-echo $LINE >> $LOGFILE
+log $LINE
 image_version >> $LOGFILE
-echo "Working directory  = $WORKDIR" >> $LOGFILE
+log "Working directory  = $WORKDIR"
 
 ######################### TESTING FOR UBIFS OR JFFS2 ##########################
 grep rootfs /proc/mounts | grep -q ubifs 
@@ -142,38 +169,18 @@ if [ "$?" = 1 ] ; then
 	big_fail
 fi
 
-####### TESTING IF ALL THE TOOLS FOR THE BUILDING PROCESS ARE PRESENT #########
+###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
-if [ ! -f $NANDDUMP ] ; then
-	{
-	echo -n "$NANDDUMP " ; $SHOW "message05"  	# nanddump not found.
-	} 2>&1 | tee -a $LOGFILE
-	big_fail
-fi
-
-
-if [ ! -f $MKFS ] ; then
-	{
-	echo -n "$MKFS " ; $SHOW "message05"  		# mkfs.ubifs not found.
-	} 2>&1 | tee -a $LOGFILE
-	big_fail
-fi
-
-
-if [ ! -f $UBINIZE ] ; then
-	{
-	echo -n "$UBINIZE " ; $SHOW "message05"  	# ubinize not found.
-	} 2>&1 | tee -a $LOGFILE
-	big_fail
-fi
+checkbinary $NANDDUMP
+checkbinary $MKFS
+checkbinary $UBINIZE
 echo -n $WHITE
 
-#==============================================================================
-# TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE   #
-#==============================================================================
-if [ -f /proc/stb/info/boxtype ] ; then			# Xtrends and XP1000
+#############################################################################
+# TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
+if [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
 	SEARCH=$( cat /proc/stb/info/boxtype )
-elif [ -f /proc/stb/info/vumodel ] ; then		# Vu models
+elif [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
 	SEARCH=$( cat /proc/stb/info/vumodel )
 else
 	echo $RED
@@ -200,17 +207,17 @@ UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
 ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
 KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
 ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
-echo "Destination        = $MAINDEST" >> $LOGFILE
-echo $LINE >> $LOGFILE
+log "Destination        = $MAINDEST"
+log $LINE
 
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
 echo -n $PURPLE
 echo -n "$SHOWNAME " | tr  a-z A-Z		# Shows the receiver brand and model
 $SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
 echo $BLUE
-echo "RECEIVER = $SHOWNAME " | tr  a-z A-Z >> $LOGFILE
-echo "MKUBIFS_ARGS = $MKUBIFS_ARGS" >> $LOGFILE
-echo "UBINIZE_ARGS = $UBINIZE_ARGS" >> $LOGFILE
+log "RECEIVER = $SHOWNAME "
+log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
+log "UBINIZE_ARGS = $UBINIZE_ARGS"
 echo "$VERSION"
 echo "Pedro_Newbie (e-mail: backupsuite@outlook.com)"
 echo $WHITE
@@ -254,46 +261,17 @@ fi
 #=================================================================================
 
 ##################### PREPARING THE BUILDING ENVIRONMENT ######################
-echo "*** FIRST SOME HOUSEKEEPING ***" >> $LOGFILE
+log "*** FIRST SOME HOUSEKEEPING ***"
 rm -rf "$WORKDIR"		# GETTING RID OF THE OLD REMAINS IF ANY
-echo "Remove directory   = $WORKDIR" >> $LOGFILE
+log "Remove directory   = $WORKDIR"
 mkdir -p "$WORKDIR"		# MAKING THE WORKING FOLDER WHERE EVERYTHING HAPPENS
-echo "Recreate directory = $WORKDIR" >> $LOGFILE
+log "Recreate directory = $WORKDIR"
 mkdir -p /tmp/bi/root # this is where the complete content will be available
-echo "Create directory   = /tmp/bi/root" >> $LOGFILE
+log "Create directory   = /tmp/bi/root"
 sync
 mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
 
-
 ####################### START THE REAL BACK-UP PROCESS ########################
-
-############################## MAKING KERNELDUMP ##############################
-echo $LINE >> $LOGFILE
-$SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-echo "Kernel resides on $MTDPLACE" >> $LOGFILE # Just for testing purposes 
-$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
-
-KERNELCHECK=`ls "$WORKDIR" -e1S | grep kernel | awk {'print $3'} ` 
-if [ $KERNELCHECK != $KERNEL ] ; then
-	echo "The size of the Kernel = $KERNELCHECK bytes, expected it to be $KERNEL bytes" >> $LOGFILE
-	echo "Now checking if there are reported badblocks, if there are badblocks reported then there is probably no problem" >> $LOGFILE
-	mtdinfo -M /dev/$MTDPLACE | grep -q BAD
-	if [ "$?" = "1" ] ; then
-		echo "There were no known badblocks in the kernel partition ($MTDPLACE), this could point at troubles" >> $LOGFILE
-	else 
-		echo "The badblocks were already marked as such in the kernelpartion /dev/$MTDPLACE, so there are probably no problems" >> $LOGFILE
-	fi
-fi
-
-if [ -f "$WORKDIR/$KERNELNAME" ] ; then
-	echo -n "Kernel dumped  :" >> $LOGFILE
-	ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
-else 
-	echo "$WORKDIR/$KERNELNAME NOT FOUND"  >> $LOGFILE
-	big_fail
-fi
-echo "--------------------------" >> $LOGFILE
-
 ############################# MAKING UBINIZE.CFG ##############################
 echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
 echo mode=ubi >> "$WORKDIR/ubinize.cfg"
@@ -302,30 +280,57 @@ echo vol_id=0 >> "$WORKDIR/ubinize.cfg"
 echo vol_type=dynamic >> "$WORKDIR/ubinize.cfg"
 echo vol_name=rootfs >> "$WORKDIR/ubinize.cfg"
 echo vol_flags=autoresize >> "$WORKDIR/ubinize.cfg"
-echo $LINE >> $LOGFILE
-echo "UBINIZE.CFG CREATED WITH THE CONTENT:"  >> $LOGFILE
+log $LINE
+log "UBINIZE.CFG CREATED WITH THE CONTENT:"
 cat "$WORKDIR/ubinize.cfg"  >> $LOGFILE
 touch "$WORKDIR/root.ubi"
 chmod 644 "$WORKDIR/root.ubi"
-echo "--------------------------" >> $LOGFILE
+log "--------------------------"
+
+############################## MAKING KERNELDUMP ##############################
+log $LINE
+$SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
+log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
+$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
+
+KERNELCHECK=`ls "$WORKDIR" -e1S | grep kernel | awk {'print $3'} ` 
+if [ $KERNELCHECK != $KERNEL ] ; then
+	log "The size of the Kernel = $KERNELCHECK bytes, expected it to be $KERNEL bytes"
+	log "Now checking if there are reported badblocks, if there are badblocks reported then there is probably no problem"
+	mtdinfo -M /dev/$MTDPLACE | grep -q BAD
+	if [ "$?" = "1" ] ; then
+		log "There were no known badblocks in the kernel partition ($MTDPLACE), this could point at troubles"
+	else 
+		log "The badblocks were already marked as such in the kernelpartion /dev/$MTDPLACE, so there are probably no problems"
+	fi
+fi
+
+if [ -f "$WORKDIR/$KERNELNAME" ] ; then
+	echo -n "Kernel dumped  :"  >> $LOGFILE
+	ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
+else 
+	log "$WORKDIR/$KERNELNAME NOT FOUND"
+	big_fail
+fi
+log "--------------------------"
 
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
-echo $LINE >> $LOGFILE
+log $LINE
 $MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
 if [ -f "$WORKDIR/root.ubi" ] ; then
 	echo -n "ROOT.UBI MADE  :" >> $LOGFILE
-	ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >>$LOGFILE
+	ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
 	UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
 	if [ "$UBISIZE" -eq 0 ] ; then 
 		echo "Probably you are trying to make the back-up in flash memory" 2>&1 | tee -a $LOGFILE
 		big_fail
 	fi
 else 
-	echo "$WORKDIR/root.ubi NOT FOUND"  >> $LOGFILE
+	log "$WORKDIR/root.ubi NOT FOUND"
 	big_fail
 fi
-echo $LINE >> $LOGFILE
+log $LINE
 echo "Start UBINIZING" >> $LOGFILE
 $UBINIZE -o "$WORKDIR/root.ubifs" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
 chmod 644 "$WORKDIR/root.ubifs"
@@ -337,7 +342,6 @@ else
 	big_fail
 fi
 echo
-
 
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
@@ -373,7 +377,7 @@ if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 		fi    
 	done
 	if [ "$TARGET" != "XX" ] ; then
-		echo $GREEN
+		echo -n $GREEN
 		$SHOW "message17" 2>&1 | tee -a $LOGFILE 	# Valid USB-flashdrive detected, making an extra copy
 		echo $LINE
 		TOTALSIZE="$(df -h "$TARGET" | tail -n 1 | awk {'print $2'})"

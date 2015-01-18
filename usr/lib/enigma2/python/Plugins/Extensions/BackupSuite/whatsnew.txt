@@ -1,4 +1,11 @@
 Changelog
+Git 58   18-01-2015 (Openpli 20+git16)
+- Some minor changes in the code (some inspired by code of Athoik)
+- Some cosmetics in the lookuptable
+
+Git 57   11-01-2015 (Openpli 20+git15)
+- France translation improved (thanks to talbss)
+
 Git 56   05-01-2015 (Openpli 20+git14)
 - Removed the image of the fireworks
 
