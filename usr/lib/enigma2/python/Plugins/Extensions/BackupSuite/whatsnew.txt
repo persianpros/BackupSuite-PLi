@@ -1,6 +1,9 @@
 Changelog
+Git 60   23-01-2015 (Openpli 20+git18)
+Some fine tuning for the full HD skins
+
 Git 59   21-01-2015 (Openpli 20+git17)
-A first step to make the BackupSuite also useable om full HD format skins (1920*1080). 
+A first step to make the BackupSuite also useable on full HD format skins (1920*1080). 
 There still has to be done some work but because of the experimental stage of the full HD skin this has, for me, a low priority at the moment.
 
 Git 58   18-01-2015 (Openpli 20+git16)
