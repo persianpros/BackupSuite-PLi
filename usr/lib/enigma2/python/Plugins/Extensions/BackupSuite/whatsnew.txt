@@ -1,5 +1,7 @@
 Changelog
 =========
+Git 62   01-02-2015 (Openpli 20+git20)
+Added support for the HD 1200
 
 Git 61   28-01-2015 (Openpli 20+git19)
 Replaced the help and info buttons
