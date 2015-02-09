@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 63   09-02-2015 (Openpli 20+git21)
+Russian translation improved (thanks to 2boom)
+
 Git 62   01-02-2015 (Openpli 20+git20)
 Added support for the HD 1200
 
