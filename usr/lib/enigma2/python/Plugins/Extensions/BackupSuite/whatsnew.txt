@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 64   12-02-2015 (Openpli 20+git22)
+Added support for the HD 500c
+
 Git 63   09-02-2015 (Openpli 20+git21)
 Russian translation improved (thanks to 2boom)
 
