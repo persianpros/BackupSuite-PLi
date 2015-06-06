@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 67   06-06-2015
+Some small alterations
+
 Git 64   12-02-2015 (Openpli 20+git22)
 Added support for the HD 500c
 

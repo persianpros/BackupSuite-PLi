@@ -70,7 +70,7 @@ try:
 	reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/mphelp.xml"))
 	backupsuiteHelp = registerHelp(*reader)
 except Exception as e:
-	print("[BackupSUite] Unable to initialize MPHelp:", e,"- Help not available!")
+	print("[BackupSuite] Unable to initialize MPHelp:", e,"- Help not available!")
 	backupsuiteHelp = None
 
 

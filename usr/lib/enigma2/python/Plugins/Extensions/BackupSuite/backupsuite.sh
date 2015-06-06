@@ -219,7 +219,7 @@ log "RECEIVER = $SHOWNAME "
 log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
 log "UBINIZE_ARGS = $UBINIZE_ARGS"
 echo "$VERSION"
-echo "Pedro_Newbie (e-mail: backupsuite@outlook.com)"
+echo "Pedro_Newbie"
 echo $WHITE
 
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
