@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 71   24-06-2015
+Openmb added support for the Miraclebox Mini plus and Micro
+
 Git 67   06-06-2015
 Some small alterations
 
