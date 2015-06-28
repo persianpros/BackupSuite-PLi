@@ -1,5 +1,10 @@
 Changelog
 =========
+Git 72   28-06-2015
+Some small alterations in the way the kernel is dumped, after dumping it will truncated to it's true size
+Inspired by the code of Athoik as seen in: http://tinyurl.com/ofmcvuo
+Thanks!
+
 Git 71   24-06-2015
 Openmb added support for the Miraclebox Mini plus and Micro
 

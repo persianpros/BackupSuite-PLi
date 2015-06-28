@@ -291,19 +291,16 @@ log "--------------------------"
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
 log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
-$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
+$NANDDUMP --noecc /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
 
-KERNELCHECK=`ls "$WORKDIR" -e1S | grep kernel | awk {'print $3'} ` 
-if [ $KERNELCHECK != $KERNEL ] ; then
-	log "The size of the Kernel = $KERNELCHECK bytes, expected it to be $KERNEL bytes"
-	log "Now checking if there are reported badblocks, if there are badblocks reported then there is probably no problem"
-	mtdinfo -M /dev/$MTDPLACE | grep -q BAD
-	if [ "$?" = "1" ] ; then
-		log "There were no known badblocks in the kernel partition ($MTDPLACE), this could point at troubles"
-	else 
-		log "The badblocks were already marked as such in the kernelpartion /dev/$MTDPLACE, so there are probably no problems"
-	fi
-fi
+# ADDED TO TRUNCATE THE KERNEL
+# INSPIRED BY CODE OF ATHOIK, SEEN IN: http://tinyurl.com/ofmcvuo
+/usr/bin/python -c "
+data=open('$WORKDIR/$KERNELNAME', 'rb').read()
+cutoff=data.find('\xff\xff\xff\xff')
+if cutoff:
+    open('$WORKDIR/$KERNELNAME', 'wb').write(data[0:cutoff])
+"
 
 if [ -f "$WORKDIR/$KERNELNAME" ] ; then
 	echo -n "Kernel dumped  :"  >> $LOGFILE
