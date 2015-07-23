@@ -192,21 +192,38 @@ cat $LOOKUP | grep -qw "$SEARCH"
 if [ "$?" = "1" ] ; then
 	echo $RED
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
-	big_fail
+#	big_fail
+	echo "This is an unsupported receiver but I will try to make a back-up. After the back-up has ended you'll have to rename the folder where the back-up is stored to match it with the required folder. You'll also have to check the filenames if they are named as in an original image, if not rename them. This procedure is experimental, use it at your own risk."
+	MODEL="$SEARCH"
+	SHOWNAME="Unknown model, it represents itself as a model $SEARCH,"
+	FOLDER="/rename_this_folder"
+	MAINDEST="$MEDIA$FOLDER"
+	EXTR1="/fullbackup_Unknown_$MODEL/$DATE"
+	EXTR2=""
+	EXTRA="$MEDIA$EXTR1$EXTR2"
+	ROOTNAME="rootfs.bin"
+	KERNELNAME="kernel.bin"
+	ACTION="noforce"
+	LEBSIZE=$( cat /sys/devices/virtual/ubi/ubi0/eraseblock_size ) 
+	MINIOSIZE=$( cat /sys/devices/virtual/ubi/ubi0/min_io_size ) 
+	ERASEBLOCK=$( cat /sys/devices/virtual/ubi/ubi0/total_eraseblocks ) 
+	PEBSIZE=$( cat /sys/devices/platform/brcmnand.0/mtd/mtd0/erasesize )
+	MKUBIFS_ARGS="-m $MINIOSIZE -e $LEBSIZE -c $ERASEBLOCK"
+	UBINIZE_ARGS="-m $MINIOSIZE -p $PEBSIZE"
+else
+	MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
+	SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
+	FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
+	MAINDEST="$MEDIA$FOLDER"
+	EXTR1="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 5`/$DATE"
+	EXTR2="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 6`"
+	EXTRA="$MEDIA$EXTR1$EXTR2"
+	MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
+	UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
+	ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
+	KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
+	ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
 fi
-
-MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
-SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
-FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
-MAINDEST="$MEDIA$FOLDER"
-EXTR1="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 5`/$DATE"
-EXTR2="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 6`"
-EXTRA="$MEDIA$EXTR1$EXTR2"
-MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
-UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
-ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
-KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
-ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
 log "Destination        = $MAINDEST"
 log $LINE
 

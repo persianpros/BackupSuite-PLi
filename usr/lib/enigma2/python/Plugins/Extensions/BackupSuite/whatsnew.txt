@@ -1,5 +1,10 @@
 Changelog
 =========
+Git 73   23-07-2015
+Added some kind of support for unknown receivers. If the receiver is not found in the lookuptable the program won't be aborted but a backup will be made with some standard file naming. The user has at least to rename the folder where the backup is made.
+Highly experimental but it is worth a go.
+WTE gave me the idea to read some necessities from the receiver. Thanks!
+
 Git 72   28-06-2015
 Some small alterations in the way the kernel is dumped, after dumping it will truncated to it's true size
 Inspired by the code of Athoik as seen in: http://tinyurl.com/ofmcvuo
