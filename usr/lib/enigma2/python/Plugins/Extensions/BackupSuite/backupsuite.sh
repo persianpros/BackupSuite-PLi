@@ -188,7 +188,7 @@ else
 	big_fail
 fi
 
-cat $LOOKUP | grep -qw "$SEARCH"
+cat $LOOKUP | cut -f 2 | grep -qw "$SEARCH"
 if [ "$?" = "1" ] ; then
 	echo $RED
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!

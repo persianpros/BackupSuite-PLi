@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 74   24-07-2015
+Very small change in selecting the correct model from the list
+
 Git 73   23-07-2015
 Added some kind of support for unknown receivers. If the receiver is not found in the lookuptable the program won't be aborted but a backup will be made with some standard file naming. The user has at least to rename the folder where the backup is made.
 Highly experimental but it is worth a go.
