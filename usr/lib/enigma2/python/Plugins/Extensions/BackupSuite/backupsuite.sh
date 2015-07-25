@@ -193,9 +193,10 @@ if [ "$?" = "1" ] ; then
 	echo $RED
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
 #	big_fail
+	UNKNOWN="yes"
 	echo "This is an unsupported receiver but I will try to make a back-up. After the back-up has ended you'll have to rename the folder where the back-up is stored to match it with the required folder. You'll also have to check the filenames if they are named as in an original image, if not rename them. This procedure is experimental, use it at your own risk."
 	MODEL="$SEARCH"
-	SHOWNAME="Unknown model, it represents itself as a model $SEARCH,"
+	SHOWNAME="Unknown model, it represents itself as a model: $SEARCH"
 	FOLDER="/rename_this_folder"
 	MAINDEST="$MEDIA$FOLDER"
 	EXTR1="/fullbackup_Unknown_$MODEL/$DATE"
@@ -211,6 +212,7 @@ if [ "$?" = "1" ] ; then
 	MKUBIFS_ARGS="-m $MINIOSIZE -e $LEBSIZE -c $ERASEBLOCK"
 	UBINIZE_ARGS="-m $MINIOSIZE -p $PEBSIZE"
 else
+	UNKNOWN="no"
 	MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
 	SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
 	FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
@@ -230,7 +232,9 @@ log $LINE
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
 echo -n $PURPLE
 echo -n "$SHOWNAME " | tr  a-z A-Z		# Shows the receiver brand and model
-$SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
+if [ $UNKNOWN != "yes" ] ; then
+	 $SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
+fi
 echo $BLUE
 log "RECEIVER = $SHOWNAME "
 log "MKUBIFS_ARGS = $MKUBIFS_ARGS"

@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 75   25-07-2015
+Very small change in handling/reporting unknown device
+
 Git 74   24-07-2015
 Very small change in selecting the correct model from the list
 
