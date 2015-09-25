@@ -109,8 +109,10 @@ $SHOW "message10" ; echo "$MAINDEST" 	# USB Image created in:
 $SHOW "message23"		# "The content of the folder is:"
 ls "$MAINDEST" -e1rSh | sed 's/-r.....r..    1//' 
 echo $LINE
-$SHOW "message11" ; echo "$EXTRA"		# and there is made an extra copy in:
-echo $LINE
+if  [ $HARDDISK != 1 ]; then
+	$SHOW "message11" ; echo "$EXTRA"		# and there is made an extra copy in:
+	echo $LINE
+fi
 } 2>&1 | tee -a $LOGFILE
 }
 ############################## END PROGRAM BLOCKS #############################
@@ -216,10 +218,15 @@ else
 	MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
 	SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
 	FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
-	MAINDEST="$MEDIA$FOLDER"
 	EXTR1="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 5`/$DATE"
 	EXTR2="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 6`"
 	EXTRA="$MEDIA$EXTR1$EXTR2"
+	if  [ $HARDDISK = 1 ]; then
+		MAINDEST="$MEDIA$EXTR1$FOLDER"
+	else 
+		MAINDEST="$MEDIA$FOLDER"
+	fi
+	#MAINDEST="$MEDIA$FOLDER"
 	MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
 	UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
 	ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
@@ -363,8 +370,10 @@ echo
 
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
-mkdir -p "$EXTRA"
-echo "Created directory  = $EXTRA" >> $LOGFILE
+if  [ $HARDDISK != 1 ]; then
+	mkdir -p "$EXTRA"
+	echo "Created directory  = $EXTRA" >> $LOGFILE
+fi
 mv "$WORKDIR/root.ubifs" "$MAINDEST/$ROOTNAME" 
 mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
 if [ $ACTION = "noforce" ] ; then
@@ -376,7 +385,9 @@ elif [ $ACTION = "force" ] ; then
 fi
 
 image_version > "$MAINDEST/imageversion" 
-cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
+if  [ $HARDDISK != 1 ]; then
+	cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
+fi
 if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/imageversion" ] ; then
 		backup_made
 		$SHOW "message14" 			# Instructions on how to restore the image.
@@ -449,10 +460,12 @@ opkg list-installed >> $LOGFILE
 ######################## COPY LOGFILE TO MAINDESTINATION ######################
 echo -n $WHITE
 cp $LOGFILE "$MAINDEST"
-if [ $EXTRA2="/vuplus" ] ; then
-	cp $LOGFILE "$MEDIA$EXTR1$FOLDER"
-else 
-	cp $LOGFILE "$EXTRA$FOLDER"
+if  [ $HARDDISK != 1 ]; then
+	if [ $EXTRA2="/vuplus" ] ; then
+		cp $LOGFILE "$MEDIA$EXTR1$FOLDER"
+	else 
+		cp $LOGFILE "$EXTRA$FOLDER"
+	fi
 fi
 if [ "$TARGET" != "XX" ] ; then
 	cp $LOGFILE "$TARGET$FOLDER"

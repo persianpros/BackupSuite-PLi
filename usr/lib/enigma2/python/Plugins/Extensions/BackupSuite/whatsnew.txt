@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 76   25-09-2015
+Made some alterations in the way a back-up is made: if a backup is made onto the harddisk there is no longer a flashable copy made in the root of the harddisk. The backup is only stored in the folder "fullbackup_<type> etc.
+If the backup is made onto an USB-stick then the copy is made in the root and a copy in the folder fullbackup_<type> etc.
+
 Git 75   25-07-2015
 Very small change in handling/reporting unknown device
 
@@ -22,64 +26,25 @@ Openmb added support for the Miraclebox Mini plus and Micro
 Git 67   06-06-2015
 Some small alterations
 
-Git 64   12-02-2015 (Openpli 20+git22)
+Git 64   12-02-2015
 Added support for the HD 500c
 
-Git 63   09-02-2015 (Openpli 20+git21)
+Git 63   09-02-2015
 Russian translation improved (thanks to 2boom)
 
-Git 62   01-02-2015 (Openpli 20+git20)
+Git 62   01-02-2015
 Added support for the HD 1200
 
-Git 61   28-01-2015 (Openpli 20+git19)
+Git 61   28-01-2015
 Replaced the help and info buttons
 
-Git 60   23-01-2015 (Openpli 20+git18)
+Git 60   23-01-2015
 Some fine tuning for the full HD skins
 
-Git 59   21-01-2015 (Openpli 20+git17)
+Git 59   21-01-2015
 A first step to make the BackupSuite also useable on full HD format skins (1920*1080). 
 There still has to be done some work but because of the experimental stage of the full HD skin this has, for me, a low priority at the moment.
 
-Git 58   18-01-2015 (Openpli 20+git16)
+Git 58   18-01-2015
 - Some minor changes in the code (some inspired by code of Athoik)
 - Some cosmetics in the lookuptable
-
-Git 57   11-01-2015 (Openpli 20+git15)
-- France translation improved (thanks to talbss)
-
-Git 56   05-01-2015 (Openpli 20+git14)
-- Removed the image of the fireworks
-
-Git 55   01-01-2015 (Openpli 20+git13)
-- Russian translation improved (thanks to 2boom)
-- Simplified the messages, no receiver specific instructions anymore on how to restore the image, 
-  just "Please check the manual of the receiver on how to restore the image."
-- Deleted the messages column in the lookuptable.txt because of above mentioned simplification.
-
-Git 54   27-12-2014 (Openpli 20+git12)
-- Changed the description in reboot.update for the Vu's 
-- Removed the noforce.update for all Vu models except the Solo SE and Zero
-- Removed the Christmas tree to make room for some fireworks
-
-Git 50-53   22-12-2014 (Openpli 20+git11)
-- Corrected lookuptable.txt for the entry Vu+ Solo SE, used a wrong name for root_cfe_auto.bin
-- Added instructions to restore a backup for the Vu+ Solo SE and Vu+ Zero. 
-  These directions are only in English and Dutch at the moment.
-- Cleaned the message-file, removed some obsolete messages. The language files however needs some attention.
-- Corrected some parameters for the Vu+ Zero and Vu+ Solo SE
-
-git 47   21-12-2014 
-- Made a workaround to create a postrm if it doesn't exist to ensure a clean uninstall.
-
-git 45   12-12-2014 (Openpli 20+git6)
-- Added a seasonal picture :-)
-
-git 43 & 44   02-12-2014 (Openpli 20+git5)
-- Changed keymapping to EPGSelectAction
-
-git 42   01-12-2014 (Openpli 20+git4)
-- Because of some changes in Openpli I had to change the mapping of the guide/info key. It should work on updated and non-updated receivers (Thanks Dima73 for the hint)
-
-git 41   30-11-2014 (Openpli 20+git3)
-- If stored speed in speed.txt = 0 then use the default speed of 250 to avoid a divide by zero error.
