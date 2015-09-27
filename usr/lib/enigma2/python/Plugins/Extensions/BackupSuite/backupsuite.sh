@@ -461,11 +461,7 @@ opkg list-installed >> $LOGFILE
 echo -n $WHITE
 cp $LOGFILE "$MAINDEST"
 if  [ $HARDDISK != 1 ]; then
-	if [ $EXTRA2="/vuplus" ] ; then
-		cp $LOGFILE "$MEDIA$EXTR1$FOLDER"
-	else 
-		cp $LOGFILE "$EXTRA$FOLDER"
-	fi
+	cp $LOGFILE "$MEDIA$EXTR1$FOLDER"
 fi
 if [ "$TARGET" != "XX" ] ; then
 	cp $LOGFILE "$TARGET$FOLDER"

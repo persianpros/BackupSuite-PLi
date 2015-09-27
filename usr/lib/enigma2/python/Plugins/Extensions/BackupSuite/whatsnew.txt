@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 77   27-09-2015
+Removed some obsolete code, this were some remains of experiments which I overlooked
+
 Git 76   25-09-2015
 Made some alterations in the way a back-up is made: if a backup is made onto the harddisk there is no longer a flashable copy made in the root of the harddisk. The backup is only stored in the folder "fullbackup_<type> etc.
 If the backup is made onto an USB-stick then the copy is made in the root and a copy in the folder fullbackup_<type> etc.
