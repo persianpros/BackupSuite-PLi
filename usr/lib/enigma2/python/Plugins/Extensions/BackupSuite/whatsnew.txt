@@ -1,8 +1,5 @@
 Changelog
 =========
-Git 78   19-10-2015
-Some preparations for the forthcoming Solo 4K. Still very experimental because of lack of information about the Solo 4K
-
 Git 77   27-09-2015
 Removed some obsolete code, this were some remains of experiments which I overlooked
 

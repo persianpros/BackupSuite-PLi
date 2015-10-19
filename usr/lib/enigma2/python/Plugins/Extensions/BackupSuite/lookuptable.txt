@@ -19,7 +19,6 @@ Octagon	xp1000s	Octagon XP1000s	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
 Vu+ Duo2	duo2	Vu+ Duo2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Solo	solo	Vu+ Solo	/vuplus/solo	/fullbackup_solo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
-Vu+ Solo 4K	solo4k	Vu+ Solo 4K	/vuplus/solo4k	/fullbackup_solo4k	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Solo SE	solose	Vu+ Solo SE	/vuplus/solose	/fullbackup_solose	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
 Vu+ Solo2	solo2	Vu+ Solo2	/vuplus/solo2	/fullbackup_solo2	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Ultimo	ultimo	Vu+ Ultimo	/vuplus/ultimo	/fullbackup_ultimo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	reboot
