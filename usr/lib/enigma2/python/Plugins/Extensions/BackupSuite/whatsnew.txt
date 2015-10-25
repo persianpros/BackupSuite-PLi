@@ -1,5 +1,12 @@
 Changelog
 =========
+Git 80   25-10-2015
+Temporary measure: bail out if the receiver is a VU+ Solo 4K until more is known what the requirements are to make a working back-up
+Lookuptable expanded with the entry Solo4K
+
+Git 78 & 79
+Git 78 has been canceled/reverted by Git 79
+
 Git 77   27-09-2015
 Removed some obsolete code, this were some remains of experiments which I overlooked
 

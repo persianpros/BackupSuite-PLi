@@ -226,6 +226,12 @@ else
 	else 
 		MAINDEST="$MEDIA$FOLDER"
 	fi
+	################# TEMPORARY: EXIT IF RECEIVER IS SOLO4K ###################
+	if [ $MODEL = "solo4k" ] ; then
+	echo "No support yet for the VU+ Solo 4K at the moment, this will probably added in the near future if more is known about it"
+	exit 0
+	fi
+	################# END TEMPORAY BAIL OUT FOR SOLO 4K #######################
 	#MAINDEST="$MEDIA$FOLDER"
 	MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
 	UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
