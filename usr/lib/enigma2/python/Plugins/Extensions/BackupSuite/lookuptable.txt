@@ -27,6 +27,7 @@ Vu+ Uno	uno	Vu+ Uno	/vuplus/uno	/fullbackup_uno	/vuplus	-m 2048 -e 126976 -c 409
 Vu+ Zero	zero	Vu+ zero	/vuplus/zero	/fullbackup_zero	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
 Xpeed LX	ini-1000de	Xpeed LX	/xpeedlx	/fullbackup_xpeed		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xpeed LX3	ini-9000de	Xpeed LX3	/xpeedlx3	/fullbackup_xpeedlx3		-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB 	rootfs.bin	kernel.bin	noforce
+Xsarius Fusion HD	fusionhd	Xsarius Fusion HD	/update/fushionhd/cfe	/fullbackup_fusionhd	/update	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Xtrend 10000	et10000	Xtrend ET10000	/et10000	/fullbackup_et10000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 4000	et4000	Xtrend ET4000	/et4x00	/fullbackup_et4x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 5000	et5000	Xtrend ET5000	/et5x00	/fullbackup_et5x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce

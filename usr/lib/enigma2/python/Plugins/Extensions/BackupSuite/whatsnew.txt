@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 81   10-11-2015
+Added support for Xsarius Fusion HD (very experimental, use with care!)
+
 Git 80   25-10-2015
 Temporary measure: bail out if the receiver is a VU+ Solo 4K until more is known what the requirements are to make a working back-up
 Lookuptable expanded with the entry Solo4K
