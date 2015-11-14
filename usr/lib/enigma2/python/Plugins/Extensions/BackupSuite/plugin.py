@@ -127,10 +127,16 @@ class BackupStart(Screen):
 			f = open("/proc/stb/info/vumodel")
 			model = f.read().strip()
 			f.close()
+		elif os.path.exists("/proc/stb/info/hwmodel"):
+			f = open("/proc/stb/info/hwmodel")
+			model = f.read().strip()
+			f.close()
 		else:
 			return
 		if model != "":
-			if model == "solo2" or model == "duo2":
+			if model == "solo2" or model == "duo2" :
+				files = "^.*\.(zip|bin|update)"
+			elif model == "fusionhd" or model == "fusionhdse" :
 				files = "^.*\.(zip|bin|update)"
 			else:
 				files = "^.*\.(zip|bin|jffs2)"
@@ -278,7 +284,15 @@ class FlashImageConfig(Screen):
 				no_backup_files = []
 				text = _("Select parameter for start flash!\n")
 				text += _('For flashing your receiver files are needed:\n')
-				if os.path.exists("/proc/stb/info/boxtype"):
+                                
+				if os.path.exists("/proc/stb/info/hwmodel"):
+					f = open("/proc/stb/info/hwmodel")
+					model = f.read().strip()
+					f.close()
+					if model in ["fusionhd", "fusionhdse"]:
+						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
+						text += "oe_kernel.bin, oe_rootfs.bin"
+				elif os.path.exists("/proc/stb/info/boxtype"):
 					backup_files = [("kernel.bin"), ("rootfs.bin")]
 					no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 					text += 'kernel.bin, rootfs.bin'
@@ -404,7 +418,7 @@ def main(session, **kwargs):
 
 def Plugins(path,**kwargs):
 	from os import path
-	if path.exists("/proc/stb/info/boxtype") or path.exists("/proc/stb/info/vumodel"):
+	if path.exists("/proc/stb/info/boxtype") or path.exists("/proc/stb/info/vumodel") or path.exists("/proc/stb/info/hwmodel"):
 		return [
 			PluginDescriptor(
 			name=_("BackupSuite"),

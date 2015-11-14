@@ -1,5 +1,10 @@
 Changelog
 =========
+
+Git 82   14-11-2015
+Completed support for the Xsarius Fusion HD (at the moment still no confirmation if it functions), looking for some owners of a Fusion who would like to test it and report if all is functioning as it should.
+Removed the support for unknown devices.
+
 Git 81   10-11-2015
 Added support for Xsarius Fusion HD (very experimental, use with care!)
 

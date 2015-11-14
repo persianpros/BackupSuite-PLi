@@ -180,10 +180,13 @@ echo -n $WHITE
 
 #############################################################################
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
-if [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
+if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
+	SEARCH=$( cat /proc/stb/info/hwmodel )
+elif [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
 	SEARCH=$( cat /proc/stb/info/boxtype )
 elif [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
 	SEARCH=$( cat /proc/stb/info/vumodel )
+
 else
 	echo $RED
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
@@ -194,27 +197,8 @@ cat $LOOKUP | cut -f 2 | grep -qw "$SEARCH"
 if [ "$?" = "1" ] ; then
 	echo $RED
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
-#	big_fail
-	UNKNOWN="yes"
-	echo "This is an unsupported receiver but I will try to make a back-up. After the back-up has ended you'll have to rename the folder where the back-up is stored to match it with the required folder. You'll also have to check the filenames if they are named as in an original image, if not rename them. This procedure is experimental, use it at your own risk."
-	MODEL="$SEARCH"
-	SHOWNAME="Unknown model, it represents itself as a model: $SEARCH"
-	FOLDER="/rename_this_folder"
-	MAINDEST="$MEDIA$FOLDER"
-	EXTR1="/fullbackup_Unknown_$MODEL/$DATE"
-	EXTR2=""
-	EXTRA="$MEDIA$EXTR1$EXTR2"
-	ROOTNAME="rootfs.bin"
-	KERNELNAME="kernel.bin"
-	ACTION="noforce"
-	LEBSIZE=$( cat /sys/devices/virtual/ubi/ubi0/eraseblock_size ) 
-	MINIOSIZE=$( cat /sys/devices/virtual/ubi/ubi0/min_io_size ) 
-	ERASEBLOCK=$( cat /sys/devices/virtual/ubi/ubi0/total_eraseblocks ) 
-	PEBSIZE=$( cat /sys/devices/platform/brcmnand.0/mtd/mtd0/erasesize )
-	MKUBIFS_ARGS="-m $MINIOSIZE -e $LEBSIZE -c $ERASEBLOCK"
-	UBINIZE_ARGS="-m $MINIOSIZE -p $PEBSIZE"
+	big_fail
 else
-	UNKNOWN="no"
 	MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
 	SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
 	FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
@@ -245,9 +229,7 @@ log $LINE
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
 echo -n $PURPLE
 echo -n "$SHOWNAME " | tr  a-z A-Z		# Shows the receiver brand and model
-if [ $UNKNOWN != "yes" ] ; then
-	 $SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
-fi
+$SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
 echo $BLUE
 log "RECEIVER = $SHOWNAME "
 log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
