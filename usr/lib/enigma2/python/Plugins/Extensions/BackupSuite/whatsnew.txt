@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 83   30-11-2015
+Added support for the Xsarius Fusion HD SE
+Corrected the extra path for the Xsarius HD
 
 Git 82   14-11-2015
 Completed support for the Xsarius Fusion HD (at the moment still no confirmation if it functions), looking for some owners of a Fusion who would like to test it and report if all is functioning as it should.
