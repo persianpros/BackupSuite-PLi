@@ -386,7 +386,7 @@ fi
 
 #################### CHECKING FOR AN EXTRA BACKUP STORAGE #####################
 if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
-	for candidate in /media/sd* /media/mmc* /media/usb* /media/*
+	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
 	do
 		if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ]
 		then

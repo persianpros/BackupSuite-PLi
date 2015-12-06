@@ -15,7 +15,7 @@ skinstartfullhd = """
 		<widget source="session.CurrentService" render="Label" position="30,90" size="720,30" zPosition="1" foregroundColor="secondFG" font="Regular;28" borderColor="black" noWrap="1" valign="center" halign="center">
 			<convert type="ServiceName">Name</convert>
 		</widget>
-
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/season_full.png" position="750,90" size="1170,930" zPosition="1"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_red.png"	position="187,1030" size="38,38" alphatest="on" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_green.png"	position="622,1030" size="38,38" alphatest="on" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_yellow.png" position="1057,1030" size="38,38" alphatest="on" />
@@ -35,6 +35,7 @@ skinstarthd = """
 		<eLabel position="0,0" size="1280,88" backgroundColor="#00000000" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/smallshadowline.png" position="0,88" size="1280,2" zPosition="2"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/smallshadowline.png" position="0,630" size="1280,2" zPosition="2"/>
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/season_start.png" position="465,88" size="815,542" zPosition="1"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/red.png"	position="145,641" size="30,30" alphatest="on" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/green.png"	position="420,641" size="30,30" alphatest="on" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/yellow.png" position="695,641" size="30,30" alphatest="on" />

@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 84   06-12-2015
+Added seasons greetings
+
 Git 83   30-11-2015
 Added support for the Xsarius Fusion HD SE
 Corrected the extra path for the Xsarius HD
