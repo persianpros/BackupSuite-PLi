@@ -164,12 +164,12 @@ image_version >> $LOGFILE
 log "Working directory  = $WORKDIR"
 
 ######################### TESTING FOR UBIFS OR JFFS2 ##########################
-grep rootfs /proc/mounts | grep -q ubifs 
-if [ "$?" = 1 ] ; then
-	echo $RED
-	$SHOW "message01" 2>&1 | tee -a $LOGFILE #NO UBIFS, THEN JFFS2 BUT NOT SUPPORTED ANYMORE
-	big_fail
-fi
+#grep rootfs /proc/mounts | grep -q ubifs 
+#if [ "$?" = 1 ] ; then
+#	echo $RED
+#	$SHOW "message01" 2>&1 | tee -a $LOGFILE #NO UBIFS, THEN JFFS2 BUT NOT SUPPORTED ANYMORE
+#	big_fail
+#fi
 
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
@@ -210,18 +210,15 @@ else
 	else 
 		MAINDEST="$MEDIA$FOLDER"
 	fi
-	################# TEMPORARY: EXIT IF RECEIVER IS SOLO4K ###################
-	if [ $MODEL = "solo4k" ] ; then
-	echo "No support yet for the VU+ Solo 4K at the moment, this will probably added in the near future if more is known about it"
-	exit 0
-	fi
-	################# END TEMPORAY BAIL OUT FOR SOLO 4K #######################
-	#MAINDEST="$MEDIA$FOLDER"
 	MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
 	UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
 	ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
 	KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
 	ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
+	if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
+		MKFS=/bin/tar
+		BZIP2=/usr/bin/bzip2
+	fi
 fi
 log "Destination        = $MAINDEST"
 log $LINE
@@ -289,80 +286,89 @@ mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
 
 ####################### START THE REAL BACK-UP PROCESS ########################
 ############################# MAKING UBINIZE.CFG ##############################
-echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
-echo mode=ubi >> "$WORKDIR/ubinize.cfg"
-echo image="$WORKDIR/root.ubi" >> "$WORKDIR/ubinize.cfg"
-echo vol_id=0 >> "$WORKDIR/ubinize.cfg"
-echo vol_type=dynamic >> "$WORKDIR/ubinize.cfg"
-echo vol_name=rootfs >> "$WORKDIR/ubinize.cfg"
-echo vol_flags=autoresize >> "$WORKDIR/ubinize.cfg"
-log $LINE
-log "UBINIZE.CFG CREATED WITH THE CONTENT:"
-cat "$WORKDIR/ubinize.cfg"  >> $LOGFILE
-touch "$WORKDIR/root.ubi"
-chmod 644 "$WORKDIR/root.ubi"
-log "--------------------------"
-
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
+	echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
+	echo mode=ubi >> "$WORKDIR/ubinize.cfg"
+	echo image="$WORKDIR/root.ubi" >> "$WORKDIR/ubinize.cfg"
+	echo vol_id=0 >> "$WORKDIR/ubinize.cfg"
+	echo vol_type=dynamic >> "$WORKDIR/ubinize.cfg"
+	echo vol_name=rootfs >> "$WORKDIR/ubinize.cfg"
+	echo vol_flags=autoresize >> "$WORKDIR/ubinize.cfg"
+	log $LINE
+	log "UBINIZE.CFG CREATED WITH THE CONTENT:"
+	cat "$WORKDIR/ubinize.cfg"  >> $LOGFILE
+	touch "$WORKDIR/root.ubi"
+	chmod 644 "$WORKDIR/root.ubi"
+	log "--------------------------"
+fi
 ############################## MAKING KERNELDUMP ##############################
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
-$NANDDUMP --noecc /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
-
-# ADDED TO TRUNCATE THE KERNEL
-# INSPIRED BY CODE OF ATHOIK, SEEN IN: http://tinyurl.com/ofmcvuo
-/usr/bin/python -c "
-data=open('$WORKDIR/$KERNELNAME', 'rb').read()
-cutoff=data.find('\xff\xff\xff\xff')
-if cutoff:
-    open('$WORKDIR/$KERNELNAME', 'wb').write(data[0:cutoff])
-"
-
-if [ -f "$WORKDIR/$KERNELNAME" ] ; then
-	echo -n "Kernel dumped  :"  >> $LOGFILE
-	ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
-else 
-	log "$WORKDIR/$KERNELNAME NOT FOUND"
-	big_fail
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
+	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
+	
+	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
+	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
+		echo -n "Kernel dumped  :"  >> $LOGFILE
+		ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
+	else 
+		log "$WORKDIR/$KERNELNAME NOT FOUND"
+		big_fail
+	fi
+	log "--------------------------"
+else
+	dd if=/dev/mmcblk0p1 of=$WORKDIR/kernel_auto.bin
+	log "Kernel resides on /dev/mmcblk0p1" 
 fi
-log "--------------------------"
 
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
-$MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
-if [ -f "$WORKDIR/root.ubi" ] ; then
-	echo -n "ROOT.UBI MADE  :" >> $LOGFILE
-	ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
-	UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
-	if [ "$UBISIZE" -eq 0 ] ; then 
-		echo "Probably you are trying to make the back-up in flash memory" 2>&1 | tee -a $LOGFILE
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
+	$MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
+	if [ -f "$WORKDIR/root.ubi" ] ; then
+		echo -n "ROOT.UBI MADE  :" >> $LOGFILE
+		ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
+		UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
+		if [ "$UBISIZE" -eq 0 ] ; then 
+			echo "Probably you are trying to make the back-up in flash memory" 2>&1 | tee -a $LOGFILE
+			big_fail
+		fi
+	else 
+		log "$WORKDIR/root.ubi NOT FOUND"
 		big_fail
 	fi
+	log $LINE
+	echo "Start UBINIZING" >> $LOGFILE
+#	$UBINIZE -o "$WORKDIR/root.ubifs" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
+#	chmod 644 "$WORKDIR/root.ubifs"
+#	if [ -f "$WORKDIR/root.ubifs" ] ; then
+#		echo -n "ROOT.UBIFS MADE:" >> $LOGFILE
+#		ls -e1 "$WORKDIR/root.ubifs" | sed 's/-r.*   1//' >> $LOGFILE
+#	else 
+#		echo "$WORKDIR/root.ubifs NOT FOUND"  >> $LOGFILE
+#		big_fail
+#	fi
+#	echo
+	$UBINIZE -o "$WORKDIR/$ROOTNAME" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
+	chmod 644 "$WORKDIR/$ROOTNAME"
+	if [ -f "$WORKDIR/$ROOTNAME" ] ; then
+		echo -n "$ROOTNAME MADE:" >> $LOGFILE
+		ls -e1 "$WORKDIR/$ROOTNAME" | sed 's/-r.*   1//' >> $LOGFILE
+	else 
+		echo "$WORKDIR/$ROOTNAME NOT FOUND"  >> $LOGFILE
+		big_fail
+	fi
+	echo
 else 
-	log "$WORKDIR/root.ubi NOT FOUND"
-	big_fail
+	$MKFS -cf %s/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
+	$BZIP2 $WORKDIR/rootfs.tar
 fi
-log $LINE
-echo "Start UBINIZING" >> $LOGFILE
-$UBINIZE -o "$WORKDIR/root.ubifs" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
-chmod 644 "$WORKDIR/root.ubifs"
-if [ -f "$WORKDIR/root.ubifs" ] ; then
-	echo -n "ROOT.UBIFS MADE:" >> $LOGFILE
-	ls -e1 "$WORKDIR/root.ubifs" | sed 's/-r.*   1//' >> $LOGFILE
-else 
-	echo "$WORKDIR/root.ubifs NOT FOUND"  >> $LOGFILE
-	big_fail
-fi
-echo
+
 
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
-if  [ $HARDDISK != 1 ]; then
-	mkdir -p "$EXTRA"
-	echo "Created directory  = $EXTRA" >> $LOGFILE
-fi
-mv "$WORKDIR/root.ubifs" "$MAINDEST/$ROOTNAME" 
+mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
 mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
 if [ $ACTION = "noforce" ] ; then
 	echo "rename this file to 'force' to force an update without confirmation" > "$MAINDEST/noforce"; 
@@ -374,6 +380,8 @@ fi
 
 image_version > "$MAINDEST/imageversion" 
 if  [ $HARDDISK != 1 ]; then
+	mkdir -p "$EXTRA"
+	echo "Created directory  = $EXTRA" >> $LOGFILE
 	cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
 fi
 if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/imageversion" ] ; then

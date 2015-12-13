@@ -1,5 +1,10 @@
 Changelog
 =========
+Git 85   13-12-2015
+Added support for the VU+ Solo 4K. Beware: this is a very early test, the plugin still needs some tidying up.
+Don't try to flash the made back-up of the Solo 4k with the built in OFGWRITE, it needs an update to be able to flash the Solo 4K
+Reverted the truncating of the kernelpartition
+
 Git 84   06-12-2015
 Added seasons greetings
 
