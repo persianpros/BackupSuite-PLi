@@ -300,7 +300,9 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/vumodel")
 					model = f.read().strip()
 					f.close()
-					if model in ["solo2", "duo2"]:
+					if model in ["solo4k"]:
+						self.session.open(MessageBox, _("Sorry, but the Vu+ Solo 4K is not supported yet."), MessageBox.TYPE_INFO, timeout=10)
+					elif model in ["duo2", "solose", "solo2", "zero"]:
 						backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.bin"]
 						no_backup_files = ["kernel.bin", "root_cfe_auto.jffs2", "rootfs.bin"]
 						text += 'kernel_cfe_auto.bin, root_cfe_auto.bin'
