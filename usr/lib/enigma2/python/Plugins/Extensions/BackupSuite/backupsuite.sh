@@ -139,7 +139,12 @@ MKFS=/usr/sbin/mkfs.ubifs
 MTDPLACE=`cat /proc/mtd | grep -w "kernel" | cut -d ":" -f 1`
 NANDDUMP=/usr/sbin/nanddump
 START=$(date +%s)
-LOOKUP="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/lookuptable.txt"
+if [ -f "/etc/lookuptable.txt" ] ; then
+	LOOKUP="/etc/lookuptable.txt"
+	echo "Using your own custom lookuptable.txt from the folder /etc"
+else
+	LOOKUP="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/lookuptable.txt"
+fi
 TARGET="XX"
 UBINIZE=/usr/sbin/ubinize
 USEDsizebytes=`df -B 1 /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`

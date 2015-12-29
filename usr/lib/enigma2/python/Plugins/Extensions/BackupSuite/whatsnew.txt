@@ -1,5 +1,14 @@
 Changelog
 =========
+Git 87   29-12-2015
+It is for me near impossible to add all enigma2 receivers on the market, just by the lack of time and missing the inside information about the receivers. 
+Therefore I added the ability to maintain your own lookuptable.txt in /etc.
+If you want to add a receiver which isn't supported by me, just copy the lookuptable.txt to /etc and edit this table with the right parameters.
+The file lookuptable.txt in /etc is safe for updates so you can build your own list with supported receivers.
+If you place the file lookuptable.txt in /etc this file will be the one that's used to create the back-up's.
+If there is no file in /etc then the standard file supplied by the BackupSuite is used.
+If you want a certain receiver to be supported just ask the image maker to add a lookuptable.txt in the folder /etc or ask for the parameters to be used.
+
 Git 86   20-12-2015
 Did some overdue maintenance on plugin.py concerning the VU+ models
 
