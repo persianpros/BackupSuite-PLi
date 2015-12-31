@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 88   01-01-2016
+Happy New Year!
+
 Git 87   29-12-2015
 It is for me near impossible to add all enigma2 receivers on the market, just by the lack of time and missing the inside information about the receivers. 
 Therefore I added the ability to maintain your own lookuptable.txt in /etc.
