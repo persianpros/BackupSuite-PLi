@@ -1,5 +1,11 @@
 Changelog
 =========
+Git 91   08-02-2016
+Added support for the Zgemma 
+- Star S / Star 2S
+- H5
+- H.S / H.2S / H.2H
+
 Git 90   31-01-2016
 Added support for the upcoming Golden Interstar LX Class S2 and C
 
