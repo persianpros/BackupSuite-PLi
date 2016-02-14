@@ -74,6 +74,8 @@ echo "Flashed = $FLASHED"
 echo "Updated = $LASTUPDATE"
 echo -n "Drivers = "
 opkg list-installed | grep dvb-modules
+echo "Enigma2 = $ENIGMA2DATE"
+echo 
 echo $LINE
 }
 
@@ -133,6 +135,7 @@ FLASHED=`date -r /etc/version +%Y.%m.%d_%H:%M`
 ISSUE=`cat /etc/issue | grep . | tail -n 1 ` 
 IMVER=${ISSUE%?????}
 LASTUPDATE=`date -r /var/lib/opkg/status +%Y.%m.%d_%H:%M`
+ENIGMA2DATE=`cat /tmp/enigma2version`
 LOGFILE=/tmp/BackupSuite.log
 MEDIA="$1"
 MKFS=/usr/sbin/mkfs.ubifs
@@ -167,14 +170,6 @@ df -h "$MEDIA"  >> $LOGFILE
 log $LINE
 image_version >> $LOGFILE
 log "Working directory  = $WORKDIR"
-
-######################### TESTING FOR UBIFS OR JFFS2 ##########################
-#grep rootfs /proc/mounts | grep -q ubifs 
-#if [ "$?" = 1 ] ; then
-#	echo $RED
-#	$SHOW "message01" 2>&1 | tee -a $LOGFILE #NO UBIFS, THEN JFFS2 BUT NOT SUPPORTED ANYMORE
-#	big_fail
-#fi
 
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
@@ -222,7 +217,14 @@ else
 	ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
 	if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
 		MKFS=/bin/tar
+		checkbinary $MKFS
 		BZIP2=/usr/bin/bzip2
+		if [ ! -f "$BZIP2" ] ; then 
+			echo "$BZIP2 not installed yet, now installing"
+			opkg update > /dev/null 2>&1
+			opkg install bzip2 > /dev/null 2>&1
+			checkbinary $MKFS
+		fi
 	fi
 fi
 log "Destination        = $MAINDEST"
@@ -242,7 +244,12 @@ echo $WHITE
 
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
-KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
+	KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
+else
+#	KERNELHEX=`cat /dev/mmcblk0p1 | cut -d " " -f 2` # Kernelsize in Hex
+	KERNELHEX=01000000
+fi
 KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
 TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
 KILOBYTES=$(($TOTAL/1024))			# Total ROOTFS + Kernel size in KB
@@ -345,16 +352,6 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	fi
 	log $LINE
 	echo "Start UBINIZING" >> $LOGFILE
-#	$UBINIZE -o "$WORKDIR/root.ubifs" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
-#	chmod 644 "$WORKDIR/root.ubifs"
-#	if [ -f "$WORKDIR/root.ubifs" ] ; then
-#		echo -n "ROOT.UBIFS MADE:" >> $LOGFILE
-#		ls -e1 "$WORKDIR/root.ubifs" | sed 's/-r.*   1//' >> $LOGFILE
-#	else 
-#		echo "$WORKDIR/root.ubifs NOT FOUND"  >> $LOGFILE
-#		big_fail
-#	fi
-#	echo
 	$UBINIZE -o "$WORKDIR/$ROOTNAME" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
 	chmod 644 "$WORKDIR/$ROOTNAME"
 	if [ -f "$WORKDIR/$ROOTNAME" ] ; then
@@ -366,7 +363,7 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	fi
 	echo
 else 
-	$MKFS -cf %s/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
+	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
 	$BZIP2 $WORKDIR/rootfs.tar
 fi
 
@@ -462,7 +459,11 @@ opkg list-installed >> $LOGFILE
 echo -n $WHITE
 cp $LOGFILE "$MAINDEST"
 if  [ $HARDDISK != 1 ]; then
-	cp $LOGFILE "$MEDIA$EXTR1$FOLDER"
+	cp $LOGFILE "$MEDIA$EXTR1"
+	mv "$MEDIA$EXTR1$FOLDER"/imageversion "$MEDIA$EXTR1"
+else
+	mv -f "$MAINDEST"/BackupSuite.log "$MEDIA$EXTR1"
+	mv -f "$MAINDEST"/imageversion "$MEDIA$EXTR1"
 fi
 if [ "$TARGET" != "XX" ] ; then
 	cp $LOGFILE "$TARGET$FOLDER"

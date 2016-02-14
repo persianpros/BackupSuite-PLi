@@ -54,6 +54,9 @@ _session = None
 BACKUP_HDD = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backuphdd.sh en_EN"
 BACKUP_USB = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupusb.sh en_EN"
 ofgwrite_bin = "/usr/bin/ofgwrite"
+LOGFILE = "BackupSuite.log"
+VERSIONFILE = "imageversion"
+ENIGMA2VERSIONFILE = "/tmp/enigma2version"
 
 def backupCommandHDD():
 	cmd = BACKUP_HDD
@@ -90,7 +93,7 @@ class BackupStart(Screen):
 		self.session = session
 		self.setup_title = _("Make a backup or restore a backup")
 		Screen.__init__(self, session)
-		self["key_red"] = Button(_("Cancel"))
+		self["key_red"] = Button(_("Close"))
 		self["key_green"] = Button(_("Backup > HDD"))
 		self["key_yellow"] = Button(_("Backup > USB"))
 		self["key_blue"] = Button(_("Restore backup"))
@@ -149,14 +152,21 @@ class BackupStart(Screen):
 	def keyInfo(self):
 		self.session.open(WhatisNewInfo)
 
+	def writeEnigma2VersionFile(self):
+		from Components.About import getEnigmaVersionString
+		with open(ENIGMA2VERSIONFILE, 'wt') as f:
+			f.write(getEnigmaVersionString())
+
 	def backuphdd(self, ret = False ):
 		if (ret == True):
+			self.writeEnigma2VersionFile()
 			text = _('Full back-up on HDD')
 			cmd = backupCommandHDD()
 			self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
 
 	def backupusb(self, ret = False ):
 		if (ret == True):
+			self.writeEnigma2VersionFile()
 			text = _('Full back-up to USB')
 			cmd = backupCommandUSB()
 			self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
@@ -208,9 +218,10 @@ class FlashImageConfig(Screen):
 
 		Screen.__init__(self, session)
 		self["Title"].setText(_("Select the folder with backup"))
-		self["key_red"] = StaticText(_("Cancel"))
+		self["key_red"] = StaticText("Close")
 		self["key_green"] = StaticText("")
 		self["key_yellow"] = StaticText("")
+		self["key_blue"] = StaticText("")
 		self["curdir"] = StaticText(_("current:  %s")%(curdir or ''))
 		self.founds = False
 		self.filelist = FileList(curdir, matchingPattern=matchingPattern, enableWrapAround=True)
@@ -222,6 +233,7 @@ class FlashImageConfig(Screen):
 				"green": self.keyGreen,
 				"red": self.keyRed,
 				"yellow": self.keyYellow,
+				"blue": self.KeyBlue,
 				"ok": self.keyOk,
 				"cancel": self.keyRed
 			})
@@ -249,6 +261,7 @@ class FlashImageConfig(Screen):
 	def __selChanged(self):
 		self["key_yellow"].setText("")
 		self["key_green"].setText("")
+		self["key_blue"].setText("")
 		self["curdir"].setText(_("current:  %s")%(self.getCurrentSelected()))
 		file_name = self.getCurrentSelected()
 		try:
@@ -258,6 +271,9 @@ class FlashImageConfig(Screen):
 					self["key_yellow"].setText(_("Unzip"))
 			elif self.filelist.canDescent() and file_name != '' and file_name != '/':
 				self["key_green"].setText(_("Run flash"))
+				if os.path.isfile(file_name + LOGFILE) and os.path.isfile(file_name + VERSIONFILE):
+					self["key_yellow"].setText(_("Backup info"))
+					self["key_blue"].setText(_("Delete"))
 		except:
 			pass
 
@@ -402,6 +418,15 @@ class FlashImageConfig(Screen):
 			filename = self.filelist.getFilename()
 			if filename and filename.endswith(".zip"):
 				self.session.openWithCallback(self.doUnzip, MessageBox, _("Do you really want to unpack %s ?") % filename, MessageBox.TYPE_YESNO)
+		elif self["key_yellow"].getText() == _("Backup info"):
+			self.session.open(MessageBox, "\n\n\n%s" % self.getBackupInfo(), MessageBox.TYPE_INFO)
+
+	def getBackupInfo(self):
+		backup_dir = self.getCurrentSelected()
+		backup_info = ""
+		for line in open(backup_dir + VERSIONFILE, "r"):
+			backup_info += line
+		return backup_info
 
 	def doUnzip(self, answer):
 		if answer is True:
@@ -413,6 +438,17 @@ class FlashImageConfig(Screen):
 					self.filelist.refresh()
 				except:
 					pass
+
+	def confirmedDelete(self, answer):
+		if answer is True:
+			backup_dir = self.getCurrentSelected()
+			cmdmessage = "echo -e 'Removing backup:   %s\n'" % os.path.basename(backup_dir.rstrip('/'))
+			cmddelete = "rm -rf %s > /dev/null 2>&1" % backup_dir
+			self.session.open(Console, _("Delete backup"), [cmdmessage, cmddelete], self.filelist.refresh)
+
+	def KeyBlue(self):
+		if self["key_blue"].getText() == _("Delete"):
+			self.session.openWithCallback(self.confirmedDelete, MessageBox, _("You are about to delete this backup:\n\n%s\nContinue?") % self.getBackupInfo(), MessageBox.TYPE_YESNO)
 
 def main(session, **kwargs):
 	session.open(BackupStart)
