@@ -1,15 +1,21 @@
 Changelog
 =========
+Git 93   21-02-2016
+Added support for the HD1500
+
 Git 92   14-02-2016
 Some big changes, at first now it is possible to maintain your backups from the plugin.
 With the blue button you are now able to delete the backups you want to get rid of.
 Please bear in mind that this only works for the backups created with this or any newer version of the BackupSuite.
 If you want to be able to do this also for your older backups then you'll have to move the files:
-imageversion from the data folder to the folder above (in the folder right under the folder /fullbackup_<model/<date_time>/ )
-Big thanks to Tension for the changes
+imageversion and BackupSuite.log 
+from the data folder to the folder above (in the folder right under the folder /fullbackup_<model/<date_time>/ )
+Big thanks to Tension for the changes!
 
-Also debugged a bit for the Solo4k, now you should be able to make a backup from the solo4k. There is still some work to do but for now it should work.
-Please remember: the solo4k backup can't be restored by the BackupSuite using the ofgwrite utility (yet).
+Also debugged a bit for the Solo4k, now you should be able to make a backup of the image in the Solo4k. 
+There is still some work to do but for now it should work.
+PLEASE REMEMBER: 
+The Solo4k backup can't be restored by the BackupSuite using the ofgwrite utility (yet).
 Thanks Findex for doing some testing with his Solo4k!
 
 Git 91   08-02-2016
