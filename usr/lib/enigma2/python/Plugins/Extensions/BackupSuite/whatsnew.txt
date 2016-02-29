@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 96   29-02-2016
+Merged pull request from Athoik which added support for the Edison OSmini
+
 Git 93   21-02-2016
 Added support for the HD1500
 
