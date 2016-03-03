@@ -139,7 +139,7 @@ class BackupStart(Screen):
 		if model != "":
 			if model == "solo2" or model == "duo2" :
 				files = "^.*\.(zip|bin|update)"
-			elif model == "fusionhd" or model == "fusionhdse" :
+			elif model == "fusionhd" or model == "fusionhdse":
 				files = "^.*\.(zip|bin|update)"
 			else:
 				files = "^.*\.(zip|bin|jffs2)"
@@ -218,12 +218,13 @@ class FlashImageConfig(Screen):
 
 		Screen.__init__(self, session)
 		self["Title"].setText(_("Select the folder with backup"))
-		self["key_red"] = StaticText("Close")
+		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText("")
 		self["key_yellow"] = StaticText("")
 		self["key_blue"] = StaticText("")
 		self["curdir"] = StaticText(_("current:  %s")%(curdir or ''))
 		self.founds = False
+		self.dualboot = self.dualBoot()
 		self.filelist = FileList(curdir, matchingPattern=matchingPattern, enableWrapAround=True)
 		self.filelist.onSelectionChanged.append(self.__selChanged)
 		self["filelist"] = self.filelist
@@ -241,6 +242,29 @@ class FlashImageConfig(Screen):
 
 	def __layoutFinished(self):
 		pass
+
+	def dualBoot(self):
+		if os.path.exists("/proc/stb/info/boxtype"):
+			try:
+				fd = open("/proc/stb/info/boxtype")
+				model = fd.read().strip()
+				fd.close()
+				if model == "et8500":
+					rootfs2 = False
+					kernel2 = False
+					f = open("/proc/mtd")
+					l = f.readlines()
+					for x in l:
+						if 'rootfs2' in x:
+							rootfs2 = True
+						if 'kernel2' in x:
+							kernel2 = True
+					f.close()
+					if rootfs2 and kernel2:
+						return True
+			except:
+				pass
+		return False
 
 	def getCurrentSelected(self):
 		dirname = self.filelist.getCurrentDirectory()
@@ -290,7 +314,10 @@ class FlashImageConfig(Screen):
 		if self["key_green"].getText() == _("Run flash"):
 			dirname = self.filelist.getCurrentDirectory()
 			if dirname:
-				self.session.openWithCallback(lambda r: self.confirmedWarning(r), MessageBox, _("Warning!\nUse at your own risk! Make always a backup before use!\nDon't use it if you use multiple ubi volumes in ubi layer!") , MessageBox.TYPE_INFO)
+				warning_text = "\n"
+				if self.dualboot:
+					warning_text += _("\nYou are using dual multiboot!")
+				self.session.openWithCallback(lambda r: self.confirmedWarning(r), MessageBox, _("Warning!\nUse at your own risk! Make always a backup before use!\nDon't use it if you use multiple ubi volumes in ubi layer!")  + warning_text, MessageBox.TYPE_INFO)
 
 	def showparameterlist(self):
 		if self["key_green"].getText() == _("Run flash"):
@@ -300,7 +327,6 @@ class FlashImageConfig(Screen):
 				no_backup_files = []
 				text = _("Select parameter for start flash!\n")
 				text += _('For flashing your receiver files are needed:\n')
-                                
 				if os.path.exists("/proc/stb/info/hwmodel"):
 					f = open("/proc/stb/info/hwmodel")
 					model = f.read().strip()
@@ -343,12 +369,18 @@ class FlashImageConfig(Screen):
 				if self.founds:
 					open_list = [
 						(_("Simulate (no write)"), "simulate"),
-						(_("Standard (root and kernel)"), "Standard"),
+						(_("Standard (root and kernel)"), "standard"),
 						(_("Only root"), "root"),
 						(_("Only kernel"), "kernel"),
-						(_("Only root with use mtdy device"), "mtdy"),
-						(_("Only kernel with use mtdx device"), "mtdx"),
 					]
+					open_list2 = [
+						(_("Simulate second partition (no write)"), "simulate2"),
+						(_("Second partition (root and kernel)"), "standard2"),
+						(_("Second partition (only root)"), "root2"),
+						(_("Second partition (only kernel)"), "kernel2"),
+					]
+					if self.dualboot:
+						open_list += open_list2
 				else:
 					open_list = [
 						(_("Exit"), "exit"),
@@ -370,7 +402,7 @@ class FlashImageConfig(Screen):
 			if ret == "simulate":
 				text += _("Simulate (no write)")
 				cmd = "%s -n '%s'" % (ofgwrite_bin, dir_flash)
-			elif ret == "Standard":
+			elif ret == "standard":
 				text += _("Standard (root and kernel)")
 				cmd = "%s -r -k '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
 			elif ret == "root":
@@ -379,29 +411,35 @@ class FlashImageConfig(Screen):
 			elif ret == "kernel":
 				text += _("Only kernel")
 				cmd = "%s -k '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
-			elif ret == "mtdy":
-				text += _("Only root with use mtdy device")
-				cmd = "%s -rmtdy '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
-			elif ret == "mtdx":
-				text += _("Only kernel with use mtdx device")
-				cmd = "%s -kmtdx '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
+			elif ret == "simulate2":
+				text += _("Simulate second partition (no write)")
+				cmd = "%s -kmtd3 -rmtd4 -n '%s'" % (ofgwrite_bin, dir_flash)
+			elif ret == "standard2":
+				text += _("Second partition (root and kernel)")
+				cmd = "%s -kmtd3 -rmtd4 '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
+			elif ret == "root2":
+				text += _("Second partition (only root)")
+				cmd = "%s -rmtd4 '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
+			elif ret == "kernel2":
+				text += _("Second partition (only kernel)")
+				cmd = "%s -kmtd3 '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
 			else:
 				return
 			message = "echo -e '\n"
 			message += _('NOT found files for flashing!\n')
 			message += "'"
-			if ret != "simulate":
+			if ret == "simulate" or ret == "simulate2":
+				if self.founds:
+					message = "echo -e '\n"
+					message += _('Show only found image and mtd partitions.\n')
+					message += "'"
+			else:
 				if self.founds:
 					message = "echo -e '\n"
 					message += _('ofgwrite will stop enigma2 now to run the flash.\n')
 					message += _('Your STB will freeze during the flashing process.\n')
 					message += _('Please: DO NOT reboot your STB and turn off the power.\n')
 					message += _('The image or kernel will be flashing and auto booted in few minutes.\n')
-					message += "'"
-			else:
-				if self.founds:
-					message = "echo -e '\n"
-					message += _('Show only found image and mtd partitions.\n')
 					message += "'"
 			try:
 				if os.path.exists(ofgwrite_bin):
