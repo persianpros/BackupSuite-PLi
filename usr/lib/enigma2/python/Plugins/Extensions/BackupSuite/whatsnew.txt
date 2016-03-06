@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 100   06-03-2016
+It seems that not every one knows the difference between a file and a folder, so for the making of a backup on an USB-stick there is a check on the existence of a file with the text pattern backupstick in the name, now the check is also done on folders!
+So if a file or a folder is found on the USB-stick with the text pattern backupstick in the name then the USB-stick is valid.
+
 Git 99   04-03-2016
 Merged pull request by Dimitrij: add support dual boot (et8500)
 
