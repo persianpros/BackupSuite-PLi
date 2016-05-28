@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 103   28-05-2016
+Added support for the Miraclebox Premium Twin+
+
 Git 102   25-05-2016
 Added support for the Spycat and the Spycat Mini
 
