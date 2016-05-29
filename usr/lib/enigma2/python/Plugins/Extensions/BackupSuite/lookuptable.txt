@@ -6,6 +6,7 @@ Formuler F1	formuler1	Formuler F1	/formuler1	/fullbackup_formuler1		-m 2048 -e 1
 Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1100	hd1100	HD 1100	/hd1100	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1200	hd1200	HD 1200	/hd1200	/fullbackup_hd1200		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+HD 1265	hd1265	HD 1265	/hd1265	/fullbackup_hd1265		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1500	hd1500	HD 1500	/hd1500	/fullbackup_hd1500		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 500C	hd500c	HD 500c	/hd500c	/fullbackup_hd500c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
