@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 105
+Added support for the Galaxy Innovations (GI) ET7000 Mini
+
 Git 104   29-05-2016
 Added support for the Mut@nt HD 1265
 
