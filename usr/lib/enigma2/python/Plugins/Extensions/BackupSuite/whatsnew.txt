@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 106-108
+Merged pull request from Dima73 which adds the Ukrainian language by vovan43. Thanks!
+
 Git 105
 Added support for the Galaxy Innovations (GI) ET7000 Mini
 
