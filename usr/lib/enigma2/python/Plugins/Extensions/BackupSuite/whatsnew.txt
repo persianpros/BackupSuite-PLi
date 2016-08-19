@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 109  19-08-2016
+Added support for online flashing of the image backup of a Vu+ Solo4k.
+Betacentauri changed his execellent tool to make this possible, thanks Betacentauri!
+
 Git 106-108
 Merged pull request from Dima73 which adds the Ukrainian language by vovan43. Thanks!
 
