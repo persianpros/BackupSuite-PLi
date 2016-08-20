@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 110  20-08-2016
+Added support for the Formuler F4
+
 Git 109  19-08-2016
 Added support for online flashing of the image backup of a Vu+ Solo4k.
 Betacentauri changed his execellent tool to make this possible, thanks Betacentauri!
