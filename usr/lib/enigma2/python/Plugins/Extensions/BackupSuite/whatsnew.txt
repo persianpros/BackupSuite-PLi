@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 111  29-08-2016
+Added support for the HD 11
+
 Git 110  20-08-2016
 Added support for the Formuler F4
 
