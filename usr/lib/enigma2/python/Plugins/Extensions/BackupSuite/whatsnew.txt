@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 112  20-09-2016
+Added support for the Edision OS Mini plus
+
 Git 111  29-08-2016
 Added support for the HD 11
 

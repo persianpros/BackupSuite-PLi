@@ -1,7 +1,8 @@
 BRAND AND MODEL	MODEL	SHOWNAME	FOLDER	EXTR1	EXTR2	MKUBIFS_ARGS	UBINIZE_ARGS	ROOTNAME	KERNELNAME	ACTION
 Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
-Edision OSmini	osmini	OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Edision OSmini	osmini	Edision OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Edision OSmini plus	osminiplus	Edision OSmini plus	/osminiplus	/fullbackup_osminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F1	formuler1	Formuler F1	/formuler1	/fullbackup_formuler1		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
