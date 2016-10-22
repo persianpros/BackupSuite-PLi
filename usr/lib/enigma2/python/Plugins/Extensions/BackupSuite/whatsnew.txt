@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 113-115
+Changed the parameter for the Vu+ Duo2
+Merged the pull request from devclone. Thanks
+
 Git 112  20-09-2016
 Added support for the Edision OS Mini plus
 
