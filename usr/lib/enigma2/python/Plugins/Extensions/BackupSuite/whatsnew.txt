@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 116
+Very small change in code, removed an obsolete part and added versionnumber on plugin-list
+
 Git 113-115
 Changed the parameter for the Vu+ Duo2
 Merged the pull request from devclone. Thanks

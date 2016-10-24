@@ -58,6 +58,15 @@ LOGFILE = "BackupSuite.log"
 VERSIONFILE = "imageversion"
 ENIGMA2VERSIONFILE = "/tmp/enigma2version"
 
+with open("/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control") as origin:
+	for versie in origin:
+		if not "Version: " in versie:
+			continue
+		try:
+			versienummer = versie.split('+')[1]
+		except IndexError:
+			print
+
 def backupCommandHDD():
 	cmd = BACKUP_HDD
 	return cmd
@@ -495,20 +504,20 @@ def main(session, **kwargs):
 
 
 def Plugins(path,**kwargs):
-	from os import path
-	if path.exists("/proc/stb/info/boxtype") or path.exists("/proc/stb/info/vumodel") or path.exists("/proc/stb/info/hwmodel"):
-		return [
-			PluginDescriptor(
-			name=_("BackupSuite"),
-			description = _("Enables back-up & restore without an USB-stick"),
-			where = PluginDescriptor.WHERE_PLUGINMENU,
-			icon = 'plugin.png',
-			fnc = main
-			),
-			PluginDescriptor(
-			name =_("BackupSuite"), 
-			description = _("Enables back-up & restore without an USB-stick"),
-			where = PluginDescriptor.WHERE_EXTENSIONSMENU, 
-			fnc = main)
-		]
+	global plugin_path
+	plugin_path = path
+	return [
+		PluginDescriptor(
+		name=_("BackupSuite"),
+		description = _("Enables back-up & restore without an USB-stick") + ", ver. " + versienummer,
+		where = PluginDescriptor.WHERE_PLUGINMENU,
+		icon = 'plugin.png',
+		fnc = main
+		),
+		PluginDescriptor(
+		name =_("BackupSuite"), 
+		description = _("Enables back-up & restore without an USB-stick") + ", ver. " + versienummer,
+		where = PluginDescriptor.WHERE_EXTENSIONSMENU, 
+		fnc = main)
+	]
 
