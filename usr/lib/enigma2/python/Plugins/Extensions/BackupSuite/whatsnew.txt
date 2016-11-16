@@ -1,5 +1,16 @@
 Changelog
 =========
+Git 122
+Added support for the Mutant HD51. The Backupsuite makes a backup in the disk.img format. Don't use it in a multiboot configuration!
+This is the first release for the HD51 and is still work in progress, so use with care.
+The backup made can't be restored via the blue button in the Backupsuite. The backup has to be restored by flashing it via USB just like a new image.
+
+Git 121
+Merged pull request 120 by persianpros with some minor optimasation of some png files
+
+Git 119
+Added the Portugese language provided by Nunigaia, Big Thanks!
+
 Git 116
 Very small change in code, removed an obsolete part and added versionnumber on plugin-list
 
