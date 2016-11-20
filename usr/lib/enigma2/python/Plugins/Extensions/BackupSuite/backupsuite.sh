@@ -109,7 +109,7 @@ backup_made()
 echo $LINE
 $SHOW "message10" ; echo "$MAINDEST" 	# USB Image created in: 
 $SHOW "message23"		# "The content of the folder is:"
-ls "$MAINDEST" -e1rSh | sed 's/-r.....r..    1//' 
+ls "$MAINDEST" -e1rSh | sed 's/-.........    1//' 
 echo $LINE
 if  [ $HARDDISK != 1 ]; then
 	$SHOW "message11" ; echo "$EXTRA"		# and there is made an extra copy in:
@@ -265,17 +265,16 @@ echo "Pedro_Newbie"
 echo $WHITE
 
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
-if [ $SEARCH = "hd51" ] ; then
-	mutanthd51backup
-fi
+#if [ $SEARCH = "hd51" ] ; then
+#	mutanthd51backup
+#fi
 
 $SHOW "message06" 	#"Some information about the task:"
 
 if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
 else
-#	KERNELHEX=`cat /dev/mmcblk0p1 | cut -d " " -f 2` # Kernelsize in Hex
-	KERNELHEX=01000000
+	KERNELHEX=800000 # Not the real size (will be added later)
 fi
 KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
 TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
@@ -356,8 +355,12 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	fi
 	log "--------------------------"
 else
-	dd if=/dev/mmcblk0p1 of=$WORKDIR/kernel_auto.bin
-	log "Kernel resides on /dev/mmcblk0p1" 
+	if [ $SEARCH = "hd51" ] ; then
+		dd if=/dev/mmcblk0p2 of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
+	else
+		dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
+		log "Kernel resides on /dev/mmcblk0p1" 
+	fi
 fi
 
 #############################  MAKING ROOT.UBI(FS) ############################
@@ -490,7 +493,7 @@ if  [ $HARDDISK != 1 ]; then
 	mv "$MEDIA$EXTR1$FOLDER"/imageversion "$MEDIA$EXTR1"
 else
 	mv -f "$MAINDEST"/BackupSuite.log "$MEDIA$EXTR1"
-	mv -f "$MAINDEST"/imageversion "$MEDIA$EXTR1"
+	cp "$MAINDEST"/imageversion "$MEDIA$EXTR1"
 fi
 if [ "$TARGET" != "XX" ] ; then
 	cp $LOGFILE "$TARGET$FOLDER"

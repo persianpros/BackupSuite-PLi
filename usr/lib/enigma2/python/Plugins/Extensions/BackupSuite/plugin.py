@@ -344,9 +344,17 @@ class FlashImageConfig(Screen):
 						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
 						text += "oe_kernel.bin, oe_rootfs.bin"
 				elif os.path.exists("/proc/stb/info/boxtype"):
-					backup_files = [("kernel.bin"), ("rootfs.bin")]
-					no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-					text += 'kernel.bin, rootfs.bin'
+					f = open("/proc/stb/info/boxtype")
+					model = f.read().strip()
+					f.close()
+					if model in ["hd51"]:
+						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = ["kernel_cfe_auto.bin", "kernel1.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						text += 'kernel.bin, rootfs.tar.bz2'
+					else:
+						backup_files = [("kernel.bin"), ("rootfs.bin")]
+						no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						text += 'kernel.bin, rootfs.bin'
 				elif os.path.exists("/proc/stb/info/vumodel"):
 					f = open("/proc/stb/info/vumodel")
 					model = f.read().strip()
@@ -410,18 +418,25 @@ class FlashImageConfig(Screen):
 			dir_flash = self.getCurrentSelected()
 			text = _("Flashing: ")
 			cmd = "echo -e"
+			xtra=''
+			if os.path.exists("/proc/stb/info/boxtype"):
+					f = open("/proc/stb/info/boxtype")
+					model = f.read().strip()
+					f.close()
+					if model in ["hd51"]:
+						xtra = '-m1 '
 			if ret == "simulate":
 				text += _("Simulate (no write)")
-				cmd = "%s -n '%s'" % (ofgwrite_bin, dir_flash)
+				cmd = "%s -n '%s''%s'" % (ofgwrite_bin, xtra, dir_flash)
 			elif ret == "standard":
 				text += _("Standard (root and kernel)")
-				cmd = "%s -r -k '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
+				cmd = "%s -r -k '%s''%s' > /dev/null 2>&1 &" % (ofgwrite_bin, xtra, dir_flash)
 			elif ret == "root":
 				text += _("Only root")
-				cmd = "%s -r '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
+				cmd = "%s -r '%s''%s' > /dev/null 2>&1 &" % (ofgwrite_bin, xtra, dir_flash)
 			elif ret == "kernel":
 				text += _("Only kernel")
-				cmd = "%s -k '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
+				cmd = "%s -k '%s''%s' > /dev/null 2>&1 &" % (ofgwrite_bin, xtra, dir_flash)
 			elif ret == "simulate2":
 				text += _("Simulate second partition (no write)")
 				cmd = "%s -kmtd3 -rmtd4 -n '%s'" % (ofgwrite_bin, dir_flash)

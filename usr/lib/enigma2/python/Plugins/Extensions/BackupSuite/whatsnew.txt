@@ -1,5 +1,17 @@
 Changelog
 =========
+Git 123
+Reworked the routine for the Mutant HD51. In the former version the possibility existed that the made backup was not complete. 
+Now the backup is made of the whole partition and then it's compressed in rootfs.tar.bz2 format.
+
+The backup can ONLY be restored using the BackupSuite -> Blue button (=Restore backup). 
+It can't be flashed by the USB-stick.
+
+Thanks go to Betacentauri which pointed me to the possible problems and gave me some guidance to the solution!
+
+It's still work in progress so it could be that in (short) term there will be more changes.
+Please test and report back if there are any issues (or if everthing goes like intended!)
+
 Git 122
 Added support for the Mutant HD51. The Backupsuite makes a backup in the disk.img format. Don't use it in a multiboot configuration!
 This is the first release for the HD51 and is still work in progress, so use with care.
