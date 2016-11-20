@@ -118,27 +118,6 @@ fi
 } 2>&1 | tee -a $LOGFILE
 }
 
-mutanthd51backup()
-{
-echo "This is work in progress, so please check your restored backups and report any errors"
-mkdir -p $MAINDEST
-#python /home/root/findkerneldevice.py
-ROOTSIZE=`df -m /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`
-COUNTEXTRA=$((($ROOTSIZE*2048)+102400))
-dd if=/dev/mmcblk0 of=$MAINDEST/disk.img count=$COUNTEXTRA > /dev/null 2>&1
-image_version > "$MAINDEST/imageversion" 
-backup_made
-END=$(date +%s)
-DIFF=$(( $END - $START ))
-MINUTES=$(( $DIFF/60 ))
-SECONDS=$(( $DIFF-(( 60*$MINUTES ))))
-echo -n $YELLOW
-{
-$SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
-} 2>&1 | tee -a $LOGFILE
-exit
-}
-
 ############################## END PROGRAM BLOCKS #############################
 
 
@@ -285,7 +264,11 @@ echo -n "KERNEL" ; $SHOW "message04" ; printf '%6s' $(($KERNEL/1024)); echo ' KB
 echo -n "ROOTFS" ; $SHOW "message04" ; printf '%6s' $USEDsizekb; echo ' KB'
 echo -n "=TOTAL" ; $SHOW "message04" ; printf '%6s' $KILOBYTES; echo " KB (= $MEGABYTES MB)"
 } 2>&1 | tee -a $LOGFILE
-ESTTIMESEC=$(($KILOBYTES/$ESTSPEED))
+if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
+	ESTTIMESEC=$(($KILOBYTES/($ESTSPEED*3)))
+else
+	ESTTIMESEC=$(($KILOBYTES/$ESTSPEED))
+fi
 ESTMINUTES=$(( $ESTTIMESEC/60 ))
 ESTSECONDS=$(( $ESTTIMESEC-(( 60*$ESTMINUTES ))))
 echo $LINE
