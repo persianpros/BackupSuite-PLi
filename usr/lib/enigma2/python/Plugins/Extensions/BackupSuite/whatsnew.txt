@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 128
+Changed 128
+Some changes because Betacentauri adapted the binary ofgwrite to facilitate the HD51
+
 Git 123+124
 Reworked the routine for the Mutant HD51. In the former version the possibility existed that the made backup was not complete. 
 Now the backup is made of the whole partition and then it's compressed in rootfs.tar.bz2 format.
