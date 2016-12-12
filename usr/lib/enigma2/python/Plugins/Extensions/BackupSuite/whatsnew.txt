@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 129
+Added seasonal greetings!
+
 Git 128
 Changed 128
 Some changes because Betacentauri adapted the binary ofgwrite to facilitate the HD51
