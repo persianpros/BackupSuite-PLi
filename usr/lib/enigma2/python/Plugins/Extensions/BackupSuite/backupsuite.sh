@@ -244,10 +244,6 @@ echo "Pedro_Newbie"
 echo $WHITE
 
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
-#if [ $SEARCH = "hd51" ] ; then
-#	mutanthd51backup
-#fi
-
 $SHOW "message06" 	#"Some information about the task:"
 
 if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then

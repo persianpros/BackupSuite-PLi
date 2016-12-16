@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 130
+Added support for the VU+ models Uno 4K and Ultimo 4K
+
 Git 129
 Added seasonal greetings!
 
