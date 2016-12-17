@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 131
+Forgot to upload the changed plugin.py for the models Uno4K en Ultimo4K
+
 Git 130
 Added support for the VU+ models Uno 4K and Ultimo 4K
 

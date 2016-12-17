@@ -359,7 +359,7 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/vumodel")
 					model = f.read().strip()
 					f.close()
-					if model in ["solo4k"]:
+					if model in ["solo4k", "uno4k", "ultimo4k"]:
 						backup_files = ["kernel_auto.bin", "rootfs.tar.bz2"]
 						no_backup_files = ["kernel.bin", "kernel_cfe_auto.bin", "root_cfe_auto.bin" "root_cfe_auto.jffs2", "rootfs.bin"]
 						text += 'kernel_auto.bin, rootfs.tar.bz2'
