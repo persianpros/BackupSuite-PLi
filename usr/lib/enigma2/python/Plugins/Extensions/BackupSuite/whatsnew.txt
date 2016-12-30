@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 132
+Changed some parameters for the Uno 4K and Ultimo 4K
+Sent Santo home
+
 Git 131
 Forgot to upload the changed plugin.py for the models Uno4K en Ultimo4K
 
