@@ -20,7 +20,7 @@ export SHOW="python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/messa
 TARGET="XX"
 USEDSIZE=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` # size of rootfs
 NEEDEDSPACE=$(((4*$USEDSIZE)/1024))
-for candidate in /media/*
+for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
 do
 	if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ] || [ -d "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ] 
 	then

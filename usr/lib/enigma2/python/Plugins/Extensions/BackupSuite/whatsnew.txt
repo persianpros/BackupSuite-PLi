@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 133
+Very small alteration in scanning suitable backup location for the usb version
+
 Git 132
 Changed some parameters for the Uno 4K and Ultimo 4K
 Sent Santo home
