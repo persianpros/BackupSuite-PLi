@@ -1,5 +1,10 @@
 Changelog
 =========
+Git 134
+Again a small alteration in scanning suitable loacations for the USB version. On certain mounts the calculated size was wrong.
+If the file backupstick is present in the root of one of the mounts it is posible to make a backup on that mount via the yellow button
+Backup > USB
+
 Git 133
 Very small alteration in scanning suitable backup location for the usb version
 

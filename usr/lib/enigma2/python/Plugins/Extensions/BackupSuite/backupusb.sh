@@ -35,10 +35,10 @@ if [ "$TARGET" = "XX" ] ; then
 else
 	echo -n $YELLOW
 	$SHOW "message22" 
-	SIZE_1="$(df -h "$TARGET" | tail -n 1 | awk {'print $4'})"
-	SIZE_2="$(df -h "$TARGET" | tail -n 1 | awk {'print $2'})"
+	SIZE_1="$(df -h "$TARGET" | tail -n 1 | awk {'print $(NF-2)'})"
+	SIZE_2="$(df -h "$TARGET" | tail -n 1 | awk {'print $(NF-4)'})"
 	echo -n " -> $TARGET ($SIZE_2, " ; $SHOW "message16" ; echo "$SIZE_1)"
-	FREESIZE="$(df -B 1048576 "$TARGET" | tail -n 1 | awk {'print $4'})"
+	FREESIZE="$(df -B 1048576 "$TARGET" | tail -n 1 | awk {'print $(NF-2)'})"
 	if [ $FREESIZE -lt $NEEDEDSPACE ] ; then
 		echo $RED
 		$SHOW "message30" ; echo -n "$TARGET" ; $SHOW "message31"
