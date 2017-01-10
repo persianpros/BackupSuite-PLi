@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 136
+Added support for the Spycat Mini Plus, Formuler F4 Turbo and Zgemma I 55
+
 Git 135
 Added support for the Edision OS mega
 
