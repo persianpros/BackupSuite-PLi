@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 137
+Some minor changes for the HD51. Find the correct kernel partition (important in multiboot environment) and give the kernel#.bin the proper number for backups of the HD51
+
 Git 136
 Added support for the Spycat Mini Plus, Formuler F4 Turbo and Zgemma I 55
 

@@ -335,7 +335,10 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	log "--------------------------"
 else
 	if [ $SEARCH = "hd51" ] ; then
-		dd if=/dev/mmcblk0p2 of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
+		python findkerneldevice.py
+		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
+		KERNELNAME=${KERNEL:11:7}.bin
+		dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
 	else
 		dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p1" 

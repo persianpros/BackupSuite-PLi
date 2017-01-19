@@ -15,7 +15,7 @@ HD 1200	hd1200	HD 1200	/hd1200	/fullbackup_hd1200		-m 2048 -e 126976 -c 8192	-m 
 HD 1265	hd1265	HD 1265	/hd1265	/fullbackup_hd1265		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1500	hd1500	HD 1500	/hd1500	/fullbackup_hd1500		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-HD 51	hd51	Mutant HD51	/hd51	/fullbackup_hd51		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.tar.bz2	kernel1.bin	none
+HD 51	hd51	Mutant HD51	/hd51	/fullbackup_hd51				rootfs.tar.bz2	kernel1.bin	none
 HD 500C	hd500c	HD 500c	/hd500c	/fullbackup_hd500c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Ixuss Zero	ixusszero	Ixuss Zero	/medialink/ixusszero	/fullbackup_ixusszero	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -33,13 +33,13 @@ Spycat Mini Plus	spycatminiplus	Spycat Mini Plus	/spycatminiplus	/fullbackup_spy
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
 Vu+ Duo2	duo2	Vu+ Duo2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Solo	solo	Vu+ Solo	/vuplus/solo	/fullbackup_solo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
-Vu+ Solo 4K	solo4k	Vu+ Solo 4K	/vuplus/solo4k	/fullbackup_solo4k	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.tar.bz2	kernel_auto.bin	reboot
+Vu+ Solo 4K	solo4k	Vu+ Solo 4K	/vuplus/solo4k	/fullbackup_solo4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	reboot
 Vu+ Solo SE	solose	Vu+ Solo SE	/vuplus/solose	/fullbackup_solose	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
 Vu+ Solo2	solo2	Vu+ Solo2	/vuplus/solo2	/fullbackup_solo2	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Ultimo	ultimo	Vu+ Ultimo	/vuplus/ultimo	/fullbackup_ultimo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	reboot
-Vu+ Ultimo 4K	ultimo4k	Vu+ Ultimo 4K	/vuplus/ultimo4k	/fullbackup_ultimo4k	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.tar.bz2	kernel_auto.bin	force
+Vu+ Ultimo 4K	ultimo4k	Vu+ Ultimo 4K	/vuplus/ultimo4k	/fullbackup_ultimo4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Vu+ Uno	uno	Vu+ Uno	/vuplus/uno	/fullbackup_uno	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	reboot
-Vu+ Uno 4K	uno4k	Vu+ Uno 4K	/vuplus/uno4k	/fullbackup_uno4k	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.tar.bz2	kernel_auto.bin	force
+Vu+ Uno 4K	uno4k	Vu+ Uno 4K	/vuplus/uno4k	/fullbackup_uno4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Vu+ Zero	zero	Vu+ zero	/vuplus/zero	/fullbackup_zero	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
 Xpeed LX	ini-1000de	Xpeed LX	/xpeedlx	/fullbackup_xpeed		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xpeed LX3	ini-9000de	Xpeed LX3	/xpeedlx3	/fullbackup_xpeedlx3		-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB 	rootfs.bin	kernel.bin	noforce
