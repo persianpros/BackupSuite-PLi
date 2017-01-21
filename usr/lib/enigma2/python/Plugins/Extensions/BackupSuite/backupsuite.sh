@@ -335,9 +335,11 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	log "--------------------------"
 else
 	if [ $SEARCH = "hd51" ] ; then
-		python findkerneldevice.py
+		python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
 		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
 		KERNELNAME=${KERNEL:11:7}.bin
+		echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
+		log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
 		dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
 	else
 		dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME

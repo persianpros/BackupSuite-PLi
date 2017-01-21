@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 138
+Added some code to report the kernel number for the HD51 multiboot
+corrected an error
+
 Git 137
 Some minor changes for the HD51. Find the correct kernel partition (important in multiboot environment) and give the kernel#.bin the proper number for backups of the HD51
 
