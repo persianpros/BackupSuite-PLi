@@ -26,6 +26,7 @@ Miraclebox Mini Plus	ini-2000sv	Miraclebox MiniPlus 	/miraclebox/miniplus	/fullb
 Miraclebox Twin	ini-5000sv	Miraclebox Twin	/miraclebox/twin	/fullbackup_mbtwin	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Twin Plus	g300	Miraclebox Twin Plus	/miraclebox/twinplus	/fullbackup_mbtwinplus	/miraclebox	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Ultra	ini-8000sv	Miraclebox Ultra	/miraclebox/ultra	/fullbackup_mbultra	/miraclebox	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
+Octagon SF4008	sf4008	Octagon SF4008	/sf4008	/fullbackup_sf4008				rootfs.tar.bz2	kernel.bin	noforce
 Octagon	xp1000s	Octagon XP1000s	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat	spycat	Spycat	/spycat	/fullbackup_spycat		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini	spycatmini	Spycat Mini	/spycatmini	/fullbackup_spycatmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
