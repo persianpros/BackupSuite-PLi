@@ -351,6 +351,10 @@ class FlashImageConfig(Screen):
 						backup_files = [("kernel1.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel1.bin, rootfs.tar.bz2'
+					elif model in ["sf4008"]:
+						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = ["kernel_cfe_auto.bin", "kernel1.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						text += 'kernel.bin, rootfs.tar.bz2'
 					else:
 						backup_files = [("kernel.bin"), ("rootfs.bin")]
 						no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]

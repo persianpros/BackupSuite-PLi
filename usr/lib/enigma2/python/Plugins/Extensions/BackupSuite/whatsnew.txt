@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 139-141
+Added support for the Octagon sf4008
+Thanks Atoik
+
 Git 138
 Added some code to report the kernel number for the HD51 multiboot
 corrected an error
