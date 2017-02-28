@@ -143,6 +143,10 @@ class BackupStart(Screen):
 			f = open("/proc/stb/info/hwmodel")
 			model = f.read().strip()
 			f.close()
+		elif os.path.exists("/proc/stb/info/gbmodel"):
+			f = open("/proc/stb/info/gbmodel")
+			model = f.read().strip()
+			f.close()
 		else:
 			return
 		if model != "":
@@ -343,6 +347,13 @@ class FlashImageConfig(Screen):
 					if model in ["fusionhd", "fusionhdse"]:
 						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
 						text += "oe_kernel.bin, oe_rootfs.bin"
+				elif os.path.exists("/proc/stb/info/gbmodel"):
+					f = open("/proc/stb/info/gbmodel")
+					model = f.read().strip()
+					f.close()
+					if model in ["gbquadplus"]:
+						backup_files = ["kernel.bin", "rootfs.bin"]
+						text += "kernel.bin, rootfs.bin"
 				elif os.path.exists("/proc/stb/info/boxtype"):
 					f = open("/proc/stb/info/boxtype")
 					model = f.read().strip()

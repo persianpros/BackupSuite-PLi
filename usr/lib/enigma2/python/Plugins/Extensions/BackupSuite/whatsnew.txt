@@ -1,8 +1,12 @@
 Changelog
 =========
+Git 142-144
+Added support for Gigablue Quad
+Thanks Athoik
+
 Git 139-141
 Added support for the Octagon sf4008
-Thanks Atoik
+Thanks Athoik
 
 Git 138
 Added some code to report the kernel number for the HD51 multiboot
