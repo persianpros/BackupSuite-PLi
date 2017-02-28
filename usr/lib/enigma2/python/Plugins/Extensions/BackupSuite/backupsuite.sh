@@ -183,6 +183,8 @@ echo -n $WHITE
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
 if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
 	SEARCH=$( cat /proc/stb/info/hwmodel )
+elif [ -f /proc/stb/info/gbmodel ] ; then			# Gigablue models
+	SEARCH=$( cat /proc/stb/info/gbmodel )
 elif [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
 	SEARCH=$( cat /proc/stb/info/boxtype )
 elif [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
