@@ -397,6 +397,7 @@ elif [ $ACTION = "reboot" ] ; then
 	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/reboot.update"
 elif [ $ACTION = "force" ] ; then
 	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
+	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
 fi
 
 image_version > "$MAINDEST/imageversion" 
