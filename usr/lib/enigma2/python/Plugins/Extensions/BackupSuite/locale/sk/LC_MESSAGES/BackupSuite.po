@@ -3,13 +3,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
+"Last-Translator: Andrej Tobola <andrej.tobola@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.8.11\n"
+"Language: sk\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
@@ -53,15 +54,15 @@ msgstr "Nebol nájdený žiadny podporovaný prijímač!"
 
 #: message02
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "BACK-UP nástroj, na výrobu kompletnej zálohy Image"
+msgstr "BACK-UP nástroj na výrobu kompletnej zálohy Image"
 
 #: message03
 msgid "Please be patient, a backup will now be made, this will take about: "
-msgstr "Prosím, buďte trpezliví, bude vytvorená záloha Image, potrvá to približne: "
+msgstr "Buďte prosím trpezliví, vytvorí sa záloha Image, ktorá potrvá približne: "
 
 #: message04
 msgid " size to be backed up: "
-msgstr " zálohovaná velkosť: "
+msgstr " zálohovaná veľkosť: "
 
 #: message05
 msgid "not found, the backup process will be aborted!"
@@ -177,7 +178,7 @@ msgstr "S najväčšou pravdepodobnosťou sa záloha nedá obnoviť, pretože je
 
 #: message29
 msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Mohol by byť problém s obnovením téjto zálohy, pretože velkosť zálohy sa blíži k maximálnej velkosti. Jedná sa o obmedzenie bootloadera, nie o chybu v zálohe alebo chybu BackupSuite."
+msgstr "Mohol by byť problém s obnovením téjto zálohy, pretože veľkosť zálohy sa blíži k maximálnej velkosti. Jedná sa o obmedzenie bootloadera, nie o chybu v zálohe alebo chybu BackupSuite."
 
 #: message30-1
 msgid "* * * WARNING * * *"
