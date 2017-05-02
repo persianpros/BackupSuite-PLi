@@ -1,5 +1,11 @@
 Changelog
 =========
+Git 152
+Added support for the SAB Alpha Triple
+
+Git 149-150
+Changed the SK translation by Pr0metheus2
+
 Git 146-148
 Added a small advise how to flash the backup for the Vu+ Solo SE, Uno4K and Zero (rename noforce.update into force.update)
 Corrected some translations in SK by Pr0metheus2. Big thanks!
