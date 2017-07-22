@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 153
+Added support for several Zgemma receivers. Thanks go to WTE (Walter)
+
 Git 152
 Added support for the SAB Alpha Triple
 
