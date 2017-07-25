@@ -302,6 +302,11 @@ mkdir -p /tmp/bi/root # this is where the complete content will be available
 log "Create directory   = /tmp/bi/root"
 sync
 mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
+##      /var/lib/samba/private/msg.sock
+## WHICH GIVES AN ERRORMESSAGE WHEN NOT REMOVED
+if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
+	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
+fi
 
 ####################### START THE REAL BACK-UP PROCESS ########################
 ############################# MAKING UBINIZE.CFG ##############################
