@@ -1,6 +1,9 @@
 Changelog
 =========
-Git 154
+Git 156
+Made some changes in plugin.py to be able to flash h7 images
+
+Git 154/155
 Added a little workaround to avoid error messages on:
 /var/lib/samba/private/msg.sock
 

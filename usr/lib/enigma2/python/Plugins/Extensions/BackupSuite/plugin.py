@@ -358,7 +358,7 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/boxtype")
 					model = f.read().strip()
 					f.close()
-					if model in ["hd51"]:
+					if model in ["hd51", "h7"]:
 						backup_files = [("kernel1.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel1.bin, rootfs.tar.bz2'
