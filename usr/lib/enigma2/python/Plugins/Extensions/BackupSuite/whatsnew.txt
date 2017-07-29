@@ -1,5 +1,9 @@
 Changelog
 =========
+Git 157
+Added Lithuanian translation
+Thanks go to VytenisP
+
 Git 156
 Made some changes in plugin.py to be able to flash h7 images
 

@@ -1,0 +1,314 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BackupSuite\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: plugin.py 89
+msgid "Make a backup or restore a backup"
+msgstr "Padaryti, arba atkurti atsarginę kopiją"
+
+msgid "Full back-up on HDD"
+msgstr "Pilna atsarginė kopija į HDD"
+
+msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Jūs norite padaryti atvaizdo atsarginę USB įkrovos kopiją į HDD?\n"
+"\n"
+"Tai užtrunka tik keletą minučių ir viskas atliekama automatiškai.\n"
+
+msgid "Full back-up to USB"
+msgstr "Pilna atsarginė kopija į USB"
+
+msgid ""
+"Do you want to make a back-up on USB?\n"
+"\n"
+"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"\n"
+"Make sure you first insert an USB flash drive before you select Yes."
+msgstr ""
+"Jūs norite padaryti atvaizdo atsarginę kopiją į USB laikmeną?\n"
+"\n"
+"Tai užtrunka tik keletą minučių, priklausomai nuo failų sistemos ir viskas atliekama automatiškai.\n"
+"\n"
+"Prieš pasirinkdami 'Taip', įsitikinkite, kad prijungėte USB laikmeną."
+
+msgid "No supported receiver found!"
+msgstr "Nerasta tinkamo imtuvo!"
+
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "ATSARGINIO KOPIJAVIMO ĮRANKIS PILNOMS KOPIJOMS KURTI"
+
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr "Būkite kantrūs, atsarginė kopija tuojau bus padaryta. Tai užtruks maždaug: "
+
+msgid " size to be backed up: "
+msgstr " atsarginės kopijos dydis: "
+
+msgid "not found, the backup process will be aborted!"
+msgstr "nerasta, atsarginio kopijavimo procesas bus nutrauktas!"
+
+msgid "Some information about the task"
+msgstr "Šiek tiek informacijos apie užduotį"
+
+msgid "Create: root.ubifs"
+msgstr "Sukurti: root.ubifs"
+
+msgid "Create: kerneldump"
+msgstr "Sukurti: kerneldump"
+
+msgid "Additional backup -> "
+msgstr "Papildoma kopija -> "
+
+msgid "USB Image created in: "
+msgstr "USB atvaizdas sukurtas: "
+
+msgid "and there is made an extra copy in: "
+msgstr "ir padaryta papildoma kopija į: "
+
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr "Kaip atkurti sistemos atvaizdą, žiūrėkite savo aparato vartotojo vadove."
+
+msgid "Image creation FAILED!"
+msgstr "Atvaizdo sukurti NEPAVYKO!"
+
+msgid "available "
+msgstr "prieinama "
+
+msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr "Viename iš USB prievadų aptikta tinkama USB laikmena, todėl papildoma atsarginė atvaizdo kopija bus nukopijuota į tą USB laikmeną."
+
+msgid "This only takes about 20 seconds....."
+msgstr "Tai truks tik apie 20 sekundžių...."
+
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Atsarginis kopijavimas baigtas, kopija įkelta į USB laikmeną."
+
+msgid "Full back-up to the harddisk"
+msgstr "Pilna atsarginė kopija į HDD"
+
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "Tinkamų USB laikmenų nerasta, todėl nėra ką daryti."
+
+msgid "PLEASE READ THIS:"
+msgstr "PERSKAITYKITE :"
+
+msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
+msgstr "Kad atsarginę kopiją daryti tiesiai į USB atmintinę, USB laikmenoje TURI BŪTI failas pavadinimu:"
+
+msgid "backupstick or"
+msgstr "backupstick, arba"
+
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
+msgstr "Jei prijungsite USB laikmeną su šiuo failu, į ją bus automatiškai sukurta atsarginė kopija ir prireikus, ši laikmena gali būti naudojama atkurti dabartinį atvaizdą."
+
+msgid "The program will exit now."
+msgstr "Programa dabar užsidarys."
+
+msgid "Full back-up direct to USB"
+msgstr "Pilna atsarginė kopija tiesiai į USB laikmeną"
+
+msgid "The content of the folder is:"
+msgstr "Katalogo turinys:"
+
+msgid "Time required for this process: "
+msgstr "Šis procesas užtruko: "
+
+msgid "minutes"
+msgstr "min."
+
+msgid "Backup done with: "
+msgstr "Atsarginė kopija padaryta: "
+
+msgid "KB per second"
+msgstr "KB per sekundę"
+
+msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Greičiausiai šios atsarginės kopijos nebegalima atkurti dėl jos dydžio - ji tiesiog per didelė, kad atkurti. Tai ne atvaizdo ir ne šio kopijavimo įrankio, bet OS paleidimo programos apribojimas."
+
+msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "GALI būti problemų su šios atsarginės kopijos atkūrimu, nes jos dydis jau priartėja prie maksimalaus leistino. Tai ne atvaizdo ir ne šio kopijavimo įrankio, bet OS paleidimo programos apribojimas."
+
+msgid "* * * WARNING * * *"
+msgstr "* * * DĖMESIO * * *"
+
+msgid "Not enough free space on "
+msgstr "Nepakanka laisvos vietos "
+
+msgid " to make a back-up!"
+msgstr " kad padaryti atsarginę kopiją!"
+
+msgid " MB available space"
+msgstr " MB laisvos vietos"
+
+msgid " MB needed space"
+msgstr " MB reikia"
+
+msgid "The program will abort, please try another medium with more free space to create your back-up."
+msgstr "Veiksmas bus nutrauktas, atsarginei kopijai pasirinkite kitą laikmeną su daugiau laisvos vietos."
+
+#: plugin.py 294
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+"\n"
+"Surasti failai:"
+
+#: plugin.py 300
+#, python-format
+msgid "  %s (maybe error)"
+msgstr "  %s (galbūt klaida)"
+
+#: plugin.py 297
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr "  %s (galbūt gerai)"
+
+#: plugin.py 303
+msgid " nothing!"
+msgstr " nieko!"
+
+#: plugin.py 327
+msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
+msgstr "Vyksta įrašymas. Prieš atvaizdo įdiegimą, nutraukite įrašymą."
+
+#: plugin.py 91
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: plugin.py 383
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr "Ar tikrai norite išskleisti %s?"
+
+#: plugin.py 317
+msgid "Exit"
+msgstr "Užverti"
+
+#: plugin.py 331
+msgid "Flashing: "
+msgstr "Diegiama: "
+
+#: plugin.py 275
+msgid "For flashing your receiver files are needed:\n"
+msgstr "Įdiegimui reikalingi failai:\n"
+
+#: plugin.py 354
+msgid "NOT found files for flashing!\n"
+msgstr "Failų diegimui NERASTA!\n"
+
+#: plugin.py 311 343
+msgid "Only kernel"
+msgstr "Tik branduolį"
+
+#: plugin.py 310 340
+msgid "Only root"
+msgstr "Tik pagrindinį"
+
+#: plugin.py 361
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr "NEPALEIDINĖKITE aparato iš naujo ir NEIŠJUNKITE maitinimo įtampos.\n"
+
+#: plugin.py 94
+msgid "Restore backup"
+msgstr "Atkurti atsarginę kopiją"
+
+#: plugin.py 249 263 269
+msgid "Run flash"
+msgstr "Pradėti diegimą"
+
+#: plugin.py 274
+msgid "Select parameter for start flash!\n"
+msgstr "Pasirinkite diegimo parametrus!\n"
+
+#: plugin.py 199
+msgid "Select the folder with backup"
+msgstr "Pasirinkite katalogą su atsargine kopija"
+
+#: plugin.py 367
+msgid "Show only found image and mtd partitions.\n"
+msgstr "Rodyti tik rastą atvaizdą ir MTD skaidinius.\n"
+
+#: plugin.py 308 334
+msgid "Simulate (no write)"
+msgstr "Imituoti (be įrašymo)"
+
+#: plugin.py 309 337
+msgid "Standard (root and kernel)"
+msgstr "Standartinis (atvaizdas ir branduolys)"
+
+#: plugin.py 362
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr "Atvaizdas, arba branduolys bus įdiegtas ir automatiškai pasileis po kelių minučių.\n"
+
+#: plugin.py 247 380
+msgid "Unzip"
+msgstr "Išskleisti"
+
+#: plugin.py 266
+msgid ""
+"Warning!\n"
+"Use at your own risk! Make always a backup before use!\n"
+"Don't use it if you use multiple ubi volumes in ubi layer!"
+msgstr ""
+"Įspėjimas!\n"
+"Naudokite savo atsakomybe! Prieš naudojimą, visada padarykite atsarginę kopiją!\n"
+"Nenaudokite jo, jei naudojate  keliatomius UBI!"
+
+#: plugin.py 360
+msgid "Your STB will freeze during the flashing process.\n"
+msgstr "Diegimo metu jūsų imtuvas nustos reaguoti į komandas.\n"
+
+#: plugin.py 203 241
+#, python-format
+msgid "current:  %s"
+msgstr "dabar: %s"
+
+#: plugin.py 359
+msgid "ofgwrite will stop enigma2 now to run the flash.\n"
+msgstr "ofgwrite dabar sustabdys enigma2 ir pradės diegimą.\n"
+
+#: plugin.py 312 346
+msgid "Only root with use mtdy device"
+msgstr "Tik pagrindinį, naudojant mtdy"
+
+#: plugin.py 313 349
+msgid "Only kernel with use mtdx device"
+msgstr "Tik branduolį, naudojant mtdy"
+
+#: plugin.py 405 412
+msgid "BackupSuite"
+msgstr "BackupSuite"
+
+#: plugin.py 406 413
+msgid "Enables back-up & restore without an USB-stick"
+msgstr "Leidžia atsarginį kopijavimą ir atkūrimą be USB laikmenos"
+
+#: plugin.py 92
+msgid "Backup > HDD"
+msgstr "Kopijuoti > HDD"
+
+#: plugin.py 93
+msgid "Backup > USB"
+msgstr "Kopijuoti > USB"
+
+#: plugin.py 173
+msgid "What is new since the last release?"
+msgstr "Kas naujo nuo paskutinio išleidimo?"
+
