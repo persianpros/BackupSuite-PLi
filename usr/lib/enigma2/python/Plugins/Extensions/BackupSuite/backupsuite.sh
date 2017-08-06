@@ -349,7 +349,7 @@ else
 		echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
 		log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
 		dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
-	elif [ $SEARCH = "sf4008" ] ; then
+	elif [ $SEARCH = "sf4008" -o $SEARCH = "et11000" ] ; then
 		dd if=/dev/mmcblk0p3 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p3"
 	else

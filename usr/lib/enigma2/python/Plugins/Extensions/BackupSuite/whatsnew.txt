@@ -1,5 +1,8 @@
 Changelog
 =========
+Git 158
+Added support for the GI ET11000
+
 Git 157
 Added Lithuanian translation
 Thanks go to VytenisP
