@@ -4,6 +4,7 @@ Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemi
 Edision OSmini	osmini	Edision OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSmini plus	osminiplus	Edision OSmini plus	/osminiplus	/fullbackup_osminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OS mega	osmega	Edision OS mega	/osmega	/fullbackup_osmega		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Edision OSnino	osnino	Edision OSnino	/osnino	/fullbackup_osnino		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F1	formuler1	Formuler F1	/formuler1	/fullbackup_formuler1		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
