@@ -40,8 +40,8 @@ SAB Alpha Triple	alphatriplehd	SAB Alpha Triple	/sab_alpha_triple	/fullbackup_sa
 Spycat	spycat	Spycat	/spycat	/fullbackup_spycat		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini	spycatmini	Spycat Mini	/spycatmini	/fullbackup_spycatmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini Plus	spycatminiplus	Spycat Mini Plus	/spycatminiplus	/fullbackup_spycatminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-VS1000 vs1000 VS1000 /vs1000 /fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-VS1500 vs1500 VS1500 /vs1500 /fullbackup_vs1500	/vs1500			rootfs.tar.bz2	kernel.bin	force
+Vimastec VS1000 vs1000 Vimastec VS1000 /vs1000 /fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Vimastec VS1500 vs1500 Vimastec VS1500 /vs1500 /fullbackup_vs1500	/vs1500			rootfs.tar.bz2	kernel.bin	force
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
 Vu+ Duo2	duo2	Vu+ Duo2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Solo	solo	Vu+ Solo	/vuplus/solo	/fullbackup_solo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
@@ -55,6 +55,7 @@ Vu+ Uno 4K	uno4k	Vu+ Uno 4K	/vuplus/uno4k	/fullbackup_uno4k	/vuplus			rootfs.tar
 Vu+ Uno 4K SE	uno4kse	Vu+ Uno 4K SE	/vuplus/uno4kse	/fullbackup_uno4kse	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Vu+ Zero	zero	Vu+ zero	/vuplus/zero	/fullbackup_zero	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
 Vu+ Zero 4K	zero4k	Vu+ zero 4K	/vuplus/zero4k	/fullbackup_zero4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
+WWIO BRE2ZE 4K bre2ze4k WWIO BRE2ZE 4K /bre2ze4k /fullbackup_bre2ze4k	/bre2ze4k			rootfs.tar.bz2	kernel.bin	force
 Xpeed LX	ini-1000de	Xpeed LX	/xpeedlx	/fullbackup_xpeed		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xpeed LX3	ini-9000de	Xpeed LX3	/xpeedlx3	/fullbackup_xpeedlx3		-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB 	rootfs.bin	kernel.bin	noforce
 Xpeed LX Class	xpeedlx	GI Xpeed LX Class S2 or C	/xpeedc	/fullbackup_xpeedc		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
