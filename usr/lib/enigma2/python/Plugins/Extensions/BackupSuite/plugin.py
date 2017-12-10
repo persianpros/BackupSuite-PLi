@@ -355,7 +355,7 @@ class FlashImageConfig(Screen):
 						backup_files = ["kernel.bin", "rootfs.bin"]
 						text += "kernel.bin, rootfs.bin"
 					elif "4k" in model:
-						backup_files = [("kernel1.bin"), ("rootfs.tar.bz2")]
+						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel.bin, rootfs.tar.bz2'
 				elif os.path.exists("/proc/stb/info/boxtype"):
