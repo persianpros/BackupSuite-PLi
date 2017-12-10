@@ -48,6 +48,7 @@ Vu+ Uno	uno	Vu+ Uno	/vuplus/uno	/fullbackup_uno	/vuplus	-m 2048 -e 126976 -c 409
 Vu+ Uno 4K	uno4k	Vu+ Uno 4K	/vuplus/uno4k	/fullbackup_uno4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Vu+ Uno 4K SE	uno4kse	Vu+ Uno 4K SE	/vuplus/uno4kse	/fullbackup_uno4kse	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Vu+ Zero	zero	Vu+ zero	/vuplus/zero	/fullbackup_zero	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
+Vu+ Zero 4K	zero4k	Vu+ zero 4K	/vuplus/zero4k	/fullbackup_zero4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Xpeed LX	ini-1000de	Xpeed LX	/xpeedlx	/fullbackup_xpeed		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xpeed LX3	ini-9000de	Xpeed LX3	/xpeedlx3	/fullbackup_xpeedlx3		-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB 	rootfs.bin	kernel.bin	noforce
 Xpeed LX Class	xpeedlx	GI Xpeed LX Class S2 or C	/xpeedc	/fullbackup_xpeedc		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
