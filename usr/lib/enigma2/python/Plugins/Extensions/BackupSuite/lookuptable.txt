@@ -13,9 +13,9 @@ Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 1
 Formuler F4 Turbo	formuler4turbo	Formuler F4 Turbo	/formuler4turbo	/fullbackup_formuler4turbo		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 GI ET7000 Mini	et7000mini	Galaxy Innovations ET7000 mini	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 GI ET11000 4k	et11000	GI ET11000	/et1x000	/fullbackup_et1x000				rootfs.tar.bz2	kernel1.bin	noforce
-Gigablue Quad 4K	gbquad4k	Gigablue Quad 4K	/gigablue/quad4k	/fullbackup_quad4k	/gigablue			rootfs.tar.bz2	kernel.bin	reboot
+Gigablue Quad 4K	gbquad4k	Gigablue Quad 4K	/gigablue/quad4k	/fullbackup_quad4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 Gigablue QuadPlus	gbquadplus	Gigablue QuadPlus	/gigablue/quadplus	/fullbackup_quadplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Gigablue UE 4K	gbue4k	Gigablue UE 4K	/gigablue/ue4k	/fullbackup_ued4k	/gigablue			rootfs.tar.bz2	kernel.bin	reboot
+Gigablue UE 4K	gbue4k	Gigablue UE 4K	/gigablue/ue4k	/fullbackup_ued4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 HD 11	hd11	HD 11	/hd11	/fullbackup_hd11		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1100	hd1100	HD 1100	/hd1100	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1200	hd1200	HD 1200	/hd1200	/fullbackup_hd1200		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -41,6 +41,7 @@ Spycat	spycat	Spycat	/spycat	/fullbackup_spycat		-m 2048 -e 126976 -c 4096 -F	-m
 Spycat Mini	spycatmini	Spycat Mini	/spycatmini	/fullbackup_spycatmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini Plus	spycatminiplus	Spycat Mini Plus	/spycatminiplus	/fullbackup_spycatminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 VS1000 vs1000 VS1000 /vs1000 /fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+VS1500 vs1500 VS1500 /vs1500 /fullbackup_vs1500	/vs1500			rootfs.tar.bz2	kernel.bin	force
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
 Vu+ Duo2	duo2	Vu+ Duo2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Solo	solo	Vu+ Solo	/vuplus/solo	/fullbackup_solo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
