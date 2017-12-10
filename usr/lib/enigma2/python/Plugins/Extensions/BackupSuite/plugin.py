@@ -354,6 +354,10 @@ class FlashImageConfig(Screen):
 					if model in ["gbquadplus"]:
 						backup_files = ["kernel.bin", "rootfs.bin"]
 						text += "kernel.bin, rootfs.bin"
+					elif "4k" in model:
+						backup_files = [("kernel1.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = ["kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						text += 'kernel.bin, rootfs.tar.bz2'
 				elif os.path.exists("/proc/stb/info/boxtype"):
 					f = open("/proc/stb/info/boxtype")
 					model = f.read().strip()
@@ -374,7 +378,7 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/vumodel")
 					model = f.read().strip()
 					f.close()
-					if model in ["solo4k", "uno4k", "ultimo4k"]:
+					if "4k" in model:
 						backup_files = ["kernel_auto.bin", "rootfs.tar.bz2"]
 						no_backup_files = ["kernel.bin", "kernel_cfe_auto.bin", "root_cfe_auto.bin" "root_cfe_auto.jffs2", "rootfs.bin"]
 						text += 'kernel_auto.bin, rootfs.tar.bz2'
