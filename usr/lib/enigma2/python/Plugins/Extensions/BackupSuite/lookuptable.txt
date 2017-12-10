@@ -1,4 +1,6 @@
 BRAND AND MODEL	MODEL	SHOWNAME	FOLDER	EXTR1	EXTR2	MKUBIFS_ARGS	UBINIZE_ARGS	ROOTNAME	KERNELNAME	ACTION
+Amiko Viper Combo	vipercombo	Amiko Viper Combo	/vipercombo	/fullbackup_vipercombo	/vipercombo	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Amiko Viper T2C	vipert2c	Amiko Viper T2C	/vipert2c	/fullbackup_vipert2c	/vipert2c	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 Edision OSmini	osmini	Edision OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -11,7 +13,9 @@ Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 1
 Formuler F4 Turbo	formuler4turbo	Formuler F4 Turbo	/formuler4turbo	/fullbackup_formuler4turbo		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 GI ET7000 Mini	et7000mini	Galaxy Innovations ET7000 mini	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 GI ET11000 4k	et11000	GI ET11000	/et1x000	/fullbackup_et1x000				rootfs.tar.bz2	kernel1.bin	noforce
+Gigablue Quad 4K	gbquad4k	Gigablue Quad 4K	/gigablue/quad4k	/fullbackup_quad4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 Gigablue QuadPlus	gbquadplus	Gigablue QuadPlus	/gigablue/quadplus	/fullbackup_quadplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue UE 4K	gbue4k	Gigablue UE 4K	/gigablue/ue4k	/fullbackup_ued4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 HD 11	hd11	HD 11	/hd11	/fullbackup_hd11		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1100	hd1100	HD 1100	/hd1100	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1200	hd1200	HD 1200	/hd1200	/fullbackup_hd1200		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -36,6 +40,8 @@ SAB Alpha Triple	alphatriplehd	SAB Alpha Triple	/sab_alpha_triple	/fullbackup_sa
 Spycat	spycat	Spycat	/spycat	/fullbackup_spycat		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini	spycatmini	Spycat Mini	/spycatmini	/fullbackup_spycatmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini Plus	spycatminiplus	Spycat Mini Plus	/spycatminiplus	/fullbackup_spycatminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Vimastec VS1000 vs1000 Vimastec VS1000 /vs1000 /fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Vimastec VS1500 vs1500 Vimastec VS1500 /vs1500 /fullbackup_vs1500	/vs1500			rootfs.tar.bz2	kernel.bin	force
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
 Vu+ Duo2	duo2	Vu+ Duo2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Solo	solo	Vu+ Solo	/vuplus/solo	/fullbackup_solo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
@@ -46,14 +52,19 @@ Vu+ Ultimo	ultimo	Vu+ Ultimo	/vuplus/ultimo	/fullbackup_ultimo	/vuplus	-m 2048 -
 Vu+ Ultimo 4K	ultimo4k	Vu+ Ultimo 4K	/vuplus/ultimo4k	/fullbackup_ultimo4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	reboot
 Vu+ Uno	uno	Vu+ Uno	/vuplus/uno	/fullbackup_uno	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	reboot
 Vu+ Uno 4K	uno4k	Vu+ Uno 4K	/vuplus/uno4k	/fullbackup_uno4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
+Vu+ Uno 4K SE	uno4kse	Vu+ Uno 4K SE	/vuplus/uno4kse	/fullbackup_uno4kse	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Vu+ Zero	zero	Vu+ zero	/vuplus/zero	/fullbackup_zero	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
+Vu+ Zero 4K	zero4k	Vu+ zero 4K	/vuplus/zero4k	/fullbackup_zero4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
+WWIO BRE2ZE 4K bre2ze4k WWIO BRE2ZE 4K /bre2ze4k /fullbackup_bre2ze4k	/bre2ze4k			rootfs.tar.bz2	kernel.bin	force
 Xpeed LX	ini-1000de	Xpeed LX	/xpeedlx	/fullbackup_xpeed		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xpeed LX3	ini-9000de	Xpeed LX3	/xpeedlx3	/fullbackup_xpeedlx3		-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB 	rootfs.bin	kernel.bin	noforce
 Xpeed LX Class	xpeedlx	GI Xpeed LX Class S2 or C	/xpeedc	/fullbackup_xpeedc		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xsarius Fusion HD	fusionhd	Xsarius Fusion HD	/update/fusionhd/cfe	/fullbackup_fusionhd	/update/fusionhd	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Xsarius Fusion HD SE	fusionhdse	Xsarius Fusion HD SE	/update/fusionhdse/cfe	/fullbackup_fusionhdse	/update/fusionhdse	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Xsarius Galaxy 4K	galaxy4k	Xsarius Galaxy 4K	/update/galaxy4k	/fullbackup_galaxy4k	/update			rootfs.tar.bz2	oe_kernel.bin	force
 Xsarius Pure HD	purehd	Xsarius Pure HD	/update/purehd/cfe	/fullbackup_purehd	/update/purehd	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Xsarius Pure HD SE purehdse Xsarius Pure HD SE /update/purehdse/cfe /fullbackup_purehdse /update/purehdse -m 2048 -e 126976 -c 4096 -F -m 2048 -p 128KiB oe_rootfs.bin oe_kernel.bin none
+Xsarius Revo 4K	revo4k	Xsarius Revo 4K	/update/revo4k	/fullbackup_revo4k	/update			rootfs.tar.bz2	oe_kernel.bin	force
 Xtrend 10000	et10000	Xtrend ET10000	/et10000	/fullbackup_et10000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 4000	et4000	Xtrend ET4000	/et4x00	/fullbackup_et4x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 5000	et5000	Xtrend ET5000	/et5x00	/fullbackup_et5x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -69,6 +80,7 @@ Xtrend 9500	et9500	Xtrend ET9500	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -
 Zgemma H.S / H.2S / H.2H	h3	Zgemma H.S / H.2S / H.2H	/zgemma/h3	/fullbackup_h3	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H4	h4	Zgemma H4	/zgemma/h4	/fullbackup_h4	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H5	h5	Zgemma H5	/zgemma/h5	/fullbackup_h5	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Zgemma H6	h6	Zgemma H6	/zgemma/h6	/fullbackup_h6	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H7	h7	Zgemma H7	/zgemma/h7	/fullbackup_h7	/zgemma			rootfs.tar.bz2	kernel1.bin	none
 Zgemma I55	i55	Zgemma I55	/zgemma/i55	/fullbackup_i55	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma LC	lc	Zgemma LC	/zgemma/lc	/fullbackup_lc	/zgemma	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
