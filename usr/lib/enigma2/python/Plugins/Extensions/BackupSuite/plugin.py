@@ -152,12 +152,12 @@ class BackupStart(Screen):
 		if model != "":
 			if model in ["duo2", "solose", "solo2", "zero"]:
 				files = "^.*\.(zip|bin|update)"
-			elif model in ["fusionhd", "fusionhdse", "purehd", "purehdse"]:
-				files = "^.*\.(zip|bin)"
+			elif model in ["duo", "solo", "ultimo", "uno", "gb800solo"]:
+				files = "^.*\.(zip|bin|jffs2)"
 			elif "4k" in model:
 				files = "^.*\.(zip|bin|tar.bz2)"
 			else:
-				files = "^.*\.(zip|bin|jffs2)"
+				files = "^.*\.(zip|bin)"
 		curdir = '/media/'
 		self.session.open(FlashImageConfig, curdir, files)
 
