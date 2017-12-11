@@ -154,6 +154,8 @@ class BackupStart(Screen):
 				files = "^.*\.(zip|bin|update)"
 			elif model in ["fusionhd", "fusionhdse", "purehd", "purehdse"]:
 				files = "^.*\.(zip|bin)"
+			elif "4k" in model:
+				files = "^.*\.(zip|bin|tar.bz2)"
 			else:
 				files = "^.*\.(zip|bin|jffs2)"
 		curdir = '/media/'
