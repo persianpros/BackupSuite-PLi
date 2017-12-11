@@ -150,7 +150,7 @@ class BackupStart(Screen):
 		else:
 			return
 		if model != "":
-			if model == "solo2" or model == "duo2" :
+			if model == "solo2" or model == "duo2" or model == "solose" or model == "zero":
 				files = "^.*\.(zip|bin|update)"
 			elif model == "fusionhd" or model == "fusionhdse":
 				files = "^.*\.(zip|bin|update)"
