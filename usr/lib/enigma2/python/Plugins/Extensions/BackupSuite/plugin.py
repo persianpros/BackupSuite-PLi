@@ -150,9 +150,9 @@ class BackupStart(Screen):
 		else:
 			return
 		if model != "":
-			if model == "solo2" or model == "duo2" or model == "solose" or model == "zero":
+			if model in ["duo2", "solose", "solo2", "zero"]:
 				files = "^.*\.(zip|bin|update)"
-			elif model == "fusionhd" or model == "fusionhdse" or model == "purehd" or model == "purehdse":
+			elif model in ["fusionhd", "fusionhdse", "purehd", "purehdse"]:
 				files = "^.*\.(zip|bin)"
 			else:
 				files = "^.*\.(zip|bin|jffs2)"
@@ -358,7 +358,7 @@ class FlashImageConfig(Screen):
 					if not "4k" in model:
 						backup_files = ["kernel.bin", "rootfs.bin"]
 						text += 'kernel.bin, rootfs.bin'
-					elif "4k" in model:
+					else:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel.bin, rootfs.tar.bz2'
