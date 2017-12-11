@@ -355,7 +355,7 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/gbmodel")
 					model = f.read().strip()
 					f.close()
-					if model in ["gbquadplus"]:
+					if not "4k" in model:
 						backup_files = ["kernel.bin", "rootfs.bin"]
 						text += 'kernel.bin, rootfs.bin'
 					elif "4k" in model:
