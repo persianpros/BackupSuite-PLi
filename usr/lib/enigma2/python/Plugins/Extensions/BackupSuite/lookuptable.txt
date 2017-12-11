@@ -12,7 +12,7 @@ Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 1
 Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F4 Turbo	formuler4turbo	Formuler F4 Turbo	/formuler4turbo	/fullbackup_formuler4turbo		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 GI ET7000 Mini	et7000mini	Galaxy Innovations ET7000 mini	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-GI ET11000 4k	et11000	GI ET11000	/et1x000	/fullbackup_et1x000				rootfs.tar.bz2	kernel1.bin	noforce
+GI ET11000 4k	et11000	GI ET11000	/et1x000	/fullbackup_et1x000				rootfs.tar.bz2	kernel.bin	noforce
 Gigablue Quad 4K	gbquad4k	Gigablue Quad 4K	/gigablue/quad4k	/fullbackup_quad4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 Gigablue QuadPlus	gbquadplus	Gigablue QuadPlus	/gigablue/quadplus	/fullbackup_quadplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue UE 4K	gbue4k	Gigablue UE 4K	/gigablue/ue4k	/fullbackup_ued4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
@@ -22,7 +22,7 @@ HD 1200	hd1200	HD 1200	/hd1200	/fullbackup_hd1200		-m 2048 -e 126976 -c 8192	-m 
 HD 1265	hd1265	HD 1265	/hd1265	/fullbackup_hd1265		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1500	hd1500	HD 1500	/hd1500	/fullbackup_hd1500		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-HD 51	hd51	Mutant HD51	/hd51	/fullbackup_hd51				rootfs.tar.bz2	kernel1.bin	none
+HD 51	hd51	Mutant HD51	/hd51	/fullbackup_hd51				rootfs.tar.bz2	kernel.bin	none
 HD 500C	hd500c	HD 500c	/hd500c	/fullbackup_hd500c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 530C	hd530c	HD 530c	/hd530c	/fullbackup_hd530c		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -81,7 +81,7 @@ Zgemma H.S / H.2S / H.2H	h3	Zgemma H.S / H.2S / H.2H	/zgemma/h3	/fullbackup_h3	/
 Zgemma H4	h4	Zgemma H4	/zgemma/h4	/fullbackup_h4	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H5	h5	Zgemma H5	/zgemma/h5	/fullbackup_h5	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H6	h6	Zgemma H6	/zgemma/h6	/fullbackup_h6	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Zgemma H7	h7	Zgemma H7	/zgemma/h7	/fullbackup_h7	/zgemma			rootfs.tar.bz2	kernel1.bin	none
+Zgemma H7	h7	Zgemma H7	/zgemma/h7	/fullbackup_h7	/zgemma			rootfs.tar.bz2	kernel.bin	none
 Zgemma I55	i55	Zgemma I55	/zgemma/i55	/fullbackup_i55	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma LC	lc	Zgemma LC	/zgemma/lc	/fullbackup_lc	/zgemma	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma Star S / Star 2S	sh1	Zgemma Star S / 2S / H1 / H2	/zgemma/sh1	/fullbackup_sh1	/zgemma	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
