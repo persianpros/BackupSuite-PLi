@@ -152,8 +152,8 @@ class BackupStart(Screen):
 		if model != "":
 			if model == "solo2" or model == "duo2" or model == "solose" or model == "zero":
 				files = "^.*\.(zip|bin|update)"
-			elif model == "fusionhd" or model == "fusionhdse":
-				files = "^.*\.(zip|bin|update)"
+			elif model == "fusionhd" or model == "fusionhdse" or model == "purehd" or model == "purehdse":
+				files = "^.*\.(zip|bin)"
 			else:
 				files = "^.*\.(zip|bin|jffs2)"
 		curdir = '/media/'
@@ -344,7 +344,7 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/hwmodel")
 					model = f.read().strip()
 					f.close()
-					if model in ["fusionhd", "fusionhdse"]:
+					if model in ["fusionhd", "fusionhdse", "purehd", "purehdse"]:
 						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
 						text += 'oe_kernel.bin, oe_rootfs.bin'
 					elif "4k" in model:
