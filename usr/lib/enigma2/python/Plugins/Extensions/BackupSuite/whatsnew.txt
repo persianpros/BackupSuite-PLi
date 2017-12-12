@@ -1,5 +1,20 @@
 Changelog
 =========
+
+TO ALL USERS
+
+I stop the development and maintenance of the BackupSuite due to personal circumstances. I have found Persian Prince willing to take over the task from me.
+Thank you for all the positive reactions I received in the past.
+I assume that the BackupSuite is in good hands with Persian Prince.
+I do not completely disappear from the satellite scene so you will see me regularly on the Openpli forum
+
+Thanks for all the support and trust in me.
+
+Pedro(_newbie)
+
+Git 178 - 189
+Several pull request from Persian Prince which contains many enhancements in the plugin
+
 Git 177
 - Corrected a copy paste error
 

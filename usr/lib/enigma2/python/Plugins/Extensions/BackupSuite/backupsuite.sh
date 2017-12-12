@@ -1,6 +1,6 @@
 #       FULL BACKUP UYILITY FOR ENIGMA2/OPENPLI, SUPPORTS VARIOUS MODELS      #
 #                   MAKES A FULLBACK-UP READY FOR FLASHING.                   #
-#                   Pedro_Newbie (backupsuite@outlook.com)                    #
+#                                                                             #
 ###############################################################################
 #
 #!/bin/sh
@@ -163,7 +163,7 @@ WORKDIR="$MEDIA/bi"
 ######################### START THE LOGFILE $LOGFILE ##########################
 echo -n "" > $LOGFILE
 log "*** THIS BACKUP IS CREATED WITH THE PLUGIN BACKUPSUITE ***"
-log "***** This plugin is brought to you by Pedro_Newbie ******"
+log "***** ********************************************* ******"
 log $LINE
 log "Plugin version     = "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d "+" -f 2- | cut -d "-" -f1`
 log "Back-up media      = $MEDIA"
@@ -242,7 +242,6 @@ log "RECEIVER = $SHOWNAME "
 log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
 log "UBINIZE_ARGS = $UBINIZE_ARGS"
 echo "$VERSION"
-echo "Pedro_Newbie"
 echo $WHITE
 
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
