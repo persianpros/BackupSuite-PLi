@@ -4,7 +4,7 @@ Git 177
 - Corrected a copy paste error
 
 Git 159-176
-- Merged pull requests with several additions by Persian Pros
+- Merged pull requests with several additions by Persian Prince
 - Corrected some space into tabs in the above mentioned additions
 - Changed the plugin.py to accept the above mentioned editions and changed detection of the VU+ 4k models
 PLEASE NOTE: The file plugin.py still needs some checking on the flash-part, I don't know if the new additions are already flashable in the plugin! I lack time to check it all.

@@ -150,12 +150,14 @@ class BackupStart(Screen):
 		else:
 			return
 		if model != "":
-			if model == "solo2" or model == "duo2" :
+			if model in ["duo2", "solose", "solo2", "zero"]:
 				files = "^.*\.(zip|bin|update)"
-			elif model == "fusionhd" or model == "fusionhdse":
-				files = "^.*\.(zip|bin|update)"
-			else:
+			elif model in ["duo", "solo", "ultimo", "uno", "gb800solo"]:
 				files = "^.*\.(zip|bin|jffs2)"
+			elif "4k" in model:
+				files = "^.*\.(zip|bin|tar.bz2)"
+			else:
+				files = "^.*\.(zip|bin)"
 		curdir = '/media/'
 		self.session.open(FlashImageConfig, curdir, files)
 
@@ -344,32 +346,36 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/hwmodel")
 					model = f.read().strip()
 					f.close()
-					if model in ["fusionhd", "fusionhdse"]:
+					if model in ["fusionhd", "fusionhdse", "purehd", "purehdse"]:
 						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
-						text += "oe_kernel.bin, oe_rootfs.bin"
+						text += 'oe_kernel.bin, oe_rootfs.bin'
+					elif "4k" in model:
+						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = ["oe_rootfs.bin", "kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						text += 'oe_kernel.bin, rootfs.tar.bz2'
 				elif os.path.exists("/proc/stb/info/gbmodel"):
 					f = open("/proc/stb/info/gbmodel")
 					model = f.read().strip()
 					f.close()
-					if model in ["gbquadplus"]:
+					if not "4k" in model:
 						backup_files = ["kernel.bin", "rootfs.bin"]
-						text += "kernel.bin, rootfs.bin"
-					elif "4k" in model:
+						text += 'kernel.bin, rootfs.bin'
+					else:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-						no_backup_files = ["kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel.bin, rootfs.tar.bz2'
 				elif os.path.exists("/proc/stb/info/boxtype"):
 					f = open("/proc/stb/info/boxtype")
 					model = f.read().strip()
 					f.close()
-					if model in ["hd51", "h7"]:
-						backup_files = [("kernel1.bin"), ("rootfs.tar.bz2")]
-						no_backup_files = ["kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-						text += 'kernel1.bin, rootfs.tar.bz2'
-					elif model in ["sf4008"]:
+					if model in ["hd51", "h7", "sf4008"]:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-						no_backup_files = ["kernel_cfe_auto.bin", "kernel1.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel.bin, rootfs.tar.bz2'
+					elif "4k" in model:
+						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = ["oe_rootfs.bin", "kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						text += 'oe_kernel.bin, rootfs.tar.bz2'
 					else:
 						backup_files = [("kernel.bin"), ("rootfs.bin")]
 						no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
@@ -547,4 +553,3 @@ def Plugins(path,**kwargs):
 		where = PluginDescriptor.WHERE_EXTENSIONSMENU, 
 		fnc = main)
 	]
-
