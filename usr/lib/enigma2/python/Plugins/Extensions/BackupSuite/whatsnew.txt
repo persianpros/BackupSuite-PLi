@@ -1,6 +1,8 @@
 Changelog
 =========
 
+Git 190
+- Message from Pedro Newbie:
 TO ALL USERS
 
 I stop the development and maintenance of the BackupSuite due to personal circumstances. I have found Persian Prince willing to take over the task from me.
@@ -13,92 +15,113 @@ Thanks for all the support and trust in me.
 Pedro(_newbie)
 
 Git 178 - 189
-Several pull request from Persian Prince which contains many enhancements in the plugin
+Several pull requests from Persian Prince which contain many enhancements in the plugin:
+- Better VU+ detection
+- Better 4K support (Various brands/models)
+- lookuptable.txt kernel1.bin typo fixed
+- Better Xsarius detection
+- Better GigaBlue detection (All models even 4Ks, lookuptable.txt should be updated too ...)
+- Fix "hd51"/"h7" and use less python code for "sf4008"
+- Faster checks and fix some kernel file detections
+- Detect 4K "tar.bz2" extension
+- Faster file detection for "jffs2" and "bin" extensions also support upcoming models with the reverse old models check
 
 Git 177
 - Corrected a copy paste error
 
-Git 159-176
-- Merged pull requests with several additions by Persian Prince
+Git 163-176
+Merged pull requests with several additions by Persian Prince :
+- Vu+ Uno 4K SE/Zero 4K support
+- Zgemma H6 support
+- Xsarius Revo 4K/Galaxy 4K support
+- Amiko Viper Combo/Viper T2C support
+- Gigablue Quad 4K/UE 4K support
+- Vimastec VS1000/VS1500 support
+- WWIO BRE2ZE 4K support
 - Corrected some space into tabs in the above mentioned additions
 - Changed the plugin.py to accept the above mentioned editions and changed detection of the VU+ 4k models
 PLEASE NOTE: The file plugin.py still needs some checking on the flash-part, I don't know if the new additions are already flashable in the plugin! I lack time to check it all.
 
+Git 162
+- Xsarius Pure HD SE support, Thanks to Dimmie
+
+Git 160
+- Add Edision OS nino support by athoik
+
 Git 158
-Added support for the GI ET11000
+- Added support for the GI ET11000
 
 Git 157
-Added Lithuanian translation
+- Added Lithuanian translation
 Thanks go to VytenisP
 
 Git 156
-Made some changes in plugin.py to be able to flash h7 images
+- Made some changes in plugin.py to be able to flash h7 images
 
-Git 154/155
-Added a little workaround to avoid error messages on:
+Git 154-155
+- Added a little workaround to avoid error messages on:
 /var/lib/samba/private/msg.sock
 
 Git 153
-Added support for several Zgemma receivers. Thanks go to WTE (Walter)
+- Added support for several Zgemma receivers. Thanks go to WTE (Walter)
 
 Git 152
-Added support for the SAB Alpha Triple
+- Added support for the SAB Alpha Triple
 
 Git 149-150
-Changed the SK translation by Pr0metheus2
+- Changed the SK translation by Pr0metheus2
 
 Git 146-148
-Added a small advise how to flash the backup for the Vu+ Solo SE, Uno4K and Zero (rename noforce.update into force.update)
-Corrected some translations in SK by Pr0metheus2. Big thanks!
+- Added a small advise how to flash the backup for the Vu+ Solo SE, Uno4K and Zero (rename noforce.update into force.update)
+- Corrected some translations in SK by Pr0metheus2. Big thanks!
 
 Git 142-144
-Added support for Gigablue Quad
+- Added support for Gigablue Quad
 Thanks Athoik
 
 Git 139-141
-Added support for the Octagon sf4008
+- Added support for the Octagon sf4008
 Thanks Athoik
 
 Git 138
-Added some code to report the kernel number for the HD51 multiboot
-corrected an error
+- Added some code to report the kernel number for the HD51 multiboot
+- corrected an error
 
 Git 137
-Some minor changes for the HD51. Find the correct kernel partition (important in multiboot environment) and give the kernel#.bin the proper number for backups of the HD51
+- Some minor changes for the HD51. Find the correct kernel partition (important in multiboot environment) and give the kernel#.bin the proper number for backups of the HD51
 
 Git 136
-Added support for the Spycat Mini Plus, Formuler F4 Turbo and Zgemma I 55
+- Added support for the Spycat Mini Plus, Formuler F4 Turbo and Zgemma I 55
 
 Git 135
-Added support for the Edision OS mega
+- Added support for the Edision OS mega
 
 Git 134
-Again a small alteration in scanning for suitable locations for the USB version. On certain mounts the calculated size was wrong.
+- Again a small alteration in scanning for suitable locations for the USB version. On certain mounts the calculated size was wrong.
 If the file 'backupstick' is present in the root of one of the mounts it is possible to make a backup on that mount via the yellow button: 
 Backup > USB
 
 Git 133
-Very small alteration in scanning for suitable backup locations for the usb version
+- Very small alteration in scanning for suitable backup locations for the usb version
 
 Git 132
-Changed some parameters for the Uno 4K and Ultimo 4K
-Sent Santa home
+- Changed some parameters for the Uno 4K and Ultimo 4K
+- Sent Santa home
 
 Git 131
-Forgot to upload the changed plugin.py for the models Uno4K en Ultimo4K
+- Forgot to upload the changed plugin.py for the models Uno4K en Ultimo4K
 
 Git 130
-Added support for the VU+ models Uno 4K and Ultimo 4K
+- Added support for the VU+ models Uno 4K and Ultimo 4K
 
 Git 129
-Added seasonal greetings!
+- Added seasonal greetings!
 
 Git 128
-Changed 128
-Some changes because Betacentauri adapted the binary ofgwrite to facilitate the HD51
+- Some changes because Betacentauri adapted the binary ofgwrite to facilitate the HD51
 
 Git 123+124
-Reworked the routine for the Mutant HD51. In the former version the possibility existed that the made backup was not complete. 
+- Reworked the routine for the Mutant HD51. In the former version the possibility existed that the made backup was not complete. 
 Now the backup is made of the whole partition and then it's compressed in rootfs.tar.bz2 format.
 
 The backup can ONLY be restored using the BackupSuite -> Blue button (=Restore backup). 
@@ -110,68 +133,68 @@ It's still work in progress so it could be that in (short) term there will be mo
 Please test and report back if there are any issues (or if everthing goes like intended!)
 
 Git 122
-Added support for the Mutant HD51. The Backupsuite makes a backup in the disk.img format. Don't use it in a multiboot configuration!
+- Added support for the Mutant HD51. The Backupsuite makes a backup in the disk.img format. Don't use it in a multiboot configuration!
 This is the first release for the HD51 and is still work in progress, so use with care.
 The backup made can't be restored via the blue button in the Backupsuite. The backup has to be restored by flashing it via USB just like a new image.
 
 Git 121
-Merged pull request 120 by persianpros with some minor optimasation of some png files
+- Merged pull request 120 by Persian Prince with some minor optimization of some png files
 
 Git 119
-Added the Portugese language provided by Nunigaia, Big Thanks!
+- Added the Portugese language provided by Nunigaia, Big Thanks!
 
 Git 116
-Very small change in code, removed an obsolete part and added versionnumber on plugin-list
+- Very small change in code, removed an obsolete part and added versionnumber on plugin-list
 
 Git 113-115
-Changed the parameter for the Vu+ Duo2
-Merged the pull request from devclone. Thanks
+- Changed the parameter for the Vu+ Duo2
+- Merged the pull request from devclone. Thanks
 
-Git 112  20-09-2016
-Added support for the Edision OS Mini plus
+Git 112
+- Added support for the Edision OS Mini plus
 
-Git 111  29-08-2016
-Added support for the HD 11
+Git 111
+- Added support for the HD 11
 
-Git 110  20-08-2016
-Added support for the Formuler F4
+Git 110
+- Added support for the Formuler F4
 
-Git 109  19-08-2016
-Added support for online flashing of the image backup of a Vu+ Solo4k.
+Git 109
+- Added support for online flashing of the image backup of a Vu+ Solo4k.
 Betacentauri changed his execellent tool to make this possible, thanks Betacentauri!
 
 Git 106-108
-Merged pull request from Dima73 which adds the Ukrainian language by vovan43. Thanks!
+- Merged pull request from Dima73 which adds the Ukrainian language by vovan43. Thanks!
 
 Git 105
-Added support for the Galaxy Innovations (GI) ET7000 Mini
+- Added support for the Galaxy Innovations (GI) ET7000 Mini
 
-Git 104   29-05-2016
-Added support for the Mut@nt HD 1265
+Git 104
+- Added support for the Mut@nt HD 1265
 
-Git 103   28-05-2016
-Added support for the Miraclebox Premium Twin+
+Git 103
+- Added support for the Miraclebox Premium Twin+
 
-Git 102   25-05-2016
-Added support for the Spycat and the Spycat Mini
+Git 102
+- Added support for the Spycat and the Spycat Mini
 
-Git 101   13-04-2016
-Added support for the Xsarius Pure HD
+Git 101
+- Added support for the Xsarius Pure HD
 
-Git 100   06-03-2016
+Git 100
 It seems that not every one knows the difference between a file and a folder, so for the making of a backup on an USB-stick there is a check on the existence of a file with the text pattern backupstick in the name, now the check is also done on folders!
 So if a file or a folder is found on the USB-stick with the text pattern backupstick in the name then the USB-stick is valid.
 
-Git 99   04-03-2016
-Merged pull request by Dimitrij: add support dual boot (et8500)
+Git 99
+- Merged pull request by Dimitrij: add support dual boot (et8500)
 
-Git 96   29-02-2016
-Merged pull request from Athoik which added support for the Edison OSmini
+Git 96
+- Merged pull request from Athoik which added support for the Edison OSmini
 
-Git 93   21-02-2016
-Added support for the HD1500
+Git 93
+- Added support for the HD1500
 
-Git 92   14-02-2016
+Git 92
 Some big changes, at first now it is possible to maintain your backups from the plugin.
 With the blue button you are now able to delete the backups you want to get rid of.
 Please bear in mind that this only works for the backups created with this or any newer version of the BackupSuite.
@@ -186,22 +209,22 @@ PLEASE REMEMBER:
 The Solo4k backup can't be restored by the BackupSuite using the ofgwrite utility (yet).
 Thanks Findex for doing some testing with his Solo4k!
 
-Git 91   08-02-2016
-Added support for the Zgemma 
-- Star S / Star 2S
-- H5
-- H.S / H.2S / H.2H
+Git 91
+- Added support for the Zgemma 
+Star S / Star 2S
+H5
+H.S / H.2S / H.2H
 
-Git 90   31-01-2016
-Added support for the upcoming Golden Interstar LX Class S2 and C
+Git 90
+- Added support for the upcoming Golden Interstar LX Class S2 and C
 
-Git 89   06-01-2016
-Back to normal screens
+Git 89
+- Back to normal screens
 
-Git 88   01-01-2016
+Git 88
 Happy New Year!
 
-Git 87   29-12-2015
+Git 87
 It is for me near impossible to add all enigma2 receivers on the market, just by the lack of time and missing the inside information about the receivers. 
 Therefore I added the ability to maintain your own lookuptable.txt in /etc.
 If you want to add a receiver which isn't supported by me, just copy the lookuptable.txt to /etc and edit this table with the right parameters.
@@ -210,83 +233,83 @@ If you place the file lookuptable.txt in /etc this file will be the one that's u
 If there is no file in /etc then the standard file supplied by the BackupSuite is used.
 If you want a certain receiver to be supported just ask the image maker to add a lookuptable.txt in the folder /etc or ask for the parameters to be used.
 
-Git 86   20-12-2015
-Did some overdue maintenance on plugin.py concerning the VU+ models
+Git 86
+- Did some overdue maintenance on plugin.py concerning the VU+ models
 
-Git 85   13-12-2015
-Added support for the VU+ Solo 4K. Beware: this is a very early test, the plugin still needs some tidying up.
+Git 85
+- Added support for the VU+ Solo 4K. Beware: this is a very early test, the plugin still needs some tidying up.
 Don't try to flash the made back-up of the Solo 4k with the built in OFGWRITE, it needs an update to be able to flash the Solo 4K
 Reverted the truncating of the kernelpartition
 
-Git 84   06-12-2015
-Added seasons greetings
+Git 84
+- Added seasons greetings
 
-Git 83   30-11-2015
-Added support for the Xsarius Fusion HD SE
-Corrected the extra path for the Xsarius HD
+Git 83
+- Added support for the Xsarius Fusion HD SE
+- Corrected the extra path for the Xsarius HD
 
-Git 82   14-11-2015
-Completed support for the Xsarius Fusion HD (at the moment still no confirmation if it functions), looking for some owners of a Fusion who would like to test it and report if all is functioning as it should.
-Removed the support for unknown devices.
+Git 82
+- Completed support for the Xsarius Fusion HD (at the moment still no confirmation if it functions), looking for some owners of a Fusion who would like to test it and report if all is functioning as it should.
+- Removed the support for unknown devices.
 
-Git 81   10-11-2015
-Added support for Xsarius Fusion HD (very experimental, use with care!)
+Git 81
+- Added support for Xsarius Fusion HD (very experimental, use with care!)
 
-Git 80   25-10-2015
-Temporary measure: bail out if the receiver is a VU+ Solo 4K until more is known what the requirements are to make a working back-up
+Git 80
+- Temporary measure: bail out if the receiver is a VU+ Solo 4K until more is known what the requirements are to make a working back-up
 Lookuptable expanded with the entry Solo4K
 
 Git 78 & 79
-Git 78 has been canceled/reverted by Git 79
+- Git 78 has been canceled/reverted by Git 79
 
-Git 77   27-09-2015
-Removed some obsolete code, this were some remains of experiments which I overlooked
+Git 77
+- Removed some obsolete code, this were some remains of experiments which I overlooked
 
-Git 76   25-09-2015
-Made some alterations in the way a back-up is made: if a backup is made onto the harddisk there is no longer a flashable copy made in the root of the harddisk. The backup is only stored in the folder "fullbackup_<type> etc.
+Git 76
+- Made some alterations in the way a back-up is made: if a backup is made onto the harddisk there is no longer a flashable copy made in the root of the harddisk. The backup is only stored in the folder "fullbackup_<type> etc.
 If the backup is made onto an USB-stick then the copy is made in the root and a copy in the folder fullbackup_<type> etc.
 
-Git 75   25-07-2015
-Very small change in handling/reporting unknown device
+Git 75
+- Very small change in handling/reporting unknown device
 
-Git 74   24-07-2015
-Very small change in selecting the correct model from the list
+Git 74
+- Very small change in selecting the correct model from the list
 
-Git 73   23-07-2015
-Added some kind of support for unknown receivers. If the receiver is not found in the lookuptable the program won't be aborted but a backup will be made with some standard file naming. The user has at least to rename the folder where the backup is made.
+Git 73
+- Added some kind of support for unknown receivers. If the receiver is not found in the lookuptable the program won't be aborted but a backup will be made with some standard file naming. The user has at least to rename the folder where the backup is made.
 Highly experimental but it is worth a go.
 WTE gave me the idea to read some necessities from the receiver. Thanks!
 
-Git 72   28-06-2015
-Some small alterations in the way the kernel is dumped, after dumping it will truncated to it's true size
+Git 72
+- Some small alterations in the way the kernel is dumped, after dumping it will truncated to it's true size
 Inspired by the code of Athoik as seen in: http://tinyurl.com/ofmcvuo
 Thanks!
 
-Git 71   24-06-2015
-Openmb added support for the Miraclebox Mini plus and Micro
+Git 71
+- Openmb added support for the Miraclebox Mini plus and Micro
 
-Git 67   06-06-2015
-Some small alterations
+Git 67
+- Some small alterations
 
-Git 64   12-02-2015
-Added support for the HD 500c
+Git 64
+- Added support for the HD 500c
 
-Git 63   09-02-2015
-Russian translation improved (thanks to 2boom)
+Git 63
+- Russian translation improved (thanks to 2boom)
 
-Git 62   01-02-2015
-Added support for the HD 1200
+Git 62
+- Added support for the HD 1200
 
-Git 61   28-01-2015
-Replaced the help and info buttons
+Git 61
+- Replaced the help and info buttons
 
-Git 60   23-01-2015
-Some fine tuning for the full HD skins
+Git 60
+- Some fine tuning for the full HD skins
 
-Git 59   21-01-2015
-A first step to make the BackupSuite also useable on full HD format skins (1920*1080). 
+Git 59
+- A first step to make the BackupSuite also useable on full HD format skins (1920*1080). 
 There still has to be done some work but because of the experimental stage of the full HD skin this has, for me, a low priority at the moment.
 
-Git 58   18-01-2015
+Git 58
 - Some minor changes in the code (some inspired by code of Athoik)
 - Some cosmetics in the lookuptable
