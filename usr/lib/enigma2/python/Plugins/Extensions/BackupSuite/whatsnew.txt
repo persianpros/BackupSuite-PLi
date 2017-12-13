@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Git 191-197
+- whatsnew.txt updated
+- Compiled mo files removed, We only need po files which are the sources.
+- maintainer.info updated
+- GigaBlue gb800solo: No need to use "jffs2" extension
+- No need to keep LICENSE file inside plugin folder
+
 Git 190
 - Message from Pedro Newbie:
 TO ALL USERS
