@@ -152,7 +152,7 @@ class BackupStart(Screen):
 		if model != "":
 			if model in ["duo2", "solose", "solo2", "zero"]:
 				files = "^.*\.(zip|bin|update)"
-			elif model in ["duo", "solo", "ultimo", "uno", "gb800solo"]:
+			elif model in ["duo", "solo", "ultimo", "uno"]:
 				files = "^.*\.(zip|bin|jffs2)"
 			elif "4k" in model:
 				files = "^.*\.(zip|bin|tar.bz2)"
