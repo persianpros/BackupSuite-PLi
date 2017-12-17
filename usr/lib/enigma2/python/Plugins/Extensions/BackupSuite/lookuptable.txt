@@ -45,6 +45,7 @@ Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink
 Ixuss Zero	ixusszero	Ixuss Zero	/medialink/ixusszero	/fullbackup_ixusszero	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Micro	7000S	Miraclebox Micro	/miraclebox/micro	/fullbackup_mbmico	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Miraclebox MicroV2	7005S	Miraclebox MicroV2	/miraclebox/microv2	/fullbackup_mbmicov2	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Mini	ini-1000sv	Miraclebox Mini	/miraclebox/mini	/fullbackup_mbmini	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Mini Plus	ini-2000sv	Miraclebox MiniPlus 	/miraclebox/miniplus	/fullbackup_mbminiplus	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Twin	ini-5000sv	Miraclebox Twin	/miraclebox/twin	/fullbackup_mbtwin	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
