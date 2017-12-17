@@ -5,6 +5,8 @@ Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048
 Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 AX Triplex	triplex	AX Triplex	/triplex	/fullbackup_triplex		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AX Ultrabox	ultrabox	AX Ultrabox	/ultrabox	/fullbackup_ultrabox	-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+AXAS Class M	en2	AXAS Class M	/en2	/fullbackup_en2	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+AXAS E3HD	e3hd	AXAS E3HD	/e3hd	/fullbackup_e3hd	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS E4HD	e4hd	AXAS E4HD	/e4hd	/fullbackup_e4hd	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS E4HD Combo	e4hdcombo	AXAS E4HD Combo	/e4hdcombo	/fullbackup_e4hdcombo	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSmini	osmini	Edision OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -62,9 +64,9 @@ Octagon SF4008	sf4008	Octagon SF4008	/sf4008	/fullbackup_sf4008				rootfs.tar.bz
 Octagon SF5008	sf5008	Octagon SF5008	/sf5008	/fullbackup_sf5008				rootfs.tar.bz2	kernel.bin	noforce
 Opticum Odin2 Hybrid	odin2hybrid	Opticum Odin2 Hybrid	/odin2/hybrid	/fullbackup_odin2hybrid	/odin2		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Opticum Odin2 Plus	odinplus	Opticum Odin2 Plus	/odinplus	/fullbackup_odinplus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Protec 9900LX	9900lx	Protec 9900LX	/9900lx	/fullbackup_9900lx	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Protec 9910LX	9910lx	Protec 9910LX	/9910lx	/fullbackup_9910lx	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Protec 9911LX	9911lx	Protec 9911LX	/9911lx	/fullbackup_9911lx	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Protek 9900LX	9900lx	Protek 9900LX	/9900lx	/fullbackup_9900lx	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Protek 9910LX	9910lx	Protek 9910LX	/9910lx	/fullbackup_9910lx	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Protek 9911LX	9911lx	Protek 9911LX	/9911lx	/fullbackup_9911lx	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Red Eagle SingleBox LCD	singleboxlcd	Red Eagle SingleBox LCD	/redeagle/singleboxlcd	/fullbackup_singleboxlcd	/redeagle		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Red Eagle TwinBox LCD	twinboxlcd	Red Eagle TwinBox LCD	/redeagle/twinboxlcd	/fullbackup_twinboxlcd	/redeagle		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 SAB Alpha Triple	alphatriplehd	SAB Alpha Triple	/sab_alpha_triple	/fullbackup_sab_alpha_triple		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
