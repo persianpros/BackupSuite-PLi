@@ -4,7 +4,7 @@ Amiko Viper T2C	vipert2c	Amiko Viper T2C	/vipert2c	/fullbackup_vipert2c		-m 2048
 Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 AX Triplex	triplex	AX Triplex	/triplex	/fullbackup_triplex		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-AX Ultrabox	ultrabox	AX ultrabox	/ultrabox	/fullbackup_ultrabox	-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+AX Ultrabox	ultrabox	AX Ultrabox	/ultrabox	/fullbackup_ultrabox	-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSmini	osmini	Edision OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSmini plus	osminiplus	Edision OSmini plus	/osminiplus	/fullbackup_osminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OS mega	osmega	Edision OS mega	/osmega	/fullbackup_osmega		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -40,6 +40,7 @@ HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 
 HD 51	hd51	Mutant HD51	/hd51	/fullbackup_hd51				rootfs.tar.bz2	kernel.bin	none
 HD 500C	hd500c	HD 500c	/hd500c	/fullbackup_hd500c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 530C	hd530c	HD 530c	/hd530c	/fullbackup_hd530c		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+UNiBOX HDECOPlus	hde	UNiBOX HDECOPlus	/unibox/hde	/fullbackup_hde	/unibox		-m 2048 -e 126976 -c 8160  -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Ixuss Zero	ixusszero	Ixuss Zero	/medialink/ixusszero	/fullbackup_ixusszero	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -52,6 +53,7 @@ Miraclebox Ultra	ini-8000sv	Miraclebox Ultra	/miraclebox/ultra	/fullbackup_mbult
 Octagon SF4008	sf4008	Octagon SF4008	/sf4008	/fullbackup_sf4008				rootfs.tar.bz2	kernel.bin	noforce
 Octagon SF5008	sf5008	Octagon SF5008	/sf5008	/fullbackup_sf5008				rootfs.tar.bz2	kernel.bin	noforce
 SAB Alpha Triple	alphatriplehd	SAB Alpha Triple	/sab_alpha_triple	/fullbackup_sab_alpha_triple		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Sogno 8800HD	8800hd	Sogno 8800HD	/sogno/8800hd	/fullbackup_8800hd	/sogno		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat	spycat	Spycat	/spycat	/fullbackup_spycat		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini	spycatmini	Spycat Mini	/spycatmini	/fullbackup_spycatmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini Plus	spycatminiplus	Spycat Mini Plus	/spycatminiplus	/fullbackup_spycatminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
