@@ -53,6 +53,8 @@ Miraclebox Twin Plus	g300	Miraclebox Twin Plus	/miraclebox/twinplus	/fullbackup_
 Miraclebox Ultra	ini-8000sv	Miraclebox Ultra	/miraclebox/ultra	/fullbackup_mbultra	/miraclebox	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 Octagon SF128	sf128	Octagon SF128	/sf128	/fullbackup_sf128		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Octagon SF138	sf138	Octagon SF138	/sf138	/fullbackup_sf138		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Octagon SF208	sf208	Octagon SF208	/sf208	/fullbackup_sf208		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Octagon SF228	sf228	Octagon SF228	/sf228	/fullbackup_sf228		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Octagon SF3038	sf3038	Octagon SF3038	/sf3038	/fullbackup_sf3038		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Octagon SF4008	sf4008	Octagon SF4008	/sf4008	/fullbackup_sf4008				rootfs.tar.bz2	kernel.bin	noforce
 Octagon SF5008	sf5008	Octagon SF5008	/sf5008	/fullbackup_sf5008				rootfs.tar.bz2	kernel.bin	noforce
