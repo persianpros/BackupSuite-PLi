@@ -5,6 +5,8 @@ Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048
 Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 AX Triplex	triplex	AX Triplex	/triplex	/fullbackup_triplex		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AX Ultrabox	ultrabox	AX Ultrabox	/ultrabox	/fullbackup_ultrabox	-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+AXAS E4HD	e4hd	AXAS E4HD	/e4hd	/fullbackup_e4hd	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+AXAS E4HD Combo	e4hdcombo	AXAS E4HD Combo	/e4hdcombo	/fullbackup_e4hdcombo	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSmini	osmini	Edision OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSmini plus	osminiplus	Edision OSmini plus	/osminiplus	/fullbackup_osminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OS mega	osmega	Edision OS mega	/osmega	/fullbackup_osmega		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
