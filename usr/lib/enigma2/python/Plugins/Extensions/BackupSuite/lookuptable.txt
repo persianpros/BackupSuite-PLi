@@ -13,9 +13,22 @@ Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 1
 Formuler F4 Turbo	formuler4turbo	Formuler F4 Turbo	/formuler4turbo	/fullbackup_formuler4turbo		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 GI ET7000 Mini	et7000mini	Galaxy Innovations ET7000 mini	/et7x00	/fullbackup_et7x00		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 GI ET11000 4k	et11000	GI ET11000	/et1x000	/fullbackup_et1x000				rootfs.tar.bz2	kernel.bin	noforce
+Gigablue 800SE	gb800se	Gigablue 800SE	/gigablue/se	/fullbackup_800se		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue 800SEPlus	gb800seplus	Gigablue 800SEPlus	/gigablue/seplus	/fullbackup_800seplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue 800UE	gb800ue	Gigablue 800UE	/gigablue/ue	/fullbackup_800ue		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue 800UEPlus	gb800ueplus	Gigablue 800UEPlus	/gigablue/ueplus	/fullbackup_800ueplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue IPBox	gbipbox	Gigablue IPBox	/gigablue/ipbox	/fullbackup_gbipbox		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue Quad	gbquad	Gigablue Quad	/gigablue/quad	/fullbackup_quad		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue Quad 4K	gbquad4k	Gigablue Quad 4K	/gigablue/quad4k	/fullbackup_quad4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 Gigablue QuadPlus	gbquadplus	Gigablue QuadPlus	/gigablue/quadplus	/fullbackup_quadplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue UE 4K	gbue4k	Gigablue UE 4K	/gigablue/ue4k	/fullbackup_ued4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
+Gigablue UltraSE	gbultrase	Gigablue UltraSE	/gigablue/ultrase	/fullbackup_gbultrase		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue UltraUE	gbultraue	Gigablue UltraUE	/gigablue/ultraue	/fullbackup_gbultraue		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue UltraUEH	gbultraueh	Gigablue UltraUEH	/gigablue/ultraueh	/fullbackup_gbultraueh		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue X1	gbx1	Gigablue X1	/gigablue/x1	/fullbackup_gbx1		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue X2	gbx2	Gigablue X2	/gigablue/x2	/fullbackup_gbx2		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue X3	gbx3	Gigablue X3	/gigablue/x3	/fullbackup_gbx3		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue X3H	gbx3h	Gigablue X3H	/gigablue/x3h	/fullbackup_gbx3h		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 11	hd11	HD 11	/hd11	/fullbackup_hd11		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1100	hd1100	HD 1100	/hd1100	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1200	hd1200	HD 1200	/hd1200	/fullbackup_hd1200		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
