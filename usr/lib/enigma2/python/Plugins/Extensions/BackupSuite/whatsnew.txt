@@ -1,6 +1,19 @@
 Changelog
 =========
 
+Git 199-213
+- Support all GigaBlue models except gb800solo
+- More Octagon support (SF128/138/208/228/3038/5008)
+- AX Triplex and Ultrabox support
+- Support blackbox7405 platform (UNiBOX HDECOPlus and Sogno 8800HD)
+- WWIO BRE2ZE T2C support
+- Miraclebox MicroV2 support
+- Red Eagle SingleBox LCD and TwinBox LCD support
+- Opticum Odin2 Hybrid and Odin2 Plus support
+- AXAS Class M and E3HD/E4HD/E4HD Combo support
+- Protek 9900LX/9910LX/9911LX support
+- Odin M9 support
+
 Git 191-197
 - whatsnew.txt updated
 - Compiled mo files removed, We only need po files which are the sources.
