@@ -9,6 +9,12 @@ AXAS Class M	en2	AXAS Class M	/en2	/fullbackup_en2		-m 2048 -e 126976 -c 4096 -F
 AXAS E3HD	e3hd	AXAS E3HD	/e3hd	/fullbackup_e3hd		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS E4HD	e4hd	AXAS E4HD	/e4hd	/fullbackup_e4hd		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS E4HD Combo	e4hdcombo	AXAS E4HD Combo	/e4hdcombo	/fullbackup_e4hdcombo		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Edision Optimuss OS	optimussos	Edision Optimuss OS	/update/optimussos/cfe	/fullbackup_optimussos	/update/optimussos	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Edision Optimuss OS1	optimussos1	Edision Optimuss OS1	/update/optimussos1/cfe	/fullbackup_optimussos1	/update/optimussos1	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Edision Optimuss OS1 Plus	optimussos1plus	Edision Optimuss OS1 Plus	/update/optimussos1plus/cfe	/fullbackup_optimussos1plus	/update/optimussos1plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Edision Optimuss OS2	optimussos2	Edision Optimuss OS2	/update/optimussos2/cfe	/fullbackup_optimussos2	/update/optimussos2	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Edision Optimuss OS2 Plus	optimussos2plus	Edision Optimuss OS2 Plus	/update/optimussos2plus/cfe	/fullbackup_optimussos2plus	/update/optimussos2plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Edision Optimuss OS3 Plus	optimussos3plus	Edision Optimuss OS3 Plus	/update/optimussos3plus/cfe	/fullbackup_optimussos3plus	/update/optimussos3plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Edision OSmini	osmini	Edision OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSmini plus	osminiplus	Edision OSmini plus	/osminiplus	/fullbackup_osminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OS mega	osmega	Edision OS mega	/osmega	/fullbackup_osmega		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -51,7 +57,7 @@ Iqon Force 2 Nano	force2nano	Iqon Force 2 Nano	/update/force2nano/cfe	/fullbacku
 Iqon Force 2 Plus	force2plus	Iqon Force 2 Plus	/update/force2plus/cfe	/fullbackup_force2plus	/update/force2plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 2 Plus HV	force2plushv	Iqon Force 2 Plus HV	/update/force2plushv/cfe	/fullbackup_force2plushv	/update/force2plushv	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 2 SE	force2se	Iqon Force 2 SE	/update/force2se/cfe	/fullbackup_force2se	/update/force2se	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
-Iqon Force 3 UHD	force3uhd	Iqon Force 3 UHD	/update/force3uhd/cfe	/fullbackup_force3uhd	/update			rootfs.tar.bz2	oe_kernel.bin	none
+Iqon Force 3 UHD	force3uhd	Iqon Force 3 UHD	/update/force3uhd	/fullbackup_force3uhd	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Iqon Force 3 UHD Plus	force3uhdplus	Iqon Force 3 UHD Plus	/update/force3uhdplus	/fullbackup_force3uhdplus	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Iqon IOS-100HD	iqonios100hd	Iqon IOS-100HD	/update/ios100/cfe	/fullbackup_ios100	/update/ios100	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon IOS-200HD	iqonios200hd	Iqon IOS-200HD	/update/ios200/cfe	/fullbackup_ios200	/update/ios200	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
