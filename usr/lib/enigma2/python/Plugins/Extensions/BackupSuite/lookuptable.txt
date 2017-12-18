@@ -75,6 +75,20 @@ Sogno 8800HD	8800hd	Sogno 8800HD	/sogno/8800hd	/fullbackup_8800hd	/sogno	-m 2048
 Spycat	spycat	Spycat	/spycat	/fullbackup_spycat		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini	spycatmini	Spycat Mini	/spycatmini	/fullbackup_spycatmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini Plus	spycatminiplus	Spycat Mini Plus	/spycatminiplus	/fullbackup_spycatminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Technomate TM-2T-OE	tm2t	Technomate TM-2T-OE	/update/tm2toe/cfe	/fullbackup_tm2t	/update/tm2toe	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM 4K super	tm4ksuper	Technomate TM 4K super	/update/tm4ksuper	/fullbackup_tm4ksuper	/update			rootfs.tar.bz2	oe_kernel.bin	none
+Technomate TM-NANO 2 Super	tmnano2super	Technomate TM-NANO 2 Super	/update/tmnano2super/cfe	/fullbackup_tmnano2super	/update/tmnano2super	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-NANO-2T	tmnano2t	Technomate TM-NANO-2T	/update/tmnano2t/cfe	/fullbackup_tmnano2t	/update/tmnano2t	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-NANO-3T Combo	tmnano3t	Technomate TM-NANO-3T Combo	/update/force1plus/cfe	/fullbackup_tmnano3t	/update/force1plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-NANO M3	tmnanom3	Technomate TM-NANO M3	/update/tmnanom3/cfe	/fullbackup_tmnanom3	/update/tmnanom3	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-NANO-OE	tmnano	Technomate TM-NANO-OE	/update/tmnanooe/cfe	/fullbackup_tmnano	/update/tmnanooe	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-NANO-SE	tmnanose	Technomate TM-NANO-SE	/update/tmnanose/cfe	/fullbackup_tmnanose	/update/tmnanose	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-NANO-SE Combo	tmnanosecombo	Technomate TM-NANO-SE Combo	/update/tmnanosecombo/cfe	/fullbackup_tmnanosecombo	/update/tmnanosecombo	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-NANO-SE M2	tmnanosem2	Technomate TM-NANO-SE M2	/update/tmnanosem2/cfe	/fullbackup_tmnanosem2	/update/tmnanosem2	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-NANO-SE Plus	tmnanoseplus	Technomate TM-NANO-SE Plus	/update/tmnanoseplus/cfe	/fullbackup_tmnanoseplus	/update/tmnanoseplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-Single	tmsingle	Technomate TM-Single	/update/tmsingle/cfe	/fullbackup_tmsingle	/update/tmsingle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Technomate TM-Twin-4K	tmtwin4k	Technomate TM-Twin-4K	/update/tmtwin4k	/fullbackup_tmtwin4k	/update			rootfs.tar.bz2	oe_kernel.bin	none
+Technomate TM-Twin-OE	tmtwin	Technomate TM-Twin-OE	/update/tmtwinoe/cfe	/fullbackup_tmtwin	/update/tmtwinoe	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Vimastec VS1000	vs1000	Vimastec VS1000	/vs1000	/fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Vimastec VS1500	vs1500	Vimastec VS1500	/vs1500	/fullbackup_vs1500				rootfs.tar.bz2	kernel.bin	force
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
