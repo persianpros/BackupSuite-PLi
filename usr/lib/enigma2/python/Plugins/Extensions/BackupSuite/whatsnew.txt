@@ -1,6 +1,15 @@
 Changelog
 =========
 
+Git 214-221
+- lookuptable.txt Cleanup, Thanks to Pedro Newbie
+- Technomate support (Even 4K models)
+- Iqon support (Even 4K models)
+- More Edision support
+- Jepssen MediaBox support
+- VALA Linux support
+- Qviart Lunix and Lunix3 4K support
+
 Git 199-213
 - Support all GigaBlue models except gb800solo
 - More Octagon support (SF128/138/208/228/3038/5008)
