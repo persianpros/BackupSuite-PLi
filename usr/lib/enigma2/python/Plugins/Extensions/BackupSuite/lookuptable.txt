@@ -108,6 +108,7 @@ Technomate TM-NANO-SE Plus	tmnanoseplus	Technomate TM-NANO-SE Plus	/update/tmnan
 Technomate TM-Single	tmsingle	Technomate TM-Single	/update/tmsingle/cfe	/fullbackup_tmsingle	/update/tmsingle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Technomate TM-Twin-4K	tmtwin4k	Technomate TM-Twin-4K	/update/tmtwin4k	/fullbackup_tmtwin4k	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Technomate TM-Twin-OE	tmtwin	Technomate TM-Twin-OE	/update/tmtwinoe/cfe	/fullbackup_tmtwin	/update/tmtwinoe	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+VALA Linux	valalinux	VALA Linux	/update/valalinux/cfe	/fullbackup_valalinux	/update/valalinux	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Vimastec VS1000	vs1000	Vimastec VS1000	/vs1000	/fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Vimastec VS1500	vs1500	Vimastec VS1500	/vs1500	/fullbackup_vs1500				rootfs.tar.bz2	kernel.bin	force
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
