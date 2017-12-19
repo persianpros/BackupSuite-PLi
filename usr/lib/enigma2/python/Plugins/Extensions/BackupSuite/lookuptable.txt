@@ -27,6 +27,7 @@ Evo ENfinity	enfinity	Evo ENfinity	/enfinity	/fullbackup_enfinity		-m 2048 -e 12
 Evo enfinityX 2plus	x2plus	Evo enfinityX 2plus	/x2plus	/fullbackup_x2plus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Evo ENfinity mini	mini	Evo ENfinity mini	/mini	/fullbackup_mini		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Evo ENfinity mini+	miniplus	Evo ENfinity mini+	/miniplus	/fullbackup_miniplus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo Slim	evoslim	Evo Slim	/xpeedlxpro	/fullbackup_evoslim		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F1	formuler1	Formuler F1	/formuler1	/fullbackup_formuler1		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
