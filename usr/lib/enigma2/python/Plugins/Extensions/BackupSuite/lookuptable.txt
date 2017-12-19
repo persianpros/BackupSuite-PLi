@@ -3,6 +3,9 @@ Amiko Viper Combo	vipercombo	Amiko Viper Combo	/vipercombo	/fullbackup_vipercomb
 Amiko Viper Combo HDD	vipercombohdd	Amiko Viper Combo HDD	/vipercombohdd	/fullbackup_vipercombohdd		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Amiko Viper T2C	vipert2c	Amiko Viper T2C	/vipert2c	/fullbackup_vipert2c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Atemio 6000	atemio6000	Atemio 6000	/atemio/6000	/fullbackup_6000	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Atemio 6100	atemio6100	Atemio 6100	/atemio/6100	/fullbackup_6100	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Atemio 6200	atemio6200	Atemio 6200	/atemio/6200	/fullbackup_6200	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 AX Triplex	triplex	AX Triplex	/triplex	/fullbackup_triplex		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AX Ultrabox	ultrabox	AX Ultrabox	/ultrabox	/fullbackup_ultrabox		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -20,10 +23,10 @@ Edision OSmini	osmini	Edision OSmini	/osmini	/fullbackup_osmini		-m 2048 -e 1269
 Edision OSmini plus	osminiplus	Edision OSmini plus	/osminiplus	/fullbackup_osminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OS mega	osmega	Edision OS mega	/osmega	/fullbackup_osmega		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSnino	osnino	Edision OSnino	/osnino	/fullbackup_osnino		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Evo ENfinity	enfinity	Evo ENfinity	/enfinity	/fullbackup_enfinity		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Evo enfinityX 2plus	x2plus	Evo enfinityX 2plus	/x2plus	/fullbackup_x2plus		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Evo ENfinity mini	mini	Evo ENfinity mini	/mini	/fullbackup_mini		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Evo ENfinity mini+	miniplus	Evo ENfinity mini+	/miniplus	/fullbackup_miniplus		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo ENfinity	enfinity	Evo ENfinity	/enfinity	/fullbackup_enfinity		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo enfinityX 2plus	x2plus	Evo enfinityX 2plus	/x2plus	/fullbackup_x2plus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo ENfinity mini	mini	Evo ENfinity mini	/mini	/fullbackup_mini		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo ENfinity mini+	miniplus	Evo ENfinity mini+	/miniplus	/fullbackup_miniplus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F1	formuler1	Formuler F1	/formuler1	/fullbackup_formuler1		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -135,7 +138,7 @@ Vu+ Uno 4K	uno4k	Vu+ Uno 4K	/vuplus/uno4k	/fullbackup_uno4k	/vuplus			rootfs.tar
 Vu+ Uno 4K SE	uno4kse	Vu+ Uno 4K SE	/vuplus/uno4kse	/fullbackup_uno4kse	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Vu+ Zero	zero	Vu+ zero	/vuplus/zero	/fullbackup_zero	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	force
 Vu+ Zero 4K	zero4k	Vu+ zero 4K	/vuplus/zero4k	/fullbackup_zero4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
-WWIO BRE2ZE	bre2ze	WWIO BRE2ZE	/bre2ze	/fullbackup_bre2ze		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+WWIO BRE2ZE	bre2ze	WWIO BRE2ZE	/bre2ze	/fullbackup_bre2ze		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 WWIO BRE2ZE 4K	bre2ze4k	WWIO BRE2ZE 4K	/bre2ze4k	/fullbackup_bre2ze4k				rootfs.tar.bz2	kernel.bin	force
 WWIO BRE2ZE T2C	bre2zet2c	WWIO BRE2ZE T2C	/bre2ze_t2c	/fullbackup_bre2zet2c		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xpeed LX	ini-1000de	Xpeed LX	/xpeedlx	/fullbackup_xpeed		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
