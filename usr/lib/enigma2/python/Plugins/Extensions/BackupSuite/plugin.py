@@ -353,6 +353,10 @@ class FlashImageConfig(Screen):
 						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["oe_rootfs.bin", "kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'oe_kernel.bin, rootfs.tar.bz2'
+					elif "ebox" in model:
+						backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2"]
+						no_backup_files = ["kernel.bin", "kernel_auto.bin", "root_cfe_auto.bin", "rootfs.bin", "rootfs.tar.bz2"]
+						text += 'kernel_cfe_auto.bin, root_cfe_auto.jffs2'
 				elif os.path.exists("/proc/stb/info/gbmodel"):
 					f = open("/proc/stb/info/gbmodel")
 					model = f.read().strip()
@@ -376,6 +380,10 @@ class FlashImageConfig(Screen):
 						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["oe_rootfs.bin", "kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'oe_kernel.bin, rootfs.tar.bz2'
+					elif "ebox" in model:
+						backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2"]
+						no_backup_files = ["kernel.bin", "kernel_auto.bin", "root_cfe_auto.bin", "rootfs.bin", "rootfs.tar.bz2"]
+						text += 'kernel_cfe_auto.bin, root_cfe_auto.jffs2'
 					else:
 						backup_files = [("kernel.bin"), ("rootfs.bin")]
 						no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
