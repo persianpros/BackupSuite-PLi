@@ -154,7 +154,7 @@ class BackupStart(Screen):
 				files = "^.*\.(zip|bin|update)"
 			elif model in ["duo", "solo", "ultimo", "uno"]:
 				files = "^.*\.(zip|bin|jffs2)"
-			elif "4k" in model:
+			elif "4k" or "uhd" in model:
 				files = "^.*\.(zip|bin|tar.bz2)"
 			else:
 				files = "^.*\.(zip|bin)"
@@ -346,10 +346,14 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/hwmodel")
 					model = f.read().strip()
 					f.close()
-					if model in ["fusionhd", "fusionhdse", "purehd", "purehdse"]:
+					if "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
 						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
 						text += 'oe_kernel.bin, oe_rootfs.bin'
-					elif "4k" in model:
+					elif model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k"]:
+						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						text += 'kernel.bin, rootfs.tar.bz2'
+					elif "4k" or "uhd" in model:
 						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["oe_rootfs.bin", "kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'oe_kernel.bin, rootfs.tar.bz2'
@@ -357,6 +361,10 @@ class FlashImageConfig(Screen):
 						backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2"]
 						no_backup_files = ["kernel.bin", "kernel_auto.bin", "root_cfe_auto.bin", "rootfs.bin", "rootfs.tar.bz2"]
 						text += 'kernel_cfe_auto.bin, root_cfe_auto.jffs2'
+					else:
+						backup_files = [("kernel.bin"), ("rootfs.bin")]
+						no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
+						text += 'kernel.bin, rootfs.bin'
 				elif os.path.exists("/proc/stb/info/gbmodel"):
 					f = open("/proc/stb/info/gbmodel")
 					model = f.read().strip()
@@ -372,11 +380,14 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/boxtype")
 					model = f.read().strip()
 					f.close()
-					if model in ["hd51", "h7", "sf4008"]:
+					if "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
+						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
+						text += 'oe_kernel.bin, oe_rootfs.bin'
+					elif model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k"]:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel.bin, rootfs.tar.bz2'
-					elif "4k" in model:
+					elif "4k" or "uhd" in model:
 						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["oe_rootfs.bin", "kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'oe_kernel.bin, rootfs.tar.bz2'
