@@ -3,9 +3,9 @@ Amiko Viper Combo	vipercombo	Amiko Viper Combo	/vipercombo	/fullbackup_vipercomb
 Amiko Viper Combo HDD	vipercombohdd	Amiko Viper Combo HDD	/vipercombohdd	/fullbackup_vipercombohdd		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Amiko Viper T2C	vipert2c	Amiko Viper T2C	/vipert2c	/fullbackup_vipert2c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Atemio 6000	atemio6000	Atemio 6000	/atemio/6000	/fullbackup_6000	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Atemio 6100	atemio6100	Atemio 6100	/atemio/6100	/fullbackup_6100	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Atemio 6200	atemio6200	Atemio 6200	/atemio/6200	/fullbackup_6200	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Atemio 6000-HD	atemio6000	Atemio 6000-HD	/atemio/6000	/fullbackup_6000	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Atemio 6100-HD	atemio6100	Atemio 6100-HD	/atemio/6100	/fullbackup_6100	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Atemio 6200-HD	atemio6200	Atemio 6200-HD	/atemio/6200	/fullbackup_6200	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 AX Triplex	triplex	AX Triplex	/triplex	/fullbackup_triplex		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AX Ultrabox	ultrabox	AX Ultrabox	/ultrabox	/fullbackup_ultrabox		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -58,7 +58,6 @@ HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 
 HD 51	hd51	Mutant HD51	/hd51	/fullbackup_hd51				rootfs.tar.bz2	kernel.bin	none
 HD 500C	hd500c	HD 500c	/hd500c	/fullbackup_hd500c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 530C	hd530c	HD 530c	/hd530c	/fullbackup_hd530c		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-UNiBOX HDECOPlus	hde	UNiBOX HDECOPlus	/unibox/hde	/fullbackup_hde	/unibox	-m 2048 -e 126976 -c 8160 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Iqon Force 1	force1	Iqon Force 1	/update/force1/cfe	/fullbackup_force1	/update/force1	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 2	force2	Iqon Force 2	/update/force2solid/cfe	/fullbackup_force2	/update/force2solid	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 2 Nano	force2nano	Iqon Force 2 Nano	/update/force2nano/cfe	/fullbackup_force2nano	/update/force2nano	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
@@ -120,6 +119,8 @@ Technomate TM-NANO-SE Plus	tmnanoseplus	Technomate TM-NANO-SE Plus	/update/tmnan
 Technomate TM-Single	tmsingle	Technomate TM-Single	/update/tmsingle/cfe	/fullbackup_tmsingle	/update/tmsingle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Technomate TM-Twin-4K	tmtwin4k	Technomate TM-Twin-4K	/update/tmtwin4k	/fullbackup_tmtwin4k	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Technomate TM-Twin-OE	tmtwin	Technomate TM-Twin-OE	/update/tmtwinoe/cfe	/fullbackup_tmtwin	/update/tmtwinoe	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+UNiBOX HDECOPlus	hde	UNiBOX HDECOPlus	/unibox/hde	/fullbackup_hde	/unibox	-m 2048 -e 126976 -c 8160 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+UNiBOX HD-x	hdx	UNiBOX HD-x	/venton-hdx	/fullbackup_hdx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 VALA Linux	valalinux	VALA Linux	/update/valalinux/cfe	/fullbackup_valalinux	/update/valalinux	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Vimastec VS1000	vs1000	Vimastec VS1000	/vs1000	/fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Vimastec VS1500	vs1500	Vimastec VS1500	/vs1500	/fullbackup_vs1500				rootfs.tar.bz2	kernel.bin	force
