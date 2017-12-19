@@ -1,6 +1,22 @@
 Changelog
 =========
 
+Git 222-238
+- Vivant support (4K)
+- MixOS (EBox) support + plugin.py support
+- plugin.py: More accuracy in box detection
+- Amiko Viper Combo HDD support
+- WWIO BRE2ZE support
+- Evo support (ENfinity and Slim)
+- Atemio 6000/6100/6200 support
+- UNiBOX HD-x support
+- Opticum Twin support
+- Miraclebox Hybrid support
+- Beyonwiz support
+- Sezam support
+- Space Black Widow-X/X2 support
+- Tiviar support
+
 Git 214-221
 - lookuptable.txt Cleanup, Thanks to Pedro Newbie
 - Technomate support (Even 4K models)
