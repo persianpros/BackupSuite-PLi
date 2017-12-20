@@ -67,6 +67,7 @@ HD 2400	hd2400	HD 2400	/hd2400	/fullbackup_hd2400		-m 2048 -e 126976 -c 8192	-m 
 HD 51	hd51	Mutant HD51	/hd51	/fullbackup_hd51				rootfs.tar.bz2	kernel.bin	none
 HD 500C	hd500c	HD 500c	/hd500c	/fullbackup_hd500c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 530C	hd530c	HD 530c	/hd530c	/fullbackup_hd530c		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+HDBox EniBox	enibox	HDBox EniBox	/enibox	/fullbackup_enibox		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Iqon Force 1	force1	Iqon Force 1	/update/force1/cfe	/fullbackup_force1	/update/force1	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 2	force2	Iqon Force 2	/update/force2solid/cfe	/fullbackup_force2	/update/force2solid	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 2 Nano	force2nano	Iqon Force 2 Nano	/update/force2nano/cfe	/fullbackup_force2nano	/update/force2nano	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
