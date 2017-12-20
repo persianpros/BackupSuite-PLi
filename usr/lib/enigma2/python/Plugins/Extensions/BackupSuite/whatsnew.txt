@@ -1,6 +1,16 @@
 Changelog
 =========
 
+Git 239-247
+- plugin.py: Detect spycat4k and spycat4kmini
+- Spycat 4K support
+- More Evo support (enfinityX and Slim)
+- Octagon SF98/108 support
+- Tripledot Tyrant support
+- Relook Mago support
+- HDBox EniBox support
+- VisionNet Marvel 1 support
+
 Git 222-238
 - Vivant support (4K)
 - MixOS (EBox) support + plugin.py support
