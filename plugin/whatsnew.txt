@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Git 248-250
+- maintainer.info removed, No need for this file anymore.
+- Follow e2openplugins structure (Use setup.py and setup_translate.py in OE)
+- Correct mo compile from po files as we're using setup_translate.py now.
+- enigma2-plugins/enigma2-plugin-extensions-backupsuite.bb bitbake recipe changed, Check PLi's OE.
+- Rename BackupSuite.translate to BackupSuite.pot and move it to the main git folder.
+- Version change from 21 to 22.
+
 Git 239-247
 - plugin.py: Detect spycat4k and spycat4kmini
 - Spycat 4K support
