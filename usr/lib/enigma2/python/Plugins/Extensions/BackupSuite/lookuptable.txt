@@ -27,10 +27,15 @@ Edision OSmini plus	osminiplus	Edision OSmini plus	/osminiplus	/fullbackup_osmin
 Edision OS mega	osmega	Edision OS mega	/osmega	/fullbackup_osmega		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OSnino	osnino	Edision OSnino	/osnino	/fullbackup_osnino		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Evo ENfinity	enfinity	Evo ENfinity	/enfinity	/fullbackup_enfinity		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Evo enfinityX 2plus	x2plus	Evo enfinityX 2plus	/x2plus	/fullbackup_x2plus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Evo ENfinity mini	mini	Evo ENfinity mini	/mini	/fullbackup_mini		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Evo ENfinity mini+	miniplus	Evo ENfinity mini+	/miniplus	/fullbackup_miniplus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo ENfinity T2C	t2cable	Evo ENfinity T2C	/t2cable	/fullbackup_t2cable		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo enfinityX 1plus	x1plus	Evo enfinityX 1plus	/x1plus	/fullbackup_x1plus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo enfinityX 2plus	x2plus	Evo enfinityX 2plus	/x2plus	/fullbackup_x2plus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo enfinityX combo plus	xcombo	Evo enfinityX combo plus	/xcombo	/fullbackup_xcombo		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Evo Slim	evoslim	Evo Slim	/xpeedlxpro	/fullbackup_evoslim		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo Slim SE	evoslimse	Evo Slim SE	/slim	/fullbackup_evoslimse		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Evo Slim T2C	evoslimt2c	Evo Slim T2C	/slimt2c	/fullbackup_evoslimt2c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F1	formuler1	Formuler F1	/formuler1	/fullbackup_formuler1		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F3	formuler3	Formuler F3	/formuler3	/fullbackup_formuler3		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Formuler F4	formuler4	Formuler F4	/formuler4	/fullbackup_formuler4		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
