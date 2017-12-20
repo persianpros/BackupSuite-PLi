@@ -349,7 +349,7 @@ class FlashImageConfig(Screen):
 					if "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
 						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
 						text += 'oe_kernel.bin, oe_rootfs.bin'
-					elif model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k"]:
+					elif model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel.bin, rootfs.tar.bz2'
@@ -383,7 +383,7 @@ class FlashImageConfig(Screen):
 					if "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
 						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
 						text += 'oe_kernel.bin, oe_rootfs.bin'
-					elif model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k"]:
+					elif model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
 						text += 'kernel.bin, rootfs.tar.bz2'
