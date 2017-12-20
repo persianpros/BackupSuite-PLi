@@ -5,7 +5,7 @@ Git 248-250
 - maintainer.info removed, No need for this file anymore.
 - Follow e2openplugins structure (Use setup.py and setup_translate.py in OE)
 - Correct mo compile from po files as we're using setup_translate.py now.
-- enigma2-plugins/enigma2-plugin-extensions-backupsuite.bb bitbake recipe changed, Check PLi's OE.
+- enigma2-plugin-extensions-backupsuite.bb bitbake recipe changed, Check PLi's OE.
 - Rename BackupSuite.translate to BackupSuite.pot and move it to the main git folder.
 - Version change from 21 to 22.
 
@@ -63,6 +63,7 @@ Git 191-197
 - maintainer.info updated
 - GigaBlue gb800solo: No need to use "jffs2" extension
 - No need to keep LICENSE file inside plugin folder
+- Version change from 20 to 21.
 
 Git 190
 - Message from Pedro Newbie:
