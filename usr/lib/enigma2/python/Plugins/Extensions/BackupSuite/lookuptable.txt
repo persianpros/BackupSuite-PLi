@@ -114,6 +114,8 @@ Sogno 8800HD	8800hd	Sogno 8800HD	/sogno/8800hd	/fullbackup_8800hd	/sogno	-m 2048
 Space Black Widow-X	bwidowx	Space Black Widow-X	/bwidowx	/fullbackup_bwidowx		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Space Black Widow-X2	bwidowx2	Space Black Widow-X2	/bwidowx2	/fullbackup_bwidowx2		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat	spycat	Spycat	/spycat	/fullbackup_spycat		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Spycat 4K	spycat4k	Spycat 4K	/spycat4k	/fullbackup_spycat4k				rootfs.tar.bz2	kernel.bin	noforce
+Spycat 4K mini	spycat4kmini	Spycat 4K mini	/spycat4kmini	/fullbackup_spycat4kmini				rootfs.tar.bz2	kernel.bin	noforce
 Spycat Mini	spycatmini	Spycat Mini	/spycatmini	/fullbackup_spycatmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini Plus	spycatminiplus	Spycat Mini Plus	/spycatminiplus	/fullbackup_spycatminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Technomate TM-2T-OE	tm2t	Technomate TM-2T-OE	/update/tm2toe/cfe	/fullbackup_tm2t	/update/tm2toe	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
