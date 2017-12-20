@@ -113,6 +113,7 @@ Qviart Lunix	lunix	Qviart Lunix	/update/lunix/cfe	/fullbackup_lunix	/update/luni
 Qviart Lunix3 4K	lunix34k	Qviart Lunix3 4K	/update/lunix3-4k	/fullbackup_lunix34k	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Red Eagle SingleBox LCD	singleboxlcd	Red Eagle SingleBox LCD	/redeagle/singleboxlcd	/fullbackup_singleboxlcd	/redeagle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Red Eagle TwinBox LCD	twinboxlcd	Red Eagle TwinBox LCD	/redeagle/twinboxlcd	/fullbackup_twinboxlcd	/redeagle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Relook Mago	mago	Relook Mago	/mago	/fullbackup_mago		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 SAB Alpha Triple	alphatriplehd	SAB Alpha Triple	/sab_alpha_triple	/fullbackup_sab_alpha_triple		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Sezam 1000-HD	sezam1000hd	Sezam 1000-HD	/hde	/fullbackup_sezam1000hd		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Sezam 5000-HD	sezam5000hd	Sezam 5000-HD	/hdx	/fullbackup_sezam5000hd		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
