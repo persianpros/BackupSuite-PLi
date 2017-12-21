@@ -1,6 +1,9 @@
 Changelog
 =========
 
+Git 251-253
+- Bitbake recipe changed: Shell scripts are executable in our git but distutils won't make them executable so do something about it.
+
 Git 248-250
 - maintainer.info removed, No need for this file anymore.
 - Follow e2openplugins structure (Use setup.py and setup_translate.py in OE)
