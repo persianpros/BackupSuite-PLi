@@ -58,7 +58,7 @@ msgstr "BACK-UP nástroj na výrobu kompletnej zálohy Image"
 
 #: message03
 msgid "Please be patient, a backup will now be made, this will take about: "
-msgstr "Buďte prosím trpezliví, vytvorí sa záloha Image, ktorá potrvá približne: "
+msgstr "Buďte prosím trpezlivý, vytvorí sa záloha Image, ktorá potrvá približne: "
 
 #: message04
 msgid " size to be backed up: "
@@ -70,7 +70,7 @@ msgstr "nebol nájdený, proces zálohovania bude zrušený!"
 
 #: message06
 msgid "Some information about the task"
-msgstr "Informácie o zálohe Image."
+msgstr "Informácie o zálohe Image"
 
 #: message06a
 msgid "Create: root.ubifs"
@@ -162,7 +162,7 @@ msgstr "Čas potrebný pre tento proces: "
 
 #: message25
 msgid "minutes"
-msgstr "minút."
+msgstr "minút"
 
 #: message26
 msgid "Backup done with: "
