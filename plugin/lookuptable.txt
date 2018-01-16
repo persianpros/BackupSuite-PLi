@@ -179,6 +179,7 @@ Xsarius Pure HD	purehd	Xsarius Pure HD	/update/purehd/cfe	/fullbackup_purehd	/up
 Xsarius Pure HD SE	purehdse	Xsarius Pure HD SE	/update/purehdse/cfe	/fullbackup_purehdse	/update/purehdse	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Xsarius Revo 4K	revo4k	Xsarius Revo 4K	/update/revo4k	/fullbackup_revo4k	/update			rootfs.tar.bz2	oe_kernel.bin	force
 Xtrend 10000	et10000	Xtrend ET10000	/et10000	/fullbackup_et10000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Xtrend 13000	et13000	Xtrend ET13000	/et13000	/fullbackup_et13000				rootfs.tar.bz2	kernel.bin	noforce
 Xtrend 4000	et4000	Xtrend ET4000	/et4x00	/fullbackup_et4x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 5000	et5000	Xtrend ET5000	/et5x00	/fullbackup_et5x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 6000	et6000	Xtrend ET6000	/et6x00	/fullbackup_et6x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
