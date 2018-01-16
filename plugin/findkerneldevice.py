@@ -4,7 +4,6 @@ import os
 import sys
 import collections
 import struct
-import sys
 import uuid
 
 # http://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_table_header_.28LBA_1.29
