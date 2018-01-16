@@ -358,7 +358,7 @@ class FlashImageConfig(Screen):
 						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
 						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
 						text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
-					elif "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
+					elif model.startswith(("fusion", "pure", "optimus", "force", "iqon", "ios", "tm2", "tmn", "tmt", "tms", "lunix", "mediabox", "vala")):
 						backup_files = [("oe_kernel.bin"), ("oe_rootfs.bin")]
 						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
 						text += "oe_kernel.bin, oe_rootfs.bin"
@@ -394,7 +394,7 @@ class FlashImageConfig(Screen):
 						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
 						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
 						text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
-					elif "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
+					elif model.startswith(("fusion", "pure", "optimus", "force", "iqon", "ios", "tm2", "tmn", "tmt", "tms", "lunix", "mediabox", "vala")):
 						backup_files = [("oe_kernel.bin"), ("oe_rootfs.bin")]
 						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
 						text += "oe_kernel.bin, oe_rootfs.bin"
