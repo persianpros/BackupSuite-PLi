@@ -16,6 +16,7 @@ AXAS E4HD Combo	e4hdcombo	AXAS E4HD Combo	/e4hdcombo	/fullbackup_e4hdcombo		-m 2
 Beyonwiz T2	beyonwizt2	Beyonwiz T2	/beyonwiz/hde2	/fullbackup_beyonwizt2	/beyonwiz	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Beyonwiz T3	beyonwizt3	Beyonwiz T3	/beyonwiz/hdx	/fullbackup_beyonwizt3	/beyonwiz	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Beyonwiz T4	beyonwizt4	Beyonwiz T4	/beyonwiz/hdp	/fullbackup_beyonwizt4	/beyonwiz	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
+Beyonwiz U4	beyonwizu4	Beyonwiz U4	/beyonwiz/u4	/fullbackup_beyonwizu4	/beyonwiz			rootfs.tar.bz2	kernel.bin	noforce
 Edision Optimuss OS	optimussos	Edision Optimuss OS	/update/optimussos/cfe	/fullbackup_optimussos	/update/optimussos	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Edision Optimuss OS1	optimussos1	Edision Optimuss OS1	/update/optimussos1/cfe	/fullbackup_optimussos1	/update/optimussos1	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Edision Optimuss OS1 Plus	optimussos1plus	Edision Optimuss OS1 Plus	/update/optimussos1plus/cfe	/fullbackup_optimussos1plus	/update/optimussos1plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
