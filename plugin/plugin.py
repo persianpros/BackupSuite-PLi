@@ -346,75 +346,78 @@ class FlashImageConfig(Screen):
 					f = open("/proc/stb/info/hwmodel")
 					model = f.read().strip()
 					f.close()
-					if "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
-						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
-						text += 'oe_kernel.bin, oe_rootfs.bin'
-					elif model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
+					if model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-						text += 'kernel.bin, rootfs.tar.bz2'
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
+						text += "kernel.bin, rootfs.tar.bz2"
 					elif "4k" or "uhd" in model:
 						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
-						no_backup_files = ["oe_rootfs.bin", "kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-						text += 'oe_kernel.bin, rootfs.tar.bz2'
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("kernel_auto.bin")]
+						text += "oe_kernel.bin, rootfs.tar.bz2"
 					elif "ebox" in model:
-						backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2"]
-						no_backup_files = ["kernel.bin", "kernel_auto.bin", "root_cfe_auto.bin", "rootfs.bin", "rootfs.tar.bz2"]
-						text += 'kernel_cfe_auto.bin, root_cfe_auto.jffs2'
+						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
+						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
+					elif "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
+						backup_files = [("oe_kernel.bin"), ("oe_rootfs.bin")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "oe_kernel.bin, oe_rootfs.bin"
 					else:
 						backup_files = [("kernel.bin"), ("rootfs.bin")]
-						no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-						text += 'kernel.bin, rootfs.bin'
+						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "kernel.bin, rootfs.bin"
 				elif os.path.exists("/proc/stb/info/gbmodel"):
 					f = open("/proc/stb/info/gbmodel")
 					model = f.read().strip()
 					f.close()
 					if not "4k" in model:
-						backup_files = ["kernel.bin", "rootfs.bin"]
-						text += 'kernel.bin, rootfs.bin'
+						backup_files = [("kernel.bin"), ("rootfs.bin")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "kernel.bin, rootfs.bin"
 					else:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-						text += 'kernel.bin, rootfs.tar.bz2'
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
+						text += "kernel.bin, rootfs.tar.bz2"
 				elif os.path.exists("/proc/stb/info/boxtype"):
 					f = open("/proc/stb/info/boxtype")
 					model = f.read().strip()
 					f.close()
-					if "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
-						backup_files = ["oe_kernel.bin", "oe_rootfs.bin"]
-						text += 'oe_kernel.bin, oe_rootfs.bin'
-					elif model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
+					if model in ["hd51", "h7", "sf4008", "sf5008", "u5", "u5pvr", "vs1500", "et11000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-						no_backup_files = ["kernel_cfe_auto.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-						text += 'kernel.bin, rootfs.tar.bz2'
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
+						text += "kernel.bin, rootfs.tar.bz2"
 					elif "4k" or "uhd" in model:
 						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
-						no_backup_files = ["oe_rootfs.bin", "kernel_cfe_auto.bin", "kernel.bin", "rootfs.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-						text += 'oe_kernel.bin, rootfs.tar.bz2'
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("kernel_auto.bin")]
+						text += "oe_kernel.bin, rootfs.tar.bz2"
 					elif "ebox" in model:
-						backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2"]
-						no_backup_files = ["kernel.bin", "kernel_auto.bin", "root_cfe_auto.bin", "rootfs.bin", "rootfs.tar.bz2"]
-						text += 'kernel_cfe_auto.bin, root_cfe_auto.jffs2'
+						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
+						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
+					elif "fusion" or "pure" or "optimus" or "force" or "iqon" or "ios" or "tm2" or "tmn" or "tmt" or "tms" or "lunix" or "mediabox" or "vala" in model:
+						backup_files = [("oe_kernel.bin"), ("oe_rootfs.bin")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "oe_kernel.bin, oe_rootfs.bin"
 					else:
 						backup_files = [("kernel.bin"), ("rootfs.bin")]
-						no_backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2", "root_cfe_auto.bin"]
-						text += 'kernel.bin, rootfs.bin'
+						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "kernel.bin, rootfs.bin"
 				elif os.path.exists("/proc/stb/info/vumodel"):
 					f = open("/proc/stb/info/vumodel")
 					model = f.read().strip()
 					f.close()
 					if "4k" in model:
-						backup_files = ["kernel_auto.bin", "rootfs.tar.bz2"]
-						no_backup_files = ["kernel.bin", "kernel_cfe_auto.bin", "root_cfe_auto.bin" "root_cfe_auto.jffs2", "rootfs.bin"]
-						text += 'kernel_auto.bin, rootfs.tar.bz2'
+						backup_files = [("kernel_auto.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin")]
+						text += "kernel_auto.bin, rootfs.tar.bz2"
 					elif model in ["duo2", "solose", "solo2", "zero"]:
-						backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.bin"]
-						no_backup_files = ["kernel.bin", "kernel_auto.bin", "root_cfe_auto.jffs2", "rootfs.bin", "rootfs.tar.bz2"]
-						text += 'kernel_cfe_auto.bin, root_cfe_auto.bin'
+						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.bin")]
+						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.jffs2"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "kernel_cfe_auto.bin, root_cfe_auto.bin"
 					else:
-						backup_files = ["kernel_cfe_auto.bin", "root_cfe_auto.jffs2"]
-						no_backup_files = ["kernel.bin", "kernel_auto.bin", "root_cfe_auto.bin", "rootfs.bin", "rootfs.tar.bz2"]
-						text += 'kernel_cfe_auto.bin, root_cfe_auto.jffs2'
+						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
+						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+						text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
 				try:
 					self.founds = False
 					text += _('\nThe found files:')
