@@ -1,12 +1,15 @@
 Changelog
 =========
 
-Git 251-261
-- Bitbake recipe changed: Better mo compile and chmod, Thanks to Erik Slagter (eriksl). Shell scripts are executable in our git but distutils won't make them executable so do something about it.
+Git 251-266
+- Bitbake recipe changed: Better mo compile and chmod, Thanks to Erik Slagter (eriksl)
+Shell scripts are executable in our git but distutils won't make them executable so do something about it.
 - SK language update, Thanks to Pr0metheus2
 - Zgemma H9 support (It's experimental as it uses hi3798mv200 chip not broadcom)
 - Edision OSninoplus support
 - plugin.py update, Update "no_backup_files" + improvements
+- Cleanup: Useless and duplicate python imports removed.
+- mphelp.xml update: Show https://github.com/persianpros/BackupSuite/issues
 - Version change from 22 to 23.
 
 Git 248-250
