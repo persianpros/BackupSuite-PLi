@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Git 251-268
+Git 251-272
 - Bitbake recipe changed: Better mo compile and chmod, Thanks to Erik Slagter (eriksl)
 Shell scripts are executable in our git but distutils won't make them executable so do something about it.
 - SK language update, Thanks to Pr0metheus2
@@ -10,6 +10,8 @@ Shell scripts are executable in our git but distutils won't make them executable
 - plugin.py update, Update "no_backup_files", Use "startswith" method and some improvements
 - Cleanup: Useless and duplicate python imports removed.
 - mphelp.xml update: Show https://github.com/persianpros/BackupSuite/issues
+- Xtrend 13000 support
+- Beyonwiz U4 support
 - Version change from 22 to 23.
 
 Git 248-250
