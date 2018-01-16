@@ -5,22 +5,20 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"Language: tr\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
 msgstr "Yedekleme yapmak veya geri yükleme"
 
-#: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Tam yedekleme HDD üzerine"
 
-#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -30,179 +28,173 @@ msgstr ""
 "\n"
 "Bu sadece bir kaç dakika sürer ve tam otomatiktir. \n"
 
-#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Tam yedekleme USB  içine"
 
-#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
-"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"This only takes a few minutes depending on the used filesystem and is fully "
+"automatic.\n"
 "\n"
 "Make sure you first insert an USB flash drive before you select Yes."
 msgstr ""
 "USB üzerinde bir yedekleme yapmak istiyor musunuz? \n"
 "\n"
-"Bu sadece kullanılan dosya sistemi bağlı olarak birkaç dakika sürer ve tam otomatiktir. \n"
+"Bu sadece kullanılan dosya sistemi bağlı olarak birkaç dakika sürer ve tam "
+"otomatiktir. \n"
 "\n"
-"Evet seçeneğini seçmeden önce ilk olarak bir USB Belek sürücü taktığınızdan emin olun."
+"Evet seçeneğini seçmeden önce ilk olarak bir USB Belek sürücü taktığınızdan "
+"emin olun."
 
-#: message01
 msgid "No supported receiver found!"
 msgstr "Desteklenen alıcısı bulunamadı!"
 
-#: message02
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
 msgstr "YEDEKLEME ARAÇ, KOMPLE YEDEKLEME YAPMAK İÇİN"
 
-#: message03
 msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr "Lütfen sabırlı olun, bir yedekleme artık yapılacaktır, bu sürer: "
 
-#: message04
 msgid " size to be backed up: "
 msgstr " yedeklenmesi boyutu: "
 
-#: message05
 msgid "not found, the backup process will be aborted!"
 msgstr "bulunamadı, yedekleme işlemi iptal olacak!"
 
-#: message06
 msgid "Some information about the task"
 msgstr "Görev hakkında bazı bilgiler"
 
-#: message06a
 msgid "Create: root.ubifs"
 msgstr "Oluşturma: root.ubifs "
 
-#: message07
 msgid "Create: kerneldump"
 msgstr "Oluşturma: kerneldump"
 
-#: message09
 msgid "Additional backup -> "
 msgstr "Ek yedekleme -> "
 
-#: message10
 msgid "USB Image created in: "
 msgstr "USB görüntü oluşturulur:"
 
-#: message11
 msgid "and there is made an extra copy in: "
 msgstr "ve orada fazladan bir kopyası yapılır:"
 
-#: message14
 msgid "Please check the manual of the receiver on how to restore the image."
-msgstr "Lütfen alıcının görüntüyü geri yüklemek nası yapılır el kılavuzuna bakınız."
+msgstr ""
+"Lütfen alıcının görüntüyü geri yüklemek nası yapılır el kılavuzuna bakınız."
 
-#: message15
 msgid "Image creation FAILED!"
 msgstr "Görüntü oluşturma BAŞARISIZ!"
 
-#: message16
 msgid "available "
 msgstr "mevcut"
 
-#: message17-1
-msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr "USB bağlantı noktalarından birinde tespit edilen geçerli bir USB-Belek varsa,bu nedenle ekstra bir kopya yedekleme görüntü şimdi bu USB-Belek için kopyalanır."
+msgid ""
+"There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
+"an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr ""
+"USB bağlantı noktalarından birinde tespit edilen geçerli bir USB-Belek varsa,"
+"bu nedenle ekstra bir kopya yedekleme görüntü şimdi bu USB-Belek için "
+"kopyalanır."
 
-#: message17-2
 msgid "This only takes about 20 seconds....."
 msgstr "Bu yaklaşık 20 saniye sürer ....."
 
-#: message19
 msgid "Backup finished and copied to your USB-flashdrive."
 msgstr "Yedekleme tamamlandı ve USB flash sürücüne kopyalanır."
 
-#: message20
 msgid "Full back-up to the harddisk"
 msgstr "Tam yedekleme sabit disk içine"
 
-#: message21-1
 msgid "There is NO valid USB-stick found, so I've got nothing to do."
 msgstr "Geçerli bir USB-Belek bulunmaz ise,hiçbir şey yapilamaz."
 
-#: message21-2
 msgid "PLEASE READ THIS:"
 msgstr "LÜTFEN BUNU OKUYUNUZ:"
 
-#: message21-3
-msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
-msgstr "USB-Belek doğrudan yedeklemek için, USB-Belek bir dosya adı içermesi ZORUNLUDUR:"
+msgid ""
+"To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
+"the name:"
+msgstr ""
+"USB-Belek doğrudan yedeklemek için, USB-Belek bir dosya adı içermesi "
+"ZORUNLUDUR:"
 
-#: message21-4
 msgid "backupstick or"
 msgstr "backupstick veya"
 
-#: message21-5
 msgid "backupstick.txt"
 msgstr "backupstick.txt"
 
-#: message21-6
-msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
-msgstr "Bu dosyayı içeren bir USB-Belek koyarsanız yedekleme otomatik olarak USB-Belek üzerine yapılacak ve mevcut görüntü gerekirse geri yüklemek için kullanılabilir."
+msgid ""
+"If you place an USB-stick containing this file then the back-up will be "
+"automatically made onto the USB-stick and can be used to restore the current "
+"image if necessary."
+msgstr ""
+"Bu dosyayı içeren bir USB-Belek koyarsanız yedekleme otomatik olarak USB-"
+"Belek üzerine yapılacak ve mevcut görüntü gerekirse geri yüklemek için "
+"kullanılabilir."
 
-#: message21-7
 msgid "The program will exit now."
 msgstr "Program şimdi kapanacak. "
 
-#: message22
 msgid "Full back-up direct to USB"
 msgstr "Tam yedekleme USB üzerine"
 
-#: message23
 msgid "The content of the folder is:"
 msgstr "Klasörün içeriği:"
 
-#: message24
 msgid "Time required for this process: "
 msgstr "Bu işlem için gereken süre: "
 
-#: message25
 msgid "minutes"
 msgstr "dakika"
 
-#: message26
 msgid "Backup done with: "
 msgstr "Yedekleme ile yapılan: "
 
-#: message27
 msgid "KB per second"
 msgstr "KB saniye başına"
 
-#: message28
-msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Bu yedekleme büyük olasılıkla boyut nedeniyle geri yüklenemez,bu şekilde geri yüklemek için çok büyük. Bu kısıtlama Bootloader`dan kaynaklaniyor,yedekleme veya BackupSuite dan degildir."
+msgid ""
+"Most likely this back-up can't be restored because of it's size, it's simply "
+"too big to restore. This is a limitation of the bootloader not of the back-"
+"up or the BackupSuite."
+msgstr ""
+"Bu yedekleme büyük olasılıkla boyut nedeniyle geri yüklenemez,bu şekilde "
+"geri yüklemek için çok büyük. Bu kısıtlama Bootloader`dan kaynaklaniyor,"
+"yedekleme veya BackupSuite dan degildir."
 
-#: message29
-msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Geri yükleme yedeklemenin maximum boyutunu gectigi icin bir sorun olabilir. Bu kısıtlama Bootloader`dan kaynaklaniyor,yedekleme veya BackupSuite dan degildir."
+msgid ""
+"There COULD be a problem with restoring this back-up because the size of the "
+"back-up comes close to the maximum size. This is a limitation of the "
+"bootloader not of the back-up or the BackupSuite."
+msgstr ""
+"Geri yükleme yedeklemenin maximum boyutunu gectigi icin bir sorun olabilir. "
+"Bu kısıtlama Bootloader`dan kaynaklaniyor,yedekleme veya BackupSuite dan "
+"degildir."
 
-#: message30-1
 msgid "* * * WARNING * * *"
 msgstr "* * * DIKKAT * * *"
 
-#: message30-2
 msgid "Not enough free space on "
 msgstr "Boş alan yeterli değil"
 
-#: message31
 msgid " to make a back-up!"
 msgstr "Bir yedeklem yapmak için!"
 
-#: message32
 msgid " MB available space"
 msgstr "MB kullanılabilir alan"
 
-#: message33
 msgid " MB needed space"
 msgstr "MB alan gerekli"
 
-#: message34
-msgid "The program will abort, please try another medium with more free space to create your back-up."
-msgstr "Program iptal edilecek, daha fazla boş alana sahip başka bir ortam deneyin lütfen yedekleme oluşturmak için."
+msgid ""
+"The program will abort, please try another medium with more free space to "
+"create your back-up."
+msgstr ""
+"Program iptal edilecek, daha fazla boş alana sahip başka bir ortam deneyin "
+"lütfen yedekleme oluşturmak için."
 
 #: plugin.py 294
 msgid ""
@@ -227,8 +219,11 @@ msgid " nothing!"
 msgstr "hiçbir şey!"
 
 #: plugin.py 327
-msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
-msgstr "Bir kayıt şu anda çalışıyor. flaş başlatmadan önce kaydı durdurun lütfen."
+msgid ""
+"A recording is currently running. Please stop the recording before trying to "
+"start a flashing."
+msgstr ""
+"Bir kayıt şu anda çalışıyor. flaş başlatmadan önce kaydı durdurun lütfen."
 
 #: plugin.py 91
 msgid "Cancel"
@@ -297,7 +292,9 @@ msgstr "Standart (kök ve kernel)"
 
 #: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr "image veya çekirdek flash yapmaya baslayacaktir ve birkaç dakika içinde otomatik olarak boot yapacaktir.\n"
+msgstr ""
+"image veya çekirdek flash yapmaya baslayacaktir ve birkaç dakika içinde "
+"otomatik olarak boot yapacaktir.\n"
 
 #: plugin.py 247 380
 msgid "Unzip"
@@ -310,7 +307,8 @@ msgid ""
 "Don't use it if you use multiple ubi volumes in ubi layer!"
 msgstr ""
 "Dikkat!\n"
-"Sorumluluk kendinize aittir!Kullanmadan önce her zaman bir yedeğini yapiniz!\n"
+"Sorumluluk kendinize aittir!Kullanmadan önce her zaman bir yedeğini "
+"yapiniz!\n"
 "Eğer Ubi katmanda birden ubi hacimleri kullanırsanız kullanın etmeyin!"
 
 #: plugin.py 360
@@ -353,4 +351,3 @@ msgstr "Yedeklem > USB"
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "En son sürümden sonra hangi yenilikler var?"
-

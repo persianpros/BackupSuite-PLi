@@ -5,23 +5,21 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
 msgstr "Effectuer une sauvegarde ou restaurer une sauvegarde"
 
-#: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Sauvegarde complète sur HDD"
 
-#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -31,179 +29,172 @@ msgstr ""
 "\n"
 "C'est entièrement automatisée et ne dure que quelques minutes.\n"
 
-#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Sauvegarde complète sur USB"
 
-#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
-"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"This only takes a few minutes depending on the used filesystem and is fully "
+"automatic.\n"
 "\n"
 "Make sure you first insert an USB flash drive before you select Yes."
 msgstr ""
 "Voulez-vous faire un back-up sur USB?\n"
 "\n"
-"C'est entièrement automatisée et ne dure que quelques minutes en fonction du système de fichiers utilisé.\n"
+"C'est entièrement automatisée et ne dure que quelques minutes en fonction du "
+"système de fichiers utilisé.\n"
 "\n"
 "Insérez une clé USB avant de sélectionner Oui."
 
-#: message01
 msgid "No supported receiver found!"
 msgstr "Recepteur non-supporté"
 
-#: message02
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
 msgstr "BACK-UP TOOL, POUR EFFECTUER UNE SAUVEGARDE COMPLETE"
 
-#: message03
 msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr "Merci d'être patient, la sauvegarde va commencer et va durer environ: "
 
-#: message04
 msgid " size to be backed up: "
 msgstr " Taille à sauvegarder:"
 
-#: message05
 msgid "not found, the backup process will be aborted!"
 msgstr "pas trouvé, interruption de la sauvegarde!"
 
-#: message06
 msgid "Some information about the task"
 msgstr "Quelques informations concernant la tâche"
 
-#: message06a
 msgid "Create: root.ubifs"
 msgstr "Création: root.ubifs"
 
-#: message07
 msgid "Create: kerneldump"
 msgstr "Création: kerneldump"
 
-#: message09
 msgid "Additional backup -> "
 msgstr "Sauvegarde additionnelle -> "
 
-#: message10
 msgid "USB Image created in: "
 msgstr "Image USB créée sur: "
 
-#: message11
 msgid "and there is made an extra copy in: "
 msgstr "et une copie supplémentaire a été éffectué sur: "
 
-#: message14
 msgid "Please check the manual of the receiver on how to restore the image."
-msgstr "Merci de vérifier comment restaurer l'image sur le guide d'utilisateur de votre STB."
+msgstr ""
+"Merci de vérifier comment restaurer l'image sur le guide d'utilisateur de "
+"votre STB."
 
-#: message15
 msgid "Image creation FAILED!"
 msgstr "Création de l'image NON REUSSIE!"
 
-#: message16
 msgid "available "
 msgstr "disponible "
 
-#: message17-1
-msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr "Une clé USB valide est détectée dans un des ports USB. Une copie de la sauvegarde sera faite sur cette clé USB."
+msgid ""
+"There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
+"an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr ""
+"Une clé USB valide est détectée dans un des ports USB. Une copie de la "
+"sauvegarde sera faite sur cette clé USB."
 
-#: message172
 msgid "This only takes about 20 seconds....."
 msgstr "Ceci dure seulement 20 secondes...."
 
-#: message19
 msgid "Backup finished and copied to your USB-flashdrive."
 msgstr "Sauvegarde terminée et copiée sur votre clé USB."
 
-#: message20
 msgid "Full back-up to the harddisk"
 msgstr "Sauvegarde complète sur HDD"
 
-#: message21-1
 msgid "There is NO valid USB-stick found, so I've got nothing to do."
 msgstr "Aucune clé USB valide détectée. Rien de sera fait."
 
-#: message21-2
 msgid "PLEASE READ THIS:"
 msgstr "MERCI DE LIRE CECI:"
 
-#: message21-3
-msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
-msgstr "Pour sauvegarder directement sur la clé USB, elle doit contenir un fichier nommé:"
+msgid ""
+"To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
+"the name:"
+msgstr ""
+"Pour sauvegarder directement sur la clé USB, elle doit contenir un fichier "
+"nommé:"
 
-#: message21-4
 msgid "backupstick or"
 msgstr "backupstick ou"
 
-#: message21-5
 msgid "backupstick.txt"
 msgstr "backupstick.txt"
 
-#: message21-6
-msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
-msgstr "Si vous branchez une clé USB contenant ce fichier alors la sauvegarde sera automatiquement effectuée sur cette clé et pourra être utilisée pour restaurer l'image courante si nécessaire."
+msgid ""
+"If you place an USB-stick containing this file then the back-up will be "
+"automatically made onto the USB-stick and can be used to restore the current "
+"image if necessary."
+msgstr ""
+"Si vous branchez une clé USB contenant ce fichier alors la sauvegarde sera "
+"automatiquement effectuée sur cette clé et pourra être utilisée pour "
+"restaurer l'image courante si nécessaire."
 
-#: message21-7
 msgid "The program will exit now."
 msgstr "Le programme va s'arrêter maintenant."
 
-#: message22
 msgid "Full back-up direct to USB"
 msgstr "Sauvegarde complète sur clé USB"
 
-#: message23
 msgid "The content of the folder is:"
 msgstr "Le contenu du dossier est:"
 
-#: message24
 msgid "Time required for this process: "
 msgstr "Temps nécessaire pour cette tâche: "
 
-#: message25
 msgid "minutes"
 msgstr "minutes"
 
-#: message26
 msgid "Backup done with: "
 msgstr "Sauvegarde effectuée avec: "
 
-#: message27
 msgid "KB per second"
 msgstr "KB par seconde"
 
-#: message28
-msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Il est très probable que la restauration de la sauvegarde ne soit pas possible en raison de sa taille excédant la limite. Il s'agit d'une limitation du bootloader et non de l'outil BackupSuite."
+msgid ""
+"Most likely this back-up can't be restored because of it's size, it's simply "
+"too big to restore. This is a limitation of the bootloader not of the back-"
+"up or the BackupSuite."
+msgstr ""
+"Il est très probable que la restauration de la sauvegarde ne soit pas "
+"possible en raison de sa taille excédant la limite. Il s'agit d'une "
+"limitation du bootloader et non de l'outil BackupSuite."
 
-#: message29
-msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Il pourrait y avoir une problème durant la restauration de la sauvegarde parceque sa taille est proche de la taille maximal. Il s'agit d'une limitation du bootloader et non de l'outil BackupSuite."
+msgid ""
+"There COULD be a problem with restoring this back-up because the size of the "
+"back-up comes close to the maximum size. This is a limitation of the "
+"bootloader not of the back-up or the BackupSuite."
+msgstr ""
+"Il pourrait y avoir une problème durant la restauration de la sauvegarde "
+"parceque sa taille est proche de la taille maximal. Il s'agit d'une "
+"limitation du bootloader et non de l'outil BackupSuite."
 
-#: message30-1
 msgid "* * * WARNING * * *"
 msgstr "* * * WARNING * * *"
 
-#: message30-2
 msgid "Not enough free space on "
 msgstr "Espace libre insuffisant sur "
 
-#: message31
 msgid " to make a back-up!"
 msgstr " pour effectuer une sauvegarde"
 
-#: message32
 msgid " MB available space"
 msgstr " MB d'espace disponible"
 
-#: message33
 msgid " MB needed space"
 msgstr " MB d'espace nécessaire"
 
-#: message34
-msgid "The program will abort, please try another medium with more free space to create your back-up."
-msgstr "Interruption du programme, merci d'utiliser un support avec plus d'espace libre pour effectuer votre sauvegarde."
+msgid ""
+"The program will abort, please try another medium with more free space to "
+"create your back-up."
+msgstr ""
+"Interruption du programme, merci d'utiliser un support avec plus d'espace "
+"libre pour effectuer votre sauvegarde."
 
 #: plugin.py 294
 msgid ""
@@ -228,8 +219,12 @@ msgid " nothing!"
 msgstr " rien!"
 
 #: plugin.py 327
-msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
-msgstr "Un enregistrement est en cours. Merci de l'arrêter avant de démarrer le flash."
+msgid ""
+"A recording is currently running. Please stop the recording before trying to "
+"start a flashing."
+msgstr ""
+"Un enregistrement est en cours. Merci de l'arrêter avant de démarrer le "
+"flash."
 
 #: plugin.py 91
 msgid "Cancel"
@@ -298,7 +293,9 @@ msgstr "Standard (root et kernel)"
 
 #: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr "L'image ou le kernel va être flashé et redemarré automatiquement dans quelques minutes.\n"
+msgstr ""
+"L'image ou le kernel va être flashé et redemarré automatiquement dans "
+"quelques minutes.\n"
 
 #: plugin.py 247 380
 msgid "Unzip"
@@ -311,7 +308,8 @@ msgid ""
 "Don't use it if you use multiple ubi volumes in ubi layer!"
 msgstr ""
 "Warning!\n"
-"Utiliser à vos risques et périls! Toujours effectuer une sauvegarde avant utilisation!\n"
+"Utiliser à vos risques et périls! Toujours effectuer une sauvegarde avant "
+"utilisation!\n"
 "Ne pas utiliser si vous utilisez de multiples volumes UBI dans la couche UBI!"
 
 #: plugin.py 360

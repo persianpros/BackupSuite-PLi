@@ -5,20 +5,20 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: \n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
 msgstr "Gör en säkerhetskopia eller återställ en säkerhetskopia"
 
-#: plugin 147
 msgid "Full back-up on HDD"
 msgstr "Fullständig säkerhetskopiering på hårddisk"
 
-#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -28,179 +28,172 @@ msgstr ""
 "\n"
 "Detta tar endast några minuter och är helt automatiskt.\n"
 
-#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Fullständig säkerhetskopiering till USB"
 
-#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
-"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"This only takes a few minutes depending on the used filesystem and is fully "
+"automatic.\n"
 "\n"
 "Make sure you first insert an USB flash drive before you select Yes."
 msgstr ""
 "Vill du göra en säkerhetskopia till USB?\n"
 "\n"
-"Detta tar endast några minuter beroende på vilket filsystem som används, och är helt automatiskt.\n"
+"Detta tar endast några minuter beroende på vilket filsystem som används, och "
+"är helt automatiskt.\n"
 "\n"
 "Se till att du först sätter i ett USB-minne innan du väljer Ja."
 
-#: message01
 msgid "No supported receiver found!"
 msgstr "Hittade ingen mottagare om stöds!"
 
-#: message02
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "SÄKERHETSKOPIERINGSVERKTYG, FÖR ATT GÖRA EN FULLSTÄNDIG SÄKERHETSKOPIERING"
+msgstr ""
+"SÄKERHETSKOPIERINGSVERKTYG, FÖR ATT GÖRA EN FULLSTÄNDIG SÄKERHETSKOPIERING"
 
-#: message03
 msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr "Ha tålamod, en säkerhetskopia görs nu. Detta tar ca: "
 
-#: message04
 msgid " size to be backed up: "
 msgstr " storlek som ska säkerhetskopieras: "
 
-#: message05
 msgid "not found, the backup process will be aborted!"
 msgstr "hittades inte, säkerhetskopieringsprocessen avbryts!"
 
-#: message06
 msgid "Some information about the task"
 msgstr "Lite information om uppgiften"
 
-#: message06a
 msgid "Create: root.ubifs"
 msgstr "Skapa: root.ubifs"
 
-#: message07
 msgid "Create: kerneldump"
 msgstr "Skapa: kerneldump"
 
-#: message09
 msgid "Additional backup -> "
 msgstr "Detaljerad säkerhetskopia -> "
 
-#: message10
 msgid "USB Image created in: "
 msgstr "USB-image skapad i: "
 
-#: message11
 msgid "and there is made an extra copy in: "
 msgstr "och det har gjorts en extra kopia i: "
 
-#: message14
 msgid "Please check the manual of the receiver on how to restore the image."
 msgstr "Titta i bruksanvisningen för mottagaren hur du återställer en image."
 
-#: message15
 msgid "Image creation FAILED!"
 msgstr "Skapande av image misslyckades!"
 
-#: message16
 msgid "available "
 msgstr "tillgängligt "
 
-#: message17-1
-msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr "Det finns en giltig USB-enhet upptäckt i en av USB-portarna, därför kommer en extra kopia av din säkerhetskopierade image att kopieras till denna USB-enhet."
+msgid ""
+"There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
+"an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr ""
+"Det finns en giltig USB-enhet upptäckt i en av USB-portarna, därför kommer "
+"en extra kopia av din säkerhetskopierade image att kopieras till denna USB-"
+"enhet."
 
-#: message17-2
 msgid "This only takes about 20 seconds....."
 msgstr "Detta tar endast ca 20 sekunder..."
 
-#: message19
 msgid "Backup finished and copied to your USB-flashdrive."
 msgstr "Säkerhetskopiering klar och kopierad till din USB-enhet."
 
-#: message20
 msgid "Full back-up to the harddisk"
 msgstr "Fullständig säkerhetskopiering till hårddisken"
 
-#: message21-1
 msgid "There is NO valid USB-stick found, so I've got nothing to do."
 msgstr "En giltig USB-enhet hittades inte, så det finns inget att göra."
 
-#: message21-2
 msgid "PLEASE READ THIS:"
 msgstr "VÄNLIGEN LÄS DETTA:"
 
-#: message21-3
-msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
-msgstr "För att säkerhetskopiera direkt till USB-minnet, så MÅSTE USB-minnet innehålla en fil med namnet:"
+msgid ""
+"To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
+"the name:"
+msgstr ""
+"För att säkerhetskopiera direkt till USB-minnet, så MÅSTE USB-minnet "
+"innehålla en fil med namnet:"
 
-#: message21-4
 msgid "backupstick or"
 msgstr "backupstick eller"
 
-#: message21-5
 msgid "backupstick.txt"
 msgstr "backupstick.txt"
 
-#: message21-6
-msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
-msgstr "Om du sätter i ett USB-minne som innehåller denna fil så kommer säkerhetskopieringen att göras automatiskt till USB-minnet, och kan sedan användas för att återställa din aktuella image om det behövs."
+msgid ""
+"If you place an USB-stick containing this file then the back-up will be "
+"automatically made onto the USB-stick and can be used to restore the current "
+"image if necessary."
+msgstr ""
+"Om du sätter i ett USB-minne som innehåller denna fil så kommer "
+"säkerhetskopieringen att göras automatiskt till USB-minnet, och kan sedan "
+"användas för att återställa din aktuella image om det behövs."
 
-#: message21-7
 msgid "The program will exit now."
 msgstr "Programmet kommer nu att avslutas."
 
-#: message22
 msgid "Full back-up direct to USB"
 msgstr "Fullständig säkerhetskopiering direkt till USB"
 
-#: message23
 msgid "The content of the folder is:"
 msgstr "Innehållet i mappen är:"
 
-#: message24
 msgid "Time required for this process: "
 msgstr "Tid som behövdes för denna process: "
 
-#: message25
 msgid "minutes"
 msgstr "minuter"
 
-#: message26
 msgid "Backup done with: "
 msgstr "Säkerhetskopiering utförd med: "
 
-#: message27
 msgid "KB per second"
 msgstr "KB per sekund"
 
-#: message28
-msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Denna säkerhetskopia kan troligtvis inte återställas p.g.a. sin storlek. Den är helt enkelt för stor för att återställa. Detta är en begränsning i bootloader, inte i säkerhetskopior eller i BackupSuite."
+msgid ""
+"Most likely this back-up can't be restored because of it's size, it's simply "
+"too big to restore. This is a limitation of the bootloader not of the back-"
+"up or the BackupSuite."
+msgstr ""
+"Denna säkerhetskopia kan troligtvis inte återställas p.g.a. sin storlek. Den "
+"är helt enkelt för stor för att återställa. Detta är en begränsning i "
+"bootloader, inte i säkerhetskopior eller i BackupSuite."
 
-#: message29
-msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Det kan uppstå problem med återställning av denna säkerhetskopia, eftersom storleken på säkerhetskopian ligger nära den maximala storleken. Detta är en begränsning i bootloader, inte i säkerhetskopior eller i BackupSuite."
+msgid ""
+"There COULD be a problem with restoring this back-up because the size of the "
+"back-up comes close to the maximum size. This is a limitation of the "
+"bootloader not of the back-up or the BackupSuite."
+msgstr ""
+"Det kan uppstå problem med återställning av denna säkerhetskopia, eftersom "
+"storleken på säkerhetskopian ligger nära den maximala storleken. Detta är en "
+"begränsning i bootloader, inte i säkerhetskopior eller i BackupSuite."
 
-#: message30-1
 msgid "* * * WARNING * * *"
 msgstr "* * * VARNING * * *"
 
-#: message30-2
 msgid "Not enough free space on "
 msgstr "Inte tillräckligt med ledigt utrymme på "
 
-#: message31
 msgid " to make a back-up!"
 msgstr " för att göra en säkerhetskopia!"
 
-#: message32
 msgid " MB available space"
 msgstr " MB tillgängligt utrymme"
 
-#: message33
 msgid " MB needed space"
 msgstr " MB utrymme krävs"
 
-#: message34
-msgid "The program will abort, please try another medium with more free space to create your back-up."
-msgstr "Programmet kommer att avbrytas. Försök med en annan lagringsenhet med mer ledigt utrymme för att skapa din säkerhetskopia."
+msgid ""
+"The program will abort, please try another medium with more free space to "
+"create your back-up."
+msgstr ""
+"Programmet kommer att avbrytas. Försök med en annan lagringsenhet med mer "
+"ledigt utrymme för att skapa din säkerhetskopia."
 
 #: plugin.py 294
 msgid ""
@@ -225,8 +218,12 @@ msgid " nothing!"
 msgstr " ingenting!"
 
 #: plugin.py 327
-msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
-msgstr "En inspelning körs för tillfället. Stoppa inspelningen innan du försöker att starta en formatering."
+msgid ""
+"A recording is currently running. Please stop the recording before trying to "
+"start a flashing."
+msgstr ""
+"En inspelning körs för tillfället. Stoppa inspelningen innan du försöker att "
+"starta en formatering."
 
 #: plugin.py 91
 msgid "Cancel"
@@ -295,7 +292,9 @@ msgstr "Standard (root och kernel)"
 
 #: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr "Denna image eller kernel kommer att installeras och auto-starta om några minuter.\n"
+msgstr ""
+"Denna image eller kernel kommer att installeras och auto-starta om några "
+"minuter.\n"
 
 #: plugin.py 247 380
 msgid "Unzip"
@@ -351,4 +350,3 @@ msgstr "Backup > USB"
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Vad är nytt sedan förra utgåvan?"
-

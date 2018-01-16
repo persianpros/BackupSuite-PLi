@@ -5,98 +5,34 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: vovan43 <vovan43@ex.ua>\n"
 "Language-Team: \n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.8\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: uk_UA\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: plugin.py 89
+msgid "Make a backup or restore a backup"
+msgstr "Створення або відновлення бекапа"
+
+msgid "Full back-up on HDD"
+msgstr "Повна резервна копія на HDD"
 
 msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
 "\n"
-"The found files:"
+"This only takes a few minutes and is fully automatic.\n"
 msgstr ""
+"Ви бажаєте зробити резервну копію прошивки на HDD?\n"
 "\n"
-"Знайдені файли:"
+"Це займе всього декілька хвилин в залежності від файлової системи, процес "
+"повністю автоматизований.\n"
 
-msgid ""
-"\n"
-"You are using dual multiboot!"
-msgstr ""
-"\n"
-"Ви використовуєте подвійний мульти загрузчик!"
-
-msgid "  %s (maybe error)"
-msgstr "  %s (можлива помилка)"
-
-msgid "  %s (maybe ok)"
-msgstr "  %s (можливо добре)"
-
-msgid " MB available space"
-msgstr " МБ вільного місця"
-
-msgid " MB needed space"
-msgstr " МБ необхідно"
-
-msgid " nothing!"
-msgstr " нічого нема!"
-
-msgid " size to be backed up: "
-msgstr " розмір резервної копії: "
-
-msgid " to make a back-up!"
-msgstr " щоб створити резервну копію!"
-
-msgid "* * * WARNING * * *"
-msgstr "* * * УВАГА * * *"
-
-msgid ""
-"A recording is currently running. Please stop the recording before trying to "
-"start a flashing."
-msgstr ""
-"В даний момент виконується запис. Будь-ласка, зупиніть її перед початком "
-"прошивки!"
-
-msgid "Additional backup -> "
-msgstr "Додаткова резервна копія -> "
-
-msgid "Almost there... Now building the USB-Image!"
-msgstr "Майже готово. Зараз створюємо прошивку на USB!"
-
-msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "УТИЛІТА ДЛЯ СТВОРЕННЯ ПОВНОЇ РЕЗЕРВНОЇ КОПІЇ"
-
-msgid "Backup > HDD"
-msgstr "Бекап > HDD"
-
-msgid "Backup > USB"
-msgstr "Бекап > USB"
-
-msgid "Backup done with: "
-msgstr "Резервна копія зроблена зі швидкістю: "
-
-msgid "Backup finished and copied to your USB-flashdrive."
-msgstr "Резервне копіювання закінчено і зараз копіюються файли на USB носій."
-
-msgid "BackupSuite"
-msgstr "Бекап-Люкс"
-
-msgid "Cancel"
-msgstr "Відміна"
-
-msgid "Close"
-msgstr "Закрити"
-
-msgid "Create: kerneldump"
-msgstr "Створюєм: kerneldump"
-
-msgid "Create: root.ubifs"
-msgstr "Створюєм: root.ubifs"
-
-msgid "Do you really want to unpack %s ?"
-msgstr "Вы дійсно бажаєте розпакувати %s?"
+msgid "Full back-up to USB"
+msgstr "Повна резервна копія на USB"
 
 msgid ""
 "Do you want to make a back-up on USB?\n"
@@ -113,194 +49,47 @@ msgstr ""
 "\n"
 "Переконайтесь що Ви вставили USB флеш носій, перш ніж вибрати Так."
 
-msgid ""
-"Do you want to make an USB-back-up image on HDD? \n"
-"\n"
-"This only takes a few minutes and is fully automatic.\n"
-msgstr ""
-"Ви бажаєте зробити резервну копію прошивки на HDD?\n"
-"\n"
-"Це займе всього декілька хвилин в залежності від файлової системи, процес "
-"повністю автоматизований.\n"
-
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Створення бекапа & відновлення без USB флешки"
-
-msgid "Exit"
-msgstr "Вихід"
-
-msgid "Flashing: "
-msgstr "Швидка прошивка: "
-
-msgid "Follow the instructions on the front-display."
-msgstr "Слідуйте інструкції на дисплеї ресивера."
-
-msgid "For flashing your receiver files are needed:\n"
-msgstr "Для прошивки Вашего ресивера необхідні файли:\n"
-
-msgid "Full 1:1 back-up direct on USB"
-msgstr "Повна (1:1) резервна копія безпосередньо на USB"
-
-msgid "Full 1:1 back-up in USB format"
-msgstr "Повна (1:1) резервна копія в форматі USB"
-
-msgid "Full back-up direct to USB"
-msgstr "Повна резервна копія безпосередньо на USB"
-
-msgid "Full back-up on HDD"
-msgstr "Повна резервна копія на HDD"
-
-msgid "Full back-up on HDD/USB"
-msgstr "Повна резервна копія на HDD/USB"
-
-msgid "Full back-up to USB"
-msgstr "Повна резервна копія на USB"
-
-msgid "Full back-up to the harddisk"
-msgstr "Повна резервна копія на жорсткий диск"
-
-msgid ""
-"If you place an USB-stick containing this file then the back-up will be "
-"automatically made onto the USB-stick and can be used to restore the current "
-"image if necessary."
-msgstr ""
-"Якщо підключити USB-флешку, яка містить цей файл, то резервна копія буде "
-"автоматично створена на USB-флешці і, якщо це буде необхідно, може бути "
-"використана для відновлення прошивки."
-
-msgid "Image creation FAILED!"
-msgstr "Створення прошивки завершилось ПОМИЛКОЮ!"
-
-msgid "KB per second"
-msgstr "КБ в секунду"
-
-msgid "Make a backup or restore a backup"
-msgstr "Створення або відновлення бекапа"
-
-msgid ""
-"Most likely this back-up can't be restored because of it's size, it's simply "
-"too big to restore. This is a limitation of the bootloader not of the back-"
-"up or the BackupSuite."
-msgstr ""
-"Цей бекап не може бути створений через розмір, т.як. він дуже великий. Це "
-"обмеження загрузчика, а не прошивки або БекапаЛюкс."
-
-msgid "NOT found files for flashing!\n"
-msgstr "Не знайдені файли для швидкої прошивки!\n"
-
 msgid "No supported receiver found!"
 msgstr "Знайдено не існуючий ресивер!"
 
-msgid "Not enough free space on "
-msgstr "Недостатньо вільного місця на "
-
-msgid "Only kernel"
-msgstr "Тільки ядро"
-
-msgid "Only root"
-msgstr "Тільки імідж"
-
-msgid "PLEASE READ THIS:"
-msgstr "БУДЬ-ЛАСКА ПРОЧИТАЙТЕ ЦЕ:"
-
-msgid ""
-"Place USB stick in the USB slot at the back side and switch the receiver off "
-"and on with the powerswitch"
-msgstr "Вставте USB-носій в USB-порт і виключіть ресивер"
-
-msgid ""
-"Place the USB-flash drive in the (front) USB-port and switch the receiver "
-"off and on with the powerswitch on the back of the receiver."
-msgstr ""
-"Вставте USB-носій в USB-порт (спереду), виключіть і включіть ресивер "
-"тумблером (якщо такой є) на задній панелі ресивера."
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "УТИЛІТА ДЛЯ СТВОРЕННЯ ПОВНОЇ РЕЗЕРВНОЇ КОПІЇ"
 
 msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr "Створення резервної копії почалося, це займе близько: "
 
-msgid "Please check the manual of the receiver on how to restore the image."
-msgstr "Читайте інструкцію як відновити прошивку."
+msgid " size to be backed up: "
+msgstr " розмір резервної копії: "
 
-msgid "Please wait"
-msgstr "Очікуйте!"
-
-msgid "Please wait.... almost ready!"
-msgstr "Очікуйте ... майже готово!"
-
-msgid "Please: DO NOT reboot your STB and turn off the power.\n"
-msgstr "НЕ перезагружайте Ваш ресивер і НЕ виключайте ток!\n"
-
-msgid "Power on!"
-msgstr "Включення!"
-
-msgid "Press arrow up from frontpanel to start loading."
-msgstr ""
-"Натисніть стрілку вверх на передній панелі ресивера, щоб почати завантаження."
-
-msgid "Restore backup"
-msgstr "Відновити"
-
-msgid "Run flash"
-msgstr "Прошити"
-
-msgid "Second partition (only kernel)"
-msgstr "Другий розділ (тільки ядро)"
-
-msgid "Second partition (only root)"
-msgstr "Другий розділ (тільки імідж)"
-
-msgid "Second partition (root and kernel)"
-msgstr "Другий розділ (тільки імідж і ядро)"
-
-msgid "Select parameter for start flash!\n"
-msgstr "Виберіть параметри  для старту швидкої прошивки!\n"
-
-msgid "Select the folder with backup"
-msgstr "Виберіть папку з бекапом"
-
-msgid "Show only found image and mtd partitions.\n"
-msgstr "Показувати тільки знайдені іміджі і mtd розділи\n"
-
-msgid "Simulate (no write)"
-msgstr "Імітація (без запису)"
-
-msgid "Simulate second partition (no write)"
-msgstr "Імітація другого розділу (без запису)"
+msgid "not found, the backup process will be aborted!"
+msgstr "не знайдено, процес резервного копіювання буде перервано!"
 
 msgid "Some information about the task"
 msgstr "Деяка інформація про завдання"
 
-msgid "Standard (root and kernel)"
-msgstr "Стандарт (імідж і ядро)"
+msgid "Create: root.ubifs"
+msgstr "Створюєм: root.ubifs"
 
-msgid "The content of the folder is:"
-msgstr "Створення папки:"
+msgid "Create: kerneldump"
+msgstr "Створюєм: kerneldump"
 
-msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr ""
-"Імідж або ядро будуть перезаписані і ресивер автоматично\n"
-"перезагрузиться через декілька хвилин.\n"
+msgid "Additional backup -> "
+msgstr "Додаткова резервна копія -> "
 
-msgid ""
-"The program will abort, please try another medium with more free space to "
-"create your back-up."
-msgstr ""
-"Процес буде перерваний, попробуйте другий носій, на якому більше вільного "
-"місця."
+msgid "USB Image created in: "
+msgstr "USB прошивка створена в: "
 
-msgid "The program will exit now."
-msgstr "Програма будет зараз закрита."
+msgid "and there is made an extra copy in: "
+msgstr "і зробити додаткову резервну копію: "
 
-msgid ""
-"There COULD be a problem with restoring this back-up because the size of the "
-"back-up comes close to the maximum size. This is a limitation of the "
-"bootloader not of the back-up or the BackupSuite."
-msgstr ""
-"Може виникнути проблема з відновлення бекапу, завеликий розмір. Обмеження "
-"загрузчика."
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr "Читайте інструкцію як відновити прошивку."
 
-msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "Не підтримуючий  USB-носій, бекап не можливо створити."
+msgid "Image creation FAILED!"
+msgstr "Створення прошивки завершилось ПОМИЛКОЮ!"
+
+msgid "available "
+msgstr "доступний "
 
 msgid ""
 "There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
@@ -312,8 +101,17 @@ msgstr ""
 msgid "This only takes about 20 seconds....."
 msgstr "Це займе  20 секунд!"
 
-msgid "Time required for this process: "
-msgstr "Час, необхідний для цієї процедури: "
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Резервне копіювання закінчено і зараз копіюються файли на USB носій."
+
+msgid "Full back-up to the harddisk"
+msgstr "Повна резервна копія на жорсткий диск"
+
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "Не підтримуючий  USB-носій, бекап не можливо створити."
+
+msgid "PLEASE READ THIS:"
+msgstr "БУДЬ-ЛАСКА ПРОЧИТАЙТЕ ЦЕ:"
 
 msgid ""
 "To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
@@ -321,18 +119,186 @@ msgid ""
 msgstr ""
 "Для прямого копіювання на USB-флешку, ФЛЕШКА має містити файл з іменем:"
 
-msgid "To restore the image:"
-msgstr "Для відновлення прошивки:"
+msgid "backupstick or"
+msgstr "backupstick або"
 
-msgid "USB Image created in: "
-msgstr "USB прошивка створена в: "
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
 
+msgid ""
+"If you place an USB-stick containing this file then the back-up will be "
+"automatically made onto the USB-stick and can be used to restore the current "
+"image if necessary."
+msgstr ""
+"Якщо підключити USB-флешку, яка містить цей файл, то резервна копія буде "
+"автоматично створена на USB-флешці і, якщо це буде необхідно, може бути "
+"використана для відновлення прошивки."
+
+msgid "The program will exit now."
+msgstr "Програма будет зараз закрита."
+
+msgid "Full back-up direct to USB"
+msgstr "Повна резервна копія безпосередньо на USB"
+
+msgid "The content of the folder is:"
+msgstr "Створення папки:"
+
+msgid "Time required for this process: "
+msgstr "Час, необхідний для цієї процедури: "
+
+msgid "minutes"
+msgstr "хвилин"
+
+msgid "Backup done with: "
+msgstr "Резервна копія зроблена зі швидкістю: "
+
+msgid "KB per second"
+msgstr "КБ в секунду"
+
+msgid ""
+"Most likely this back-up can't be restored because of it's size, it's simply "
+"too big to restore. This is a limitation of the bootloader not of the back-"
+"up or the BackupSuite."
+msgstr ""
+"Цей бекап не може бути створений через розмір, т.як. він дуже великий. Це "
+"обмеження загрузчика, а не прошивки або БекапаЛюкс."
+
+msgid ""
+"There COULD be a problem with restoring this back-up because the size of the "
+"back-up comes close to the maximum size. This is a limitation of the "
+"bootloader not of the back-up or the BackupSuite."
+msgstr ""
+"Може виникнути проблема з відновлення бекапу, завеликий розмір. Обмеження "
+"загрузчика."
+
+msgid "* * * WARNING * * *"
+msgstr "* * * УВАГА * * *"
+
+msgid "Not enough free space on "
+msgstr "Недостатньо вільного місця на "
+
+msgid " to make a back-up!"
+msgstr " щоб створити резервну копію!"
+
+msgid " MB available space"
+msgstr " МБ вільного місця"
+
+msgid " MB needed space"
+msgstr " МБ необхідно"
+
+msgid ""
+"The program will abort, please try another medium with more free space to "
+"create your back-up."
+msgstr ""
+"Процес буде перерваний, попробуйте другий носій, на якому більше вільного "
+"місця."
+
+#: plugin.py 294
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+"\n"
+"Знайдені файли:"
+
+#: plugin.py 300
+#, python-format
+msgid "  %s (maybe error)"
+msgstr "  %s (можлива помилка)"
+
+#: plugin.py 297
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr "  %s (можливо добре)"
+
+#: plugin.py 303
+msgid " nothing!"
+msgstr " нічого нема!"
+
+#: plugin.py 327
+msgid ""
+"A recording is currently running. Please stop the recording before trying to "
+"start a flashing."
+msgstr ""
+"В даний момент виконується запис. Будь-ласка, зупиніть її перед початком "
+"прошивки!"
+
+#: plugin.py 91
+msgid "Cancel"
+msgstr "Відміна"
+
+#: plugin.py 383
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr "Вы дійсно бажаєте розпакувати %s?"
+
+#: plugin.py 317
+msgid "Exit"
+msgstr "Вихід"
+
+#: plugin.py 331
+msgid "Flashing: "
+msgstr "Швидка прошивка: "
+
+#: plugin.py 275
+msgid "For flashing your receiver files are needed:\n"
+msgstr "Для прошивки Вашего ресивера необхідні файли:\n"
+
+#: plugin.py 354
+msgid "NOT found files for flashing!\n"
+msgstr "Не знайдені файли для швидкої прошивки!\n"
+
+#: plugin.py 311 343
+msgid "Only kernel"
+msgstr "Тільки ядро"
+
+#: plugin.py 310 340
+msgid "Only root"
+msgstr "Тільки імідж"
+
+#: plugin.py 361
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr "НЕ перезагружайте Ваш ресивер і НЕ виключайте ток!\n"
+
+#: plugin.py 94
+msgid "Restore backup"
+msgstr "Відновити"
+
+#: plugin.py 249 263 269
+msgid "Run flash"
+msgstr "Прошити"
+
+#: plugin.py 274
+msgid "Select parameter for start flash!\n"
+msgstr "Виберіть параметри  для старту швидкої прошивки!\n"
+
+#: plugin.py 199
+msgid "Select the folder with backup"
+msgstr "Виберіть папку з бекапом"
+
+#: plugin.py 367
+msgid "Show only found image and mtd partitions.\n"
+msgstr "Показувати тільки знайдені іміджі і mtd розділи\n"
+
+#: plugin.py 308 334
+msgid "Simulate (no write)"
+msgstr "Імітація (без запису)"
+
+#: plugin.py 309 337
+msgid "Standard (root and kernel)"
+msgstr "Стандарт (імідж і ядро)"
+
+#: plugin.py 362
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr ""
+"Імідж або ядро будуть перезаписані і ресивер автоматично\n"
+"перезагрузиться через декілька хвилин.\n"
+
+#: plugin.py 247 380
 msgid "Unzip"
 msgstr "Розпакувати"
 
-msgid "Wait until the standby LED will become blue."
-msgstr "Чекайте, поки індикатор режиму очікування не стане синім"
-
+#: plugin.py 266
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -343,63 +309,143 @@ msgstr ""
 " перед кожним застосуванням!\n"
 "Не використовуйте його, якщо Ви маєте декілька томів ubi!"
 
-msgid "What is new since the last release?"
-msgstr "Що нового з остатнього реліза?"
-
-msgid ""
-"When message at display at front If you want to upgrade..., please quickly "
-"press UP button on remote control."
-msgstr ""
-"Якщо на дисплеї ресивера є повідомлення і ви бажаєте створити бекап, швидко "
-"натисніть кнопку UP на пульті управління."
-
-msgid "When message reboot, power off and remove USB."
-msgstr "Після перезагрузки виключіть ток  і витягніть USB-носій."
-
-msgid ""
-"When the record LED and standby LED become red press CH+ button on the "
-"receiver to start USB update."
-msgstr ""
-"Коли індикатори запису і режиму очікування стануть червоними натисніть на "
-"пульті кнопку CH+ для початку оновлення."
-
+#: plugin.py 360
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "Ваш ресивер буде заблоковано на час процесу швидкої прошивки!\n"
 
-msgid "and there is made an extra copy in: "
-msgstr "і зробити додаткову резервну копію: "
-
-msgid "available "
-msgstr "доступний "
-
-msgid "backupstick or"
-msgstr "backupstick або"
-
-msgid "backupstick.txt"
-msgstr "backupstick.txt"
-
+#: plugin.py 203 241
+#, python-format
 msgid "current:  %s"
 msgstr "Поточна:  %s"
 
-msgid "minutes"
-msgstr "хвилин"
-
-msgid "not found, the backup process will be aborted!"
-msgstr "не знайдено, процес резервного копіювання буде перервано!"
-
+#: plugin.py 359
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "утиліта ofgwrite зупинить зараз enigma2 для швидкої прошивки!\n"
 
-msgid ""
-"sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' "
-"en_EN"
+#: plugin.py 312 346
+msgid "Only root with use mtdy device"
 msgstr ""
-"sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' "
-"ru_RU"
 
-msgid ""
-"sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' "
-"en_EN"
+#: plugin.py 313 349
+msgid "Only kernel with use mtdx device"
 msgstr ""
-"sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' "
-"ru_RU"
+
+#: plugin.py 405 412
+msgid "BackupSuite"
+msgstr "Бекап-Люкс"
+
+#: plugin.py 406 413
+msgid "Enables back-up & restore without an USB-stick"
+msgstr "Створення бекапа & відновлення без USB флешки"
+
+#: plugin.py 92
+msgid "Backup > HDD"
+msgstr "Бекап > HDD"
+
+#: plugin.py 93
+msgid "Backup > USB"
+msgstr "Бекап > USB"
+
+#: plugin.py 173
+msgid "What is new since the last release?"
+msgstr "Що нового з остатнього реліза?"
+
+#~ msgid ""
+#~ "\n"
+#~ "You are using dual multiboot!"
+#~ msgstr ""
+#~ "\n"
+#~ "Ви використовуєте подвійний мульти загрузчик!"
+
+#~ msgid "Almost there... Now building the USB-Image!"
+#~ msgstr "Майже готово. Зараз створюємо прошивку на USB!"
+
+#~ msgid "Close"
+#~ msgstr "Закрити"
+
+#~ msgid "Follow the instructions on the front-display."
+#~ msgstr "Слідуйте інструкції на дисплеї ресивера."
+
+#~ msgid "Full 1:1 back-up direct on USB"
+#~ msgstr "Повна (1:1) резервна копія безпосередньо на USB"
+
+#~ msgid "Full 1:1 back-up in USB format"
+#~ msgstr "Повна (1:1) резервна копія в форматі USB"
+
+#~ msgid "Full back-up on HDD/USB"
+#~ msgstr "Повна резервна копія на HDD/USB"
+
+#~ msgid ""
+#~ "Place USB stick in the USB slot at the back side and switch the receiver "
+#~ "off and on with the powerswitch"
+#~ msgstr "Вставте USB-носій в USB-порт і виключіть ресивер"
+
+#~ msgid ""
+#~ "Place the USB-flash drive in the (front) USB-port and switch the receiver "
+#~ "off and on with the powerswitch on the back of the receiver."
+#~ msgstr ""
+#~ "Вставте USB-носій в USB-порт (спереду), виключіть і включіть ресивер "
+#~ "тумблером (якщо такой є) на задній панелі ресивера."
+
+#~ msgid "Please wait"
+#~ msgstr "Очікуйте!"
+
+#~ msgid "Please wait.... almost ready!"
+#~ msgstr "Очікуйте ... майже готово!"
+
+#~ msgid "Power on!"
+#~ msgstr "Включення!"
+
+#~ msgid "Press arrow up from frontpanel to start loading."
+#~ msgstr ""
+#~ "Натисніть стрілку вверх на передній панелі ресивера, щоб почати "
+#~ "завантаження."
+
+#~ msgid "Second partition (only kernel)"
+#~ msgstr "Другий розділ (тільки ядро)"
+
+#~ msgid "Second partition (only root)"
+#~ msgstr "Другий розділ (тільки імідж)"
+
+#~ msgid "Second partition (root and kernel)"
+#~ msgstr "Другий розділ (тільки імідж і ядро)"
+
+#~ msgid "Simulate second partition (no write)"
+#~ msgstr "Імітація другого розділу (без запису)"
+
+#~ msgid "To restore the image:"
+#~ msgstr "Для відновлення прошивки:"
+
+#~ msgid "Wait until the standby LED will become blue."
+#~ msgstr "Чекайте, поки індикатор режиму очікування не стане синім"
+
+#~ msgid ""
+#~ "When message at display at front If you want to upgrade..., please "
+#~ "quickly press UP button on remote control."
+#~ msgstr ""
+#~ "Якщо на дисплеї ресивера є повідомлення і ви бажаєте створити бекап, "
+#~ "швидко натисніть кнопку UP на пульті управління."
+
+#~ msgid "When message reboot, power off and remove USB."
+#~ msgstr "Після перезагрузки виключіть ток  і витягніть USB-носій."
+
+#~ msgid ""
+#~ "When the record LED and standby LED become red press CH+ button on the "
+#~ "receiver to start USB update."
+#~ msgstr ""
+#~ "Коли індикатори запису і режиму очікування стануть червоними натисніть на "
+#~ "пульті кнопку CH+ для початку оновлення."
+
+#~ msgid ""
+#~ "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' "
+#~ "en_EN"
+#~ msgstr ""
+#~ "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-HDD/backup.sh' "
+#~ "ru_RU"
+
+#~ msgid ""
+#~ "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' "
+#~ "en_EN"
+#~ msgstr ""
+#~ "sh '/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite-USB/backup.sh' "
+#~ "ru_RU"

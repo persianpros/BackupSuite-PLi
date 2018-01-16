@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Backup Suite Official Greek Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-12-30 20:08+0100\n"
+"PO-Revision-Date: 2018-01-16 12:56+0330\n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: SatDreamGR <mcelliot_g@hotmail.com>\n"
 "Language: el_GR\n"
@@ -11,187 +11,181 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin 147
+#: plugin.py 89
+msgid "Make a backup or restore a backup"
+msgstr "Δημιουργία αντιγράφου ή επαναφορά αντιγράφου ασφαλείας"
+
 msgid "Full back-up on HDD"
 msgstr "Πλήρης εφεδρεία σε HDD"
 
-#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
 "This only takes a few minutes and is fully automatic.\n"
 msgstr ""
 
-#: plugin 153
 msgid "Full back-up to USB"
 msgstr "Πλήρης εφεδρεία σε USB"
 
-#: plugin 112
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
-"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"This only takes a few minutes depending on the used filesystem and is fully "
+"automatic.\n"
 "\n"
 "Make sure you first insert an USB flash drive before you select Yes."
 msgstr ""
 
-#: message01
 msgid "No supported receiver found!"
 msgstr "Δεν βρέθηκε υποστηριζόμενος δέκτης!"
 
-#: message02
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
 msgstr "ΕΡΓΑΛΕΙΟ BACK-UP, ΔΗΜΙΟΥΡΓΕΙ ΠΛΗΡΗ ΑΝΤΙΓΡΑΦΑ ΑΣΦΑΛΕΙΑΣ"
 
-#: message03
 msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr "Παρακαλώ περιμένετε, εκτελείται εφεδρεία, αυτό θα πάρει περίπου: "
 
-#: message04
 msgid " size to be backed up: "
 msgstr "μέγεθος προς εφεδρεία: "
 
-#: message05
 msgid "not found, the backup process will be aborted!"
 msgstr "δεν βρέθηκε, η διαδικασία εφεδρείας θα ακυρωθεί!"
 
-#: message06
 msgid "Some information about the task"
 msgstr "Πληροφορίες εργασίας"
 
-#: message06a
 msgid "Create: root.ubifs"
 msgstr "Δημιουργία: root.ubifs"
 
-#: message07
 msgid "Create: kerneldump"
 msgstr "Δημιουργία: kerneldump"
 
-#: message09
 msgid "Additional backup -> "
 msgstr "Επιπρόσθετο αντίγραφο ασφαλείας -> "
 
-#: message10
 msgid "USB Image created in: "
 msgstr "Το USB Image δημιουργήθηκε στο: "
 
-#: message11
 msgid "and there is made an extra copy in: "
 msgstr "και ένα επιπρόσθετο αντίγραφο δημιουργήθηκε στο: "
 
-#: message14
 msgid "Please check the manual of the receiver on how to restore the image."
-msgstr "Παρακαλώ ελέγξτε το εγχειρίδιο χρήστη για το πώς να επαναφέρετε το image."
+msgstr ""
+"Παρακαλώ ελέγξτε το εγχειρίδιο χρήστη για το πώς να επαναφέρετε το image."
 
-#: message15
 msgid "Image creation FAILED!"
 msgstr "Η δημιουργία Image ΑΠΕΤΥΧΕ!"
 
-#: message16
 msgid "available "
 msgstr "διαθέσιμα"
 
-#: message17-1
-msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr "Εντοπίστηκε συμβατό USB στικ σε μία από τις θύρες USB, επομένως ένα επιπρόσθετο αντίγραφο ασφαλείας του image θα αντιγραφεί σε αυτό."
+msgid ""
+"There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
+"an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr ""
+"Εντοπίστηκε συμβατό USB στικ σε μία από τις θύρες USB, επομένως ένα "
+"επιπρόσθετο αντίγραφο ασφαλείας του image θα αντιγραφεί σε αυτό."
 
-#: message17-2
 msgid "This only takes about 20 seconds....."
 msgstr "Αυτό θα χρειαστεί περίπου 20 δευτερόλεπτα....."
 
-#: message19
 msgid "Backup finished and copied to your USB-flashdrive."
 msgstr "Το αντίγραφο δημιουργήθηκε και αντιγράφτηκε στο USB στικ."
 
-#: message20
 msgid "Full back-up to the harddisk"
 msgstr "Πλήρης εφεδρεία στο σκληρό δίσκο"
 
-#: message21-1
 msgid "There is NO valid USB-stick found, so I've got nothing to do."
 msgstr "ΔΕΝ βρέθηκε συμβατό USB στικ, έτσι δεν θα γίνει τίποτα."
 
-#: message21-2
 msgid "PLEASE READ THIS:"
 msgstr "ΠΑΡΑΚΑΛΟΥΜΕ ΔΙΑΒΑΣΤΕ ΑΥΤΟ:"
 
-#: message21-3
-msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
-msgstr "Για απευθείας εφεδρεία στο USB στικ, το USB στικ ΠΡΕΠΕΙ να περιέχει ένα αρχείο με το όνομα: "
+msgid ""
+"To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
+"the name:"
+msgstr ""
+"Για απευθείας εφεδρεία στο USB στικ, το USB στικ ΠΡΕΠΕΙ να περιέχει ένα "
+"αρχείο με το όνομα: "
 
-#: message21-4
 msgid "backupstick or"
 msgstr "backupstick ή"
 
-#: message21-5
 msgid "backupstick.txt"
 msgstr "backupstick.txt"
 
-#: message21-6
-msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
-msgstr "Αν τοποθετήσετε ένα USB στικ με αυτό το αρχείο, τότε το αντίγραφο θα δημιουργηθεί αυτόματα στο USB στικ και μπορεί να χρησιμοποιηθεί για την επαναφορά του τρέχοντος image αν χρειαστεί."
+msgid ""
+"If you place an USB-stick containing this file then the back-up will be "
+"automatically made onto the USB-stick and can be used to restore the current "
+"image if necessary."
+msgstr ""
+"Αν τοποθετήσετε ένα USB στικ με αυτό το αρχείο, τότε το αντίγραφο θα "
+"δημιουργηθεί αυτόματα στο USB στικ και μπορεί να χρησιμοποιηθεί για την "
+"επαναφορά του τρέχοντος image αν χρειαστεί."
 
-#: message21-7
 msgid "The program will exit now."
 msgstr "Θα γίνει έξοδος από το πρόγραμμα τώρα."
 
 msgid "Full back-up direct to USB"
 msgstr "Πλήρης εφεδρεία απευθείας σε USB"
 
-#: message23
 msgid "The content of the folder is:"
 msgstr "Το περιεχόμενο του φακέλου είναι:"
 
-#: message24
 msgid "Time required for this process: "
 msgstr "Απαιτούμενος χρόνος για τη διαδικασία: "
 
-#: message25
 msgid "minutes"
 msgstr "λεπτά"
 
-#: message26
 msgid "Backup done with: "
 msgstr "Το αντίγραφο δημιουργήθηκε με: "
 
-#: message27
 msgid "KB per second"
 msgstr "ΚΒ ανά δευτερόλεπτο"
 
-#: message28
-msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Πιθανότατα είναι αδύνατη η επαναφορά αυτού του αντιγράφου λόγω του μεγέθους του. Πρόκειται για περιορισμό του bootloader και όχι του αντιγράφου του BackupSuite."
+msgid ""
+"Most likely this back-up can't be restored because of it's size, it's simply "
+"too big to restore. This is a limitation of the bootloader not of the back-"
+"up or the BackupSuite."
+msgstr ""
+"Πιθανότατα είναι αδύνατη η επαναφορά αυτού του αντιγράφου λόγω του μεγέθους "
+"του. Πρόκειται για περιορισμό του bootloader και όχι του αντιγράφου του "
+"BackupSuite."
 
-#: message29
-msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Μπορεί να υπάρξει ΠΙΘΑΝΟ πρόβλημα επαναφοράς επειδή το μέγεθος του αντίγραφου είναι κοντά στο μέγιστο επιτρεπτό. Πρόκειται για περιορισμό του bootloader και όχι του αντιγράφου του BackupSuite."
+msgid ""
+"There COULD be a problem with restoring this back-up because the size of the "
+"back-up comes close to the maximum size. This is a limitation of the "
+"bootloader not of the back-up or the BackupSuite."
+msgstr ""
+"Μπορεί να υπάρξει ΠΙΘΑΝΟ πρόβλημα επαναφοράς επειδή το μέγεθος του "
+"αντίγραφου είναι κοντά στο μέγιστο επιτρεπτό. Πρόκειται για περιορισμό του "
+"bootloader και όχι του αντιγράφου του BackupSuite."
 
-#: message30-1
 msgid "* * * WARNING * * *"
 msgstr "* * * ΠΡΟΕΙΔΟΠΟΙΗΣΗ * * *"
 
-#: message30-2
 msgid "Not enough free space on "
 msgstr "Μη επαρκής χώρος στο "
 
-#: message31
 msgid " to make a back-up!"
 msgstr " για τη δημιουργία αντιγράφου!"
 
-#: message32
 msgid " MB available space"
 msgstr " διαθέσιμος χώρος σε MB"
 
-#: message33
 msgid " MB needed space"
 msgstr " απαιτούμενος χώρος σε MB"
 
-#: message34
-msgid "The program will abort, please try another medium with more free space to create your back-up."
-msgstr "Το πρόγραμμα θα ματαιωθεί, δοκιμάστε ένα άλλο μέσο με περισσότερο ελεύθερο χώρο για το αντίγραφο σας."
+msgid ""
+"The program will abort, please try another medium with more free space to "
+"create your back-up."
+msgstr ""
+"Το πρόγραμμα θα ματαιωθεί, δοκιμάστε ένα άλλο μέσο με περισσότερο ελεύθερο "
+"χώρο για το αντίγραφο σας."
 
 #: plugin.py 294
 msgid ""
@@ -215,13 +209,13 @@ msgstr "  %s (πιθανώς ok)"
 msgid " nothing!"
 msgstr " τίποτα!"
 
-#: plugin.py
-msgid " version "
-msgstr " έκδοση "
-
 #: plugin.py 327
-msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
-msgstr "Μία εγγραφή είναι σε εξέλιξη. Παρακαλώ σταματήστε την εγγραφή πριν ξεκινήσετε το φλασάρισμα."
+msgid ""
+"A recording is currently running. Please stop the recording before trying to "
+"start a flashing."
+msgstr ""
+"Μία εγγραφή είναι σε εξέλιξη. Παρακαλώ σταματήστε την εγγραφή πριν "
+"ξεκινήσετε το φλασάρισμα."
 
 #: plugin.py 91
 msgid "Cancel"
@@ -290,7 +284,9 @@ msgstr "Στάνταρ (ρίζα και kernel)"
 
 #: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr "Το image ή ο kernel θα φλασαριστούν και θα εκκινηθούν αυτόματα σε λίγα λεπτά.\n"
+msgstr ""
+"Το image ή ο kernel θα φλασαριστούν και θα εκκινηθούν αυτόματα σε λίγα "
+"λεπτά.\n"
 
 #: plugin.py 247 380
 msgid "Unzip"
@@ -317,7 +313,8 @@ msgstr "τρέχον:  %s"
 
 #: plugin.py 359
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
-msgstr "το ofgwrite θα σταματήσει το enigma2 τώρα για να τρέξει το φλασάρισμα.\n"
+msgstr ""
+"το ofgwrite θα σταματήσει το enigma2 τώρα για να τρέξει το φλασάρισμα.\n"
 
 #: plugin.py 312 346
 msgid "Only root with use mtdy device"
@@ -333,11 +330,8 @@ msgstr "BackupSuite"
 
 #: plugin.py 406 413
 msgid "Enables back-up & restore without an USB-stick"
-msgstr "Ενεργοποιεί τη δημιουργία & επαναφορά αντιγράφων ασφαλείας χωρίς USB στικ"
-
-#: plugin.py
-msgid "Make a backup or restore a backup"
-msgstr "Δημιουργία αντιγράφου ή επαναφορά αντιγράφου ασφαλείας"
+msgstr ""
+"Ενεργοποιεί τη δημιουργία & επαναφορά αντιγράφων ασφαλείας χωρίς USB στικ"
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -351,3 +345,5 @@ msgstr "Εφεδρεία > USB"
 msgid "What is new since the last release?"
 msgstr "Τι είναι νέο από την τελευταία έκδοση;"
 
+#~ msgid " version "
+#~ msgstr " έκδοση "

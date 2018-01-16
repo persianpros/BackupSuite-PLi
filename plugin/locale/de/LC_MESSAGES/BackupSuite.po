@@ -5,33 +5,20 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
 msgstr "Backup erstellen oder wiederherstellen"
 
-#: plugin.py 91
-msgid "Cancel"
-msgstr "Abbrechen"
+msgid "Full back-up on HDD"
+msgstr "Voll-Backup auf HDD"
 
-#: plugin.py 92
-msgid "Backup > HDD"
-msgstr "Backup > HDD"
-
-#: plugin.py 93
-msgid "Backup > USB"
-msgstr "Backup > USB"
-
-#: plugin.py 94
-msgid "Restore backup"
-msgstr "Backup flashen"
-
-#: plugin 109
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -41,48 +28,279 @@ msgstr ""
 "\n"
 "Das dauert nur wenige Minuten und geht automatisch.\n"
 
-#: plugin 112
+msgid "Full back-up to USB"
+msgstr "Voll-Backup auf USB"
+
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
-"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"This only takes a few minutes depending on the used filesystem and is fully "
+"automatic.\n"
 "\n"
 "Make sure you first insert an USB flash drive before you select Yes."
 msgstr ""
 "Möchten sie ein Backup auf USB erstellen?\n"
 "\n"
-"Das dauert abhängig vom verwendeten Dateisystem nur wenige Minuten und geht automatisch.\n"
+"Das dauert abhängig vom verwendeten Dateisystem nur wenige Minuten und geht "
+"automatisch.\n"
 "\n"
-"Stellen Sie sicher, dass ein USB-Stick angeschlossen ist, bevor Sie Ja wählen."
+"Stellen Sie sicher, dass ein USB-Stick angeschlossen ist, bevor Sie Ja "
+"wählen."
 
-#: plugin 147
-msgid "Full back-up on HDD"
-msgstr "Voll-Backup auf HDD"
+msgid "No supported receiver found!"
+msgstr "Kein unterstützter Receiver gefunden!"
 
-#: plugin 153
-msgid "Full back-up to USB"
-msgstr "Voll-Backup auf USB"
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "BACK-UP TOOL, UM EIN VOLLSTÄNDIGES SYSTEM-BACK-UP ZU ERSTELLEN"
 
-#: plugin.py 173
-msgid "What is new since the last release?"
-msgstr "Was ist neu seit der letzten Version?"
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr "Bitte etwas Geduld, ein Backup wird erstellt, das dauert ungefähr: "
+
+msgid " size to be backed up: "
+msgstr " Größe zu sichern: "
+
+msgid "not found, the backup process will be aborted!"
+msgstr "nicht gefunden, der Backup-Vorgang wird abgebrochen!"
+
+msgid "Some information about the task"
+msgstr "Einige Informationen über die Aufgabe"
+
+msgid "Create: root.ubifs"
+msgstr "Erstelle: root.ubifs"
+
+msgid "Create: kerneldump"
+msgstr "Erstelle: Kerneldump"
+
+msgid "Additional backup -> "
+msgstr "Zusätzliche Sicherung -> "
+
+msgid "USB Image created in: "
+msgstr "USB-Image erstellt in: "
+
+msgid "and there is made an extra copy in: "
+msgstr "Eine Extra-Kopie liegt in: "
+
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr ""
+"Bitte lesen Sie im Handbuch des Receivers, wie man ein Image wieder "
+"herstellt."
+
+msgid "Image creation FAILED!"
+msgstr "Image-Erstellung fehlgeschlagen!"
+
+msgid "available "
+msgstr "verfügbar "
+
+msgid ""
+"There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
+"an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr ""
+"Es wurde ein USB-Stick an einem der USB-Anschlüsse gefunden, es wird nun "
+"eine Extra-Kopie des Backup-Images auf den USB-Stick kopiert."
+
+msgid "This only takes about 20 seconds....."
+msgstr "Das dauert nur ungefähr 20 Sekunden....."
+
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Das Backup ist fertig und wurde auf den USB-Stick kopiert."
+
+msgid "Full back-up to the harddisk"
+msgstr "Voll-Backup auf Festplatte"
+
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "Es wurde kein USB-Stick gefunden, Abbruch...."
+
+msgid "PLEASE READ THIS:"
+msgstr "BITTE LESEN SIE DIESES:"
+
+msgid ""
+"To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
+"the name:"
+msgstr ""
+"Um ein Backup auf einem USB-Stick erstellen zu können, muss auf dem USB-"
+"Stick eine Datei mit dem folgenden Namen vorhanden sein:"
+
+msgid "backupstick or"
+msgstr "backupstick oder"
+
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+msgid ""
+"If you place an USB-stick containing this file then the back-up will be "
+"automatically made onto the USB-stick and can be used to restore the current "
+"image if necessary."
+msgstr ""
+"Steckt man einen USB-Stick, der diese Datei beinhaltet, an die Box, wird das "
+"Backup automatisch auf diesen USB-Stick erstellt und kann bei Bedarf zur "
+"Wiederherstellung des aktuellen Images verwendet werden."
+
+msgid "The program will exit now."
+msgstr "Das Programm wird jetzt beendet."
+
+# #: message22
+msgid "Full back-up direct to USB"
+msgstr "Voll-Backup direkt auf USB"
+
+msgid "The content of the folder is:"
+msgstr "Der Inhalt des Ordners ist:"
+
+msgid "Time required for this process: "
+msgstr "Die benötigte Zeit für dieses Backup: "
+
+msgid "minutes"
+msgstr "Minuten"
+
+msgid "Backup done with: "
+msgstr "Backup erstellt mit: "
+
+msgid "KB per second"
+msgstr "KB pro Sekunde"
+
+msgid ""
+"Most likely this back-up can't be restored because of it's size, it's simply "
+"too big to restore. This is a limitation of the bootloader not of the back-"
+"up or the BackupSuite."
+msgstr ""
+"Dieses Backup kann höchstwahrscheinlich nicht wieder eingespielt werden, es "
+"ist schlicht zu gross um es wieder herzustellen. Dies ist eine Beschränkung "
+"des Bootloaders, nicht des Backups oder der BackupSuite."
+
+msgid ""
+"There COULD be a problem with restoring this back-up because the size of the "
+"back-up comes close to the maximum size. This is a limitation of the "
+"bootloader not of the back-up or the BackupSuite."
+msgstr ""
+"Bei der Wiederherstellung dieses Backup könnte es zu einem Problem kommen da "
+"dieses nahe an der zulässigen Grösse liegt. Dies ist eine Beschränkung des "
+"Bootloaders, nicht des Backups oder der BackupSuite."
+
+msgid "* * * WARNING * * *"
+msgstr "* * * WARNUNG * * *"
+
+msgid "Not enough free space on "
+msgstr "Nicht genügend Speicher frei auf "
+
+msgid " to make a back-up!"
+msgstr " um ein Backup zu erstellen!"
+
+msgid " MB available space"
+msgstr " MB Speicher frei"
+
+msgid " MB needed space"
+msgstr " MB Speicher benötigt"
+
+msgid ""
+"The program will abort, please try another medium with more free space to "
+"create your back-up."
+msgstr ""
+"Das Programm wird abgebrochen, bitte ein anderes Medium mit mehr freien "
+"Speicher wählen um ihr Backup zu erstellen."
+
+#: plugin.py 294
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+"\n"
+"Gefundene Dateien:"
+
+#: plugin.py 300
+#, python-format
+msgid "  %s (maybe error)"
+msgstr " %s (vielleicht fehlerhaft)"
+
+#: plugin.py 297
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr " %s (vielleicht ok)"
+
+#: plugin.py 303
+msgid " nothing!"
+msgstr "Nichts!"
+
+#: plugin.py 327
+msgid ""
+"A recording is currently running. Please stop the recording before trying to "
+"start a flashing."
+msgstr ""
+"Aktuell läuft eine Aufnahme. Bitte die Aufnahme stoppen bevor versucht wird "
+"einen Flashvorgang zu starten."
+
+#: plugin.py 91
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: plugin.py 383
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr "Möchten sie %s wirklich entpacken ?"
+
+#: plugin.py 317
+msgid "Exit"
+msgstr "Beenden"
+
+#: plugin.py 331
+msgid "Flashing: "
+msgstr "Flash läuft..."
+
+#: plugin.py 275
+msgid "For flashing your receiver files are needed:\n"
+msgstr "Benötigte Dateien um zu flashen:\n"
+
+#: plugin.py 354
+msgid "NOT found files for flashing!\n"
+msgstr "Keine Dateien zum Flashen gefunden !\n"
+
+#: plugin.py 311 343
+msgid "Only kernel"
+msgstr "Nur Kernel"
+
+#: plugin.py 310 340
+msgid "Only root"
+msgstr "Nur root"
+
+#: plugin.py 361
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr "Bitte die Box keinesfalls neustarten bzw. in Power OFF versetzen !\n"
+
+#: plugin.py 94
+msgid "Restore backup"
+msgstr "Backup flashen"
+
+#: plugin.py 249 263 269
+msgid "Run flash"
+msgstr "Starte Flash"
+
+#: plugin.py 274
+msgid "Select parameter for start flash!\n"
+msgstr "Wähle die Art zu flashen !\n"
 
 #: plugin.py 199
 msgid "Select the folder with backup"
 msgstr "Wähle den Ordner mit dem Backup"
 
-#: plugin.py 203 241
-#, python-format
-msgid "current:  %s"
-msgstr "Aktuell:  %s"
+#: plugin.py 367
+msgid "Show only found image and mtd partitions.\n"
+msgstr "Zeige verfügbare Images und MTD Partitionen.\n"
+
+#: plugin.py 308 334
+msgid "Simulate (no write)"
+msgstr "Simulation (kein Schreibvorgang)"
+
+#: plugin.py 309 337
+msgid "Standard (root and kernel)"
+msgstr "Standard (root und Kernel)"
+
+#: plugin.py 362
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr ""
+"Das Image oder der Kernel wird geflasht - Box startet in wenigen Minuten "
+"neu..\n"
 
 #: plugin.py 247 380
 msgid "Unzip"
 msgstr "Entpacken"
-
-#: plugin.py 249 263 269
-msgid "Run flash"
-msgstr "Starte Flash"
 
 #: plugin.py 266
 msgid ""
@@ -94,51 +312,18 @@ msgstr ""
 "!!! Verwendung auf eigene Gefahr !!! Zuvor immer ein Backup erstellen!\n"
 "Nicht anwenden bei multiple ubi volumes in ubi layer"
 
-#: plugin.py 274
-msgid "Select parameter for start flash!\n"
-msgstr "Wähle die Art zu flashen !\n"
+#: plugin.py 360
+msgid "Your STB will freeze during the flashing process.\n"
+msgstr "Während dem Flashvorgang ist die Box unbedienbar.\n"
 
-#: plugin.py 275
-msgid "For flashing your receiver files are needed:\n"
-msgstr "Benötigte Dateien um zu flashen:\n"
-
-#: plugin.py 294
-msgid ""
-"\n"
-"The found files:"
-msgstr ""
-"\n"
-"Gefundene Dateien:"
-
-#: plugin.py 297
+#: plugin.py 203 241
 #, python-format
-msgid "  %s (maybe ok)"
-msgstr " %s (vielleicht ok)"
+msgid "current:  %s"
+msgstr "Aktuell:  %s"
 
-#: plugin.py 300
-#, python-format
-msgid "  %s (maybe error)"
-msgstr " %s (vielleicht fehlerhaft)"
-
-#: plugin.py 303
-msgid " nothing!"
-msgstr "Nichts!"
-
-#: plugin.py 308 334
-msgid "Simulate (no write)"
-msgstr "Simulation (kein Schreibvorgang)"
-
-#: plugin.py 309 337
-msgid "Standard (root and kernel)"
-msgstr "Standard (root und Kernel)"
-
-#: plugin.py 310 340
-msgid "Only root"
-msgstr "Nur root"
-
-#: plugin.py 311 343
-msgid "Only kernel"
-msgstr "Nur Kernel"
+#: plugin.py 359
+msgid "ofgwrite will stop enigma2 now to run the flash.\n"
+msgstr "Das Programm ofgwrite stoppt jetzt Enigma2 um den Flash zu starten.\n"
 
 #: plugin.py 312 346
 msgid "Only root with use mtdy device"
@@ -148,47 +333,6 @@ msgstr "Nur root bei Verwendung von mtdy device"
 msgid "Only kernel with use mtdx device"
 msgstr "Nur Kernel bei Verwendung von mtdx device"
 
-#: plugin.py 317
-msgid "Exit"
-msgstr "Beenden"
-
-#: plugin.py 327
-msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
-msgstr "Aktuell läuft eine Aufnahme. Bitte die Aufnahme stoppen bevor versucht wird einen Flashvorgang zu starten."
-
-#: plugin.py 331
-msgid "Flashing: "
-msgstr "Flash läuft..."
-
-#: plugin.py 354
-msgid "NOT found files for flashing!\n"
-msgstr "Keine Dateien zum Flashen gefunden !\n"
-
-#: plugin.py 359
-msgid "ofgwrite will stop enigma2 now to run the flash.\n"
-msgstr "Das Programm ofgwrite stoppt jetzt Enigma2 um den Flash zu starten.\n"
-
-#: plugin.py 360
-msgid "Your STB will freeze during the flashing process.\n"
-msgstr "Während dem Flashvorgang ist die Box unbedienbar.\n"
-
-#: plugin.py 361
-msgid "Please: DO NOT reboot your STB and turn off the power.\n"
-msgstr "Bitte die Box keinesfalls neustarten bzw. in Power OFF versetzen !\n"
-
-#: plugin.py 362
-msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr "Das Image oder der Kernel wird geflasht - Box startet in wenigen Minuten neu..\n"
-
-#: plugin.py 367
-msgid "Show only found image and mtd partitions.\n"
-msgstr "Zeige verfügbare Images und MTD Partitionen.\n"
-
-#: plugin.py 383
-#, python-format
-msgid "Do you really want to unpack %s ?"
-msgstr "Möchten sie %s wirklich entpacken ?"
-
 #: plugin.py 405 412
 msgid "BackupSuite"
 msgstr "BackupSuite"
@@ -197,159 +341,14 @@ msgstr "BackupSuite"
 msgid "Enables back-up & restore without an USB-stick"
 msgstr "Backup & Wiederherstellung ohne USB-Stick möglich"
 
-#: message01
-msgid "No supported receiver found!"
-msgstr "Kein unterstützter Receiver gefunden!"
+#: plugin.py 92
+msgid "Backup > HDD"
+msgstr "Backup > HDD"
 
-#: message02
-msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "BACK-UP TOOL, UM EIN VOLLSTÄNDIGES SYSTEM-BACK-UP ZU ERSTELLEN"
+#: plugin.py 93
+msgid "Backup > USB"
+msgstr "Backup > USB"
 
-#: message03
-msgid "Please be patient, a backup will now be made, this will take about: "
-msgstr "Bitte etwas Geduld, ein Backup wird erstellt, das dauert ungefähr: "
-
-#: message04
-msgid " size to be backed up: "
-msgstr " Größe zu sichern: "
-
-#: message05
-msgid "not found, the backup process will be aborted!"
-msgstr "nicht gefunden, der Backup-Vorgang wird abgebrochen!"
-
-#: message06
-msgid "Some information about the task"
-msgstr "Einige Informationen über die Aufgabe"
-
-#: message06a
-msgid "Create: root.ubifs"
-msgstr "Erstelle: root.ubifs"
-
-#: message07
-msgid "Create: kerneldump"
-msgstr "Erstelle: Kerneldump"
-
-#: message09
-msgid "Additional backup -> "
-msgstr "Zusätzliche Sicherung -> "
-
-#: message10
-msgid "USB Image created in: "
-msgstr "USB-Image erstellt in: "
-
-#: message11
-msgid "and there is made an extra copy in: "
-msgstr "Eine Extra-Kopie liegt in: "
-
-#: message14
-msgid "Please check the manual of the receiver on how to restore the image."
-msgstr "Bitte lesen Sie im Handbuch des Receivers, wie man ein Image wieder herstellt."
-
-#: message15
-msgid "Image creation FAILED!"
-msgstr "Image-Erstellung fehlgeschlagen!"
-
-#: message16
-msgid "available "
-msgstr "verfügbar "
-
-#: message17-1
-msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr "Es wurde ein USB-Stick an einem der USB-Anschlüsse gefunden, es wird nun eine Extra-Kopie des Backup-Images auf den USB-Stick kopiert."
-
-#: message17-2
-msgid "This only takes about 20 seconds....."
-msgstr "Das dauert nur ungefähr 20 Sekunden....."
-
-#: message19
-msgid "Backup finished and copied to your USB-flashdrive."
-msgstr "Das Backup ist fertig und wurde auf den USB-Stick kopiert."
-
-#: message20
-msgid "Full back-up to the harddisk"
-msgstr "Voll-Backup auf Festplatte"
-
-#: message21-1
-msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "Es wurde kein USB-Stick gefunden, Abbruch...."
-
-#: message21-2
-msgid "PLEASE READ THIS:"
-msgstr "BITTE LESEN SIE DIESES:"
-
-#: message21-3
-msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
-msgstr "Um ein Backup auf einem USB-Stick erstellen zu können, muss auf dem USB-Stick eine Datei mit dem folgenden Namen vorhanden sein:"
-
-#: message21-4
-msgid "backupstick or"
-msgstr "backupstick oder"
-
-#: message21-5
-msgid "backupstick.txt"
-msgstr "backupstick.txt"
-
-#: message21-6
-msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
-msgstr "Steckt man einen USB-Stick, der diese Datei beinhaltet, an die Box, wird das Backup automatisch auf diesen USB-Stick erstellt und kann bei Bedarf zur Wiederherstellung des aktuellen Images verwendet werden."
-
-#: message21-7
-msgid "The program will exit now."
-msgstr "Das Programm wird jetzt beendet."
-
-# #: message22
-msgid "Full back-up direct to USB"
-msgstr "Voll-Backup direkt auf USB"
-
-#: message23
-msgid "The content of the folder is:"
-msgstr "Der Inhalt des Ordners ist:"
-
-#: message24
-msgid "Time required for this process: "
-msgstr "Die benötigte Zeit für dieses Backup: "
-
-#: message25
-msgid "minutes"
-msgstr "Minuten"
-
-#: message26
-msgid "Backup done with: "
-msgstr "Backup erstellt mit: "
-
-#: message27
-msgid "KB per second"
-msgstr "KB pro Sekunde"
-
-#: message28
-msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Dieses Backup kann höchstwahrscheinlich nicht wieder eingespielt werden, es ist schlicht zu gross um es wieder herzustellen. Dies ist eine Beschränkung des Bootloaders, nicht des Backups oder der BackupSuite."
-
-#: message29
-msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Bei der Wiederherstellung dieses Backup könnte es zu einem Problem kommen da dieses nahe an der zulässigen Grösse liegt. Dies ist eine Beschränkung des Bootloaders, nicht des Backups oder der BackupSuite."
-
-#: message30-1
-msgid "* * * WARNING * * *"
-msgstr "* * * WARNUNG * * *"
-
-#: message30-2
-msgid "Not enough free space on "
-msgstr "Nicht genügend Speicher frei auf "
-
-#: message31
-msgid " to make a back-up!"
-msgstr " um ein Backup zu erstellen!"
-
-#: message32
-msgid " MB available space"
-msgstr " MB Speicher frei"
-
-#: message33
-msgid " MB needed space"
-msgstr " MB Speicher benötigt"
-
-#: message34
-msgid "The program will abort, please try another medium with more free space to create your back-up."
-msgstr "Das Programm wird abgebrochen, bitte ein anderes Medium mit mehr freien Speicher wählen um ihr Backup zu erstellen."
-
+#: plugin.py 173
+msgid "What is new since the last release?"
+msgstr "Was ist neu seit der letzten Version?"
