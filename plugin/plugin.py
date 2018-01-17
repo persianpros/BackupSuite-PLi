@@ -150,11 +150,9 @@ class BackupStart(Screen):
 		else:
 			return
 		if model != "":
-			if model in ["duo2", "solose", "solo2", "zero"]:
-				files = "^.*\.(zip|bin|update)"
-			elif model in ["duo", "solo", "ultimo", "uno"]:
+			if model in ["duo", "solo", "ultimo", "uno"] or "ebox" in model:
 				files = "^.*\.(zip|bin|jffs2)"
-			elif "4k" or "uhd" in model:
+			elif "4k" or "uhd" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000"]:
 				files = "^.*\.(zip|bin|tar.bz2)"
 			else:
 				files = "^.*\.(zip|bin)"
