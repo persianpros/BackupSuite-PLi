@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Git 273-276
+- Update po files using latest pot file.
+- jffs2 extension detection for all Ebox STBs.
+- tar.bz2 extension detection for STBs without 4K in their names.
+- Backup fixed for STBs with multiple kernel partitions like H7.
+- Use findkerneldevice.py for all STBs not just some with if situations.
+- Version change from 23 to 24.
+
 Git 251-272
 - Bitbake recipe changed: Better mo compile and chmod, Thanks to Erik Slagter (eriksl)
 Shell scripts are executable in our git but distutils won't make them executable so do something about it.
