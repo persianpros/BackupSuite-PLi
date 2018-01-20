@@ -196,6 +196,27 @@ msgstr ""
 "Program iptal edilecek, daha fazla boş alana sahip başka bir ortam deneyin "
 "lütfen yedekleme oluşturmak için."
 
+msgid "is not executable..."
+msgstr ""
+
+msgid "Using your own custom lookuptable.txt from the folder /etc"
+msgstr ""
+
+msgid "Version unknown, probably not installed the right way."
+msgstr ""
+
+msgid "not installed yet, now installing"
+msgstr ""
+
+msgid "Probably you are trying to make the back-up in flash memory"
+msgstr ""
+
+msgid "No additional USB-stick found to copy an extra backup"
+msgstr ""
+
+msgid "Installed packages contained in this backup:"
+msgstr ""
+
 #: plugin.py 294
 msgid ""
 "\n"

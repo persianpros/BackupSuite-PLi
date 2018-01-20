@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Backup Suite Official Greek Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-01-16 12:56+0330\n"
+"PO-Revision-Date: 2018-01-20 13:55+0330\n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: SatDreamGR <mcelliot_g@hotmail.com>\n"
 "Language: el_GR\n"
@@ -186,6 +186,27 @@ msgid ""
 msgstr ""
 "Το πρόγραμμα θα ματαιωθεί, δοκιμάστε ένα άλλο μέσο με περισσότερο ελεύθερο "
 "χώρο για το αντίγραφο σας."
+
+msgid "is not executable..."
+msgstr ""
+
+msgid "Using your own custom lookuptable.txt from the folder /etc"
+msgstr ""
+
+msgid "Version unknown, probably not installed the right way."
+msgstr ""
+
+msgid "not installed yet, now installing"
+msgstr ""
+
+msgid "Probably you are trying to make the back-up in flash memory"
+msgstr ""
+
+msgid "No additional USB-stick found to copy an extra backup"
+msgstr ""
+
+msgid "Installed packages contained in this backup:"
+msgstr ""
 
 #: plugin.py 294
 msgid ""
