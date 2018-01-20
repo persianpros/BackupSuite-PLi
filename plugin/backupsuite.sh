@@ -97,7 +97,7 @@ if [ ! -f "$1" ] ; then {
 	big_fail
 elif [ ! -x "$1" ] ; then
 	{
-	echo "Error: $1 is not executable..."
+	echo "Error: $1 " ; $SHOW "message35"
 	} 2>&1 | tee -a $LOGFILE
 	big_fail
 fi
@@ -145,7 +145,7 @@ NANDDUMP=/usr/sbin/nanddump
 START=$(date +%s)
 if [ -f "/etc/lookuptable.txt" ] ; then
 	LOOKUP="/etc/lookuptable.txt"
-	echo "Using your own custom lookuptable.txt from the folder /etc"
+	$SHOW "message36"
 else
 	LOOKUP="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/lookuptable.txt"
 fi
@@ -156,7 +156,7 @@ USEDsizekb=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`
 if [ -f "/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control" ] ; then
 	VERSION="Version: "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d "+" -f 2`
 else
-	VERSION="Version unknown, probably not installed the right way."
+	VERSION=`$SHOW "message37"`
 fi
 WORKDIR="$MEDIA/bi"
 
@@ -222,8 +222,8 @@ else
 		MKFS=/bin/tar
 		checkbinary $MKFS
 		BZIP2=/usr/bin/bzip2
-		if [ ! -f "$BZIP2" ] ; then 
-			echo "$BZIP2 not installed yet, now installing"
+		if [ ! -f "$BZIP2" ] ; then
+			echo "$BZIP2 " ; $SHOW "message38"
 			opkg update > /dev/null 2>&1
 			opkg install bzip2 > /dev/null 2>&1
 			checkbinary $MKFS
@@ -359,7 +359,7 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 		ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
 		UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
 		if [ "$UBISIZE" -eq 0 ] ; then 
-			echo "Probably you are trying to make the back-up in flash memory" 2>&1 | tee -a $LOGFILE
+			$SHOW "message39" 2>&1 | tee -a $LOGFILE
 			big_fail
 		fi
 	else 
@@ -437,7 +437,7 @@ if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 		df -h "$TARGET"  >> $LOGFILE
 		$SHOW "message19" 2>&1 | tee -a $LOGFILE	# Backup finished and copied to your USB-flashdrive
 	else 
-		echo "NO additional USB-stick found to copy an extra backup" >> $LOGFILE
+		$SHOW "message40" >> $LOGFILE
 	fi
 sync
 fi
@@ -468,7 +468,7 @@ $SHOW "message26" ; echo -n "$SPEED" ; $SHOW "message27"
 #### ADD A LIST OF THE INSTALLED PACKAGES TO THE BackupSuite.LOG ####
 echo $LINE >> $LOGFILE
 echo $LINE >> $LOGFILE
-echo "Installed packages contained in this backup:" >> $LOGFILE
+$SHOW "message41" >> $LOGFILE
 echo "--------------------------------------------" >> $LOGFILE
 opkg list-installed >> $LOGFILE
 

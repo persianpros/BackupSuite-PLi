@@ -153,6 +153,34 @@ def message34():
 	print _("The program will abort, please try another medium with more free space to create your back-up.")
 	return
 
+def message35():
+	print _("is not executable...")
+	return
+
+def message36():
+	print _("Using your own custom lookuptable.txt from the folder /etc")
+	return
+
+def message37():
+	print _("Version unknown, probably not installed the right way.")
+	return
+
+def message38():
+	print _("not installed yet, now installing")
+	return
+
+def message39():
+	print _("Probably you are trying to make the back-up in flash memory")
+	return
+
+def message40():
+	print _("No additional USB-stick found to copy an extra backup")
+	return
+
+def message41():
+	print _("Installed packages contained in this backup:")
+	return
+
 globals()[sys.argv[2]]()
 os_environ["LANGUAGE"] = sys.argv[1]
 
