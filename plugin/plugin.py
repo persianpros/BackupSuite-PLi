@@ -134,21 +134,33 @@ class BackupStart(Screen):
 		model = ""
 		files = "^.*\.(zip|bin)"
 		if os.path.exists("/proc/stb/info/boxtype"):
-			f = open("/proc/stb/info/boxtype")
-			model = f.read().strip()
-			f.close()
+			try:
+				f = open("/proc/stb/info/boxtype")
+				model = f.read().strip()
+				f.close()
+			except:
+				pass
 		elif os.path.exists("/proc/stb/info/vumodel"):
-			f = open("/proc/stb/info/vumodel")
-			model = f.read().strip()
-			f.close()
+			try:
+				f = open("/proc/stb/info/vumodel")
+				model = f.read().strip()
+				f.close()
+			except:
+				pass
 		elif os.path.exists("/proc/stb/info/hwmodel"):
-			f = open("/proc/stb/info/hwmodel")
-			model = f.read().strip()
-			f.close()
+			try:
+				f = open("/proc/stb/info/hwmodel")
+				model = f.read().strip()
+				f.close()
+			except:
+				pass
 		elif os.path.exists("/proc/stb/info/gbmodel"):
-			f = open("/proc/stb/info/gbmodel")
-			model = f.read().strip()
-			f.close()
+			try:
+				f = open("/proc/stb/info/gbmodel")
+				model = f.read().strip()
+				f.close()
+			except:
+				pass
 		else:
 			return
 		if model != "":
