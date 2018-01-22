@@ -101,7 +101,20 @@ fi
 check_dependency(){
    log "Checking Dependencies ..."
    UPDATE=0
-   for pkg in mtd-utils mtd-utils-ubifs mtd-utils-jffs2 dreambox-buildimage;
+   for pkg in mtd-utils mtd-utils-ubifs;
+   do   
+      opkg status $pkg | grep -q "install user installed"
+      if [ $? -ne 0 ] ; then
+         [ $UPDATE -eq 0 ] && opkg update && UPDATE=1
+         opkg install $pkg 2>/dev/null
+      fi
+   done
+}
+############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
+check_dependency_old(){
+   log "Checking Dependencies ..."
+   UPDATE=0
+   for pkg in mtd-utils-jffs2 dreambox-buildimage;
    do   
       opkg status $pkg | grep -q "install user installed"
       if [ $? -ne 0 ] ; then
@@ -201,8 +214,6 @@ echo $RED
 check_dependency
 checkbinary $NANDDUMP
 checkbinary $MKFS
-checkbinary $MKFSJFFS2
-checkbinary $BUILDIMAGE
 checkbinary $UBINIZE
 echo -n $WHITE
 
@@ -505,10 +516,17 @@ fi
 exit 
 ############### END OF PROGRAMM ################
 
-# athoik's code, Modified by Persian Prince#
-
 if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
 log "Found old dreamboxes, nfi mode"
+
+###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
+echo $RED
+check_dependency_old
+checkbinary $MKFSJFFS2
+checkbinary $BUILDIMAGE
+echo -n $WHITE
+
+# athoik's code, Modified by Persian Prince #
 
 CREATE_ZIP="$2"
 IMAGENAME="$3"
