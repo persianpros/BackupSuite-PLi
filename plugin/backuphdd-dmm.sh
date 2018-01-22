@@ -52,8 +52,8 @@ if [ -f /hdd/hdd-check ] ; then
 	fi
 	echo -n " -> /hdd -> $MEDIA ($TOTALSIZE, "; $SHOW "message16" ; echo "$FREESIZE)"
 	echo -n $WHITE
-	chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupsuite.sh > /dev/null 2>&1
-	/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupsuite.sh /hdd
+	chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
+	/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh /hdd
 	rm -f /hdd/hdd-check
 	sync
 else
@@ -91,8 +91,8 @@ else
 		FREESIZE_0="$(df -h $MEDIA | tail -n 1 | awk {'print $4'})"
 		echo -n " -> $MEDIA ($TOTALSIZE_0, "; $SHOW "message16" ; echo -n "$FREESIZE_0)"
 		echo -n $WHITE
-		chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupsuite.sh > /dev/null 2>&1
-		/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupsuite.sh $MEDIA 
+		chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
+		/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh $MEDIA 
 		echo "$HDD_MOUNT" > /tmp/BackupSuite.log
 		sync
 	fi

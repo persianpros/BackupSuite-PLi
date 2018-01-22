@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Backup Suite Official Greek Translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-01-20 13:55+0330\n"
+"PO-Revision-Date: 2018-01-22 14:24+0330\n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: SatDreamGR <mcelliot_g@hotmail.com>\n"
 "Language: el_GR\n"
@@ -206,6 +206,9 @@ msgid "No additional USB-stick found to copy an extra backup"
 msgstr ""
 
 msgid "Installed packages contained in this backup:"
+msgstr ""
+
+msgid "NFI Image created in: "
 msgstr ""
 
 #: plugin.py 294

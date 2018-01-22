@@ -111,12 +111,41 @@ check_dependency()
       fi
    done
 }
+############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
+check_dependency_old()
+{
+   log "Checking Dependencies ..."
+   UPDATE=0
+   for pkg in mtd-utils-jffs2 dreambox-buildimage;
+   do   
+      opkg status $pkg | grep -q "install user installed"
+      if [ $? -ne 0 ] ; then
+         [ $UPDATE -eq 0 ] && opkg update && UPDATE=1
+         opkg install $pkg 2>/dev/null
+      fi
+   done
+}
 ################### BACK-UP MADE AND REPORTING SIZE ETC. ######################
 backup_made()
 {
 {
 echo $LINE
 $SHOW "message10" ; echo "$MAINDEST" 	# USB Image created in: 
+$SHOW "message23"		# "The content of the folder is:"
+ls "$MAINDEST" -e1rSh | sed 's/-.........    1//' 
+echo $LINE
+if  [ $HARDDISK != 1 ]; then
+	$SHOW "message11" ; echo "$EXTRA"		# and there is made an extra copy in:
+	echo $LINE
+fi
+} 2>&1 | tee -a $LOGFILE
+}
+################### BACK-UP MADE AND REPORTING SIZE ETC. ######################
+backup_made_nfi()
+{
+{
+echo $LINE
+$SHOW "message42" ; echo "$MAINDEST" 	# NFI Image created in: 
 $SHOW "message23"		# "The content of the folder is:"
 ls "$MAINDEST" -e1rSh | sed 's/-.........    1//' 
 echo $LINE
@@ -148,6 +177,8 @@ ENIGMA2DATE=`cat /tmp/enigma2version`
 LOGFILE=/tmp/BackupSuite.log
 MEDIA="$1"
 MKFS=/usr/sbin/mkfs.ubifs
+MKFSJFFS2=/usr/sbin/mkfs.jffs2
+BUILDIMAGE=/usr/bin/buildimage
 MTDPLACE=`cat /proc/mtd | grep -w "kernel" | cut -d ":" -f 1`
 NANDDUMP=/usr/sbin/nanddump
 START=$(date +%s)
@@ -190,52 +221,43 @@ echo -n $WHITE
 
 #############################################################################
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
-if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
-	SEARCH=$( cat /proc/stb/info/hwmodel )
-elif [ -f /proc/stb/info/gbmodel ] ; then			# Gigablue models
-	SEARCH=$( cat /proc/stb/info/gbmodel )
-elif [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
-	SEARCH=$( cat /proc/stb/info/boxtype )
-elif [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
-	SEARCH=$( cat /proc/stb/info/vumodel )
+if [ -f /proc/stb/info/model ] ; then
+	SEARCH=$( cat /proc/stb/info/model )
 else
 	echo $RED
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
 	big_fail
 fi
 
-cat $LOOKUP | cut -f 2 | grep -qw "$SEARCH"
-if [ "$?" = "1" ] ; then
-	echo $RED
-	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
-	big_fail
-else
-	MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
-	SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
-	FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
-	EXTR1="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 5`/$DATE"
-	EXTR2="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 6`"
-	EXTRA="$MEDIA$EXTR1$EXTR2"
-	if  [ $HARDDISK = 1 ]; then
-		MAINDEST="$MEDIA$EXTR1$FOLDER"
-	else 
-		MAINDEST="$MEDIA$FOLDER"
-	fi
-	MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
-	UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
-	ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
-	KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
-	ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
-	if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
-		MKFS=/bin/tar
+############################## DM9X0 Situation ##############################
+dm9x0_situation()
+{
+log "Found dm9x0, bz2 mode"
+MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
+SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
+FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
+EXTR1="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 5`/$DATE"
+EXTR2="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 6`"
+EXTRA="$MEDIA$EXTR1$EXTR2"
+if  [ $HARDDISK = 1 ]; then
+	MAINDEST="$MEDIA$EXTR1$FOLDER"
+else 
+	MAINDEST="$MEDIA$FOLDER"
+fi
+MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
+UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
+ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
+KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
+ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
+if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
+	MKFS=/bin/tar
+	checkbinary $MKFS
+	BZIP2=/usr/bin/bzip2
+	if [ ! -f "$BZIP2" ] ; then
+		echo "$BZIP2 " ; $SHOW "message38"
+		opkg update > /dev/null 2>&1
+		opkg install bzip2 > /dev/null 2>&1
 		checkbinary $MKFS
-		BZIP2=/usr/bin/bzip2
-		if [ ! -f "$BZIP2" ] ; then
-			echo "$BZIP2 " ; $SHOW "message38"
-			opkg update > /dev/null 2>&1
-			opkg install bzip2 > /dev/null 2>&1
-			checkbinary $MKFS
-		fi
 	fi
 fi
 log "Destination        = $MAINDEST"
@@ -338,7 +360,7 @@ log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
 if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
-	
+
 	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
 	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
 		echo -n "Kernel dumped  :"  >> $LOGFILE
@@ -493,5 +515,355 @@ fi
 if [ "$TARGET" != "XX" ] ; then
 	cp $LOGFILE "$TARGET$FOLDER"
 fi
-exit 
 ############### END OF PROGRAMM ################
+}
+############################## DM9X0 Situation ##############################
+
+if [ $SEARCH = "dm900" ] || [ $SEARCH = "dm920" ] ; then
+	dm9x0_situation
+fi
+
+########################### Old Dreambox Situation ###########################
+old_dreambox_situation()
+{
+log "Found old dreamboxes, nfi mode"
+
+###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
+echo $RED
+check_dependency_old
+checkbinary $MKFSJFFS2
+checkbinary $BUILDIMAGE
+echo -n $WHITE
+
+# athoik's code, Modified by Persian Prince #
+
+CREATE_ZIP="$2"
+IMAGENAME="$3"
+
+cleanup_mounts(){
+   if [ ! -z "$TBI" ] ; then
+      if [ -d "$TBI/boot" ] ; then
+	 if grep -q "$TBI/boot" /proc/mounts ; then 
+	    umount "$TBI/boot" 2>/dev/null || log "Cannot umount boot" && exit 6
+	 fi
+	 rmdir "$TBI/boot" 2>/dev/null
+      fi
+      if [ -d "$TBI/root" ] ; then
+	 if grep -q "$TBI/root" /proc/mounts ; then
+	    umount "$TBI/root" 2>/dev/null || log "Cannot umount root" && exit 7
+	 fi
+	 rmdir "$TBI/root" 2>/dev/null
+      fi
+   fi
+}
+
+#
+# Set Backup Location
+#
+EXTRA="$MEDIA/fullbackup_dreambox/$DATE"
+MAINDEST="$MEDIA/$SEARCH"
+
+SBI="$MEDIA/bi"
+TBI="/tmp/bi"
+#
+# Initialize Parameters
+#
+EXTRA_BUILDCMD=""
+EXTRA_IMAGECMD=""
+
+DREAMBOX_ERASE_BLOCK_SIZE=""
+DREAMBOX_FLASH_SIZE=""
+DREAMBOX_SECTOR_SIZE=""
+MKUBIFS_ARGS=""
+UBINIZE_ARGS=""
+
+UBINIZE_VOLSIZE="0"
+UBINIZE_DATAVOLSIZE="0"
+UBI_VOLNAME="rootfs"
+
+DREAMBOX_IMAGE_SIZE=""
+DREAMBOX_PART0_SIZE=""
+DREAMBOX_PART1_SIZE=""
+DREAMBOX_PART2_SIZE=""
+
+#
+# Set parameters based on box
+# dm7020hdv2 is recognized from /sys/devices/virtual/mtd/mtd0/writesize
+# No support for xz images: dm520,dm7080,dm820
+case $SEARCH in
+   dm800|dm500hd|dm800se)
+      EXTRA_BUILDCMD="--brcmnand"
+      DREAMBOX_ERASE_BLOCK_SIZE="0x4000"
+      DREAMBOX_FLASH_SIZE="0x4000000"
+      DREAMBOX_SECTOR_SIZE="512"
+      MKUBIFS_ARGS="-m 512 -e 15KiB -c 3798 -x favor_lzo -X 1 -F -j 4MiB"
+      UBINIZE_ARGS="-m 512 -p 16KiB -s 512"
+      DREAMBOX_IMAGE_SIZE="64"
+      DREAMBOX_PART0_SIZE="0x40000"
+      DREAMBOX_PART1_SIZE="0x3C0000"
+      DREAMBOX_PART2_SIZE="0x3C00000"
+      ;;
+   dm500hdv2|dm800sev2|dm7020hdv2)
+      EXTRA_BUILDCMD="--hw-ecc --brcmnand"
+      DREAMBOX_ERASE_BLOCK_SIZE="0x20000"
+      DREAMBOX_FLASH_SIZE="0x40000000"
+      DREAMBOX_SECTOR_SIZE="2048"
+      MKUBIFS_ARGS="-m 2048 -e 124KiB -c 3320 -x favor_lzo -F"
+      UBINIZE_ARGS="-m 2048 -p 128KiB -s 2048"
+      UBINIZE_VOLSIZE="402MiB"
+      UBINIZE_DATAVOLSIZE="569MiB"
+      DREAMBOX_IMAGE_SIZE="1024"
+      DREAMBOX_PART0_SIZE="0x100000"
+      DREAMBOX_PART1_SIZE="0x700000"
+      DREAMBOX_PART2_SIZE="0x3F800000"
+      ;;
+   dm7020hd)
+      EXTRA_BUILDCMD="--hw-ecc --brcmnand"
+      DREAMBOX_ERASE_BLOCK_SIZE="0x40000"
+      DREAMBOX_FLASH_SIZE="0x40000000"
+      DREAMBOX_SECTOR_SIZE="4096"
+      MKUBIFS_ARGS="-m 4096 -e 248KiB -c 1640 -x favor_lzo -F"
+      UBINIZE_ARGS="-m 4096 -p 256KiB -s 4096"
+      UBINIZE_VOLSIZE="397MiB"
+      UBINIZE_DATAVOLSIZE="574MiB"
+      DREAMBOX_IMAGE_SIZE="1024"
+      DREAMBOX_PART0_SIZE="0x100000"
+      DREAMBOX_PART1_SIZE="0x700000"
+      DREAMBOX_PART2_SIZE="0x3F800000"
+
+      # dm7020hdv2 when writesize = 2048
+      WRITESIZE="4096"
+      if [ -f /sys/devices/virtual/mtd/mtd0/writesize ] ; then 
+	 WRITESIZE=$(cat /sys/devices/virtual/mtd/mtd0/writesize)
+      fi
+      if [ $WRITESIZE = "2048" ] ; then
+	 log "Found dm7020hdv2"
+	 DREAMBOX_ERASE_BLOCK_SIZE="0x20000"
+	 DREAMBOX_SECTOR_SIZE="2048"
+	 MKUBIFS_ARGS="-m 2048 -e 124KiB -c 3320 -x favor_lzo -F"
+	 UBINIZE_ARGS="-m 2048 -p 128KiB -s 2048"
+	 UBINIZE_VOLSIZE="402MiB"
+	 UBINIZE_DATAVOLSIZE="569MiB"
+      fi
+      ;;
+   dm8000)
+      EXTRA_BUILDCMD=""
+      DREAMBOX_ERASE_BLOCK_SIZE="0x20000"
+      DREAMBOX_FLASH_SIZE="0x10000000"
+      DREAMBOX_SECTOR_SIZE="2048"
+      MKUBIFS_ARGS="-m 2048 -e 126KiB -c 1961 -x favor_lzo -F"
+      UBINIZE_ARGS="-m 2048 -p 128KiB -s 512"
+      DREAMBOX_IMAGE_SIZE="256"
+      DREAMBOX_PART0_SIZE="0x100000"
+      DREAMBOX_PART1_SIZE="0x700000"
+      DREAMBOX_PART2_SIZE="0xF800000"
+      ;;
+   *)
+      log "Error: Unknown dreambox?"
+      exit 3
+      ;;
+esac
+
+EXTRA_IMAGECMD="-e $DREAMBOX_ERASE_BLOCK_SIZE -n -l"
+
+#
+# Setup temporary files and variables
+#
+SECSTAGE="$SBI/secondstage.bin"
+UBINIZE_CFG="$TBI/ubinize.cfg"
+BOOT="$SBI/boot.jffs2"
+ROOTFS="$SBI/rootfs.jffs2"
+
+cleanup_mounts
+
+echo $LINE
+echo "Starting Full Backup, Please wait ..."
+echo $LINE
+
+rm -rf "$SBI" 2>/dev/null
+rm -rf "$TBI" 2>/dev/null
+mkdir -p "$SBI"
+mkdir -p "$TBI"
+
+#
+# Export secondstage
+#
+log "Exporting secondstage"
+/usr/sbin/nanddump --noecc --omitoob --bb=skipbad --file="$SECSTAGE" /dev/mtd1
+if [ $? -ne 0 ] && [ ! -f "$SECSTAGE" ] ; then
+   rm -rf "$SBI" 2>/dev/null
+   rm -rf "$TBI" 2>/dev/null
+   log "Error: nanddump failed to dump secondstage!"
+   exit 8
+fi
+
+#
+# Trim 0xFFFFFF from secondstage
+#
+/usr/bin/python -c "
+data=open('$SECSTAGE', 'rb').read()
+cutoff=data.find('\xff\xff\xff\xff')
+if cutoff:
+    open('$SECSTAGE', 'wb').write(data[0:cutoff])
+"
+
+SIZE="$(du -k "$SECSTAGE" | awk '{ print $1 }')"
+if [ $SIZE -gt 200 ] ; then 
+   log "Error: Size of secondstage must be less than 200k"
+   log "Reinstall secondstage before creating backup"
+   log "opkg install --force-reinstall dreambox-secondstage-$SEARCH"
+   rm -rf "$SBI" 2>/dev/null
+   rm -rf "$TBI" 2>/dev/null
+   exit 9
+fi
+
+#
+# Export boot partition
+#
+log "Exporting boot partition"
+mkdir -p "$TBI/boot"
+mount -t jffs2 /dev/mtdblock/2 "$TBI/boot"
+
+/usr/sbin/mkfs.jffs2 \
+   --root="$TBI/boot" \
+   --compression-mode=none \
+   --output="$BOOT" \
+   $EXTRA_IMAGECMD
+
+umount "$TBI/boot" 2>/dev/null
+
+#
+# Export root partition
+#
+if grep -q ubi0:rootfs /proc/mounts ; then
+
+   log "Exporting rootfs (UBI)"
+   ROOTFS="$SBI/rootfs.ubi"
+   ROOTUBIFS="$SBI/rootfs.ubifs"
+   mkdir -p "$TBI/root"
+   mount --bind / "$TBI/root"
+
+   echo [root] > $UBINIZE_CFG
+   echo mode=ubi >> $UBINIZE_CFG
+   echo image=$ROOTUBIFS >> $UBINIZE_CFG
+   echo vol_id=0 >> $UBINIZE_CFG
+   echo vol_name=$UBI_VOLNAME >> $UBINIZE_CFG
+   echo vol_type=dynamic >> $UBINIZE_CFG
+   if [ "$UBINIZE_VOLSIZE" = "0" ] ; then
+      echo vol_flags=autoresize >> $UBINIZE_CFG
+   else
+      echo vol_size=$UBINIZE_VOLSIZE >> $UBINIZE_CFG
+      if [ "$UBINIZE_DATAVOLSIZE" != "0" ] ; then
+	 echo [data] >> $UBINIZE_CFG
+	 echo mode=ubi >> $UBINIZE_CFG
+	 echo vol_id=1 >> $UBINIZE_CFG
+	 echo vol_type=dynamic >> $UBINIZE_CFG
+	 echo vol_name=data >> $UBINIZE_CFG
+	 echo vol_size=$UBINIZE_DATAVOLSIZE >> $UBINIZE_CFG
+	 echo vol_flags=autoresize >> $UBINIZE_CFG
+      fi
+   fi
+
+   /usr/sbin/mkfs.ubifs -r "$TBI/root" -o $ROOTUBIFS $MKUBIFS_ARGS
+   log "mkfs.ubifs return value: $?"
+   /usr/sbin/ubinize -o $ROOTFS $UBINIZE_ARGS $UBINIZE_CFG
+   log "ubinize return value: $?"
+
+   umount "$TBI/root" 2>/dev/null
+else
+   log "Export rootfs (JFFS2)"
+   mkdir -p "$TBI/root"
+   mount -t jffs2 /dev/mtdblock/3 "$TBI/root"
+
+   /usr/sbin/mkfs.jffs2 \
+      --root="$TBI/root" \
+      --disable-compressor=lzo \
+      --compression-mode=size \
+      --output=$ROOTFS \
+      $EXTRA_IMAGECMD
+   log "mkfs.jffs2 return value: $?"
+   umount "$TBI/root" 2>/dev/null
+fi
+
+#
+# Build NFI image
+#
+log "Building NFI image"
+/usr/bin/buildimage --arch $SEARCH $EXTRA_BUILDCMD \
+   --erase-block-size $DREAMBOX_ERASE_BLOCK_SIZE \
+   --flash-size $DREAMBOX_FLASH_SIZE \
+   --sector-size $DREAMBOX_SECTOR_SIZE \
+   --boot-partition $DREAMBOX_PART0_SIZE:$SECSTAGE \
+   --data-partition $DREAMBOX_PART1_SIZE:$BOOT \
+   --data-partition $DREAMBOX_PART2_SIZE:$ROOTFS \
+   > "$SBI/backup.nfi"
+
+#
+# Archive NFI image
+#
+log "Transfering image to backup folder"
+TSTAMP="$(date "+%Y-%m-%d-%Hh%Mm")"
+rm -rf "$MAINDEST" 2>/dev/null
+
+mkdir -p "$MAINDEST"
+NFI="$MAINDEST/$TSTAMP-$SEARCH.nfi"
+mv "$SBI/backup.nfi" "$NFI"
+log "Backup image created $NFI"
+log "$(du -h $NFI)"
+
+if [ -z "$CREATE_ZIP" ] ; then
+   mkdir -p "$EXTRA"
+   touch "$NFI/$IMVER"
+   cp -r "$NFI" "$EXTRA"
+   touch "$MEDIA/fullbackup/.timestamp"
+else
+   if [ $CREATE_ZIP != "none" ] ; then
+      log "Create zip archive..."
+      cd $MEDIA && $CREATE_ZIP -r $MEDIA/backup-$IMAGENAME-$SEARCH-$TSTAMP.zip . -i /$SEARCH/*
+      cd
+   fi
+fi
+
+#
+# Cleanup
+#
+log "Remove temporary files..."
+cleanup_mounts
+rm -rf "$SBI" 2>/dev/null
+rm -rf "$TBI" 2>/dev/null
+
+if [ -f "$NFI" ] ; then
+	backup_made_nfi
+else
+	echo $RED
+	$SHOW "message15" 2>&1 | tee -a $LOGFILE # Image creation FAILED!
+	echo $WHITE
+fi
+#
+# The End
+#
+log "Completed!"
+################## CLEANING UP AND REPORTING SOME STATISTICS ##################
+clean_up
+END=$(date +%s)
+DIFF=$(( $END - $START ))
+MINUTES=$(( $DIFF/60 ))
+SECONDS=$(( $DIFF-(( 60*$MINUTES ))))
+echo -n $YELLOW
+{
+$SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
+} 2>&1 | tee -a $LOGFILE
+#### ADD A LIST OF THE INSTALLED PACKAGES TO THE BackupSuite.LOG ####
+echo $LINE >> $LOGFILE
+echo $LINE >> $LOGFILE
+$SHOW "message41" >> $LOGFILE
+echo "--------------------------------------------" >> $LOGFILE
+opkg list-installed >> $LOGFILE
+}
+########################### Old Dreambox Situation ###########################
+
+if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
+	old_dreambox_situation
+fi
+
+exit

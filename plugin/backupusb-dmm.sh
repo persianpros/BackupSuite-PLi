@@ -48,7 +48,7 @@ else
 		echo $WHITE
 		exit 0
 	fi
-	chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupsuite.sh > /dev/null 2>&1
-	/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupsuite.sh "$TARGET" 
+	chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
+	/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh "$TARGET" 
 	sync
 fi
