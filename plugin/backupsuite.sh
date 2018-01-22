@@ -98,7 +98,8 @@ elif [ ! -x "$1" ] ; then
 fi
 }
 ############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
-check_dependency(){
+check_dependency()
+{
    log "Checking Dependencies ..."
    UPDATE=0
    for pkg in mtd-utils mtd-utils-ubifs;
@@ -197,7 +198,6 @@ elif [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
 	SEARCH=$( cat /proc/stb/info/boxtype )
 elif [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
 	SEARCH=$( cat /proc/stb/info/vumodel )
-
 else
 	echo $RED
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!

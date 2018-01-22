@@ -98,7 +98,8 @@ elif [ ! -x "$1" ] ; then
 fi
 }
 ############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
-check_dependency(){
+check_dependency()
+{
    log "Checking Dependencies ..."
    UPDATE=0
    for pkg in mtd-utils mtd-utils-ubifs;
@@ -111,7 +112,8 @@ check_dependency(){
    done
 }
 ############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
-check_dependency_old(){
+check_dependency_old()
+{
    log "Checking Dependencies ..."
    UPDATE=0
    for pkg in mtd-utils-jffs2 dreambox-buildimage;
@@ -227,7 +229,8 @@ else
 	big_fail
 fi
 
-if [ $SEARCH = "dm900" ] || [ $SEARCH = "dm920" ] ; then
+############################## DM9X0 Situation ##############################
+dm9x0_situation()
 {
 log "Found dm9x0, bz2 mode"
 MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
@@ -514,9 +517,14 @@ if [ "$TARGET" != "XX" ] ; then
 fi
 ############### END OF PROGRAMM ################
 }
+############################## DM9X0 Situation ##############################
+
+if [ $SEARCH = "dm900" ] || [ $SEARCH = "dm920" ] ; then
+	dm9x0_situation
 fi
 
-if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
+########################### Old Dreambox Situation ###########################
+old_dreambox_situation()
 {
 log "Found old dreamboxes, nfi mode"
 
@@ -852,5 +860,10 @@ $SHOW "message41" >> $LOGFILE
 echo "--------------------------------------------" >> $LOGFILE
 opkg list-installed >> $LOGFILE
 }
+########################### Old Dreambox Situation ###########################
+
+if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
+	old_dreambox_situation
 fi
+
 exit
