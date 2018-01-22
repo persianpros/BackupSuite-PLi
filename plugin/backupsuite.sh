@@ -40,7 +40,6 @@ log()
 {
 echo "$*" >> $LOGFILE
 }
-
 ########################## DEFINE CLEAN-UP ROUTINE ############################
 clean_up()
 {
@@ -49,7 +48,6 @@ rmdir /tmp/bi/root > /dev/null 2>&1
 rmdir /tmp/bi > /dev/null 2>&1
 rm -rf "$WORKDIR" > /dev/null 2>&1
 }
-
 ###################### BIG OOPS!, HOLY SH... (SHELL SCRIPT :-))################
 big_fail()
 {
@@ -64,7 +62,6 @@ $SHOW "message15" 2>&1 | tee -a $LOGFILE # Image creation FAILED!
 echo $WHITE
 exit 0
 }
-
 ############################ DEFINE IMAGE_VERSION #############################
 image_version()
 {
@@ -78,7 +75,6 @@ echo "Enigma2 = $ENIGMA2DATE"
 echo 
 echo $LINE
 }
-
 #################### CLEAN UP AND MAKE DESTINATION FOLDERS ####################
 make_folders()
 {
@@ -87,7 +83,6 @@ log "Removed directory  = $MAINDEST"
 mkdir -p "$MAINDEST"
 log "Created directory  = $MAINDEST"
 }
-
 ################ CHECK FOR THE NEEDED BINARIES IF THEY EXIST ##################
 checkbinary()
 {
@@ -101,6 +96,19 @@ elif [ ! -x "$1" ] ; then
 	} 2>&1 | tee -a $LOGFILE
 	big_fail
 fi
+}
+############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
+check_dependency(){
+   log "Checking Dependencies ..."
+   UPDATE=0
+   for pkg in mtd-utils mtd-utils-ubifs;
+   do   
+      opkg status $pkg | grep -q "install user installed"
+      if [ $? -ne 0 ] ; then
+         [ $UPDATE -eq 0 ] && opkg update && UPDATE=1
+         opkg install $pkg 2>/dev/null
+      fi
+   done
 }
 ################### BACK-UP MADE AND REPORTING SIZE ETC. ######################
 backup_made()
@@ -117,7 +125,6 @@ if  [ $HARDDISK != 1 ]; then
 fi
 } 2>&1 | tee -a $LOGFILE
 }
-
 ############################## END PROGRAM BLOCKS #############################
 
 
@@ -174,6 +181,7 @@ log "Working directory  = $WORKDIR"
 
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
+check_dependency
 checkbinary $NANDDUMP
 checkbinary $MKFS
 checkbinary $UBINIZE
