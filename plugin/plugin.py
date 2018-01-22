@@ -52,7 +52,8 @@ _session = None
 
 BACKUP_HDD = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backuphdd.sh en_EN"
 BACKUP_USB = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupusb.sh en_EN"
-BACKUP_DMM = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh en_EN"
+BACKUP_DMM_HDD = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backuphdd-dmm.sh en_EN"
+BACKUP_DMM_USB = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupusb-dmm.sh en_EN"
 ofgwrite_bin = "/usr/bin/ofgwrite"
 LOGFILE = "BackupSuite.log"
 VERSIONFILE = "imageversion"
@@ -78,14 +79,14 @@ def backupCommandHDD():
 	except:
 		pass
 	try:
-		if os.path.exists(BACKUP_DMM):
-			os.chmod(BACKUP_DMM, 0755)
+		if os.path.exists(BACKUP_DMM_HDD):
+			os.chmod(BACKUP_DMM_HDD, 0755)
 	except:
 		pass
 	if DMM_STATUS == 'none':
 		cmd = BACKUP_HDD
 	if DMM_STATUS == 'dmm':
-		cmd = BACKUP_DMM
+		cmd = BACKUP_DMM_HDD
 	return cmd
 
 def backupCommandUSB():
@@ -95,14 +96,14 @@ def backupCommandUSB():
 	except:
 		pass
 	try:
-		if os.path.exists(BACKUP_DMM):
-			os.chmod(BACKUP_DMM, 0755)
+		if os.path.exists(BACKUP_DMM_USB):
+			os.chmod(BACKUP_DMM_USB, 0755)
 	except:
 		pass
 	if DMM_STATUS == 'none':
 		cmd = BACKUP_USB
 	if DMM_STATUS == 'dmm':
-		cmd = BACKUP_DMM
+		cmd = BACKUP_DMM_USB
 	return cmd
 
 try:
