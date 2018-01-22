@@ -10,6 +10,10 @@ Ready bitbake recipe:
 
 https://github.com/OpenPLi/openpli-oe-core/blob/develop/meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bb
 
+For Dreambox you need:
+
+https://github.com/DMM-PLi/meta-dream/blob/develop/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bbappend
+
 Contributors:
 
 https://github.com/athoik

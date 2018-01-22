@@ -125,6 +125,21 @@ if  [ $HARDDISK != 1 ]; then
 fi
 } 2>&1 | tee -a $LOGFILE
 }
+################### BACK-UP MADE AND REPORTING SIZE ETC. ######################
+backup_made_nfi()
+{
+{
+echo $LINE
+$SHOW "message42" ; echo "$MAINDEST" 	# NFI Image created in: 
+$SHOW "message23"		# "The content of the folder is:"
+ls "$MAINDEST" -e1rSh | sed 's/-.........    1//' 
+echo $LINE
+if  [ $HARDDISK != 1 ]; then
+	$SHOW "message11" ; echo "$EXTRA"		# and there is made an extra copy in:
+	echo $LINE
+fi
+} 2>&1 | tee -a $LOGFILE
+}
 ############################## END PROGRAM BLOCKS #############################
 
 
@@ -201,6 +216,37 @@ else
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
 	big_fail
 fi
+
+if [ $SEARCH = "dm900" ] || [ $SEARCH = "dm920" ] ; then
+	log "Found dm9x0, bz2 mode"
+	MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
+	SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
+	FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
+	EXTR1="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 5`/$DATE"
+	EXTR2="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 6`"
+	EXTRA="$MEDIA$EXTR1$EXTR2"
+	if  [ $HARDDISK = 1 ]; then
+		MAINDEST="$MEDIA$EXTR1$FOLDER"
+	else 
+		MAINDEST="$MEDIA$FOLDER"
+	fi
+	MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
+	UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
+	ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
+	KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
+	ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
+	if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
+		MKFS=/bin/tar
+		checkbinary $MKFS
+		BZIP2=/usr/bin/bzip2
+		if [ ! -f "$BZIP2" ] ; then
+			echo "$BZIP2 " ; $SHOW "message38"
+			opkg update > /dev/null 2>&1
+			opkg install bzip2 > /dev/null 2>&1
+			checkbinary $MKFS
+		fi
+	fi
+fi
 log "Destination        = $MAINDEST"
 log $LINE
 
@@ -215,7 +261,254 @@ log "UBINIZE_ARGS = $UBINIZE_ARGS"
 echo "$VERSION"
 echo $WHITE
 
-# athoik's code #
+############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
+$SHOW "message06" 	#"Some information about the task:"
+
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
+	KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
+else
+	KERNELHEX=800000 # Not the real size (will be added later)
+fi
+KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
+TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
+KILOBYTES=$(($TOTAL/1024))			# Total ROOTFS + Kernel size in KB
+MEGABYTES=$(($KILOBYTES/1024))
+{
+echo -n "KERNEL" ; $SHOW "message04" ; printf '%6s' $(($KERNEL/1024)); echo ' KB'
+echo -n "ROOTFS" ; $SHOW "message04" ; printf '%6s' $USEDsizekb; echo ' KB'
+echo -n "=TOTAL" ; $SHOW "message04" ; printf '%6s' $KILOBYTES; echo " KB (= $MEGABYTES MB)"
+} 2>&1 | tee -a $LOGFILE
+if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
+	ESTTIMESEC=$(($KILOBYTES/($ESTSPEED*3)))
+else
+	ESTTIMESEC=$(($KILOBYTES/$ESTSPEED))
+fi
+ESTMINUTES=$(( $ESTTIMESEC/60 ))
+ESTSECONDS=$(( $ESTTIMESEC-(( 60*$ESTMINUTES ))))
+echo $LINE
+{
+$SHOW "message03"  ; printf "%d.%02d " $ESTMINUTES $ESTSECONDS ; $SHOW "message25" # estimated time in minutes 
+echo $LINE
+} 2>&1 | tee -a $LOGFILE
+
+####### WARNING IF THE IMAGESIZE OF THE XTRENDS GETS TOO BIG TO RESTORE ########
+if [ ${MODEL:0:2} = "et" -a ${MODEL:0:3} != "et8" -a ${MODEL:0:3} != "et1" -a ${MODEL:0:3} != "et7" ] ; then
+	if [ $MEGABYTES -gt 120 ] ; then
+    echo -n $RED
+	$SHOW "message28" 2>&1 | tee -a $LOGFILE #Image probably too big to restore
+	echo $WHITE
+	elif [ $MEGABYTES -gt 110 ] ; then
+	echo -n $YELLOW
+	$SHOW "message29" 2>&1 | tee -a $LOGFILE #Image between 111 and 120MB could cause problems
+	echo $WHITE
+	fi
+fi
+
+#=================================================================================
+#exit 0  #USE FOR DEBUGGING/TESTING ###########################################
+#=================================================================================
+
+##################### PREPARING THE BUILDING ENVIRONMENT ######################
+log "*** FIRST SOME HOUSEKEEPING ***"
+rm -rf "$WORKDIR"		# GETTING RID OF THE OLD REMAINS IF ANY
+log "Remove directory   = $WORKDIR"
+mkdir -p "$WORKDIR"		# MAKING THE WORKING FOLDER WHERE EVERYTHING HAPPENS
+log "Recreate directory = $WORKDIR"
+mkdir -p /tmp/bi/root # this is where the complete content will be available
+log "Create directory   = /tmp/bi/root"
+sync
+mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
+## TEMPORARY WORKAROUND FOR OPENPLI 6 TO REMOVE 
+##      /var/lib/samba/private/msg.sock
+## WHICH GIVES AN ERRORMESSAGE WHEN NOT REMOVED
+if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
+	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
+fi
+
+####################### START THE REAL BACK-UP PROCESS ########################
+############################# MAKING UBINIZE.CFG ##############################
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
+	echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
+	echo mode=ubi >> "$WORKDIR/ubinize.cfg"
+	echo image="$WORKDIR/root.ubi" >> "$WORKDIR/ubinize.cfg"
+	echo vol_id=0 >> "$WORKDIR/ubinize.cfg"
+	echo vol_type=dynamic >> "$WORKDIR/ubinize.cfg"
+	echo vol_name=rootfs >> "$WORKDIR/ubinize.cfg"
+	echo vol_flags=autoresize >> "$WORKDIR/ubinize.cfg"
+	log $LINE
+	log "UBINIZE.CFG CREATED WITH THE CONTENT:"
+	cat "$WORKDIR/ubinize.cfg"  >> $LOGFILE
+	touch "$WORKDIR/root.ubi"
+	chmod 644 "$WORKDIR/root.ubi"
+	log "--------------------------"
+fi
+############################## MAKING KERNELDUMP ##############################
+log $LINE
+$SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
+	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
+	
+	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
+	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
+		echo -n "Kernel dumped  :"  >> $LOGFILE
+		ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
+	else 
+		log "$WORKDIR/$KERNELNAME NOT FOUND"
+		big_fail
+	fi
+	log "--------------------------"
+else
+	python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
+	KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
+	KERNELNAME=${KERNEL:11:7}.bin
+	echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
+	log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
+	dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
+fi
+
+#############################  MAKING ROOT.UBI(FS) ############################
+$SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
+log $LINE
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
+	$MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
+	if [ -f "$WORKDIR/root.ubi" ] ; then
+		echo -n "ROOT.UBI MADE  :" >> $LOGFILE
+		ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
+		UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
+		if [ "$UBISIZE" -eq 0 ] ; then 
+			$SHOW "message39" 2>&1 | tee -a $LOGFILE
+			big_fail
+		fi
+	else 
+		log "$WORKDIR/root.ubi NOT FOUND"
+		big_fail
+	fi
+	log $LINE
+	echo "Start UBINIZING" >> $LOGFILE
+	$UBINIZE -o "$WORKDIR/$ROOTNAME" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
+	chmod 644 "$WORKDIR/$ROOTNAME"
+	if [ -f "$WORKDIR/$ROOTNAME" ] ; then
+		echo -n "$ROOTNAME MADE:" >> $LOGFILE
+		ls -e1 "$WORKDIR/$ROOTNAME" | sed 's/-r.*   1//' >> $LOGFILE
+	else 
+		echo "$WORKDIR/$ROOTNAME NOT FOUND"  >> $LOGFILE
+		big_fail
+	fi
+	echo
+else 
+	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
+	$BZIP2 $WORKDIR/rootfs.tar
+fi
+
+
+############################ ASSEMBLING THE IMAGE #############################
+make_folders
+mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
+mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
+if [ $ACTION = "noforce" ] ; then
+	echo "rename this file to 'force' to force an update without confirmation" > "$MAINDEST/noforce"; 
+elif [ $ACTION = "reboot" ] ; then
+	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/reboot.update"
+elif [ $ACTION = "force" ] ; then
+	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
+	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
+fi
+
+image_version > "$MAINDEST/imageversion" 
+if  [ $HARDDISK != 1 ]; then
+	mkdir -p "$EXTRA"
+	echo "Created directory  = $EXTRA" >> $LOGFILE
+	cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
+fi
+if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/imageversion" ] ; then
+		backup_made
+		$SHOW "message14" 			# Instructions on how to restore the image.
+		echo $LINE
+else
+	big_fail
+fi
+
+#################### CHECKING FOR AN EXTRA BACKUP STORAGE #####################
+if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
+	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
+	do
+		if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ]
+		then
+		TARGET="${candidate}"
+		fi    
+	done
+	if [ "$TARGET" != "XX" ] ; then
+		echo -n $GREEN
+		$SHOW "message17" 2>&1 | tee -a $LOGFILE 	# Valid USB-flashdrive detected, making an extra copy
+		echo $LINE
+		TOTALSIZE="$(df -h "$TARGET" | tail -n 1 | awk {'print $2'})"
+		FREESIZE="$(df -h "$TARGET" | tail -n 1 | awk {'print $4'})"
+		{
+		$SHOW "message09" ; echo -n "$TARGET ($TOTALSIZE, " ; $SHOW "message16" ; echo "$FREESIZE)"
+		} 2>&1 | tee -a $LOGFILE
+		rm -rf "$TARGET$FOLDER"
+		mkdir -p "$TARGET$FOLDER"
+		cp -r "$MAINDEST/." "$TARGET$FOLDER"
+		echo $LINE >> $LOGFILE
+		echo "MADE AN EXTRA COPY IN: $TARGET" >> $LOGFILE
+		df -h "$TARGET"  >> $LOGFILE
+		$SHOW "message19" 2>&1 | tee -a $LOGFILE	# Backup finished and copied to your USB-flashdrive
+	else 
+		$SHOW "message40" >> $LOGFILE
+	fi
+sync
+fi
+######################### END OF EXTRA BACKUP STORAGE #########################
+
+################## CLEANING UP AND REPORTING SOME STATISTICS ##################
+clean_up
+END=$(date +%s)
+DIFF=$(( $END - $START ))
+MINUTES=$(( $DIFF/60 ))
+SECONDS=$(( $DIFF-(( 60*$MINUTES ))))
+echo -n $YELLOW
+{
+$SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
+} 2>&1 | tee -a $LOGFILE
+
+ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} ` 
+KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} ` 
+TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
+SPEED=$(( $TOTALSIZE/$DIFF ))
+
+echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
+echo $LINE >> $LOGFILE
+# "Back up done with $SPEED KB per second" 
+{
+$SHOW "message26" ; echo -n "$SPEED" ; $SHOW "message27"
+} 2>&1 | tee -a $LOGFILE
+#### ADD A LIST OF THE INSTALLED PACKAGES TO THE BackupSuite.LOG ####
+echo $LINE >> $LOGFILE
+echo $LINE >> $LOGFILE
+$SHOW "message41" >> $LOGFILE
+echo "--------------------------------------------" >> $LOGFILE
+opkg list-installed >> $LOGFILE
+
+######################## COPY LOGFILE TO MAINDESTINATION ######################
+echo -n $WHITE
+cp $LOGFILE "$MAINDEST"
+if  [ $HARDDISK != 1 ]; then
+	cp $LOGFILE "$MEDIA$EXTR1"
+	mv "$MEDIA$EXTR1$FOLDER"/imageversion "$MEDIA$EXTR1"
+else
+	mv -f "$MAINDEST"/BackupSuite.log "$MEDIA$EXTR1"
+	cp "$MAINDEST"/imageversion "$MEDIA$EXTR1"
+fi
+if [ "$TARGET" != "XX" ] ; then
+	cp $LOGFILE "$TARGET$FOLDER"
+fi
+exit 
+############### END OF PROGRAMM ################
+
+# athoik's code, Modified by Persian Prince#
+
+if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
+log "Found old dreamboxes, nfi mode"
 
 CREATE_ZIP="$2"
 IMAGENAME="$3"
@@ -237,48 +530,13 @@ cleanup_mounts(){
    fi
 }
 
-control_c(){
-   log "Control C was pressed, quiting..."
-   cleanup_mounts
-   rm -rf "$SBI" 2>/dev/null
-   rm -rf "$TBI" 2>/dev/null
-   exit 255
-}
-
-trap control_c SIGINT
-
-#
-# Read Dreambox Model
-#
-MACHINE="$(cat /proc/stb/info/model)"
-log "Found Dreambox $MACHINE ..."
-
 #
 # Set Backup Location
 #
-BACKUP_LOCATION=""
+EXTRA="$MEDIA/fullbackup_dreambox/$DATE"
+MAINDEST="$MEDIA/$SEARCH"
 
-if [ -z $1 ] ; then 
-   if [ -d /media/usb ] && df /media/usb 1>/dev/null 2>/dev/null ; then
-      BACKUP_LOCATION="/media/usb"
-   elif [ -d /media/hdd ] && df /media/hdd 1>/dev/null 2>/dev/null ; then
-      BACKUP_LOCATION="/media/hdd"
-   else
-      log "Error: Backup Location not found!"
-      exit 2
-   fi
-elif [ -d $1 ] && [ $1 != "/" ] && df $1 1>/dev/null 2>/dev/null ; then
-    BACKUP_LOCATION=$1
-else
-   log "Error: Invalid Backup Location $1"
-   exit 2
-fi
-log "Backup on $BACKUP_LOCATION"
-
-EXTRA="$BACKUP_LOCATION/automatic_fullbackup/$DATE"
-MAINDEST="$BACKUP_LOCATION/$MACHINE"
-
-SBI="$BACKUP_LOCATION/bi"
+SBI="$MEDIA/bi"
 TBI="/tmp/bi"
 #
 # Initialize Parameters
@@ -305,8 +563,7 @@ DREAMBOX_PART2_SIZE=""
 # Set parameters based on box
 # dm7020hdv2 is recognized from /sys/devices/virtual/mtd/mtd0/writesize
 # No support for xz images: dm520,dm7080,dm820
-# No support for bz2 images: dm900,dm920
-case $MACHINE in
+case $SEARCH in
    dm800|dm500hd|dm800se)
       EXTRA_BUILDCMD="--brcmnand"
       DREAMBOX_ERASE_BLOCK_SIZE="0x4000"
@@ -353,7 +610,7 @@ case $MACHINE in
          WRITESIZE=$(cat /sys/devices/virtual/mtd/mtd0/writesize)
       fi
       if [ $WRITESIZE = "2048" ] ; then
-         log "Found version2 of dm7020hd..."
+         log "Found dm7020hdv2"
          DREAMBOX_ERASE_BLOCK_SIZE="0x20000"
          DREAMBOX_SECTOR_SIZE="2048"
          MKUBIFS_ARGS="-m 2048 -e 124KiB -c 3320 -x favor_lzo -F"
@@ -392,11 +649,11 @@ ROOTFS="$SBI/rootfs.jffs2"
 
 cleanup_mounts
 
-echo "Starting Full Backup!\nOptions control panel will not be available 2-15 minutes.\nPlease wait ..."
-echo "--------------------------\n"
-
-echo "\nWARNING!\n"
-echo "To stop creating a backup, press the 'Menu' button.\n"
+echo $LINE
+{
+$SHOW "message03"  ; printf "%d.%02d " $ESTMINUTES $ESTSECONDS ; $SHOW "message25" # estimated time in minutes 
+echo $LINE
+} 2>&1 | tee -a $LOGFILE
 sleep 2
 
 rm -rf "$SBI" 2>/dev/null
@@ -430,7 +687,7 @@ SIZE="$(du -k "$SECSTAGE" | awk '{ print $1 }')"
 if [ $SIZE -gt 200 ] ; then 
    log "Error: Size of secondstage must be less than 200k"
    log "Reinstall secondstage before creating backup"
-   log "opkg install --force-reinstall dreambox-secondstage-$MACHINE"
+   log "opkg install --force-reinstall dreambox-secondstage-$SEARCH"
    rm -rf "$SBI" 2>/dev/null
    rm -rf "$TBI" 2>/dev/null
    exit 9
@@ -508,7 +765,7 @@ fi
 # Build NFI image
 #
 log "Building NFI image"
-/usr/bin/buildimage --arch $MACHINE $EXTRA_BUILDCMD \
+/usr/bin/buildimage --arch $SEARCH $EXTRA_BUILDCMD \
    --erase-block-size $DREAMBOX_ERASE_BLOCK_SIZE \
    --flash-size $DREAMBOX_FLASH_SIZE \
    --sector-size $DREAMBOX_SECTOR_SIZE \
@@ -525,7 +782,7 @@ TSTAMP="$(date "+%Y-%m-%d-%Hh%Mm")"
 rm -rf "$MAINDEST" 2>/dev/null
 
 mkdir -p "$MAINDEST"
-NFI="$MAINDEST/$TSTAMP-$MACHINE.nfi"
+NFI="$MAINDEST/$TSTAMP-$SEARCH.nfi"
 mv "$SBI/backup.nfi" "$NFI"
 log "Backup image created $NFI"
 log "$(du -h $NFI)"
@@ -534,11 +791,11 @@ if [ -z "$CREATE_ZIP" ] ; then
    mkdir -p "$EXTRA"
    touch "$NFI/$IMVER"
    cp -r "$NFI" "$EXTRA"
-   touch "$BACKUP_LOCATION/fullbackup/.timestamp"
+   touch "$MEDIA/fullbackup/.timestamp"
 else
    if [ $CREATE_ZIP != "none" ] ; then
       log "Create zip archive..."
-      cd $BACKUP_LOCATION && $CREATE_ZIP -r $BACKUP_LOCATION/backup-$IMAGENAME-$MACHINE-$TSTAMP.zip . -i /$MACHINE/*
+      cd $MEDIA && $CREATE_ZIP -r $MEDIA/backup-$IMAGENAME-$SEARCH-$TSTAMP.zip . -i /$SEARCH/*
       cd
    fi
 fi
@@ -552,23 +809,45 @@ rm -rf "$SBI" 2>/dev/null
 rm -rf "$TBI" 2>/dev/null
 
 if [ -f "$NFI" ] ; then
-	echo " "
-	echo "BACK-UP MADE SUCCESSFULLY IN: $MAINDEST\n"
+	backup_made_nfi
 else
-	echo " "
-	echo "Image creation FAILED!\n"
+	echo $RED
+	$SHOW "message15" 2>&1 | tee -a $LOGFILE # Image creation FAILED!
+	echo $WHITE
 fi
 #
 # The End
 #
 log "Completed!"
 sleep 3
+################## CLEANING UP AND REPORTING SOME STATISTICS ##################
+clean_up
 END=$(date +%s)
 DIFF=$(( $END - $START ))
 MINUTES=$(( $DIFF/60 ))
 SECONDS=$(( $DIFF-(( 60*$MINUTES ))))
-if [ $SECONDS -le  9 ] ; then 
-	SECONDS="0$SECONDS"
+echo -n $YELLOW
+{
+$SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
+} 2>&1 | tee -a $LOGFILE
+
+ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} ` 
+KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} ` 
+TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
+SPEED=$(( $TOTALSIZE/$DIFF ))
+
+echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
+echo $LINE >> $LOGFILE
+# "Back up done with $SPEED KB per second" 
+{
+$SHOW "message26" ; echo -n "$SPEED" ; $SHOW "message27"
+} 2>&1 | tee -a $LOGFILE
+#### ADD A LIST OF THE INSTALLED PACKAGES TO THE BackupSuite.LOG ####
+echo $LINE >> $LOGFILE
+echo $LINE >> $LOGFILE
+$SHOW "message41" >> $LOGFILE
+echo "--------------------------------------------" >> $LOGFILE
+opkg list-installed >> $LOGFILE
+
 fi
-echo "BACKUP FINISHED IN $MINUTES.$SECONDS MINUTES\n"
-exit 0
+exit

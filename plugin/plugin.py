@@ -201,9 +201,9 @@ class BackupStart(Screen):
 		if model != "":
 			if model in ["duo", "solo", "ultimo", "uno"] or "ebox" in model:
 				files = "^.*\.(zip|bin|jffs2)"
-			elif "4k" or "uhd" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000"]:
+			elif "4k" or "uhd" or "dm9" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000"]:
 				files = "^.*\.(zip|bin|bz2)"
-			elif model.startswith("dm"):
+			elif model.startswith(("dm5", "dm7", "dm8")):
 				self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
 				return
 			else:

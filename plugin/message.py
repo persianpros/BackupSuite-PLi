@@ -181,6 +181,10 @@ def message41():
 	print _("Installed packages contained in this backup:")
 	return
 
+def message42():
+	sys.stdout.write(_("NFI Image created in: "))
+	return
+
 globals()[sys.argv[2]]()
 os_environ["LANGUAGE"] = sys.argv[1]
 

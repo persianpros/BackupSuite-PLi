@@ -27,7 +27,6 @@ do
 	TARGET="${candidate}"
 	fi 
 done
-
 if [ "$TARGET" = "XX" ] ; then
 	echo -n $RED
 	$SHOW "message21" #error about no USB-found

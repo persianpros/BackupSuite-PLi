@@ -1,6 +1,4 @@
 #!/bin/sh
-### Still somewhat experimental but I think it will work! [ Untill proven otherwise :-) ]
-
 if tty > /dev/null ; then
    RED='-e \e[00;31m'
    GREEN='-e \e[00;32m'
@@ -16,7 +14,6 @@ else
    PURPLE='\c00?:55>7'
    WHITE='\c00??????'
 fi
-
 export LANG=$1
 export SHOW="python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/message.py $LANG"
 export HARDDISK=1
