@@ -257,7 +257,6 @@ if [ $SEARCH = "dm900" ] || [ $SEARCH = "dm920" ] ; then
 			checkbinary $MKFS
 		fi
 	fi
-fi
 log "Destination        = $MAINDEST"
 log $LINE
 
@@ -513,8 +512,8 @@ fi
 if [ "$TARGET" != "XX" ] ; then
 	cp $LOGFILE "$TARGET$FOLDER"
 fi
-exit 
 ############### END OF PROGRAMM ################
+fi
 
 if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
 log "Found old dreamboxes, nfi mode"
@@ -866,6 +865,5 @@ echo $LINE >> $LOGFILE
 $SHOW "message41" >> $LOGFILE
 echo "--------------------------------------------" >> $LOGFILE
 opkg list-installed >> $LOGFILE
-
 fi
 exit
