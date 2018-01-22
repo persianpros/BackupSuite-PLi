@@ -214,6 +214,9 @@ msgstr ""
 msgid "Installed packages contained in this backup:"
 msgstr ""
 
+msgid "NFI Image created in: "
+msgstr ""
+
 #: plugin.py 294
 msgid ""
 "\n"
