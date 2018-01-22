@@ -1,4 +1,4 @@
-import schermen
+from schermen import *
 import os
 import gettext
 import enigma
@@ -15,8 +15,10 @@ from Components.ScrollLabel import ScrollLabel
 from Components.Sources.StaticText import StaticText
 from Plugins.Plugin import PluginDescriptor
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from os import environ
 import NavigationInstance
 from Tools import Notifications
+from enigma import getDesktop
 
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
