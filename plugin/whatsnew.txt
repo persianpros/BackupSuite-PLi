@@ -1,13 +1,26 @@
 Changelog
 =========
 
+Git 281-300
+- plugin.py cleanup
+- Make sure "backuphdd.sh" and "backupusb.sh" are executable.
+Now we don't need bitbake chmod and you won't see ".sh: Permession denied" anymore.
+- "backupusb.sh" and "backuphdd.sh" updated, Make sure "backupsuite.sh" is executable.
+- backupsuite.sh updated, Add "check_dependency" to make sure you have what you need.
+- Dreambox nfi and bz2 support
+All old dreamboxes with "nfi" images could create backup but restore
+is not possible via plugin itself as we have to flash them via DMM's webif.
+dm9x0 backup and restore not tested yet ...
+dm520,dm7080,dm820 with xz images not yet supported.
+- Version change from 24 to 25.
+
 Git 273-280
 - Update po files using latest pot file, Now translators could translate new strings.
 - jffs2 extension detection for all Ebox STBs.
 - tar.bz2 extension detection for STBs without 4K in their names.
 - Backup fixed for STBs with multiple kernel partitions like H7.
 - Use findkerneldevice.py for all STBs not just some with if situations.
-- Allow more localization and update the pot file, 7 New messages ...
+- Allow more localization and update the pot file, 8 New messages ...
 - Version change from 23 to 24.
 
 Git 251-272
