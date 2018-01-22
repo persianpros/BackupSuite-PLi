@@ -4,7 +4,7 @@ Created by Pedro Newbie
 
 Maintainer : Persian Prince
 
-Backup Suite for enigma2 images (Except Dreamboxes)
+Backup Suite for enigma2 images
 
 Ready bitbake recipe:
 
