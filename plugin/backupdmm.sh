@@ -862,7 +862,7 @@ opkg list-installed >> $LOGFILE
 }
 ########################### Old Dreambox Situation ###########################
 
-if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
+if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm525" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
 	old_dreambox_situation
 fi
 
