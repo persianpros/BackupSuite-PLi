@@ -349,9 +349,12 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	fi
 	log "--------------------------"
 else
-	if [ $SEARCH = "bm750" ] || [ $SEARCH = vu* ] ; then
+	if [ $SEARCH = "vusolo4k" -o $SEARCH = "vuultimo4k" -o $SEARCH = "vuuno4k" -o $SEARCH = "vuuno4kse" ] ; then
 		dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p1" 
+	elif [ $SEARCH = "vuzero4k" ] ; then
+		dd if=/dev/mmcblk0p4 of=$WORKDIR/$KERNELNAME
+		log "Kernel resides on /dev/mmcblk0p4"
 	else
 		python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
 		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
