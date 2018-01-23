@@ -15,7 +15,6 @@ from Components.ScrollLabel import ScrollLabel
 from Components.Sources.StaticText import StaticText
 from Plugins.Plugin import PluginDescriptor
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
-from Tools.HardwareInfo import HardwareInfo
 from os import environ
 import NavigationInstance
 from Tools import Notifications
@@ -68,10 +67,6 @@ with open("/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control") as
 		except IndexError:
 			print
 
-DMM_STATUS = "none"
-if HardwareInfo().get_device_name().startswith('dm') and os.path.exists("/proc/stb/info/model"):
-	DMM_STATUS = "dmm"
-
 def backupCommandHDD():
 	try:
 		if os.path.exists(BACKUP_HDD):
@@ -83,9 +78,9 @@ def backupCommandHDD():
 			os.chmod(BACKUP_DMM_HDD, 0755)
 	except:
 		pass
-	if DMM_STATUS == 'none':
+	if os.path.exists("/proc/stb/info/hwmodel") or os.path.exists("/proc/stb/info/gbmodel") or os.path.exists("/proc/stb/info/boxtype") or os.path.exists("/proc/stb/info/vumodel"):
 		cmd = BACKUP_HDD
-	if DMM_STATUS == 'dmm':
+	else:
 		cmd = BACKUP_DMM_HDD
 	return cmd
 
@@ -100,9 +95,9 @@ def backupCommandUSB():
 			os.chmod(BACKUP_DMM_USB, 0755)
 	except:
 		pass
-	if DMM_STATUS == 'none':
+	if os.path.exists("/proc/stb/info/hwmodel") or os.path.exists("/proc/stb/info/gbmodel") or os.path.exists("/proc/stb/info/boxtype") or os.path.exists("/proc/stb/info/vumodel"):
 		cmd = BACKUP_USB
-	if DMM_STATUS == 'dmm':
+	else:
 		cmd = BACKUP_DMM_USB
 	return cmd
 
@@ -189,13 +184,6 @@ class BackupStart(Screen):
 				f.close()
 			except:
 				pass
-		elif HardwareInfo().get_device_name().startswith('dm') and os.path.exists("/proc/stb/info/model"):
-			try:
-				f = open("/proc/stb/info/model")
-				model = f.read().strip()
-				f.close()
-			except:
-				pass
 		else:
 			return
 		if model != "":
@@ -203,9 +191,6 @@ class BackupStart(Screen):
 				files = "^.*\.(zip|bin|jffs2)"
 			elif "4k" or "uhd" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000"]:
 				files = "^.*\.(zip|bin|bz2)"
-			elif model.startswith("dm"):
-				self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
-				return
 			else:
 				files = "^.*\.(zip|bin)"
 		curdir = '/media/'
@@ -477,7 +462,7 @@ class FlashImageConfig(Screen):
 							text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
 					except:
 						pass
-				elif HardwareInfo().get_device_name().startswith('dm') and os.path.exists("/proc/stb/info/model"):
+				else:
 					try:
 						f = open("/proc/stb/info/model")
 						model = f.read().strip()
