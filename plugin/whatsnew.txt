@@ -1,17 +1,18 @@
 Changelog
 =========
 
-Git 281-300
+Git 281-305
 - plugin.py cleanup
 - Make sure "backuphdd.sh" and "backupusb.sh" are executable.
 Now we don't need bitbake chmod and you won't see ".sh: Permession denied" anymore.
 - "backupusb.sh" and "backuphdd.sh" updated, Make sure "backupsuite.sh" is executable.
 - backupsuite.sh updated, Add "check_dependency" to make sure you have what you need.
-- Dreambox nfi and bz2 support
-All old dreamboxes with "nfi" images could create backup but restore
-is not possible via plugin itself as we have to flash them via DMM's webif.
-dm9x0 backup and restore not tested yet ...
-dm520,dm7080,dm820 with xz images not yet supported.
+- Dreambox support
+All old dreamboxes with "nfi" images could create backups now.
+dm9x0 bz2 backup not tested yet ...
+dm52x,dm7080,dm820 xz backup not tested yet ...
+Restore for dreambox is not possible via plugin itself
+as you have to flash your backup via DMM's WebIF.
 - Version change from 24 to 25.
 
 Git 273-280
