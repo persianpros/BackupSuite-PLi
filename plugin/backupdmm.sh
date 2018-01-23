@@ -125,6 +125,20 @@ check_dependency_old()
       fi
    done
 }
+############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
+check_dependency_xz()
+{
+   log "Checking Dependencies ..."
+   UPDATE=0
+   for pkg in xz;
+   do   
+      opkg status $pkg | grep -q "install user installed"
+      if [ $? -ne 0 ] ; then
+         [ $UPDATE -eq 0 ] && opkg update && UPDATE=1
+         opkg install $pkg 2>/dev/null
+      fi
+   done
+}
 ################### BACK-UP MADE AND REPORTING SIZE ETC. ######################
 backup_made()
 {
@@ -179,6 +193,7 @@ MEDIA="$1"
 MKFS=/usr/sbin/mkfs.ubifs
 MKFSJFFS2=/usr/sbin/mkfs.jffs2
 BUILDIMAGE=/usr/bin/buildimage
+XZBINARY=/usr/bin/xz
 MTDPLACE=`cat /proc/mtd | grep -w "kernel" | cut -d ":" -f 1`
 NANDDUMP=/usr/sbin/nanddump
 START=$(date +%s)
@@ -521,6 +536,307 @@ fi
 
 if [ $SEARCH = "dm900" ] || [ $SEARCH = "dm920" ] ; then
 	dm9x0_situation
+fi
+
+######################## DM52X,DM7080,DM820 Situation ########################
+dm52x_dm7080_dm820_situation()
+{
+log "Found dm52x,dm7080,dm820, xz mode"
+
+###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
+echo $RED
+check_dependency_xz
+checkbinary $XZBINARY
+echo -n $WHITE
+
+MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
+SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
+FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
+EXTR1="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 5`/$DATE"
+EXTR2="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 6`"
+EXTRA="$MEDIA$EXTR1$EXTR2"
+if  [ $HARDDISK = 1 ]; then
+	MAINDEST="$MEDIA$EXTR1$FOLDER"
+else 
+	MAINDEST="$MEDIA$FOLDER"
+fi
+MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
+UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
+ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
+KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
+ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
+if [ $ROOTNAME = "rootfs.tar.xz" ] ; then
+	MKFS=/bin/tar
+	checkbinary $MKFS
+	XZBINARY=/usr/bin/xz
+	if [ ! -f "$XZBINARY" ] ; then
+		echo "$XZBINARY " ; $SHOW "message38"
+		opkg update > /dev/null 2>&1
+		opkg install xz > /dev/null 2>&1
+		checkbinary $MKFS
+	fi
+fi
+log "Destination        = $MAINDEST"
+log $LINE
+
+############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
+echo -n $PURPLE
+echo -n "$SHOWNAME " | tr  a-z A-Z		# Shows the receiver brand and model
+$SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
+echo $BLUE
+log "RECEIVER = $SHOWNAME "
+log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
+log "UBINIZE_ARGS = $UBINIZE_ARGS"
+echo "$VERSION"
+echo $WHITE
+
+############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
+$SHOW "message06" 	#"Some information about the task:"
+
+if [ $ROOTNAME != "rootfs.tar.xz" ] ; then
+	KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
+else
+	KERNELHEX=800000 # Not the real size (will be added later)
+fi
+KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
+TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
+KILOBYTES=$(($TOTAL/1024))			# Total ROOTFS + Kernel size in KB
+MEGABYTES=$(($KILOBYTES/1024))
+{
+echo -n "KERNEL" ; $SHOW "message04" ; printf '%6s' $(($KERNEL/1024)); echo ' KB'
+echo -n "ROOTFS" ; $SHOW "message04" ; printf '%6s' $USEDsizekb; echo ' KB'
+echo -n "=TOTAL" ; $SHOW "message04" ; printf '%6s' $KILOBYTES; echo " KB (= $MEGABYTES MB)"
+} 2>&1 | tee -a $LOGFILE
+if [ $ROOTNAME = "rootfs.tar.xz" ] ; then
+	ESTTIMESEC=$(($KILOBYTES/($ESTSPEED*3)))
+else
+	ESTTIMESEC=$(($KILOBYTES/$ESTSPEED))
+fi
+ESTMINUTES=$(( $ESTTIMESEC/60 ))
+ESTSECONDS=$(( $ESTTIMESEC-(( 60*$ESTMINUTES ))))
+echo $LINE
+{
+$SHOW "message03"  ; printf "%d.%02d " $ESTMINUTES $ESTSECONDS ; $SHOW "message25" # estimated time in minutes 
+echo $LINE
+} 2>&1 | tee -a $LOGFILE
+
+####### WARNING IF THE IMAGESIZE OF THE XTRENDS GETS TOO BIG TO RESTORE ########
+if [ ${MODEL:0:2} = "et" -a ${MODEL:0:3} != "et8" -a ${MODEL:0:3} != "et1" -a ${MODEL:0:3} != "et7" ] ; then
+	if [ $MEGABYTES -gt 120 ] ; then
+    echo -n $RED
+	$SHOW "message28" 2>&1 | tee -a $LOGFILE #Image probably too big to restore
+	echo $WHITE
+	elif [ $MEGABYTES -gt 110 ] ; then
+	echo -n $YELLOW
+	$SHOW "message29" 2>&1 | tee -a $LOGFILE #Image between 111 and 120MB could cause problems
+	echo $WHITE
+	fi
+fi
+
+#=================================================================================
+#exit 0  #USE FOR DEBUGGING/TESTING ###########################################
+#=================================================================================
+
+##################### PREPARING THE BUILDING ENVIRONMENT ######################
+log "*** FIRST SOME HOUSEKEEPING ***"
+rm -rf "$WORKDIR"		# GETTING RID OF THE OLD REMAINS IF ANY
+log "Remove directory   = $WORKDIR"
+mkdir -p "$WORKDIR"		# MAKING THE WORKING FOLDER WHERE EVERYTHING HAPPENS
+log "Recreate directory = $WORKDIR"
+mkdir -p /tmp/bi/root # this is where the complete content will be available
+log "Create directory   = /tmp/bi/root"
+sync
+mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
+## TEMPORARY WORKAROUND FOR OPENPLI 6 TO REMOVE 
+##      /var/lib/samba/private/msg.sock
+## WHICH GIVES AN ERRORMESSAGE WHEN NOT REMOVED
+if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
+	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
+fi
+
+####################### START THE REAL BACK-UP PROCESS ########################
+############################# MAKING UBINIZE.CFG ##############################
+if [ $ROOTNAME != "rootfs.tar.xz" ] ; then
+	echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
+	echo mode=ubi >> "$WORKDIR/ubinize.cfg"
+	echo image="$WORKDIR/root.ubi" >> "$WORKDIR/ubinize.cfg"
+	echo vol_id=0 >> "$WORKDIR/ubinize.cfg"
+	echo vol_type=dynamic >> "$WORKDIR/ubinize.cfg"
+	echo vol_name=rootfs >> "$WORKDIR/ubinize.cfg"
+	echo vol_flags=autoresize >> "$WORKDIR/ubinize.cfg"
+	log $LINE
+	log "UBINIZE.CFG CREATED WITH THE CONTENT:"
+	cat "$WORKDIR/ubinize.cfg"  >> $LOGFILE
+	touch "$WORKDIR/root.ubi"
+	chmod 644 "$WORKDIR/root.ubi"
+	log "--------------------------"
+fi
+############################## MAKING KERNELDUMP ##############################
+log $LINE
+$SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
+if [ $ROOTNAME != "rootfs.tar.xz" ] ; then
+	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
+
+	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
+	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
+		echo -n "Kernel dumped  :"  >> $LOGFILE
+		ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
+	else 
+		log "$WORKDIR/$KERNELNAME NOT FOUND"
+		big_fail
+	fi
+	log "--------------------------"
+else
+	python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
+	KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
+	KERNELNAME=${KERNEL:11:7}.bin
+	echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
+	log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
+	dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
+fi
+
+#############################  MAKING ROOT.UBI(FS) ############################
+$SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
+log $LINE
+if [ $ROOTNAME != "rootfs.tar.xz" ] ; then
+	$MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
+	if [ -f "$WORKDIR/root.ubi" ] ; then
+		echo -n "ROOT.UBI MADE  :" >> $LOGFILE
+		ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
+		UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
+		if [ "$UBISIZE" -eq 0 ] ; then 
+			$SHOW "message39" 2>&1 | tee -a $LOGFILE
+			big_fail
+		fi
+	else 
+		log "$WORKDIR/root.ubi NOT FOUND"
+		big_fail
+	fi
+	log $LINE
+	echo "Start UBINIZING" >> $LOGFILE
+	$UBINIZE -o "$WORKDIR/$ROOTNAME" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
+	chmod 644 "$WORKDIR/$ROOTNAME"
+	if [ -f "$WORKDIR/$ROOTNAME" ] ; then
+		echo -n "$ROOTNAME MADE:" >> $LOGFILE
+		ls -e1 "$WORKDIR/$ROOTNAME" | sed 's/-r.*   1//' >> $LOGFILE
+	else 
+		echo "$WORKDIR/$ROOTNAME NOT FOUND"  >> $LOGFILE
+		big_fail
+	fi
+	echo
+else 
+	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
+	$XZBINARY $WORKDIR/rootfs.tar
+fi
+
+
+############################ ASSEMBLING THE IMAGE #############################
+make_folders
+mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
+mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
+if [ $ACTION = "noforce" ] ; then
+	echo "rename this file to 'force' to force an update without confirmation" > "$MAINDEST/noforce"; 
+elif [ $ACTION = "reboot" ] ; then
+	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/reboot.update"
+elif [ $ACTION = "force" ] ; then
+	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
+	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
+fi
+
+image_version > "$MAINDEST/imageversion" 
+if  [ $HARDDISK != 1 ]; then
+	mkdir -p "$EXTRA"
+	echo "Created directory  = $EXTRA" >> $LOGFILE
+	cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
+fi
+if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/imageversion" ] ; then
+		backup_made
+		$SHOW "message14" 			# Instructions on how to restore the image.
+		echo $LINE
+else
+	big_fail
+fi
+
+#################### CHECKING FOR AN EXTRA BACKUP STORAGE #####################
+if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
+	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
+	do
+		if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ]
+		then
+		TARGET="${candidate}"
+		fi    
+	done
+	if [ "$TARGET" != "XX" ] ; then
+		echo -n $GREEN
+		$SHOW "message17" 2>&1 | tee -a $LOGFILE 	# Valid USB-flashdrive detected, making an extra copy
+		echo $LINE
+		TOTALSIZE="$(df -h "$TARGET" | tail -n 1 | awk {'print $2'})"
+		FREESIZE="$(df -h "$TARGET" | tail -n 1 | awk {'print $4'})"
+		{
+		$SHOW "message09" ; echo -n "$TARGET ($TOTALSIZE, " ; $SHOW "message16" ; echo "$FREESIZE)"
+		} 2>&1 | tee -a $LOGFILE
+		rm -rf "$TARGET$FOLDER"
+		mkdir -p "$TARGET$FOLDER"
+		cp -r "$MAINDEST/." "$TARGET$FOLDER"
+		echo $LINE >> $LOGFILE
+		echo "MADE AN EXTRA COPY IN: $TARGET" >> $LOGFILE
+		df -h "$TARGET"  >> $LOGFILE
+		$SHOW "message19" 2>&1 | tee -a $LOGFILE	# Backup finished and copied to your USB-flashdrive
+	else 
+		$SHOW "message40" >> $LOGFILE
+	fi
+sync
+fi
+######################### END OF EXTRA BACKUP STORAGE #########################
+
+################## CLEANING UP AND REPORTING SOME STATISTICS ##################
+clean_up
+END=$(date +%s)
+DIFF=$(( $END - $START ))
+MINUTES=$(( $DIFF/60 ))
+SECONDS=$(( $DIFF-(( 60*$MINUTES ))))
+echo -n $YELLOW
+{
+$SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
+} 2>&1 | tee -a $LOGFILE
+
+ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} ` 
+KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} ` 
+TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
+SPEED=$(( $TOTALSIZE/$DIFF ))
+
+echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
+echo $LINE >> $LOGFILE
+# "Back up done with $SPEED KB per second" 
+{
+$SHOW "message26" ; echo -n "$SPEED" ; $SHOW "message27"
+} 2>&1 | tee -a $LOGFILE
+#### ADD A LIST OF THE INSTALLED PACKAGES TO THE BackupSuite.LOG ####
+echo $LINE >> $LOGFILE
+echo $LINE >> $LOGFILE
+$SHOW "message41" >> $LOGFILE
+echo "--------------------------------------------" >> $LOGFILE
+opkg list-installed >> $LOGFILE
+
+######################## COPY LOGFILE TO MAINDESTINATION ######################
+echo -n $WHITE
+cp $LOGFILE "$MAINDEST"
+if  [ $HARDDISK != 1 ]; then
+	cp $LOGFILE "$MEDIA$EXTR1"
+	mv "$MEDIA$EXTR1$FOLDER"/imageversion "$MEDIA$EXTR1"
+else
+	mv -f "$MAINDEST"/BackupSuite.log "$MEDIA$EXTR1"
+	cp "$MAINDEST"/imageversion "$MEDIA$EXTR1"
+fi
+if [ "$TARGET" != "XX" ] ; then
+	cp $LOGFILE "$TARGET$FOLDER"
+fi
+############### END OF PROGRAMM ################
+}
+######################## DM52X,DM7080,DM820 Situation ########################
+
+if [ $SEARCH = "dm520" ] || [ $SEARCH = "dm525" ] || [ $SEARCH = "dm7080" ] || [ $SEARCH = "dm820" ] ; then
+	dm52x_dm7080_dm820_situation
 fi
 
 ########################### Old Dreambox Situation ###########################

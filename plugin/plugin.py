@@ -201,9 +201,9 @@ class BackupStart(Screen):
 		if model != "":
 			if model in ["duo", "solo", "ultimo", "uno"] or "ebox" in model:
 				files = "^.*\.(zip|bin|jffs2)"
-			elif "4k" or "uhd" or "dm9" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000"]:
+			elif "4k" or "uhd" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000"]:
 				files = "^.*\.(zip|bin|bz2)"
-			elif model.startswith(("dm5", "dm7", "dm8")):
+			elif model.startswith("dm"):
 				self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
 				return
 			else:
@@ -486,6 +486,10 @@ class FlashImageConfig(Screen):
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
 							text += "kernel.bin, rootfs.tar.bz2"
+						elif model in ["dm520", "dm525", "dm7080", "dm820"]:
+							backup_files = [("*.xz")]
+							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
+							text += "*.xz"
 						else:
 							backup_files = [("*.nfi")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
