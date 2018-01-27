@@ -97,48 +97,6 @@ elif [ ! -x "$1" ] ; then
 	big_fail
 fi
 }
-############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
-check_dependency()
-{
-   log "Checking Dependencies ..."
-   UPDATE=0
-   for pkg in mtd-utils mtd-utils-ubifs;
-   do   
-      opkg status $pkg | grep -q "install user installed"
-      if [ $? -ne 0 ] ; then
-         [ $UPDATE -eq 0 ] && opkg update && UPDATE=1
-         opkg install $pkg 2>/dev/null
-      fi
-   done
-}
-############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
-check_dependency_old()
-{
-   log "Checking Dependencies ..."
-   UPDATE=0
-   for pkg in mtd-utils-jffs2 dreambox-buildimage;
-   do   
-      opkg status $pkg | grep -q "install user installed"
-      if [ $? -ne 0 ] ; then
-         [ $UPDATE -eq 0 ] && opkg update && UPDATE=1
-         opkg install $pkg 2>/dev/null
-      fi
-   done
-}
-############## CHECK FOR THE NEEDED DEPENDENCIES IF THEY EXIST ################
-check_dependency_xz()
-{
-   log "Checking Dependencies ..."
-   UPDATE=0
-   for pkg in xz;
-   do   
-      opkg status $pkg | grep -q "install user installed"
-      if [ $? -ne 0 ] ; then
-         [ $UPDATE -eq 0 ] && opkg update && UPDATE=1
-         opkg install $pkg 2>/dev/null
-      fi
-   done
-}
 ################### BACK-UP MADE AND REPORTING SIZE ETC. ######################
 backup_made()
 {
@@ -228,7 +186,6 @@ log "Working directory  = $WORKDIR"
 
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
-check_dependency
 checkbinary $NANDDUMP
 checkbinary $MKFS
 checkbinary $UBINIZE
@@ -562,7 +519,6 @@ log "Found dm52x,dm7080,dm820, xz mode"
 
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
-check_dependency_xz
 checkbinary $XZBINARY
 echo -n $WHITE
 
@@ -863,7 +819,6 @@ log "Found old dreamboxes, nfi mode"
 
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
-check_dependency_old
 checkbinary $MKFSJFFS2
 checkbinary $BUILDIMAGE
 echo -n $WHITE
