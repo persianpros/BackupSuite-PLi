@@ -78,10 +78,10 @@ def backupCommandHDD():
 			os.chmod(BACKUP_DMM_HDD, 0755)
 	except:
 		pass
-	if os.path.exists("/proc/stb/info/hwmodel") or os.path.exists("/proc/stb/info/gbmodel") or os.path.exists("/proc/stb/info/boxtype") or os.path.exists("/proc/stb/info/vumodel"):
-		cmd = BACKUP_HDD
-	else:
+	if os.path.exists("/etc/modules-load.d/dreambox-dvb-modules.conf") or os.path.exists("/etc/modules-load.d/10-dreambox-dvb-modules.conf"):
 		cmd = BACKUP_DMM_HDD
+	else:
+		cmd = BACKUP_HDD
 	return cmd
 
 def backupCommandUSB():
@@ -95,10 +95,10 @@ def backupCommandUSB():
 			os.chmod(BACKUP_DMM_USB, 0755)
 	except:
 		pass
-	if os.path.exists("/proc/stb/info/hwmodel") or os.path.exists("/proc/stb/info/gbmodel") or os.path.exists("/proc/stb/info/boxtype") or os.path.exists("/proc/stb/info/vumodel"):
-		cmd = BACKUP_USB
-	else:
+	if os.path.exists("/etc/modules-load.d/dreambox-dvb-modules.conf") or os.path.exists("/etc/modules-load.d/10-dreambox-dvb-modules.conf"):
 		cmd = BACKUP_DMM_USB
+	else:
+		cmd = BACKUP_USB
 	return cmd
 
 try:
@@ -184,6 +184,13 @@ class BackupStart(Screen):
 				f.close()
 			except:
 				pass
+		elif os.path.exists("/etc/modules-load.d/dreambox-dvb-modules.conf") or os.path.exists("/etc/modules-load.d/10-dreambox-dvb-modules.conf"):
+			try:
+				f = open("/proc/stb/info/model")
+				model = f.read().strip()
+				f.close()
+			except:
+				pass
 		else:
 			return
 		if model != "":
@@ -191,6 +198,9 @@ class BackupStart(Screen):
 				files = "^.*\.(zip|bin|jffs2)"
 			elif "4k" or "uhd" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000"]:
 				files = "^.*\.(zip|bin|bz2)"
+			elif model.startswith("dm"):
+				self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
+				return
 			else:
 				files = "^.*\.(zip|bin)"
 		curdir = '/media/'
@@ -462,7 +472,7 @@ class FlashImageConfig(Screen):
 							text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
 					except:
 						pass
-				else:
+				elif os.path.exists("/etc/modules-load.d/dreambox-dvb-modules.conf") or os.path.exists("/etc/modules-load.d/10-dreambox-dvb-modules.conf"):
 					try:
 						f = open("/proc/stb/info/model")
 						model = f.read().strip()
