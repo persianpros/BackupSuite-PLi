@@ -190,6 +190,11 @@ echo -n $WHITE
 
 #############################################################################
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
+if [ -f /etc/modules-load.d/dreambox-dvb-modules.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules.conf ] ; then
+	log "It's a dreambox!"
+	exit 1
+fi
+
 if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
 	SEARCH=$( cat /proc/stb/info/hwmodel )
 elif [ -f /proc/stb/info/gbmodel ] ; then			# Gigablue models
