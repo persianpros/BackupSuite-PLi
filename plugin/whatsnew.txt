@@ -1,12 +1,10 @@
 Changelog
 =========
 
-Git 281-305
+Git 281-319
 - plugin.py cleanup
 - Make sure "backuphdd.sh" and "backupusb.sh" are executable.
-Now we don't need bitbake chmod and you won't see ".sh: Permession denied" anymore.
 - "backupusb.sh" and "backuphdd.sh" updated, Make sure "backupsuite.sh" is executable.
-- backupsuite.sh updated, Add "check_dependency" to make sure you have what you need.
 - Dreambox support
 All old dreamboxes with "nfi" images could create backups now.
 dm9x0 bz2 backup not tested yet ...
