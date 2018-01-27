@@ -241,21 +241,18 @@ if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
 	log "Not a dreambox?"
 	exit 1
 fi
-
 if [ -f /proc/stb/info/gbmodel ] ; then			# Gigablue models
 	log "Not a dreambox?"
 	exit 1
 fi
-
 if [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
 	log "Not a dreambox?"
 	exit 1
 fi
-
 if [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
 	log "Not a dreambox?"
 	exit 1
-
+fi
 if [ -f /etc/modules-load.d/dreambox-dvb-modules.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules.conf ] ; then
 	SEARCH=$( cat /proc/stb/info/model )
 else
