@@ -256,7 +256,7 @@ if [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
 	log "Not a dreambox?"
 	exit 1
 
-if [ -f /proc/stb/info/model ] ; then
+if [ -f /etc/modules-load.d/dreambox-dvb-modules.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules.conf ] ; then
 	SEARCH=$( cat /proc/stb/info/model )
 else
 	echo $RED
