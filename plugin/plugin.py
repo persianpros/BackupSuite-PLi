@@ -2,6 +2,7 @@ from schermen import *
 import os
 import gettext
 import enigma
+import glob
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Console import Console
@@ -78,10 +79,11 @@ def backupCommandHDD():
 			os.chmod(BACKUP_DMM_HDD, 0755)
 	except:
 		pass
-	if os.path.exists("/etc/modules-load.d/dreambox-dvb-modules.conf") or os.path.exists("/etc/modules-load.d/10-dreambox-dvb-modules.conf"):
-		cmd = BACKUP_DMM_HDD
-	else:
-		cmd = BACKUP_HDD
+	for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
+		if os.path.exists(dvbmod):
+			cmd = BACKUP_DMM_HDD
+		else:
+			cmd = BACKUP_HDD
 	return cmd
 
 def backupCommandUSB():
@@ -95,10 +97,11 @@ def backupCommandUSB():
 			os.chmod(BACKUP_DMM_USB, 0755)
 	except:
 		pass
-	if os.path.exists("/etc/modules-load.d/dreambox-dvb-modules.conf") or os.path.exists("/etc/modules-load.d/10-dreambox-dvb-modules.conf"):
-		cmd = BACKUP_DMM_USB
-	else:
-		cmd = BACKUP_USB
+	for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
+		if os.path.exists(dvbmod):
+			cmd = BACKUP_DMM_USB
+		else:
+			cmd = BACKUP_USB
 	return cmd
 
 try:
@@ -184,15 +187,17 @@ class BackupStart(Screen):
 				f.close()
 			except:
 				pass
-		elif os.path.exists("/etc/modules-load.d/dreambox-dvb-modules.conf") or os.path.exists("/etc/modules-load.d/10-dreambox-dvb-modules.conf"):
-			try:
-				f = open("/proc/stb/info/model")
-				model = f.read().strip()
-				f.close()
-			except:
-				pass
 		else:
-			return
+			for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
+				if os.path.exists(dvbmod):
+					try:
+						f = open("/proc/stb/info/model")
+						model = f.read().strip()
+						f.close()
+					except:
+						pass
+				else:
+					return
 		if model != "":
 			if model in ["duo", "solo", "ultimo", "uno"] or "ebox" in model:
 				files = "^.*\.(zip|bin|jffs2)"
@@ -472,25 +477,27 @@ class FlashImageConfig(Screen):
 							text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
 					except:
 						pass
-				elif os.path.exists("/etc/modules-load.d/dreambox-dvb-modules.conf") or os.path.exists("/etc/modules-load.d/10-dreambox-dvb-modules.conf"):
-					try:
-						f = open("/proc/stb/info/model")
-						model = f.read().strip()
-						f.close()
-						if "dm9" in model:
-							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
-							text += "kernel.bin, rootfs.tar.bz2"
-						elif model in ["dm520", "dm525", "dm7080", "dm820"]:
-							backup_files = [("*.xz")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
-							text += "*.xz"
-						else:
-							backup_files = [("*.nfi")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
-							text += "*.nfi"
-					except:
-						pass
+				else:
+					for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
+						if os.path.exists(dvbmod):
+							try:
+								f = open("/proc/stb/info/model")
+								model = f.read().strip()
+								f.close()
+								if "dm9" in model:
+									backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
+									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
+									text += "kernel.bin, rootfs.tar.bz2"
+								elif model in ["dm520", "dm525", "dm7080", "dm820"]:
+									backup_files = [("*.xz")]
+									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
+									text += "*.xz"
+								else:
+									backup_files = [("*.nfi")]
+									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
+									text += "*.nfi"
+							except:
+								pass
 				try:
 					self.founds = False
 					text += _('\nThe found files:')
