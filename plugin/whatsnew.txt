@@ -7,7 +7,7 @@ Git 281-323
 - "backupusb.sh" and "backuphdd.sh" updated, Make sure "backupsuite.sh" is executable.
 - Dreambox support
 All old dreamboxes with "nfi" images could create backups now.
-dm9x0 bz2 backup not tested yet ...
+dm9x0 bz2 backup is ok also
 dm52x,dm7080,dm820 xz backup not tested yet ...
 Restore for dreambox is not possible via plugin itself
 as you have to flash your backup via DMM's WebIF.
