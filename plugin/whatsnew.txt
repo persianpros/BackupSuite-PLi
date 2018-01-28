@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Git 281-319
+Git 281-323
 - plugin.py cleanup
 - Make sure "backuphdd.sh" and "backupusb.sh" are executable.
 - "backupusb.sh" and "backuphdd.sh" updated, Make sure "backupsuite.sh" is executable.
@@ -11,6 +11,8 @@ dm9x0 bz2 backup not tested yet ...
 dm52x,dm7080,dm820 xz backup not tested yet ...
 Restore for dreambox is not possible via plugin itself
 as you have to flash your backup via DMM's WebIF.
+- Better dreambox detection, Thanks to Hains
+- Vu4k kernel problem fixed.
 - Version change from 24 to 25.
 
 Git 273-280
