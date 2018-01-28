@@ -175,11 +175,11 @@ echo -n $WHITE
 
 #############################################################################
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
-if [ -f /etc/modules-load.d/dreambox-dvb-modules.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules.conf ] ; then
+
+if [ -f /etc/modules-load.d/dreambox-dvb-modules-dm*.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules-dm*.conf ] ; then
 	log "It's a dreambox!"
 	exit 1
 fi
-
 if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
 	SEARCH=$( cat /proc/stb/info/hwmodel )
 elif [ -f /proc/stb/info/gbmodel ] ; then			# Gigablue models
@@ -339,10 +339,10 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	fi
 	log "--------------------------"
 else
-	if [ $SEARCH = "vusolo4k" -o $SEARCH = "vuultimo4k" -o $SEARCH = "vuuno4k" -o $SEARCH = "vuuno4kse" ] ; then
+	if [ $SEARCH = "solo4k" -o $SEARCH = "ultimo4k" -o $SEARCH = "uno4k" -o $SEARCH = "uno4kse" ] ; then
 		dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p1" 
-	elif [ $SEARCH = "vuzero4k" ] ; then
+	elif [ $SEARCH = "zero4k" ] ; then
 		dd if=/dev/mmcblk0p4 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p4"
 	else
