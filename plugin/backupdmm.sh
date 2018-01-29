@@ -882,7 +882,6 @@ DREAMBOX_PART2_SIZE=""
 #
 # Set parameters based on box
 # dm7020hdv2 is recognized from /sys/devices/virtual/mtd/mtd0/writesize
-# No support for xz images: dm520,dm7080,dm820
 case $SEARCH in
    dm800|dm500hd|dm800se)
       EXTRA_BUILDCMD="--brcmnand"
