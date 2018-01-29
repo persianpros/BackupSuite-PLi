@@ -543,7 +543,7 @@ UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
 ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
 KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
 ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
-if [ $ROOTNAME = "rootfs.tar.xz" ] ; then
+if [ $SEARCH = "dm520" -o $SEARCH = "dm525" -o $SEARCH = "dm7080" -o $SEARCH = "dm820" ] ; then
 	MKFS=/bin/tar
 	checkbinary $MKFS
 	XZBINARY=/usr/bin/xz
@@ -571,7 +571,7 @@ echo $WHITE
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
 
-if [ $ROOTNAME != "rootfs.tar.xz" ] ; then
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
 else
 	KERNELHEX=800000 # Not the real size (will be added later)
@@ -585,7 +585,7 @@ echo -n "KERNEL" ; $SHOW "message04" ; printf '%6s' $(($KERNEL/1024)); echo ' KB
 echo -n "ROOTFS" ; $SHOW "message04" ; printf '%6s' $USEDsizekb; echo ' KB'
 echo -n "=TOTAL" ; $SHOW "message04" ; printf '%6s' $KILOBYTES; echo " KB (= $MEGABYTES MB)"
 } 2>&1 | tee -a $LOGFILE
-if [ $ROOTNAME = "rootfs.tar.xz" ] ; then
+if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
 	ESTTIMESEC=$(($KILOBYTES/($ESTSPEED*3)))
 else
 	ESTTIMESEC=$(($KILOBYTES/$ESTSPEED))
@@ -634,7 +634,7 @@ fi
 
 ####################### START THE REAL BACK-UP PROCESS ########################
 ############################# MAKING UBINIZE.CFG ##############################
-if [ $ROOTNAME != "rootfs.tar.xz" ] ; then
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
 	echo mode=ubi >> "$WORKDIR/ubinize.cfg"
 	echo image="$WORKDIR/root.ubi" >> "$WORKDIR/ubinize.cfg"
@@ -652,7 +652,7 @@ fi
 ############################## MAKING KERNELDUMP ##############################
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-if [ $ROOTNAME != "rootfs.tar.xz" ] ; then
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
 
 	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
@@ -676,7 +676,7 @@ fi
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
-if [ $ROOTNAME != "rootfs.tar.xz" ] ; then
+if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	$MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
 	if [ -f "$WORKDIR/root.ubi" ] ; then
 		echo -n "ROOT.UBI MADE  :" >> $LOGFILE
