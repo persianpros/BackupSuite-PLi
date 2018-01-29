@@ -489,9 +489,9 @@ class FlashImageConfig(Screen):
 									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
 									text += "kernel.bin, rootfs.tar.bz2"
 								elif model in ["dm520", "dm525", "dm7080", "dm820"]:
-									backup_files = [("*.xz")]
-									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
-									text += "*.xz"
+									backup_files = [("kernel.bin"), ("rootfs.bin")]
+									no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("rootfs.tar.bz2")]
+									text += "kernel.bin, rootfs.bin"
 								else:
 									backup_files = [("*.nfi")]
 									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
