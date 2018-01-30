@@ -151,7 +151,6 @@ MEDIA="$1"
 MKFS=/usr/sbin/mkfs.ubifs
 MKFSJFFS2=/usr/sbin/mkfs.jffs2
 BUILDIMAGE=/usr/bin/buildimage
-XZBINARY=/usr/bin/xz
 MTDPLACE=`cat /proc/mtd | grep -w "kernel" | cut -d ":" -f 1`
 NANDDUMP=/usr/sbin/nanddump
 START=$(date +%s)
@@ -293,19 +292,6 @@ $SHOW "message03"  ; printf "%d.%02d " $ESTMINUTES $ESTSECONDS ; $SHOW "message2
 echo $LINE
 } 2>&1 | tee -a $LOGFILE
 
-####### WARNING IF THE IMAGESIZE OF THE XTRENDS GETS TOO BIG TO RESTORE ########
-if [ ${MODEL:0:2} = "et" -a ${MODEL:0:3} != "et8" -a ${MODEL:0:3} != "et1" -a ${MODEL:0:3} != "et7" ] ; then
-	if [ $MEGABYTES -gt 120 ] ; then
-    echo -n $RED
-	$SHOW "message28" 2>&1 | tee -a $LOGFILE #Image probably too big to restore
-	echo $WHITE
-	elif [ $MEGABYTES -gt 110 ] ; then
-	echo -n $YELLOW
-	$SHOW "message29" 2>&1 | tee -a $LOGFILE #Image between 111 and 120MB could cause problems
-	echo $WHITE
-	fi
-fi
-
 #=================================================================================
 #exit 0  #USE FOR DEBUGGING/TESTING ###########################################
 #=================================================================================
@@ -412,14 +398,6 @@ fi
 make_folders
 mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
 mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
-if [ $ACTION = "noforce" ] ; then
-	echo "rename this file to 'force' to force an update without confirmation" > "$MAINDEST/noforce"; 
-elif [ $ACTION = "reboot" ] ; then
-	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/reboot.update"
-elif [ $ACTION = "force" ] ; then
-	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
-	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
-fi
 
 image_version > "$MAINDEST/imageversion" 
 if  [ $HARDDISK != 1 ]; then
@@ -522,60 +500,28 @@ dm52x_dm7080_dm820_situation()
 {
 log "Found dm52x,dm7080,dm820, xz mode"
 
-###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
-echo $RED
-checkbinary $XZBINARY
-echo -n $WHITE
+EXTRA="$MEDIA/fullbackup_dreambox/$DATE"
+MAINDEST="$MEDIA/$SEARCH"
 
-MODEL=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 2`
-SHOWNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 3`
-FOLDER="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 4`"
-EXTR1="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 5`/$DATE"
-EXTR2="`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 6`"
-EXTRA="$MEDIA$EXTR1$EXTR2"
-if  [ $HARDDISK = 1 ]; then
-	MAINDEST="$MEDIA$EXTR1$FOLDER"
-else 
-	MAINDEST="$MEDIA$FOLDER"
-fi
-MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
-UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
-ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
-KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
-ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
-if [ $SEARCH = "dm520" -o $SEARCH = "dm525" -o $SEARCH = "dm7080" -o $SEARCH = "dm820" ] ; then
-	MKFS=/bin/tar
-	checkbinary $MKFS
-	XZBINARY=/usr/bin/xz
-	if [ ! -f "$XZBINARY" ] ; then
-		echo "$XZBINARY " ; $SHOW "message38"
-		opkg update > /dev/null 2>&1
-		opkg install xz > /dev/null 2>&1
-		checkbinary $MKFS
-	fi
-fi
+ROOTNAME = "rootfs.bin"
+KERNELNAME = "kernel.bin"
+
 log "Destination        = $MAINDEST"
 log $LINE
 
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
 echo -n $PURPLE
-echo -n "$SHOWNAME " | tr  a-z A-Z		# Shows the receiver brand and model
+echo -n "$SEARCH " | tr  a-z A-Z		# Shows the receiver brand and model
 $SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
 echo $BLUE
-log "RECEIVER = $SHOWNAME "
-log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
-log "UBINIZE_ARGS = $UBINIZE_ARGS"
+log "RECEIVER = $SEARCH "
 echo "$VERSION"
 echo $WHITE
 
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
 
-if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
-	KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
-else
-	KERNELHEX=800000 # Not the real size (will be added later)
-fi
+KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
 KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
 TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
 KILOBYTES=$(($TOTAL/1024))			# Total ROOTFS + Kernel size in KB
@@ -585,11 +531,7 @@ echo -n "KERNEL" ; $SHOW "message04" ; printf '%6s' $(($KERNEL/1024)); echo ' KB
 echo -n "ROOTFS" ; $SHOW "message04" ; printf '%6s' $USEDsizekb; echo ' KB'
 echo -n "=TOTAL" ; $SHOW "message04" ; printf '%6s' $KILOBYTES; echo " KB (= $MEGABYTES MB)"
 } 2>&1 | tee -a $LOGFILE
-if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
-	ESTTIMESEC=$(($KILOBYTES/($ESTSPEED*3)))
-else
-	ESTTIMESEC=$(($KILOBYTES/$ESTSPEED))
-fi
+ESTTIMESEC=$(($KILOBYTES/$ESTSPEED))
 ESTMINUTES=$(( $ESTTIMESEC/60 ))
 ESTSECONDS=$(( $ESTTIMESEC-(( 60*$ESTMINUTES ))))
 echo $LINE
@@ -597,19 +539,6 @@ echo $LINE
 $SHOW "message03"  ; printf "%d.%02d " $ESTMINUTES $ESTSECONDS ; $SHOW "message25" # estimated time in minutes 
 echo $LINE
 } 2>&1 | tee -a $LOGFILE
-
-####### WARNING IF THE IMAGESIZE OF THE XTRENDS GETS TOO BIG TO RESTORE ########
-if [ ${MODEL:0:2} = "et" -a ${MODEL:0:3} != "et8" -a ${MODEL:0:3} != "et1" -a ${MODEL:0:3} != "et7" ] ; then
-	if [ $MEGABYTES -gt 120 ] ; then
-    echo -n $RED
-	$SHOW "message28" 2>&1 | tee -a $LOGFILE #Image probably too big to restore
-	echo $WHITE
-	elif [ $MEGABYTES -gt 110 ] ; then
-	echo -n $YELLOW
-	$SHOW "message29" 2>&1 | tee -a $LOGFILE #Image between 111 and 120MB could cause problems
-	echo $WHITE
-	fi
-fi
 
 #=================================================================================
 #exit 0  #USE FOR DEBUGGING/TESTING ###########################################
@@ -632,94 +561,31 @@ if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then
 	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
 fi
 
-####################### START THE REAL BACK-UP PROCESS ########################
-############################# MAKING UBINIZE.CFG ##############################
-if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
-	echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
-	echo mode=ubi >> "$WORKDIR/ubinize.cfg"
-	echo image="$WORKDIR/root.ubi" >> "$WORKDIR/ubinize.cfg"
-	echo vol_id=0 >> "$WORKDIR/ubinize.cfg"
-	echo vol_type=dynamic >> "$WORKDIR/ubinize.cfg"
-	echo vol_name=rootfs >> "$WORKDIR/ubinize.cfg"
-	echo vol_flags=autoresize >> "$WORKDIR/ubinize.cfg"
-	log $LINE
-	log "UBINIZE.CFG CREATED WITH THE CONTENT:"
-	cat "$WORKDIR/ubinize.cfg"  >> $LOGFILE
-	touch "$WORKDIR/root.ubi"
-	chmod 644 "$WORKDIR/root.ubi"
-	log "--------------------------"
-fi
 ############################## MAKING KERNELDUMP ##############################
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
-	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
 
-	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
-	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
-		echo -n "Kernel dumped  :"  >> $LOGFILE
-		ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
-	else 
-		log "$WORKDIR/$KERNELNAME NOT FOUND"
-		big_fail
-	fi
-	log "--------------------------"
-else
-	python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
-	KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
-	KERNELNAME=${KERNEL:11:7}.bin
-	echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
-	log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
-	dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
+log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
+
+$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
+if [ -f "$WORKDIR/$KERNELNAME" ] ; then
+	echo -n "Kernel dumped  :"  >> $LOGFILE
+	ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
+else 
+	log "$WORKDIR/$KERNELNAME NOT FOUND"
+	big_fail
 fi
+log "--------------------------"
 
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
-if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
-	$MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
-	if [ -f "$WORKDIR/root.ubi" ] ; then
-		echo -n "ROOT.UBI MADE  :" >> $LOGFILE
-		ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
-		UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
-		if [ "$UBISIZE" -eq 0 ] ; then 
-			$SHOW "message39" 2>&1 | tee -a $LOGFILE
-			big_fail
-		fi
-	else 
-		log "$WORKDIR/root.ubi NOT FOUND"
-		big_fail
-	fi
-	log $LINE
-	echo "Start UBINIZING" >> $LOGFILE
-	$UBINIZE -o "$WORKDIR/$ROOTNAME" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
-	chmod 644 "$WORKDIR/$ROOTNAME"
-	if [ -f "$WORKDIR/$ROOTNAME" ] ; then
-		echo -n "$ROOTNAME MADE:" >> $LOGFILE
-		ls -e1 "$WORKDIR/$ROOTNAME" | sed 's/-r.*   1//' >> $LOGFILE
-	else 
-		echo "$WORKDIR/$ROOTNAME NOT FOUND"  >> $LOGFILE
-		big_fail
-	fi
-	echo
-else 
-	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
-	$XZBINARY $WORKDIR/rootfs.tar
-fi
-
+$MKFS -cvJf $WORKDIR/rootfs.tar.xz -C /tmp/bi/root --exclude=/var/nmbd/* .
 
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
 mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
 mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
-if [ $ACTION = "noforce" ] ; then
-	echo "rename this file to 'force' to force an update without confirmation" > "$MAINDEST/noforce"; 
-elif [ $ACTION = "reboot" ] ; then
-	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/reboot.update"
-elif [ $ACTION = "force" ] ; then
-	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
-	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
-fi
 
 image_version > "$MAINDEST/imageversion" 
 if  [ $HARDDISK != 1 ]; then
@@ -800,11 +666,11 @@ opkg list-installed >> $LOGFILE
 echo -n $WHITE
 cp $LOGFILE "$MAINDEST"
 if  [ $HARDDISK != 1 ]; then
-	cp $LOGFILE "$MEDIA$EXTR1"
-	mv "$MEDIA$EXTR1$FOLDER"/imageversion "$MEDIA$EXTR1"
+	cp $LOGFILE "$MEDIA"
+	mv "$MEDIA$FOLDER"/imageversion "$MEDIA"
 else
-	mv -f "$MAINDEST"/BackupSuite.log "$MEDIA$EXTR1"
-	cp "$MAINDEST"/imageversion "$MEDIA$EXTR1"
+	mv -f "$MAINDEST"/BackupSuite.log "$MEDIA"
+	cp "$MAINDEST"/imageversion "$MEDIA"
 fi
 if [ "$TARGET" != "XX" ] ; then
 	cp $LOGFILE "$TARGET$FOLDER"
