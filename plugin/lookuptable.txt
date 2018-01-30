@@ -19,9 +19,6 @@ Beyonwiz T4	beyonwizt4	Beyonwiz T4	/beyonwiz/hdp	/fullbackup_beyonwizt4	/beyonwi
 Beyonwiz U4	beyonwizu4	Beyonwiz U4	/beyonwiz/u4	/fullbackup_beyonwizu4	/beyonwiz			rootfs.tar.bz2	kernel.bin	noforce
 Dreambox DM900	dm900	Dreambox DM900	/dm900	/fullbackup_dm900				rootfs.tar.bz2	kernel.bin	none
 Dreambox DM920	dm920	Dreambox DM920	/dm920	/fullbackup_dm920				rootfs.tar.bz2	kernel.bin	none
-Dreambox DM520	dm520	Dreambox DM520	/dm520	/fullbackup_dm520				rootfs.bin	kernel.bin	none
-Dreambox DM7080	dm7080	Dreambox DM7080	/dm7080	/fullbackup_dm7080				rootfs.bin	kernel.bin	none
-Dreambox DM820	dm820	Dreambox DM820	/dm820	/fullbackup_dm820				rootfs.bin	kernel.bin	none
 Edision Optimuss OS	optimussos	Edision Optimuss OS	/update/optimussos/cfe	/fullbackup_optimussos	/update/optimussos	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Edision Optimuss OS1	optimussos1	Edision Optimuss OS1	/update/optimussos1/cfe	/fullbackup_optimussos1	/update/optimussos1	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Edision Optimuss OS1 Plus	optimussos1plus	Edision Optimuss OS1 Plus	/update/optimussos1plus/cfe	/fullbackup_optimussos1plus	/update/optimussos1plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
