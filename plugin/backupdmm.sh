@@ -237,16 +237,14 @@ UBINIZE_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 8`
 ROOTNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 9`
 KERNELNAME=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 10`
 ACTION=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 11`
-if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
-	MKFS=/bin/tar
+MKFS=/bin/tar
+checkbinary $MKFS
+BZIP2=/usr/bin/bzip2
+if [ ! -f "$BZIP2" ] ; then
+	echo "$BZIP2 " ; $SHOW "message38"
+	opkg update > /dev/null 2>&1
+	opkg install bzip2 > /dev/null 2>&1
 	checkbinary $MKFS
-	BZIP2=/usr/bin/bzip2
-	if [ ! -f "$BZIP2" ] ; then
-		echo "$BZIP2 " ; $SHOW "message38"
-		opkg update > /dev/null 2>&1
-		opkg install bzip2 > /dev/null 2>&1
-		checkbinary $MKFS
-	fi
 fi
 log "Destination        = $MAINDEST"
 log $LINE
@@ -265,11 +263,7 @@ echo $WHITE
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
 
-if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
-	KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
-else
-	KERNELHEX=800000 # Not the real size (will be added later)
-fi
+KERNELHEX=800000 # Not the real size (will be added later)
 KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
 TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
 KILOBYTES=$(($TOTAL/1024))			# Total ROOTFS + Kernel size in KB
@@ -279,11 +273,7 @@ echo -n "KERNEL" ; $SHOW "message04" ; printf '%6s' $(($KERNEL/1024)); echo ' KB
 echo -n "ROOTFS" ; $SHOW "message04" ; printf '%6s' $USEDsizekb; echo ' KB'
 echo -n "=TOTAL" ; $SHOW "message04" ; printf '%6s' $KILOBYTES; echo " KB (= $MEGABYTES MB)"
 } 2>&1 | tee -a $LOGFILE
-if [ $ROOTNAME = "rootfs.tar.bz2" ] ; then
-	ESTTIMESEC=$(($KILOBYTES/($ESTSPEED*3)))
-else
-	ESTTIMESEC=$(($KILOBYTES/$ESTSPEED))
-fi
+ESTTIMESEC=$(($KILOBYTES/($ESTSPEED*3)))
 ESTMINUTES=$(( $ESTTIMESEC/60 ))
 ESTSECONDS=$(( $ESTTIMESEC-(( 60*$ESTMINUTES ))))
 echo $LINE
@@ -313,86 +303,27 @@ if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then
 	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
 fi
 
-####################### START THE REAL BACK-UP PROCESS ########################
-############################# MAKING UBINIZE.CFG ##############################
-if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
-	echo \[ubifs\] > "$WORKDIR/ubinize.cfg"
-	echo mode=ubi >> "$WORKDIR/ubinize.cfg"
-	echo image="$WORKDIR/root.ubi" >> "$WORKDIR/ubinize.cfg"
-	echo vol_id=0 >> "$WORKDIR/ubinize.cfg"
-	echo vol_type=dynamic >> "$WORKDIR/ubinize.cfg"
-	echo vol_name=rootfs >> "$WORKDIR/ubinize.cfg"
-	echo vol_flags=autoresize >> "$WORKDIR/ubinize.cfg"
-	log $LINE
-	log "UBINIZE.CFG CREATED WITH THE CONTENT:"
-	cat "$WORKDIR/ubinize.cfg"  >> $LOGFILE
-	touch "$WORKDIR/root.ubi"
-	chmod 644 "$WORKDIR/root.ubi"
-	log "--------------------------"
-fi
 ############################## MAKING KERNELDUMP ##############################
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
-	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
-
-	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
-	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
-		echo -n "Kernel dumped  :"  >> $LOGFILE
-		ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
-	else 
-		log "$WORKDIR/$KERNELNAME NOT FOUND"
-		big_fail
-	fi
-	log "--------------------------"
+if [ $SEARCH = "dm900" -o $SEARCH = "dm920" ] ; then
+	dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
+	log "Kernel resides on /dev/mmcblk0p1" 
 else
-	if [ $SEARCH = "dm900" -o $SEARCH = "dm920" ] ; then
-		dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
-		log "Kernel resides on /dev/mmcblk0p1" 
-	else
-		python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
-		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
-		KERNELNAME=${KERNEL:11:7}.bin
-		echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
-		log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
-		dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
-	fi
+	python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
+	KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
+	KERNELNAME=${KERNEL:11:7}.bin
+	echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
+	log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
+	dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
 fi
 
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
-if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
-	$MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
-	if [ -f "$WORKDIR/root.ubi" ] ; then
-		echo -n "ROOT.UBI MADE  :" >> $LOGFILE
-		ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
-		UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
-		if [ "$UBISIZE" -eq 0 ] ; then 
-			$SHOW "message39" 2>&1 | tee -a $LOGFILE
-			big_fail
-		fi
-	else 
-		log "$WORKDIR/root.ubi NOT FOUND"
-		big_fail
-	fi
-	log $LINE
-	echo "Start UBINIZING" >> $LOGFILE
-	$UBINIZE -o "$WORKDIR/$ROOTNAME" $UBINIZE_ARGS "$WORKDIR/ubinize.cfg" >/dev/null
-	chmod 644 "$WORKDIR/$ROOTNAME"
-	if [ -f "$WORKDIR/$ROOTNAME" ] ; then
-		echo -n "$ROOTNAME MADE:" >> $LOGFILE
-		ls -e1 "$WORKDIR/$ROOTNAME" | sed 's/-r.*   1//' >> $LOGFILE
-	else 
-		echo "$WORKDIR/$ROOTNAME NOT FOUND"  >> $LOGFILE
-		big_fail
-	fi
-	echo
-else 
-	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
-	$BZIP2 $WORKDIR/rootfs.tar
-fi
 
+$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
+$BZIP2 $WORKDIR/rootfs.tar
 
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
