@@ -113,8 +113,6 @@ fi
 } 2>&1 | tee -a $LOGFILE
 }
 ############################## END PROGRAM BLOCKS #############################
-
-
 ########################## DECLARATION OF VARIABLES ###########################
 BACKUPDATE=`date +%Y.%m.%d_%H:%M`
 DATE=`date +%Y%m%d_%H%M`
@@ -153,7 +151,6 @@ else
 	VERSION=`$SHOW "message37"`
 fi
 WORKDIR="$MEDIA/bi"
-
 ######################### START THE LOGFILE $LOGFILE ##########################
 echo -n "" > $LOGFILE
 log "*** THIS BACKUP IS CREATED WITH THE PLUGIN BACKUPSUITE ***"
@@ -165,17 +162,14 @@ df -h "$MEDIA"  >> $LOGFILE
 log $LINE
 image_version >> $LOGFILE
 log "Working directory  = $WORKDIR"
-
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
 checkbinary $NANDDUMP
 checkbinary $MKFS
 checkbinary $UBINIZE
 echo -n $WHITE
-
 #############################################################################
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
-
 if [ -f /etc/modules-load.d/dreambox-dvb-modules-dm*.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules-dm*.conf ] ; then
 	log "It's a dreambox!"
 	exit 1
@@ -193,7 +187,6 @@ else
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
 	big_fail
 fi
-
 cat $LOOKUP | cut -f 2 | grep -qw "$SEARCH"
 if [ "$?" = "1" ] ; then
 	echo $RED
@@ -230,7 +223,6 @@ else
 fi
 log "Destination        = $MAINDEST"
 log $LINE
-
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
 echo -n $PURPLE
 echo -n "$SHOWNAME " | tr  a-z A-Z		# Shows the receiver brand and model
@@ -241,10 +233,8 @@ log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
 log "UBINIZE_ARGS = $UBINIZE_ARGS"
 echo "$VERSION"
 echo $WHITE
-
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
-
 if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
 else
@@ -271,7 +261,6 @@ echo $LINE
 $SHOW "message03"  ; printf "%d.%02d " $ESTMINUTES $ESTSECONDS ; $SHOW "message25" # estimated time in minutes 
 echo $LINE
 } 2>&1 | tee -a $LOGFILE
-
 ####### WARNING IF THE IMAGESIZE OF THE XTRENDS GETS TOO BIG TO RESTORE ########
 if [ ${MODEL:0:2} = "et" -a ${MODEL:0:3} != "et8" -a ${MODEL:0:3} != "et1" -a ${MODEL:0:3} != "et7" ] ; then
 	if [ $MEGABYTES -gt 120 ] ; then
@@ -284,11 +273,9 @@ if [ ${MODEL:0:2} = "et" -a ${MODEL:0:3} != "et8" -a ${MODEL:0:3} != "et1" -a ${
 	echo $WHITE
 	fi
 fi
-
 #=================================================================================
 #exit 0  #USE FOR DEBUGGING/TESTING ###########################################
 #=================================================================================
-
 ##################### PREPARING THE BUILDING ENVIRONMENT ######################
 log "*** FIRST SOME HOUSEKEEPING ***"
 rm -rf "$WORKDIR"		# GETTING RID OF THE OLD REMAINS IF ANY
@@ -305,7 +292,6 @@ mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
 if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
 	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
 fi
-
 ####################### START THE REAL BACK-UP PROCESS ########################
 ############################# MAKING UBINIZE.CFG ##############################
 if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
@@ -328,7 +314,6 @@ log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
 if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
-	
 	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
 	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
 		echo -n "Kernel dumped  :"  >> $LOGFILE
@@ -354,7 +339,6 @@ else
 		dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
 	fi
 fi
-
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
@@ -388,8 +372,6 @@ else
 	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
 	$BZIP2 $WORKDIR/rootfs.tar
 fi
-
-
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
 mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
@@ -402,7 +384,6 @@ elif [ $ACTION = "force" ] ; then
 	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
 	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
 fi
-
 image_version > "$MAINDEST/imageversion" 
 if  [ $HARDDISK != 1 ]; then
 	mkdir -p "$EXTRA"
@@ -416,7 +397,6 @@ if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/ima
 else
 	big_fail
 fi
-
 #################### CHECKING FOR AN EXTRA BACKUP STORAGE #####################
 if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
@@ -448,7 +428,6 @@ if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 sync
 fi
 ######################### END OF EXTRA BACKUP STORAGE #########################
-
 ################## CLEANING UP AND REPORTING SOME STATISTICS ##################
 clean_up
 END=$(date +%s)
@@ -459,12 +438,10 @@ echo -n $YELLOW
 {
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
-
 ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} ` 
 KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} ` 
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
-
 echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
 echo $LINE >> $LOGFILE
 # "Back up done with $SPEED KB per second" 
@@ -477,7 +454,6 @@ echo $LINE >> $LOGFILE
 $SHOW "message41" >> $LOGFILE
 echo "--------------------------------------------" >> $LOGFILE
 opkg list-installed >> $LOGFILE
-
 ######################## COPY LOGFILE TO MAINDESTINATION ######################
 echo -n $WHITE
 cp $LOGFILE "$MAINDEST"
