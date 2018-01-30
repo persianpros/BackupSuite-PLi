@@ -128,8 +128,6 @@ fi
 } 2>&1 | tee -a $LOGFILE
 }
 ############################## END PROGRAM BLOCKS #############################
-
-
 ########################## DECLARATION OF VARIABLES ###########################
 BACKUPDATE=`date +%Y.%m.%d_%H:%M`
 DATE=`date +%Y%m%d_%H%M`
@@ -170,7 +168,6 @@ else
 	VERSION=`$SHOW "message37"`
 fi
 WORKDIR="$MEDIA/bi"
-
 ######################### START THE LOGFILE $LOGFILE ##########################
 echo -n "" > $LOGFILE
 log "*** THIS BACKUP IS CREATED WITH THE PLUGIN BACKUPSUITE ***"
@@ -182,17 +179,14 @@ df -h "$MEDIA"  >> $LOGFILE
 log $LINE
 image_version >> $LOGFILE
 log "Working directory  = $WORKDIR"
-
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
 checkbinary $NANDDUMP
 checkbinary $MKFS
 checkbinary $UBINIZE
 echo -n $WHITE
-
 #############################################################################
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
-
 if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
 	log "Not a dreambox?"
 	exit 1
@@ -216,7 +210,6 @@ else
 	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
 	big_fail
 fi
-
 ############################## DM9X0 Situation ##############################
 dm9x0_situation()
 {
@@ -248,7 +241,6 @@ if [ ! -f "$BZIP2" ] ; then
 fi
 log "Destination        = $MAINDEST"
 log $LINE
-
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
 echo -n $PURPLE
 echo -n "$SHOWNAME " | tr  a-z A-Z		# Shows the receiver brand and model
@@ -259,10 +251,8 @@ log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
 log "UBINIZE_ARGS = $UBINIZE_ARGS"
 echo "$VERSION"
 echo $WHITE
-
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
-
 KERNELHEX=800000 # Not the real size (will be added later)
 KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
 TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
@@ -281,11 +271,9 @@ echo $LINE
 $SHOW "message03"  ; printf "%d.%02d " $ESTMINUTES $ESTSECONDS ; $SHOW "message25" # estimated time in minutes 
 echo $LINE
 } 2>&1 | tee -a $LOGFILE
-
 #=================================================================================
 #exit 0  #USE FOR DEBUGGING/TESTING ###########################################
 #=================================================================================
-
 ##################### PREPARING THE BUILDING ENVIRONMENT ######################
 log "*** FIRST SOME HOUSEKEEPING ***"
 rm -rf "$WORKDIR"		# GETTING RID OF THE OLD REMAINS IF ANY
@@ -302,7 +290,6 @@ mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
 if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
 	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
 fi
-
 ############################## MAKING KERNELDUMP ##############################
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
@@ -317,19 +304,15 @@ else
 	log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
 	dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
 fi
-
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
-
 $MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
 $BZIP2 $WORKDIR/rootfs.tar
-
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
 mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
 mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
-
 image_version > "$MAINDEST/imageversion" 
 if  [ $HARDDISK != 1 ]; then
 	mkdir -p "$EXTRA"
@@ -343,7 +326,6 @@ if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/ima
 else
 	big_fail
 fi
-
 #################### CHECKING FOR AN EXTRA BACKUP STORAGE #####################
 if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
@@ -375,7 +357,6 @@ if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 sync
 fi
 ######################### END OF EXTRA BACKUP STORAGE #########################
-
 ################## CLEANING UP AND REPORTING SOME STATISTICS ##################
 clean_up
 END=$(date +%s)
@@ -386,12 +367,10 @@ echo -n $YELLOW
 {
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
-
 ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} ` 
 KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} ` 
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
-
 echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
 echo $LINE >> $LOGFILE
 # "Back up done with $SPEED KB per second" 
@@ -404,7 +383,6 @@ echo $LINE >> $LOGFILE
 $SHOW "message41" >> $LOGFILE
 echo "--------------------------------------------" >> $LOGFILE
 opkg list-installed >> $LOGFILE
-
 ######################## COPY LOGFILE TO MAINDESTINATION ######################
 echo -n $WHITE
 cp $LOGFILE "$MAINDEST"
@@ -421,25 +399,19 @@ fi
 ############### END OF PROGRAMM ################
 }
 ############################## DM9X0 Situation ##############################
-
 if [ $SEARCH = "dm900" ] || [ $SEARCH = "dm920" ] ; then
 	dm9x0_situation
 fi
-
 ######################## DM52X,DM7080,DM820 Situation ########################
 dm52x_dm7080_dm820_situation()
 {
 log "Found dm52x,dm7080,dm820, xz mode"
-
 EXTRA="$MEDIA/fullbackup_dreambox/$DATE"
 MAINDEST="$MEDIA/$SEARCH"
-
 ROOTNAME = "rootfs.bin"
 KERNELNAME = "kernel.bin"
-
 log "Destination        = $MAINDEST"
 log $LINE
-
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
 echo -n $PURPLE
 echo -n "$SEARCH " | tr  a-z A-Z		# Shows the receiver brand and model
@@ -448,10 +420,8 @@ echo $BLUE
 log "RECEIVER = $SEARCH "
 echo "$VERSION"
 echo $WHITE
-
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
-
 KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
 KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
 TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
@@ -470,11 +440,9 @@ echo $LINE
 $SHOW "message03"  ; printf "%d.%02d " $ESTMINUTES $ESTSECONDS ; $SHOW "message25" # estimated time in minutes 
 echo $LINE
 } 2>&1 | tee -a $LOGFILE
-
 #=================================================================================
 #exit 0  #USE FOR DEBUGGING/TESTING ###########################################
 #=================================================================================
-
 ##################### PREPARING THE BUILDING ENVIRONMENT ######################
 log "*** FIRST SOME HOUSEKEEPING ***"
 rm -rf "$WORKDIR"		# GETTING RID OF THE OLD REMAINS IF ANY
@@ -491,13 +459,10 @@ mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
 if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
 	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
 fi
-
 ############################## MAKING KERNELDUMP ##############################
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-
 log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
-
 $NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
 if [ -f "$WORKDIR/$KERNELNAME" ] ; then
 	echo -n "Kernel dumped  :"  >> $LOGFILE
@@ -507,17 +472,14 @@ else
 	big_fail
 fi
 log "--------------------------"
-
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
 $MKFS -cvJf $WORKDIR/rootfs.tar.xz -C /tmp/bi/root --exclude=/var/nmbd/* .
-
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
 mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
 mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
-
 image_version > "$MAINDEST/imageversion" 
 if  [ $HARDDISK != 1 ]; then
 	mkdir -p "$EXTRA"
@@ -531,7 +493,6 @@ if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/ima
 else
 	big_fail
 fi
-
 #################### CHECKING FOR AN EXTRA BACKUP STORAGE #####################
 if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
@@ -563,7 +524,6 @@ if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 sync
 fi
 ######################### END OF EXTRA BACKUP STORAGE #########################
-
 ################## CLEANING UP AND REPORTING SOME STATISTICS ##################
 clean_up
 END=$(date +%s)
@@ -574,12 +534,10 @@ echo -n $YELLOW
 {
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
-
 ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} ` 
 KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} ` 
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
-
 echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
 echo $LINE >> $LOGFILE
 # "Back up done with $SPEED KB per second" 
@@ -592,7 +550,6 @@ echo $LINE >> $LOGFILE
 $SHOW "message41" >> $LOGFILE
 echo "--------------------------------------------" >> $LOGFILE
 opkg list-installed >> $LOGFILE
-
 ######################## COPY LOGFILE TO MAINDESTINATION ######################
 echo -n $WHITE
 cp $LOGFILE "$MAINDEST"
@@ -609,27 +566,21 @@ fi
 ############### END OF PROGRAMM ################
 }
 ######################## DM52X,DM7080,DM820 Situation ########################
-
 if [ $SEARCH = "dm520" ] || [ $SEARCH = "dm525" ] || [ $SEARCH = "dm7080" ] || [ $SEARCH = "dm820" ] ; then
 	dm52x_dm7080_dm820_situation
 fi
-
 ########################### Old Dreambox Situation ###########################
 old_dreambox_situation()
 {
 log "Found old dreamboxes, nfi mode"
-
 ###### TESTING IF ALL THE BINARIES FOR THE BUILDING PROCESS ARE PRESENT #######
 echo $RED
 checkbinary $MKFSJFFS2
 checkbinary $BUILDIMAGE
 echo -n $WHITE
-
 # athoik's code, Modified by Persian Prince #
-
 CREATE_ZIP="$2"
 IMAGENAME="$3"
-
 cleanup_mounts(){
    if [ ! -z "$TBI" ] ; then
       if [ -d "$TBI/boot" ] ; then
@@ -646,13 +597,11 @@ cleanup_mounts(){
       fi
    fi
 }
-
 #
 # Set Backup Location
 #
 EXTRA="$MEDIA/fullbackup_dreambox/$DATE"
 MAINDEST="$MEDIA/$SEARCH"
-
 SBI="$MEDIA/bi"
 TBI="/tmp/bi"
 #
@@ -660,22 +609,18 @@ TBI="/tmp/bi"
 #
 EXTRA_BUILDCMD=""
 EXTRA_IMAGECMD=""
-
 DREAMBOX_ERASE_BLOCK_SIZE=""
 DREAMBOX_FLASH_SIZE=""
 DREAMBOX_SECTOR_SIZE=""
 MKUBIFS_ARGS=""
 UBINIZE_ARGS=""
-
 UBINIZE_VOLSIZE="0"
 UBINIZE_DATAVOLSIZE="0"
 UBI_VOLNAME="rootfs"
-
 DREAMBOX_IMAGE_SIZE=""
 DREAMBOX_PART0_SIZE=""
 DREAMBOX_PART1_SIZE=""
 DREAMBOX_PART2_SIZE=""
-
 #
 # Set parameters based on box
 # dm7020hdv2 is recognized from /sys/devices/virtual/mtd/mtd0/writesize
@@ -719,7 +664,6 @@ case $SEARCH in
       DREAMBOX_PART0_SIZE="0x100000"
       DREAMBOX_PART1_SIZE="0x700000"
       DREAMBOX_PART2_SIZE="0x3F800000"
-
       # dm7020hdv2 when writesize = 2048
       WRITESIZE="4096"
       if [ -f /sys/devices/virtual/mtd/mtd0/writesize ] ; then 
@@ -752,9 +696,7 @@ case $SEARCH in
       exit 3
       ;;
 esac
-
 EXTRA_IMAGECMD="-e $DREAMBOX_ERASE_BLOCK_SIZE -n -l"
-
 #
 # Setup temporary files and variables
 #
@@ -762,18 +704,14 @@ SECSTAGE="$SBI/secondstage.bin"
 UBINIZE_CFG="$TBI/ubinize.cfg"
 BOOT="$SBI/boot.jffs2"
 ROOTFS="$SBI/rootfs.jffs2"
-
 cleanup_mounts
-
 echo $LINE
 echo "Starting Full Backup, Please wait ..."
 echo $LINE
-
 rm -rf "$SBI" 2>/dev/null
 rm -rf "$TBI" 2>/dev/null
 mkdir -p "$SBI"
 mkdir -p "$TBI"
-
 #
 # Export secondstage
 #
@@ -785,7 +723,6 @@ if [ $? -ne 0 ] && [ ! -f "$SECSTAGE" ] ; then
    log "Error: nanddump failed to dump secondstage!"
    exit 8
 fi
-
 #
 # Trim 0xFFFFFF from secondstage
 #
@@ -795,7 +732,6 @@ cutoff=data.find('\xff\xff\xff\xff')
 if cutoff:
     open('$SECSTAGE', 'wb').write(data[0:cutoff])
 "
-
 SIZE="$(du -k "$SECSTAGE" | awk '{ print $1 }')"
 if [ $SIZE -gt 200 ] ; then 
    log "Error: Size of secondstage must be less than 200k"
@@ -805,33 +741,27 @@ if [ $SIZE -gt 200 ] ; then
    rm -rf "$TBI" 2>/dev/null
    exit 9
 fi
-
 #
 # Export boot partition
 #
 log "Exporting boot partition"
 mkdir -p "$TBI/boot"
 mount -t jffs2 /dev/mtdblock/2 "$TBI/boot"
-
 /usr/sbin/mkfs.jffs2 \
    --root="$TBI/boot" \
    --compression-mode=none \
    --output="$BOOT" \
    $EXTRA_IMAGECMD
-
 umount "$TBI/boot" 2>/dev/null
-
 #
 # Export root partition
 #
 if grep -q ubi0:rootfs /proc/mounts ; then
-
    log "Exporting rootfs (UBI)"
    ROOTFS="$SBI/rootfs.ubi"
    ROOTUBIFS="$SBI/rootfs.ubifs"
    mkdir -p "$TBI/root"
    mount --bind / "$TBI/root"
-
    echo [root] > $UBINIZE_CFG
    echo mode=ubi >> $UBINIZE_CFG
    echo image=$ROOTUBIFS >> $UBINIZE_CFG
@@ -852,18 +782,15 @@ if grep -q ubi0:rootfs /proc/mounts ; then
 	 echo vol_flags=autoresize >> $UBINIZE_CFG
       fi
    fi
-
    /usr/sbin/mkfs.ubifs -r "$TBI/root" -o $ROOTUBIFS $MKUBIFS_ARGS
    log "mkfs.ubifs return value: $?"
    /usr/sbin/ubinize -o $ROOTFS $UBINIZE_ARGS $UBINIZE_CFG
    log "ubinize return value: $?"
-
    umount "$TBI/root" 2>/dev/null
 else
    log "Export rootfs (JFFS2)"
    mkdir -p "$TBI/root"
    mount -t jffs2 /dev/mtdblock/3 "$TBI/root"
-
    /usr/sbin/mkfs.jffs2 \
       --root="$TBI/root" \
       --disable-compressor=lzo \
@@ -873,7 +800,6 @@ else
    log "mkfs.jffs2 return value: $?"
    umount "$TBI/root" 2>/dev/null
 fi
-
 #
 # Build NFI image
 #
@@ -886,20 +812,17 @@ log "Building NFI image"
    --data-partition $DREAMBOX_PART1_SIZE:$BOOT \
    --data-partition $DREAMBOX_PART2_SIZE:$ROOTFS \
    > "$SBI/backup.nfi"
-
 #
 # Archive NFI image
 #
 log "Transfering image to backup folder"
 TSTAMP="$(date "+%Y-%m-%d-%Hh%Mm")"
 rm -rf "$MAINDEST" 2>/dev/null
-
 mkdir -p "$MAINDEST"
 NFI="$MAINDEST/$TSTAMP-$SEARCH.nfi"
 mv "$SBI/backup.nfi" "$NFI"
 log "Backup image created $NFI"
 log "$(du -h $NFI)"
-
 if [ -z "$CREATE_ZIP" ] ; then
    mkdir -p "$EXTRA"
    touch "$NFI/$IMVER"
@@ -912,7 +835,6 @@ else
       cd
    fi
 fi
-
 #
 # Cleanup
 #
@@ -920,7 +842,6 @@ log "Remove temporary files..."
 cleanup_mounts
 rm -rf "$SBI" 2>/dev/null
 rm -rf "$TBI" 2>/dev/null
-
 if [ -f "$NFI" ] ; then
 	backup_made_nfi
 else
@@ -950,9 +871,7 @@ echo "--------------------------------------------" >> $LOGFILE
 opkg list-installed >> $LOGFILE
 }
 ########################### Old Dreambox Situation ###########################
-
 if [ $SEARCH != "dm900" ] && [ $SEARCH != "dm920" ] && [ $SEARCH != "dm520" ] && [ $SEARCH != "dm525" ] && [ $SEARCH != "dm7080" ] && [ $SEARCH != "dm820" ] ; then
 	old_dreambox_situation
 fi
-
 exit
