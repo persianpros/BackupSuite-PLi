@@ -408,8 +408,6 @@ dm52x_dm7080_dm820_situation()
 log "Found dm52x,dm7080,dm820, xz mode"
 EXTRA="$MEDIA/fullbackup_dreambox/$DATE"
 MAINDEST="$MEDIA/$SEARCH"
-ROOTNAME = "rootfs.bin"
-KERNELNAME = "kernel.bin"
 log "Destination        = $MAINDEST"
 log $LINE
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
@@ -459,40 +457,21 @@ mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
 if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
 	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
 fi
-############################## MAKING KERNELDUMP ##############################
-log $LINE
-$SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
-$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
-if [ -f "$WORKDIR/$KERNELNAME" ] ; then
-	echo -n "Kernel dumped  :"  >> $LOGFILE
-	ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
-else 
-	log "$WORKDIR/$KERNELNAME NOT FOUND"
-	big_fail
-fi
-log "--------------------------"
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
 $MKFS -cvJf $WORKDIR/rootfs.tar.xz -C /tmp/bi/root --exclude=/var/nmbd/* .
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
-mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
-mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
 image_version > "$MAINDEST/imageversion" 
 if  [ $HARDDISK != 1 ]; then
 	mkdir -p "$EXTRA"
 	echo "Created directory  = $EXTRA" >> $LOGFILE
 	cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
 fi
-if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/imageversion" ] ; then
-		backup_made
-		$SHOW "message14" 			# Instructions on how to restore the image.
-		echo $LINE
-else
-	big_fail
-fi
+backup_made
+$SHOW "message14" 			# Instructions on how to restore the image.
+echo $LINE
 #################### CHECKING FOR AN EXTRA BACKUP STORAGE #####################
 if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
