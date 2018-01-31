@@ -578,6 +578,15 @@ echo $RED
 checkbinary $MKFSJFFS2
 checkbinary $BUILDIMAGE
 echo -n $WHITE
+############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
+echo -n $PURPLE
+echo -n "$SEARCH " | tr  a-z A-Z		# Shows the receiver brand and model
+$SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
+echo $BLUE
+log "RECEIVER = $SEARCH "
+echo "$VERSION"
+echo $WHITE
+############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 # athoik's code, Modified by Persian Prince #
 CREATE_ZIP="$2"
 IMAGENAME="$3"
