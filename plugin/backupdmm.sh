@@ -420,7 +420,7 @@ echo "$VERSION"
 echo $WHITE
 ############ CALCULATE SIZE, ESTIMATED SPEED AND SHOW IT ON SCREEN ############
 $SHOW "message06" 	#"Some information about the task:"
-KERNELHEX=`cat /proc/mtd | grep -w "kernel" | cut -d " " -f 2` # Kernelsize in Hex
+KERNELHEX=800000 # Not the real size (will be added later)
 KERNEL=$((0x$KERNELHEX))			# Total Kernel size in bytes
 TOTAL=$(($USEDsizebytes+$KERNEL))	# Total ROOTFS + Kernel size in bytes
 KILOBYTES=$(($TOTAL/1024))			# Total ROOTFS + Kernel size in KB
