@@ -1,17 +1,17 @@
 Changelog
 =========
 
-Git 281-323
+Git 281-340
 - plugin.py cleanup
 - Make sure "backuphdd.sh" and "backupusb.sh" are executable.
 - "backupusb.sh" and "backuphdd.sh" updated, Make sure "backupsuite.sh" is executable.
 - Dreambox support
 All old dreamboxes with "nfi" images could create backups now.
 dm9x0 bz2 backup is ok also
-dm52x,dm7080,dm820 xz backup not tested yet ...
+dm52x,dm7080,dm820 xz backup needs more tests
 Restore for dreambox is not possible via plugin itself
 as you have to flash your backup via DMM's WebIF.
-- Better dreambox detection, Thanks to Hains
+- Better dreambox detection, Thanks a lot to Hains
 - Vu4k kernel problem fixed.
 - Version change from 24 to 25.
 
