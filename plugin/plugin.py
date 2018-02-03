@@ -79,11 +79,10 @@ def backupCommandHDD():
 			os.chmod(BACKUP_DMM_HDD, 0755)
 	except:
 		pass
+	cmd = BACKUP_HDD
 	for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
 		if os.path.exists(dvbmod):
 			cmd = BACKUP_DMM_HDD
-		else:
-			cmd = BACKUP_HDD
 	return cmd
 
 def backupCommandUSB():
@@ -97,11 +96,10 @@ def backupCommandUSB():
 			os.chmod(BACKUP_DMM_USB, 0755)
 	except:
 		pass
+	cmd = BACKUP_USB
 	for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
 		if os.path.exists(dvbmod):
 			cmd = BACKUP_DMM_USB
-		else:
-			cmd = BACKUP_USB
 	return cmd
 
 try:
