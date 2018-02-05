@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Git 281-343
+Git 281-346
 - plugin.py cleanup
 - Make sure "backuphdd.sh" and "backupusb.sh" are executable.
 - "backupusb.sh" and "backuphdd.sh" updated, Make sure "backupsuite.sh" is executable.
@@ -14,6 +14,7 @@ as you have to flash your backup via DMM's WebIF.
 - Better dreambox detection, Thanks a lot to Hains
 - Vu4k kernel problem fixed.
 - IT language update, Thanks to pzanone
+- mphelp.xml update: Show https://github.com/PLi-metas/BackupSuite/issues
 - Version change from 24 to 25.
 
 Git 273-280
@@ -33,7 +34,6 @@ Shell scripts are executable in our git but distutils won't make them executable
 - Edision OSninoplus support
 - plugin.py update, Update "no_backup_files", Use "startswith" method and some improvements
 - Cleanup: Useless and duplicate python imports removed.
-- mphelp.xml update: Show https://github.com/persianpros/BackupSuite/issues
 - Xtrend 13000 support
 - Beyonwiz U4 support
 - Version change from 22 to 23.
