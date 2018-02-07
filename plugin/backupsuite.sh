@@ -330,6 +330,9 @@ else
 	elif [ $SEARCH = "zero4k" ] ; then
 		dd if=/dev/mmcblk0p4 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p4"
+	elif [ $SEARCH = "sf4008" ] ; then
+		dd if=/dev/mmcblk0p3 of=$WORKDIR/$KERNELNAME
+		log "Kernel resides on /dev/mmcblk0p3"
 	else
 		python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
 		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
