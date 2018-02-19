@@ -396,6 +396,10 @@ class FlashImageConfig(Screen):
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
 							text += "kernel.bin, rootfs.tar.bz2"
+						elif model.startswith(("et4", "et5", "et6", "et7", "et8", "et9", "et10")):
+							backup_files = [("kernel.bin"), ("rootfs.bin")]
+							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+							text += "kernel.bin, rootfs.bin"
 						elif "4k" or "uhd" in model:
 							backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("kernel_auto.bin")]
@@ -438,6 +442,10 @@ class FlashImageConfig(Screen):
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
 							text += "kernel.bin, rootfs.tar.bz2"
+						elif model.startswith(("et4", "et5", "et6", "et7", "et8", "et9", "et10")):
+							backup_files = [("kernel.bin"), ("rootfs.bin")]
+							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
+							text += "kernel.bin, rootfs.bin"
 						elif "4k" or "uhd" in model:
 							backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("kernel_auto.bin")]
