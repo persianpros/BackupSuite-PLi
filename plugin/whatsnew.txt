@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Git 281-346
+Git 281-350
 - plugin.py cleanup
 - Make sure "backuphdd.sh" and "backupusb.sh" are executable.
 - "backupusb.sh" and "backuphdd.sh" updated, Make sure "backupsuite.sh" is executable.
@@ -15,6 +15,8 @@ as you have to flash your backup via DMM's WebIF.
 - Vu4k kernel problem fixed.
 - IT language update, Thanks to pzanone
 - mphelp.xml update: Show https://github.com/PLi-metas/BackupSuite/issues
+- sf4008 kernel detection fixed.
+- Xtrend file detection fixed.
 - Version change from 24 to 25.
 
 Git 273-280
