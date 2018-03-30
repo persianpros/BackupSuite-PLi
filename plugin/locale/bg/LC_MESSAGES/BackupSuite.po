@@ -1,0 +1,307 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BackupSuite\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Мартин Петков <marto74bg@yahoo.co.uk>\n"
+"Language-Team: Bulgarian\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 "
+"&& (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+"\n"
+"Открити файлове:"
+
+msgid "  %s (maybe error)"
+msgstr "  %s (може би грешка)"
+
+msgid "  %s (maybe ok)"
+msgstr "  %s (може би е ок"
+
+msgid " MB available space"
+msgstr " МБ свободно място"
+
+msgid " MB needed space"
+msgstr " МБ са необходими"
+
+msgid " nothing!"
+msgstr " нищо няма!"
+
+msgid " size to be backed up: "
+msgstr " размер на резервното копие: "
+
+msgid " to make a back-up!"
+msgstr " за да се създаде резервно копие!"
+
+msgid "* * * WARNING * * *"
+msgstr "* * * ВНИМАНИЕ * * *"
+
+msgid ""
+"A recording is currently running. Please stop the recording before trying to "
+"start a flashing."
+msgstr "В момента тече запис. Моля спрете го, преди да започнете с флашването."
+
+msgid "Additional backup -> "
+msgstr "Допълнително резервно копие -> "
+
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "ПРОГРАМА ЗА СЪЗДАВАНЕ НА ПЪЛНО РЕЗЕРВНО КОПИЕ"
+
+msgid "Backup > HDD"
+msgstr "Бакъп > HDD"
+
+msgid "Backup > USB"
+msgstr "Бакъп > USB"
+
+msgid "Backup done with: "
+msgstr "Резервното копие завърши със скорост: "
+
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Резервното копие завърши и файловете са копирани на USB флашката."
+
+msgid "BackupSuite"
+msgstr "BackupSuite"
+
+msgid "Cancel"
+msgstr "Отмяна"
+
+msgid "Create: kerneldump"
+msgstr "Създава се: kerneldump"
+
+msgid "Create: root.ubifs"
+msgstr "Създава се: root.ubifs"
+
+msgid "Do you really want to unpack %s ?"
+msgstr "Наистина ли искате да разопаковате %s?"
+
+msgid ""
+"Do you want to make a back-up on USB?\n"
+"\n"
+"This only takes a few minutes depending on the used filesystem and is fully "
+"automatic.\n"
+"\n"
+"Make sure you first insert an USB flash drive before you select Yes."
+msgstr ""
+"Наистина ли искате да направите резервно копие на USB?\n"
+"\n"
+"Това ще отнеме само няколко минути в зависимост от файловата система и процеса "
+"е напълно автоматизиран.\n"
+"\n"
+"Убедете се, че сте поставили USB флашка, преди да изберете Да."
+
+msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Наистина ли искате да направите резервно копие на HDD? \n"
+"\n"
+"Това ще отнеме само няколко минути, процеса е напълно автоматизиран.\n"
+
+msgid "Enables back-up & restore without an USB-stick"
+msgstr "Позволява създаване на бакъп & възстановяване без USB-стик"
+
+msgid "Exit"
+msgstr "Изход"
+
+msgid "Flashing: "
+msgstr "Флашване: "
+
+msgid "For flashing your receiver files are needed:\n"
+msgstr "За флашването наВашия приемник са необходими файлове:\n"
+
+msgid "Full back-up direct to USB"
+msgstr "Пълно резервно копие директно на USB"
+
+msgid "Full back-up on HDD"
+msgstr "Пълно резервно копие на HDD"
+
+msgid "Full back-up to USB"
+msgstr "Пълно резервно копие на USB"
+
+msgid "Full back-up to the harddisk"
+msgstr "Пълно резервно копие на твърдия диск"
+
+msgid ""
+"If you place an USB-stick containing this file then the back-up will be "
+"automatically made onto the USB-stick and can be used to restore the current "
+"image if necessary."
+msgstr ""
+"Ако включите USB-флашка съдържаща този файл, то резервното копие ще бъде "
+"автоматично създадено на USB-флашката и, може да се използва за възстановяване "
+"на текущия имидж при необходимост."
+
+msgid "Image creation FAILED!"
+msgstr "Създаването на имиджа завърши с ГРЕШКА!"
+
+msgid "KB per second"
+msgstr "КБ в секунда"
+
+msgid "Make a backup or restore a backup"
+msgstr "Създаване или възстановяване на резервно копие"
+
+msgid ""
+"Most likely this back-up can't be restored because of it's size, it's simply "
+"too big to restore. This is a limitation of the bootloader not of the back-up "
+"or the BackupSuite."
+msgstr ""
+"Най-вероятно, този бакъп не може да се възстанови поради неговия размер, т.к. е "
+"твърде голям. Това е ограничение на bootloadeа, а не на резервното копие или на "
+"BackupSuite."
+
+msgid "NOT found files for flashing!\n"
+msgstr "НЕ са открити файлове за флашване!\n"
+
+msgid "No supported receiver found!"
+msgstr "Приемника не се поддържа!"
+
+msgid "Not enough free space on "
+msgstr "Недостатъчно свободно място на "
+
+msgid "Only kernel"
+msgstr "Само ядро"
+
+msgid "Only root"
+msgstr "Само имидж"
+
+msgid "PLEASE READ THIS:"
+msgstr "МОЛЯ ПРОЧЕТЕТЕ ТОВА:"
+
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr ""
+"Моля бъдете търпеливи, създаването на резервно копие започна, това ще отнеме "
+"около: "
+
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr ""
+"Моля проверете инструкциите на приемника относно, как да възстановите имиджа."
+
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr "Моля, НЕ рестартирайте Вашия приемник и НЕ изключвайте захранването!\n"
+
+msgid "Restore backup"
+msgstr "Възстановяване"
+
+msgid "Run flash"
+msgstr "Флашване"
+
+msgid "Select parameter for start flash!\n"
+msgstr "Изберете параметри за старт на флашването!\n"
+
+msgid "Select the folder with backup"
+msgstr "Изберете папката с бакъп"
+
+msgid "Show only found image and mtd partitions.\n"
+msgstr "Покажи само откритите имиджи и mtd дялове\n"
+
+msgid "Simulate (no write)"
+msgstr "Симулирай (без запис)"
+
+msgid "Some information about the task"
+msgstr "Някои данни за задачата"
+
+msgid "Standard (root and kernel)"
+msgstr "Стандарт (имидж и ядро)"
+
+msgid "The content of the folder is:"
+msgstr "Съдържание на папка:"
+
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr ""
+"Имиджа или ядрото ще бъдат презаписани и приемника автоматично ще се\n"
+"рестартира след няколко минути.\n"
+
+msgid ""
+"The program will abort, please try another medium with more free space to "
+"create your back-up."
+msgstr ""
+"Процеса ще прекъсне, моля опитайте с друг носител, на който има повече свободно "
+"място."
+
+msgid "The program will exit now."
+msgstr "Програмата ще се затвори сега."
+
+msgid ""
+"There COULD be a problem with restoring this back-up because the size of the "
+"back-up comes close to the maximum size. This is a limitation of the bootloader "
+"not of the back-up or the BackupSuite."
+msgstr ""
+"Може да възникне проблем с възстановяването на това резервно копие поради това ,"
+"че размера му се доближава до максимално възможния. Това ограничение е на "
+"bootloader-а а не на резервното копие или BackupSuite."
+
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "Открит е невалиден USB-стик, затова резервно копие няма да се направи."
+
+msgid ""
+"There is a valid USB-flashdrive detected in one of the USB-ports, therefore an "
+"extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr ""
+"Открит е валиден USB-стик в един от USB-портовете, затова допълнително резервно "
+"копие на имиджа ще бъде копирано на този USB-стик."
+
+msgid "This only takes about 20 seconds....."
+msgstr "Това ще отнеме само около 20 секунди..."
+
+msgid "Time required for this process: "
+msgstr "Време необходимо за този процес: "
+
+msgid ""
+"To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
+"the name:"
+msgstr ""
+"За директно копиране на USB-флашка, Флашката ТРЯБВА да съдържа файл с име:"
+
+msgid "USB Image created in: "
+msgstr "USB имджа е създан в: "
+
+msgid "Unzip"
+msgstr "Разархивиране"
+
+msgid ""
+"Warning!\n"
+"Use at your own risk! Make always a backup before use!\n"
+"Don't use it if you use multiple ubi volumes in ubi layer!"
+msgstr ""
+"Важно!\n"
+"Използвайте на свой риск! Винаги правете бакъп преди използване!\n"
+"Не го използвайте, ако имате няколко ubi дяла!"
+
+msgid "What is new since the last release?"
+msgstr "Какво ново след последната версия?"
+
+msgid "Your STB will freeze during the flashing process.\n"
+msgstr "Вашия приемник ще замръзне по време на флашването!\n"
+
+msgid "and there is made an extra copy in: "
+msgstr "и направи допълнително резервно копие в: "
+
+msgid "available "
+msgstr "достъпен "
+
+msgid "backupstick or"
+msgstr "backupstick или"
+
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+msgid "current:  %s"
+msgstr "текуща:  %s"
+
+msgid "minutes"
+msgstr "минути"
+
+msgid "not found, the backup process will be aborted!"
+msgstr "не е открит, процеса за резервно копие ще бъде прекратен!"
+
+msgid "ofgwrite will stop enigma2 now to run the flash.\n"
+msgstr "програмата ofgwrite сега ще спре enigma2 за флашването!\n"
