@@ -1,32 +1,32 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: BackupSuite\n"
 "POT-Creation-Date: 2018-02-02 11:42+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
+"Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: message.py:22 plugin.py:207
 msgid "No supported receiver found!"
-msgstr "Non e stato trovato nessun ricevitore supportato!"
+msgstr "Non è stato trovato nessun ricevitore supportato!"
 
 #: message.py:26
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "BACK-UP TOOL, PER  ESEGUIRE UN BACK-UP COMPLETO"
+msgstr "STRUMENTO DI BACKUP, PER  ESEGUIRE UN BACKUP COMPLETO"
 
 #: message.py:30
 msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr ""
-"Si prega di essere pazienti, un backup sara' eseguito, ci impieghera' circa: "
+"Si prega di essere pazienti, un backup sarà eseguito e impiegherà circa: "
 
 #: message.py:34
 msgid " size to be backed up: "
@@ -34,7 +34,7 @@ msgstr " dimensione del backup: "
 
 #: message.py:38
 msgid "not found, the backup process will be aborted!"
-msgstr "non trovato, il processo backup sara' abortito! "
+msgstr "non trovato, il processo di backup sarà abortito! "
 
 #: message.py:42
 msgid "Some information about the task"
@@ -54,19 +54,19 @@ msgstr "Altri backup -> "
 
 #: message.py:58
 msgid "USB Image created in: "
-msgstr "USB-Image creata in: "
+msgstr "Immagine USB creata in: "
 
 #: message.py:62
 msgid "and there is made an extra copy in: "
-msgstr "un altra copia e stata creata in: "
+msgstr "un'altra copia è stata creata in: "
 
 #: message.py:66
 msgid "Please check the manual of the receiver on how to restore the image."
-msgstr "Controllare il manuale del ricevitore su come ripristinare l immagine."
+msgstr "Controllare nel manuale del ricevitore come ripristinare l'immagine."
 
 #: message.py:70
 msgid "Image creation FAILED!"
-msgstr "Creazione dell immagine FALLITA!"
+msgstr "Creazione dell'immagine FALLITA!"
 
 #: message.py:74
 msgid "available "
@@ -77,36 +77,36 @@ msgid ""
 "There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
 "an extra copy of the back-up image will now be copied to that USB-flashdrive."
 msgstr ""
-"E presente una penna USB in uno dei USB-port per questo un altra copia dell "
-"immagine sara' creata nella penna USB."
+"E' presente una chiavetta USB in una delle porte disponibili, per questo "
+"motivo un'altra copia dell'immagine sarà creata nella chiavetta USB."
 
 #: message.py:79
 msgid "This only takes about 20 seconds....."
-msgstr "Ci impieghera' circa 20 secondi....."
+msgstr "Impiegherà circa 20 secondi....."
 
 #: message.py:83
 msgid "Backup finished and copied to your USB-flashdrive."
-msgstr "Il Backup e finito e sara copiato nella penna USB."
+msgstr "Il Backup è finito e sarà copiato nella chiavetta USB."
 
 #: message.py:87
 msgid "Full back-up to the harddisk"
-msgstr "Completo Back-up su harddisk"
+msgstr "Backup completo su disco rigido"
 
 #: message.py:91
 msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "Non esiste una valida USB penna, non e possibile fare niente...."
+msgstr "Non esiste una chiavetta USB valida, non è possibile fare niente."
 
 #: message.py:93
 msgid "PLEASE READ THIS:"
-msgstr "PREGO LEGGERE QUESTO:"
+msgstr "LEGGERE PRIMA:"
 
 #: message.py:94
 msgid ""
 "To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
 "the name:"
 msgstr ""
-"Per effettuare un back-up completo su penna USB ce bisogno di creare un file "
-"con questo nome:"
+"Per effettuare un backup completo su chiavetta USB è necessario creare un "
+"file con questo nome:"
 
 #: message.py:95
 msgid "backupstick or"
@@ -122,26 +122,26 @@ msgid ""
 "automatically made onto the USB-stick and can be used to restore the current "
 "image if necessary."
 msgstr ""
-"Se la penna USB contiene questo file allora un Back-up verra' "
-"automaticamente creato sulla penna USB e potra' essere usato per "
-"ripristinare l' attuale immagine se necessario."
+"Se la chiavetta USB contiene questo file allora un backup sarà "
+"automaticamente creato sulla chiavetta USB e potrà essere usato per "
+"ripristinare l'attuale immagine se necessario."
 
 #: message.py:99
 msgid "The program will exit now."
-msgstr "Il programma verra' adesso terminato."
+msgstr "Il programma terminerà ora."
 
 # #: message22
 #: message.py:103
 msgid "Full back-up direct to USB"
-msgstr "Back-up completo su USB"
+msgstr "Backup completo su USB"
 
 #: message.py:107
 msgid "The content of the folder is:"
-msgstr "Il contenuto della cartella e':"
+msgstr "Il contenuto della cartella è:"
 
 #: message.py:112
 msgid "Time required for this process: "
-msgstr "Il tempo richiesto per questo processo: "
+msgstr "Tempo richiesto per questo processo: "
 
 #: message.py:116
 msgid "minutes"
@@ -161,9 +161,9 @@ msgid ""
 "too big to restore. This is a limitation of the bootloader not of the back-"
 "up or the BackupSuite."
 msgstr ""
-"Probabilmente il back-up non puo essere ripristinato perche la dimensione e "
-"semplicemente troppo grande per essere ripristinata. Questa e una "
-"limitazione nel bootloader non del back-up o della BackupSuite."
+"Probabilmente il backup non può essere ripristinato perché la dimensione è "
+"semplicemente troppo grande per essere ripristinata. Questa è una "
+"limitazione del bootloader e non del backup o di BackupSuite."
 
 #: message.py:132
 msgid ""
@@ -171,9 +171,9 @@ msgid ""
 "back-up comes close to the maximum size. This is a limitation of the "
 "bootloader not of the back-up or the BackupSuite."
 msgstr ""
-"E possibile che ci sia un problema nel ripristino dell immagine poiche la "
-"dimensione del back-up e vicina alla dimensione massima. Questa e una "
-"limitazione nel bootloader non del back-up o del  BackupSuite."
+"E' possibile che ci sia un problema nel ripristino dell'immagine poiché la "
+"dimensione del backup è vicina alla dimensione massima. Questa è una "
+"limitazione del bootloader e non del backup o di  BackupSuite."
 
 #: message.py:136
 msgid "* * * WARNING * * *"
@@ -181,27 +181,27 @@ msgstr "* * * ATTENZIONE * * *"
 
 #: message.py:137
 msgid "Not enough free space on "
-msgstr "Non ce abbastanza spazio libero "
+msgstr "Non c'è abbastanza spazio libero "
 
 #: message.py:141
 msgid " to make a back-up!"
-msgstr " per effettuare un back-up!"
+msgstr " per effettuare un backup!"
 
 #: message.py:145
 msgid " MB available space"
-msgstr " MB spazio libero"
+msgstr "Spazio libero (MB)"
 
 #: message.py:149
 msgid " MB needed space"
-msgstr " MB spazio necessario"
+msgstr "Spazio necessario (MB)"
 
 #: message.py:153
 msgid ""
 "The program will abort, please try another medium with more free space to "
 "create your back-up."
 msgstr ""
-"Il programma sara terminato, usare un altro mezzo che abbia piu spazio per "
-"creare il vostro back-up."
+"Il programma sarà terminato, usare un'altra unità che abbia più spazio per "
+"creare il vostro backup."
 
 #: message.py:157
 msgid "is not executable..."
@@ -213,15 +213,15 @@ msgstr "Usando il tuo lookuptable.txt personalizzato dalla cartella /etc"
 
 #: message.py:165
 msgid "Version unknown, probably not installed the right way."
-msgstr "Versione sconosciuta, probabilmente non installata nel modo giusto."
+msgstr "Versione sconosciuta, probabilmente non è installata nel modo giusto."
 
 #: message.py:169
 msgid "not installed yet, now installing"
-msgstr "non ancora installato, ora l'installo"
+msgstr "non ancora installata, ora la installo"
 
 #: message.py:173
 msgid "Probably you are trying to make the back-up in flash memory"
-msgstr "Probabilmente stai provando a fare il backup nella memoria flash"
+msgstr "Probabilmente si sta tentando a fare il backup nella memoria flash"
 
 #: message.py:177
 msgid "No additional USB-stick found to copy an extra backup"
@@ -241,11 +241,11 @@ msgstr "NAS"
 
 #: plugin.py:129
 msgid "Make a backup or restore a backup"
-msgstr "Eseguire un backup o ripristinare un backup"
+msgstr "Eseguire o ripristinare un backup"
 
 #: plugin.py:131 plugin.py:257 plugin.py:284
 msgid "Close"
-msgstr "Chiudi"
+msgstr "Chiudere"
 
 #: plugin.py:132
 msgid "Backup > HDD"
@@ -257,7 +257,7 @@ msgstr "Backup > USB"
 
 #: plugin.py:134
 msgid "Restore backup"
-msgstr "Ripristino back-up"
+msgstr "Ripristinare backup"
 
 #: plugin.py:149
 msgid ""
@@ -265,7 +265,7 @@ msgid ""
 "\n"
 "This only takes a few minutes and is fully automatic.\n"
 msgstr ""
-"Si desidera mettere il back-up USB sull'HDD?\n"
+"Si desidera fare un'immagine USB di backup sul disco rigido?\n"
 "\n"
 "Questa operazione richiede pochi minuti ed è completamente automatica. \n"
 
@@ -278,32 +278,32 @@ msgid ""
 "\n"
 "Make sure you first insert an USB flash drive before you select Yes."
 msgstr ""
-"Si desidera fare un back-up su USB?\n"
+"Si desidera fare un backup su USB?\n"
 "\n"
 "Questa operazione richiede pochi minuti a seconda del file system utilizzato "
 "ed è completamente automatica.\n"
 "\n"
-"Assicuratevi che la penna USB sia inserita prima di selezionare Sì."
+"Assicuratevi che la chiavetta USB sia inserita prima di selezionare Sì."
 
 #: plugin.py:228
 msgid "Full back-up on HDD"
-msgstr "Intero-Backup nel HDD"
+msgstr "Backup completo su disco rigido"
 
 #: plugin.py:235
 msgid "Full back-up to USB"
-msgstr "Intero-Backup nel USB"
+msgstr "Backup completo su USB"
 
 #: plugin.py:256
 msgid "What is new since the last release?"
-msgstr "Ciò che è nuovo rispetto all'ultima versione?"
+msgstr "Novità rispetto all'ultima versione?"
 
 #: plugin.py:258
 msgid "Please wait"
-msgstr "attendere prego"
+msgstr "Attendere prego..."
 
 #: plugin.py:283
 msgid "Select the folder with backup"
-msgstr "Selezionare la cartella con Backup"
+msgstr "Selezionare la cartella con backup"
 
 #: plugin.py:288 plugin.py:351
 #, python-format
@@ -320,11 +320,11 @@ msgstr "Iniziare il Flash"
 
 #: plugin.py:361 plugin.py:605
 msgid "Backup info"
-msgstr "Backup info"
+msgstr "Info Backup"
 
 #: plugin.py:362 plugin.py:634
 msgid "Delete"
-msgstr "Elimina"
+msgstr "Eliminare"
 
 #: plugin.py:381
 msgid ""
@@ -332,7 +332,7 @@ msgid ""
 "You are using dual multiboot!"
 msgstr ""
 "\n"
-"Stai usando dual multiboot!"
+"Si sta usando il dual multiboot!"
 
 #: plugin.py:382
 msgid ""
@@ -341,17 +341,16 @@ msgid ""
 "Don't use it if you use multiple ubi volumes in ubi layer!"
 msgstr ""
 "Attenzione !\n"
-"!!! Usare a propio rischio !!! Eseguire sempre prima un back-up prima di "
-"usare!\n"
-"Non usare se un multiplo ubi volume e usato in ubi layer"
+"!!! Usare a proprio rischio !!! Eseguire sempre un backup prima di usare!\n"
+"Non usare con volumi ubi multipli in ubi layer!"
 
 #: plugin.py:390
 msgid "Select parameter for start flash!\n"
-msgstr "Selezione dei parametri per iniziare il flash!\n"
+msgstr "Selezionare i parametri per iniziare il flash!\n"
 
 #: plugin.py:391
 msgid "For flashing your receiver files are needed:\n"
-msgstr "Per eseguire un flash del ricevitore ce bisogno del file:\n"
+msgstr "Per eseguire un flash del ricevitore è necessario il file:\n"
 
 #: plugin.py:503
 msgid ""
@@ -359,12 +358,12 @@ msgid ""
 "The found files:"
 msgstr ""
 "\n"
-"I file trovati:"
+"File trovati:"
 
 #: plugin.py:506
 #, python-format
 msgid "  %s (maybe ok)"
-msgstr " %s (possibile ok)"
+msgstr " %s (possibile OK)"
 
 #: plugin.py:509
 #, python-format
@@ -381,7 +380,7 @@ msgstr "Simulazione (non esecuzione)"
 
 #: plugin.py:518 plugin.py:552
 msgid "Standard (root and kernel)"
-msgstr "Standard (root e Kernel)"
+msgstr "Standard (root e kernel)"
 
 #: plugin.py:519 plugin.py:555
 msgid "Only root"
@@ -389,7 +388,7 @@ msgstr "Solo root"
 
 #: plugin.py:520 plugin.py:558
 msgid "Only kernel"
-msgstr "Solo Kernel"
+msgstr "Solo kernel"
 
 #: plugin.py:523 plugin.py:561
 msgid "Simulate second partition (no write)"
@@ -416,8 +415,8 @@ msgid ""
 "A recording is currently running. Please stop the recording before trying to "
 "start a flashing."
 msgstr ""
-"Ce un registrazione in corso. Sei pregato di fermare la registrazione prima "
-"di iniziare il flashing."
+"Una registrazione è in corso. Si prega di fermare la registrazione prima di "
+"iniziare il flashing."
 
 #: plugin.py:546
 msgid "Flashing: "
@@ -425,7 +424,7 @@ msgstr "Flashing:"
 
 #: plugin.py:575
 msgid "NOT found files for flashing!\n"
-msgstr "Files per il flash non trovate !\n"
+msgstr "File per il flash non trovati!\n"
 
 #: plugin.py:580
 msgid "Show only found image and mtd partitions.\n"
@@ -434,31 +433,30 @@ msgstr "Mostrare solo le immagini trovate e la partizione MTD.\n"
 #: plugin.py:585
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr ""
-"Il programma ofgwrite fermera' enigma2 per iniziare il processo di "
-"flashing.\n"
+"Il programma ofgwrite fermerà Enigma2 per iniziare il processo di flashing.\n"
 
 #: plugin.py:586
 msgid "Your STB will freeze during the flashing process.\n"
-msgstr "Il tuo box si fermera' durante il processo di flashing.\n"
+msgstr "Il ricevitore si fermerà durante il processo di flashing.\n"
 
 #: plugin.py:587
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
-msgstr "Pregati di NON eseguire un reboot o spegnere il ricevitore !\n"
+msgstr "Attenzione: NON eseguire un riavvio o spegnere il ricevitore !\n"
 
 #: plugin.py:588
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr ""
-"L immagine o il kernel sara flshato e automaticamente avviato in alcuni "
+"L'immagine o il kernel sarà flashato e automaticamente avviato in alcuni "
 "minuti\n"
 
 #: plugin.py:604
 #, python-format
 msgid "Do you really want to unpack %s ?"
-msgstr "Vuoi veramente scompattare %s  ?"
+msgstr "Si desidera veramente scompattare %s  ?"
 
 #: plugin.py:631
 msgid "Delete backup"
-msgstr "Elimina Backup"
+msgstr "Eliminare Backup"
 
 #: plugin.py:635
 #, python-format
@@ -468,10 +466,10 @@ msgid ""
 "%s\n"
 "Continue?"
 msgstr ""
-"Stai per eliminare questo backup:\n"
+"Si sta per eliminare questo backup:\n"
 "\n"
 "%s\n"
-"Continua?"
+"Continuare?"
 
 #: plugin.py:646 plugin.py:653
 msgid "BackupSuite"
@@ -479,7 +477,7 @@ msgstr "BackupSuite"
 
 #: plugin.py:647 plugin.py:654
 msgid "Enables back-up & restore without an USB-stick"
-msgstr "Effettuare un back-up & ripristinare senza una penna USB"
+msgstr "Effettuare backup e ripristini senza una chiavetta USB"
 
 #~ msgid "Cancel"
 #~ msgstr "Cancella"
