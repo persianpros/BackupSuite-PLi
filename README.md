@@ -13,21 +13,3 @@ https://github.com/OpenPLi/openpli-oe-core/blob/develop/meta-openpli/recipes-ope
 For Dreambox you need:
 
 https://github.com/PLi-metas/meta-dream/blob/develop/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bbappend
-
-Contributors:
-
-https://github.com/athoik
-
-https://github.com/openmb
-
-https://github.com/Pr0metheus2
-
-https://github.com/nunigaia
-
-https://github.com/Dima73
-
-https://github.com/devclone
-
-https://github.com/talbss
-
-https://github.com/hains
