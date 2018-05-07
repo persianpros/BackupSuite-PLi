@@ -199,7 +199,7 @@ class BackupStart(Screen):
 		if model != "":
 			if model in ["duo", "solo", "ultimo", "uno"] or "ebox" in model:
 				files = "^.*\.(zip|bin|jffs2)"
-			elif "4k" or "uhd" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000"]:
+			elif "4k" or "uhd" in model or model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "vs1500", "et11000", "et13000"]:
 				files = "^.*\.(zip|bin|bz2)"
 			elif model.startswith("dm"):
 				self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
@@ -392,7 +392,7 @@ class FlashImageConfig(Screen):
 						f = open("/proc/stb/info/hwmodel")
 						model = f.read().strip()
 						f.close()
-						if model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
+						if model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "vs1500", "et11000", "et13000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
 							text += "kernel.bin, rootfs.tar.bz2"
@@ -438,7 +438,7 @@ class FlashImageConfig(Screen):
 						f = open("/proc/stb/info/boxtype")
 						model = f.read().strip()
 						f.close()
-						if model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "vs1500", "et11000", "et13000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
+						if model in ["hd51", "h7", "h9", "sf4008", "sf5008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "vs1500", "et11000", "et13000", "bre2ze4k", "spycat4k", "spycat4kmini"]:
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
 							text += "kernel.bin, rootfs.tar.bz2"
