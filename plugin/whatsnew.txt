@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Git 351-361
+- plugin.py changes for new Vivant Dinobot 4K models
+- More Vivant Dinobot support (4K)
+- Amiko Viper Slim support
+- Italian translation updated, Thanks to https://github.com/Gringit
+- Bulgarian translation added, Thanks to https://github.com/marto74bg
+- et11000 kernel detection fixed.
+
 Git 281-350
 - plugin.py cleanup
 - Make sure "backuphdd.sh" and "backupusb.sh" are executable.
