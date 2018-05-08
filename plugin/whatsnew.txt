@@ -1,7 +1,8 @@
 Changelog
 =========
 
-Git 351-361
+Git 351-364
+- GigaBlue 4K kernel detection fixed.
 - plugin.py changes for new Vivant Dinobot 4K models
 - More Vivant Dinobot support (4K)
 - Amiko Viper Slim support
