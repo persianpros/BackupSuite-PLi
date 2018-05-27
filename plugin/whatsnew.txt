@@ -1,10 +1,11 @@
 Changelog
 =========
 
-Git 351-367
+Git 351-370
+- Zgemma H7/H9 kernel detection fixed.
 - Protek 4K support
 - GigaBlue 4K kernel detection fixed.
-- plugin.py changes for new Vivant Dinobot 4K models
+- plugin.py changes for new Vivant Dinobot 4K models and Protek 4K
 - More Vivant Dinobot support (4K)
 - Amiko Viper Slim support
 - Italian translation updated, Thanks to https://github.com/Gringit
