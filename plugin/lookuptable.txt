@@ -81,6 +81,7 @@ Iqon Force 2 Plus HV	force2plushv	Iqon Force 2 Plus HV	/update/force2plushv/cfe	
 Iqon Force 2 SE	force2se	Iqon Force 2 SE	/update/force2se/cfe	/fullbackup_force2se	/update/force2se	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 3 UHD	force3uhd	Iqon Force 3 UHD	/update/force3uhd	/fullbackup_force3uhd	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Iqon Force 3 UHD Plus	force3uhdplus	Iqon Force 3 UHD Plus	/update/force3uhdplus	/fullbackup_force3uhdplus	/update			rootfs.tar.bz2	oe_kernel.bin	none
+Iqon Force 4	force4	Iqon Force 4	/update/force4	/fullbackup_force4	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Iqon IOS-100HD	iqonios100hd	Iqon IOS-100HD	/update/ios100/cfe	/fullbackup_ios100	/update/ios100	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon IOS-200HD	iqonios200hd	Iqon IOS-200HD	/update/ios200/cfe	/fullbackup_ios200	/update/ios200	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon IOS-300HD	iqonios300hd	Iqon IOS-300HD	/update/ios300/cfe	/fullbackup_ios300	/update/ios300	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
