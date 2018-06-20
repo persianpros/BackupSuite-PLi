@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Git 371-375
+- Evo Nova Combo/IP/Twin support
+- plugin.py changes for Clap CC1 4K
+- Clap CC1 4K support
+- Iqon Force 4 support
+
 Git 351-370
 - Zgemma H7/H9 kernel detection fixed.
 - Protek 4K support
