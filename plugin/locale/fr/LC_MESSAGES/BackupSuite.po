@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.9\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: plugin.py 89
@@ -48,7 +48,7 @@ msgstr ""
 "Insérez une clé USB avant de sélectionner Oui."
 
 msgid "No supported receiver found!"
-msgstr "Recepteur non-supporté"
+msgstr "Recepteur non-supporté!"
 
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
 msgstr "BACK-UP TOOL, POUR EFFECTUER UNE SAUVEGARDE COMPLETE"
@@ -57,7 +57,7 @@ msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr "Merci d'être patient, la sauvegarde va commencer et va durer environ: "
 
 msgid " size to be backed up: "
-msgstr " Taille à sauvegarder:"
+msgstr " Taille à sauvegarder: "
 
 msgid "not found, the backup process will be aborted!"
 msgstr "pas trouvé, interruption de la sauvegarde!"
@@ -197,28 +197,32 @@ msgstr ""
 "libre pour effectuer votre sauvegarde."
 
 msgid "is not executable..."
-msgstr ""
+msgstr "n’est pas éxécutable…"
 
 msgid "Using your own custom lookuptable.txt from the folder /etc"
 msgstr ""
+"Utiliser votre propre personnalisé lookuptable.txt depuis le répertoire /etc"
 
 msgid "Version unknown, probably not installed the right way."
-msgstr ""
+msgstr "Version inconnue, probablement pas installée correctement."
 
 msgid "not installed yet, now installing"
-msgstr ""
+msgstr "pas encore installé, installation en cours"
 
 msgid "Probably you are trying to make the back-up in flash memory"
 msgstr ""
+"Vous essayez probablement de faire une sauvegarde dans la mémoire flash"
 
 msgid "No additional USB-stick found to copy an extra backup"
 msgstr ""
+"Pas de stick mémoire USB additionnel trouvé pour copier une sauvegarde "
+"supplémentaire"
 
 msgid "Installed packages contained in this backup:"
-msgstr ""
+msgstr "Packages installés contenus dans cette sauvegarde:"
 
 msgid "NFI Image created in: "
-msgstr ""
+msgstr "Image NFI créée dans: "
 
 #: plugin.py 294
 msgid ""
