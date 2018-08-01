@@ -391,11 +391,6 @@ elif [ $ACTION = "force" ] ; then
 	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
 fi
 image_version > "$MAINDEST/imageversion"
-if  [ $HARDDISK != 1 ]; then
-	mkdir -p "$EXTRA"
-	echo "Created directory  = $EXTRA" >> $LOGFILE
-	cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
-fi
 if [ $SEARCH = "h9" ] ; then
 	log "Zgemma h9 found, we need to copy more files for flashing later!"
 	dd if=/dev/mtd0 of=$MAINDEST/fastboot.bin > /dev/null 2>&1
@@ -404,6 +399,11 @@ if [ $SEARCH = "h9" ] ; then
 	cp -r "$MAINDEST/bootargs.bin" "$MEDIA/zgemma/bootargs.bin" > /dev/null 2>&1
 	dd if=/dev/mtd2 of=$MAINDEST/baseparam.bin > /dev/null 2>&1
 	dd if=/dev/mtd3 of=$MAINDEST/pq_param.bin > /dev/null 2>&1
+fi
+if  [ $HARDDISK != 1 ]; then
+	mkdir -p "$EXTRA"
+	echo "Created directory  = $EXTRA" >> $LOGFILE
+	cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
 fi
 if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" ] ; then
 		backup_made
