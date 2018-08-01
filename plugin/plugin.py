@@ -650,14 +650,14 @@ def Plugins(path,**kwargs):
 	return [
 		PluginDescriptor(
 		name=_("BackupSuite"),
-		description = _("Enables back-up & restore without an USB-stick") + ", ver. " + versienummer,
+		description = _("Backup and restore your image") + ", ver. " + versienummer,
 		where = PluginDescriptor.WHERE_PLUGINMENU,
 		icon = 'plugin.png',
 		fnc = main
 		),
 		PluginDescriptor(
 		name =_("BackupSuite"), 
-		description = _("Enables back-up & restore without an USB-stick") + ", ver. " + versienummer,
+		description = _("Backup and restore your image") + ", ver. " + versienummer,
 		where = PluginDescriptor.WHERE_EXTENSIONSMENU, 
 		fnc = main)
 	]
