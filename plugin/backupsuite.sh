@@ -31,7 +31,7 @@ else							# On the STB
 	GREEN='\c0000??00'
 	YELLOW='\c00????00'
 	BLUE='\c0000????'
-	PURPLE='\c00?:55>7'   
+	PURPLE='\c00?:55>7'
 	WHITE='\c00??????'
 fi
 ###################### FIRST DEFINE SOME PROGRAM BLOCKS #######################
@@ -51,7 +51,7 @@ rm -rf "$WORKDIR" > /dev/null 2>&1
 ###################### BIG OOPS!, HOLY SH... (SHELL SCRIPT :-))################
 big_fail()
 {
-if [ -d $WORKDIR ] ; then 
+if [ -d $WORKDIR ] ; then
 	log "FAIL!"
 	log "Content so far of the working directory $WORKDIR "
 	ls -el $WORKDIR >> $LOGFILE
@@ -72,7 +72,7 @@ echo "Updated = $LASTUPDATE"
 echo -n "Drivers = "
 opkg list-installed | grep dvb-modules
 echo "Enigma2 = $ENIGMA2DATE"
-echo 
+echo
 echo $LINE
 }
 #################### CLEAN UP AND MAKE DESTINATION FOLDERS ####################
@@ -102,9 +102,9 @@ backup_made()
 {
 {
 echo $LINE
-$SHOW "message10" ; echo "$MAINDEST" 	# USB Image created in: 
+$SHOW "message10" ; echo "$MAINDEST" 	# USB Image created in:
 $SHOW "message23"		# "The content of the folder is:"
-ls "$MAINDEST" -e1rSh | sed 's/-.........    1//' 
+ls "$MAINDEST" -e1rSh | sed 's/-.........    1//'
 echo $LINE
 if  [ $HARDDISK != 1 ]; then
 	$SHOW "message11" ; echo "$EXTRA"		# and there is made an extra copy in:
@@ -118,14 +118,14 @@ BACKUPDATE=`date +%Y.%m.%d_%H:%M`
 DATE=`date +%Y%m%d_%H%M`
 if [ -f "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt" ] ; then
 	ESTSPEED=`cat /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt`
-	if [ $ESTSPEED -lt 50 ] ; then 
+	if [ $ESTSPEED -lt 50 ] ; then
 		ESTSPEED="250"
 	fi
 else
 	ESTSPEED="250"
 fi
 FLASHED=`date -r /etc/version +%Y.%m.%d_%H:%M`
-ISSUE=`cat /etc/issue | grep . | tail -n 1 ` 
+ISSUE=`cat /etc/issue | grep . | tail -n 1 `
 IMVER=${ISSUE%?????}
 LASTUPDATE=`date -r /var/lib/opkg/status +%Y.%m.%d_%H:%M`
 ENIGMA2DATE=`cat /tmp/enigma2version`
@@ -144,7 +144,7 @@ fi
 TARGET="XX"
 UBINIZE=/usr/sbin/ubinize
 USEDsizebytes=`df -B 1 /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`
-USEDsizekb=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` 
+USEDsizekb=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3`
 if [ -f "/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control" ] ; then
 	VERSION="Version: "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d "+" -f 2`
 else
@@ -201,7 +201,7 @@ else
 	EXTRA="$MEDIA$EXTR1$EXTR2"
 	if  [ $HARDDISK = 1 ]; then
 		MAINDEST="$MEDIA$EXTR1$FOLDER"
-	else 
+	else
 		MAINDEST="$MEDIA$FOLDER"
 	fi
 	MKUBIFS_ARGS=`cat $LOOKUP | grep -w -m1 "$SEARCH" | cut -f 7`
@@ -226,7 +226,7 @@ log $LINE
 ############# START TO SHOW SOME INFORMATION ABOUT BRAND & MODEL ##############
 echo -n $PURPLE
 echo -n "$SHOWNAME " | tr  a-z A-Z		# Shows the receiver brand and model
-$SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP 
+$SHOW "message02"  			# BACK-UP TOOL FOR MAKING A COMPLETE BACK-UP
 echo $BLUE
 log "RECEIVER = $SHOWNAME "
 log "MKUBIFS_ARGS = $MKUBIFS_ARGS"
@@ -286,10 +286,10 @@ mkdir -p /tmp/bi/root # this is where the complete content will be available
 log "Create directory   = /tmp/bi/root"
 sync
 mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
-## TEMPORARY WORKAROUND FOR OPENPLI 6 TO REMOVE 
+## TEMPORARY WORKAROUND FOR OPENPLI 6 TO REMOVE
 ##      /var/lib/samba/private/msg.sock
 ## WHICH GIVES AN ERRORMESSAGE WHEN NOT REMOVED
-if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
+if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then
 	rm -rf /tmp/bi/root/var/lib/samba/private/msg.sock
 fi
 ####################### START THE REAL BACK-UP PROCESS ########################
@@ -313,12 +313,12 @@ fi
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
 if [ $ROOTNAME != "rootfs.tar.bz2" -o $SEARCH = "h9" ] ; then
-	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes 
+	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes
 	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
 	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
 		echo -n "Kernel dumped  :"  >> $LOGFILE
 		ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
-	else 
+	else
 		log "$WORKDIR/$KERNELNAME NOT FOUND"
 		big_fail
 	fi
@@ -338,7 +338,7 @@ else
 		log "Kernel resides on /dev/mmcblk0p4"
 	else
 		python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
-		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev` 
+		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev`
 		KERNELNAME=${KERNEL:11:7}.bin
 		echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
 		log "$KERNELNAME = STARTUP_${KERNEL:17:1}"
@@ -354,11 +354,11 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 		echo -n "ROOT.UBI MADE  :" >> $LOGFILE
 		ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
 		UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
-		if [ "$UBISIZE" -eq 0 ] ; then 
+		if [ "$UBISIZE" -eq 0 ] ; then
 			$SHOW "message39" 2>&1 | tee -a $LOGFILE
 			big_fail
 		fi
-	else 
+	else
 		log "$WORKDIR/root.ubi NOT FOUND"
 		big_fail
 	fi
@@ -369,34 +369,34 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	if [ -f "$WORKDIR/$ROOTNAME" ] ; then
 		echo -n "$ROOTNAME MADE:" >> $LOGFILE
 		ls -e1 "$WORKDIR/$ROOTNAME" | sed 's/-r.*   1//' >> $LOGFILE
-	else 
+	else
 		echo "$WORKDIR/$ROOTNAME NOT FOUND"  >> $LOGFILE
 		big_fail
 	fi
 	echo
-else 
+else
 	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
 	$BZIP2 $WORKDIR/rootfs.tar
 fi
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
-mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME" 
+mv "$WORKDIR/$ROOTNAME" "$MAINDEST/$ROOTNAME"
 mv "$WORKDIR/$KERNELNAME" "$MAINDEST/$KERNELNAME"
 if [ $ACTION = "noforce" ] ; then
-	echo "rename this file to 'force' to force an update without confirmation" > "$MAINDEST/noforce"; 
+	echo "rename this file to 'force' to force an update without confirmation" > "$MAINDEST/noforce";
 elif [ $ACTION = "reboot" ] ; then
 	echo "rename this file to 'force.update' to force an update without confirmation" > "$MAINDEST/reboot.update"
 elif [ $ACTION = "force" ] ; then
 	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
 	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
 fi
-image_version > "$MAINDEST/imageversion" 
+image_version > "$MAINDEST/imageversion"
 if  [ $HARDDISK != 1 ]; then
 	mkdir -p "$EXTRA"
 	echo "Created directory  = $EXTRA" >> $LOGFILE
 	cp -r "$MAINDEST" "$EXTRA" 	#copy the made back-up to images
 fi
-if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" -a -f "$MAINDEST/imageversion" ] ; then
+if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" ] ; then
 		backup_made
 		$SHOW "message14" 			# Instructions on how to restore the image.
 		echo $LINE
@@ -410,7 +410,7 @@ if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 		if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ]
 		then
 		TARGET="${candidate}"
-		fi    
+		fi
 	done
 	if [ "$TARGET" != "XX" ] ; then
 		echo -n $GREEN
@@ -428,7 +428,7 @@ if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 		echo "MADE AN EXTRA COPY IN: $TARGET" >> $LOGFILE
 		df -h "$TARGET"  >> $LOGFILE
 		$SHOW "message19" 2>&1 | tee -a $LOGFILE	# Backup finished and copied to your USB-flashdrive
-	else 
+	else
 		$SHOW "message40" >> $LOGFILE
 	fi
 sync
@@ -444,13 +444,13 @@ echo -n $YELLOW
 {
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
-ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} ` 
-KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} ` 
+ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} `
+KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} `
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
 echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
 echo $LINE >> $LOGFILE
-# "Back up done with $SPEED KB per second" 
+# "Back up done with $SPEED KB per second"
 {
 $SHOW "message26" ; echo -n "$SPEED" ; $SHOW "message27"
 } 2>&1 | tee -a $LOGFILE
@@ -473,5 +473,5 @@ fi
 if [ "$TARGET" != "XX" ] ; then
 	cp $LOGFILE "$TARGET$FOLDER"
 fi
-exit 
+exit
 ############### END OF PROGRAMM ################
