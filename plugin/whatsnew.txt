@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Git 376-386
+- MMC support, Now you can create backups on MMC (/media/mmc) with Menu button, skin is not ready yet!
+- Persian language added.
+- Zgemma H9 changes for restore problem, still not ready.
+- BackupSuite.pot and all po files updated with latest strings (MMC support).
+- French translation updated, Thanks to https://github.com/pr2git
+- Qviart Lunix2 4K support
+
 Git 371-375
 - Evo Nova Combo/IP/Twin support
 - plugin.py changes for Clap CC1 4K
