@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
@@ -46,6 +46,26 @@ msgstr ""
 "\n"
 "Zorg er voor dat een USB-stick is geplaatst in de USB-poort voordat je JA "
 "kiest."
+
+#, fuzzy
+#| msgid "Full back-up on HDD"
+msgid "Full back-up on MMC"
+msgstr "Volledige back-up op de harddisk"
+
+#, fuzzy
+#| msgid ""
+#| "Do you want to make an USB-back-up image on HDD? \n"
+#| "\n"
+#| "This only takes a few minutes and is fully automatic.\n"
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Wil je een USB-back-up maken op je harddisk? \n"
+"\n"
+"Dit duurt enige minuten afhankelijk van het bestandssysteem en is volledig "
+"automatisch.\n"
 
 msgid "No supported receiver found!"
 msgstr "Geen ondersteunde ontvanger gevonden!"
@@ -194,6 +214,11 @@ msgid ""
 msgstr ""
 "Het programma wordt afgesloten, probeer alstublieft een medium met meer "
 "beschikbare ruimte om uw back-up te maken."
+
+#, fuzzy
+#| msgid "Full back-up to the harddisk"
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Volledige Backup op de harde schijf"
 
 msgid "is not executable..."
 msgstr ""
@@ -360,8 +385,8 @@ msgid "BackupSuite"
 msgstr "BackupSuite"
 
 #: plugin.py 406 413
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Maakt backups en herstelt deze zonder USB-stick"
+msgid "Backup and restore your image"
+msgstr ""
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -371,6 +396,14 @@ msgstr "Backup > HDD"
 msgid "Backup > USB"
 msgstr "Backup > USB"
 
+#, fuzzy
+#| msgid "Backup > HDD"
+msgid "Backup > MMC"
+msgstr "Backup > HDD"
+
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Wat is nieuw sinds de laatste uitgave?"
+
+#~ msgid "Enables back-up & restore without an USB-stick"
+#~ msgstr "Maakt backups en herstelt deze zonder USB-stick"

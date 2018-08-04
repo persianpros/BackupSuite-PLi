@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -48,6 +48,26 @@ msgstr ""
 "повністю автоматизований.\n"
 "\n"
 "Переконайтесь що Ви вставили USB флеш носій, перш ніж вибрати Так."
+
+#, fuzzy
+#| msgid "Full back-up on HDD"
+msgid "Full back-up on MMC"
+msgstr "Повна резервна копія на HDD"
+
+#, fuzzy
+#| msgid ""
+#| "Do you want to make an USB-back-up image on HDD? \n"
+#| "\n"
+#| "This only takes a few minutes and is fully automatic.\n"
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Ви бажаєте зробити резервну копію прошивки на HDD?\n"
+"\n"
+"Це займе всього декілька хвилин в залежності від файлової системи, процес "
+"повністю автоматизований.\n"
 
 msgid "No supported receiver found!"
 msgstr "Знайдено не існуючий ресивер!"
@@ -192,6 +212,11 @@ msgid ""
 msgstr ""
 "Процес буде перерваний, попробуйте другий носій, на якому більше вільного "
 "місця."
+
+#, fuzzy
+#| msgid "Full back-up to the harddisk"
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Повна резервна копія на жорсткий диск"
 
 msgid "is not executable..."
 msgstr ""
@@ -359,8 +384,10 @@ msgid "BackupSuite"
 msgstr "Бекап-Люкс"
 
 #: plugin.py 406 413
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Створення бекапа & відновлення без USB флешки"
+#, fuzzy
+#| msgid "To restore the image:"
+msgid "Backup and restore your image"
+msgstr "Для відновлення прошивки:"
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -370,9 +397,17 @@ msgstr "Бекап > HDD"
 msgid "Backup > USB"
 msgstr "Бекап > USB"
 
+#, fuzzy
+#| msgid "Backup > HDD"
+msgid "Backup > MMC"
+msgstr "Бекап > HDD"
+
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Що нового з остатнього реліза?"
+
+#~ msgid "Enables back-up & restore without an USB-stick"
+#~ msgstr "Створення бекапа & відновлення без USB флешки"
 
 #~ msgid ""
 #~ "\n"
@@ -436,9 +471,6 @@ msgstr "Що нового з остатнього реліза?"
 
 #~ msgid "Simulate second partition (no write)"
 #~ msgstr "Імітація другого розділу (без запису)"
-
-#~ msgid "To restore the image:"
-#~ msgstr "Для відновлення прошивки:"
 
 #~ msgid "Wait until the standby LED will become blue."
 #~ msgstr "Чекайте, поки індикатор режиму очікування не стане синім"

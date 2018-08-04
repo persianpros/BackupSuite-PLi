@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: plugin.py 89
@@ -45,6 +45,25 @@ msgstr ""
 "pełni automatyczne.\n"
 "\n"
 "Upewnij się, że podłączyłeś pendrive USB zanim wybierzesz TAK."
+
+#, fuzzy
+#| msgid "Full back-up on HDD"
+msgid "Full back-up on MMC"
+msgstr "Backup image na HDD"
+
+#, fuzzy
+#| msgid ""
+#| "Do you want to make an USB-back-up image on HDD? \n"
+#| "\n"
+#| "This only takes a few minutes and is fully automatic.\n"
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Czy chcesz stworzyć backup image (w formacie usb) na HDD? \n"
+"\n"
+"To zajmie tylko kilka minut i jest w pełni automatyczne.\n"
 
 msgid "No supported receiver found!"
 msgstr "Odbiornik nie wspierany przez plugin!"
@@ -193,6 +212,11 @@ msgid ""
 msgstr ""
 "Wykonywanie zostanie przerwane, do utworzenia swojego backupu użyj innego "
 "nośnika, z więksżą ilością wolnego miejsca."
+
+#, fuzzy
+#| msgid "Full back-up to the harddisk"
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Pełny backup image na dysku"
 
 msgid "is not executable..."
 msgstr ""
@@ -359,8 +383,8 @@ msgid "BackupSuite"
 msgstr "BackupSuite"
 
 #: plugin.py 406 413
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Pozwala wykonać kopię i przywrócić image bez pena USB"
+msgid "Backup and restore your image"
+msgstr ""
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -370,9 +394,15 @@ msgstr ""
 msgid "Backup > USB"
 msgstr ""
 
+msgid "Backup > MMC"
+msgstr ""
+
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Co nowego od ostatniego wydania?"
+
+#~ msgid "Enables back-up & restore without an USB-stick"
+#~ msgstr "Pozwala wykonać kopię i przywrócić image bez pena USB"
 
 #~ msgid "not found, the backup process will be aborted"
 #~ msgstr "nie znaleziono, tworzenie backupu zostanie przerwane"

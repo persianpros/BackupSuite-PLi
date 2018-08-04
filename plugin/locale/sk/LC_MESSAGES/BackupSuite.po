@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
@@ -45,6 +45,25 @@ msgstr ""
 "automatická.\n"
 "\n"
 "Uistite sa, že je USB flash disk zasunutý pred tým, ako stlačíte Áno."
+
+#, fuzzy
+#| msgid "Full back-up on HDD"
+msgid "Full back-up on MMC"
+msgstr "Plná záloha na HDD"
+
+#, fuzzy
+#| msgid ""
+#| "Do you want to make an USB-back-up image on HDD? \n"
+#| "\n"
+#| "This only takes a few minutes and is fully automatic.\n"
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Chcete urobiť USB zálohu Image na HDD?\n"
+"\n"
+"Trvá to len niekoľko minút a je plne automatická.\n"
 
 msgid "No supported receiver found!"
 msgstr "Nebol nájdený žiadny podporovaný prijímač!"
@@ -191,6 +210,11 @@ msgid ""
 msgstr ""
 "Proces bude prerušený, prosím skúste nové médium s dostatkom volného miesta "
 "pre vytvorenie zálohy."
+
+#, fuzzy
+#| msgid "Full back-up to the harddisk"
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Plná záloha na harddisk"
 
 msgid "is not executable..."
 msgstr ""
@@ -357,8 +381,8 @@ msgid "BackupSuite"
 msgstr "BackupSuite"
 
 #: plugin.py 406 413
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Umožňuje vytvoriť zálohu a obnovenie bez USB-klúča"
+msgid "Backup and restore your image"
+msgstr ""
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -368,6 +392,14 @@ msgstr "Záloha > HDD"
 msgid "Backup > USB"
 msgstr "Záloha > USB"
 
+#, fuzzy
+#| msgid "Backup > HDD"
+msgid "Backup > MMC"
+msgstr "Záloha > HDD"
+
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Čo je nové od poslednej verzie?"
+
+#~ msgid "Enables back-up & restore without an USB-stick"
+#~ msgstr "Umožňuje vytvoriť zálohu a obnovenie bez USB-klúča"

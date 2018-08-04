@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: plugin.py 89
@@ -46,6 +46,25 @@ msgstr ""
 "totalmente automatico.\n"
 "\n"
 "Asegurese primero de insertar su dispositivo USB antes de seleccionar SI."
+
+#, fuzzy
+#| msgid "Full back-up on HDD"
+msgid "Full back-up on MMC"
+msgstr "Back-up completo en Disco Duro"
+
+#, fuzzy
+#| msgid ""
+#| "Do you want to make an USB-back-up image on HDD? \n"
+#| "\n"
+#| "This only takes a few minutes and is fully automatic.\n"
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Quiere realizar un back-up de su imagen para USB en el disco duro? \n"
+"\n"
+"Esto tardara pocos minutos y es totalmente automatico.\n"
 
 msgid "No supported receiver found!"
 msgstr "Decodificador no valido!"
@@ -195,6 +214,11 @@ msgid ""
 msgstr ""
 "El programa abortará, utilizar otro dispositivo con mas espacio libre para "
 "crear el back-up."
+
+#, fuzzy
+#| msgid "Full back-up to the harddisk"
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Back-up completo al Disco duro"
 
 msgid "is not executable..."
 msgstr ""
@@ -360,8 +384,8 @@ msgid "BackupSuite"
 msgstr "BackupSuite"
 
 #: plugin.py 406 413
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Habilita back-up & restore sin un USB"
+msgid "Backup and restore your image"
+msgstr ""
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -371,6 +395,14 @@ msgstr "Backup > HDD"
 msgid "Backup > USB"
 msgstr "Backup > USB"
 
+#, fuzzy
+#| msgid "Backup > HDD"
+msgid "Backup > MMC"
+msgstr "Backup > HDD"
+
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Qué hay de nuevo desde la última versión?"
+
+#~ msgid "Enables back-up & restore without an USB-stick"
+#~ msgstr "Habilita back-up & restore sin un USB"

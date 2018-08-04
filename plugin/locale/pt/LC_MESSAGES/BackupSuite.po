@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
@@ -46,6 +46,25 @@ msgstr ""
 "\n"
 "Certifique-se que você primeiro insira uma unidade flash USB antes de "
 "selecionar Sim."
+
+#, fuzzy
+#| msgid "Full back-up on HDD"
+msgid "Full back-up on MMC"
+msgstr "Back-up integral no HDD"
+
+#, fuzzy
+#| msgid ""
+#| "Do you want to make an USB-back-up image on HDD? \n"
+#| "\n"
+#| "This only takes a few minutes and is fully automatic.\n"
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Quer fazer uma imagem de USB-backup no disco RÍGIDO?\n"
+"\n"
+"Isso só leva alguns minutos e é totalmente automático.\n"
 
 msgid "No supported receiver found!"
 msgstr "Este receptor não é suportado!"
@@ -196,6 +215,11 @@ msgid ""
 msgstr ""
 "O programa vai abortar, por favor, tente outra media com mais espaço livre "
 "para criar o seu back-up."
+
+#, fuzzy
+#| msgid "Full back-up to the harddisk"
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Back-up integral no disco rígido"
 
 msgid "is not executable..."
 msgstr ""
@@ -362,8 +386,8 @@ msgid "BackupSuite"
 msgstr "BackupSuite"
 
 #: plugin.py 406 413
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Ativa o back-up & restauro sem um Stick-USB"
+msgid "Backup and restore your image"
+msgstr ""
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -373,6 +397,14 @@ msgstr "Back-up > HDD"
 msgid "Backup > USB"
 msgstr "Back-up > USB"
 
+#, fuzzy
+#| msgid "Backup > HDD"
+msgid "Backup > MMC"
+msgstr "Back-up > HDD"
+
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "O que há de novo desde a última release?"
+
+#~ msgid "Enables back-up & restore without an USB-stick"
+#~ msgstr "Ativa o back-up & restauro sem um Stick-USB"

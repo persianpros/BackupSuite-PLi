@@ -36,6 +36,15 @@ msgid ""
 "Make sure you first insert an USB flash drive before you select Yes."
 msgstr ""
 
+msgid "Full back-up on MMC"
+msgstr ""
+
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+
 msgid "No supported receiver found!"
 msgstr ""
 
@@ -151,6 +160,9 @@ msgid " MB needed space"
 msgstr ""
 
 msgid "The program will abort, please try another medium with more free space to create your back-up."
+msgstr ""
+
+msgid "Full back-up to the MultiMediaCard"
 msgstr ""
 
 msgid "is not executable..."
@@ -316,6 +328,9 @@ msgstr ""
 
 #: plugin.py 93
 msgid "Backup > USB"
+msgstr ""
+
+msgid "Backup > MMC"
 msgstr ""
 
 #: plugin.py 173

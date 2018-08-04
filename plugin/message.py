@@ -185,9 +185,9 @@ def message42():
 	sys.stdout.write(_("NFI Image created in: "))
 	return
 
+def message43():
+	sys.stdout.write(_("Full back-up to the MultiMediaCard"))
+	return
+
 globals()[sys.argv[2]]()
 os_environ["LANGUAGE"] = sys.argv[1]
-
-
-
-

@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -47,6 +47,25 @@ msgstr ""
 "полностью автоматизирован.\n"
 "\n"
 "Убедитесь, что Вы вставили USB флеш носитель, прежде чем выбрать Да."
+
+#, fuzzy
+#| msgid "Full back-up on HDD"
+msgid "Full back-up on MMC"
+msgstr "Полная резервная копия на HDD"
+
+#, fuzzy
+#| msgid ""
+#| "Do you want to make an USB-back-up image on HDD? \n"
+#| "\n"
+#| "This only takes a few minutes and is fully automatic.\n"
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Вы хотите сделать резервную копию прошивки на HDD? \n"
+"\n"
+"Это займёт всего несколько минут, процесс полностью автоматизирован.\n"
 
 msgid "No supported receiver found!"
 msgstr "Найден не поддерживаемый ресивер!"
@@ -200,6 +219,11 @@ msgid ""
 msgstr ""
 "Процесс будет прерван, попробуйте другой носитель, на котором больше "
 "свободного места"
+
+#, fuzzy
+#| msgid "Full back-up to the harddisk"
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Полная резервная копия на жёсткий диск"
 
 msgid "is not executable..."
 msgstr ""
@@ -367,8 +391,10 @@ msgid "BackupSuite"
 msgstr "Бэкап-Люкс"
 
 #: plugin.py 406 413
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Создание бэкапа & восстановление без USB флешки"
+#, fuzzy
+#| msgid "To restore the image:"
+msgid "Backup and restore your image"
+msgstr "Для восстановления прошивки:"
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -378,9 +404,17 @@ msgstr "Бэкап > HDD"
 msgid "Backup > USB"
 msgstr "Бэкап > USB"
 
+#, fuzzy
+#| msgid "Backup > HDD"
+msgid "Backup > MMC"
+msgstr "Бэкап > HDD"
+
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Что нового с последнего релиза?"
+
+#~ msgid "Enables back-up & restore without an USB-stick"
+#~ msgstr "Создание бэкапа & восстановление без USB флешки"
 
 #~ msgid "Almost there... Now building the USB-Image!"
 #~ msgstr "Почти готово. Сейчас создаём прошивку на USB!"
@@ -424,9 +458,6 @@ msgstr "Что нового с последнего релиза?"
 #~ msgid "Press arrow up from frontpanel to start loading."
 #~ msgstr ""
 #~ "Нажмите стрелку вверх на передней панели ресивера, чтобы начать загрузку."
-
-#~ msgid "To restore the image:"
-#~ msgstr "Для восстановления прошивки:"
 
 #~ msgid "Wait until the standby LED will become blue."
 #~ msgstr "Ждите, пока индикатор режима ожидания не станет синим"

@@ -52,8 +52,10 @@ _session = None
 
 BACKUP_HDD = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backuphdd.sh en_EN"
 BACKUP_USB = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupusb.sh en_EN"
+BACKUP_MMC = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupmmc.sh en_EN"
 BACKUP_DMM_HDD = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backuphdd-dmm.sh en_EN"
 BACKUP_DMM_USB = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupusb-dmm.sh en_EN"
+BACKUP_DMM_MMC = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupmmc-dmm.sh en_EN"
 ofgwrite_bin = "/usr/bin/ofgwrite"
 LOGFILE = "BackupSuite.log"
 VERSIONFILE = "imageversion"
@@ -102,6 +104,23 @@ def backupCommandUSB():
 			cmd = BACKUP_DMM_USB
 	return cmd
 
+def backupCommandMMC():
+	try:
+		if os.path.exists(BACKUP_MMC):
+			os.chmod(BACKUP_MMC, 0755)
+	except:
+		pass
+	try:
+		if os.path.exists(BACKUP_DMM_MMC):
+			os.chmod(BACKUP_DMM_MMC, 0755)
+	except:
+		pass
+	cmd = BACKUP_MMC
+	for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
+		if os.path.exists(dvbmod):
+			cmd = BACKUP_DMM_MMC
+	return cmd
+
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
 	from Tools.Directories import resolveFilename, SCOPE_PLUGINS
@@ -126,6 +145,7 @@ class BackupStart(Screen):
 		self.session = session
 		self.setup_title = _("Make a backup or restore a backup")
 		Screen.__init__(self, session)
+		self["key_menu"] = Button(_("Backup > MMC"))
 		self["key_red"] = Button(_("Close"))
 		self["key_green"] = Button(_("Backup > HDD"))
 		self["key_yellow"] = Button(_("Backup > USB"))
@@ -133,6 +153,7 @@ class BackupStart(Screen):
 		self["help"] = StaticText()
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions", "EPGSelectActions", "HelpActions"],
 		{
+			"menu": self.confirmmmc,
 			"red": self.cancel,
 			"green": self.confirmhdd,
 			"yellow": self.confirmusb,
@@ -149,6 +170,9 @@ class BackupStart(Screen):
 	def confirmusb(self):
 		self.session.openWithCallback(self.backupusb, MessageBox, _("Do you want to make a back-up on USB?\n\nThis only takes a few minutes depending on the used filesystem and is fully automatic.\n\nMake sure you first insert an USB flash drive before you select Yes.") , MessageBox.TYPE_YESNO, timeout = 20, default = True)
 
+	def confirmmmc(self):
+		self.session.openWithCallback(self.backupmmc, MessageBox, _("Do you want to make an USB-back-up image on MMC? \n\nThis only takes a few minutes and is fully automatic.\n") , MessageBox.TYPE_YESNO, timeout = 20, default = True)
+		
 	def showHelp(self):
 		from plugin import backupsuiteHelp
 		if backupsuiteHelp:
@@ -232,6 +256,13 @@ class BackupStart(Screen):
 			self.writeEnigma2VersionFile()
 			text = _('Full back-up to USB')
 			cmd = backupCommandUSB()
+			self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
+			
+	def backupmmc(self, ret = False ):
+		if (ret == True):
+			self.writeEnigma2VersionFile()
+			text = _('Full back-up on MMC')
+			cmd = backupCommandMMC()
 			self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
 
 	def consoleClosed(self, answer=None): 
@@ -650,14 +681,14 @@ def Plugins(path,**kwargs):
 	return [
 		PluginDescriptor(
 		name=_("BackupSuite"),
-		description = _("Backup and restore your image") + ", ver. " + versienummer,
+		description = _("Backup and restore your image") + ", " + versienummer,
 		where = PluginDescriptor.WHERE_PLUGINMENU,
 		icon = 'plugin.png',
 		fnc = main
 		),
 		PluginDescriptor(
 		name =_("BackupSuite"), 
-		description = _("Backup and restore your image") + ", ver. " + versienummer,
+		description = _("Backup and restore your image") + ", " + versienummer,
 		where = PluginDescriptor.WHERE_EXTENSIONSMENU, 
 		fnc = main)
 	]

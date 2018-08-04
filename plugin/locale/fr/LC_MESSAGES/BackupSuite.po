@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.9\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: plugin.py 89
@@ -46,6 +46,25 @@ msgstr ""
 "système de fichiers utilisé.\n"
 "\n"
 "Insérez une clé USB avant de sélectionner Oui."
+
+#, fuzzy
+#| msgid "Full back-up on HDD"
+msgid "Full back-up on MMC"
+msgstr "Sauvegarde complète sur HDD"
+
+#, fuzzy
+#| msgid ""
+#| "Do you want to make an USB-back-up image on HDD? \n"
+#| "\n"
+#| "This only takes a few minutes and is fully automatic.\n"
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Voulez-vous faire une sauvegarde de type USB sur le HDD? \n"
+"\n"
+"C'est entièrement automatisée et ne dure que quelques minutes.\n"
 
 msgid "No supported receiver found!"
 msgstr "Recepteur non-supporté!"
@@ -195,6 +214,11 @@ msgid ""
 msgstr ""
 "Interruption du programme, merci d'utiliser un support avec plus d'espace "
 "libre pour effectuer votre sauvegarde."
+
+#, fuzzy
+#| msgid "Full back-up to the harddisk"
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Sauvegarde complète sur HDD"
 
 msgid "is not executable..."
 msgstr "n’est pas éxécutable…"
@@ -366,8 +390,8 @@ msgid "BackupSuite"
 msgstr "BackupSuite"
 
 #: plugin.py 406 413
-msgid "Enables back-up & restore without an USB-stick"
-msgstr "Active la sauvegarde & restauration sans clé USB"
+msgid "Backup and restore your image"
+msgstr ""
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -377,6 +401,14 @@ msgstr "Sauvegarde > HDD"
 msgid "Backup > USB"
 msgstr "Sauvegarde > USB"
 
+#, fuzzy
+#| msgid "Backup > HDD"
+msgid "Backup > MMC"
+msgstr "Sauvegarde > HDD"
+
 #: plugin.py 173
 msgid "What is new since the last release?"
 msgstr "Quoi de neuf depuis la dernière version?"
+
+#~ msgid "Enables back-up & restore without an USB-stick"
+#~ msgstr "Active la sauvegarde & restauration sans clé USB"
