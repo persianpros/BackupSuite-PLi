@@ -1,8 +1,9 @@
 Changelog
 =========
 
-Git 376-386
-- MMC support, Now you can create backups on MMC (/media/mmc) with Menu button, skin is not ready yet!
+Git 376-388
+- schermen.py : menu button for MMC (Only full hd skins for now).
+- MMC support, Now you can create backups on MMC (/media/mmc) with Menu button.
 - Persian language added.
 - Zgemma H9 changes for restore problem, still not ready.
 - BackupSuite.pot and all po files updated with latest strings (MMC support).
