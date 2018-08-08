@@ -16,17 +16,19 @@ skinstartfullhd = """
 			<convert type="ServiceName">Name</convert>
 		</widget>
 
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_red.png"	position="187,1030" size="38,38" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_green.png"	position="622,1030" size="38,38" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_yellow.png" position="1057,1030" size="38,38" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_blue.png"	position="1492,1030" size="38,38" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_menu.png" alphatest="on" position="187,1030" size="51,38" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_red.png"	position="537,1030" size="38,38" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_green.png"	position="772,1030" size="38,38" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_yellow.png" position="1157,1030" size="38,38" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_blue.png"	position="1542,1030" size="38,38" alphatest="on" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_info.png" alphatest="on" position="115,1030" size="54,38" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/f_help.png" alphatest="on" position="40,1030" size="51,38" />
 
-		<widget name="key_red" 		position="239,1030" size="380,36"  valign="top" halign="left" zPosition="4"  foregroundColor="#00ff0000" font="Regular;34" /> 
-		<widget name="key_green"	position="674,1030" size="380,36"  valign="top" halign="left" zPosition="4"  foregroundColor="#0053b611" font="Regular;34" /> 
-		<widget name="key_yellow" 	position="1109,1030" size="380,36"  valign="top" halign="left" zPosition="4"  foregroundColor="#00F9C731" font="Regular;34" />
-		<widget name="key_blue" 	position="1544,1030" size="380,36" valign="top" halign="left" zPosition="4"  foregroundColor="#003a71c3" font="Regular;34" />
+		<widget name="key_menu" 	position="239,1030" size="250,36"  valign="top" halign="left" zPosition="4"  font="Regular;34" />
+		<widget name="key_red" 		position="589,1030" size="100,36"  valign="top" halign="left" zPosition="4"  foregroundColor="#00ff0000" font="Regular;34" /> 
+		<widget name="key_green"	position="824,1030" size="250,36"  valign="top" halign="left" zPosition="4"  foregroundColor="#0053b611" font="Regular;34" /> 
+		<widget name="key_yellow" 	position="1209,1030" size="250,36"  valign="top" halign="left" zPosition="4"  foregroundColor="#00F9C731" font="Regular;34" />
+		<widget name="key_blue" 	position="1594,1030" size="250,36" valign="top" halign="left" zPosition="4"  foregroundColor="#003a71c3" font="Regular;34" />
 		<widget source="help" render="Label" position="5,345" size="590,83" font="Regular;21" />
 	</screen>"""
 
