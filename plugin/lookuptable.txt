@@ -114,6 +114,7 @@ Octagon SF228	sf228	Octagon SF228	/sf228	/fullbackup_sf228		-m 2048 -e 126976 -c
 Octagon SF3038	sf3038	Octagon SF3038	/sf3038	/fullbackup_sf3038		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Octagon SF4008	sf4008	Octagon SF4008	/sf4008	/fullbackup_sf4008				rootfs.tar.bz2	kernel.bin	noforce
 Octagon SF5008	sf5008	Octagon SF5008	/sf5008	/fullbackup_sf5008				rootfs.tar.bz2	kernel.bin	noforce
+Octagon SF8008	sf8008	Octagon SF8008	/octagon/sf8008	/fullbackup_sf8008	/octagon			rootfs.tar.bz2
 Opticum Odin2 Hybrid	odin2hybrid	Opticum Odin2 Hybrid	/odin2/hybrid	/fullbackup_odin2hybrid	/odin2	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Opticum Odin2 Plus	odinplus	Opticum Odin2 Plus	/odinplus	/fullbackup_odinplus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Opticum Twin	opticumtt	Opticum Twin	/opticum/tt	/fullbackup_opticumtt	/opticum	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
