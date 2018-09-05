@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Git 389-392
+- Zgemma I55 Plus support
+- Octagon SF8008 support
+- Version change from 25 to 26.
+
 Git 376-388
 - schermen.py : menu button for MMC (Only full hd skins for now).
 - MMC support, Now you can create backups on MMC (/media/mmc) with Menu button.
