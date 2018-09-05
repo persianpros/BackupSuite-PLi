@@ -15,7 +15,7 @@ else
    WHITE='\c00??????'
 fi
 export LANG=$1
-export SHOW="python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/message.py $LANG"
+export SHOW="python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/message.pyo $LANG"
 export HARDDISK=1
 echo -n $YELLOW
 $SHOW "message20"   	#echo "Full back-up to the harddisk"

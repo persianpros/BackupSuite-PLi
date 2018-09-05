@@ -16,7 +16,7 @@ else
 fi
 export LANG=$1
 export HARDDISK=0
-export SHOW="python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/message.py $LANG"
+export SHOW="python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/message.pyo $LANG"
 TARGET="XX"
 USEDSIZE=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` # size of rootfs
 NEEDEDSPACE=$(((4*$USEDSIZE)/1024))
