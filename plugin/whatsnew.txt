@@ -1,7 +1,10 @@
 Changelog
 =========
 
-Git 389-392
+Git 389-395
+- Edision OS ninopro/mio4k support
+- Fix message.py error: No such file or directory, Thanks to https://github.com/athoik 
+- We don't ship .py source files anymore so ipk only contains pyo compiled files.
 - Zgemma I55 Plus support
 - Octagon SF8008 support
 - Version change from 25 to 26.
