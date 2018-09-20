@@ -324,7 +324,7 @@ if [ $ROOTNAME != "rootfs.tar.bz2" -o $SEARCH = "h9" -o $SEARCH = "i55plus" ] ; 
 	fi
 	log "--------------------------"
 else
-	if [ $SEARCH = "solo4k" -o $SEARCH = "ultimo4k" -o $SEARCH = "uno4k" -o $SEARCH = "uno4kse" ] ; then
+	if [ $SEARCH = "solo4k" -o $SEARCH = "ultimo4k" -o $SEARCH = "uno4k" -o $SEARCH = "uno4kse" -o $SEARCH = "lunix3-4k" ] ; then
 		dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p1"
 	elif [ $SEARCH = "h7" ] ; then
@@ -337,7 +337,7 @@ else
 		dd if=/dev/mmcblk0p4 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p4"
 	else
-		python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.py
+		python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.pyo
 		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev`
 		KERNELNAME=${KERNEL:11:7}.bin
 		echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
