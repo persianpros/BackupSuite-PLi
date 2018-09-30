@@ -160,6 +160,7 @@ Technomate TM-Twin-OE	tmtwin	Technomate TM-Twin-OE	/update/tmtwinoe/cfe	/fullbac
 Tiviar Alpha+	tiviaraplus	Tiviar Alpha+	/tiviaraplus	/fullbackup_tiviaraplus		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Tiviar mini	tiviarmin	Tiviar mini	/tiviarmin	/fullbackup_tiviarmin		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Tripledot Tyrant	tyrant	Tripledot Tyrant	/tyrant	/fullbackup_tyrant		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Ustym 4K Pro	ustym4kpro	Ustym 4K Pro	/uclan/ustym4kpro	/fullbackup_ustym4kpro	/uclan			rootfs.tar.bz2
 UNiBOX HDECOPlus	hde	UNiBOX HDECOPlus	/unibox/hde	/fullbackup_hde	/unibox	-m 2048 -e 126976 -c 8160 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 UNiBOX HD-x	hdx	UNiBOX HD-x	/venton-hdx	/fullbackup_hdx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 VALA Linux	valalinux	VALA Linux	/update/valalinux/cfe	/fullbackup_valalinux	/update/valalinux	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
