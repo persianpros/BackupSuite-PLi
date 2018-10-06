@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Git 396-402
+- Ustym 4K Pro support
+- Fix pyo files in shell scripts.
+- Fix Qviart Lunix3 4K, thanks to https://github.com/Dima73
+- Mutant HD60 support
+
 Git 389-395
 - Edision OS ninopro/mio4k support
 - Fix message.py error: No such file or directory, Thanks to https://github.com/athoik 
