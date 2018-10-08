@@ -317,6 +317,7 @@ class FlashImageConfig(Screen):
 		self["curdir"] = StaticText(_("current:  %s")%(curdir or ''))
 		self.founds = False
 		self.dualboot = self.dualBoot()
+		self.ForceMode = self.ForceMode()
 		self.filelist = FileList(curdir, matchingPattern=matchingPattern, enableWrapAround=True)
 		self.filelist.onSelectionChanged.append(self.__selChanged)
 		self["filelist"] = self.filelist
@@ -353,6 +354,27 @@ class FlashImageConfig(Screen):
 					f.close()
 					if rootfs2 and kernel2:
 						return True
+			except:
+				pass
+		return False
+
+	def ForceMode(self):
+		if os.path.exists("/proc/stb/info/hwmodel"):
+			try:
+				fd = open("/proc/stb/info/hwmodel")
+				model = fd.read().strip()
+				fd.close()
+				if model in ["h9", "i55plus"]:
+					return True
+			except:
+				pass
+		elif os.path.exists("/proc/stb/info/boxtype"):
+			try:
+				fd = open("/proc/stb/info/boxtype")
+				model = fd.read().strip()
+				fd.close()
+				if model in ["h9", "i55plus"]:
+					return True
 			except:
 				pass
 		return False
@@ -559,7 +581,7 @@ class FlashImageConfig(Screen):
 					open_list2 = [
 						(_("Simulate second partition (no write)"), "simulate2"),
 						(_("Second partition (root and kernel)"), "standard2"),
-						(_("Second partition (only root)"), "root2"),
+						(_("Second partition (only root)"), "rootfs2"),
 						(_("Second partition (only kernel)"), "kernel2"),
 					]
 					if self.dualboot:
@@ -587,7 +609,10 @@ class FlashImageConfig(Screen):
 				cmd = "%s -n '%s'" % (ofgwrite_bin, dir_flash)
 			elif ret == "standard":
 				text += _("Standard (root and kernel)")
-				cmd = "%s -r -k '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
+				if self.ForceMode:
+					cmd = "%s -f -r -k '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
+				else:
+					cmd = "%s -r -k '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
 			elif ret == "root":
 				text += _("Only root")
 				cmd = "%s -r '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
@@ -600,7 +625,7 @@ class FlashImageConfig(Screen):
 			elif ret == "standard2":
 				text += _("Second partition (root and kernel)")
 				cmd = "%s -kmtd3 -rmtd4 '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
-			elif ret == "root2":
+			elif ret == "rootfs2":
 				text += _("Second partition (only root)")
 				cmd = "%s -rmtd4 '%s' > /dev/null 2>&1 &" % (ofgwrite_bin, dir_flash)
 			elif ret == "kernel2":
