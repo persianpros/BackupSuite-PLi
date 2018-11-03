@@ -125,6 +125,7 @@ Protek 4K	protek4k	Protek 4K	/protek4k	/fullbackup_protek4k				rootfs.tar.bz2	ke
 Protek 9900LX	9900lx	Protek 9900LX	/9900lx	/fullbackup_9900lx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Protek 9910LX	9910lx	Protek 9910LX	/9910lx	/fullbackup_9910lx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Protek 9911LX	9911lx	Protek 9911LX	/9911lx	/fullbackup_9911lx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Protek 9920LX	9920lx	Protek 9920LX	/9920lx	/fullbackup_9920lx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Qviart Lunix	lunix	Qviart Lunix	/update/lunix/cfe	/fullbackup_lunix	/update/lunix	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Qviart Lunix2 4K	lunix24k	Qviart Lunix2 4K	/update/lunix24k	/fullbackup_lunix24k	/update			rootfs.tar.bz2	oe_kernel.bin
 Qviart Lunix3 4K	lunix3-4k	Qviart Lunix3 4K	/update/lunix3-4k	/fullbackup_lunix34k	/update			rootfs.tar.bz2	oe_kernel.bin	none
@@ -215,8 +216,8 @@ Zgemma H4	h4	Zgemma H4	/zgemma/h4	/fullbackup_h4	/zgemma	-m 2048 -e 126976 -c 81
 Zgemma H5	h5	Zgemma H5	/zgemma/h5	/fullbackup_h5	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H6	h6	Zgemma H6	/zgemma/h6	/fullbackup_h6	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H7	h7	Zgemma H7	/zgemma/h7	/fullbackup_h7	/zgemma			rootfs.tar.bz2	kernel.bin	none
-Zgemma H9	h9	Zgemma H9	/zgemma/h9	/fullbackup_h9	/zgemma			rootfs.tar.bz2	kernel.bin	none
+Zgemma H9	h9	Zgemma H9	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma I55	i55	Zgemma I55	/zgemma/i55	/fullbackup_i55	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Zgemma I55 Plus	i55plus	Zgemma I55 Plus	/zgemma/i55plus	/fullbackup_i55plus	/zgemma			rootfs.tar.bz2	kernel.bin	none
+Zgemma I55 Plus	i55plus	Zgemma I55 Plus	/zgemma/i55plus	/fullbackup_i55plus	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma LC	lc	Zgemma LC	/zgemma/lc	/fullbackup_lc	/zgemma	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma SH1	sh1	Zgemma SH1	/zgemma/sh1	/fullbackup_sh1	/zgemma	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
