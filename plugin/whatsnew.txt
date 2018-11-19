@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Git 403-408
+- Zgemma H9 Combo support
+- Vu+ Duo 4K support
+- Try fix restore problem for h9, h9 combo and i55plus, Thanks to https://github.com/betacentauri
+- Protek 9920LX support
+- Add "ForceMode" for Zgemma h9, h9 combo and i55plus (I hope it helps).
+
 Git 396-402
 - Ustym 4K Pro support
 - Fix pyo files in shell scripts.
