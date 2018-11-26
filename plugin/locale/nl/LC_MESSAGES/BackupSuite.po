@@ -224,7 +224,7 @@ msgid "is not executable..."
 msgstr "is niet uitvoerbaar.."
 
 msgid "Using your own custom lookuptable.txt from the folder /etc"
-msgstr "Gebruik uw eigen gemaakte lookuptable.txt in the folder /etc"
+msgstr "Gebruik uw eigen gemaakte lookuptable.txt in de folder /etc"
 
 msgid "Version unknown, probably not installed the right way."
 msgstr "Versie onbekend, waarschijnlijk niet op de juiste manier geinstalleerd."
@@ -236,7 +236,7 @@ msgid "Probably you are trying to make the back-up in flash memory"
 msgstr "U probeert waarschijnlijk een backup te maken in het flash geheugen"
 
 msgid "No additional USB-stick found to copy an extra backup"
-msgstr "Geen extra USB-stick gevonden om een extra backup te Kopiëren"
+msgstr "Geen extra USB-stick gevonden om een extra backup te kopiëren"
 
 msgid "Installed packages contained in this backup:"
 msgstr "Geinstalleerde pakketten in deze backup:"
