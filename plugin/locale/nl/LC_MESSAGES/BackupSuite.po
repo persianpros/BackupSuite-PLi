@@ -242,7 +242,7 @@ msgid "Installed packages contained in this backup:"
 msgstr "Geinstalleerde pakketten in deze backup:"
 
 msgid "NFI Image created in: "
-msgstr "NFI Image gemaakt in:"
+msgstr "NFI Image gemaakt in: "
 
 #: plugin.py 294
 msgid ""
