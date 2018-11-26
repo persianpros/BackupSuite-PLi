@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
+"Last-Translator: Hains van den Bosch <hainsvdbosch@ziggo.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -221,28 +221,28 @@ msgid "Full back-up to the MultiMediaCard"
 msgstr "Volledige Backup op de harde schijf"
 
 msgid "is not executable..."
-msgstr ""
+msgstr "is niet uitvoerbaar.."
 
 msgid "Using your own custom lookuptable.txt from the folder /etc"
-msgstr ""
+msgstr "Gebruik uw eigen gemaakte lookuptable.txt in the folder /etc"
 
 msgid "Version unknown, probably not installed the right way."
-msgstr ""
+msgstr "Versie onbekend, waarschijnlijk niet op de juiste manier geinstalleerd."
 
 msgid "not installed yet, now installing"
-msgstr ""
+msgstr "niet geinstalleerd, nu installeren"
 
 msgid "Probably you are trying to make the back-up in flash memory"
-msgstr ""
+msgstr "U probeert waarschijnlijk een backup te maken in het flash geheugen"
 
 msgid "No additional USB-stick found to copy an extra backup"
-msgstr ""
+msgstr "Geen extra USB-stick gevonden om een extra backup te Kopiëren"
 
 msgid "Installed packages contained in this backup:"
-msgstr ""
+msgstr "Geinstalleerde pakketten in deze backup:"
 
 msgid "NFI Image created in: "
-msgstr ""
+msgstr "NFI Image gemaakt in:"
 
 #: plugin.py 294
 msgid ""
