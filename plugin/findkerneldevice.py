@@ -90,12 +90,18 @@ def find_kernel_device_udevadm(kernelpartition):
 		return ''
 
 def find_kernel_device_gpt(kernelpartition):
+	device = '/dev/mmcblk0'
+	try:
+		import re
+		device = re.search('/dev/mmcblk(\d+)', open('/proc/cmdline').read()).group(0)
+	except:
+		pass
 	try:
 		p = 1
-		header = read_header(open('/dev/mmcblk0', 'r'))
-		for part in read_partitions(open('/dev/mmcblk0', 'r'), header):
+		header = read_header(open(device, 'r'))
+		for part in read_partitions(open(device, 'r'), header):
 			if kernelpartition == part.name:
-				return '/dev/mmcblk0p' + str(p)
+				return device + 'p' + str(p)
 			p += 1
 		return ''
 	except:
