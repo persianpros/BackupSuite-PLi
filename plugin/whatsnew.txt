@@ -1,7 +1,10 @@
 Changelog
 =========
 
-Git 403-408
+Git 403-415
+- Dinobot 4K Pro support
+- findkerneldevice.py: Support devices other than mmcblk0, Thanks to https://github.com/athoik
+- Dutch translation updated, Thanks to https://github.com/Hains
 - Zgemma H9 Combo support
 - Vu+ Duo 4K support
 - Try fix restore problem for h9, h9 combo and i55plus, Thanks to https://github.com/betacentauri
