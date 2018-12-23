@@ -172,6 +172,7 @@ Vivant Dinobot 4K	u5	Vivant Dinobot 4K	/dinobot/u5	/fullbackup_u5	/dinobot			roo
 Vivant Dinobot 4K L	u51	Vivant Dinobot 4K L	/dinobot/u51	/fullbackup_u51	/dinobot			rootfs.tar.bz2	kernel.bin	none
 Vivant Dinobot 4K Mini	u53	Vivant Dinobot 4K Mini	/dinobot/u53	/fullbackup_u53	/dinobot			rootfs.tar.bz2	kernel.bin	none
 Vivant Dinobot 4K Plus	u52	Vivant Dinobot 4K Plus	/dinobot/u52	/fullbackup_u52	/dinobot			rootfs.tar.bz2	kernel.bin	none
+Vivant Dinobot 4K Pro	u54	Vivant Dinobot 4K Pro	/dinobot/u54	/fullbackup_u54	/dinobot			rootfs.tar.bz2	kernel.bin	none
 Vivant Dinobot 4K SE	u5pvr	Vivant Dinobot 4K SE	/dinobot/u5pvr	/fullbackup_u5pvr	/dinobot			rootfs.tar.bz2	kernel.bin	none
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
 Vu+ Duo 2	duo2	Vu+ Duo 2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
