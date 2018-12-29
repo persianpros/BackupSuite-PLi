@@ -64,7 +64,7 @@ as you have to flash your backup via DMM's WebIF.
 - Better dreambox detection, Thanks a lot to Hains
 - Vu4k kernel problem fixed.
 - IT language update, Thanks to pzanone
-- mphelp.xml update: Show https://github.com/PLi-metas/BackupSuite/issues
+- mphelp.xml update: Show https://github.com/OpenVisionE2/BackupSuite/issues
 - sf4008 kernel detection fixed.
 - Xtrend file detection fixed.
 - Version change from 24 to 25.
