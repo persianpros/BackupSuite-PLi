@@ -225,7 +225,7 @@ class BackupStart(Screen):
 				files = "^.*\.(zip|bin|jffs2)"
 			elif "4k" or "uhd" in model or model in ["hd51", "hd60", "h7", "sf4008", "sf5008", "sf8008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "u54", "vs1500", "et11000", "et13000", "cc1"]:
 				files = "^.*\.(zip|bin|bz2)"
-			elif model in ["h9", "h9combo", "i55plus"]:
+			elif model in ["h9", "h9combo", "i55plus", "u55"]:
 				files = "^.*\.(zip|bin|ubi)"
 			elif model.startswith("dm"):
 				self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
@@ -375,7 +375,7 @@ class FlashImageConfig(Screen):
 				fd = open("/proc/stb/info/boxtype")
 				model = fd.read().strip()
 				fd.close()
-				if model in ["h9", "i55plus"]:
+				if model in ["h9", "h9combo", "i55plus"]:
 					return True
 			except:
 				pass
@@ -451,7 +451,7 @@ class FlashImageConfig(Screen):
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
 							text += "kernel.bin, rootfs.tar.bz2"
-						elif model in ["h9", "h9combo", "i55plus"]:
+						elif model in ["h9", "h9combo", "i55plus", "u55"]:
 							backup_files = [("uImage"), ("rootfs.ubi")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
 							text += "uImage, rootfs.ubi"
@@ -501,7 +501,7 @@ class FlashImageConfig(Screen):
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin")]
 							text += "kernel.bin, rootfs.tar.bz2"
-						elif model in ["h9", "h9combo", "i55plus"]:
+						elif model in ["h9", "h9combo", "i55plus", "u55"]:
 							backup_files = [("uImage"), ("rootfs.ubi")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
 							text += "uImage, rootfs.ubi"
