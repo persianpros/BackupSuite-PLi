@@ -80,6 +80,7 @@ HD 500C	hd500c	HD 500c	/hd500c	/fullbackup_hd500c		-m 2048 -e 126976 -c 4096	-m 
 HD 530C	hd530c	HD 530c	/hd530c	/fullbackup_hd530c		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HDBox EniBox	enibox	HDBox EniBox	/enibox	/fullbackup_enibox		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 60	hd60	Mutant HD60	/hd60	/fullbackup_hd60				rootfs.tar.bz2	kernel.bin	none
+HD 61	hd61	Mutant HD61	/hd61	/fullbackup_hd61				rootfs.tar.bz2	uImage	none
 Iqon Force 1	force1	Iqon Force 1	/update/force1/cfe	/fullbackup_force1	/update/force1	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 2	force2	Iqon Force 2	/update/force2solid/cfe	/fullbackup_force2	/update/force2solid	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Iqon Force 2 Nano	force2nano	Iqon Force 2 Nano	/update/force2nano/cfe	/fullbackup_force2nano	/update/force2nano	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
@@ -97,6 +98,7 @@ Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink
 Ixuss Zero	ixusszero	Ixuss Zero	/medialink/ixusszero	/fullbackup_ixusszero	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Jepssen MediaBox HD LX	mediabox	Jepssen MediaBox HD LX	/update/mediabox/cfe	/fullbackup_mediabox	/update/mediabox	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+MaxyTec Multibox	multibox	MaxyTec Multibox	/multibox	/fullbackup_multibox				rootfs.tar.bz2	uImage	none
 Miraclebox Hybrid	mbhybrid	Miraclebox Hybrid	/miraclebox/minihybrid	/fullbackup_minihybrid	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Micro	7000S	Miraclebox Micro	/miraclebox/micro	/fullbackup_mbmico	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox MicroV2	7005S	Miraclebox MicroV2	/miraclebox/microv2	/fullbackup_mbmicov2	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -117,7 +119,7 @@ Octagon SF228	sf228	Octagon SF228	/sf228	/fullbackup_sf228		-m 2048 -e 126976 -c
 Octagon SF3038	sf3038	Octagon SF3038	/sf3038	/fullbackup_sf3038		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Octagon SF4008	sf4008	Octagon SF4008	/sf4008	/fullbackup_sf4008				rootfs.tar.bz2	kernel.bin	noforce
 Octagon SF5008	sf5008	Octagon SF5008	/sf5008	/fullbackup_sf5008				rootfs.tar.bz2	kernel.bin	noforce
-Octagon SF8008	sf8008	Octagon SF8008	/octagon/sf8008	/fullbackup_sf8008	/octagon			rootfs.tar.bz2
+Octagon SF8008	sf8008	Octagon SF8008	/octagon/sf8008	/fullbackup_sf8008	/octagon			rootfs.tar.bz2	kernel.bin	none
 Opticum Odin2 Hybrid	odin2hybrid	Opticum Odin2 Hybrid	/odin2/hybrid	/fullbackup_odin2hybrid	/odin2	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Opticum Odin2 Plus	odinplus	Opticum Odin2 Plus	/odinplus	/fullbackup_odinplus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Opticum Twin	opticumtt	Opticum Twin	/opticum/tt	/fullbackup_opticumtt	/opticum	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -127,7 +129,7 @@ Protek 9910LX	9910lx	Protek 9910LX	/9910lx	/fullbackup_9910lx		-m 2048 -e 126976
 Protek 9911LX	9911lx	Protek 9911LX	/9911lx	/fullbackup_9911lx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Protek 9920LX	9920lx	Protek 9920LX	/9920lx	/fullbackup_9920lx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Qviart Lunix	lunix	Qviart Lunix	/update/lunix/cfe	/fullbackup_lunix	/update/lunix	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
-Qviart Lunix2 4K	lunix24k	Qviart Lunix2 4K	/update/lunix24k	/fullbackup_lunix24k	/update			rootfs.tar.bz2	oe_kernel.bin
+Qviart Lunix2 4K	lunix24k	Qviart Lunix2 4K	/update/lunix24k	/fullbackup_lunix24k	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Qviart Lunix3 4K	lunix3-4k	Qviart Lunix3 4K	/update/lunix3-4k	/fullbackup_lunix34k	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Red Eagle SingleBox LCD	singleboxlcd	Red Eagle SingleBox LCD	/redeagle/singleboxlcd	/fullbackup_singleboxlcd	/redeagle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Red Eagle TwinBox LCD	twinboxlcd	Red Eagle TwinBox LCD	/redeagle/twinboxlcd	/fullbackup_twinboxlcd	/redeagle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -161,9 +163,10 @@ Technomate TM-Twin-OE	tmtwin	Technomate TM-Twin-OE	/update/tmtwinoe/cfe	/fullbac
 Tiviar Alpha+	tiviaraplus	Tiviar Alpha+	/tiviaraplus	/fullbackup_tiviaraplus		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Tiviar mini	tiviarmin	Tiviar mini	/tiviarmin	/fullbackup_tiviarmin		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Tripledot Tyrant	tyrant	Tripledot Tyrant	/tyrant	/fullbackup_tyrant		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Ustym 4K Pro	ustym4kpro	Ustym 4K Pro	/uclan/ustym4kpro	/fullbackup_ustym4kpro	/uclan			rootfs.tar.bz2
+Ultra Box V8Plus Combo	v8plus	Ultra Box V8Plus Combo	/v8plus	/fullbackup_v8plus				rootfs.tar.bz2	uImage	none
 UNiBOX HDECOPlus	hde	UNiBOX HDECOPlus	/unibox/hde	/fullbackup_hde	/unibox	-m 2048 -e 126976 -c 8160 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 UNiBOX HD-x	hdx	UNiBOX HD-x	/venton-hdx	/fullbackup_hdx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Ustym 4K Pro	ustym4kpro	Ustym 4K Pro	/uclan/ustym4kpro	/fullbackup_ustym4kpro	/uclan			rootfs.tar.bz2	kernel.bin	none
 VALA Linux	valalinux	VALA Linux	/update/valalinux/cfe	/fullbackup_valalinux	/update/valalinux	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Vimastec VS1000	vs1000	Vimastec VS1000	/vs1000	/fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Vimastec VS1500	vs1500	Vimastec VS1500	/vs1500	/fullbackup_vs1500				rootfs.tar.bz2	kernel.bin	force

@@ -223,7 +223,7 @@ class BackupStart(Screen):
 		if model != "":
 			if model in ["duo", "solo", "ultimo", "uno"] or "ebox" in model:
 				files = "^.*\.(zip|bin|jffs2)"
-			elif "4k" or "uhd" in model or model in ["hd51", "hd60", "h7", "sf4008", "sf5008", "sf8008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "u54", "vs1500", "et11000", "et13000", "cc1"]:
+			elif "4k" or "uhd" in model or model in ["hd51", "hd60", "hd61", "h7", "sf4008", "sf5008", "sf8008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "u54", "vs1500", "et11000", "et13000", "cc1", "multibox", "v8plus"]:
 				files = "^.*\.(zip|bin|bz2)"
 			elif model in ["h9", "h9combo", "i55plus", "u55"]:
 				files = "^.*\.(zip|bin|ubi)"
@@ -455,6 +455,10 @@ class FlashImageConfig(Screen):
 							backup_files = [("uImage"), ("rootfs.ubi")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
 							text += "uImage, rootfs.ubi"
+						elif model in ["hd61", "multibox", "v8plus"]:
+							backup_files = [("uImage"), ("rootfs.tar.bz2")]
+							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.ubi"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
+							text += "uImage, rootfs.tar.bz2"
 						elif model.startswith(("et4", "et5", "et6", "et7", "et8", "et9", "et10")):
 							backup_files = [("kernel.bin"), ("rootfs.bin")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
@@ -505,6 +509,10 @@ class FlashImageConfig(Screen):
 							backup_files = [("uImage"), ("rootfs.ubi")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
 							text += "uImage, rootfs.ubi"
+						elif model in ["hd61", "multibox", "v8plus"]:
+							backup_files = [("uImage"), ("rootfs.tar.bz2")]
+							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.ubi"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
+							text += "uImage, rootfs.tar.bz2"
 						elif model.startswith(("et4", "et5", "et6", "et7", "et8", "et9", "et10")):
 							backup_files = [("kernel.bin"), ("rootfs.bin")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin")]
