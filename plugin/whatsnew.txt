@@ -1,8 +1,20 @@
 Changelog
 =========
 
+Git 416-421
+- Update no_backup_files regarding "uImage" and "rootfs.ubi"
+- Mutant HD61 support
+- MaxyTec Multibox support
+- Ultra Box V8Plus Combo support
+- Octagon SF8008 fix kernel name
+- Qviart Lunix2 4K fix action
+- Ustym 4K Pro fix kernel name
+- Update setup.py (Version fix)
+- Vivant Dinobot U55 support
+- Use Open Vision name instead of PLi-metas and pli-extras
+
 Git 403-415
-- Dinobot 4K Pro support
+- Vivant Dinobot 4K Pro support
 - findkerneldevice.py: Support devices other than mmcblk0, Thanks to https://github.com/athoik
 - Dutch translation updated, Thanks to https://github.com/Hains
 - Zgemma H9 Combo support
