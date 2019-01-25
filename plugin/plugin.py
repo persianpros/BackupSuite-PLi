@@ -225,7 +225,7 @@ class BackupStart(Screen):
 				files = "^.*\.(zip|bin|jffs2)"
 			elif "4k" or "uhd" in model or model in ["hd51", "hd60", "hd61", "h7", "sf4008", "sf5008", "sf8008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "u54", "vs1500", "et11000", "et13000", "cc1", "multibox", "v8plus"]:
 				files = "^.*\.(zip|bin|bz2)"
-			elif model in ["h9", "h9combo", "i55plus", "u55"]:
+			elif model in ["h9", "h9combo", "i55plus", "u55", "u41"]:
 				files = "^.*\.(zip|bin|ubi)"
 			elif model.startswith("dm"):
 				self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
@@ -451,7 +451,7 @@ class FlashImageConfig(Screen):
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
 							text += "kernel.bin, rootfs.tar.bz2"
-						elif model in ["h9", "h9combo", "i55plus", "u55"]:
+						elif model in ["h9", "h9combo", "i55plus", "u55", "u41"]:
 							backup_files = [("uImage"), ("rootfs.ubi")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
 							text += "uImage, rootfs.ubi"
@@ -505,7 +505,7 @@ class FlashImageConfig(Screen):
 							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
 							text += "kernel.bin, rootfs.tar.bz2"
-						elif model in ["h9", "h9combo", "i55plus", "u55"]:
+						elif model in ["h9", "h9combo", "i55plus", "u55", "u41"]:
 							backup_files = [("uImage"), ("rootfs.ubi")]
 							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin")]
 							text += "uImage, rootfs.ubi"
