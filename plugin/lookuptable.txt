@@ -61,7 +61,7 @@ Gigablue IPBox	gbipbox	Gigablue IPBox	/gigablue/ipbox	/fullbackup_gbipbox	/gigab
 Gigablue Quad	gbquad	Gigablue Quad	/gigablue/quad	/fullbackup_quad	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue Quad 4K	gbquad4k	Gigablue Quad 4K	/gigablue/quad4k	/fullbackup_quad4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 Gigablue QuadPlus	gbquadplus	Gigablue QuadPlus	/gigablue/quadplus	/fullbackup_quadplus	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Gigablue Trio 4K	gbtrio4k	Gigablue Trio 4K	/gigablue/gbtrio4k	/fullbackup_gbtrio4k	/gigablue			rootfs.tar.bz2	kernel.bin	none
+Gigablue Trio 4K	gbtrio4k	Gigablue Trio 4K	/gigablue/trio4k	/fullbackup_trio4k	/gigablue			rootfs.tar.bz2	kernel.bin	none
 Gigablue UE 4K	gbue4k	Gigablue UE 4K	/gigablue/ue4k	/fullbackup_ued4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 Gigablue UltraSE	gbultrase	Gigablue UltraSE	/gigablue/ultrase	/fullbackup_gbultrase	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue UltraUE	gbultraue	Gigablue UltraUE	/gigablue/ultraue	/fullbackup_gbultraue	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
