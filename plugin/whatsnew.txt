@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Git 422-429
+- Beyonwiz V2 support
+- Gigablue Trio 4K support
+- Vu+ Duo 4K kernel detection fixed.
+- Vivant Dinobot H265 support
+- Octagon SF8008 kernel detection fixed, Thanks to https://github.com/athoik
+
 Git 416-421
 - Update no_backup_files regarding "uImage" and "rootfs.ubi"
 - Mutant HD61 support
