@@ -2,7 +2,6 @@ from schermen import *
 import os
 import gettext
 import enigma
-import glob
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Console import Console
@@ -17,9 +16,7 @@ from Components.Sources.StaticText import StaticText
 from Plugins.Plugin import PluginDescriptor
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from os import environ
-import NavigationInstance
-from Tools import Notifications
-from enigma import getDesktop
+from enigma import getDesktop, getBoxType
 
 lang = language.getLanguage()
 environ["LANGUAGE"] = lang[:2]
@@ -81,10 +78,10 @@ def backupCommandHDD():
 			os.chmod(BACKUP_DMM_HDD, 0755)
 	except:
 		pass
-	cmd = BACKUP_HDD
-	for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
-		if os.path.exists(dvbmod):
-			cmd = BACKUP_DMM_HDD
+	if getBoxType().startswith("dm"):
+		cmd = BACKUP_DMM_HDD
+	else:
+		cmd = BACKUP_HDD
 	return cmd
 
 def backupCommandUSB():
@@ -98,10 +95,10 @@ def backupCommandUSB():
 			os.chmod(BACKUP_DMM_USB, 0755)
 	except:
 		pass
-	cmd = BACKUP_USB
-	for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
-		if os.path.exists(dvbmod):
-			cmd = BACKUP_DMM_USB
+	if getBoxType().startswith("dm"):
+		cmd = BACKUP_DMM_USB
+	else:
+		cmd = BACKUP_USB
 	return cmd
 
 def backupCommandMMC():
@@ -115,10 +112,10 @@ def backupCommandMMC():
 			os.chmod(BACKUP_DMM_MMC, 0755)
 	except:
 		pass
-	cmd = BACKUP_MMC
-	for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
-		if os.path.exists(dvbmod):
-			cmd = BACKUP_DMM_MMC
+	if getBoxType().startswith("dm"):
+		cmd = BACKUP_DMM_MMC
+	else:
+		cmd = BACKUP_MMC
 	return cmd
 
 try:
@@ -179,59 +176,19 @@ class BackupStart(Screen):
 			backupsuiteHelp.open(self.session)
 
 	def flashimage(self):
-		model = ""
 		files = "^.*\.(zip|bin)"
-		if os.path.exists("/proc/stb/info/boxtype"):
-			try:
-				f = open("/proc/stb/info/boxtype")
-				model = f.read().strip()
-				f.close()
-			except:
-				pass
-		elif os.path.exists("/proc/stb/info/vumodel"):
-			try:
-				f = open("/proc/stb/info/vumodel")
-				model = f.read().strip()
-				f.close()
-			except:
-				pass
-		elif os.path.exists("/proc/stb/info/hwmodel"):
-			try:
-				f = open("/proc/stb/info/hwmodel")
-				model = f.read().strip()
-				f.close()
-			except:
-				pass
-		elif os.path.exists("/proc/stb/info/gbmodel"):
-			try:
-				f = open("/proc/stb/info/gbmodel")
-				model = f.read().strip()
-				f.close()
-			except:
-				pass
+		model = getBoxType()
+		if model in ("vuduo","vusolo","vuultimo","vuuno") or model.startswith("ebox"):
+			files = "^.*\.(zip|bin|jffs2)"
+		elif "4k" or "uhd" in model or model in ("hd51","hd60","hd61","h7","sf4008","sf5008","sf8008","vs1500","et11000","et13000","cc1","multibox","v8plus"):
+			files = "^.*\.(zip|bin|bz2)"
+		elif model in ("h9","h9combo","i55plus","dinobotu55","dinoboth265"):
+			files = "^.*\.(zip|bin|ubi)"
+		elif model.startswith("dm"):
+			self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
+			return
 		else:
-			for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
-				if os.path.exists(dvbmod):
-					try:
-						f = open("/proc/stb/info/model")
-						model = f.read().strip()
-						f.close()
-					except:
-						pass
-				else:
-					return
-		if model != "":
-			if model in ["duo", "solo", "ultimo", "uno"] or "ebox" in model:
-				files = "^.*\.(zip|bin|jffs2)"
-			elif "4k" or "uhd" in model or model in ["hd51", "hd60", "hd61", "h7", "sf4008", "sf5008", "sf8008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "u54", "vs1500", "et11000", "et13000", "cc1", "multibox", "v8plus"]:
-				files = "^.*\.(zip|bin|bz2)"
-			elif model in ["h9", "h9combo", "i55plus", "u55", "u41"]:
-				files = "^.*\.(zip|bin|ubi)"
-			elif model.startswith("dm"):
-				self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
-				return
-			else:
-				files = "^.*\.(zip|bin)"
+			files = "^.*\.(zip|bin)"
 		curdir = '/media/'
 		self.session.open(FlashImageConfig, curdir, files)
 
@@ -338,47 +295,24 @@ class FlashImageConfig(Screen):
 		pass
 
 	def dualBoot(self):
-		if os.path.exists("/proc/stb/info/boxtype"):
-			try:
-				fd = open("/proc/stb/info/boxtype")
-				model = fd.read().strip()
-				fd.close()
-				if model == "et8500":
-					rootfs2 = False
-					kernel2 = False
-					f = open("/proc/mtd")
-					l = f.readlines()
-					for x in l:
-						if 'rootfs2' in x:
-							rootfs2 = True
-						if 'kernel2' in x:
-							kernel2 = True
-					f.close()
-					if rootfs2 and kernel2:
-						return True
-			except:
-				pass
+		if getBoxType() == "et8500":
+			rootfs2 = False
+			kernel2 = False
+			f = open("/proc/mtd")
+			l = f.readlines()
+			for x in l:
+				if 'rootfs2' in x:
+					rootfs2 = True
+				if 'kernel2' in x:
+					kernel2 = True
+			f.close()
+			if rootfs2 and kernel2:
+				return True
 		return False
 
 	def ForceMode(self):
-		if os.path.exists("/proc/stb/info/hwmodel"):
-			try:
-				fd = open("/proc/stb/info/hwmodel")
-				model = fd.read().strip()
-				fd.close()
-				if model in ["h9", "h9combo", "i55plus"]:
-					return True
-			except:
-				pass
-		elif os.path.exists("/proc/stb/info/boxtype"):
-			try:
-				fd = open("/proc/stb/info/boxtype")
-				model = fd.read().strip()
-				fd.close()
-				if model in ["h9", "h9combo", "i55plus"]:
-					return True
-			except:
-				pass
+		if getBoxType() in ("h9","h9combo","i55plus"):
+			return True
 		return False
 
 	def getCurrentSelected(self):
@@ -437,144 +371,81 @@ class FlashImageConfig(Screen):
 	def showparameterlist(self):
 		if self["key_green"].getText() == _("Run flash"):
 			dirname = self.getCurrentSelected()
+			model = getBoxType()
 			if dirname:
 				backup_files = []
 				no_backup_files = []
 				text = _("Select parameter for start flash!\n")
 				text += _('For flashing your receiver files are needed:\n')
-				if os.path.exists("/proc/stb/info/hwmodel"):
-					try:
-						f = open("/proc/stb/info/hwmodel")
-						model = f.read().strip()
-						f.close()
-						if model in ["hd51", "hd60", "h7", "sf4008", "sf5008", "sf8008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "u54", "vs1500", "et11000", "et13000", "bre2ze4k", "spycat4k", "spycat4kmini", "protek4k", "cc1"]:
-							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel.bin, rootfs.tar.bz2"
-						elif model in ["h9", "h9combo", "i55plus", "u55", "u41"]:
-							backup_files = [("uImage"), ("rootfs.ubi")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
-							text += "uImage, rootfs.ubi"
-						elif model in ["hd61", "multibox", "v8plus"]:
-							backup_files = [("uImage"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.ubi"), ("kernel_auto.bin"), ("kernel.bin")]
-							text += "uImage, rootfs.tar.bz2"
-						elif model.startswith(("et4", "et5", "et6", "et7", "et8", "et9", "et10")):
-							backup_files = [("kernel.bin"), ("rootfs.bin")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel.bin, rootfs.bin"
-						elif "4k" or "uhd" in model:
-							backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "oe_kernel.bin, rootfs.tar.bz2"
-						elif "ebox" in model:
-							backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
-							no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
-						elif model.startswith(("fusion", "pure", "optimus", "force", "iqon", "ios", "tm2", "tmn", "tmt", "tms", "lunix", "mediabox", "vala")):
-							backup_files = [("oe_kernel.bin"), ("oe_rootfs.bin")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "oe_kernel.bin, oe_rootfs.bin"
-						else:
-							backup_files = [("kernel.bin"), ("rootfs.bin")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel.bin, rootfs.bin"
-					except:
-						pass
-				elif os.path.exists("/proc/stb/info/gbmodel"):
-					try:
-						f = open("/proc/stb/info/gbmodel")
-						model = f.read().strip()
-						f.close()
-						if not "4k" in model:
-							backup_files = [("kernel.bin"), ("rootfs.bin")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel.bin, rootfs.bin"
-						else:
-							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel.bin, rootfs.tar.bz2"
-					except:
-						pass
-				elif os.path.exists("/proc/stb/info/boxtype"):
-					try:
-						f = open("/proc/stb/info/boxtype")
-						model = f.read().strip()
-						f.close()
-						if model in ["hd51", "hd60", "h7", "sf4008", "sf5008", "sf8008", "u4", "u5", "u5pvr", "u51", "u52", "u53", "u54", "vs1500", "et11000", "et13000", "bre2ze4k", "spycat4k", "spycat4kmini", "protek4k", "cc1"]:
-							backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel.bin, rootfs.tar.bz2"
-						elif model in ["h9", "h9combo", "i55plus", "u55", "u41"]:
-							backup_files = [("uImage"), ("rootfs.ubi")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin")]
-							text += "uImage, rootfs.ubi"
-						elif model in ["hd61", "multibox", "v8plus"]:
-							backup_files = [("uImage"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.ubi"), ("kernel_auto.bin"), ("kernel.bin")]
-							text += "uImage, rootfs.tar.bz2"
-						elif model.startswith(("et4", "et5", "et6", "et7", "et8", "et9", "et10")):
-							backup_files = [("kernel.bin"), ("rootfs.bin")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel.bin, rootfs.bin"
-						elif "4k" or "uhd" in model:
-							backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "oe_kernel.bin, rootfs.tar.bz2"
-						elif "ebox" in model:
-							backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
-							no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
-						elif model.startswith(("fusion", "pure", "optimus", "force", "iqon", "ios", "tm2", "tmn", "tmt", "tms", "lunix", "mediabox", "vala")):
-							backup_files = [("oe_kernel.bin"), ("oe_rootfs.bin")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "oe_kernel.bin, oe_rootfs.bin"
-						else:
-							backup_files = [("kernel.bin"), ("rootfs.bin")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel.bin, rootfs.bin"
-					except:
-						pass
-				elif os.path.exists("/proc/stb/info/vumodel"):
-					try:
-						f = open("/proc/stb/info/vumodel")
-						model = f.read().strip()
-						f.close()
-						if "4k" in model:
-							backup_files = [("kernel_auto.bin"), ("rootfs.tar.bz2")]
-							no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel_auto.bin, rootfs.tar.bz2"
-						elif model in ["duo2", "solose", "solo2", "zero"]:
-							backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.bin")]
-							no_backup_files = [("rootfs.bin"), ("root_cfe_auto.jffs2"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel_cfe_auto.bin, root_cfe_auto.bin"
-						else:
-							backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
-							no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-							text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
-					except:
-						pass
+				if model.startswith("dm"):
+					if "dm9" in model:
+						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel.bin, rootfs.tar.bz2"
+					elif model in ("dm520","dm7080","dm820"):
+						backup_files = [("*.xz")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("uImage"), ("rootfs.ubi")]
+						text += "*.xz"
+					else:
+						backup_files = [("*.nfi")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("uImage"), ("rootfs.ubi")]
+						text += "*.nfi"
+				elif model.startswith("gb"):
+					if not "4k" in model:
+						backup_files = [("kernel.bin"), ("rootfs.bin")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel.bin, rootfs.bin"
+					else:
+						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel.bin, rootfs.tar.bz2"
+				elif model.startswith("vu"):
+					if "4k" in model:
+						backup_files = [("kernel_auto.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel_auto.bin, rootfs.tar.bz2"
+					elif model in ("vuduo2","vusolose","vusolo2","vuzero"):
+						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.bin")]
+						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.jffs2"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel_cfe_auto.bin, root_cfe_auto.bin"
+					else:
+						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
+						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
+
 				else:
-					for dvbmod in glob.glob('/etc/modules-load.d/*dreambox-dvb-modules-dm*.conf'):
-						if os.path.exists(dvbmod):
-							try:
-								f = open("/proc/stb/info/model")
-								model = f.read().strip()
-								f.close()
-								if "dm9" in model:
-									backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
-									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
-									text += "kernel.bin, rootfs.tar.bz2"
-								elif model in ["dm520", "dm525", "dm7080", "dm820"]:
-									backup_files = [("*.xz")]
-									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("uImage"), ("rootfs.ubi")]
-									text += "*.xz"
-								else:
-									backup_files = [("*.nfi")]
-									no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("uImage"), ("rootfs.ubi")]
-									text += "*.nfi"
-							except:
-								pass
+					if model in ("hd51","hd60","h7","sf4008","sf5008","sf8008","vs1500","et11000","et13000","bre2ze4k","spycat4k","spycat4kmini","protek4k","cc1") or model.startswith(("anadol","axashis","dinobot4","ferguson4","mediabox4k")):
+						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel.bin, rootfs.tar.bz2"
+					elif model in ("h9","h9combo","i55plus","dinobotu55","dinoboth265"):
+						backup_files = [("uImage"), ("rootfs.ubi")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
+						text += "uImage, rootfs.ubi"
+					elif model in ("hd61","multibox","v8plus"):
+						backup_files = [("uImage"), ("rootfs.tar.bz2")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.ubi"), ("kernel_auto.bin"), ("kernel.bin")]
+						text += "uImage, rootfs.tar.bz2"
+					elif model.startswith(("et4","et5","et6","et7","et8","et9","et10")):
+						backup_files = [("kernel.bin"), ("rootfs.bin")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel.bin, rootfs.bin"
+					elif model.startswith("ebox"):
+						backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2")]
+						no_backup_files = [("rootfs.bin"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
+					elif model.startswith(("fusion","pure","optimus","force","iqon","ios","tm2","tmn","tmt","tms","lunix","mediabox","vala")):
+						backup_files = [("oe_kernel.bin"), ("oe_rootfs.bin")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "oe_kernel.bin, oe_rootfs.bin"
+					elif "4k" or "uhd" in model:
+						backup_files = [("oe_kernel.bin"), ("rootfs.tar.bz2")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_rootfs.bin"), ("kernel.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "oe_kernel.bin, rootfs.tar.bz2"
+					else:
+						backup_files = [("kernel.bin"), ("rootfs.bin")]
+						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
+						text += "kernel.bin, rootfs.bin"
 				try:
 					self.founds = False
 					text += _('\nThe found files:')
