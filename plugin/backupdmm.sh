@@ -187,28 +187,17 @@ checkbinary $UBINIZE
 echo -n $WHITE
 #############################################################################
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
-if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
-	log "Not a dreambox?"
-	exit 1
-fi
-if [ -f /proc/stb/info/gbmodel ] ; then			# Gigablue models
-	log "Not a dreambox?"
-	exit 1
-fi
-if [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
-	log "Not a dreambox?"
-	exit 1
-fi
-if [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
-	log "Not a dreambox?"
-	exit 1
-fi
 if [ -f /etc/modules-load.d/dreambox-dvb-modules-dm*.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules-dm*.conf ] ; then
-	SEARCH=$( cat /proc/stb/info/model )
+	if [ -f /etc/model ] ; then
+		log "Thanks GOD it's Open Vision"
+		SEARCH=$( cat /etc/model )
+	else
+		log "Not Open Vision, Open PLi maybe?"	
+		SEARCH=$( cat /proc/stb/info/model )
+	fi
 else
-	echo $RED
-	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
-	big_fail
+	log "It's not a dreambox! Not compatible with this script."
+	exit 1
 fi
 ############################## DM9X0 Situation ##############################
 dm9x0_situation()

@@ -171,21 +171,28 @@ echo -n $WHITE
 #############################################################################
 # TEST IF RECEIVER IS SUPPORTED AND READ THE VARIABLES FROM THE LOOKUPTABLE #
 if [ -f /etc/modules-load.d/dreambox-dvb-modules-dm*.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules-dm*.conf ] ; then
-	log "It's a dreambox!"
+	log "It's a dreambox! Not compatible with this script."
 	exit 1
-fi
-if [ -f /proc/stb/info/hwmodel ] ; then				# New Xsarius models
-	SEARCH=$( cat /proc/stb/info/hwmodel )
-elif [ -f /proc/stb/info/gbmodel ] ; then			# Gigablue models
-	SEARCH=$( cat /proc/stb/info/gbmodel )
-elif [ -f /proc/stb/info/boxtype ] ; then			# All models except Vu+
-	SEARCH=$( cat /proc/stb/info/boxtype )
-elif [ -f /proc/stb/info/vumodel ] ; then		# Vu+ models
-	SEARCH=$( cat /proc/stb/info/vumodel )
 else
-	echo $RED
-	$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
-	big_fail
+	if [ -f /etc/model ] ; then
+		log "Thanks GOD it's Open Vision"
+		SEARCH=$( cat /etc/model )
+	else
+		log "Not Open Vision, Open PLi maybe?"	
+		if [ -f /proc/stb/info/hwmodel ] ; then
+			SEARCH=$( cat /proc/stb/info/hwmodel )
+		elif [ -f /proc/stb/info/gbmodel ] ; then
+			SEARCH=$( cat /proc/stb/info/gbmodel )
+		elif [ -f /proc/stb/info/boxtype ] ; then
+			SEARCH=$( cat /proc/stb/info/boxtype )
+		elif [ -f /proc/stb/info/vumodel ] ; then
+			SEARCH=$( cat /proc/stb/info/vumodel )
+		else
+			echo $RED
+			$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
+			big_fail
+		fi
+	fi
 fi
 cat $LOOKUP | cut -f 2 | grep -qw "$SEARCH"
 if [ "$?" = "1" ] ; then
