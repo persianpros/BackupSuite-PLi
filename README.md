@@ -1,5 +1,5 @@
-Backup Suite
-===========
+BackupSuite [![Build Status](https://travis-ci.org/OpenVisionE2/BackupSuite.svg?branch=master)](https://travis-ci.org/OpenVisionE2/BackupSuite)
+==========
 Created by Pedro Newbie
 
 Maintainer : Persian Prince
