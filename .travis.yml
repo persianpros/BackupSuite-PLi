@@ -23,4 +23,5 @@ git:
 script:
 - echo compiling Backup Suite plugin
 - python -m compileall .
+- find . -type f -name "*.po" -exec msgfmt {} -o {}.mo \;
 - echo done!
