@@ -508,11 +508,6 @@ class FlashImageConfig(Screen):
 					message += _('Please: DO NOT reboot your STB and turn off the power.\n')
 					message += _('The image or kernel will be flashing and auto booted in few minutes.\n')
 					message += "'"
-			try:
-				if os.path.exists(ofgwrite_bin):
-					os.chmod(ofgwrite_bin, 0755)
-			except:
-				pass
 			self.session.open(Console, text,[message, cmd])
 
 	def keyRed(self):
