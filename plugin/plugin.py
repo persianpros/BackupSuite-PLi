@@ -68,16 +68,6 @@ with open("/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control") as
 			print
 
 def backupCommandHDD():
-	try:
-		if os.path.exists(BACKUP_HDD):
-			os.chmod(BACKUP_HDD, 0755)
-	except:
-		pass
-	try:
-		if os.path.exists(BACKUP_DMM_HDD):
-			os.chmod(BACKUP_DMM_HDD, 0755)
-	except:
-		pass
 	if getBoxType().startswith("dm"):
 		cmd = BACKUP_DMM_HDD
 	else:
@@ -85,16 +75,6 @@ def backupCommandHDD():
 	return cmd
 
 def backupCommandUSB():
-	try:
-		if os.path.exists(BACKUP_USB):
-			os.chmod(BACKUP_USB, 0755)
-	except:
-		pass
-	try:
-		if os.path.exists(BACKUP_DMM_USB):
-			os.chmod(BACKUP_DMM_USB, 0755)
-	except:
-		pass
 	if getBoxType().startswith("dm"):
 		cmd = BACKUP_DMM_USB
 	else:
@@ -102,16 +82,6 @@ def backupCommandUSB():
 	return cmd
 
 def backupCommandMMC():
-	try:
-		if os.path.exists(BACKUP_MMC):
-			os.chmod(BACKUP_MMC, 0755)
-	except:
-		pass
-	try:
-		if os.path.exists(BACKUP_DMM_MMC):
-			os.chmod(BACKUP_DMM_MMC, 0755)
-	except:
-		pass
 	if getBoxType().startswith("dm"):
 		cmd = BACKUP_DMM_MMC
 	else:
