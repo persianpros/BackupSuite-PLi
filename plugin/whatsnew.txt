@@ -1,6 +1,15 @@
 Changelog
 =========
 
+Git 430-441
+- AXAS His C 4K support
+- AXAS His Twin support
+- Don't chmod executable files anymore, bitbake should do that.
+- Travis CI support.
+- Open Vision uses MACHINE names so we have vusolo4k instead of solo4k.
+- Be more accurate for Open Vision.
+- Use getBoxType which is more accurate, reduce code size and be faster.
+
 Git 422-429
 - Beyonwiz V2 support
 - Gigablue Trio 4K support
