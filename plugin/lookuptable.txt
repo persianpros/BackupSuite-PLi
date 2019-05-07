@@ -16,7 +16,7 @@ AXAS E3HD	e3hd	AXAS E3HD	/e3hd	/fullbackup_e3hd		-m 2048 -e 126976 -c 4096 -F	-m
 AXAS E4HD	e4hd	AXAS E4HD	/e4hd	/fullbackup_e4hd		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS E4HD Combo	e4hdcombo	AXAS E4HD Combo	/e4hdcombo	/fullbackup_e4hdcombo		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS His C 4K	axashisc4k	AXAS His C 4K	/axas/axasc4k	/fullbackup_axashisc4k	/axas			rootfs.tar.bz2	kernel.bin	none
-AXAS His Twin	axashistwin	AXAS His Twin	/axas/axastwin	/fullbackup_axashistwin	/axas	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+AXAS His Twin	axashistwin	AXAS His Twin	/axas/axashistwin	/fullbackup_axashistwin	/axas	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Beyonwiz T2	beyonwizt2	Beyonwiz T2	/beyonwiz/hde2	/fullbackup_beyonwizt2	/beyonwiz	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Beyonwiz T3	beyonwizt3	Beyonwiz T3	/beyonwiz/hdx	/fullbackup_beyonwizt3	/beyonwiz	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Beyonwiz T4	beyonwizt4	Beyonwiz T4	/beyonwiz/hdp	/fullbackup_beyonwizt4	/beyonwiz	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
