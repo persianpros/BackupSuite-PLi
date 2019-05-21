@@ -4,6 +4,7 @@ Amiko Viper Combo	vipercombo	Amiko Viper Combo	/vipercombo	/fullbackup_vipercomb
 Amiko Viper Combo HDD	vipercombohdd	Amiko Viper Combo HDD	/vipercombohdd	/fullbackup_vipercombohdd		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Amiko Viper Slim	viperslim	Amiko Viper Slim	/viperslim	/fullbackup_viperslim		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	force
 Amiko Viper T2C	vipert2c	Amiko Viper T2C	/vipert2c	/fullbackup_vipert2c		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Anadol Pro HD5	u42	Anadol Pro HD5	/dinobot/u42	/fullbackup_u42	/dinobot	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Atemio 5200	ini-1000am	Atemio 5200	/atemio/5x00	/fullbackup_5x00	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio 6000-HD	atemio6000	Atemio 6000-HD	/atemio/6000	/fullbackup_6000	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio 6100-HD	atemio6100	Atemio 6100-HD	/atemio/6100	/fullbackup_6100	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
