@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Git 442-450
+- Zgemma H10 support
+- Anadol Pro HD5 support
+- AXAS His Twin fix image folder
+- Amiko Viper 4K support
+- Fix identification for lunix4k, Thanks to https://github.com/Dima73
+- Edision OS mio4kplus support
+
 Git 430-441
 - AXAS His C 4K support
 - AXAS His Twin support
