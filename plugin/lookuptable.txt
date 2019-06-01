@@ -225,6 +225,7 @@ Xtrend 8500	et8500	Xtrend ET8500	/et8500	/fullbackup_et8500		-m 2048 -e 126976 -
 Xtrend 9000	et9000	Xtrend ET9000	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 9200	et9200	Xtrend ET9200	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 9500	et9500	Xtrend ET9500	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Zgemma H10	h10	Zgemma H10	/zgemma/h10	/fullbackup_h10	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H3	h3	Zgemma H3	/zgemma/h3	/fullbackup_h3	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H4	h4	Zgemma H4	/zgemma/h4	/fullbackup_h4	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H5	h5	Zgemma H5	/zgemma/h5	/fullbackup_h5	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
