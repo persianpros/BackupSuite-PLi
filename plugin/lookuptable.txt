@@ -11,6 +11,7 @@ Atemio 6100-HD	atemio6100	Atemio 6100-HD	/atemio/6100	/fullbackup_6100	/atemio	-
 Atemio 6200-HD	atemio6200	Atemio 6200-HD	/atemio/6200	/fullbackup_6200	/atemio	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Atemio Nemesis	ini-8000am	Atemio Nemesis	/atemio/8x00	/fullbackup_nemesis	/atemio	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 AX Triplex	triplex	AX Triplex	/triplex	/fullbackup_triplex		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+AX Ultra	axultra	AX Ultra	/axultra	/fullbackup_axultra		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AX Ultrabox	ultrabox	AX Ultrabox	/ultrabox	/fullbackup_ultrabox		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS Class M	en2	AXAS Class M	/en2	/fullbackup_en2		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS E3HD	e3hd	AXAS E3HD	/e3hd	/fullbackup_e3hd		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
