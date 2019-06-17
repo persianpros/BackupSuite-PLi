@@ -8,11 +8,7 @@ Backup Suite for enigma2 images
 
 Ready bitbake recipe:
 
-https://github.com/OpenPLi/openpli-oe-core/blob/develop/meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bb
-
-For Dreambox you need:
-
-https://github.com/OpenVisionE2/openvision-oe/blob/develop/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bbappend
+https://github.com/OpenVisionE2/openvision-development-platform/blob/develop/meta-openvision/recipes-openvision/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bb
 
 ## kerneldev error:
 If you got this error:
