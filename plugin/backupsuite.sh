@@ -349,6 +349,11 @@ else
 	elif [ $SEARCH = "sf8008" -o $SEARCH = "ustym4kpro" -o $SEARCH = "gbtrio4k" -o $SEARCH = "cc1" -o $SEARCH = "viper4k" -o $SEARCH = "beyonwizv2" ] ; then
 		dd if=/dev/mmcblk0p12 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p12"
+	elif [ $SEARCH = "hd60" ] ; then
+		/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.sh
+		KERNEL=`readlink -n /dev/kernel`
+		log "Kernel resides on $KERNEL"
+		dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
 	else
 		python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.pyo
 		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev`
@@ -467,7 +472,7 @@ echo -n $YELLOW
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
 ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} `
-KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} `
+KERNELSIZE=`ls "$MAINDEST" -e1S | grep $KERNELNAME | awk {'print $3'} `
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
 echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
