@@ -472,7 +472,7 @@ echo -n $YELLOW
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
 ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} `
-KERNELSIZE=`ls "$MAINDEST" -e1S | grep kernel | awk {'print $3'} `
+KERNELSIZE=`ls "$MAINDEST" -e1S | grep $KERNELNAME | awk {'print $3'} `
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
 echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
