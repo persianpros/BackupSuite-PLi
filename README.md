@@ -2,8 +2,6 @@ BackupSuite [![Build Status](https://travis-ci.org/OpenVisionE2/BackupSuite.svg?
 ===========
 Created by Pedro Newbie
 
-Maintainer : Persian Prince
-
 Backup Suite for enigma2 images
 
 Ready bitbake recipe:
