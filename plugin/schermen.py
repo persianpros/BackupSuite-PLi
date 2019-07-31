@@ -66,12 +66,12 @@ skinstartsd = """
 	<screen name="BackupSuite" position="fill" size="720,576" title=" " >
 		<eLabel position="0,0" size="720,88" backgroundColor="#00000000" />
 		<widget source="Title" render="Label" transparent="1" zPosition="1" halign="center" valign="center" position="60,30" size="600,45" font="Regular;20" foregroundColor="#006CA4C5"/>
-		<ePixmap pixmap="skin_default/buttons/key_info.png" zPosition="1" position="10,540" size="35,25" alphatest="blend"/>
+		<ePixmap pixmap="buttons/key_info.png" zPosition="1" position="10,540" size="35,25" alphatest="blend"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/img/key_help.png" zPosition="1" position="50,540" size="35,25" alphatest="blend"/>
-		<ePixmap pixmap="skin_default/buttons/button_red.png" zPosition="1" position="10,516" size="15,16" alphatest="blend"/>
-		<ePixmap pixmap="skin_default/buttons/button_green.png" zPosition="1" position="190,516" size="15,16" alphatest="blend"/>
-		<ePixmap pixmap="skin_default/buttons/button_yellow.png" zPosition="1" position="370,516" size="15,16" alphatest="blend"/>
-		<ePixmap pixmap="skin_default/buttons/button_blue.png" zPosition="1" position="550,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_red.png" zPosition="1" position="10,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_green.png" zPosition="1" position="190,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_yellow.png" zPosition="1" position="370,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_blue.png" zPosition="1" position="550,516" size="15,16" alphatest="blend"/>
 		<widget source="key_red" render="Label" position="30,514" zPosition="1" size="150,45" font="Regular;20" foregroundColor="#00ff0000" halign="left" valign="top" />
 		<widget source="key_green" render="Label" position="210,514" zPosition="1" size="150,45" font="Regular;20" foregroundColor="#0053b611" halign="left" valign="top" />
 		<widget source="key_yellow" render="Label" position="390,514" zPosition="1" size="150,45" font="Regular;20" foregroundColor="#00F9C731" halign="left" valign="top" />
@@ -118,7 +118,7 @@ skinnewsd = """
 	<screen name="BackupSuite" position="fill" size="720,576" title=" " >
 		<eLabel position="0,0" size="720,88" backgroundColor="#00000000" />
 		<widget source="Title" render="Label" transparent="1" zPosition="1" halign="center" valign="center" position="60,30" size="600,45" font="Regular;20" foregroundColor="#006CA4C5"/>
-		<ePixmap pixmap="skin_default/buttons/button_red.png" zPosition="1" position="10,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_red.png" zPosition="1" position="10,516" size="15,16" alphatest="blend"/>
 		<widget source="key_red" render="Label" position="30,514" zPosition="1" size="150,45" font="Regular;20" foregroundColor="#00ff0000" halign="left" valign="top" />
 		<widget name="AboutScrollLabel" font="Regular;20" position="10,88" size="700,400" zPosition="2" halign="left" />
 	</screen>"""
@@ -187,10 +187,10 @@ skinflashsd = """
 	<screen name="FlashImageConfig" position="fill" size="720,576" title=" " >
 		<eLabel position="0,0" size="720,88" backgroundColor="#00000000" />
 		<widget source="Title" render="Label" transparent="1" zPosition="1" halign="center" valign="center" position="60,30" size="600,45" font="Regular;20" foregroundColor="#006CA4C5"/>
-		<ePixmap pixmap="skin_default/buttons/button_red.png" zPosition="1" position="10,516" size="15,16" alphatest="blend"/>
-		<ePixmap pixmap="skin_default/buttons/button_green.png" zPosition="1" position="190,516" size="15,16" alphatest="blend"/>
-		<ePixmap pixmap="skin_default/buttons/button_yellow.png" zPosition="1" position="370,516" size="15,16" alphatest="blend"/>
-		<ePixmap pixmap="skin_default/buttons/button_blue.png" zPosition="1" position="550,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_red.png" zPosition="1" position="10,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_green.png" zPosition="1" position="190,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_yellow.png" zPosition="1" position="370,516" size="15,16" alphatest="blend"/>
+		<ePixmap pixmap="buttons/button_blue.png" zPosition="1" position="550,516" size="15,16" alphatest="blend"/>
 		<widget source="key_red" render="Label" position="30,514" zPosition="1" size="150,45" font="Regular;20" foregroundColor="#00ff0000" halign="left" valign="top" />
 		<widget source="key_green" render="Label" position="210,514" zPosition="1" size="150,45" font="Regular;20" foregroundColor="#0053b611" halign="left" valign="top" />
 		<widget source="key_yellow" render="Label" position="390,514" zPosition="1" size="150,45" font="Regular;20" foregroundColor="#00F9C731" halign="left" valign="top" />
