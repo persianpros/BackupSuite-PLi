@@ -66,6 +66,7 @@ Gigablue 800SE	gb800se	Gigablue 800SE	/gigablue/se	/fullbackup_800se	/gigablue	-
 Gigablue 800SEPlus	gb800seplus	Gigablue 800SEPlus	/gigablue/seplus	/fullbackup_800seplus	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue 800UE	gb800ue	Gigablue 800UE	/gigablue/ue	/fullbackup_800ue	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue 800UEPlus	gb800ueplus	Gigablue 800UEPlus	/gigablue/ueplus	/fullbackup_800ueplus	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue IP 4K	gbip4k	Gigablue IP 4K	/gigablue/ip4k	/fullbackup_ip4k	/gigablue			rootfs.tar.bz2	kernel.bin	none
 Gigablue IPBox	gbipbox	Gigablue IPBox	/gigablue/ipbox	/fullbackup_gbipbox	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue Quad	gbquad	Gigablue Quad	/gigablue/quad	/fullbackup_quad	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue Quad 4K	gbquad4k	Gigablue Quad 4K	/gigablue/quad4k	/fullbackup_quad4k	/gigablue			rootfs.tar.bz2	kernel.bin	force
