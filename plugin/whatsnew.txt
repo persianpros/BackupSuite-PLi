@@ -3,19 +3,18 @@ Changelog
 
 Git 451-465
 - GigaBlue IP 4K support
-- IZIBox X3 support
+- IZIBox X3/Eco Twin HD support
 - Remove superfluous usage of skin_default in image paths.
-- Ferguson Ariva ATV Combo support
-- Ferguson Ariva ATV Twin support
-- IZIBox Eco Twin HD support
+- Ferguson Ariva ATV Combo/Twin support
 - JamesDonkey HD Duo support
 - Protek 4K X1 support
 - Spycat Mini V2 support
+- Reduce hd60/hd61 code.
 - Fix flash/backup hd60, Thanks to https://github.com/betacentauri
 - Use proper kernel filename (can also be uImage) to get kernel size , Thanks to https://github.com/betacentauri
 - Vivant Dinobot U43 support
 - AX Ultra support
-- Fix HiSilicon models.
+- Fix HiSilicon model detection.
 
 Git 442-450
 - Zgemma H10 support
