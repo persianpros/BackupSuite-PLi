@@ -3,7 +3,7 @@ import setup_translate
 
 pkg = 'Extensions.BackupSuite'
 setup (name = 'enigma2-plugin-extensions-backupsuite',
-       version = '0.26',
+       version = '1.0',
        description = 'Back-up tool for various enigma2 receivers',
        packages = [pkg],
        package_dir = {pkg: 'plugin'},
