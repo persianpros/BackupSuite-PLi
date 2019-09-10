@@ -6,7 +6,7 @@ Backup Suite for enigma2 images
 
 Ready bitbake recipe:
 
-https://github.com/OpenVisionE2/openvision-development-platform/blob/develop/meta-openvision/recipes-openvision/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bb
+https://github.com/OpenVisionE2/openvision-development-platform/blob/upcoming/meta-openvision/recipes-openvision/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bb
 
 ## kerneldev error:
 If you got this error:
