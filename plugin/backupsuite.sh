@@ -5,9 +5,13 @@
 #
 #!/bin/sh
 
-VISIONVERSION=`cat /etc/visionversion | sed "s/\..*//"`
+if [ -f /etc/visionversion ]; then
+	VISIONVERSION=`cat /etc/visionversion | sed "s/\..*//"`
+else
+	VISIONVERSION="7"
+fi
 
-if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+if [ $VISIONVERSION == "7" ]; then
 	LS1=`-e1`
 else
 	LS1=`-1`
@@ -112,7 +116,7 @@ backup_made()
 echo $LINE
 $SHOW "message10" ; echo "$MAINDEST" 	# USB Image created in:
 $SHOW "message23"		# "The content of the folder is:"
-if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+if [ $VISIONVERSION == "7" ]; then
 	ls "$MAINDEST" -e1rSh | sed 's/-.........    1//'
 else
 	ls "$MAINDEST" -1rSh | sed 's/-.........    1//'
@@ -405,7 +409,7 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	fi
 	echo
 else
-	if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+	if [ $VISIONVERSION == "7" ]; then
 		$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
 	else
 		$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root .
@@ -487,7 +491,7 @@ echo -n $YELLOW
 {
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
-if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+if [ $VISIONVERSION == "7" ]; then
 	ROOTSIZE=`ls "$MAINDEST" -e1S | grep $ROOTNAME | awk {'print $3'} `
 	KERNELSIZE=`ls "$MAINDEST" -e1S | grep $KERNELNAME | awk {'print $3'} `
 else

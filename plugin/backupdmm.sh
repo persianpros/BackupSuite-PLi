@@ -5,9 +5,13 @@
 #
 #!/bin/sh
 
-VISIONVERSION=`cat /etc/visionversion | sed "s/\..*//"`
+if [ -f /etc/visionversion ]; then
+	VISIONVERSION=`cat /etc/visionversion | sed "s/\..*//"`
+else
+	VISIONVERSION="7"
+fi
 
-if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+if [ $VISIONVERSION == "7" ]; then
 	LS1=`-e1`
 	LS2=`-e1rSh`
 else
@@ -306,7 +310,7 @@ fi
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
-if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+if [ $VISIONVERSION == "7" ]; then
 	$MKFS -cvJf $WORKDIR/rootfs.tar.xz -C /tmp/bi/root --exclude=/var/nmbd/* .
 else
 	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root .
@@ -370,7 +374,7 @@ echo -n $YELLOW
 {
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
-if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+if [ $VISIONVERSION == "7" ]; then
 	ROOTSIZE=`ls "$MAINDEST" -e1S | grep $ROOTNAME | awk {'print $3'} ` 
 	KERNELSIZE=`ls "$MAINDEST" -e1S | grep $KERNELNAME | awk {'print $3'} ` 
 else
@@ -468,7 +472,7 @@ fi
 #############################  MAKING ROOT.UBI(FS) ############################
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
-if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+if [ $VISIONVERSION == "7" ]; then
 	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
 else
 	$MKFS -cvJf $WORKDIR/rootfs.tar.xz -C /tmp/bi/root .
@@ -525,7 +529,7 @@ echo -n $YELLOW
 {
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
-if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+if [ $VISIONVERSION == "7" ]; then
 	ROOTSIZE=`ls "$MAINDEST" -e1S | grep $ROOTNAME | awk {'print $3'} `
 	KERNELSIZE=`ls "$MAINDEST" -e1S | grep $KERNELNAME | awk {'print $3'} `
 else
