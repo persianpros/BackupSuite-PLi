@@ -5,6 +5,14 @@
 #
 #!/bin/sh
 
+VISIONVERSION=`cat /etc/visionversion | sed "s/\..*//"`
+
+if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+	LS1=`-e1`
+else
+	LS1=`-1`
+fi
+
 ## ADD A POSTRM ROUTINE TO ENSURE A CLEAN UNINSTALL
 ## This is normally added while building but despite several requests it isn't added yet
 ## So therefore this workaround.
@@ -54,7 +62,7 @@ big_fail()
 if [ -d $WORKDIR ] ; then
 	log "FAIL!"
 	log "Content so far of the working directory $WORKDIR "
-	ls -el $WORKDIR >> $LOGFILE
+	ls $LS1 $WORKDIR >> $LOGFILE
 fi
 clean_up
 echo $RED
@@ -104,7 +112,11 @@ backup_made()
 echo $LINE
 $SHOW "message10" ; echo "$MAINDEST" 	# USB Image created in:
 $SHOW "message23"		# "The content of the folder is:"
-ls "$MAINDEST" -e1rSh | sed 's/-.........    1//'
+if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+	ls "$MAINDEST" -e1rSh | sed 's/-.........    1//'
+else
+	ls "$MAINDEST" -1rSh | sed 's/-.........    1//'
+fi
 echo $LINE
 if  [ $HARDDISK != 1 ]; then
 	$SHOW "message11" ; echo "$EXTRA"		# and there is made an extra copy in:
@@ -324,7 +336,7 @@ if [ $ROOTNAME != "rootfs.tar.bz2" -o $SEARCH = "h9" -o $SEARCH = "h9combo" -o $
 	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
 	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
 		echo -n "Kernel dumped  :"  >> $LOGFILE
-		ls -e1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
+		ls $LS1 "$WORKDIR/$KERNELNAME" | sed 's/-r.*   1//' >> $LOGFILE
 	else
 		log "$WORKDIR/$KERNELNAME NOT FOUND"
 		big_fail
@@ -370,7 +382,7 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	$MKFS -r /tmp/bi/root -o "$WORKDIR/root.ubi" $MKUBIFS_ARGS
 	if [ -f "$WORKDIR/root.ubi" ] ; then
 		echo -n "ROOT.UBI MADE  :" >> $LOGFILE
-		ls -e1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
+		ls $LS1 "$WORKDIR/root.ubi" | sed 's/-r.*   1//' >> $LOGFILE
 		UBISIZE=`cat "$WORKDIR/root.ubi" | wc -c`
 		if [ "$UBISIZE" -eq 0 ] ; then
 			$SHOW "message39" 2>&1 | tee -a $LOGFILE
@@ -386,14 +398,18 @@ if [ $ROOTNAME != "rootfs.tar.bz2" ] ; then
 	chmod 644 "$WORKDIR/$ROOTNAME"
 	if [ -f "$WORKDIR/$ROOTNAME" ] ; then
 		echo -n "$ROOTNAME MADE:" >> $LOGFILE
-		ls -e1 "$WORKDIR/$ROOTNAME" | sed 's/-r.*   1//' >> $LOGFILE
+		ls $LS1 "$WORKDIR/$ROOTNAME" | sed 's/-r.*   1//' >> $LOGFILE
 	else
 		echo "$WORKDIR/$ROOTNAME NOT FOUND"  >> $LOGFILE
 		big_fail
 	fi
 	echo
 else
-	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
+	if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+		$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
+	else
+		$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root .
+	fi
 	$BZIP2 $WORKDIR/rootfs.tar
 fi
 ############################ ASSEMBLING THE IMAGE #############################
@@ -471,8 +487,13 @@ echo -n $YELLOW
 {
 $SHOW "message24"  ; printf "%d.%02d " $MINUTES $SECONDS ; $SHOW "message25"
 } 2>&1 | tee -a $LOGFILE
-ROOTSIZE=`ls "$MAINDEST" -e1S | grep root | awk {'print $3'} `
-KERNELSIZE=`ls "$MAINDEST" -e1S | grep $KERNELNAME | awk {'print $3'} `
+if [ $VISIONVERSION == "7" ] || [ ! -f /etc/visionversion ]; then
+	ROOTSIZE=`ls "$MAINDEST" -e1S | grep $ROOTNAME | awk {'print $3'} `
+	KERNELSIZE=`ls "$MAINDEST" -e1S | grep $KERNELNAME | awk {'print $3'} `
+else
+	ROOTSIZE=`ls "$MAINDEST" -lS | grep $ROOTNAME | awk {'print $5'} `
+	KERNELSIZE=`ls "$MAINDEST" -lS | grep $KERNELNAME | awk {'print $5'} `
+fi
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
 echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
