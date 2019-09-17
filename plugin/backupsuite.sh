@@ -12,9 +12,9 @@ else
 fi
 
 if [ $VISIONVERSION == "7" ]; then
-	LS1=`-e1`
+	LS1="-e1"
 else
-	LS1=`-1`
+	LS1="-1"
 fi
 
 ## ADD A POSTRM ROUTINE TO ENSURE A CLEAN UNINSTALL
