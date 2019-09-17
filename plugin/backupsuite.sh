@@ -13,8 +13,10 @@ fi
 
 if [ $VISIONVERSION == "7" ]; then
 	LS1="-e1"
+	LS2="-el"
 else
 	LS1="-1"
+	LS2="-l"
 fi
 
 ## ADD A POSTRM ROUTINE TO ENSURE A CLEAN UNINSTALL
@@ -66,7 +68,7 @@ big_fail()
 if [ -d $WORKDIR ] ; then
 	log "FAIL!"
 	log "Content so far of the working directory $WORKDIR "
-	ls $LS1 $WORKDIR >> $LOGFILE
+	ls $LS2 $WORKDIR >> $LOGFILE
 fi
 clean_up
 echo $RED
