@@ -12,10 +12,10 @@ else
 fi
 
 if [ $VISIONVERSION == "7" ]; then
-	LS1="-e1"
+	LS1="-el"
 	LS2="-e1rSh"
 else
-	LS1="-1"
+	LS1="-l"
 	LS2="-1rSh"
 fi
 
