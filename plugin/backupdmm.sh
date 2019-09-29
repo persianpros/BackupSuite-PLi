@@ -337,9 +337,8 @@ fi
 if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
 	do
-		if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ]
-		then
-		TARGET="${candidate}"
+		if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ] ; then
+			TARGET="${candidate}"
 		fi
 	done
 	if [ "$TARGET" != "XX" ] ; then
@@ -492,9 +491,8 @@ echo $LINE
 if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
 	do
-		if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ]
-		then
-		TARGET="${candidate}"
+		if [ -f "${candidate}/"*[Bb][Aa][Cc][Kk][Uu][Pp][Ss][Tt][Ii][Cc][Kk]* ] ; then
+			TARGET="${candidate}"
 		fi    
 	done
 	if [ "$TARGET" != "XX" ] ; then
