@@ -79,6 +79,7 @@ Gigablue UltraUEH	gbultraueh	Gigablue UltraUEH	/gigablue/ultraueh	/fullbackup_gb
 Gigablue X1	gbx1	Gigablue X1	/gigablue/x1	/fullbackup_gbx1	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue X2	gbx2	Gigablue X2	/gigablue/x2	/fullbackup_gbx2	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Gigablue X3	gbx3	Gigablue X3	/gigablue/x3	/fullbackup_gbx3	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Gigablue X3 4K	gbx34k	Gigablue X3 4K	/gigablue/x34k	/fullbackup_gbx34k	/gigablue			rootfs.tar.bz2	kernel.bin	force
 Gigablue X3H	gbx3h	Gigablue X3H	/gigablue/x3h	/fullbackup_gbx3h	/gigablue	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 11	hd11	HD 11	/hd11	/fullbackup_hd11		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 HD 1100	hd1100	HD 1100	/hd1100	/fullbackup_hd1100		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
