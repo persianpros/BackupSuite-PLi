@@ -16,7 +16,7 @@ msgstr ""
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
-msgstr "Δημιουργία αντιγράφου ή επαναφορά αντιγράφου ασφαλείας"
+msgstr "Δημιουργία ή επαναφορά αντιγράφου ασφαλείας"
 
 msgid "Full back-up on HDD"
 msgstr "Πλήρης εφεδρεία σε HDD"
