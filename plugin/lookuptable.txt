@@ -34,6 +34,7 @@ Edision Optimuss OS2	optimussos2	Edision Optimuss OS2	/update/optimussos2/cfe	/f
 Edision Optimuss OS2 Plus	optimussos2plus	Edision Optimuss OS2 Plus	/update/optimussos2plus/cfe	/fullbackup_optimussos2plus	/update/optimussos2plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Edision Optimuss OS3 Plus	optimussos3plus	Edision Optimuss OS3 Plus	/update/optimussos3plus/cfe	/fullbackup_optimussos3plus	/update/optimussos3plus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Edision OS mini	osmini	Edision OS mini	/osmini	/fullbackup_osmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+Edision OS mini4k	osmini4k	Edision OS mini4k	/osmini4k	/fullbackup_osmini4k				rootfs.tar.bz2	kernel.bin	none
 Edision OS mini plus	osminiplus	Edision OS mini plus	/osminiplus	/fullbackup_osminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OS mega	osmega	Edision OS mega	/osmega	/fullbackup_osmega		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Edision OS mio4k	osmio4k	Edision OS mio4k	/osmio4k	/fullbackup_osmio4k				rootfs.tar.bz2	kernel.bin	none
