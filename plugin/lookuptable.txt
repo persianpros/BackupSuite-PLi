@@ -111,7 +111,7 @@ Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink
 Ixuss Zero	ixusszero	Ixuss Zero	/medialink/ixusszero	/fullbackup_ixusszero	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 IZIBox Eco Twin HD	iziboxecohd	IZIBox Eco Twin HD	/izibox/ecohd	/fullbackup_iziboxecohd	/izibox	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 IZIBox X3	iziboxx3	IZIBox X3	/izibox/x3	/fullbackup_iziboxx3	/izibox	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
-JamesDonkey HD Duo	jdhdduo	JamesDonkey HD Duo	/jamesdonkey/hdduo	/fullbackup_jdhdduo	/jamesdonkey	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+JamesDonkey HD Duo	jdhdduo	JamesDonkey HD Duo	/jd/duohd	/fullbackup_jdhdduo	/jd	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Jepssen MediaBox HD LX	mediabox	Jepssen MediaBox HD LX	/update/mediabox/cfe	/fullbackup_mediabox	/update/mediabox	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 MaxyTec Multibox	multibox	MaxyTec Multibox	/multibox	/fullbackup_multibox				rootfs.tar.bz2	uImage	none
