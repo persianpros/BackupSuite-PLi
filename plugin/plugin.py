@@ -150,7 +150,7 @@ class BackupStart(Screen):
 		model = getBoxType()
 		if model in ("vuduo","vusolo","vuultimo","vuuno") or model.startswith("ebox"):
 			files = "^.*\.(zip|bin|jffs2)"
-		elif "4k" or "uhd" in model or model in ("hd51","hd60","hd61","h7","sf4008","sf5008","sf8008","vs1500","et11000","et13000","cc1","multibox","v8plus","e4hdultra"):
+		elif "4k" or "uhd" in model or model in ("hd51","hd60","hd61","h7","sf4008","sf5008","sf8008","sf8008m","vs1500","et11000","et13000","cc1","multibox","v8plus","e4hdultra"):
 			files = "^.*\.(zip|bin|bz2)"
 		elif model in ("h9","h9combo","i55plus","h10","dinobotu55","iziboxx3","dinoboth265","axashistwin","protek4kx1"):
 			files = "^.*\.(zip|bin|ubi)"
@@ -384,7 +384,7 @@ class FlashImageConfig(Screen):
 						text += "kernel_cfe_auto.bin, root_cfe_auto.jffs2"
 
 				else:
-					if model in ("hd51","h7","sf4008","sf5008","sf8008","vs1500","et11000","et13000","bre2ze4k","spycat4k","spycat4kmini","protek4k","e4hdultra","cc1","spycatminiv2","iziboxecohd","jdhdduo","turing","arivacombo","arivatwin") or model.startswith(("anadol","axashis4","dinobot4","ferguson4","mediabox4","axashisc4")):
+					if model in ("hd51","h7","sf4008","sf5008","sf8008","sf8008m","vs1500","et11000","et13000","bre2ze4k","spycat4k","spycat4kmini","protek4k","e4hdultra","cc1","spycatminiv2","iziboxecohd","jdhdduo","turing","arivacombo","arivatwin") or model.startswith(("anadol","axashis4","dinobot4","ferguson4","mediabox4","axashisc4")):
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
 						text += "kernel.bin, rootfs.tar.bz2"
