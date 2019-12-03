@@ -1,6 +1,15 @@
 Changelog
 =========
 
+Git 466-484
+- Octagon SF8008m support
+- Edision OS mini4k support
+- Qviart Lunix Co support
+- Small optimization in Greek translation, Thanks to https://github.com/nautilus7
+- GigaBlue X3 4K support
+- Smart Open Vision detection by Persian Prince and Hains
+- AXAS E4HD Ultra 4K fix
+
 Git 451-465
 - GigaBlue IP 4K support
 - IZIBox X3/Eco Twin HD support
@@ -11,7 +20,7 @@ Git 451-465
 - Spycat Mini V2 support
 - Reduce hd60/hd61 code.
 - Fix flash/backup hd60, Thanks to https://github.com/betacentauri
-- Use proper kernel filename (can also be uImage) to get kernel size , Thanks to https://github.com/betacentauri
+- Use proper kernel filename (can also be uImage) to get kernel size, Thanks to https://github.com/betacentauri
 - Vivant Dinobot U43 support
 - AX Ultra support
 - Fix HiSilicon model detection.
