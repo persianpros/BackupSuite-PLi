@@ -5,6 +5,13 @@
 #
 #!/bin/sh
 
+if [ -d "/usr/lib64" ]; then
+	echo "multilib situation!"
+	LIBDIR="/usr/lib64"
+else
+	LIBDIR="/usr/lib"
+fi
+
 if [ -f /etc/visionversion ]; then
 	VISIONVERSION=`cat /etc/visionversion | sed "s/\..*//"`
 else
@@ -25,7 +32,7 @@ fi
 POSTRM="/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.postrm"
 if [ ! -f $POSTRM ] ; then
 	echo "#!/bin/sh" > "$POSTRM"
-	echo "rm -rf /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite" >> "$POSTRM"
+	echo "rm -rf $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite" >> "$POSTRM"
 	echo 'echo "Plugin removed!"' >> "$POSTRM"
 	echo "exit 0" >> "$POSTRM"
 	chmod 755 "$POSTRM"
@@ -145,8 +152,8 @@ fi
 ########################## DECLARATION OF VARIABLES ###########################
 BACKUPDATE=`date +%Y.%m.%d_%H:%M`
 DATE=`date +%Y%m%d_%H%M`
-if [ -f "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt" ] ; then
-	ESTSPEED=`cat /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt`
+if [ -f "$LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt" ] ; then
+	ESTSPEED=`cat $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt`
 	if [ $ESTSPEED -lt 50 ] ; then
 		ESTSPEED="250"
 	fi
@@ -170,7 +177,7 @@ if [ -f "/etc/lookuptable.txt" ] ; then
 	LOOKUP="/etc/lookuptable.txt"
 	$SHOW "message36"
 else
-	LOOKUP="/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/lookuptable.txt"
+	LOOKUP="$LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/lookuptable.txt"
 fi
 TARGET="XX"
 UBINIZE=/usr/sbin/ubinize
@@ -300,7 +307,7 @@ if [ $SEARCH = "dm900" -o $SEARCH = "dm920" ] ; then
 	dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
 	log "Kernel resides on /dev/mmcblk0p1" 
 else
-	python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.pyo
+	python $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.pyo
 	KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev`
 	KERNELNAME=${KERNEL:11:7}.bin
 	echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
@@ -382,7 +389,7 @@ else
 fi
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
-echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
+echo $SPEED > $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
 echo $LINE >> $LOGFILE
 # "Back up done with $SPEED KB per second" 
 {
@@ -536,7 +543,7 @@ else
 fi
 TOTALSIZE=$((($ROOTSIZE+$KERNELSIZE)/1024))
 SPEED=$(( $TOTALSIZE/$DIFF ))
-echo $SPEED > /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
+echo $SPEED > $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/speed.txt
 echo $LINE >> $LOGFILE
 # "Back up done with $SPEED KB per second"
 {

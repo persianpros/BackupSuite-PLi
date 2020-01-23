@@ -14,9 +14,17 @@ else
    PURPLE='\c00?:55>7'
    WHITE='\c00??????'
 fi
+
+if [ -d "/usr/lib64" ]; then
+	echo "multilib situation!"
+	LIBDIR="/usr/lib64"
+else
+	LIBDIR="/usr/lib"
+fi
+
 export LANG=$1
 export HARDDISK=0
-export SHOW="python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/message.pyo $LANG"
+export SHOW="python $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/message.pyo $LANG"
 TARGET="XX"
 USEDSIZE=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` # size of rootfs
 NEEDEDSPACE=$(((4*$USEDSIZE)/1024))
@@ -48,7 +56,7 @@ else
 		echo $WHITE
 		exit 0
 	fi
-	chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
-	/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh "$TARGET" 
+	chmod 755 $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
+	$LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh "$TARGET" 
 	sync
 fi

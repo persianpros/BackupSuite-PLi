@@ -15,8 +15,15 @@ else
    WHITE='\c00??????'
 fi
 
+if [ -d "/usr/lib64" ]; then
+	echo "multilib situation!"
+	LIBDIR="/usr/lib64"
+else
+	LIBDIR="/usr/lib"
+fi
+
 export LANG=$1
-export SHOW="python /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/message.pyo $LANG"
+export SHOW="python $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/message.pyo $LANG"
 export HARDDISK=0
 echo -n $YELLOW
 $SHOW "message43"   	#echo "Full back-up to the MultiMediaCard"
@@ -53,8 +60,8 @@ if [ -f /mmc/mmc-check ] ; then
 	fi
 	echo -n " -> /mmc -> $MEDIA ($TOTALSIZE, "; $SHOW "message16" ; echo "$FREESIZE)"
 	echo -n $WHITE
-  chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
-	/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh /mmc
+  chmod 755 $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
+	$LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh /mmc
 	rm -f /mmc/mmc-check
 	sync
 else
@@ -92,8 +99,8 @@ else
 		FREESIZE_0="$(df -h $MEDIA | tail -n 1 | awk {'print $4'})"
 		echo -n " -> $MEDIA ($TOTALSIZE_0, "; $SHOW "message16" ; echo -n "$FREESIZE_0)"
 		echo -n $WHITE
-    chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
-		/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh $MEDIA
+    chmod 755 $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh > /dev/null 2>&1
+		$LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/backupdmm.sh $MEDIA
 		echo "$MMC_MOUNT" > /tmp/BackupSuite.log
 		sync
 	fi

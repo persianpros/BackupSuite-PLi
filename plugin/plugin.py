@@ -47,12 +47,12 @@ _session = None
 ##################################
 # Configuration GUI
 
-BACKUP_HDD = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backuphdd.sh en_EN"
-BACKUP_USB = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupusb.sh en_EN"
-BACKUP_MMC = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupmmc.sh en_EN"
-BACKUP_DMM_HDD = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backuphdd-dmm.sh en_EN"
-BACKUP_DMM_USB = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupusb-dmm.sh en_EN"
-BACKUP_DMM_MMC = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/backupmmc-dmm.sh en_EN"
+BACKUP_HDD = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/backuphdd.sh")
+BACKUP_USB = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/backupusb.sh")
+BACKUP_MMC = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/backupmmc.sh")
+BACKUP_DMM_HDD = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/backuphdd-dmm.sh")
+BACKUP_DMM_USB = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/backupusb-dmm.sh")
+BACKUP_DMM_MMC = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/backupmmc-dmm.sh")
 ofgwrite_bin = "/usr/bin/ofgwrite"
 LOGFILE = "BackupSuite.log"
 VERSIONFILE = "imageversion"
@@ -69,23 +69,23 @@ with open("/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control") as
 
 def backupCommandHDD():
 	if getBoxType().startswith("dm"):
-		cmd = BACKUP_DMM_HDD
+		cmd = BACKUP_DMM_HDD + ' en_EN'
 	else:
-		cmd = BACKUP_HDD
+		cmd = BACKUP_HDD + ' en_EN'
 	return cmd
 
 def backupCommandUSB():
 	if getBoxType().startswith("dm"):
-		cmd = BACKUP_DMM_USB
+		cmd = BACKUP_DMM_USB + ' en_EN'
 	else:
-		cmd = BACKUP_USB
+		cmd = BACKUP_USB + ' en_EN'
 	return cmd
 
 def backupCommandMMC():
 	if getBoxType().startswith("dm"):
-		cmd = BACKUP_DMM_MMC
+		cmd = BACKUP_DMM_MMC + ' en_EN'
 	else:
-		cmd = BACKUP_MMC
+		cmd = BACKUP_MMC + ' en_EN'
 	return cmd
 
 try:
@@ -221,7 +221,7 @@ class WhatisNewInfo(Screen):
 				"up": self["AboutScrollLabel"].pageUp,
 				"down": self["AboutScrollLabel"].pageDown
 			})
-		with open('/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/whatsnew.txt') as file:
+		with open(resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/whatsnew.txt")) as file:
 			whatsnew = file.read()
 		self["AboutScrollLabel"].setText(whatsnew)
 

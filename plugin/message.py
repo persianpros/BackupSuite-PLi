@@ -2,9 +2,12 @@
 from os import environ as os_environ
 import gettext
 import sys
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
+
+BACKUPSUITE_LANGUAGE_PATH = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/locale")
 
 def localeInit():
-	gettext.bindtextdomain("BackupSuite","/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/locale")
+	gettext.bindtextdomain("BackupSuite",BACKUPSUITE_LANGUAGE_PATH)
 
 localeInit()
 
