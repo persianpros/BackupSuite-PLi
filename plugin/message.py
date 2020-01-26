@@ -4,10 +4,8 @@ import gettext
 import sys
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
-BACKUPSUITE_LANGUAGE_PATH = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/locale")
-
 def localeInit():
-	gettext.bindtextdomain("BackupSuite",BACKUPSUITE_LANGUAGE_PATH)
+	gettext.bindtextdomain("BackupSuite", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/BackupSuite/locale"))
 
 localeInit()
 
