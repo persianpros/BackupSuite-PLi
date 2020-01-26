@@ -112,6 +112,7 @@ class BackupStart(Screen):
 		self.session = session
 		self.setup_title = _("Make a backup or restore a backup")
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite")
 		self["key_menu"] = Button(_("Backup > MMC"))
 		self["key_red"] = Button(_("Close"))
 		self["key_green"] = Button(_("Backup > HDD"))
@@ -133,13 +134,13 @@ class BackupStart(Screen):
 
 	def confirmhdd(self):
 		self.session.openWithCallback(self.backuphdd, MessageBox, _("Do you want to make an USB-back-up image on HDD? \n\nThis only takes a few minutes and is fully automatic.\n") , MessageBox.TYPE_YESNO, timeout = 20, default = True)
-		
+
 	def confirmusb(self):
 		self.session.openWithCallback(self.backupusb, MessageBox, _("Do you want to make a back-up on USB?\n\nThis only takes a few minutes depending on the used filesystem and is fully automatic.\n\nMake sure you first insert an USB flash drive before you select Yes.") , MessageBox.TYPE_YESNO, timeout = 20, default = True)
 
 	def confirmmmc(self):
 		self.session.openWithCallback(self.backupmmc, MessageBox, _("Do you want to make an USB-back-up image on MMC? \n\nThis only takes a few minutes and is fully automatic.\n") , MessageBox.TYPE_YESNO, timeout = 20, default = True)
-		
+
 	def showHelp(self):
 		from plugin import backupsuiteHelp
 		if backupsuiteHelp:
@@ -186,7 +187,7 @@ class BackupStart(Screen):
 			text = _('Full back-up to USB')
 			cmd = backupCommandUSB()
 			self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
-			
+
 	def backupmmc(self, ret = False ):
 		if (ret == True):
 			self.writeEnigma2VersionFile()
@@ -194,7 +195,7 @@ class BackupStart(Screen):
 			cmd = backupCommandMMC()
 			self.session.openWithCallback(self.consoleClosed,Console,text,[cmd])
 
-	def consoleClosed(self, answer=None): 
+	def consoleClosed(self, answer=None):
 		return
 
 ## What is new information
@@ -211,6 +212,7 @@ class WhatisNewInfo(Screen):
 		else:
 			self.skin = skinnewsd
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite")
 		self["Title"].setText(_("What is new since the last release?"))
 		self["key_red"] = Button(_("Close"))
 		self["AboutScrollLabel"] = ScrollLabel(_("Please wait"))
@@ -238,6 +240,7 @@ class FlashImageConfig(Screen):
 		else:
 			self.skin = skinflashsd
 		Screen.__init__(self, session)
+		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite")
 		self["Title"].setText(_("Select the folder with backup"))
 		self["key_red"] = StaticText(_("Close"))
 		self["key_green"] = StaticText("")
@@ -566,8 +569,8 @@ def Plugins(path,**kwargs):
 		fnc = main
 		),
 		PluginDescriptor(
-		name =_("BackupSuite"), 
+		name =_("BackupSuite"),
 		description = _("Backup and restore your image") + ", " + versienummer,
-		where = PluginDescriptor.WHERE_EXTENSIONSMENU, 
+		where = PluginDescriptor.WHERE_EXTENSIONSMENU,
 		fnc = main)
 	]
