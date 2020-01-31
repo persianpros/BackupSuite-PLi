@@ -12,10 +12,10 @@ else
 	LIBDIR="/usr/lib"
 fi
 
-if [ -f /etc/visionversion ]; then
-	VISIONVERSION=`cat /etc/visionversion | sed "s/\..*//"`
-else
+if [ `mkdir -p /tmp/test && ls -e1 /tmp/test 2>/dev/null && echo Yes || echo No | cat` == "Yes" ]; then
 	VISIONVERSION="7"
+else
+	VISIONVERSION="9"
 fi
 
 if [ $VISIONVERSION == "7" ]; then
