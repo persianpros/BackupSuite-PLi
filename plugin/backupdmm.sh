@@ -1,4 +1,4 @@
-#       FULL BACKUP UYILITY FOR ENIGMA2/OPENPLI, SUPPORTS VARIOUS MODELS      #
+#     FULL BACKUP UYILITY FOR ENIGMA2/OPENVISION, SUPPORTS VARIOUS MODELS     #
 #                   MAKES A FULLBACK-UP READY FOR FLASHING.                   #
 #                                                                             #
 ###############################################################################
@@ -191,8 +191,8 @@ fi
 WORKDIR="$MEDIA/bi"
 ######################### START THE LOGFILE $LOGFILE ##########################
 echo -n "" > $LOGFILE
-log "*** THIS BACKUP IS CREATED WITH THE PLUGIN BACKUPSUITE ***"
-log "***** ********************************************* ******"
+log "*** THIS BACKUP IS CREATED WITH THE BACKUPSUITE PLUGIN ***"
+log "*****  https://github.com/OpenVisionE2/BackupSuite  ******"
 log $LINE
 log "Plugin version     = "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d "+" -f 2- | cut -d "-" -f1`
 log "Back-up media      = $MEDIA"
@@ -213,7 +213,7 @@ if [ -f /etc/modules-load.d/dreambox-dvb-modules-dm*.conf ] || [ -f /etc/modules
 		log "Thanks GOD it's Open Vision"
 		SEARCH=$( cat /etc/model )
 	else
-		log "Not Open Vision, Open PLi maybe?"	
+		log "Not Open Vision, OpenPLi or SatDreamGr maybe?"	
 		SEARCH=$( cat /proc/stb/info/model )
 	fi
 else
@@ -294,7 +294,7 @@ mkdir -p /tmp/bi/root # this is where the complete content will be available
 log "Create directory   = /tmp/bi/root"
 sync
 mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
-## TEMPORARY WORKAROUND FOR OPENPLI 6 TO REMOVE
+## TEMPORARY WORKAROUND TO REMOVE
 ##      /var/lib/samba/private/msg.sock
 ## WHICH GIVES AN ERRORMESSAGE WHEN NOT REMOVED
 if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then
@@ -469,7 +469,7 @@ mkdir -p /tmp/bi/root # this is where the complete content will be available
 log "Create directory   = /tmp/bi/root"
 sync
 mount --bind / /tmp/bi/root # the complete root at /tmp/bi/root
-## TEMPORARY WORKAROUND FOR OPENPLI 6 TO REMOVE 
+## TEMPORARY WORKAROUND TO REMOVE 
 ##      /var/lib/samba/private/msg.sock
 ## WHICH GIVES AN ERRORMESSAGE WHEN NOT REMOVED
 if [ -d /tmp/bi/root/var/lib/samba/private/msg.sock ] ; then 
