@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
-from os import environ as os_environ
+from os import environ as os_environ, path as os_path
 import gettext
 import sys
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS
+
+if os_path.isdir("/usr/lib64"):
+	BACKUPSUITE_LANGUAGE_PATH = "/usr/lib64/enigma2/python/Plugins/Extensions/BackupSuite/locale"
+else:
+	BACKUPSUITE_LANGUAGE_PATH = "/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite/locale"
 
 def localeInit():
-	gettext.bindtextdomain("BackupSuite", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/BackupSuite/locale"))
+	gettext.bindtextdomain("BackupSuite", BACKUPSUITE_LANGUAGE_PATH)
 
 localeInit()
-
 
 
 def _(txt):
