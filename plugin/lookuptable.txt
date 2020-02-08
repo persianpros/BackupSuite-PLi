@@ -109,9 +109,7 @@ Iqon IOS-300HD	iqonios300hd	Iqon IOS-300HD	/update/ios300/cfe	/fullbackup_ios300
 Iqon IOS-300HDV2	iqonios300hdv2	Iqon IOS-300HDV2	/update/ios300new/cfe	/fullbackup_ios300new	/update/ios300new	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Ixuss One	ixussone	Ixuss One	/medialink/ixussone	/fullbackup_ixussone	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Ixuss Zero	ixusszero	Ixuss Zero	/medialink/ixusszero	/fullbackup_ixusszero	/medialink	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-IZIBox Eco Twin HD	iziboxecohd	IZIBox Eco Twin HD	/dinobot/iziboxecohd	/fullbackup_iziboxecohd	/dinobot	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 IZIBox X3	iziboxx3	IZIBox X3	/izibox/x3	/fullbackup_iziboxx3	/izibox	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
-JamesDonkey HD Duo	jdhdduo	JamesDonkey HD Duo	/jd/duohd	/fullbackup_jdhdduo	/jd	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Jepssen MediaBox HD LX	mediabox	Jepssen MediaBox HD LX	/update/mediabox/cfe	/fullbackup_mediabox	/update/mediabox	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 MaxyTec Multibox	multibox	MaxyTec Multibox	/multibox	/fullbackup_multibox				rootfs.tar.bz2	uImage	none
@@ -165,7 +163,6 @@ Spycat 4K	spycat4k	Spycat 4K	/spycat4k	/fullbackup_spycat4k				rootfs.tar.bz2	ke
 Spycat 4K mini	spycat4kmini	Spycat 4K mini	/spycat4kmini	/fullbackup_spycat4kmini				rootfs.tar.bz2	kernel.bin	noforce
 Spycat Mini	spycatmini	Spycat Mini	/spycatmini	/fullbackup_spycatmini		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Spycat Mini Plus	spycatminiplus	Spycat Mini Plus	/spycatminiplus	/fullbackup_spycatminiplus		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Spycat Mini V2	spycatminiv2	Spycat Mini V2	/spycat/miniv2	/fullbackup_spycatminiv2	/spycat	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Technomate TM-2T-OE	tm2t	Technomate TM-2T-OE	/update/tm2toe/cfe	/fullbackup_tm2t	/update/tm2toe	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Technomate TM 4K super	tm4ksuper	Technomate TM 4K super	/update/tm4ksuper	/fullbackup_tm4ksuper	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Technomate TM-NANO 2 Super	tmnano2super	Technomate TM-NANO 2 Super	/update/tmnano2super/cfe	/fullbackup_tmnano2super	/update/tmnano2super	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
