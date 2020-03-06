@@ -1,6 +1,14 @@
 Changelog
 =========
 
+Git 485-496
+- Use boxbranding when enigma getBoxType isn't available, Thanks to https://github.com/s3n0
+- Get rid of dinobot u42/u43 duplicates
+- Some log messages changed
+- Open Vision detection changed to work on all images, Thanks to https://github.com/athoik
+- Multilib full support by Persian Prince and https://github.com/nautilus7
+- Greek translation updated, Thanks to https://github.com/nautilus7
+
 Git 466-484
 - Octagon SF8008m support
 - Edision OS mini4k support
