@@ -14,3 +14,5 @@ If you got this error:
 cat: can't open '/sys/firmware/devicetree/base/chosen/kerneldev': No such file or directory
 ```
 It means Backup Suite couldn't detect "/dev/mtd# or /dev/mmcblk0p#" of your kernel and you need to tell us your machine name so we could add it to manual detection.
+
+Report problems: https://forum.openvision.tech/viewtopic.php?f=10&t=686
