@@ -199,9 +199,9 @@ if [ -f /etc/modules-load.d/dreambox-dvb-modules-dm*.conf ] || [ -f /etc/modules
 	log "It's a dreambox! Not compatible with this script."
 	exit 1
 else
-	if [ -f /etc/model ] ; then
+	if [ -f /etc/openvision/model ] ; then
 		log "Thanks GOD it's Open Vision"
-		SEARCH=$( cat /etc/model )
+		SEARCH=$( cat /etc/openvision/model )
 	else
 		log "Not Open Vision, OpenPLi or SatDreamGr maybe?"	
 		if [ -f /proc/stb/info/hwmodel ] ; then
