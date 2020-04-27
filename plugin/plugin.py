@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
 from schermen import *
 import os
 import gettext
@@ -69,7 +71,7 @@ with open("/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control") as
 		try:
 			versienummer = versie.split('+')[1]
 		except IndexError:
-			print
+			print("[BackupSuite] can't detect version!")
 
 def backupCommandHDD():
 	if getBoxType().startswith("dm"):
