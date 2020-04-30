@@ -24,7 +24,6 @@ Beyonwiz T3	beyonwizt3	Beyonwiz T3	/beyonwiz/hdx	/fullbackup_beyonwizt3	/beyonwi
 Beyonwiz T4	beyonwizt4	Beyonwiz T4	/beyonwiz/hdp	/fullbackup_beyonwizt4	/beyonwiz	-m 4096 -e 1040384 -c 1984	-m 4096 -p 1024KiB	rootfs.bin	kernel.bin	noforce
 Beyonwiz U4	beyonwizu4	Beyonwiz U4	/beyonwiz/u4	/fullbackup_beyonwizu4	/beyonwiz			rootfs.tar.bz2	kernel.bin	noforce
 Beyonwiz V2	beyonwizv2	Beyonwiz V2	/beyonwiz/v2	/fullbackup_beyonwizv2	/beyonwiz			rootfs.tar.bz2	kernel.bin	none
-Clap CC1 4K	cc1	Clap CC1 4K	/clap/cc1	/fullbackup_cc1	/clap			rootfs.tar.bz2	kernel.bin	none
 Dreambox DM900	dm900	Dreambox DM900	/dm900	/fullbackup_dm900				rootfs.tar.bz2	kernel.bin	none
 Dreambox DM920	dm920	Dreambox DM920	/dm920	/fullbackup_dm920				rootfs.tar.bz2	kernel.bin	none
 Edision Optimuss OS	optimussos	Edision Optimuss OS	/update/optimussos/cfe	/fullbackup_optimussos	/update/optimussos	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
@@ -180,7 +179,6 @@ Technomate TM-Twin-OE	tmtwin	Technomate TM-Twin-OE	/update/tmtwinoe/cfe	/fullbac
 Tiviar Alpha+	tiviaraplus	Tiviar Alpha+	/tiviaraplus	/fullbackup_tiviaraplus		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Tiviar mini	tiviarmin	Tiviar mini	/tiviarmin	/fullbackup_tiviarmin		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Tripledot Tyrant	tyrant	Tripledot Tyrant	/tyrant	/fullbackup_tyrant		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Ultra Box V8Plus Combo	v8plus	Ultra Box V8Plus Combo	/v8plus	/fullbackup_v8plus				rootfs.tar.bz2	uImage	none
 UNiBOX HDECOPlus	hde	UNiBOX HDECOPlus	/unibox/hde	/fullbackup_hde	/unibox	-m 2048 -e 126976 -c 8160 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 UNiBOX HD-x	hdx	UNiBOX HD-x	/venton-hdx	/fullbackup_hdx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Ustym 4K Pro	ustym4kpro	Ustym 4K Pro	/uclan/ustym4kpro	/fullbackup_ustym4kpro	/uclan			rootfs.tar.bz2	kernel.bin	none
