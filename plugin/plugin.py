@@ -22,7 +22,7 @@ from os import environ
 from enigma import getDesktop
 try:
     from enigma import getBoxType
-except ImportError:
+except ImportError as e:
     from boxbranding import getBoxType
 
 lang = language.getLanguage()
