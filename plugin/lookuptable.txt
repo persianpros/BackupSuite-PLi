@@ -112,6 +112,7 @@ IZIBox X3	iziboxx3	IZIBox X3	/izibox/x3	/fullbackup_iziboxx3	/izibox	-m 2048 -e 
 Jepssen MediaBox HD LX	mediabox	Jepssen MediaBox HD LX	/update/mediabox/cfe	/fullbackup_mediabox	/update/mediabox	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 MaxyTec Multibox	multibox	MaxyTec Multibox	/multibox	/fullbackup_multibox				rootfs.tar.bz2	uImage	none
+MaxyTec Multibox Plus	multiboxplus	MaxyTec Multibox Plus	/plus	/fullbackup_multiboxplus				rootfs.tar.bz2	uImage	none
 Miraclebox Hybrid	mbhybrid	Miraclebox Hybrid	/miraclebox/minihybrid	/fullbackup_minihybrid	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Micro	7000S	Miraclebox Micro	/miraclebox/micro	/fullbackup_mbmico	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox MicroV2	7005S	Miraclebox MicroV2	/miraclebox/microv2	/fullbackup_mbmicov2	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
