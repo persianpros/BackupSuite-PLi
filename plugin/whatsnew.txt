@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Git 497-507
+- Last version for other images, Open Vision has the new generation with smart checks.
+- Maxytec Multibox Plus support
+- Python 3 compatible.
+- Get rid of dev boxes: cc1, v8plus, bcm7358, vp7358ci
+- Turkish translation updated, Thanks to https://github.com/audi06
+
 Git 485-496
 - Use boxbranding when enigma getBoxType isn't available, Thanks to https://github.com/s3n0
 - Get rid of dinobot u42/u43 duplicates
