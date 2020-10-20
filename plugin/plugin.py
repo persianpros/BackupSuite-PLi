@@ -160,7 +160,7 @@ class BackupStart(Screen):
 			files = "^.*\.(zip|bin|jffs2)"
 		elif "4k" or "uhd" in model or model in ("hd51","hd60","hd61","h7","sf4008","sf5008","sf8008","sf8008m","vs1500","et11000","et13000","multibox","multiboxplus","e4hdultra"):
 			files = "^.*\.(zip|bin|bz2)"
-		elif model in ("h9","h9combo","i55plus","h10","dinobotu55","iziboxx3","dinoboth265","axashistwin","protek4kx1"):
+		elif model in ("h9","h9combo","i55plus","h10","hzero","h8","dinobotu55","iziboxx3","dinoboth265","axashistwin","protek4kx1"):
 			files = "^.*\.(zip|bin|ubi)"
 		elif model.startswith("dm"):
 			self.session.open(MessageBox, _("No supported receiver found!"), MessageBox.TYPE_ERROR)
@@ -291,7 +291,7 @@ class FlashImageConfig(Screen):
 		return False
 
 	def ForceMode(self):
-		if getBoxType() in ("h9","h9combo","i55plus","h10"):
+		if getBoxType() in ("h9","h9combo","i55plus","h10","hzero","h8"):
 			return True
 		return False
 
@@ -398,7 +398,7 @@ class FlashImageConfig(Screen):
 						backup_files = [("kernel.bin"), ("rootfs.tar.bz2")]
 						no_backup_files = [("kernel_cfe_auto.bin"), ("rootfs.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("kernel_auto.bin"), ("uImage"), ("rootfs.ubi")]
 						text += "kernel.bin, rootfs.tar.bz2"
-					elif model in ("h9","h9combo","i55plus","h10","dinobotu55","iziboxx3","dinoboth265","axashistwin","protek4kx1"):
+					elif model in ("h9","h9combo","i55plus","h10","hzero","h8","dinobotu55","iziboxx3","dinoboth265","axashistwin","protek4kx1"):
 						backup_files = [("uImage"), ("rootfs.ubi")]
 						no_backup_files = [("kernel_cfe_auto.bin"), ("root_cfe_auto.jffs2"), ("root_cfe_auto.bin"), ("oe_kernel.bin"), ("oe_rootfs.bin"), ("rootfs.tar.bz2"), ("kernel_auto.bin"), ("kernel.bin"), ("rootfs.tar.bz2")]
 						text += "uImage, rootfs.ubi"

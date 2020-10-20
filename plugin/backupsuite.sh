@@ -344,7 +344,7 @@ fi
 ############################## MAKING KERNELDUMP ##############################
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-if [ $ROOTNAME != "rootfs.tar.bz2" -o $SEARCH = "h9" -o $SEARCH = "h9combo" -o $SEARCH = "i55plus" -o $SEARCH = "h10" ] ; then
+if [ $ROOTNAME != "rootfs.tar.bz2" -o $SEARCH = "h9" -o $SEARCH = "h9combo" -o $SEARCH = "i55plus" -o $SEARCH = "h10" -o $SEARCH = "hzero" -o $SEARCH = "h8" -o $SEARCH = "h8.2h" -o $SEARCH = "h9.s" -o $SEARCH = "h9.t" -o $SEARCH = "h9.2h" -o $SEARCH = "h9.2s" -o $SEARCH = "h9twin" ] ; then
 	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes
 	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
 	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
@@ -438,8 +438,8 @@ elif [ $ACTION = "force" ] ; then
 	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
 fi
 image_version > "$MAINDEST/imageversion"
-if [ $SEARCH = "h9" -o $SEARCH = "h9combo" -o $SEARCH = "i55plus" -o $SEARCH = "h10" ] ; then
-	log "Zgemma hisil-3798mv200 found, we need to copy more files for flashing later!"
+if [ $SEARCH = "h9" -o $SEARCH = "h9combo" -o $SEARCH = "i55plus" -o $SEARCH = "h10" -o $SEARCH = "hzero" -o $SEARCH = "h8" -o $SEARCH = "h8.2h" -o $SEARCH = "h9.s" -o $SEARCH = "h9.t" -o $SEARCH = "h9.2h" -o $SEARCH = "h9.2s" -o $SEARCH = "h9twin" ] ; then
+	log "Zgemma hisil found, we need to copy more files for flashing later!"
 	dd if=/dev/mtd0 of=$MAINDEST/fastboot.bin > /dev/null 2>&1
 	dd if=/dev/mtd1 of=$MAINDEST/bootargs.bin > /dev/null 2>&1
 	cp -r "$MAINDEST/fastboot.bin" "$MEDIA/zgemma/fastboot.bin" > /dev/null 2>&1

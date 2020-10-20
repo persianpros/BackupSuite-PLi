@@ -241,8 +241,16 @@ Zgemma H4	h4	Zgemma H4	/zgemma/h4	/fullbackup_h4	/zgemma	-m 2048 -e 126976 -c 81
 Zgemma H5	h5	Zgemma H5	/zgemma/h5	/fullbackup_h5	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H6	h6	Zgemma H6	/zgemma/h6	/fullbackup_h6	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H7	h7	Zgemma H7	/zgemma/h7	/fullbackup_h7	/zgemma			rootfs.tar.bz2	kernel.bin	none
+Zgemma H8	h8	Zgemma H8	/zgemma/h8	/fullbackup_h8	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	non
+Zgemma H8.2H	h8.2h	Zgemma H8.2H	/zgemma/h8	/fullbackup_h8	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	non
 Zgemma H9	h9	Zgemma H9	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma H9.S	h9.s	Zgemma H9.S	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma H9.T	h9.t	Zgemma H9.T	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma H9.2H	h9.2h	Zgemma H9.2H	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma H9.2S	h9.2s	Zgemma H9.2S	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H9 Combo	h9combo	Zgemma H9 Combo	/zgemma/h9combo	/fullbackup_h9combo	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma H9 Twin	h9twin	Zgemma H9 Twin	/zgemma/h9combo	/fullbackup_h9combo	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma HZero	hzero	Zgemma HZero	/zgemma/hzero	/fullbackup_hzero	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma I55	i55	Zgemma I55	/zgemma/i55	/fullbackup_i55	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma I55 Plus	i55plus	Zgemma I55 Plus	/zgemma/i55plus	/fullbackup_i55plus	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma LC	lc	Zgemma LC	/zgemma/lc	/fullbackup_lc	/zgemma	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
