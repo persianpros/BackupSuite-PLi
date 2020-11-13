@@ -211,10 +211,10 @@ echo -n $WHITE
 if [ -f /etc/modules-load.d/dreambox-dvb-modules-dm*.conf ] || [ -f /etc/modules-load.d/10-dreambox-dvb-modules-dm*.conf ] ; then
 	if [ -f /etc/openvision/model ] ; then
 		log "Thanks GOD it's Open Vision"
-		SEARCH=$( cat /etc/openvision/model )
+		SEARCH=$( cat /etc/openvision/model | tr "A-Z" "a-z" )
 	else
 		log "Not Open Vision, OpenPLi or SatDreamGr maybe?"	
-		SEARCH=$( cat /proc/stb/info/model )
+		SEARCH=$( cat /proc/stb/info/model | tr "A-Z" "a-z" )
 	fi
 else
 	log "It's not a dreambox! Not compatible with this script."
