@@ -8,6 +8,8 @@ Ready bitbake recipe:
 
 https://github.com/OpenPLi/openpli-oe-core/blob/develop/meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-backupsuite.bb
 
+Report problems: https://forums.openpli.org/topic/21460-backupsuite/
+
 ## kerneldev error
 If you got this error:
 ```
