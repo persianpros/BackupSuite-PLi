@@ -205,13 +205,13 @@ else
 	else
 		log "Not Open Vision, OpenPLi or SatDreamGr maybe?"	
 		if [ -f /proc/stb/info/hwmodel ] ; then
-			SEARCH=$( cat /proc/stb/info/hwmodel | tr "A-Z" "a-z" )
+			SEARCH=$( cat /proc/stb/info/hwmodel | tr "A-Z" "a-z" | tr -d '[:space:]' )
 		elif [ -f /proc/stb/info/gbmodel ] ; then
-			SEARCH=$( cat /proc/stb/info/gbmodel | tr "A-Z" "a-z" )
+			SEARCH=$( cat /proc/stb/info/gbmodel | tr "A-Z" "a-z" | tr -d '[:space:]' )
 		elif [ -f /proc/stb/info/boxtype ] ; then
-			SEARCH=$( cat /proc/stb/info/boxtype | tr "A-Z" "a-z" )
+			SEARCH=$( cat /proc/stb/info/boxtype | tr "A-Z" "a-z" | tr -d '[:space:]' )
 		elif [ -f /proc/stb/info/vumodel ] ; then
-			SEARCH=$( cat /proc/stb/info/vumodel | tr "A-Z" "a-z" )
+			SEARCH=$( cat /proc/stb/info/vumodel | tr "A-Z" "a-z" | tr -d '[:space:]' )
 		else
 			echo $RED
 			$SHOW "message01" 2>&1 | tee -a $LOGFILE # No supported receiver found!
