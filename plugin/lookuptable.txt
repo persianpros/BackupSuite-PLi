@@ -199,6 +199,7 @@ Vivant Dinobot U55	u55	Vivant Dinobot U55	/dinobot/u55	/fullbackup_u55	/dinobot	
 Vu+ Duo	duo	Vu+ Duo	/vuplus/duo	/fullbackup_duo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
 Vu+ Duo 2	duo2	Vu+ Duo 2	/vuplus/duo2	/fullbackup_duo2	/vuplus	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Duo 4K	duo4k	Vu+ Duo 4K	/vuplus/duo4k	/fullbackup_duo4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
+Vu+ Duo 4K SE	duo4kse	Vu+ Duo 4K SE	/vuplus/duo4kse	/fullbackup_duo4kse	/vuplus			rootfs.tar.bz2	kernel_auto.bin	force
 Vu+ Solo	solo	Vu+ Solo	/vuplus/solo	/fullbackup_solo	/vuplus	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	root_cfe_auto.jffs2	kernel_cfe_auto.bin	none
 Vu+ Solo 2	solo2	Vu+ Solo 2	/vuplus/solo2	/fullbackup_solo2	/vuplus	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	root_cfe_auto.bin	kernel_cfe_auto.bin	reboot
 Vu+ Solo 4K	solo4k	Vu+ Solo 4K	/vuplus/solo4k	/fullbackup_solo4k	/vuplus			rootfs.tar.bz2	kernel_auto.bin	reboot

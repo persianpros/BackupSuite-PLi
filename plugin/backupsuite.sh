@@ -368,7 +368,7 @@ else
 	elif [ $SEARCH = "zero4k" -o $SEARCH = "vuzero4k" -o $SEARCH = "gbquad4k" -o $SEARCH = "gbue4k" -o $SEARCH = "gbx34k" ] ; then
 		dd if=/dev/mmcblk0p4 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p4"
-	elif [ $SEARCH = "duo4k" -o $SEARCH = "vuduo4k" ] ; then
+	elif [ $SEARCH = "duo4k" -o $SEARCH = "vuduo4k" -o $SEARCH = "duo4kse" -o $SEARCH = "vuduo4kse" ] ; then
 		dd if=/dev/mmcblk0p6 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p6"
 	elif [ $SEARCH = "sf8008" -o $SEARCH = "sf8008m" -o $SEARCH = "ustym4kpro" -o $SEARCH = "gbtrio4k" -o $SEARCH = "gbip4k" -o $SEARCH = "viper4k" -o $SEARCH = "beyonwizv2" ] ; then
