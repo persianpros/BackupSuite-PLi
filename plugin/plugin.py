@@ -253,7 +253,7 @@ class FlashImageConfig(Screen):
 		self["key_green"] = StaticText("")
 		self["key_yellow"] = StaticText("")
 		self["key_blue"] = StaticText("")
-		self["curdir"] = StaticText(_("current:  %s")%(curdir or ''))
+		self["curdir"] = StaticText(_("current:  %s") % (curdir or ''))
 		self.founds = False
 		self.dualboot = self.dualBoot()
 		self.ForceMode = self.ForceMode()
@@ -315,7 +315,7 @@ class FlashImageConfig(Screen):
 		self["key_yellow"].setText("")
 		self["key_green"].setText("")
 		self["key_blue"].setText("")
-		self["curdir"].setText(_("current:  %s")%(self.getCurrentSelected()))
+		self["curdir"].setText(_("current:  %s") % (self.getCurrentSelected()))
 		file_name = self.getCurrentSelected()
 		try:
 			if not self.filelist.canDescent() and file_name != '' and file_name != '/':
@@ -346,7 +346,7 @@ class FlashImageConfig(Screen):
 				warning_text = "\n"
 				if self.dualboot:
 					warning_text += _("\nYou are using dual multiboot!")
-				self.session.openWithCallback(lambda r: self.confirmedWarning(r), MessageBox, _("Warning!\nUse at your own risk! Make always a backup before use!\nDon't use it if you use multiple ubi volumes in ubi layer!")  + warning_text, MessageBox.TYPE_INFO)
+				self.session.openWithCallback(lambda r: self.confirmedWarning(r), MessageBox, _("Warning!\nUse at your own risk! Make always a backup before use!\nDon't use it if you use multiple ubi volumes in ubi layer!") + warning_text, MessageBox.TYPE_INFO)
 
 	def showparameterlist(self):
 		if self["key_green"].getText() == _("Run flash"):
@@ -544,7 +544,7 @@ class FlashImageConfig(Screen):
 			filename = self.filelist.getFilename()
 			if dirname and filename:
 				try:
-					os.system('unzip -o %s%s -d %s'%(dirname,filename,dirname))
+					os.system('unzip -o %s%s -d %s' % (dirname,filename,dirname))
 					self.filelist.refresh()
 				except:
 					pass
