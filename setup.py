@@ -4,7 +4,7 @@ from distutils.core import setup
 import setup_translate
 
 pkg = 'Extensions.BackupSuite'
-setup (name='enigma2-plugin-extensions-backupsuite',
+setup(name='enigma2-plugin-extensions-backupsuite',
        version='1.0',
        description='Back-up tool for various enigma2 receivers',
        packages=[pkg],
