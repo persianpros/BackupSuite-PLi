@@ -31,6 +31,7 @@ gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
 gettext.textdomain("enigma2")
 gettext.bindtextdomain("BackupSuite", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/BackupSuite/locale"))
 
+
 def _(txt):
 	t = gettext.dgettext("BackupSuite", txt)
 	if t == txt:
@@ -39,6 +40,7 @@ def _(txt):
 
 ######################################################################################################
 #Set default configuration
+
 
 wherechoises = [('none', 'None'), ("/media/net", _("NAS"))]
 for p in harddiskmanager.getMountedPartitions():
@@ -74,12 +76,14 @@ with open("/var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control") as
 		except IndexError:
 			print("[BackupSuite] can't detect version!")
 
+
 def backupCommandHDD():
 	if getBoxType().startswith("dm"):
 		cmd = BACKUP_DMM_HDD + ' en_EN'
 	else:
 		cmd = BACKUP_HDD + ' en_EN'
 	return cmd
+
 
 def backupCommandUSB():
 	if getBoxType().startswith("dm"):
@@ -88,12 +92,14 @@ def backupCommandUSB():
 		cmd = BACKUP_USB + ' en_EN'
 	return cmd
 
+
 def backupCommandMMC():
 	if getBoxType().startswith("dm"):
 		cmd = BACKUP_DMM_MMC + ' en_EN'
 	else:
 		cmd = BACKUP_MMC + ' en_EN'
 	return cmd
+
 
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
@@ -103,6 +109,7 @@ try:
 except Exception as e:
 	print("[BackupSuite] Unable to initialize MPHelp:", e, "- Help not available!")
 	backupsuiteHelp = None
+
 
 class BackupStart(Screen):
 	def __init__(self, session, args=0):
@@ -206,6 +213,8 @@ class BackupStart(Screen):
 		return
 
 ## What is new information
+
+
 class WhatisNewInfo(Screen):
 	def __init__(self, session):
 		try:
@@ -233,6 +242,7 @@ class WhatisNewInfo(Screen):
 		with open(resolveFilename(SCOPE_PLUGINS, "Extensions/BackupSuite/whatsnew.txt")) as file:
 			whatsnew = file.read()
 		self["AboutScrollLabel"].setText(whatsnew)
+
 
 class FlashImageConfig(Screen):
 	def __init__(self, session, curdir, matchingPattern=None):
@@ -559,6 +569,7 @@ class FlashImageConfig(Screen):
 	def KeyBlue(self):
 		if self["key_blue"].getText() == _("Delete"):
 			self.session.openWithCallback(self.confirmedDelete, MessageBox, _("You are about to delete this backup:\n\n%s\nContinue?") % self.getBackupInfo(), MessageBox.TYPE_YESNO)
+
 
 def main(session, **kwargs):
 	session.open(BackupStart)
