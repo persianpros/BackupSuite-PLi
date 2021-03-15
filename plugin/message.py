@@ -28,13 +28,13 @@ def _(txt):
 
 def message01():
 	print(_("No supported receiver found!"))
-	return 
-	
+	return
+
 
 def message02():
 	print(_("BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"))
 	return
-		
+
 
 def message03():
 	sys.stdout.write(_("Please be patient, a backup will now be made, this will take about: "))
@@ -43,8 +43,8 @@ def message03():
 
 def message04():
 	sys.stdout.write(_(" size to be backed up: "))
-	return 
-	
+	return
+
 
 def message05():
 	print(_("not found, the backup process will be aborted!"))
@@ -53,7 +53,7 @@ def message05():
 
 def message06():
 	print(_("Some information about the task"))
-	return 
+	return
 
 
 def message06a():
@@ -88,12 +88,12 @@ def message14():
 
 def message15():
 	print(_("Image creation FAILED!"))
-	return 
+	return
 
 
 def message16():
 	sys.stdout.write(_("available "))
-	return 
+	return
 
 
 def message17():
@@ -133,26 +133,26 @@ def message22():
 def message23():
 	print(_("The content of the folder is:"))
 	return
-	
-	
+
+
 def message24():
 	sys.stdout.write(_("Time required for this process: "))
-	return 
-	
+	return
+
 
 def message25():
 	print(_("minutes"))
-	return 
-	
+	return
+
 
 def message26():
 	sys.stdout.write(_("Backup done with: "))
 	return
-	
+
 
 def message27():
 	print(_("KB per second"))
-	return 
+	return
 
 
 def message28():
@@ -163,18 +163,18 @@ def message28():
 def message29():
 	print(_("There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."))
 	return
-	
+
 
 def message30():
 	print(_("* * * WARNING * * *"))
 	sys.stdout.write(_("Not enough free space on "))
 	return
-	
+
 
 def message31():
 	print(_(" to make a back-up!"))
 	return
-	
+
 
 def message32():
 	print(_(" MB available space"))
@@ -184,7 +184,7 @@ def message32():
 def message33():
 	print(_(" MB needed space"))
 	return
-	
+
 
 def message34():
 	print(_("The program will abort, please try another medium with more free space to create your back-up."))
