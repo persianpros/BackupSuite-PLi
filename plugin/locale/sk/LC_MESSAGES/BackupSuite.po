@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: plugin.py 89
 msgid "Make a backup or restore a backup"
@@ -24,9 +24,9 @@ msgid ""
 "\n"
 "This only takes a few minutes and is fully automatic.\n"
 msgstr ""
-"Chcete urobiť USB zálohu Image na HDD?\n"
+"Chcete vytvoriť USB zálohu operačného systému na HDD?\n"
 "\n"
-"Trvá to len niekoľko minút a je plne automatická.\n"
+"Záloha je plne automatická a trvá iba niekoľko minút.\n"
 
 msgid "Full back-up to USB"
 msgstr "Plná záloha na USB"
@@ -39,50 +39,45 @@ msgid ""
 "\n"
 "Make sure you first insert an USB flash drive before you select Yes."
 msgstr ""
-"Chcete urobiť zálohu na USB?\n"
+"Chcete vytvoriť zálohu na USB?\n"
 "\n"
-"Doba závisí na súborovom systéme, trvá len niekoľko minút a je plne "
-"automatická.\n"
+"Dĺžka zálohovania závisí na použitom súborovom systéme, je plne automacitká "
+"a trvá iba niekoľko minút.\n"
 "\n"
-"Uistite sa, že je USB flash disk zasunutý pred tým, ako stlačíte Áno."
+"Uistite sa, že je USB disk zasunutý pred tým, ako stlačíte Áno."
 
-#, fuzzy
-#| msgid "Full back-up on HDD"
 msgid "Full back-up on MMC"
-msgstr "Plná záloha na HDD"
+msgstr "Plná záloha na MMC"
 
-#, fuzzy
-#| msgid ""
-#| "Do you want to make an USB-back-up image on HDD? \n"
-#| "\n"
-#| "This only takes a few minutes and is fully automatic.\n"
 msgid ""
 "Do you want to make an USB-back-up image on MMC? \n"
 "\n"
 "This only takes a few minutes and is fully automatic.\n"
 msgstr ""
-"Chcete urobiť USB zálohu Image na HDD?\n"
+"Chcete vytvoriť USB zálohu operačného systému na pamäťovú kartu?\n"
 "\n"
-"Trvá to len niekoľko minút a je plne automatická.\n"
+"Záloha je plne automatická a trvá iba niekoľko minút.\n"
+"\n"
 
 msgid "No supported receiver found!"
 msgstr "Nebol nájdený žiadny podporovaný prijímač!"
 
 msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "BACK-UP nástroj na výrobu kompletnej zálohy Image"
+msgstr "BACK-UP nástroj na výrobu kompletnej zálohy operačného systému"
 
 msgid "Please be patient, a backup will now be made, this will take about: "
 msgstr ""
-"Buďte prosím trpezlivý, vytvorí sa záloha Image, ktorá potrvá približne: "
+"Buďte prosím trpezlivý, vytvorí sa záloha operačného systému, ktorá potrvá "
+"približne: "
 
 msgid " size to be backed up: "
 msgstr " zálohovaná veľkosť: "
 
 msgid "not found, the backup process will be aborted!"
-msgstr "nebol nájdený, proces zálohovania bude zrušený!"
+msgstr "nebol nájdený, proces zálohovania bude prerušený!"
 
 msgid "Some information about the task"
-msgstr "Informácie o zálohe Image"
+msgstr "Informácie o vykonávanej zálohe"
 
 msgid "Create: root.ubifs"
 msgstr "Vytvára sa : root.ubifs"
@@ -94,7 +89,7 @@ msgid "Additional backup -> "
 msgstr "Ďalšia záloha -> "
 
 msgid "USB Image created in: "
-msgstr "USB Image vytvorený v: "
+msgstr "USB záloha vytvorená v: "
 
 msgid "and there is made an extra copy in: "
 msgstr "a ďalšia vytvorená kópia v: "
@@ -103,7 +98,7 @@ msgid "Please check the manual of the receiver on how to restore the image."
 msgstr "Skontrolujte si prosím v príručke prijímača, ako obnoviť zálohu Image."
 
 msgid "Image creation FAILED!"
-msgstr "Vytváranie Image zlyhalo!"
+msgstr "Vytvorenie zálohy OS zlyhalo!"
 
 msgid "available "
 msgstr "dostupných "
@@ -112,8 +107,8 @@ msgid ""
 "There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
 "an extra copy of the back-up image will now be copied to that USB-flashdrive."
 msgstr ""
-"USB flash disk bol nájdený v jednom z USB portov, extra kópia zálohy Image "
-"bude skopírovana na USB."
+"USB nájdený v jednom z USB portov, extra kópia zálohy operačného systému "
+"bude preto skopírovana na toto USB."
 
 msgid "This only takes about 20 seconds....."
 msgstr "Potrvá to približne 20 sekúnd ....."
@@ -125,7 +120,7 @@ msgid "Full back-up to the harddisk"
 msgstr "Plná záloha na harddisk"
 
 msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "Nebol nájdený žiadny USB-klúč, nič sa nevykoná."
+msgstr "Nebol nájdený potrebný USB disk, záloha sa nevykoná."
 
 msgid "PLEASE READ THIS:"
 msgstr "Prosím prečítajte si toto:"
@@ -134,7 +129,7 @@ msgid ""
 "To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
 "the name:"
 msgstr ""
-"Ak chcete zálohovať priamo na USB-klúč, tento musí obsahovať súbory s názvom:"
+"Ak chcete zálohovať priamo na USB disk, tento musí obsahovať súbor s názvom:"
 
 msgid "backupstick or"
 msgstr "backupstick alebo"
@@ -147,8 +142,9 @@ msgid ""
 "automatically made onto the USB-stick and can be used to restore the current "
 "image if necessary."
 msgstr ""
-"Ak zasuniete USB-kľúč obsahujúci tento súbor, potom bude záloha automaticky "
-"prevedená na USB a môže byť použitá na obnovenie Image v prípade potreby."
+"Ak zasuniete USB disk obsahujúci tento súbor, záloha bude automaticky "
+"vykonaná na tento disk a môže byť neskôr použitá na obnovenie zálohy OS v "
+"prípade potreby."
 
 msgid "The program will exit now."
 msgstr "Program bude ukončený."
@@ -176,9 +172,9 @@ msgid ""
 "too big to restore. This is a limitation of the bootloader not of the back-"
 "up or the BackupSuite."
 msgstr ""
-"S najväčšou pravdepodobnosťou sa záloha nedá obnoviť, pretože je jednoducho "
-"príliš velká pre obnovenie. Jedná sa o obmedzenie bootloadera, nie o chybu v "
-"zálohe alebo chybu BackupSuite."
+"S najväčšou pravdepodobnosťou sa záloha nedá obnoviť, pretože je príliš "
+"velká pre obnovenie. Jedná sa o obmedzenie bootloadera, nie o chybu v zálohe "
+"alebo chybu doplnku BackupSuite."
 
 msgid ""
 "There COULD be a problem with restoring this back-up because the size of the "
@@ -187,7 +183,7 @@ msgid ""
 msgstr ""
 "Mohol by byť problém s obnovením téjto zálohy, pretože veľkosť zálohy sa "
 "blíži k maximálnej velkosti. Jedná sa o obmedzenie bootloadera, nie o chybu "
-"v zálohe alebo chybu BackupSuite."
+"v zálohe alebo chybu doplnku BackupSuite."
 
 msgid "* * * WARNING * * *"
 msgstr "* * * Varovanie * * *"
@@ -208,37 +204,35 @@ msgid ""
 "The program will abort, please try another medium with more free space to "
 "create your back-up."
 msgstr ""
-"Proces bude prerušený, prosím skúste nové médium s dostatkom volného miesta "
+"Proces bude prerušený, prosím skúste iné médium s dostatkom volného miesta "
 "pre vytvorenie zálohy."
 
-#, fuzzy
-#| msgid "Full back-up to the harddisk"
 msgid "Full back-up to the MultiMediaCard"
-msgstr "Plná záloha na harddisk"
+msgstr "Plná záloha na pamäťovú kartu (MMC)"
 
 msgid "is not executable..."
-msgstr ""
+msgstr "nie je spustiteľný..."
 
 msgid "Using your own custom lookuptable.txt from the folder /etc"
-msgstr ""
+msgstr "Použije sa váš vlastný lookuptable.txt zo zložky /etc"
 
 msgid "Version unknown, probably not installed the right way."
-msgstr ""
+msgstr "Verzia neznáma, pravdepodobne nebola správne nainštalovaná."
 
 msgid "not installed yet, now installing"
-msgstr ""
+msgstr "ešte nie je nainštalované, inštalujem teraz"
 
 msgid "Probably you are trying to make the back-up in flash memory"
-msgstr ""
+msgstr "Pravdepodobne sa pokúšate vytvoriť zálohu vo flash pamäti"
 
 msgid "No additional USB-stick found to copy an extra backup"
-msgstr ""
+msgstr "Na vytvorenie extra zálohy nebol nájdený dodatočný USB disk"
 
 msgid "Installed packages contained in this backup:"
-msgstr ""
+msgstr "Inštalované balíky dostupné v tejto zálohe:"
 
 msgid "NFI Image created in: "
-msgstr ""
+msgstr "NFI záloha vytvorená v:"
 
 #: plugin.py 294
 msgid ""
@@ -267,8 +261,8 @@ msgid ""
 "A recording is currently running. Please stop the recording before trying to "
 "start a flashing."
 msgstr ""
-"V súčasnej dobe prebieha nahrávanie. Pred pokusom o spustenie flash-ovania "
-"prosím zastavte nahrávanie."
+"V súčasnej dobe prebieha nahrávanie. Pred pokusom o spustenie obnovy prosím "
+"zastavte nahrávanie."
 
 #: plugin.py 91
 msgid "Cancel"
@@ -289,11 +283,11 @@ msgstr "Flashing: "
 
 #: plugin.py 275
 msgid "For flashing your receiver files are needed:\n"
-msgstr "Pre flash sú potrebné súbory:\n"
+msgstr "Pre obnovenie sú potrebné súbory:\n"
 
 #: plugin.py 354
 msgid "NOT found files for flashing!\n"
-msgstr "Neboli nájdené súbory pre flash!\n"
+msgstr "Neboli nájdené súbory pre obnovenie zálohy!\n"
 
 #: plugin.py 311 343
 msgid "Only kernel"
@@ -313,11 +307,11 @@ msgstr "Obnoviť zálohu"
 
 #: plugin.py 249 263 269
 msgid "Run flash"
-msgstr "Spustiť flash"
+msgstr "Spustiť obnovu"
 
 #: plugin.py 274
 msgid "Select parameter for start flash!\n"
-msgstr "Vyberte parameter pre spustenie flash!\n"
+msgstr "Vyberte parameter pre spustenie obnovy!\n"
 
 #: plugin.py 199
 msgid "Select the folder with backup"
@@ -329,7 +323,7 @@ msgstr "Zobraziť iba nájdený Image a MTD oddiely..\n"
 
 #: plugin.py 308 334
 msgid "Simulate (no write)"
-msgstr "Simulovať (bez zápisu)"
+msgstr "Simulácia (bez zápisu)"
 
 #: plugin.py 309 337
 msgid "Standard (root and kernel)"
@@ -338,8 +332,8 @@ msgstr "Štandard (root a kernel)"
 #: plugin.py 362
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr ""
-"Image alebo kernel bude prepísaný a prijímač sa automaticky reštartuje do "
-"niekolkých minút.\n"
+"Image alebo kernel bude obnovený a prijímač sa automaticky do niekolkých "
+"minút reštartuje.\n"
 
 #: plugin.py 247 380
 msgid "Unzip"
@@ -353,11 +347,11 @@ msgid ""
 msgstr ""
 "Varovanie!\n"
 "Používate na vlastné riziko! Odporúčame urobiť zálohu pred každým použitím!\n"
-"Nepoužívajte ho, ak používate viac Ubi objemov v UBI vrstve!"
+"Nepoužívajte to, ak používate viac Ubi jednotiek v UBI vrstve!"
 
 #: plugin.py 360
 msgid "Your STB will freeze during the flashing process.\n"
-msgstr "Váš STB môže zamrznúť alebo blikať počas flash procesu.\n"
+msgstr "Počas procesu obnovy môže Váš STB prestať reagovať.\n"
 
 #: plugin.py 203 241
 #, python-format
@@ -366,7 +360,7 @@ msgstr "adresár:  %s"
 
 #: plugin.py 359
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
-msgstr "ofgwrite teraz zastaví Enigmu2 a spustí sa Flash.\n"
+msgstr "Pre spustenie obnovy systému ofgwrite ukončí beh OS Enigma.\n"
 
 #: plugin.py 312 346
 msgid "Only root with use mtdy device"
@@ -382,7 +376,7 @@ msgstr "BackupSuite"
 
 #: plugin.py 406 413
 msgid "Backup and restore your image"
-msgstr ""
+msgstr "Zálohovať a obnoviť zálohu systému"
 
 #: plugin.py 92
 msgid "Backup > HDD"
@@ -392,10 +386,8 @@ msgstr "Záloha > HDD"
 msgid "Backup > USB"
 msgstr "Záloha > USB"
 
-#, fuzzy
-#| msgid "Backup > HDD"
 msgid "Backup > MMC"
-msgstr "Záloha > HDD"
+msgstr "Záloha > MMC"
 
 #: plugin.py 173
 msgid "What is new since the last release?"
