@@ -2,7 +2,7 @@ BackupSuite [![Build Status](https://travis-ci.org/persianpros/BackupSuite-PLi.s
 ===========
 Created by Pedro Newbie revamped by Persian Prince
 
-Backup Suite (old generation) for enigma2 images (except Open Vision)
+Backup Suite for OpenPLi and similars (except Open Vision)
 
 Ready bitbake recipe:
 
