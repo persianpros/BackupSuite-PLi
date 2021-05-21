@@ -236,7 +236,6 @@ Xtrend 8500	et8500	Xtrend ET8500	/et8500	/fullbackup_et8500		-m 2048 -e 126976 -
 Xtrend 9000	et9000	Xtrend ET9000	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 9200	et9200	Xtrend ET9200	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Xtrend 9500	et9500	Xtrend ET9500	/et9x00	/fullbackup_et9x00		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-Zgemma H10	h10	Zgemma H10	/zgemma/h10	/fullbackup_h10	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H3	h3	Zgemma H3	/zgemma/h3	/fullbackup_h3	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H4	h4	Zgemma H4	/zgemma/h4	/fullbackup_h4	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H5	h5	Zgemma H5	/zgemma/h5	/fullbackup_h5	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -249,10 +248,12 @@ Zgemma H9.S	h9.s	Zgemma H9.S	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976
 Zgemma H9.T	h9.t	Zgemma H9.T	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H9.2H	h9.2h	Zgemma H9.2H	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H9.2S	h9.2s	Zgemma H9.2S	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
-Zgemma H9 Combo	h9combo	Zgemma H9 Combo	/zgemma/h9combo	/fullbackup_h9combo	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
-Zgemma H9 Combo SE	h9combose	Zgemma H9 Combo SE	/zgemma/h9combose	/fullbackup_h9combose	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
-Zgemma H9 SE	h9se	Zgemma H9 SE	/zgemma/h9se	/fullbackup_h9se	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
-Zgemma H9 Twin	h9twin	Zgemma H9 Twin	/zgemma/h9combo	/fullbackup_h9combo	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma H9 Combo	h9combo	Zgemma H9 Combo	/zgemma/h9combo	/fullbackup_h9combo	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H9 Twin	h9twin	Zgemma H9 Twin	/zgemma/h9combo	/fullbackup_h9combo	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H9 Combo SE	h9combose	Zgemma H9 Combo SE	/zgemma/h9combose	/fullbackup_h9combose	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H9 SE	h9se	Zgemma H9 SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H10	h10	Zgemma H10	/zgemma/h10	/fullbackup_h10	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H11	h11	Zgemma H11	/zgemma/h11	/fullbackup_h11	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma HZero	hzero	Zgemma HZero	/zgemma/hzero	/fullbackup_hzero	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma I55	i55	Zgemma I55	/zgemma/i55	/fullbackup_i55	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma I55 Plus	i55plus	Zgemma I55 Plus	/zgemma/i55plus	/fullbackup_i55plus	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
