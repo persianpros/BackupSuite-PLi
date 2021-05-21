@@ -344,7 +344,7 @@ fi
 ############################## MAKING KERNELDUMP ##############################
 log $LINE
 $SHOW "message07" 2>&1 | tee -a $LOGFILE			# Create: kerneldump
-if [ $ROOTNAME != "rootfs.tar.bz2" -o $SEARCH = "h9" -o $SEARCH = "h9se" -o $SEARCH = "h9combo" -o $SEARCH = "h9combose" -o $SEARCH = "i55plus" -o $SEARCH = "i55se" -o $SEARCH = "h10" -o $SEARCH = "hzero" -o $SEARCH = "h8" -o $SEARCH = "h8.2h" -o $SEARCH = "h9.s" -o $SEARCH = "h9.t" -o $SEARCH = "h9.2h" -o $SEARCH = "h9.2s" -o $SEARCH = "h9twin" ] ; then
+if [ $ROOTNAME != "rootfs.tar.bz2" -o $SEARCH = "h9" -o $SEARCH = "i55plus" -o $SEARCH = "i55se" -o $SEARCH = "hzero" -o $SEARCH = "h8" -o $SEARCH = "h8.2h" -o $SEARCH = "h9.s" -o $SEARCH = "h9.t" -o $SEARCH = "h9.2h" -o $SEARCH = "h9.2s" ] ; then
 	log "Kernel resides on $MTDPLACE" 					# Just for testing purposes
 	$NANDDUMP /dev/$MTDPLACE -qf "$WORKDIR/$KERNELNAME"
 	if [ -f "$WORKDIR/$KERNELNAME" ] ; then
@@ -374,7 +374,7 @@ else
 	elif [ $SEARCH = "sf8008" -o $SEARCH = "sf8008m" -o $SEARCH = "ustym4kpro" -o $SEARCH = "gbtrio4k" -o $SEARCH = "gbip4k" -o $SEARCH = "viper4k" -o $SEARCH = "beyonwizv2" ] ; then
 		dd if=/dev/mmcblk0p12 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p12"
-	elif [ $SEARCH = "hd60" -o $SEARCH = "hd61" ] ; then
+	elif [ $SEARCH = "hd60" -o $SEARCH = "hd61" -o $SEARCH = "h9twin"-o $SEARCH = "h9se" -o $SEARCH = "h9combo" -o $SEARCH = "h9combose" -o $SEARCH = "h10" -o $SEARCH = "h11" ] ; then
 		$LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.sh
 		KERNEL=`readlink -n /dev/kernel`
 		log "Kernel resides on $KERNEL"
