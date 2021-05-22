@@ -241,8 +241,8 @@ Zgemma H4	h4	Zgemma H4	/zgemma/h4	/fullbackup_h4	/zgemma	-m 2048 -e 126976 -c 81
 Zgemma H5	h5	Zgemma H5	/zgemma/h5	/fullbackup_h5	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H6	h6	Zgemma H6	/zgemma/h6	/fullbackup_h6	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H7	h7	Zgemma H7	/zgemma/h7	/fullbackup_h7	/zgemma			rootfs.tar.bz2	kernel.bin	none
-Zgemma H8	h8	Zgemma H8	/zgemma/h8	/fullbackup_h8	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	non
-Zgemma H8.2H	h8.2h	Zgemma H8.2H	/zgemma/h8	/fullbackup_h8	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	non
+Zgemma H8	h8	Zgemma H8	/zgemma/h8	/fullbackup_h8	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma H8.2H	h8.2h	Zgemma H8.2H	/zgemma/h8	/fullbackup_h8	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H9	h9	Zgemma H9	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H9.S	h9.s	Zgemma H9.S	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H9.T	h9.t	Zgemma H9.T	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
@@ -251,7 +251,10 @@ Zgemma H9.2S	h9.2s	Zgemma H9.2S	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126
 Zgemma H9 Combo	h9combo	Zgemma H9 Combo	/zgemma/h9combo	/fullbackup_h9combo	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H9 Twin	h9twin	Zgemma H9 Twin	/zgemma/h9combo	/fullbackup_h9combo	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H9 Combo SE	h9combose	Zgemma H9 Combo SE	/zgemma/h9combose	/fullbackup_h9combose	/zgemma			rootfs.tar.bz2	uImage	none
-Zgemma H9 SE	h9se	Zgemma H9 SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H9 Twin SE	h9twinse	Zgemma H9 Twin SE	/zgemma/h9combose	/fullbackup_h9combo	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H9.S SE	h9se.s	Zgemma H9.S SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H9.2S SE	h9se.2s	Zgemma H9.2S SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H9.2H SE	h9se.2h	Zgemma H9.2H SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H10	h10	Zgemma H10	/zgemma/h10	/fullbackup_h10	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H11	h11	Zgemma H11	/zgemma/h11	/fullbackup_h11	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma HZero	hzero	Zgemma HZero	/zgemma/hzero	/fullbackup_hzero	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
