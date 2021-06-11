@@ -179,7 +179,7 @@ WORKDIR="$MEDIA/bi"
 ######################### START THE LOGFILE $LOGFILE ##########################
 echo -n "" > $LOGFILE
 log "*** THIS BACKUP IS CREATED WITH THE BACKUPSUITE PLUGIN ***"
-log "*****  https://github.com/OpenVisionE2/BackupSuite  ******"
+log "*****  https://github.com/persianpros/BackupSuite-PLi  ******"
 log $LINE
 log "Plugin version     = "`cat /var/lib/opkg/info/enigma2-plugin-extensions-backupsuite.control | grep "Version: " | cut -d "+" -f 2- | cut -d "-" -f1`
 log "Back-up media      = $MEDIA"
