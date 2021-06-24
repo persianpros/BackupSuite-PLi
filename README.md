@@ -1,4 +1,4 @@
-BackupSuite [![Build Status](https://travis-ci.com/persianpros/BackupSuite-PLi.svg?branch=master)](https://travis-ci.com/persianpros/BackupSuite-PLi) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+BackupSuite [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ===========
 Created by Pedro Newbie revamped by Persian Prince
 
