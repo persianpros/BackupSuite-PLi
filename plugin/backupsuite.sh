@@ -356,7 +356,7 @@ if [ $ROOTNAME != "rootfs.tar.bz2" -o $SEARCH = "h9" -o $SEARCH = "i55plus" -o $
 	fi
 	log "--------------------------"
 else
-	if [ $SEARCH = "solo4k" -o $SEARCH = "vusolo4k" -o $SEARCH = "ultimo4k" -o $SEARCH = "vuultimo4k" -o $SEARCH = "uno4k" -o $SEARCH = "vuuno4k" -o $SEARCH = "uno4kse" -o $SEARCH = "vuuno4kse" -o $SEARCH = "lunix3-4k" -o $SEARCH = "lunix34k" -o $SEARCH = "lunix4k" -o $SEARCH = "galaxy4k" ] ; then
+	if [ $SEARCH = "solo4k" -o $SEARCH = "vusolo4k" -o $SEARCH = "ultimo4k" -o $SEARCH = "vuultimo4k" -o $SEARCH = "uno4k" -o $SEARCH = "vuuno4k" -o $SEARCH = "uno4kse" -o $SEARCH = "vuuno4kse" -o $SEARCH = "lunix3-4k" -o $SEARCH = "lunix4k" -o $SEARCH = "galaxy4k" ] ; then
 		dd if=/dev/mmcblk0p1 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p1"
 	elif [ $SEARCH = "h7" ] ; then
@@ -438,6 +438,11 @@ elif [ $ACTION = "force" ] ; then
 	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
 fi
 image_version > "$MAINDEST/imageversion"
+if [ $SEARCH = "lunix3-4k" -o $SEARCH = "lunix4k" -o $SEARCH = "galaxy4k" -o $SEARCH = "revo4k" ] ; then
+	if [ -f /boot/initrd_run.bin ] ; then
+		cp /boot/initrd_run.bin "$MAINDEST/initrd_run.bin"
+	fi
+fi
 if [ $SEARCH = "h9" -o $SEARCH = "h9se" -o $SEARCH = "h9combo" -o $SEARCH = "h9combose" -o $SEARCH = "i55plus" -o $SEARCH = "i55se" -o $SEARCH = "h10" -o $SEARCH = "hzero" -o $SEARCH = "h8" -o $SEARCH = "h8.2h" -o $SEARCH = "h9.s" -o $SEARCH = "h9.t" -o $SEARCH = "h9.2h" -o $SEARCH = "h9.2s" -o $SEARCH = "h9twin" ] ; then
 	log "Zgemma hisil found, we need to copy more files for flashing later!"
 	dd if=/dev/mtd0 of=$MAINDEST/fastboot.bin > /dev/null 2>&1
