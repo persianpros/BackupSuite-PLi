@@ -1,250 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-22 19:19+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Hains van den Bosch <hainsvdbosch@ziggo.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 2.1.1\n"
 
-#: plugin.py 89
-msgid "Make a backup or restore a backup"
-msgstr "Maak een backup of herstel een backup"
-
-msgid "Full back-up on HDD"
-msgstr "Volledige back-up op de harddisk"
-
-msgid ""
-"Do you want to make an USB-back-up image on HDD? \n"
-"\n"
-"This only takes a few minutes and is fully automatic.\n"
-msgstr ""
-"Wil je een USB-back-up maken op je harddisk? \n"
-"\n"
-"Dit duurt enige minuten afhankelijk van het bestandssysteem en is volledig "
-"automatisch.\n"
-
-msgid "Full back-up to USB"
-msgstr "Volledige back-up naar USB"
-
-msgid ""
-"Do you want to make a back-up on USB?\n"
-"\n"
-"This only takes a few minutes depending on the used filesystem and is fully "
-"automatic.\n"
-"\n"
-"Make sure you first insert an USB flash drive before you select Yes."
-msgstr ""
-"Wil je een back-up maken direct op een USB-stick?\n"
-"\n"
-"Dit duurt enige minuten afhankelijk van het bestandssysteem.\n"
-"\n"
-"Zorg er voor dat een USB-stick is geplaatst in de USB-poort voordat je JA "
-"kiest."
-
-#, fuzzy
-#| msgid "Full back-up on HDD"
-msgid "Full back-up on MMC"
-msgstr "Volledige back-up op de harddisk"
-
-#, fuzzy
-#| msgid ""
-#| "Do you want to make an USB-back-up image on HDD? \n"
-#| "\n"
-#| "This only takes a few minutes and is fully automatic.\n"
-msgid ""
-"Do you want to make an USB-back-up image on MMC? \n"
-"\n"
-"This only takes a few minutes and is fully automatic.\n"
-msgstr ""
-"Wil je een USB-back-up maken op je harddisk? \n"
-"\n"
-"Dit duurt enige minuten afhankelijk van het bestandssysteem en is volledig "
-"automatisch.\n"
-
-msgid "No supported receiver found!"
-msgstr "Geen ondersteunde ontvanger gevonden!"
-
-msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "BACK-UP GEREEDSCHAP, VOOR HET MAKEN VAN EEN VOLLEDIGE BACK-UP"
-
-msgid "Please be patient, a backup will now be made, this will take about: "
-msgstr "Een ogenblik geduld, de back-up wordt nu gemaakt, dit duurt ongeveer: "
-
-msgid " size to be backed up: "
-msgstr " omvang om te backuppen: "
-
-msgid "not found, the backup process will be aborted!"
-msgstr "niet gevonden, het back-up proces zal worden afgebroken!"
-
-msgid "Some information about the task"
-msgstr "Wat informatie omtrent de taak"
-
-msgid "Create: root.ubifs"
-msgstr "Maak nu het bestand: root.ubifs"
-
-msgid "Create: kerneldump"
-msgstr "Maak nu de kerneldump"
-
-msgid "Additional backup -> "
-msgstr "Extra backup -> "
-
-msgid "USB Image created in: "
-msgstr "USB-image gemaakt in: "
-
-msgid "and there is made an extra copy in: "
-msgstr "en er is een extra kopie gemaakt in: "
-
-msgid "Please check the manual of the receiver on how to restore the image."
-msgstr ""
-"Raadpleeg de handleiding van de box hoe je een back-up terug kan plaatsen."
-
-msgid "Image creation FAILED!"
-msgstr "Back-up maken is NIET gelukt!"
-
-msgid "available "
-msgstr "beschikbaar "
-
-msgid ""
-"There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
-"an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr ""
-"Er is een geldige USB-stick gevonden in een van de USB-poorten, daarom wordt "
-"er nu een extra kopie van de back-up gekopieerd naar de USB-stick."
-
-msgid "This only takes about 20 seconds....."
-msgstr "Dit duurt maar ongeveer 20 seconden....."
-
-msgid "Backup finished and copied to your USB-flashdrive."
-msgstr "Backup klaar en gekopieerd naar de USB-stick."
-
-msgid "Full back-up to the harddisk"
-msgstr "Volledige Backup op de harde schijf"
-
-msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "Er is GEEN geldige USB-stick gevonden, dus ik heb niets te doen."
-
-msgid "PLEASE READ THIS:"
-msgstr "LEES DIT A.U.B."
-
-msgid ""
-"To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
-"the name:"
-msgstr ""
-"Om direct een back-up op de USB-stick te maken MOET er een bestand op staan "
-"met de naam:"
-
-msgid "backupstick or"
-msgstr "backupstick of"
-
-msgid "backupstick.txt"
-msgstr "backupstick.txt"
-
-msgid ""
-"If you place an USB-stick containing this file then the back-up will be "
-"automatically made onto the USB-stick and can be used to restore the current "
-"image if necessary."
-msgstr ""
-"Als je een USB-stick plaatst met dit bestand dan wordt de back-up "
-"automatisch op de USB-stick geplaatst en kan dan gebruikt worden om de image "
-"te herstellen."
-
-msgid "The program will exit now."
-msgstr "Het programma sluit nu af."
-
-msgid "Full back-up direct to USB"
-msgstr "Volledige back-up direct op USB"
-
-msgid "The content of the folder is:"
-msgstr "De inhoud van de map is:"
-
-msgid "Time required for this process: "
-msgstr "Tijd die nodig was voor dit proces: "
-
-msgid "minutes"
-msgstr "minuten"
-
-msgid "Backup done with: "
-msgstr "Backup gemaakt met: "
-
-msgid "KB per second"
-msgstr "KB per seconde"
-
-msgid ""
-"Most likely this back-up can't be restored because of it's size, it's simply "
-"too big to restore. This is a limitation of the bootloader not of the back-"
-"up or the BackupSuite."
-msgstr ""
-"Hoogstwaarschijnlijk kan deze back-up niet hersteld worden gezien de omvang, "
-"het is gewoonweg te groot om te herstellen. Dit is een beperking van de "
-"bootloader niet van de back-up of de BackupSuite."
-
-msgid ""
-"There COULD be a problem with restoring this back-up because the size of the "
-"back-up comes close to the maximum size. This is a limitation of the "
-"bootloader not of the back-up or the BackupSuite."
-msgstr ""
-"Er KAN een probleem zijn om deze back-up te herstellen vanwege het feit dat "
-"de omvang dicht tegen de maximale omvang ligt. Dit is een beperking van de "
-"bootloader, niet van de back-up of de BackupSuite."
-
-msgid "* * * WARNING * * *"
-msgstr "* * * WAARSCHUWING * * *"
-
-msgid "Not enough free space on "
-msgstr "Niet genoeg vrije ruimte op "
-
-msgid " to make a back-up!"
-msgstr " om een back-up te maken!"
-
-msgid " MB available space"
-msgstr " MB beschikbare ruimte"
-
-msgid " MB needed space"
-msgstr " MB benodigde ruimte"
-
-msgid ""
-"The program will abort, please try another medium with more free space to "
-"create your back-up."
-msgstr ""
-"Het programma wordt afgesloten, probeer alstublieft een medium met meer "
-"beschikbare ruimte om uw back-up te maken."
-
-#, fuzzy
-#| msgid "Full back-up to the harddisk"
-msgid "Full back-up to the MultiMediaCard"
-msgstr "Volledige Backup op de harde schijf"
-
-msgid "is not executable..."
-msgstr "is niet uitvoerbaar.."
-
-msgid "Using your own custom lookuptable.txt from the folder /etc"
-msgstr "Gebruik uw eigen gemaakte lookuptable.txt in de folder /etc"
-
-msgid "Version unknown, probably not installed the right way."
-msgstr "Versie onbekend, waarschijnlijk niet op de juiste manier geinstalleerd."
-
-msgid "not installed yet, now installing"
-msgstr "niet geinstalleerd, nu installeren"
-
-msgid "Probably you are trying to make the back-up in flash memory"
-msgstr "U probeert waarschijnlijk een backup te maken in het flash geheugen"
-
-msgid "No additional USB-stick found to copy an extra backup"
-msgstr "Geen extra USB-stick gevonden om een extra backup te kopiëren"
-
-msgid "Installed packages contained in this backup:"
-msgstr "Geinstalleerde pakketten in deze backup:"
-
-msgid "NFI Image created in: "
-msgstr "NFI Image gemaakt in: "
-
-#: plugin.py 294
+#: ../plugin.py:441
 msgid ""
 "\n"
 "The found files:"
@@ -252,104 +21,379 @@ msgstr ""
 "\n"
 "De gevonden bestanden:"
 
-#: plugin.py 300
+#: ../plugin.py:358
+msgid ""
+"\n"
+"You are using dual multiboot!"
+msgstr ""
+
+#: ../plugin.py:447
 #, python-format
 msgid "  %s (maybe error)"
 msgstr "  %s (misschien fout)"
 
-#: plugin.py 297
+#: ../plugin.py:444
 #, python-format
 msgid "  %s (maybe ok)"
 msgstr "  %s (misschien ok)"
 
-#: plugin.py 303
+#: ../message.py:180
+msgid " MB available space"
+msgstr " MB beschikbare ruimte"
+
+#: ../message.py:185
+msgid " MB needed space"
+msgstr " MB benodigde ruimte"
+
+#: ../plugin.py:450
 msgid " nothing!"
 msgstr " niets!"
 
-#: plugin.py 327
-msgid ""
-"A recording is currently running. Please stop the recording before trying to "
-"start a flashing."
+#: ../message.py:45
+msgid " size to be backed up: "
+msgstr " omvang om te backuppen: "
+
+#: ../message.py:175
+msgid " to make a back-up!"
+msgstr " om een back-up te maken!"
+
+#: ../message.py:169
+msgid "* * * WARNING * * *"
+msgstr "* * * WAARSCHUWING * * *"
+
+#: ../plugin.py:480
+msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
+msgstr "Er loopt momenteel een opname. Stop deze opname voordat geprobeerd wordt om te flashen"
+
+#: ../message.py:70
+msgid "Additional backup -> "
+msgstr "Extra backup -> "
+
+#: ../message.py:35
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "BACK-UP GEREEDSCHAP, VOOR HET MAKEN VAN EEN VOLLEDIGE BACK-UP"
+
+#: ../plugin.py:132
+msgid "Backup > HDD"
+msgstr "Backup > HDD"
+
+#: ../plugin.py:130
+#, fuzzy
+msgid "Backup > MMC"
+msgstr "Backup > HDD"
+
+#: ../plugin.py:133
+msgid "Backup > USB"
+msgstr "Backup > USB"
+
+#: ../plugin.py:584 ../plugin.py:591
+msgid "Backup and restore your image"
 msgstr ""
-"Er loopt momenteel een opname. Stop deze opname voordat geprobeerd wordt om "
-"te flashen"
 
-#: plugin.py 91
-msgid "Cancel"
-msgstr "Annuleer"
+#: ../message.py:149
+msgid "Backup done with: "
+msgstr "Backup gemaakt met: "
 
-#: plugin.py 383
+#: ../message.py:106
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Backup klaar en gekopieerd naar de USB-stick."
+
+#: ../plugin.py:338 ../plugin.py:541
+#, fuzzy
+msgid "Backup info"
+msgstr "BackupSuite"
+
+#: ../plugin.py:583 ../plugin.py:590
+msgid "BackupSuite"
+msgstr "BackupSuite"
+
+#: ../plugin.py:131 ../plugin.py:233 ../plugin.py:262
+msgid "Close"
+msgstr ""
+
+#: ../message.py:65
+msgid "Create: kerneldump"
+msgstr "Maak nu de kerneldump"
+
+#: ../message.py:60
+msgid "Create: root.ubifs"
+msgstr "Maak nu het bestand: root.ubifs"
+
+#: ../plugin.py:339 ../plugin.py:570
+msgid "Delete"
+msgstr ""
+
+#: ../plugin.py:567
+#, fuzzy
+msgid "Delete backup"
+msgstr "Backup terugzetten"
+
+#: ../plugin.py:540
 #, python-format
 msgid "Do you really want to unpack %s ?"
 msgstr "Wil je echt %s uitpakken?"
 
-#: plugin.py 317
+#: ../plugin.py:153
+msgid ""
+"Do you want to make a back-up on USB?\n"
+"\n"
+"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"\n"
+"Make sure you first insert an USB flash drive before you select Yes."
+msgstr ""
+"Wil je een back-up maken direct op een USB-stick?\n"
+"\n"
+"Dit duurt enige minuten afhankelijk van het bestandssysteem.\n"
+"\n"
+"Zorg er voor dat een USB-stick is geplaatst in de USB-poort voordat je JA kiest."
+
+#: ../plugin.py:150
+msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Wil je een USB-back-up maken op je harddisk? \n"
+"\n"
+"Dit duurt enige minuten afhankelijk van het bestandssysteem en is volledig automatisch.\n"
+
+#: ../plugin.py:156
+#, fuzzy
+msgid ""
+"Do you want to make an USB-back-up image on MMC? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Wil je een USB-back-up maken op je harddisk? \n"
+"\n"
+"Dit duurt enige minuten afhankelijk van het bestandssysteem en is volledig automatisch.\n"
+
+#: ../plugin.py:470
 msgid "Exit"
 msgstr "Einde"
 
-#: plugin.py 331
+#: ../plugin.py:484
 msgid "Flashing: "
 msgstr "Flashing"
 
-#: plugin.py 275
+#: ../plugin.py:369
 msgid "For flashing your receiver files are needed:\n"
 msgstr "Benodigde bestanden om de ontvanger te flashen:\n"
 
-#: plugin.py 354
+#: ../message.py:129
+msgid "Full back-up direct to USB"
+msgstr "Volledige back-up direct op USB"
+
+#: ../plugin.py:194
+msgid "Full back-up on HDD"
+msgstr "Volledige back-up op de harddisk"
+
+#: ../plugin.py:208
+#, fuzzy
+msgid "Full back-up on MMC"
+msgstr "Volledige back-up op de harddisk"
+
+#: ../plugin.py:201
+msgid "Full back-up to USB"
+msgstr "Volledige back-up naar USB"
+
+#: ../message.py:235
+#, fuzzy
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Volledige Backup op de harde schijf"
+
+#: ../message.py:111
+msgid "Full back-up to the harddisk"
+msgstr "Volledige Backup op de harde schijf"
+
+#: ../message.py:123
+msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
+msgstr "Als je een USB-stick plaatst met dit bestand dan wordt de back-up automatisch op de USB-stick geplaatst en kan dan gebruikt worden om de image te herstellen."
+
+#: ../message.py:90
+msgid "Image creation FAILED!"
+msgstr "Back-up maken is NIET gelukt!"
+
+#: ../message.py:225
+msgid "Installed packages contained in this backup:"
+msgstr "Geinstalleerde pakketten in deze backup:"
+
+#: ../message.py:154
+msgid "KB per second"
+msgstr "KB per seconde"
+
+#: ../plugin.py:127
+msgid "Make a backup or restore a backup"
+msgstr "Maak een backup of herstel een backup"
+
+#: ../message.py:159
+msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Hoogstwaarschijnlijk kan deze back-up niet hersteld worden gezien de omvang, het is gewoonweg te groot om te herstellen. Dit is een beperking van de bootloader niet van de back-up of de BackupSuite."
+
+#: ../plugin.py:45
+msgid "NAS"
+msgstr ""
+
+#: ../message.py:230
+msgid "NFI Image created in: "
+msgstr "NFI Image gemaakt in: "
+
+#: ../plugin.py:516
 msgid "NOT found files for flashing!\n"
 msgstr "GEEN bestanden gevonden om te flashen!\n"
 
-#: plugin.py 311 343
+#: ../message.py:220
+msgid "No additional USB-stick found to copy an extra backup"
+msgstr "Geen extra USB-stick gevonden om een extra backup te kopiëren"
+
+#: ../plugin.py:173 ../message.py:30
+msgid "No supported receiver found!"
+msgstr "Geen ondersteunde ontvanger gevonden!"
+
+#: ../message.py:170
+msgid "Not enough free space on "
+msgstr "Niet genoeg vrije ruimte op "
+
+#: ../plugin.py:458 ../plugin.py:499
 msgid "Only kernel"
 msgstr "Alleen kernel"
 
-#: plugin.py 310 340
+#: ../plugin.py:457 ../plugin.py:496
 msgid "Only root"
 msgstr "Alleen root"
 
-#: plugin.py 361
+#: ../message.py:118
+msgid "PLEASE READ THIS:"
+msgstr "LEES DIT A.U.B."
+
+#: ../message.py:40
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr "Een ogenblik geduld, de back-up wordt nu gemaakt, dit duurt ongeveer: "
+
+#: ../message.py:85
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr "Raadpleeg de handleiding van de box hoe je een back-up terug kan plaatsen."
+
+#: ../plugin.py:234
+msgid "Please wait"
+msgstr ""
+
+#: ../plugin.py:528
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
 msgstr "AUB: De ontvanger NIET HERSTARTEN en NIET de stroom onderbreken.\n"
 
-#: plugin.py 94
+#: ../message.py:215
+msgid "Probably you are trying to make the back-up in flash memory"
+msgstr "U probeert waarschijnlijk een backup te maken in het flash geheugen"
+
+#: ../plugin.py:134
 msgid "Restore backup"
 msgstr "Backup terugzetten"
 
-#: plugin.py 249 263 269
+#: ../plugin.py:336 ../plugin.py:353 ../plugin.py:362
 msgid "Run flash"
 msgstr "Start flash"
 
-#: plugin.py 274
+#: ../plugin.py:464 ../plugin.py:511
+#, fuzzy
+msgid "Second partition (only kernel)"
+msgstr "Standaard (root en kernel)"
+
+#: ../plugin.py:463 ../plugin.py:508
+msgid "Second partition (only root)"
+msgstr ""
+
+#: ../plugin.py:462 ../plugin.py:505
+#, fuzzy
+msgid "Second partition (root and kernel)"
+msgstr "Standaard (root en kernel)"
+
+#: ../plugin.py:368
 msgid "Select parameter for start flash!\n"
 msgstr "Selecteer parameter om flash te starten!\n"
 
-#: plugin.py 199
+#: ../plugin.py:261
 msgid "Select the folder with backup"
 msgstr "Selecteer de map met de backup"
 
-#: plugin.py 367
+#: ../plugin.py:521
 msgid "Show only found image and mtd partitions.\n"
 msgstr "Toon alleen de gevonden image en mtd partities.\n"
 
-#: plugin.py 308 334
+#: ../plugin.py:455 ../plugin.py:487
 msgid "Simulate (no write)"
 msgstr "Simuleren (niet schrijven)"
 
-#: plugin.py 309 337
+#: ../plugin.py:461 ../plugin.py:502
+#, fuzzy
+msgid "Simulate second partition (no write)"
+msgstr "Simuleren (niet schrijven)"
+
+#: ../message.py:55
+msgid "Some information about the task"
+msgstr "Wat informatie omtrent de taak"
+
+#: ../plugin.py:456 ../plugin.py:490
 msgid "Standard (root and kernel)"
 msgstr "Standaard (root en kernel)"
 
-#: plugin.py 362
-msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr ""
-"De image en/of de kernel worden geflasht en automatisch herstart binnen een "
-"paar minuten.\n"
+#: ../message.py:134
+msgid "The content of the folder is:"
+msgstr "De inhoud van de map is:"
 
-#: plugin.py 247 380
+#: ../plugin.py:529
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr "De image en/of de kernel worden geflasht en automatisch herstart binnen een paar minuten.\n"
+
+#: ../message.py:190
+msgid "The program will abort, please try another medium with more free space to create your back-up."
+msgstr "Het programma wordt afgesloten, probeer alstublieft een medium met meer beschikbare ruimte om uw back-up te maken."
+
+#: ../message.py:124
+msgid "The program will exit now."
+msgstr "Het programma sluit nu af."
+
+#: ../message.py:164
+msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Er KAN een probleem zijn om deze back-up te herstellen vanwege het feit dat de omvang dicht tegen de maximale omvang ligt. Dit is een beperking van de bootloader, niet van de back-up of de BackupSuite."
+
+#: ../message.py:116
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "Er is GEEN geldige USB-stick gevonden, dus ik heb niets te doen."
+
+#: ../message.py:100
+msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr "Er is een geldige USB-stick gevonden in een van de USB-poorten, daarom wordt er nu een extra kopie van de back-up gekopieerd naar de USB-stick."
+
+#: ../message.py:101
+msgid "This only takes about 20 seconds....."
+msgstr "Dit duurt maar ongeveer 20 seconden....."
+
+#: ../message.py:139
+msgid "Time required for this process: "
+msgstr "Tijd die nodig was voor dit proces: "
+
+#: ../message.py:119
+msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
+msgstr "Om direct een back-up op de USB-stick te maken MOET er een bestand op staan met de naam:"
+
+#: ../message.py:75
+msgid "USB Image created in: "
+msgstr "USB-image gemaakt in: "
+
+#: ../plugin.py:334 ../plugin.py:537
 msgid "Unzip"
 msgstr "Unzip"
 
-#: plugin.py 266
+#: ../message.py:200
+msgid "Using your own custom lookuptable.txt from the folder /etc"
+msgstr "Gebruik uw eigen gemaakte lookuptable.txt in de folder /etc"
+
+#: ../message.py:205
+msgid "Version unknown, probably not installed the right way."
+msgstr "Versie onbekend, waarschijnlijk niet op de juiste manier geinstalleerd."
+
+#: ../plugin.py:359
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -359,51 +403,60 @@ msgstr ""
 "Gebruik op eigen risico! Maak altijd een backup voor gebruik!\n"
 "Niet gebruiken als je meervoudige ubi volumes gebruikt in de ubi laag!"
 
-#: plugin.py 360
+#: ../plugin.py:232
+msgid "What is new since the last release?"
+msgstr "Wat is nieuw sinds de laatste uitgave?"
+
+#: ../plugin.py:571
+#, python-format
+msgid ""
+"You are about to delete this backup:\n"
+"\n"
+"%s\n"
+"Continue?"
+msgstr ""
+
+#: ../plugin.py:527
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "Je STB zal bevriezen gedurende de flash procedure.\n"
 
-#: plugin.py 203 241
+#: ../message.py:80
+msgid "and there is made an extra copy in: "
+msgstr "en er is een extra kopie gemaakt in: "
+
+#: ../message.py:95
+msgid "available "
+msgstr "beschikbaar "
+
+#: ../message.py:120
+msgid "backupstick or"
+msgstr "backupstick of"
+
+#: ../message.py:121
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+#: ../plugin.py:266 ../plugin.py:328
 #, python-format
 msgid "current:  %s"
 msgstr "huidig:  %s"
 
-#: plugin.py 359
+#: ../message.py:195
+msgid "is not executable..."
+msgstr "is niet uitvoerbaar.."
+
+#: ../message.py:144
+msgid "minutes"
+msgstr "minuten"
+
+#: ../message.py:50
+msgid "not found, the backup process will be aborted!"
+msgstr "niet gevonden, het back-up proces zal worden afgebroken!"
+
+#: ../message.py:210
+msgid "not installed yet, now installing"
+msgstr "niet geinstalleerd, nu installeren"
+
+#: ../plugin.py:526
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "ofgwrite zal enigma2 stoppen om te kunnen flashen.\n"
-
-#: plugin.py 312 346
-msgid "Only root with use mtdy device"
-msgstr "Alleen root met gebruik van mtdy device"
-
-#: plugin.py 313 349
-msgid "Only kernel with use mtdx device"
-msgstr "Alleen kernel met gebruik van mtdx device"
-
-#: plugin.py 405 412
-msgid "BackupSuite"
-msgstr "BackupSuite"
-
-#: plugin.py 406 413
-msgid "Backup and restore your image"
-msgstr ""
-
-#: plugin.py 92
-msgid "Backup > HDD"
-msgstr "Backup > HDD"
-
-#: plugin.py 93
-msgid "Backup > USB"
-msgstr "Backup > USB"
-
-#, fuzzy
-#| msgid "Backup > HDD"
-msgid "Backup > MMC"
-msgstr "Backup > HDD"
-
-#: plugin.py 173
-msgid "What is new since the last release?"
-msgstr "Wat is nieuw sinds de laatste uitgave?"
-
-#~ msgid "Enables back-up & restore without an USB-stick"
-#~ msgstr "Maakt backups en herstelt deze zonder USB-stick"

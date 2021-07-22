@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BackupSuite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-15 14:54+0300\n"
+"POT-Creation-Date: 2021-07-22 19:19+0200\n"
 "PO-Revision-Date: 2020-03-15 15:59+0300\n"
 "Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
 "Language-Team: Turkish\n"
@@ -18,237 +18,124 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: message.py:26 plugin.py:163
-msgid "No supported receiver found!"
-msgstr "Desteklenen alıcı bulunamadı!"
+#: ../plugin.py:441
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+"\n"
+"Bulunan dosyalar:"
 
-#: message.py:30
-msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "KOMPLE YEDEKLEME İÇİN YEDEKLEME ARACI"
+#: ../plugin.py:358
+msgid ""
+"\n"
+"You are using dual multiboot!"
+msgstr ""
 
-#: message.py:34
-msgid "Please be patient, a backup will now be made, this will take about: "
-msgstr "Lütfen sabırlı olun, şimdi bir yedekleme yapılacak, bu işlem aşağıdakileri alacak: "
+#: ../plugin.py:447
+#, python-format
+msgid "  %s (maybe error)"
+msgstr "  %s (belki hata)"
 
-#: message.py:38
-msgid " size to be backed up: "
-msgstr " yedeklenecek boyut: "
+#: ../plugin.py:444
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr "  %s (belki tamam)"
 
-#: message.py:42
-msgid "not found, the backup process will be aborted!"
-msgstr "bulunamadı, yedekleme işlemi iptal edilecek!"
-
-#: message.py:46
-msgid "Some information about the task"
-msgstr "Görev hakkında bazı bilgiler"
-
-#: message.py:50
-msgid "Create: root.ubifs"
-msgstr "Oluştur: root.ubifs"
-
-#: message.py:54
-msgid "Create: kerneldump"
-msgstr "Oluştur: kerneldump"
-
-#: message.py:58
-msgid "Additional backup -> "
-msgstr "Ek yedekleme -> "
-
-#: message.py:62
-msgid "USB Image created in: "
-msgstr "USB Görüntüsü oluşturuldu: "
-
-#: message.py:66
-msgid "and there is made an extra copy in: "
-msgstr "ve içinde fazladan bir kopya var: "
-
-#: message.py:70
-msgid "Please check the manual of the receiver on how to restore the image."
-msgstr "Lütfen görüntünün nasıl geri yükleneceği konusunda alıcının kılavuzuna bakın."
-
-#: message.py:74
-msgid "Image creation FAILED!"
-msgstr "Görüntü oluşturma BAŞARISIZ!"
-
-#: message.py:78
-msgid "available "
-msgstr "mevcut "
-
-#: message.py:82
-msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr "USB bağlantı noktalarından birinde geçerli bir USB flash sürücü var, bu nedenle yedek görüntünün fazladan bir kopyası artık bu USB flash sürücüye kopyalanacak."
-
-#: message.py:83
-msgid "This only takes about 20 seconds....."
-msgstr "Bu yaklaşık 20 saniye sürüyor ....."
-
-#: message.py:87
-msgid "Backup finished and copied to your USB-flashdrive."
-msgstr "Yedekleme tamamlandı ve USB flash sürücünüze kopyalandı."
-
-#: message.py:91
-msgid "Full back-up to the harddisk"
-msgstr "Sabit diske tam yedekleme"
-
-#: message.py:95
-msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "Geçerli bir USB bellek bulunamadı, bu yüzden yapacak bir şeyim yok."
-
-#: message.py:97
-msgid "PLEASE READ THIS:"
-msgstr "LÜTFEN BUNU OKUYUNUZ:"
-
-#: message.py:98
-msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
-msgstr "Doğrudan USB çubuğa yedeklemek için USB çubuğunda şu adda bir dosya bulunmalıdır:"
-
-#: message.py:99
-msgid "backupstick or"
-msgstr "backupstick veya"
-
-#: message.py:100
-msgid "backupstick.txt"
-msgstr "backupstick.txt"
-
-#: message.py:102
-msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
-msgstr "Bu dosyayı içeren bir USB bellek yerleştirirseniz, yedek otomatik olarak USB bellek üzerine yapılır ve gerekirse geçerli görüntüyü geri yüklemek için kullanılabilir."
-
-#: message.py:103
-msgid "The program will exit now."
-msgstr "Program şimdi çıkacak."
-
-#: message.py:107
-msgid "Full back-up direct to USB"
-msgstr "Doğrudan USB'ye tam yedekleme"
-
-#: message.py:111
-msgid "The content of the folder is:"
-msgstr "Klasörün içeriği:"
-
-#: message.py:116
-msgid "Time required for this process: "
-msgstr "Bu işlem için gereken süre: "
-
-#: message.py:120
-msgid "minutes"
-msgstr "dakika"
-
-#: message.py:124
-msgid "Backup done with: "
-msgstr "Yedekleme şununla yapıldı: "
-
-#: message.py:128
-msgid "KB per second"
-msgstr "Saniyede KB"
-
-#: message.py:132
-msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Büyük olasılıkla bu yedekleme boyutu nedeniyle geri yüklenemez, geri yüklemek için çok büyüktür. Bu, yedeklemenin veya BackupSuite'ın değil önyükleyicisinin bir sınırlamasıdır."
-
-#: message.py:136
-msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Yedeklemenin boyutu maksimum boyuta yaklaştığı için bu yedeklemeyi geri yükleme ile ilgili bir sorun olabilir. Bu, yedeklemenin veya BackupSuite'ın değil önyükleyicisinin bir sınırlamasıdır."
-
-#: message.py:140
-msgid "* * * WARNING * * *"
-msgstr "* * * UYARI * * *"
-
-#: message.py:141
-msgid "Not enough free space on "
-msgstr "Yeterli boş alan yok "
-
-#: message.py:145
-msgid " to make a back-up!"
-msgstr " yedekleme yapmak için!"
-
-#: message.py:149
+#: ../message.py:180
 msgid " MB available space"
 msgstr " MB kullanılabilir alan"
 
-#: message.py:153
+#: ../message.py:185
 msgid " MB needed space"
 msgstr " MB gerekli alan"
 
-#: message.py:157
-msgid "The program will abort, please try another medium with more free space to create your back-up."
-msgstr "Program iptal edilecek, lütfen yedeklemenizi oluşturmak için daha fazla boş alana sahip başka bir ortam deneyin."
+#: ../plugin.py:450
+msgid " nothing!"
+msgstr " hiçbir şey!"
 
-#: message.py:161
-msgid "is not executable..."
-msgstr "yürütülebilir değil ..."
+#: ../message.py:45
+msgid " size to be backed up: "
+msgstr " yedeklenecek boyut: "
 
-#: message.py:165
-msgid "Using your own custom lookuptable.txt from the folder /etc"
-msgstr "/etc klasöründen kendi özel lookuptable.txt dosyanızı kullanma"
+#: ../message.py:175
+msgid " to make a back-up!"
+msgstr " yedekleme yapmak için!"
 
-#: message.py:169
-msgid "Version unknown, probably not installed the right way."
-msgstr "Sürüm bilinmiyor, muhtemelen doğru şekilde yüklenmemiş."
+#: ../message.py:169
+msgid "* * * WARNING * * *"
+msgstr "* * * UYARI * * *"
 
-#: message.py:173
-msgid "not installed yet, now installing"
-msgstr "henüz kurulmadı, şimdi kuruluyor"
+#: ../plugin.py:480
+msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
+msgstr "Kayıt şu anda çalışıyor. Lütfen yanıp sönmeye başlamadan önce kaydı durdurun."
 
-#: message.py:177
-msgid "Probably you are trying to make the back-up in flash memory"
-msgstr "Muhtemelen flash bellekte yedekleme yapmaya çalışıyorsunuz"
+#: ../message.py:70
+msgid "Additional backup -> "
+msgstr "Ek yedekleme -> "
 
-#: message.py:181
-msgid "No additional USB-stick found to copy an extra backup"
-msgstr "Fazladan bir yedek kopyalamak için ek bir USB bellek bulunamadı"
+#: ../message.py:35
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "KOMPLE YEDEKLEME İÇİN YEDEKLEME ARACI"
 
-#: message.py:185
-msgid "Installed packages contained in this backup:"
-msgstr "Bu yedekte kurulu paketler:"
-
-#: message.py:189
-msgid "NFI Image created in: "
-msgstr "NFI Resim oluşturuldu: "
-
-#: message.py:193
-msgid "Full back-up to the MultiMediaCard"
-msgstr "MultiMediaCard'a tam yedekleme"
-
-#: plugin.py:40
-msgid "NAS"
-msgstr "NAS"
-
-#: plugin.py:117
-msgid "Make a backup or restore a backup"
-msgstr "Yedekleme yapın veya yedeklemeyi geri yükleyin"
-
-#: plugin.py:120
-msgid "Backup > MMC"
-msgstr "Yedekleme> MMC"
-
-#: plugin.py:121 plugin.py:221 plugin.py:249
-msgid "Close"
-msgstr "Kapat"
-
-#: plugin.py:122
+#: ../plugin.py:132
 msgid "Backup > HDD"
 msgstr "Yedekleme> HDD"
 
-#: plugin.py:123
+#: ../plugin.py:130
+msgid "Backup > MMC"
+msgstr "Yedekleme> MMC"
+
+#: ../plugin.py:133
 msgid "Backup > USB"
 msgstr "Yedekleme> USB"
 
-#: plugin.py:124
-msgid "Restore backup"
-msgstr "Yedeği geri yükle"
+#: ../plugin.py:584 ../plugin.py:591
+msgid "Backup and restore your image"
+msgstr "Resminizi yedekleyin ve geri yükleyin"
 
-#: plugin.py:140
-msgid ""
-"Do you want to make an USB-back-up image on HDD? \n"
-"\n"
-"This only takes a few minutes and is fully automatic.\n"
-msgstr ""
-"HDD'de USB yedekleme görüntüsü yapmak istiyor musunuz?\n"
-"\n"
-"Bu yalnızca birkaç dakika sürer ve tam otomatiktir.\n"
+#: ../message.py:149
+msgid "Backup done with: "
+msgstr "Yedekleme şununla yapıldı: "
 
-#: plugin.py:143
+#: ../message.py:106
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Yedekleme tamamlandı ve USB flash sürücünüze kopyalandı."
+
+#: ../plugin.py:338 ../plugin.py:541
+msgid "Backup info"
+msgstr "Yedek bilgi"
+
+#: ../plugin.py:583 ../plugin.py:590
+msgid "BackupSuite"
+msgstr "BackupSuite"
+
+#: ../plugin.py:131 ../plugin.py:233 ../plugin.py:262
+msgid "Close"
+msgstr "Kapat"
+
+#: ../message.py:65
+msgid "Create: kerneldump"
+msgstr "Oluştur: kerneldump"
+
+#: ../message.py:60
+msgid "Create: root.ubifs"
+msgstr "Oluştur: root.ubifs"
+
+#: ../plugin.py:339 ../plugin.py:570
+msgid "Delete"
+msgstr "Sil"
+
+#: ../plugin.py:567
+msgid "Delete backup"
+msgstr "Yedeği sil"
+
+#: ../plugin.py:540
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr "Gerçekten %s paketini açmak istiyor musunuz ?"
+
+#: ../plugin.py:153
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -262,7 +149,17 @@ msgstr ""
 "\n"
 "Evet'i seçmeden önce bir USB flash sürücü taktığınızdan emin olun."
 
-#: plugin.py:146
+#: ../plugin.py:150
+msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"HDD'de USB yedekleme görüntüsü yapmak istiyor musunuz?\n"
+"\n"
+"Bu yalnızca birkaç dakika sürer ve tam otomatiktir.\n"
+
+#: ../plugin.py:156
 msgid ""
 "Do you want to make an USB-back-up image on MMC? \n"
 "\n"
@@ -272,51 +169,227 @@ msgstr ""
 "\n"
 "Bu yalnızca birkaç dakika sürer ve tam otomatiktir.\n"
 
-#: plugin.py:184
+#: ../plugin.py:470
+msgid "Exit"
+msgstr "Çıkış"
+
+#: ../plugin.py:484
+msgid "Flashing: "
+msgstr "Flaş yapiyor: "
+
+#: ../plugin.py:369
+msgid "For flashing your receiver files are needed:\n"
+msgstr "Yanıp sönen alıcı dosyalarınız için:\n"
+
+#: ../message.py:129
+msgid "Full back-up direct to USB"
+msgstr "Doğrudan USB'ye tam yedekleme"
+
+#: ../plugin.py:194
 msgid "Full back-up on HDD"
 msgstr "HDD'de tam yedekleme"
 
-#: plugin.py:191
-msgid "Full back-up to USB"
-msgstr "USB'ye tam yedekleme"
-
-#: plugin.py:198
+#: ../plugin.py:208
 msgid "Full back-up on MMC"
 msgstr "MMC'de tam yedekleme"
 
-#: plugin.py:220
-msgid "What is new since the last release?"
-msgstr "Son sürümden beri yeni olan nedir?"
+#: ../plugin.py:201
+msgid "Full back-up to USB"
+msgstr "USB'ye tam yedekleme"
 
-#: plugin.py:222
+#: ../message.py:235
+msgid "Full back-up to the MultiMediaCard"
+msgstr "MultiMediaCard'a tam yedekleme"
+
+#: ../message.py:111
+msgid "Full back-up to the harddisk"
+msgstr "Sabit diske tam yedekleme"
+
+#: ../message.py:123
+msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
+msgstr "Bu dosyayı içeren bir USB bellek yerleştirirseniz, yedek otomatik olarak USB bellek üzerine yapılır ve gerekirse geçerli görüntüyü geri yüklemek için kullanılabilir."
+
+#: ../message.py:90
+msgid "Image creation FAILED!"
+msgstr "Görüntü oluşturma BAŞARISIZ!"
+
+#: ../message.py:225
+msgid "Installed packages contained in this backup:"
+msgstr "Bu yedekte kurulu paketler:"
+
+#: ../message.py:154
+msgid "KB per second"
+msgstr "Saniyede KB"
+
+#: ../plugin.py:127
+msgid "Make a backup or restore a backup"
+msgstr "Yedekleme yapın veya yedeklemeyi geri yükleyin"
+
+#: ../message.py:159
+msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Büyük olasılıkla bu yedekleme boyutu nedeniyle geri yüklenemez, geri yüklemek için çok büyüktür. Bu, yedeklemenin veya BackupSuite'ın değil önyükleyicisinin bir sınırlamasıdır."
+
+#: ../plugin.py:45
+msgid "NAS"
+msgstr "NAS"
+
+#: ../message.py:230
+msgid "NFI Image created in: "
+msgstr "NFI Resim oluşturuldu: "
+
+#: ../plugin.py:516
+msgid "NOT found files for flashing!\n"
+msgstr "Yanıp sönen dosyalar bulunamadı!\n"
+
+#: ../message.py:220
+msgid "No additional USB-stick found to copy an extra backup"
+msgstr "Fazladan bir yedek kopyalamak için ek bir USB bellek bulunamadı"
+
+#: ../plugin.py:173 ../message.py:30
+msgid "No supported receiver found!"
+msgstr "Desteklenen alıcı bulunamadı!"
+
+#: ../message.py:170
+msgid "Not enough free space on "
+msgstr "Yeterli boş alan yok "
+
+#: ../plugin.py:458 ../plugin.py:499
+msgid "Only kernel"
+msgstr "Sadece çekirdek"
+
+#: ../plugin.py:457 ../plugin.py:496
+msgid "Only root"
+msgstr "Sadece kök"
+
+#: ../message.py:118
+msgid "PLEASE READ THIS:"
+msgstr "LÜTFEN BUNU OKUYUNUZ:"
+
+#: ../message.py:40
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr "Lütfen sabırlı olun, şimdi bir yedekleme yapılacak, bu işlem aşağıdakileri alacak: "
+
+#: ../message.py:85
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr "Lütfen görüntünün nasıl geri yükleneceği konusunda alıcının kılavuzuna bakın."
+
+#: ../plugin.py:234
 msgid "Please wait"
 msgstr "Lütfen bekleyin"
 
-#: plugin.py:248
-msgid "Select the folder with backup"
-msgstr "Yedekli klasörü seç"
+#: ../plugin.py:528
+msgid "Please: DO NOT reboot your STB and turn off the power.\n"
+msgstr "Lütfen: STB'nizi yeniden başlatmayın ve gücü kapatmayın.\n"
 
-#: plugin.py:253 plugin.py:315
-msgid "current:  %s"
-msgstr "akım:  %s"
+#: ../message.py:215
+msgid "Probably you are trying to make the back-up in flash memory"
+msgstr "Muhtemelen flash bellekte yedekleme yapmaya çalışıyorsunuz"
 
-#: plugin.py:321 plugin.py:524
-msgid "Unzip"
-msgstr "Sıkıştır"
+#: ../plugin.py:134
+msgid "Restore backup"
+msgstr "Yedeği geri yükle"
 
-#: plugin.py:323 plugin.py:340 plugin.py:349
+#: ../plugin.py:336 ../plugin.py:353 ../plugin.py:362
 msgid "Run flash"
 msgstr "Flaş çalıştır"
 
-#: plugin.py:325 plugin.py:528
-msgid "Backup info"
-msgstr "Yedek bilgi"
+#: ../plugin.py:464 ../plugin.py:511
+msgid "Second partition (only kernel)"
+msgstr "İkinci bölüm (sadece çekirdek)"
 
-#: plugin.py:326 plugin.py:557
-msgid "Delete"
-msgstr "Sil"
+#: ../plugin.py:463 ../plugin.py:508
+msgid "Second partition (only root)"
+msgstr "İkinci bölüm (sadece kök)"
 
-#: plugin.py:346
+#: ../plugin.py:462 ../plugin.py:505
+msgid "Second partition (root and kernel)"
+msgstr "İkinci bölüm (kök ve çekirdek)"
+
+#: ../plugin.py:368
+msgid "Select parameter for start flash!\n"
+msgstr "Başlama flaşı için parametre seç!\n"
+
+#: ../plugin.py:261
+msgid "Select the folder with backup"
+msgstr "Yedekli klasörü seç"
+
+#: ../plugin.py:521
+msgid "Show only found image and mtd partitions.\n"
+msgstr "Sadece bulunan resim ve mtd bölümlerini göster.\n"
+
+#: ../plugin.py:455 ../plugin.py:487
+msgid "Simulate (no write)"
+msgstr "Benzet (yazma yok)"
+
+#: ../plugin.py:461 ../plugin.py:502
+msgid "Simulate second partition (no write)"
+msgstr "İkinci bölümü simüle et (yazma yok)"
+
+#: ../message.py:55
+msgid "Some information about the task"
+msgstr "Görev hakkında bazı bilgiler"
+
+#: ../plugin.py:456 ../plugin.py:490
+msgid "Standard (root and kernel)"
+msgstr "Standart (kök ve çekirdek)"
+
+#: ../message.py:134
+msgid "The content of the folder is:"
+msgstr "Klasörün içeriği:"
+
+#: ../plugin.py:529
+msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
+msgstr "Görüntü veya çekirdek birkaç dakika içinde yanıp sönecek ve otomatik olarak önyüklenecektir.\n"
+
+#: ../message.py:190
+msgid "The program will abort, please try another medium with more free space to create your back-up."
+msgstr "Program iptal edilecek, lütfen yedeklemenizi oluşturmak için daha fazla boş alana sahip başka bir ortam deneyin."
+
+#: ../message.py:124
+msgid "The program will exit now."
+msgstr "Program şimdi çıkacak."
+
+#: ../message.py:164
+msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Yedeklemenin boyutu maksimum boyuta yaklaştığı için bu yedeklemeyi geri yükleme ile ilgili bir sorun olabilir. Bu, yedeklemenin veya BackupSuite'ın değil önyükleyicisinin bir sınırlamasıdır."
+
+#: ../message.py:116
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "Geçerli bir USB bellek bulunamadı, bu yüzden yapacak bir şeyim yok."
+
+#: ../message.py:100
+msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr "USB bağlantı noktalarından birinde geçerli bir USB flash sürücü var, bu nedenle yedek görüntünün fazladan bir kopyası artık bu USB flash sürücüye kopyalanacak."
+
+#: ../message.py:101
+msgid "This only takes about 20 seconds....."
+msgstr "Bu yaklaşık 20 saniye sürüyor ....."
+
+#: ../message.py:139
+msgid "Time required for this process: "
+msgstr "Bu işlem için gereken süre: "
+
+#: ../message.py:119
+msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
+msgstr "Doğrudan USB çubuğa yedeklemek için USB çubuğunda şu adda bir dosya bulunmalıdır:"
+
+#: ../message.py:75
+msgid "USB Image created in: "
+msgstr "USB Görüntüsü oluşturuldu: "
+
+#: ../plugin.py:334 ../plugin.py:537
+msgid "Unzip"
+msgstr "Sıkıştır"
+
+#: ../message.py:200
+msgid "Using your own custom lookuptable.txt from the folder /etc"
+msgstr "/etc klasöründen kendi özel lookuptable.txt dosyanızı kullanma"
+
+#: ../message.py:205
+msgid "Version unknown, probably not installed the right way."
+msgstr "Sürüm bilinmiyor, muhtemelen doğru şekilde yüklenmemiş."
+
+#: ../plugin.py:359
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -326,111 +399,12 @@ msgstr ""
 "Kendi sorumluluğunuzdadır kullanın! Kullanmadan önce her zaman bir yedekleme yapın!\n"
 "Ubi katmanında birden fazla ubi birimi kullanıyorsanız kullanmayın!"
 
-#: plugin.py:355
-msgid "Select parameter for start flash!\n"
-msgstr "Başlama flaşı için parametre seç!\n"
+#: ../plugin.py:232
+msgid "What is new since the last release?"
+msgstr "Son sürümden beri yeni olan nedir?"
 
-#: plugin.py:356
-msgid "For flashing your receiver files are needed:\n"
-msgstr "Yanıp sönen alıcı dosyalarınız için:\n"
-
-#: plugin.py:428
-msgid ""
-"\n"
-"The found files:"
-msgstr ""
-"\n"
-"Bulunan dosyalar:"
-
-#: plugin.py:431
-msgid "  %s (maybe ok)"
-msgstr "  %s (belki tamam)"
-
-#: plugin.py:434
-msgid "  %s (maybe error)"
-msgstr "  %s (belki hata)"
-
-#: plugin.py:437
-msgid " nothing!"
-msgstr " hiçbir şey!"
-
-#: plugin.py:442 plugin.py:474
-msgid "Simulate (no write)"
-msgstr "Benzet (yazma yok)"
-
-#: plugin.py:443 plugin.py:477
-msgid "Standard (root and kernel)"
-msgstr "Standart (kök ve çekirdek)"
-
-#: plugin.py:444 plugin.py:483
-msgid "Only root"
-msgstr "Sadece kök"
-
-#: plugin.py:445 plugin.py:486
-msgid "Only kernel"
-msgstr "Sadece çekirdek"
-
-#: plugin.py:448 plugin.py:489
-msgid "Simulate second partition (no write)"
-msgstr "İkinci bölümü simüle et (yazma yok)"
-
-#: plugin.py:449 plugin.py:492
-msgid "Second partition (root and kernel)"
-msgstr "İkinci bölüm (kök ve çekirdek)"
-
-#: plugin.py:450 plugin.py:495
-msgid "Second partition (only root)"
-msgstr "İkinci bölüm (sadece kök)"
-
-#: plugin.py:451 plugin.py:498
-msgid "Second partition (only kernel)"
-msgstr "İkinci bölüm (sadece çekirdek)"
-
-#: plugin.py:457
-msgid "Exit"
-msgstr "Çıkış"
-
-#: plugin.py:467
-msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
-msgstr "Kayıt şu anda çalışıyor. Lütfen yanıp sönmeye başlamadan önce kaydı durdurun."
-
-#: plugin.py:471
-msgid "Flashing: "
-msgstr "Flaş yapiyor: "
-
-#: plugin.py:503
-msgid "NOT found files for flashing!\n"
-msgstr "Yanıp sönen dosyalar bulunamadı!\n"
-
-#: plugin.py:508
-msgid "Show only found image and mtd partitions.\n"
-msgstr "Sadece bulunan resim ve mtd bölümlerini göster.\n"
-
-#: plugin.py:513
-msgid "ofgwrite will stop enigma2 now to run the flash.\n"
-msgstr "ofgwrite flaşı çalıştırmak için enigma2'yi şimdi durduracak.\n"
-
-#: plugin.py:514
-msgid "Your STB will freeze during the flashing process.\n"
-msgstr "STB'niz yanıp sönme işlemi sırasında donacaktır.\n"
-
-#: plugin.py:515
-msgid "Please: DO NOT reboot your STB and turn off the power.\n"
-msgstr "Lütfen: STB'nizi yeniden başlatmayın ve gücü kapatmayın.\n"
-
-#: plugin.py:516
-msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
-msgstr "Görüntü veya çekirdek birkaç dakika içinde yanıp sönecek ve otomatik olarak önyüklenecektir.\n"
-
-#: plugin.py:527
-msgid "Do you really want to unpack %s ?"
-msgstr "Gerçekten %s paketini açmak istiyor musunuz ?"
-
-#: plugin.py:554
-msgid "Delete backup"
-msgstr "Yedeği sil"
-
-#: plugin.py:558
+#: ../plugin.py:571
+#, python-format
 msgid ""
 "You are about to delete this backup:\n"
 "\n"
@@ -442,10 +416,47 @@ msgstr ""
 "%s\n"
 "Devam et?"
 
-#: plugin.py:569 plugin.py:576
-msgid "BackupSuite"
-msgstr "BackupSuite"
+#: ../plugin.py:527
+msgid "Your STB will freeze during the flashing process.\n"
+msgstr "STB'niz yanıp sönme işlemi sırasında donacaktır.\n"
 
-#: plugin.py:570 plugin.py:577
-msgid "Backup and restore your image"
-msgstr "Resminizi yedekleyin ve geri yükleyin"
+#: ../message.py:80
+msgid "and there is made an extra copy in: "
+msgstr "ve içinde fazladan bir kopya var: "
+
+#: ../message.py:95
+msgid "available "
+msgstr "mevcut "
+
+#: ../message.py:120
+msgid "backupstick or"
+msgstr "backupstick veya"
+
+#: ../message.py:121
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+#: ../plugin.py:266 ../plugin.py:328
+#, python-format
+msgid "current:  %s"
+msgstr "akım:  %s"
+
+#: ../message.py:195
+msgid "is not executable..."
+msgstr "yürütülebilir değil ..."
+
+#: ../message.py:144
+msgid "minutes"
+msgstr "dakika"
+
+#: ../message.py:50
+msgid "not found, the backup process will be aborted!"
+msgstr "bulunamadı, yedekleme işlemi iptal edilecek!"
+
+#: ../message.py:210
+msgid "not installed yet, now installing"
+msgstr "henüz kurulmadı, şimdi kuruluyor"
+
+#: ../plugin.py:526
+msgid "ofgwrite will stop enigma2 now to run the flash.\n"
+msgstr "ofgwrite flaşı çalıştırmak için enigma2'yi şimdi durduracak.\n"
