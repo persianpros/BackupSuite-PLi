@@ -26,11 +26,11 @@ skinstartfullhd = """
 		<ePixmap pixmap="~/img/f_info.png" alphatest="on" position="115,1030" size="54,38" />
 		<ePixmap pixmap="~/img/f_help.png" alphatest="on" position="40,1030" size="51,38" />
 
-		<widget name="key_menu" position="239,1030" size="250,36" valign="top" halign="left" zPosition="4" font="Regular;34" />
-		<widget name="key_red" position="589,1030" size="100,36" valign="top" halign="left" zPosition="4" foregroundColor="#00ff0000" font="Regular;34" />
-		<widget name="key_green" position="824,1030" size="250,36" valign="top" halign="left" zPosition="4" foregroundColor="#0053b611" font="Regular;34" />
-		<widget name="key_yellow" position="1209,1030" size="250,36" valign="top" halign="left" zPosition="4" foregroundColor="#00F9C731" font="Regular;34" />
-		<widget name="key_blue" position="1594,1030" size="250,36" valign="top" halign="left" zPosition="4" foregroundColor="#003a71c3" font="Regular;34" />
+		<widget name="key_menu" position="239,1030" size="250,40" valign="top" halign="left" zPosition="4" font="Regular;34" />
+		<widget name="key_red" position="589,1030" size="180,40" valign="top" halign="left" zPosition="4" foregroundColor="#00ff0000" font="Regular;34" />
+		<widget name="key_green" position="824,1030" size="250,40" valign="top" halign="left" zPosition="4" foregroundColor="#0053b611" font="Regular;34" />
+		<widget name="key_yellow" position="1209,1030" size="250,40" valign="top" halign="left" zPosition="4" foregroundColor="#00F9C731" font="Regular;34" />
+		<widget name="key_blue" position="1594,1030" size="250,40" valign="top" halign="left" zPosition="4" foregroundColor="#003a71c3" font="Regular;34" />
 		<widget source="help" render="Label" position="5,345" size="590,83" font="Regular;21" />
 	</screen>"""
 
