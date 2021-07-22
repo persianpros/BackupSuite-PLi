@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Backup Suite Official Greek Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2021-07-22 19:19+0200\n"
 "PO-Revision-Date: 2020-01-24 01:02+0200\n"
 "Last-Translator: Pedro_Newbie <backupsuite@outlook.com>\n"
 "Language-Team: SatDreamGR <mcelliot_g@hotmail.com>\n"
@@ -14,25 +14,126 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin.py 89
-msgid "Make a backup or restore a backup"
-msgstr "Δημιουργία ή επαναφορά αντιγράφου ασφαλείας"
-
-msgid "Full back-up on HDD"
-msgstr "Πλήρης εφεδρεία σε HDD"
-
+#: ../plugin.py:441
 msgid ""
-"Do you want to make an USB-back-up image on HDD? \n"
 "\n"
-"This only takes a few minutes and is fully automatic.\n"
+"The found files:"
 msgstr ""
-"Θέλετε σίγουρα να δημιουργήσετε ένα αντίγραφο ασφαλείας στον σκληρό δίσκο; \n"
 "\n"
-"Θα πάρει μόνο μερικά λεπτά και είναι πλήρως αυτοματοποιημένο.\n"
+"Αρχεία που βρέθηκαν:"
 
-msgid "Full back-up to USB"
-msgstr "Πλήρης εφεδρεία σε USB"
+#: ../plugin.py:358
+msgid ""
+"\n"
+"You are using dual multiboot!"
+msgstr ""
 
+#: ../plugin.py:447
+#, python-format
+msgid "  %s (maybe error)"
+msgstr "  %s (πιθανό σφάλμα)"
+
+#: ../plugin.py:444
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr "  %s (πιθανώς ok)"
+
+#: ../message.py:180
+msgid " MB available space"
+msgstr " διαθέσιμος χώρος σε MB"
+
+#: ../message.py:185
+msgid " MB needed space"
+msgstr " απαιτούμενος χώρος σε MB"
+
+#: ../plugin.py:450
+msgid " nothing!"
+msgstr " τίποτα!"
+
+#: ../message.py:45
+msgid " size to be backed up: "
+msgstr " μέγεθος προς εφεδρεία: "
+
+#: ../message.py:175
+msgid " to make a back-up!"
+msgstr " για τη δημιουργία αντιγράφου!"
+
+#: ../message.py:169
+msgid "* * * WARNING * * *"
+msgstr "* * * ΠΡΟΕΙΔΟΠΟΙΗΣΗ * * *"
+
+#: ../plugin.py:480
+msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
+msgstr "Μία εγγραφή είναι σε εξέλιξη. Παρακαλώ σταματήστε την εγγραφή πριν ξεκινήσετε το φλασάρισμα."
+
+#: ../message.py:70
+msgid "Additional backup -> "
+msgstr "Επιπρόσθετο αντίγραφο ασφαλείας -> "
+
+#: ../message.py:35
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "ΕΡΓΑΛΕΙΟ BACK-UP, ΔΗΜΙΟΥΡΓΕΙ ΠΛΗΡΗ ΑΝΤΙΓΡΑΦΑ ΑΣΦΑΛΕΙΑΣ"
+
+#: ../plugin.py:132
+msgid "Backup > HDD"
+msgstr "Εφεδρεία > HDD"
+
+#: ../plugin.py:130
+msgid "Backup > MMC"
+msgstr "Εφεδρεία > MMC"
+
+#: ../plugin.py:133
+msgid "Backup > USB"
+msgstr "Εφεδρεία > USB"
+
+#: ../plugin.py:584 ../plugin.py:591
+msgid "Backup and restore your image"
+msgstr "Δημιουργία αντιγράφου ασφαλείας και επαναφορά του image"
+
+#: ../message.py:149
+msgid "Backup done with: "
+msgstr "Το αντίγραφο δημιουργήθηκε με: "
+
+#: ../message.py:106
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Το αντίγραφο δημιουργήθηκε και αντιγράφτηκε στο USB στικ."
+
+#: ../plugin.py:338 ../plugin.py:541
+#, fuzzy
+msgid "Backup info"
+msgstr "BackupSuite"
+
+#: ../plugin.py:583 ../plugin.py:590
+msgid "BackupSuite"
+msgstr "BackupSuite"
+
+#: ../plugin.py:131 ../plugin.py:233 ../plugin.py:262
+msgid "Close"
+msgstr ""
+
+#: ../message.py:65
+msgid "Create: kerneldump"
+msgstr "Δημιουργία: kerneldump"
+
+#: ../message.py:60
+msgid "Create: root.ubifs"
+msgstr "Δημιουργία: root.ubifs"
+
+#: ../plugin.py:339 ../plugin.py:570
+msgid "Delete"
+msgstr ""
+
+#: ../plugin.py:567
+#, fuzzy
+msgid "Delete backup"
+msgstr "Επαναφορά αντιγράφου"
+
+#: ../plugin.py:540
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr "Θελετε σίγουρα να αποσυμπιεστεί το %s ;"
+
+#: ../plugin.py:153
 msgid ""
 "Do you want to make a back-up on USB?\n"
 "\n"
@@ -46,9 +147,17 @@ msgstr ""
 "\n"
 "Βεβαιωθείτε ότι έχετε εισάγει μία συσκευή USB πριν επιλέξετε Ναι."
 
-msgid "Full back-up on MMC"
-msgstr "Πλήρης εφεδρεία σε MMC"
+#: ../plugin.py:150
+msgid ""
+"Do you want to make an USB-back-up image on HDD? \n"
+"\n"
+"This only takes a few minutes and is fully automatic.\n"
+msgstr ""
+"Θέλετε σίγουρα να δημιουργήσετε ένα αντίγραφο ασφαλείας στον σκληρό δίσκο; \n"
+"\n"
+"Θα πάρει μόνο μερικά λεπτά και είναι πλήρως αυτοματοποιημένο.\n"
 
+#: ../plugin.py:156
 msgid ""
 "Do you want to make an USB-back-up image on MMC? \n"
 "\n"
@@ -58,250 +167,230 @@ msgstr ""
 "\n"
 "Θα πάρει μόνο μερικά λεπτά και είναι πλήρως αυτοματοποιημένο.\n"
 
-msgid "No supported receiver found!"
-msgstr "Δεν βρέθηκε υποστηριζόμενος δέκτης!"
-
-msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "ΕΡΓΑΛΕΙΟ BACK-UP, ΔΗΜΙΟΥΡΓΕΙ ΠΛΗΡΗ ΑΝΤΙΓΡΑΦΑ ΑΣΦΑΛΕΙΑΣ"
-
-msgid "Please be patient, a backup will now be made, this will take about: "
-msgstr "Παρακαλώ περιμένετε, εκτελείται εφεδρεία, αυτό θα πάρει περίπου: "
-
-msgid " size to be backed up: "
-msgstr " μέγεθος προς εφεδρεία: "
-
-msgid "not found, the backup process will be aborted!"
-msgstr "δεν βρέθηκε, η διαδικασία εφεδρείας θα ακυρωθεί!"
-
-msgid "Some information about the task"
-msgstr "Πληροφορίες εργασίας"
-
-msgid "Create: root.ubifs"
-msgstr "Δημιουργία: root.ubifs"
-
-msgid "Create: kerneldump"
-msgstr "Δημιουργία: kerneldump"
-
-msgid "Additional backup -> "
-msgstr "Επιπρόσθετο αντίγραφο ασφαλείας -> "
-
-msgid "USB Image created in: "
-msgstr "Το USB Image δημιουργήθηκε στο: "
-
-msgid "and there is made an extra copy in: "
-msgstr "και ένα επιπρόσθετο αντίγραφο δημιουργήθηκε στο: "
-
-msgid "Please check the manual of the receiver on how to restore the image."
-msgstr "Παρακαλώ ελέγξτε το εγχειρίδιο χρήστη για το πώς να επαναφέρετε το image."
-
-msgid "Image creation FAILED!"
-msgstr "Η δημιουργία Image ΑΠΕΤΥΧΕ!"
-
-msgid "available "
-msgstr "διαθέσιμα "
-
-msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr "Εντοπίστηκε συμβατό USB στικ σε μία από τις θύρες USB, επομένως ένα επιπρόσθετο αντίγραφο ασφαλείας του image θα αντιγραφεί σε αυτό."
-
-msgid "This only takes about 20 seconds....."
-msgstr "Αυτό θα χρειαστεί περίπου 20 δευτερόλεπτα....."
-
-msgid "Backup finished and copied to your USB-flashdrive."
-msgstr "Το αντίγραφο δημιουργήθηκε και αντιγράφτηκε στο USB στικ."
-
-msgid "Full back-up to the harddisk"
-msgstr "Πλήρης εφεδρεία στον σκληρό δίσκο"
-
-msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "ΔΕΝ βρέθηκε συμβατό USB στικ, έτσι δεν θα γίνει τίποτα."
-
-msgid "PLEASE READ THIS:"
-msgstr "ΠΑΡΑΚΑΛΟΥΜΕ ΔΙΑΒΑΣΤΕ ΑΥΤΟ:"
-
-msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
-msgstr "Για απευθείας εφεδρεία στο USB στικ, το USB στικ ΠΡΕΠΕΙ να περιέχει ένα αρχείο με το όνομα:"
-
-msgid "backupstick or"
-msgstr "backupstick ή"
-
-msgid "backupstick.txt"
-msgstr "backupstick.txt"
-
-msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
-msgstr "Αν τοποθετήσετε ένα USB στικ με αυτό το αρχείο, τότε το αντίγραφο θα δημιουργηθεί αυτόματα στο USB στικ και μπορεί να χρησιμοποιηθεί για την επαναφορά του τρέχοντος image αν χρειαστεί."
-
-msgid "The program will exit now."
-msgstr "Θα γίνει έξοδος από το πρόγραμμα τώρα."
-
-msgid "Full back-up direct to USB"
-msgstr "Πλήρης εφεδρεία απευθείας σε USB"
-
-msgid "The content of the folder is:"
-msgstr "Το περιεχόμενο του φακέλου είναι:"
-
-msgid "Time required for this process: "
-msgstr "Απαιτούμενος χρόνος για τη διαδικασία: "
-
-msgid "minutes"
-msgstr "λεπτά"
-
-msgid "Backup done with: "
-msgstr "Το αντίγραφο δημιουργήθηκε με: "
-
-msgid "KB per second"
-msgstr "ΚΒ ανά δευτερόλεπτο"
-
-msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Πιθανότατα είναι αδύνατη η επαναφορά αυτού του αντιγράφου λόγω του μεγέθους του. Πρόκειται για περιορισμό του bootloader και όχι του αντιγράφου του BackupSuite."
-
-msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
-msgstr "Μπορεί να υπάρξει ΠΙΘΑΝΟ πρόβλημα επαναφοράς επειδή το μέγεθος του αντίγραφου είναι κοντά στο μέγιστο επιτρεπτό. Πρόκειται για περιορισμό του bootloader και όχι του αντιγράφου του BackupSuite."
-
-msgid "* * * WARNING * * *"
-msgstr "* * * ΠΡΟΕΙΔΟΠΟΙΗΣΗ * * *"
-
-msgid "Not enough free space on "
-msgstr "Μη επαρκής χώρος στο "
-
-msgid " to make a back-up!"
-msgstr " για τη δημιουργία αντιγράφου!"
-
-msgid " MB available space"
-msgstr " διαθέσιμος χώρος σε MB"
-
-msgid " MB needed space"
-msgstr " απαιτούμενος χώρος σε MB"
-
-msgid "The program will abort, please try another medium with more free space to create your back-up."
-msgstr "Το πρόγραμμα θα ματαιωθεί, δοκιμάστε ένα άλλο μέσο με περισσότερο ελεύθερο χώρο για το αντίγραφο σας."
-
-msgid "Full back-up to the MultiMediaCard"
-msgstr "Πλήρης εφεδρεία στη MultiMediaCard"
-
-msgid "is not executable..."
-msgstr "δεν είναι εκτελέσιμο..."
-
-msgid "Using your own custom lookuptable.txt from the folder /etc"
-msgstr "Χρησιμοποιείται το δικό σας τροποποιημένο lookuptable.txt από τον φάκελο /etc"
-
-msgid "Version unknown, probably not installed the right way."
-msgstr "Άγνωστη έκδοση, μάλλον δεν έγινε σωστή εγκατάσταση."
-
-msgid "not installed yet, now installing"
-msgstr "δεν εγκαταστάθηκε ακόμα, γίνεται εγκατάσταση τώρα"
-
-msgid "Probably you are trying to make the back-up in flash memory"
-msgstr "Ίσως προσπαθείτε να δημιουργήσετε ένα αντίγραφο ασφαλείας στη μνήμη flash"
-
-msgid "No additional USB-stick found to copy an extra backup"
-msgstr "Δε βρέθηκε επιπλέον συσκευή USB για να μεταφερθεί το έξτρα αντίγραφο"
-
-msgid "Installed packages contained in this backup:"
-msgstr "Εγκαταστημένα πακέτα που συμπεριλήφθηκαν στο αντίγραφο ασφαλείας:"
-
-msgid "NFI Image created in: "
-msgstr "Το NFI image δημιουργήθηκε στο: "
-
-#: plugin.py 294
-msgid ""
-"\n"
-"The found files:"
-msgstr ""
-"\n"
-"Αρχεία που βρέθηκαν:"
-
-#: plugin.py 300
-#, python-format
-msgid "  %s (maybe error)"
-msgstr "  %s (πιθανό σφάλμα)"
-
-#: plugin.py 297
-#, python-format
-msgid "  %s (maybe ok)"
-msgstr "  %s (πιθανώς ok)"
-
-#: plugin.py 303
-msgid " nothing!"
-msgstr " τίποτα!"
-
-#: plugin.py 327
-msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
-msgstr "Μία εγγραφή είναι σε εξέλιξη. Παρακαλώ σταματήστε την εγγραφή πριν ξεκινήσετε το φλασάρισμα."
-
-#: plugin.py 91
-msgid "Cancel"
-msgstr "Ακύρωση"
-
-#: plugin.py 383
-#, python-format
-msgid "Do you really want to unpack %s ?"
-msgstr "Θελετε σίγουρα να αποσυμπιεστεί το %s ;"
-
-#: plugin.py 317
+#: ../plugin.py:470
 msgid "Exit"
 msgstr "Έξοδος"
 
-#: plugin.py 331
+#: ../plugin.py:484
 msgid "Flashing: "
 msgstr "Φλασάρισμα: "
 
-#: plugin.py 275
+#: ../plugin.py:369
 msgid "For flashing your receiver files are needed:\n"
 msgstr "Για το φλασάρισμα του δέκτη απαιτούνται τα αρχεία:\n"
 
-#: plugin.py 354
+#: ../message.py:129
+msgid "Full back-up direct to USB"
+msgstr "Πλήρης εφεδρεία απευθείας σε USB"
+
+#: ../plugin.py:194
+msgid "Full back-up on HDD"
+msgstr "Πλήρης εφεδρεία σε HDD"
+
+#: ../plugin.py:208
+msgid "Full back-up on MMC"
+msgstr "Πλήρης εφεδρεία σε MMC"
+
+#: ../plugin.py:201
+msgid "Full back-up to USB"
+msgstr "Πλήρης εφεδρεία σε USB"
+
+#: ../message.py:235
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Πλήρης εφεδρεία στη MultiMediaCard"
+
+#: ../message.py:111
+msgid "Full back-up to the harddisk"
+msgstr "Πλήρης εφεδρεία στον σκληρό δίσκο"
+
+#: ../message.py:123
+msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
+msgstr "Αν τοποθετήσετε ένα USB στικ με αυτό το αρχείο, τότε το αντίγραφο θα δημιουργηθεί αυτόματα στο USB στικ και μπορεί να χρησιμοποιηθεί για την επαναφορά του τρέχοντος image αν χρειαστεί."
+
+#: ../message.py:90
+msgid "Image creation FAILED!"
+msgstr "Η δημιουργία Image ΑΠΕΤΥΧΕ!"
+
+#: ../message.py:225
+msgid "Installed packages contained in this backup:"
+msgstr "Εγκαταστημένα πακέτα που συμπεριλήφθηκαν στο αντίγραφο ασφαλείας:"
+
+#: ../message.py:154
+msgid "KB per second"
+msgstr "ΚΒ ανά δευτερόλεπτο"
+
+#: ../plugin.py:127
+msgid "Make a backup or restore a backup"
+msgstr "Δημιουργία ή επαναφορά αντιγράφου ασφαλείας"
+
+#: ../message.py:159
+msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Πιθανότατα είναι αδύνατη η επαναφορά αυτού του αντιγράφου λόγω του μεγέθους του. Πρόκειται για περιορισμό του bootloader και όχι του αντιγράφου του BackupSuite."
+
+#: ../plugin.py:45
+msgid "NAS"
+msgstr ""
+
+#: ../message.py:230
+msgid "NFI Image created in: "
+msgstr "Το NFI image δημιουργήθηκε στο: "
+
+#: ../plugin.py:516
 msgid "NOT found files for flashing!\n"
 msgstr "ΔΕΝ βρέθηκαν αρχεία για φλασάρισμα!\n"
 
-#: plugin.py 311 343
+#: ../message.py:220
+msgid "No additional USB-stick found to copy an extra backup"
+msgstr "Δε βρέθηκε επιπλέον συσκευή USB για να μεταφερθεί το έξτρα αντίγραφο"
+
+#: ../plugin.py:173 ../message.py:30
+msgid "No supported receiver found!"
+msgstr "Δεν βρέθηκε υποστηριζόμενος δέκτης!"
+
+#: ../message.py:170
+msgid "Not enough free space on "
+msgstr "Μη επαρκής χώρος στο "
+
+#: ../plugin.py:458 ../plugin.py:499
 msgid "Only kernel"
 msgstr "Μόνο τον kernel"
 
-#: plugin.py 310 340
+#: ../plugin.py:457 ../plugin.py:496
 msgid "Only root"
 msgstr "Μόνο τη ρίζα"
 
-#: plugin.py 361
+#: ../message.py:118
+msgid "PLEASE READ THIS:"
+msgstr "ΠΑΡΑΚΑΛΟΥΜΕ ΔΙΑΒΑΣΤΕ ΑΥΤΟ:"
+
+#: ../message.py:40
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr "Παρακαλώ περιμένετε, εκτελείται εφεδρεία, αυτό θα πάρει περίπου: "
+
+#: ../message.py:85
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr "Παρακαλώ ελέγξτε το εγχειρίδιο χρήστη για το πώς να επαναφέρετε το image."
+
+#: ../plugin.py:234
+msgid "Please wait"
+msgstr ""
+
+#: ../plugin.py:528
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
 msgstr "Παρακαλούμε: ΜΗΝ επανεκκινήσετε ή κλείσετε το δέκτη σας.\n"
 
-#: plugin.py 94
+#: ../message.py:215
+msgid "Probably you are trying to make the back-up in flash memory"
+msgstr "Ίσως προσπαθείτε να δημιουργήσετε ένα αντίγραφο ασφαλείας στη μνήμη flash"
+
+#: ../plugin.py:134
 msgid "Restore backup"
 msgstr "Επαναφορά αντιγράφου"
 
-#: plugin.py 249 263 269
+#: ../plugin.py:336 ../plugin.py:353 ../plugin.py:362
 msgid "Run flash"
 msgstr "Φλασάρισμα"
 
-#: plugin.py 274
+#: ../plugin.py:464 ../plugin.py:511
+#, fuzzy
+msgid "Second partition (only kernel)"
+msgstr "Στάνταρ (ρίζα και kernel)"
+
+#: ../plugin.py:463 ../plugin.py:508
+msgid "Second partition (only root)"
+msgstr ""
+
+#: ../plugin.py:462 ../plugin.py:505
+#, fuzzy
+msgid "Second partition (root and kernel)"
+msgstr "Στάνταρ (ρίζα και kernel)"
+
+#: ../plugin.py:368
 msgid "Select parameter for start flash!\n"
 msgstr "Επιλογή παραμέτρου για εκκίνηση φλασαρίσματος!\n"
 
-#: plugin.py 199
+#: ../plugin.py:261
 msgid "Select the folder with backup"
 msgstr "Επιλογή του φακέλου με το αντίγραφο"
 
-#: plugin.py 367
+#: ../plugin.py:521
 msgid "Show only found image and mtd partitions.\n"
 msgstr "Εμφάνιση μόνο των images που βρέθηκαν και των κατατμήσεων mtd.\n"
 
-#: plugin.py 308 334
+#: ../plugin.py:455 ../plugin.py:487
 msgid "Simulate (no write)"
 msgstr "Προσομοίωση (μη εγγραφή)"
 
-#: plugin.py 309 337
+#: ../plugin.py:461 ../plugin.py:502
+#, fuzzy
+msgid "Simulate second partition (no write)"
+msgstr "Προσομοίωση (μη εγγραφή)"
+
+#: ../message.py:55
+msgid "Some information about the task"
+msgstr "Πληροφορίες εργασίας"
+
+#: ../plugin.py:456 ../plugin.py:490
 msgid "Standard (root and kernel)"
 msgstr "Στάνταρ (ρίζα και kernel)"
 
-#: plugin.py 362
+#: ../message.py:134
+msgid "The content of the folder is:"
+msgstr "Το περιεχόμενο του φακέλου είναι:"
+
+#: ../plugin.py:529
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr "Το image ή ο kernel θα φλασαριστούν και θα εκκινηθούν αυτόματα σε λίγα λεπτά.\n"
 
-#: plugin.py 247 380
+#: ../message.py:190
+msgid "The program will abort, please try another medium with more free space to create your back-up."
+msgstr "Το πρόγραμμα θα ματαιωθεί, δοκιμάστε ένα άλλο μέσο με περισσότερο ελεύθερο χώρο για το αντίγραφο σας."
+
+#: ../message.py:124
+msgid "The program will exit now."
+msgstr "Θα γίνει έξοδος από το πρόγραμμα τώρα."
+
+#: ../message.py:164
+msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Μπορεί να υπάρξει ΠΙΘΑΝΟ πρόβλημα επαναφοράς επειδή το μέγεθος του αντίγραφου είναι κοντά στο μέγιστο επιτρεπτό. Πρόκειται για περιορισμό του bootloader και όχι του αντιγράφου του BackupSuite."
+
+#: ../message.py:116
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "ΔΕΝ βρέθηκε συμβατό USB στικ, έτσι δεν θα γίνει τίποτα."
+
+#: ../message.py:100
+msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr "Εντοπίστηκε συμβατό USB στικ σε μία από τις θύρες USB, επομένως ένα επιπρόσθετο αντίγραφο ασφαλείας του image θα αντιγραφεί σε αυτό."
+
+#: ../message.py:101
+msgid "This only takes about 20 seconds....."
+msgstr "Αυτό θα χρειαστεί περίπου 20 δευτερόλεπτα....."
+
+#: ../message.py:139
+msgid "Time required for this process: "
+msgstr "Απαιτούμενος χρόνος για τη διαδικασία: "
+
+#: ../message.py:119
+msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
+msgstr "Για απευθείας εφεδρεία στο USB στικ, το USB στικ ΠΡΕΠΕΙ να περιέχει ένα αρχείο με το όνομα:"
+
+#: ../message.py:75
+msgid "USB Image created in: "
+msgstr "Το USB Image δημιουργήθηκε στο: "
+
+#: ../plugin.py:334 ../plugin.py:537
 msgid "Unzip"
 msgstr "Αποσυμπίεση"
 
-#: plugin.py 266
+#: ../message.py:200
+msgid "Using your own custom lookuptable.txt from the folder /etc"
+msgstr "Χρησιμοποιείται το δικό σας τροποποιημένο lookuptable.txt από τον φάκελο /etc"
+
+#: ../message.py:205
+msgid "Version unknown, probably not installed the right way."
+msgstr "Άγνωστη έκδοση, μάλλον δεν έγινε σωστή εγκατάσταση."
+
+#: ../plugin.py:359
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -311,52 +400,60 @@ msgstr ""
 "Χρήση με δική σας ευθύνη! Δημιουργείτε πάντα αντίγραφο πριν τη χρήση!\n"
 "Μην το χρησιμοποιείτε σε πολλαπλούς τόμους ubi στο επίπεδο ubi!"
 
-#: plugin.py 360
+#: ../plugin.py:232
+msgid "What is new since the last release?"
+msgstr "Τι είναι νέο από την τελευταία έκδοση;"
+
+#: ../plugin.py:571
+#, python-format
+msgid ""
+"You are about to delete this backup:\n"
+"\n"
+"%s\n"
+"Continue?"
+msgstr ""
+
+#: ../plugin.py:527
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "Ο δέκτης σας θα παγώσει κατά το φλασάρισμα.\n"
 
-#: plugin.py 203 241
+#: ../message.py:80
+msgid "and there is made an extra copy in: "
+msgstr "και ένα επιπρόσθετο αντίγραφο δημιουργήθηκε στο: "
+
+#: ../message.py:95
+msgid "available "
+msgstr "διαθέσιμα "
+
+#: ../message.py:120
+msgid "backupstick or"
+msgstr "backupstick ή"
+
+#: ../message.py:121
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+#: ../plugin.py:266 ../plugin.py:328
 #, python-format
 msgid "current:  %s"
 msgstr "τρέχον:  %s"
 
-#: plugin.py 359
+#: ../message.py:195
+msgid "is not executable..."
+msgstr "δεν είναι εκτελέσιμο..."
+
+#: ../message.py:144
+msgid "minutes"
+msgstr "λεπτά"
+
+#: ../message.py:50
+msgid "not found, the backup process will be aborted!"
+msgstr "δεν βρέθηκε, η διαδικασία εφεδρείας θα ακυρωθεί!"
+
+#: ../message.py:210
+msgid "not installed yet, now installing"
+msgstr "δεν εγκαταστάθηκε ακόμα, γίνεται εγκατάσταση τώρα"
+
+#: ../plugin.py:526
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "το ofgwrite θα σταματήσει το enigma2 τώρα για να τρέξει το φλασάρισμα.\n"
-
-#: plugin.py 312 346
-msgid "Only root with use mtdy device"
-msgstr "Μόνο ρίζα σε χρήση συσκευής mtdx"
-
-#: plugin.py 313 349
-msgid "Only kernel with use mtdx device"
-msgstr "Μόνο kernel σε χρήση συσκευής mtdx"
-
-#: plugin.py 405 412
-msgid "BackupSuite"
-msgstr "BackupSuite"
-
-#: plugin.py 406 413
-msgid "Backup and restore your image"
-msgstr "Δημιουργία αντιγράφου ασφαλείας και επαναφορά του image"
-
-#: plugin.py 92
-msgid "Backup > HDD"
-msgstr "Εφεδρεία > HDD"
-
-#: plugin.py 93
-msgid "Backup > USB"
-msgstr "Εφεδρεία > USB"
-
-msgid "Backup > MMC"
-msgstr "Εφεδρεία > MMC"
-
-#: plugin.py 173
-msgid "What is new since the last release?"
-msgstr "Τι είναι νέο από την τελευταία έκδοση;"
-
-#~ msgid "Enables back-up & restore without an USB-stick"
-#~ msgstr "Ενεργοποιεί τη δημιουργία & επαναφορά αντιγράφων ασφαλείας χωρίς USB στικ"
-
-#~ msgid " version "
-#~ msgstr " έκδοση "

@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BackupSuite\n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-22 19:19+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Мартин Петков <marto74bg@yahoo.co.uk>\n"
 "Language-Team: Bulgarian\n"
@@ -11,16 +12,143 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 2.1.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: plugin.py 89
-msgid "Make a backup or restore a backup"
-msgstr "Създаване или възстановяване на резервно копие"
+#: ../plugin.py:441
+msgid ""
+"\n"
+"The found files:"
+msgstr ""
+"\n"
+"Открити файлове:"
 
-msgid "Full back-up on HDD"
-msgstr "Пълно резервно копие на HDD"
+#: ../plugin.py:358
+msgid ""
+"\n"
+"You are using dual multiboot!"
+msgstr ""
 
+#: ../plugin.py:447
+#, python-format
+msgid "  %s (maybe error)"
+msgstr "  %s (може би грешка)"
+
+#: ../plugin.py:444
+#, python-format
+msgid "  %s (maybe ok)"
+msgstr "  %s (може би е ок"
+
+#: ../message.py:180
+msgid " MB available space"
+msgstr " МБ свободно място"
+
+#: ../message.py:185
+msgid " MB needed space"
+msgstr " МБ са необходими"
+
+#: ../plugin.py:450
+msgid " nothing!"
+msgstr " нищо няма!"
+
+#: ../message.py:45
+msgid " size to be backed up: "
+msgstr " размер на резервното копие: "
+
+#: ../message.py:175
+msgid " to make a back-up!"
+msgstr " за да се създаде резервно копие!"
+
+#: ../message.py:169
+msgid "* * * WARNING * * *"
+msgstr "* * * ВНИМАНИЕ * * *"
+
+#: ../plugin.py:480
+msgid "A recording is currently running. Please stop the recording before trying to start a flashing."
+msgstr "В момента тече запис. Моля спрете го, преди да започнете с флашването."
+
+#: ../message.py:70
+msgid "Additional backup -> "
+msgstr "Допълнително резервно копие -> "
+
+#: ../message.py:35
+msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
+msgstr "ПРОГРАМА ЗА СЪЗДАВАНЕ НА ПЪЛНО РЕЗЕРВНО КОПИЕ"
+
+#: ../plugin.py:132
+msgid "Backup > HDD"
+msgstr "Бакъп > HDD"
+
+#: ../plugin.py:130
+#, fuzzy
+msgid "Backup > MMC"
+msgstr "Бакъп > HDD"
+
+#: ../plugin.py:133
+msgid "Backup > USB"
+msgstr "Бакъп > USB"
+
+#: ../plugin.py:584 ../plugin.py:591
+msgid "Backup and restore your image"
+msgstr ""
+
+#: ../message.py:149
+msgid "Backup done with: "
+msgstr "Резервното копие завърши със скорост: "
+
+#: ../message.py:106
+msgid "Backup finished and copied to your USB-flashdrive."
+msgstr "Резервното копие завърши и файловете са копирани на USB флашката."
+
+#: ../plugin.py:338 ../plugin.py:541
+#, fuzzy
+msgid "Backup info"
+msgstr "BackupSuite"
+
+#: ../plugin.py:583 ../plugin.py:590
+msgid "BackupSuite"
+msgstr "BackupSuite"
+
+#: ../plugin.py:131 ../plugin.py:233 ../plugin.py:262
+msgid "Close"
+msgstr ""
+
+#: ../message.py:65
+msgid "Create: kerneldump"
+msgstr "Създава се: kerneldump"
+
+#: ../message.py:60
+msgid "Create: root.ubifs"
+msgstr "Създава се: root.ubifs"
+
+#: ../plugin.py:339 ../plugin.py:570
+msgid "Delete"
+msgstr ""
+
+#: ../plugin.py:567
+#, fuzzy
+msgid "Delete backup"
+msgstr "Възстановяване"
+
+#: ../plugin.py:540
+#, python-format
+msgid "Do you really want to unpack %s ?"
+msgstr "Наистина ли искате да разопаковате %s?"
+
+#: ../plugin.py:153
+msgid ""
+"Do you want to make a back-up on USB?\n"
+"\n"
+"This only takes a few minutes depending on the used filesystem and is fully automatic.\n"
+"\n"
+"Make sure you first insert an USB flash drive before you select Yes."
+msgstr ""
+"Наистина ли искате да направите резервно копие на USB?\n"
+"\n"
+"Това ще отнеме само няколко минути в зависимост от файловата система и процеса е напълно автоматизиран.\n"
+"\n"
+"Убедете се, че сте поставили USB флашка, преди да изберете Да."
+
+#: ../plugin.py:150
 msgid ""
 "Do you want to make an USB-back-up image on HDD? \n"
 "\n"
@@ -30,34 +158,8 @@ msgstr ""
 "\n"
 "Това ще отнеме само няколко минути, процеса е напълно автоматизиран.\n"
 
-msgid "Full back-up to USB"
-msgstr "Пълно резервно копие на USB"
-
-msgid ""
-"Do you want to make a back-up on USB?\n"
-"\n"
-"This only takes a few minutes depending on the used filesystem and is fully "
-"automatic.\n"
-"\n"
-"Make sure you first insert an USB flash drive before you select Yes."
-msgstr ""
-"Наистина ли искате да направите резервно копие на USB?\n"
-"\n"
-"Това ще отнеме само няколко минути в зависимост от файловата система и "
-"процеса е напълно автоматизиран.\n"
-"\n"
-"Убедете се, че сте поставили USB флашка, преди да изберете Да."
-
+#: ../plugin.py:156
 #, fuzzy
-#| msgid "Full back-up on HDD"
-msgid "Full back-up on MMC"
-msgstr "Пълно резервно копие на HDD"
-
-#, fuzzy
-#| msgid ""
-#| "Do you want to make an USB-back-up image on HDD? \n"
-#| "\n"
-#| "This only takes a few minutes and is fully automatic.\n"
 msgid ""
 "Do you want to make an USB-back-up image on MMC? \n"
 "\n"
@@ -67,290 +169,235 @@ msgstr ""
 "\n"
 "Това ще отнеме само няколко минути, процеса е напълно автоматизиран.\n"
 
-msgid "No supported receiver found!"
-msgstr "Приемника не се поддържа!"
-
-msgid "BACK-UP TOOL, FOR MAKING A COMPLETE BACK-UP"
-msgstr "ПРОГРАМА ЗА СЪЗДАВАНЕ НА ПЪЛНО РЕЗЕРВНО КОПИЕ"
-
-msgid "Please be patient, a backup will now be made, this will take about: "
-msgstr ""
-"Моля бъдете търпеливи, създаването на резервно копие започна, това ще отнеме "
-"около: "
-
-msgid " size to be backed up: "
-msgstr " размер на резервното копие: "
-
-msgid "not found, the backup process will be aborted!"
-msgstr "не е открит, процеса за резервно копие ще бъде прекратен!"
-
-msgid "Some information about the task"
-msgstr "Някои данни за задачата"
-
-msgid "Create: root.ubifs"
-msgstr "Създава се: root.ubifs"
-
-msgid "Create: kerneldump"
-msgstr "Създава се: kerneldump"
-
-msgid "Additional backup -> "
-msgstr "Допълнително резервно копие -> "
-
-msgid "USB Image created in: "
-msgstr "USB имджа е създан в: "
-
-msgid "and there is made an extra copy in: "
-msgstr "и направи допълнително резервно копие в: "
-
-msgid "Please check the manual of the receiver on how to restore the image."
-msgstr ""
-"Моля проверете инструкциите на приемника относно, как да възстановите имиджа."
-
-msgid "Image creation FAILED!"
-msgstr "Създаването на имиджа завърши с ГРЕШКА!"
-
-msgid "available "
-msgstr "достъпен "
-
-msgid ""
-"There is a valid USB-flashdrive detected in one of the USB-ports, therefore "
-"an extra copy of the back-up image will now be copied to that USB-flashdrive."
-msgstr ""
-"Открит е валиден USB-стик в един от USB-портовете, затова допълнително "
-"резервно копие на имиджа ще бъде копирано на този USB-стик."
-
-msgid "This only takes about 20 seconds....."
-msgstr "Това ще отнеме само около 20 секунди..."
-
-msgid "Backup finished and copied to your USB-flashdrive."
-msgstr "Резервното копие завърши и файловете са копирани на USB флашката."
-
-msgid "Full back-up to the harddisk"
-msgstr "Пълно резервно копие на твърдия диск"
-
-msgid "There is NO valid USB-stick found, so I've got nothing to do."
-msgstr "Открит е невалиден USB-стик, затова резервно копие няма да се направи."
-
-msgid "PLEASE READ THIS:"
-msgstr "МОЛЯ ПРОЧЕТЕТЕ ТОВА:"
-
-msgid ""
-"To back-up directly to the USB-stick, the USB-stick MUST contain a file with "
-"the name:"
-msgstr ""
-"За директно копиране на USB-флашка, Флашката ТРЯБВА да съдържа файл с име:"
-
-msgid "backupstick or"
-msgstr "backupstick или"
-
-msgid "backupstick.txt"
-msgstr "backupstick.txt"
-
-msgid ""
-"If you place an USB-stick containing this file then the back-up will be "
-"automatically made onto the USB-stick and can be used to restore the current "
-"image if necessary."
-msgstr ""
-"Ако включите USB-флашка съдържаща този файл, то резервното копие ще бъде "
-"автоматично създадено на USB-флашката и, може да се използва за "
-"възстановяване на текущия имидж при необходимост."
-
-msgid "The program will exit now."
-msgstr "Програмата ще се затвори сега."
-
-msgid "Full back-up direct to USB"
-msgstr "Пълно резервно копие директно на USB"
-
-msgid "The content of the folder is:"
-msgstr "Съдържание на папка:"
-
-msgid "Time required for this process: "
-msgstr "Време необходимо за този процес: "
-
-msgid "minutes"
-msgstr "минути"
-
-msgid "Backup done with: "
-msgstr "Резервното копие завърши със скорост: "
-
-msgid "KB per second"
-msgstr "КБ в секунда"
-
-msgid ""
-"Most likely this back-up can't be restored because of it's size, it's simply "
-"too big to restore. This is a limitation of the bootloader not of the back-"
-"up or the BackupSuite."
-msgstr ""
-"Най-вероятно, този бакъп не може да се възстанови поради неговия размер, т."
-"к. е твърде голям. Това е ограничение на bootloadeа, а не на резервното "
-"копие или на BackupSuite."
-
-msgid ""
-"There COULD be a problem with restoring this back-up because the size of the "
-"back-up comes close to the maximum size. This is a limitation of the "
-"bootloader not of the back-up or the BackupSuite."
-msgstr ""
-"Може да възникне проблем с възстановяването на това резервно копие поради "
-"това ,че размера му се доближава до максимално възможния. Това ограничение е "
-"на bootloader-а а не на резервното копие или BackupSuite."
-
-msgid "* * * WARNING * * *"
-msgstr "* * * ВНИМАНИЕ * * *"
-
-msgid "Not enough free space on "
-msgstr "Недостатъчно свободно място на "
-
-msgid " to make a back-up!"
-msgstr " за да се създаде резервно копие!"
-
-msgid " MB available space"
-msgstr " МБ свободно място"
-
-msgid " MB needed space"
-msgstr " МБ са необходими"
-
-msgid ""
-"The program will abort, please try another medium with more free space to "
-"create your back-up."
-msgstr ""
-"Процеса ще прекъсне, моля опитайте с друг носител, на който има повече "
-"свободно място."
-
-#, fuzzy
-#| msgid "Full back-up to the harddisk"
-msgid "Full back-up to the MultiMediaCard"
-msgstr "Пълно резервно копие на твърдия диск"
-
-msgid "is not executable..."
-msgstr ""
-
-msgid "Using your own custom lookuptable.txt from the folder /etc"
-msgstr ""
-
-msgid "Version unknown, probably not installed the right way."
-msgstr ""
-
-msgid "not installed yet, now installing"
-msgstr ""
-
-msgid "Probably you are trying to make the back-up in flash memory"
-msgstr ""
-
-msgid "No additional USB-stick found to copy an extra backup"
-msgstr ""
-
-msgid "Installed packages contained in this backup:"
-msgstr ""
-
-#, fuzzy
-#| msgid "USB Image created in: "
-msgid "NFI Image created in: "
-msgstr "USB имджа е създан в: "
-
-#: plugin.py 294
-msgid ""
-"\n"
-"The found files:"
-msgstr ""
-"\n"
-"Открити файлове:"
-
-#: plugin.py 300
-#, python-format
-msgid "  %s (maybe error)"
-msgstr "  %s (може би грешка)"
-
-#: plugin.py 297
-#, python-format
-msgid "  %s (maybe ok)"
-msgstr "  %s (може би е ок"
-
-#: plugin.py 303
-msgid " nothing!"
-msgstr " нищо няма!"
-
-#: plugin.py 327
-msgid ""
-"A recording is currently running. Please stop the recording before trying to "
-"start a flashing."
-msgstr "В момента тече запис. Моля спрете го, преди да започнете с флашването."
-
-#: plugin.py 91
-msgid "Cancel"
-msgstr "Отмяна"
-
-#: plugin.py 383
-#, python-format
-msgid "Do you really want to unpack %s ?"
-msgstr "Наистина ли искате да разопаковате %s?"
-
-#: plugin.py 317
+#: ../plugin.py:470
 msgid "Exit"
 msgstr "Изход"
 
-#: plugin.py 331
+#: ../plugin.py:484
 msgid "Flashing: "
 msgstr "Флашване: "
 
-#: plugin.py 275
+#: ../plugin.py:369
 msgid "For flashing your receiver files are needed:\n"
 msgstr "За флашването наВашия приемник са необходими файлове:\n"
 
-#: plugin.py 354
+#: ../message.py:129
+msgid "Full back-up direct to USB"
+msgstr "Пълно резервно копие директно на USB"
+
+#: ../plugin.py:194
+msgid "Full back-up on HDD"
+msgstr "Пълно резервно копие на HDD"
+
+#: ../plugin.py:208
+#, fuzzy
+msgid "Full back-up on MMC"
+msgstr "Пълно резервно копие на HDD"
+
+#: ../plugin.py:201
+msgid "Full back-up to USB"
+msgstr "Пълно резервно копие на USB"
+
+#: ../message.py:235
+#, fuzzy
+msgid "Full back-up to the MultiMediaCard"
+msgstr "Пълно резервно копие на твърдия диск"
+
+#: ../message.py:111
+msgid "Full back-up to the harddisk"
+msgstr "Пълно резервно копие на твърдия диск"
+
+#: ../message.py:123
+msgid "If you place an USB-stick containing this file then the back-up will be automatically made onto the USB-stick and can be used to restore the current image if necessary."
+msgstr "Ако включите USB-флашка съдържаща този файл, то резервното копие ще бъде автоматично създадено на USB-флашката и, може да се използва за възстановяване на текущия имидж при необходимост."
+
+#: ../message.py:90
+msgid "Image creation FAILED!"
+msgstr "Създаването на имиджа завърши с ГРЕШКА!"
+
+#: ../message.py:225
+msgid "Installed packages contained in this backup:"
+msgstr ""
+
+#: ../message.py:154
+msgid "KB per second"
+msgstr "КБ в секунда"
+
+#: ../plugin.py:127
+msgid "Make a backup or restore a backup"
+msgstr "Създаване или възстановяване на резервно копие"
+
+#: ../message.py:159
+msgid "Most likely this back-up can't be restored because of it's size, it's simply too big to restore. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Най-вероятно, този бакъп не може да се възстанови поради неговия размер, т.к. е твърде голям. Това е ограничение на bootloadeа, а не на резервното копие или на BackupSuite."
+
+#: ../plugin.py:45
+msgid "NAS"
+msgstr ""
+
+#: ../message.py:230
+#, fuzzy
+msgid "NFI Image created in: "
+msgstr "USB имджа е създан в: "
+
+#: ../plugin.py:516
 msgid "NOT found files for flashing!\n"
 msgstr "НЕ са открити файлове за флашване!\n"
 
-#: plugin.py 311 343
+#: ../message.py:220
+msgid "No additional USB-stick found to copy an extra backup"
+msgstr ""
+
+#: ../plugin.py:173 ../message.py:30
+msgid "No supported receiver found!"
+msgstr "Приемника не се поддържа!"
+
+#: ../message.py:170
+msgid "Not enough free space on "
+msgstr "Недостатъчно свободно място на "
+
+#: ../plugin.py:458 ../plugin.py:499
 msgid "Only kernel"
 msgstr "Само ядро"
 
-#: plugin.py 310 340
+#: ../plugin.py:457 ../plugin.py:496
 msgid "Only root"
 msgstr "Само имидж"
 
-#: plugin.py 361
+#: ../message.py:118
+msgid "PLEASE READ THIS:"
+msgstr "МОЛЯ ПРОЧЕТЕТЕ ТОВА:"
+
+#: ../message.py:40
+msgid "Please be patient, a backup will now be made, this will take about: "
+msgstr "Моля бъдете търпеливи, създаването на резервно копие започна, това ще отнеме около: "
+
+#: ../message.py:85
+msgid "Please check the manual of the receiver on how to restore the image."
+msgstr "Моля проверете инструкциите на приемника относно, как да възстановите имиджа."
+
+#: ../plugin.py:234
+msgid "Please wait"
+msgstr ""
+
+#: ../plugin.py:528
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
 msgstr "Моля, НЕ рестартирайте Вашия приемник и НЕ изключвайте захранването!\n"
 
-#: plugin.py 94
+#: ../message.py:215
+msgid "Probably you are trying to make the back-up in flash memory"
+msgstr ""
+
+#: ../plugin.py:134
 msgid "Restore backup"
 msgstr "Възстановяване"
 
-#: plugin.py 249 263 269
+#: ../plugin.py:336 ../plugin.py:353 ../plugin.py:362
 msgid "Run flash"
 msgstr "Флашване"
 
-#: plugin.py 274
+#: ../plugin.py:464 ../plugin.py:511
+#, fuzzy
+msgid "Second partition (only kernel)"
+msgstr "Стандарт (имидж и ядро)"
+
+#: ../plugin.py:463 ../plugin.py:508
+msgid "Second partition (only root)"
+msgstr ""
+
+#: ../plugin.py:462 ../plugin.py:505
+#, fuzzy
+msgid "Second partition (root and kernel)"
+msgstr "Стандарт (имидж и ядро)"
+
+#: ../plugin.py:368
 msgid "Select parameter for start flash!\n"
 msgstr "Изберете параметри за старт на флашването!\n"
 
-#: plugin.py 199
+#: ../plugin.py:261
 msgid "Select the folder with backup"
 msgstr "Изберете папката с бакъп"
 
-#: plugin.py 367
+#: ../plugin.py:521
 msgid "Show only found image and mtd partitions.\n"
 msgstr "Покажи само откритите имиджи и mtd дялове\n"
 
-#: plugin.py 308 334
+#: ../plugin.py:455 ../plugin.py:487
 msgid "Simulate (no write)"
 msgstr "Симулирай (без запис)"
 
-#: plugin.py 309 337
+#: ../plugin.py:461 ../plugin.py:502
+#, fuzzy
+msgid "Simulate second partition (no write)"
+msgstr "Симулирай (без запис)"
+
+#: ../message.py:55
+msgid "Some information about the task"
+msgstr "Някои данни за задачата"
+
+#: ../plugin.py:456 ../plugin.py:490
 msgid "Standard (root and kernel)"
 msgstr "Стандарт (имидж и ядро)"
 
-#: plugin.py 362
+#: ../message.py:134
+msgid "The content of the folder is:"
+msgstr "Съдържание на папка:"
+
+#: ../plugin.py:529
 msgid "The image or kernel will be flashing and auto booted in few minutes.\n"
 msgstr ""
 "Имиджа или ядрото ще бъдат презаписани и приемника автоматично ще се\n"
 "рестартира след няколко минути.\n"
 
-#: plugin.py 247 380
+#: ../message.py:190
+msgid "The program will abort, please try another medium with more free space to create your back-up."
+msgstr "Процеса ще прекъсне, моля опитайте с друг носител, на който има повече свободно място."
+
+#: ../message.py:124
+msgid "The program will exit now."
+msgstr "Програмата ще се затвори сега."
+
+#: ../message.py:164
+msgid "There COULD be a problem with restoring this back-up because the size of the back-up comes close to the maximum size. This is a limitation of the bootloader not of the back-up or the BackupSuite."
+msgstr "Може да възникне проблем с възстановяването на това резервно копие поради това ,че размера му се доближава до максимално възможния. Това ограничение е на bootloader-а а не на резервното копие или BackupSuite."
+
+#: ../message.py:116
+msgid "There is NO valid USB-stick found, so I've got nothing to do."
+msgstr "Открит е невалиден USB-стик, затова резервно копие няма да се направи."
+
+#: ../message.py:100
+msgid "There is a valid USB-flashdrive detected in one of the USB-ports, therefore an extra copy of the back-up image will now be copied to that USB-flashdrive."
+msgstr "Открит е валиден USB-стик в един от USB-портовете, затова допълнително резервно копие на имиджа ще бъде копирано на този USB-стик."
+
+#: ../message.py:101
+msgid "This only takes about 20 seconds....."
+msgstr "Това ще отнеме само около 20 секунди..."
+
+#: ../message.py:139
+msgid "Time required for this process: "
+msgstr "Време необходимо за този процес: "
+
+#: ../message.py:119
+msgid "To back-up directly to the USB-stick, the USB-stick MUST contain a file with the name:"
+msgstr "За директно копиране на USB-флашка, Флашката ТРЯБВА да съдържа файл с име:"
+
+#: ../message.py:75
+msgid "USB Image created in: "
+msgstr "USB имджа е създан в: "
+
+#: ../plugin.py:334 ../plugin.py:537
 msgid "Unzip"
 msgstr "Разархивиране"
 
-#: plugin.py 266
+#: ../message.py:200
+msgid "Using your own custom lookuptable.txt from the folder /etc"
+msgstr ""
+
+#: ../message.py:205
+msgid "Version unknown, probably not installed the right way."
+msgstr ""
+
+#: ../plugin.py:359
 msgid ""
 "Warning!\n"
 "Use at your own risk! Make always a backup before use!\n"
@@ -360,51 +407,60 @@ msgstr ""
 "Използвайте на свой риск! Винаги правете бакъп преди използване!\n"
 "Не го използвайте, ако имате няколко ubi дяла!"
 
-#: plugin.py 360
+#: ../plugin.py:232
+msgid "What is new since the last release?"
+msgstr "Какво ново след последната версия?"
+
+#: ../plugin.py:571
+#, python-format
+msgid ""
+"You are about to delete this backup:\n"
+"\n"
+"%s\n"
+"Continue?"
+msgstr ""
+
+#: ../plugin.py:527
 msgid "Your STB will freeze during the flashing process.\n"
 msgstr "Вашия приемник ще замръзне по време на флашването!\n"
 
-#: plugin.py 203 241
+#: ../message.py:80
+msgid "and there is made an extra copy in: "
+msgstr "и направи допълнително резервно копие в: "
+
+#: ../message.py:95
+msgid "available "
+msgstr "достъпен "
+
+#: ../message.py:120
+msgid "backupstick or"
+msgstr "backupstick или"
+
+#: ../message.py:121
+msgid "backupstick.txt"
+msgstr "backupstick.txt"
+
+#: ../plugin.py:266 ../plugin.py:328
 #, python-format
 msgid "current:  %s"
 msgstr "текуща:  %s"
 
-#: plugin.py 359
+#: ../message.py:195
+msgid "is not executable..."
+msgstr ""
+
+#: ../message.py:144
+msgid "minutes"
+msgstr "минути"
+
+#: ../message.py:50
+msgid "not found, the backup process will be aborted!"
+msgstr "не е открит, процеса за резервно копие ще бъде прекратен!"
+
+#: ../message.py:210
+msgid "not installed yet, now installing"
+msgstr ""
+
+#: ../plugin.py:526
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
 msgstr "програмата ofgwrite сега ще спре enigma2 за флашването!\n"
-
-#: plugin.py 312 346
-msgid "Only root with use mtdy device"
-msgstr ""
-
-#: plugin.py 313 349
-msgid "Only kernel with use mtdx device"
-msgstr ""
-
-#: plugin.py 405 412
-msgid "BackupSuite"
-msgstr "BackupSuite"
-
-#: plugin.py 406 413
-msgid "Backup and restore your image"
-msgstr ""
-
-#: plugin.py 92
-msgid "Backup > HDD"
-msgstr "Бакъп > HDD"
-
-#: plugin.py 93
-msgid "Backup > USB"
-msgstr "Бакъп > USB"
-
-#, fuzzy
-#| msgid "Backup > HDD"
-msgid "Backup > MMC"
-msgstr "Бакъп > HDD"
-
-#: plugin.py 173
-msgid "What is new since the last release?"
-msgstr "Какво ново след последната версия?"
-
-#~ msgid "Enables back-up & restore without an USB-stick"
-#~ msgstr "Позволява създаване на бакъп & възстановяване без USB-стик"
