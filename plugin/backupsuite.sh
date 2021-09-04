@@ -209,11 +209,12 @@ else
 		elif [ -f /proc/stb/info/gbmodel ] ; then
 			SEARCH=$( cat /proc/stb/info/gbmodel | tr "A-Z" "a-z" | tr -d '[:space:]' )
 		elif [ -f /proc/stb/info/boxtype ] ; then
-			SEARCH=$( cat /proc/stb/info/boxtype | tr "A-Z" "a-z" | tr -d '[:space:]' )
 			if grep H9 /proc/stb/info/boxtype > /dev/null ; then
 				SEARCH=$( cat /proc/stb/info/model )
 			elif grep H1 /proc/stb/info/boxtype > /dev/null ; then
 				SEARCH=$( cat /proc/stb/info/model )
+			else
+				SEARCH=$( cat /proc/stb/info/boxtype | tr "A-Z" "a-z" | tr -d '[:space:]' )
 			fi
 		elif [ -f /proc/stb/info/vumodel ] ; then
 			SEARCH=$( cat /proc/stb/info/vumodel | tr "A-Z" "a-z" | tr -d '[:space:]' )
@@ -442,13 +443,16 @@ elif [ $ACTION = "force" ] ; then
 	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
 	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
 fi
+if [ $SEARCH "zero4k" -o $SEARCH = "uno4k" -o $SEARCH "uno4kse" -o $SEARCH "ultimo4k" -o $SEARCH "solo4k" -o $SEARCH "duo4k" -o $SEARCH "duo4kse" ] ; then
+	echo "rename this file to 'mkpart.update' for forces create partition and kernel update." > "$MAINDEST/nomkpart.update"
+fi
 image_version > "$MAINDEST/imageversion"
 if [ $SEARCH = "lunix3-4k" -o $SEARCH = "lunix4k" -o $SEARCH = "galaxy4k" -o $SEARCH = "revo4k" ] ; then
 	if [ -f /boot/initrd_run.bin ] ; then
 		cp /boot/initrd_run.bin "$MAINDEST/initrd_run.bin"
 	fi
 fi
-if [ $SEARCH = "h9" -o $SEARCH = "h9se" -o $SEARCH = "h9combo" -o $SEARCH = "h9combose" -o $SEARCH = "i55plus" -o $SEARCH = "i55se" -o $SEARCH = "h10" -o $SEARCH = "hzero" -o $SEARCH = "h8" -o $SEARCH = "h8.2h" -o $SEARCH = "h9.s" -o $SEARCH = "h9.t" -o $SEARCH = "h9.2h" -o $SEARCH = "h9.2s" -o $SEARCH = "h9twin" ] ; then
+if [ $SEARCH = "h9" -o $SEARCH = "h9se" -o $SEARCH = "h9combo" -o $SEARCH = "h9combose" -o $SEARCH = "i55plus" -o $SEARCH = "i55se" -o $SEARCH = "h10" -o $SEARCH = "hzero" -o $SEARCH = "h8" -o $SEARCH = "h8.2h" -o $SEARCH = "h9.s" -o $SEARCH = "h9.t" -o $SEARCH = "h9.2h" -o $SEARCH = "h9.2s" -o $SEARCH = "h9twin" -o $SEARCH = "h9twinse" ] ; then
 	log "Zgemma hisil found, we need to copy more files for flashing later!"
 	dd if=/dev/mtd0 of=$MAINDEST/fastboot.bin > /dev/null 2>&1
 	dd if=/dev/mtd1 of=$MAINDEST/bootargs.bin > /dev/null 2>&1

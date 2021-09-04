@@ -252,6 +252,7 @@ Zgemma H9 Combo	h9combo	Zgemma H9 Combo	/zgemma/h9combo	/fullbackup_h9combo	/zge
 Zgemma H9 Twin	h9twin	Zgemma H9 Twin	/zgemma/h9combo	/fullbackup_h9combo	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H9 Combo SE	h9combose	Zgemma H9 Combo SE	/zgemma/h9combose	/fullbackup_h9combose	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H9 Twin SE	h9twinse	Zgemma H9 Twin SE	/zgemma/h9combose	/fullbackup_h9combo	/zgemma			rootfs.tar.bz2	uImage	none
+Zgemma H9(S/2S/2H) SE	h9se	Zgemma H9(S/2S/2H) SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H9.S SE	h9se.s	Zgemma H9.S SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H9.2S SE	h9se.2s	Zgemma H9.2S SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
 Zgemma H9.2H SE	h9se.2h	Zgemma H9.2H SE	/zgemma/h9se	/fullbackup_h9se	/zgemma			rootfs.tar.bz2	uImage	none
