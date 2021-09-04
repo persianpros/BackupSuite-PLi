@@ -443,7 +443,7 @@ elif [ $ACTION = "force" ] ; then
 	echo "rename this file to 'force.update' to be able to flash this backup" > "$MAINDEST/noforce.update"
 	echo "Rename the file in the folder /vuplus/$SEARCH/noforce.update to /vuplus/$SEARCH/force.update to flash this image"
 fi
-if [ -o $SEARCH "zero4k" -o $SEARCH = "uno4k" -o $SEARCH "uno4kse" -o $SEARCH "ultimo4k" -o $SEARCH "solo4k" -o $SEARCH "duo4k" -o $SEARCH "duo4kse" ] ; then
+if [ $SEARCH "zero4k" -o $SEARCH = "uno4k" -o $SEARCH "uno4kse" -o $SEARCH "ultimo4k" -o $SEARCH "solo4k" -o $SEARCH "duo4k" -o $SEARCH "duo4kse" ] ; then
 	echo "rename this file to 'mkpart.update' for forces create partition and kernel update." > "$MAINDEST/nomkpart.update"
 fi
 image_version > "$MAINDEST/imageversion"
