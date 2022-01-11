@@ -1,4 +1,6 @@
 BRAND AND MODEL	MODEL	SHOWNAME	FOLDER	EXTR1	EXTR2	MKUBIFS_ARGS	UBINIZE_ARGS	ROOTNAME	KERNELNAME	ACTION
+ABcom Pulse 4K	pulse4k ABcom Pulse 4K	/pulse4k /fullbackup_pulse4k	/pulse4k			rootfs.tar.bz2	uImage	none
+ABcom Pulse4K mini	pulse4kmini	ABcom Pulse4K mini	/pulse4kmini	/fullbackup_pulse4kmini	/pulse4kmini			rootfs.tar.bz2	uImage	none
 Amiko Viper 4K	viper4k	Amiko Viper 4K	/amiko/viper4k	/fullbackup_viper4k	/amiko			rootfs.tar.bz2	kernel.bin	none
 Amiko Viper Combo	vipercombo	Amiko Viper Combo	/vipercombo	/fullbackup_vipercombo		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Amiko Viper Combo HDD	vipercombohdd	Amiko Viper Combo HDD	/vipercombohdd	/fullbackup_vipercombohdd		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -113,6 +115,7 @@ Jepssen MediaBox HD LX	mediabox	Jepssen MediaBox HD LX	/update/mediabox/cfe	/ful
 Max-Digital XP1000	xp1000	Max-Digital XP1000	/xp1000	/fullbackup_xp1000		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 MaxyTec Multibox	multibox	MaxyTec Multibox	/multibox	/fullbackup_multibox				rootfs.tar.bz2	uImage	none
 MaxyTec Multibox Plus	multiboxplus	MaxyTec Multibox Plus	/plus	/fullbackup_multiboxplus				rootfs.tar.bz2	uImage	none
+MaxyTec Multibox SE	multiboxse	MaxyTec Multibox SE	/multiboxse	/fullbackup_multiboxse				rootfs.tar.bz2	uImage	none
 Miraclebox Hybrid	mbhybrid	Miraclebox Hybrid	/miraclebox/minihybrid	/fullbackup_minihybrid	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox Micro	7000S	Miraclebox Micro	/miraclebox/micro	/fullbackup_mbmico	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Miraclebox MicroV2	7005S	Miraclebox MicroV2	/miraclebox/microv2	/fullbackup_mbmicov2	/miraclebox	-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -148,6 +151,7 @@ Qviart Lunix	lunix	Qviart Lunix	/update/lunix/cfe	/fullbackup_lunix	/update/luni
 Qviart Lunix4K	lunix4k	Qviart Lunix4K	/update/lunix4k	/fullbackup_lunix4k	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Qviart Lunix3 4K	lunix3-4k	Qviart Lunix3 4K	/update/lunix3-4k	/fullbackup_lunix34k	/update			rootfs.tar.bz2	oe_kernel.bin	none
 Qviart Lunix Co	lunixco	Qviart Lunix Co	/update/lunixco/cfe	/fullbackup_lunixco	/update/lunixco	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
+Qviart DUAL 4K	dual	Qviart DUAL 4K	/dual	/fullbackup_dual	/dual			rootfs.tar.bz2	kernel.bin	none
 Red Eagle SingleBox LCD	singleboxlcd	Red Eagle SingleBox LCD	/redeagle/singleboxlcd	/fullbackup_singleboxlcd	/redeagle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Red Eagle TwinBox LCD	twinboxlcd	Red Eagle TwinBox LCD	/redeagle/twinboxlcd	/fullbackup_twinboxlcd	/redeagle	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Relook Mago	mago	Relook Mago	/mago	/fullbackup_mago		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
