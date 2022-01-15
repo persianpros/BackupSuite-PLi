@@ -1,10 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-from schermen import *
+from .schermen import *
 import os
 import gettext
-import enigma
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Console import Console
@@ -13,7 +12,6 @@ from Components.Button import Button
 from Components.FileList import FileList
 from Components.Language import language
 from Components.Harddisk import harddiskmanager
-from Components.Label import Label
 from Components.ScrollLabel import ScrollLabel
 from Components.Sources.StaticText import StaticText
 from Plugins.Plugin import PluginDescriptor
@@ -156,7 +154,7 @@ class BackupStart(Screen):
 		self.session.openWithCallback(self.backupmmc, MessageBox, _("Do you want to make an USB-back-up image on MMC? \n\nThis only takes a few minutes and is fully automatic.\n"), MessageBox.TYPE_YESNO, timeout=20, default=True)
 
 	def showHelp(self):
-		from plugin import backupsuiteHelp
+		from .plugin import backupsuiteHelp
 		if backupsuiteHelp:
 			backupsuiteHelp.open(self.session)
 
