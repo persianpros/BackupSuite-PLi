@@ -1,5 +1,5 @@
 BRAND AND MODEL	MODEL	SHOWNAME	FOLDER	EXTR1	EXTR2	MKUBIFS_ARGS	UBINIZE_ARGS	ROOTNAME	KERNELNAME	ACTION
-ABcom Pulse 4K	pulse4k ABcom Pulse 4K	/pulse4k /fullbackup_pulse4k	/pulse4k			rootfs.tar.bz2	uImage	none
+ABcom Pulse 4K	pulse4k	ABcom Pulse 4K	/pulse4k	/fullbackup_pulse4k	/pulse4k			rootfs.tar.bz2	uImage	none
 ABcom Pulse4K mini	pulse4kmini	ABcom Pulse4K mini	/pulse4kmini	/fullbackup_pulse4kmini	/pulse4kmini			rootfs.tar.bz2	uImage	none
 Amiko Viper 4K	viper4k	Amiko Viper 4K	/amiko/viper4k	/fullbackup_viper4k	/amiko			rootfs.tar.bz2	kernel.bin	none
 Amiko Viper Combo	vipercombo	Amiko Viper Combo	/vipercombo	/fullbackup_vipercombo		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
