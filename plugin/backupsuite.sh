@@ -473,6 +473,23 @@ if [ -f "$MAINDEST/$ROOTNAME" -a -f "$MAINDEST/$KERNELNAME" ] ; then
 else
 	big_fail
 fi
+
+############# CREATE FOLDER imagebackups AND ZIP ARCHIVE ####################
+if ! [ -d $MEDIA/imagebackups ] ; then
+	mkdir -p $MEDIA/imagebackups
+fi
+if [ -d $MEDIA/imagebackups ] ; then
+	ZIP=/usr/bin/zip
+	if [ ! -f "$ZIP" ] ; then
+		opkg update > /dev/null 2>&1
+		opkg install zip > /dev/null 2>&1
+		checkbinary $ZIP
+	fi
+	ISSUE1=`cat /etc/issue | grep . | tail -n 1 | sed -e 's/[\t ]//g;/^$/d'`
+	VER=${ISSUE1%????}
+	$ZIP -r $MEDIA/imagebackups/backup-$VER-$MODEL-$DATE.zip /$MAINDEST/*
+fi
+
 #################### CHECKING FOR AN EXTRA BACKUP STORAGE #####################
 if  [ $HARDDISK = 1 ]; then						# looking for a valid usb-stick
 	for candidate in `cut -d ' ' -f 2 /proc/mounts | grep '^/media/'`
