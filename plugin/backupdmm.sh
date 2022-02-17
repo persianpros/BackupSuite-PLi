@@ -479,9 +479,9 @@ fi
 $SHOW "message06a" 2>&1 | tee -a $LOGFILE		#Create: root.ubifs
 log $LINE
 if [ $VISIONVERSION == "7" ]; then
-	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root --exclude=/var/nmbd/* .
+	$MKFS -cvJf $WORKDIR/rootfs.tar.xz -C /tmp/bi/root --exclude=/var/nmbd/* .
 else
-	$MKFS -cvJf $WORKDIR/rootfs.tar.xz -C /tmp/bi/root .
+	$MKFS -cf $WORKDIR/rootfs.tar -C /tmp/bi/root .
 fi
 ############################ ASSEMBLING THE IMAGE #############################
 make_folders
