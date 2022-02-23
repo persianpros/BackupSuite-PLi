@@ -1,4 +1,4 @@
-BackupSuite-PLi [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![backupsuite](https://github.com/OpenVisionE2/BackupSuite-PLi/actions/workflows/backupsuite.yml/badge.svg)](https://github.com/OpenVisionE2/BackupSuite-PLi/actions/workflows/backupsuite.yml) [![ovbot](https://github.com/OpenVisionE2/BackupSuite-PLi/actions/workflows/ovbot.yml/badge.svg)](https://github.com/OpenVisionE2/BackupSuite-PLi/actions/workflows/ovbot.yml)
+BackupSuite-PLi [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![backupsuite](https://github.com/persianpros/BackupSuite-PLi/actions/workflows/backupsuite.yml/badge.svg)](https://github.com/persianpros/BackupSuite-PLi/actions/workflows/backupsuite.yml) [![ovbot](https://github.com/persianpros/BackupSuite-PLi/actions/workflows/ovbot.yml/badge.svg)](https://github.com/persianpros/BackupSuite-PLi/actions/workflows/ovbot.yml)
 ===============
 Created by Pedro Newbie revamped by Persian Prince
 
