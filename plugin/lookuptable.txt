@@ -246,8 +246,8 @@ Zgemma H4	h4	Zgemma H4	/zgemma/h4	/fullbackup_h4	/zgemma	-m 2048 -e 126976 -c 81
 Zgemma H5	h5	Zgemma H5	/zgemma/h5	/fullbackup_h5	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H6	h6	Zgemma H6	/zgemma/h6	/fullbackup_h6	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Zgemma H7	h7	Zgemma H7	/zgemma/h7	/fullbackup_h7	/zgemma			rootfs.tar.bz2	kernel.bin	none
-Zgemma H8	h8	Zgemma H8	/zgemma/h8	/fullbackup_h8	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
-Zgemma H8.2H	h8.2h	Zgemma H8.2H	/zgemma/h8	/fullbackup_h8	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
+Zgemma H8	h8	Zgemma H8	/zgemma/h8	/fullbackup_h8	/zgemma	-m 4096 -e 253952 -c 2048	-m 4096 -p 256KiB	rootfs.ubi	uImage	none
+Zgemma H8.2H	h8.2h	Zgemma H8.2H	/zgemma/h8	/fullbackup_h8	/zgemma	-m 4096 -e 253952 -c 2048	-m 4096 -p 256KiB	rootfs.ubi	uImage	none
 Zgemma H9	h9	Zgemma H9	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H9.S	h9.s	Zgemma H9.S	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
 Zgemma H9.T	h9.t	Zgemma H9.T	/zgemma/h9	/fullbackup_h9	/zgemma	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
