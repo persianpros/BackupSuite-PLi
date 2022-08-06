@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 skinstartfullhd = """
 	<screen name="BackupSuite" position="fill" size="1920,1080" title=" " >

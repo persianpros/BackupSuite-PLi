@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 from os import environ as os_environ, path as os_path
 import gettext
 import sys
