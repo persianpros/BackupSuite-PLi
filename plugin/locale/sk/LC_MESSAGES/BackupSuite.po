@@ -26,6 +26,8 @@ msgid ""
 "\n"
 "You are using dual multiboot!"
 msgstr ""
+"\n"
+"Používate duálny multiboot!"
 
 #: ../plugin.py:447
 #, python-format
@@ -98,9 +100,8 @@ msgid "Backup finished and copied to your USB-flashdrive."
 msgstr "Zálohovanie bolo dokončené a skopírované na USB."
 
 #: ../plugin.py:338 ../plugin.py:541
-#, fuzzy
 msgid "Backup info"
-msgstr "BackupSuite"
+msgstr "Informácia o zálohe"
 
 #: ../plugin.py:583 ../plugin.py:590
 msgid "BackupSuite"
@@ -108,7 +109,7 @@ msgstr "BackupSuite"
 
 #: ../plugin.py:131 ../plugin.py:233 ../plugin.py:262
 msgid "Close"
-msgstr ""
+msgstr "Zatvoriť"
 
 #: ../message.py:65
 msgid "Create: kerneldump"
@@ -120,12 +121,11 @@ msgstr "Vytvára sa : root.ubifs"
 
 #: ../plugin.py:339 ../plugin.py:570
 msgid "Delete"
-msgstr ""
+msgstr "Vymazať"
 
 #: ../plugin.py:567
-#, fuzzy
 msgid "Delete backup"
-msgstr "Obnoviť zálohu"
+msgstr "Vymazať zálohu"
 
 #: ../plugin.py:540
 #, python-format
@@ -229,11 +229,11 @@ msgstr "S najväčšou pravdepodobnosťou sa záloha nedá obnoviť, pretože je
 
 #: ../plugin.py:45
 msgid "NAS"
-msgstr ""
+msgstr "NAS"
 
 #: ../message.py:230
 msgid "NFI Image created in: "
-msgstr "NFI záloha vytvorená v:"
+msgstr "NFI záloha vytvorená v: "
 
 #: ../plugin.py:516
 msgid "NOT found files for flashing!\n"
@@ -273,7 +273,7 @@ msgstr "Skontrolujte si prosím v príručke prijímača, ako obnoviť zálohu I
 
 #: ../plugin.py:234
 msgid "Please wait"
-msgstr ""
+msgstr "Prosím čakajte"
 
 #: ../plugin.py:528
 msgid "Please: DO NOT reboot your STB and turn off the power.\n"
@@ -292,18 +292,16 @@ msgid "Run flash"
 msgstr "Spustiť obnovu"
 
 #: ../plugin.py:464 ../plugin.py:511
-#, fuzzy
 msgid "Second partition (only kernel)"
-msgstr "Štandard (root a kernel)"
+msgstr "Druhá partícia (iba kernel)"
 
 #: ../plugin.py:463 ../plugin.py:508
 msgid "Second partition (only root)"
-msgstr ""
+msgstr "Druhá partícia (iba root)"
 
 #: ../plugin.py:462 ../plugin.py:505
-#, fuzzy
 msgid "Second partition (root and kernel)"
-msgstr "Štandard (root a kernel)"
+msgstr "Druhá partícia (root a kernel)"
 
 #: ../plugin.py:368
 msgid "Select parameter for start flash!\n"
@@ -322,9 +320,8 @@ msgid "Simulate (no write)"
 msgstr "Simulácia (bez zápisu)"
 
 #: ../plugin.py:461 ../plugin.py:502
-#, fuzzy
 msgid "Simulate second partition (no write)"
-msgstr "Simulácia (bez zápisu)"
+msgstr "Simulovať druhú partíciu (bez zápisu)"
 
 #: ../message.py:55
 msgid "Some information about the task"
@@ -412,6 +409,10 @@ msgid ""
 "%s\n"
 "Continue?"
 msgstr ""
+"Chystáte sa odstrániť túto zálohu:\n"
+"\n"
+"%s\n"
+"Pokračovať?"
 
 #: ../plugin.py:527
 msgid "Your STB will freeze during the flashing process.\n"
@@ -456,4 +457,4 @@ msgstr "ešte nie je nainštalované, inštalujem teraz"
 
 #: ../plugin.py:526
 msgid "ofgwrite will stop enigma2 now to run the flash.\n"
-msgstr "Pre spustenie obnovy systému ofgwrite ukončí beh OS Enigma.\n"
+msgstr "ofgwrite ukončí beh OS Enigma z dôvodu obnovy systému .\n"
