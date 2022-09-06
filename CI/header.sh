@@ -10,7 +10,7 @@ begin=$(date +"%s")
 
 find . -type f -name "*.py" | xargs -L1 sed -i '/^#!\/usr\/bin\/env/d' # Avoid "#!/usr/bin/env python" lines and remove them all.
 find . -type f -name "*.py" | xargs -L1 sed -i '/ coding:/d' # Avoid duplicate "# -*- coding: utf-8 -*-" lines and remove them all.
-find . -type f -name "*.py" | xargs -L1 sed -i '/print_function/d' # Avoid duplicate "from __future__ import print_function" lines and remove them all.
+#find . -type f -name "*.py" | xargs -L1 sed -i '/print_function/d' # Avoid duplicate "from __future__ import print_function" lines and remove them all.
 find . -type f -name "*.py" | xargs -L1 sed -i '/^#!\/usr\/bin\/python/d' # Avoid duplicate "#!/usr/bin/python" lines and remove them all.
 find . -type f -name "*.py" | xargs -L1 sed -i '1i# -*- coding: utf-8 -*-' # Add "# -*- coding: utf-8 -*-" as the second line, always!
 
@@ -22,7 +22,7 @@ echo ""
 finish=$(date +"%s")
 timediff=$(($finish-$begin))
 echo -e "Change time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds."
-echo -e "Fast changing would be less than 1 minutes."
+echo -e "Fast changing would be less than 1 minute."
 echo ""
 echo "Cleanup Done!"
 echo ""
