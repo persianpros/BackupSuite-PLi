@@ -139,6 +139,8 @@ Octagon SF4008	sf4008	Octagon SF4008	/sf4008	/fullbackup_sf4008				rootfs.tar.bz
 Octagon SF5008	sf5008	Octagon SF5008	/sf5008	/fullbackup_sf5008				rootfs.tar.bz2	kernel.bin	noforce
 Octagon SF8008	sf8008	Octagon SF8008	/octagon/sf8008	/fullbackup_sf8008	/octagon			rootfs.tar.bz2	kernel.bin	none
 Octagon SF8008M	sf8008m	Octagon SF8008M	/octagon/sf8008m	/fullbackup_sf8008m	/octagon			rootfs.tar.bz2	kernel.bin	none
+Octagon SFX6008	sfx6008	Octagon SFX6008	/octagon/sfx6008	/fullbackup_sfx6008	/octagon			rootfs.tar.bz2	kernel.bin	none
+Octagon SX888 4K UHD	sx88v2	Octagon SX888 4K UHD	/octagon/sx88v2	/fullbackup_sx88v2	/octagon			rootfs.tar.bz2	kernel.bin	none
 Opticum Odin2 Hybrid	odin2hybrid	Opticum Odin2 Hybrid	/odin2/hybrid	/fullbackup_odin2hybrid	/odin2	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Opticum Odin2 Plus	odinplus	Opticum Odin2 Plus	/odinplus	/fullbackup_odinplus		-m 2048 -e 126976 -c 4096	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Opticum Twin	opticumtt	Opticum Twin	/opticum/tt	/fullbackup_opticumtt	/opticum	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
@@ -188,6 +190,7 @@ Tripledot Tyrant	tyrant	Tripledot Tyrant	/tyrant	/fullbackup_tyrant		-m 2048 -e 
 UNiBOX HDECOPlus	hde	UNiBOX HDECOPlus	/unibox/hde	/fullbackup_hde	/unibox	-m 2048 -e 126976 -c 8160 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 UNiBOX HD-x	hdx	UNiBOX HD-x	/venton-hdx	/fullbackup_hdx		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Ustym 4K Pro	ustym4kpro	Ustym 4K Pro	/uclan/ustym4kpro	/fullbackup_ustym4kpro	/uclan			rootfs.tar.bz2	kernel.bin	none
+Ustym 4K S2 OTT X	ustym4ks2ottx	Ustym 4K S2 OTT X	/uclan/ustym4ks2ottx	/fullbackup_ustym4ks2ottx	/uclan			rootfs.tar.bz2	kernel.bin	none
 VALA Linux	valalinux	VALA Linux	/update/valalinux/cfe	/fullbackup_valalinux	/update/valalinux	-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	oe_rootfs.bin	oe_kernel.bin	none
 Vimastec VS1000	vs1000	Vimastec VS1000	/vs1000	/fullbackup_vs1000		-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 Vimastec VS1500	vs1500	Vimastec VS1500	/vs1500	/fullbackup_vs1500				rootfs.tar.bz2	kernel.bin	force
