@@ -20,3 +20,5 @@ It means Backup Suite couldn't detect "/dev/mtd# or /dev/mmcblk0p#" of your kern
 ## lookuptable.txt
 If you want to edit lookuptable.txt you need Notepad++/Notepadqq with Tab size 30
 (Settings->Preferences->Languages)
+
+STB names are present in https://github.com/E2OpenPlugins/e2openplugin-OpenWebif/blob/master/plugin/controllers/models/owibranding.py
