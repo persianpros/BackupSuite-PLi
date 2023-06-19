@@ -26,6 +26,20 @@ else
 	LS2="-l"
 fi
 
+PYVERSION=$(python -V 2>&1 | grep -Po '(?<=Python )(.+)')
+case $PYVERSION in
+	2.*)
+		PYEXT=pyo
+		;;
+	3.*)
+		PYEXT=pyc
+		;;
+esac
+if [ -z $PYVERSION ]; then
+	echo "Unable to determine installed Python version!"
+	exit 1
+fi
+
 ## ADD A POSTRM ROUTINE TO ENSURE A CLEAN UNINSTALL
 ## This is normally added while building but despite several requests it isn't added yet
 ## So therefore this workaround.
@@ -386,7 +400,7 @@ else
 		log "Kernel resides on $KERNEL"
 		dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
 	else
-		python $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.pyo
+		python $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.$PYEXT
 		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev`
 		KERNELNAME=${KERNEL:11:7}.bin
 		echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"

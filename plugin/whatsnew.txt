@@ -1,6 +1,9 @@
 Changelog
 =========
 
+Git 555
+- python 3 compatibility (extensions changed from pyo to pyc)
+
 Git 497-507
 - Last version for other images, Open Vision has the new generation with smart checks.
 - Maxytec Multibox Plus support

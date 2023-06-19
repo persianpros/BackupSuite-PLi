@@ -21,10 +21,23 @@ if [ -d "/usr/lib64" ]; then
 else
 	LIBDIR="/usr/lib"
 fi
+PYVERSION=$(python -V 2>&1 | grep -Po '(?<=Python )(.+)')
+case $PYVERSION in
+	2.*)
+		PYEXT=pyo
+		;;
+	3.*)
+		PYEXT=pyc
+		;;
+esac
+if [ -z $PYVERSION ]; then
+	echo "Unable to determine installed Python version!"
+	exit 1
+fi
 
 export LANG=$1
 export HARDDISK=0
-export SHOW="python $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/message.pyo $LANG"
+export SHOW="python $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/message.$PYEXT $LANG"
 TARGET="XX"
 USEDSIZE=`df -k /usr/ | grep [0-9]% | tr -s " " | cut -d " " -f 3` # size of rootfs
 NEEDEDSPACE=$(((4*$USEDSIZE)/1024))
