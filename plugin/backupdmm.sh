@@ -26,7 +26,7 @@ else
 	LS2="-1rSh"
 fi
 
-PYVERSION=$(python -V 2>&1 | grep -Po '(?<=Python )(.+)')
+PYVERSION=$(python -V 2>&1 | awk '{print $2}')
 case $PYVERSION in
 	2.*)
 		PYEXT=pyo
