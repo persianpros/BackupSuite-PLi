@@ -113,7 +113,7 @@ msgstr "Zatvoriť"
 
 #: ../message.py:65
 msgid "Create: kerneldump"
-msgstr "Vytvára sa : Kerneldump"
+msgstr "Vytvára sa : kerneldump"
 
 #: ../message.py:60
 msgid "Create: root.ubifs"
