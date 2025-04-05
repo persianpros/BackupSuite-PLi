@@ -774,7 +774,7 @@ fi
 #
 log "Exporting boot partition"
 mkdir -p "$TBI/boot"
-mount -t jffs2 /dev/mtdblock/2 "$TBI/boot"
+mount -t jffs2 /dev/mtdblock2 "$TBI/boot"
 /usr/sbin/mkfs.jffs2 \
    --root="$TBI/boot" \
    --compression-mode=none \
