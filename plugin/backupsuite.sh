@@ -388,13 +388,13 @@ else
 	elif [ $SEARCH = "sf4008" -o $SEARCH = "et11000" ] ; then
 		dd if=/dev/mmcblk0p3 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p3"
-	elif [ $SEARCH = "zero4k" -o $SEARCH = "vuzero4k" -o $SEARCH = "gbquad4k" -o $SEARCH = "gbue4k" -o $SEARCH = "gbx34k" ] ; then
+	elif [ $SEARCH = "zero4k" -o $SEARCH = "vuzero4k" -o $SEARCH = "gbquad4k" -o $SEARCH = "gbquad4kpro" -o $SEARCH = "gbue4k" -o $SEARCH = "gbx34k" ] ; then
 		dd if=/dev/mmcblk0p4 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p4"
 	elif [ $SEARCH = "duo4k" -o $SEARCH = "vuduo4k" -o $SEARCH = "duo4kse" -o $SEARCH = "vuduo4kse" ] ; then
 		dd if=/dev/mmcblk0p6 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p6"
-	elif [ $SEARCH = "sf8008" -o $SEARCH = "sf8008m" -o $SEARCH = "ustym4kpro" -o $SEARCH = "ustym4ks2ottx" -o $SEARCH = "gbtrio4k" -o $SEARCH = "gbip4k" -o $SEARCH = "viper4k" -o $SEARCH = "beyonwizv2" ] ; then
+	elif [ $SEARCH = "sf8008" -o $SEARCH = "sf8008m" -o $SEARCH = "ustym4kpro" -o $SEARCH = "ustym4ks2ottx" -o $SEARCH = "gbtrio4k" -o $SEARCH = "gbtrio4kpro" -o $SEARCH = "gbip4k" -o $SEARCH = "viper4k" -o $SEARCH = "beyonwizv2" ] ; then
 		dd if=/dev/mmcblk0p12 of=$WORKDIR/$KERNELNAME
 		log "Kernel resides on /dev/mmcblk0p12"
 	elif [ $SEARCH = "hd60" -o $SEARCH = "hd61" -o $SEARCH = "hd66se" -o $SEARCH = "h9se" -o $SEARCH = "h9combo" -o $SEARCH = "h9twin" -o $SEARCH = "h9combose" -o $SEARCH = "h9twinse" -o $SEARCH = "h10" -o $SEARCH = "h11" -o $SEARCH = "pulse4k" -o $SEARCH = "pulse4kmini" -o $SEARCH = "multibox" -o $SEARCH = "multiboxse" -o $SEARCH = "dual" -o $SEARCH = "sx88v2" -o $SEARCH = "sfx6008" ] ; then
