@@ -30,9 +30,11 @@ PYVERSION=$(python -V 2>&1 | awk '{print $2}')
 case $PYVERSION in
 	2.*)
 		PYEXT=pyo
+		PYNAME=python
 		;;
 	3.*)
 		PYEXT=pyc
+		PYNAME=python3
 		;;
 esac
 if [ -z $PYVERSION ]; then
@@ -403,7 +405,7 @@ else
 		log "Kernel resides on $KERNEL"
 		dd if=/dev/kernel of=$WORKDIR/$KERNELNAME > /dev/null 2>&1
 	else
-		python $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.$PYEXT
+		$PYNAME $LIBDIR/enigma2/python/Plugins/Extensions/BackupSuite/findkerneldevice.$PYEXT
 		KERNEL=`cat /sys/firmware/devicetree/base/chosen/kerneldev`
 		KERNELNAME=${KERNEL:11:7}.bin
 		echo "$KERNELNAME = STARTUP_${KERNEL:17:1}"
