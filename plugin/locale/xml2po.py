@@ -19,7 +19,7 @@ class parseXML(ContentHandler, LexicalHandler):
 		self.isPointsElement, self.isReboundsElement = 0, 0
 		self.attrlist = attrlist
 		self.last_comment = None
-		self.ishex = re.compile('#[0-9a-fA-F]+\Z')
+		self.ishex = re.compile('#[0-9a-fA-F]+\\Z')
 
 	def comment(self, comment):
 		if comment.find("TRANSLATORS:") != -1:
