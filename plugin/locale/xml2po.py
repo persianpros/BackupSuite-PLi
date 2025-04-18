@@ -59,7 +59,6 @@ for arg in sys.argv[1:]:
 	for (k, c) in attrlist:
 		print()
 		print('#: ' + arg)
-		k = k.replace('\"', '\\"')
 		k = k.replace('\n', '\x5c\x6e') # put newline to .po string
 		if c:
 			for l in c.split('\n'):
