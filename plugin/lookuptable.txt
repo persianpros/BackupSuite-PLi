@@ -17,7 +17,7 @@ AX Ultra	axultra	AX Ultra	/axultra	/fullbackup_axultra		-m 2048 -e 126976 -c 819
 AX Ultrabox	ultrabox	AX Ultrabox	/ultrabox	/fullbackup_ultrabox		-m 2048 -e 126976 -c 8192 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS Class M	en2	AXAS Class M	/en2	/fullbackup_en2		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS E3HD	e3hd	AXAS E3HD	/e3hd	/fullbackup_e3hd		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
-AXAS E4HD	e4hd	AXAS E4HD	/e4hd	/fullbackup_e4hd		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
+AXAS E4HD	e4hd	AXAS E4HD	/e4hd	/fullbackup_e4hd				rootfs.tar.bz2	kernel.bin	none
 AXAS E4HD Combo	e4hdcombo	AXAS E4HD Combo	/e4hdcombo	/fullbackup_e4hdcombo		-m 2048 -e 126976 -c 4096 -F	-m 2048 -p 128KiB	rootfs.bin	kernel.bin	noforce
 AXAS His C 4K	axashisc4k	AXAS His C 4K	/axas/axasc4k	/fullbackup_axashisc4k	/axas			rootfs.tar.bz2	kernel.bin	none
 AXAS His Twin	axashistwin	AXAS His Twin	/axas/axashistwin	/fullbackup_axashistwin	/axas	-m 2048 -e 126976 -c 8192	-m 2048 -p 128KiB	rootfs.ubi	uImage	none
